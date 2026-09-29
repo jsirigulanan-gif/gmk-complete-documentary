@@ -121,70 +121,70 @@
     },
     {
       "detail": "PASS: 80 schemas/contracts structurally valid; all local $refs resolved; valid fixtures passed.",
-      "duration_seconds": 1.488,
+      "duration_seconds": 1.399,
       "name": "schema_validator",
       "returncode": 0,
       "status": "PASS"
     },
     {
       "detail": "PASS: semantic smoke checks detected expected cross-field failures.",
-      "duration_seconds": 0.055,
+      "duration_seconds": 0.054,
       "name": "semantic_smoke",
       "returncode": 0,
       "status": "PASS"
     },
     {
       "detail": "PASS — Gate Engine evaluated exact evidence, authorized adjacent transition, and recorded immutable gate snapshot.",
-      "duration_seconds": 0.427,
+      "duration_seconds": 0.421,
       "name": "gate_smoke",
       "returncode": 0,
       "status": "PASS"
     },
     {
       "detail": "{\n  \"ok\": true,\n  \"checks\": [\n    {\n      \"check\": \"dir:schema\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:artifacts/contracts\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:config\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:fixtures\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_state\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_semantics\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_dependency\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_gate\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_runtime\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_operations\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_incident\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_recovery\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_production\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_render\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_qa\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_release\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_orchestrator\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_cli\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_workspace\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_research\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_narrative\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_footage\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_pilot\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_operator\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:operator\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:tests\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:tools\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:pyproject.toml\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:START_GMK.cmd\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:INSTALL_GMK.cmd\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:START_GMK.sh\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:INSTALL_GMK.sh\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:QUICK_START_CACHYOS_TH.md\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:README_START_HERE_TH.md\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:schema/schema-registry.json\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:config/gmk_policy_bundle.yaml\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:README.md\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:BUILD_STATUS.json\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"no_current_manifest_in_source_root\",\n      \"ok\": true\n    }\n  ]\n}",
-      "duration_seconds": 0.057,
+      "duration_seconds": 0.055,
       "name": "repo_layout_audit",
       "returncode": 0,
       "status": "PASS"
     },
     {
       "detail": "",
-      "duration_seconds": 0.239,
+      "duration_seconds": 0.181,
       "name": "compileall",
       "returncode": 0,
       "status": "PASS"
     },
     {
       "detail": "...                                                                      [100%]\n3 passed in 0.18s",
-      "duration_seconds": 0.665,
+      "duration_seconds": 0.71,
       "name": "pytest_build035_audit",
       "returncode": 0,
       "status": "PASS"
     },
     {
-      "detail": "....                                                                     [100%]\n4 passed in 5.70s",
-      "duration_seconds": 6.238,
+      "detail": "....                                                                     [100%]\n4 passed in 4.98s",
+      "duration_seconds": 5.501,
       "name": "pytest_build040_operator",
       "returncode": 0,
       "status": "PASS"
     },
     {
-      "detail": "....                                                                     [100%]\n4 passed in 0.42s",
-      "duration_seconds": 0.98,
+      "detail": "....                                                                     [100%]\n4 passed in 0.41s",
+      "duration_seconds": 0.936,
       "name": "pytest_build041_cachyos",
       "returncode": 0,
       "status": "PASS"
     },
     {
-      "detail": "..............                                                           [100%]\n14 passed in 14.40s",
-      "duration_seconds": 14.985,
+      "detail": "..............                                                           [100%]\n14 passed in 14.42s",
+      "duration_seconds": 14.934,
       "name": "pytest_build042_footage_fast",
       "returncode": 0,
       "status": "PASS"
     },
     {
-      "detail": "...........                                                              [100%]\n11 passed in 3.26s",
-      "duration_seconds": 3.763,
+      "detail": "...........                                                              [100%]\n11 passed in 3.29s",
+      "duration_seconds": 3.788,
       "name": "pytest_build044_frame_boundaries",
       "returncode": 0,
       "status": "PASS"

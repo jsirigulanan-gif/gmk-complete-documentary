@@ -60,3 +60,21 @@ The next product gap is an operator/CLI entry point for the existing automatic
 production runtime and explicitly configured vision provider. See
 `GPT_WORK_HANDOFF.md`. Current continuation is in Codex; no separate GPT Work
 job has been created.
+
+## CachyOS operator activation
+
+On 2026-09-29, the first package install attempt failed because cached pacman
+database entries pointed to mirrors returning 404. After refreshing the package
+database, `tk`, `python-jsonschema`, `python-yaml`, and `python-pytest`
+installed successfully.
+The existing user-level `yt-dlp` executable is accepted by the updated installer.
+`./INSTALL_GMK.sh` completed and installed `~/.local/bin/gmk-pt-operator` plus
+the desktop launcher. `./START_GMK.sh --system-check` reported Build 044 and
+all checks passing. An 8-second GUI startup smoke test remained running without
+an exception until the test timeout stopped it. The local P.T. pilot still needs
+its two source-locked videos and operator inspection before media execution.
+
+The final system-Python QUICK audit passed with 26 checks, zero failures, and
+the same one documented legacy warning. Build 040/041 operator tests passed
+8/8. The installed `gmk-pt-operator --system-check` reports Build 044 and all
+7 checks passing.

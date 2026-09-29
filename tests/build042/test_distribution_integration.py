@@ -1,11 +1,13 @@
 from pathlib import Path
+import json
 from gmk_cli.cli import parser
 from gmk_operator.app import system_check
 
 ROOT=Path(__file__).resolve().parents[2]
 
-def test_build_042_is_reported_and_yt_dlp_is_system_check():
- c=system_check();assert c['build']=='042'
+def test_current_build_is_reported_and_yt_dlp_is_system_check():
+ expected=json.loads((ROOT/'BUILD_STATUS.json').read_text())['build']
+ c=system_check();assert c['build']==expected
  by={x['check']:x for x in c['checks']};assert 'yt_dlp' in by
 
 def test_cachyos_installer_installs_yt_dlp():

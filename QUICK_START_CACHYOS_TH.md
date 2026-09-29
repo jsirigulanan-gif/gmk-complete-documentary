@@ -1,11 +1,11 @@
 # GMK P.T. Operator — เริ่มใช้บน CachyOS
 
-แพ็ก Build 042 รองรับ **CachyOS / Arch Linux แบบ native** ไม่ต้องใช้ `.cmd` และไม่ต้องติดตั้ง GMK ด้วย `pip install -e .`
+แพ็ก Build 044 รองรับ **CachyOS / Arch Linux แบบ native** ไม่ต้องใช้ `.cmd` และไม่ต้องติดตั้ง GMK ด้วย `pip install -e .`
 
 ## ครั้งแรก
 
 1. แตก ZIP ไปไว้ในโฟลเดอร์ที่คุณเขียนไฟล์ได้ เช่น `~/GMK/`
-2. เปิด Terminal ในโฟลเดอร์ `gmk-schema-v1-build-042`
+2. เปิด Terminal ในโฟลเดอร์ repo `gmk-complete-documentary`
 3. รัน:
 
 ```bash
@@ -21,6 +21,7 @@ chmod +x INSTALL_GMK.sh START_GMK.sh
 - `yt-dlp` (ค้น metadata/caption และ acquire footage ที่เข้าถึงได้)
 - `python-jsonschema`
 - `python-yaml`
+- `python-pytest` (สำหรับ QUICK audit)
 
 จากนั้นจะเพิ่ม **GMK P.T. Operator** เข้าเมนูแอปของ desktop environment และสร้าง launcher ที่ `~/.local/bin/gmk-pt-operator`
 
@@ -50,4 +51,4 @@ chmod +x INSTALL_GMK.sh START_GMK.sh
 2. **ค้น YouTube + Timestamp** — ค้น candidate, rank, อ่าน caption/auto-caption และเสนอช่วงเวลา
 3. ระบบยึด priority: **YouTube → Web/Archive video → Still/Document → AI last**
 
-Build 042 จะไม่ใช้ metadata อย่างเดียวเป็นหลักฐานว่าภาพตรง ถ้าคลิปไม่มี transcript/visual evidence พอ จะคงสถานะ inspection-required ไว้ก่อน
+ระบบจะไม่ใช้ metadata อย่างเดียวเป็นหลักฐานว่าภาพตรง ถ้าคลิปไม่มี transcript/visual evidence พอ จะคงสถานะ inspection-required ไว้ก่อน

@@ -15,6 +15,11 @@
   Build 040–043 reports remain preserved.
 - Narrow the local input ignore rule to retain the handoff's packaged pilot
   research document in Git.
+- Correct the CachyOS installer and Operator version labels to Build 044, use
+  the existing `yt-dlp` command when available, and install the desktop launcher
+  after the missing local Tk and Python packages are present.
+- Keep the distribution regression check aligned with current build metadata
+  instead of a hard-coded Build 042 label.
 
 ## Boundaries
 

@@ -4,7 +4,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT"
 
 echo "============================================================"
-echo " GMK P.T. Operator — Build 042 — CachyOS / Arch Linux Setup"
+echo " GMK P.T. Operator — Build 044 — CachyOS / Arch Linux Setup"
 echo "============================================================"
 echo
 
@@ -14,13 +14,16 @@ if ! command -v pacman >/dev/null 2>&1; then
   exit 2
 fi
 
-PACKAGES=(python tk ffmpeg yt-dlp python-jsonschema python-yaml)
+PACKAGES=(python tk ffmpeg python-jsonschema python-yaml python-pytest)
 MISSING=()
 for pkg in "${PACKAGES[@]}"; do
   if ! pacman -Q "$pkg" >/dev/null 2>&1; then
     MISSING+=("$pkg")
   fi
 done
+if ! command -v yt-dlp >/dev/null 2>&1 && ! pacman -Q yt-dlp >/dev/null 2>&1; then
+  MISSING+=(yt-dlp)
+fi
 
 if ((${#MISSING[@]})); then
   echo "[1/4] Installing required CachyOS/Arch packages: ${MISSING[*]}"
@@ -34,9 +37,10 @@ python - <<'PY'
 import sys
 if sys.version_info < (3,10):
     raise SystemExit("Python 3.10+ is required")
+from importlib.metadata import version
 import jsonschema, yaml, tkinter
 print("Python", sys.version.split()[0], "OK")
-print("jsonschema", jsonschema.__version__ if hasattr(jsonschema, '__version__') else "OK")
+print("jsonschema", version("jsonschema"))
 print("PyYAML", yaml.__version__ if hasattr(yaml, '__version__') else "OK")
 print("Tkinter OK")
 PY

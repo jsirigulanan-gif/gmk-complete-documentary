@@ -1,13 +1,13 @@
 # Current package: Build 043
 
-# เริ่มใช้ GMK P.T. Operator — Build 042
+# เริ่มใช้ GMK P.T. Operator — Build 044
 
-Build 042 เป็น **CachyOS / Arch Linux native release + Windows-compatible release** ของ GMK Operator GUI โดย GUI เป็นเพียงหน้าควบคุม; source-lock, `ffprobe`, checksum, Gate และ workspace mutation ยังใช้ authoritative runtime ชุดเดียวกับ CLI
+Build 044 เป็น **CachyOS / Arch Linux native release + Windows-compatible release** ของ GMK Operator GUI โดย GUI เป็นเพียงหน้าควบคุม; source-lock, `ffprobe`, checksum, Gate และ workspace mutation ยังใช้ authoritative runtime ชุดเดียวกับ CLI
 
 ## CachyOS / Arch Linux — แนะนำสำหรับเครื่องนี้
 
 1. แตก ZIP ไปไว้ในโฟลเดอร์ที่เขียนไฟล์ได้ เช่น `~/GMK/`
-2. เปิด Terminal ในโฟลเดอร์ `gmk-schema-v1-build-042`
+2. เปิด Terminal ในโฟลเดอร์ repo `gmk-complete-documentary`
 3. รัน `./INSTALL_GMK.sh`
 4. หลังติดตั้ง เปิด **GMK P.T. Operator** จากเมนูแอป หรือรัน `./START_GMK.sh`
 

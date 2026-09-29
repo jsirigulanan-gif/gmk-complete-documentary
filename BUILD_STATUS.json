@@ -222,7 +222,8 @@
     "build_043_compileall": "PASS",
     "build_044_quick_audit": "26 PASS / 0 FAIL / 0 TIMEOUT / 1 documented legacy WARN",
     "build_044_targeted": "14 PASS (Build 044 + Build 043 + frame compatibility)",
-    "build_043_baseline_local": "32 PASS (Build 042 + Build 043), 75.02 seconds"
+    "build_043_baseline_local": "32 PASS (Build 042 + Build 043), 75.02 seconds",
+    "build_044_cachyos_operator": "INSTALL_GMK.sh PASS; system check 7/7; GUI startup smoke stayed open 8 seconds; QUICK audit 26 PASS / 0 FAIL / 1 legacy WARN"
   },
   "verified_segments": 8,
   "visual_coverage_runtime": "IMPLEMENTED",

@@ -22,6 +22,7 @@ from gmk_footage.research import FootageResearchRuntime
 from gmk_footage.fallback_research import MaterialFallbackResearchRuntime
 
 ROOT = Path(__file__).resolve().parents[1]
+BUILD = json.loads((ROOT / "BUILD_STATUS.json").read_text(encoding="utf-8"))["build"]
 WORKSPACE = ROOT / "pilot" / "PT_WORKSPACE"
 INTAKE = ROOT / "pilot" / "PT_MEDIA_INTAKE"
 WORKSHEET = INTAKE / "PT_MEDIA_INSPECTION_WORKSHEET.json"
@@ -96,7 +97,7 @@ def system_check() -> dict[str, Any]:
     except Exception as exc:
         add("tkinter", False, str(exc))
     return {
-        "build": "042",
+        "build": BUILD,
         "platform": platform.platform(),
         "ok": all(x["ok"] for x in checks),
         "checks": checks,
@@ -137,7 +138,7 @@ class OperatorApp:
         self.tk = tk
         self.ttk = ttk
         self.root = tk.Tk()
-        self.root.title("GMK Complete Documentary Maker — Build 042")
+        self.root.title(f"GMK Complete Documentary Maker — Build {BUILD}")
         self.root.geometry("980x720")
         self.root.minsize(860, 640)
         self.cfg = apply_operator_config()
@@ -160,7 +161,7 @@ class OperatorApp:
         title.pack(anchor="w")
         ttk.Label(
             outer,
-            text="Build 042 — Complete Documentary Maker / YouTube-first Footage Research / Auto Editing Core",
+            text=f"Build {BUILD} — Complete Documentary Maker / YouTube-first Footage Research / Auto Editing Core",
         ).pack(anchor="w", pady=(0, 10))
 
         self.notebook = ttk.Notebook(outer)
