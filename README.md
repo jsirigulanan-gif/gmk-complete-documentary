@@ -1,6 +1,8 @@
-# GMK Complete Documentary Maker — Build 044
+# GMK Complete Documentary Maker — Build 045
 
-> **Current build:** Build 044 — Reliable frame sampling and Git checkout audit. Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
+> **Current build:** Build 045 — Clear Operator navigation for the P.T. pilot. Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
+
+Build 045 adds a purpose and scope overview in the Operator. The two source-locked Lisa/TGA video slots now live under the P.T. pilot instead of appearing as top-level product features. This GUI currently operates on the bundled P.T. project; it does not yet create arbitrary documentary projects or produce a full film with one click. See [Build 045 changelog](CHANGELOG_BUILD_045.md).
 
 Build 044 fixes frame sampling at the end of a video and enables audits in Git checkouts. The imported baseline is preserved as tag `build-043`. See [Build 044 changelog](CHANGELOG_BUILD_044.md).
 
@@ -119,6 +121,7 @@ Human approvals remain mandatory at their frozen boundaries.
 - 042 — YouTube-first footage discovery, ranking, timestamp inspection, acquisition, web/still fallbacks, automatic rough-cut assembly and credits
 - 043 — Visual semantic frame matching and evidence manifests for transcript-poor footage
 - 044 — End-of-file frame sampling fix, Git checkout audit support, and regression coverage
+- 045 — Operator overview and P.T. pilot navigation, with truthful scope labels
 
 ## Audit
 ```bash

@@ -157,27 +157,36 @@ class OperatorApp:
         outer = ttk.Frame(self.root, padding=14)
         outer.pack(fill="both", expand=True)
 
-        title = ttk.Label(outer, text="GMK P.T. Operator", font=("Segoe UI", 18, "bold"))
+        title = ttk.Label(outer, text="GMK Documentary Maker", font=("Segoe UI", 18, "bold"))
         title.pack(anchor="w")
         ttk.Label(
             outer,
-            text=f"Build {BUILD} — Complete Documentary Maker / YouTube-first Footage Research / Auto Editing Core",
+            text=f"Build {BUILD} — หน้าควบคุมโครงการตัวอย่าง P.T. สำหรับค้นฟุตเทจและตรวจหลักฐาน",
         ).pack(anchor="w", pady=(0, 10))
 
         self.notebook = ttk.Notebook(outer)
         self.notebook.pack(fill="both", expand=True)
 
-        self.dashboard = ttk.Frame(self.notebook, padding=12)
-        self.notebook.add(self.dashboard, text="สถานะ")
-        self._build_dashboard(self.dashboard)
+        overview = ttk.Frame(self.notebook, padding=12)
+        self.notebook.add(overview, text="เริ่มต้น")
+        self._build_overview(overview)
 
         documentary = ttk.Frame(self.notebook, padding=12)
-        self.notebook.add(documentary, text="Documentary Maker")
+        self.notebook.add(documentary, text="ค้นฟุตเทจ P.T.")
         self._build_documentary_tab(documentary)
 
-        for key, label in (("LISA_X_DIRECT_VERIFIED", "Lisa camera hack"), ("TGA_VIDEO", "TGA stage statement")):
-            frame = ttk.Frame(self.notebook, padding=12)
-            self.notebook.add(frame, text=label)
+        pilot = ttk.Frame(self.notebook, padding=12)
+        self.notebook.add(pilot, text="โครงการตัวอย่าง P.T.")
+        self.pilot_notebook = ttk.Notebook(pilot)
+        self.pilot_notebook.pack(fill="both", expand=True)
+
+        self.dashboard = ttk.Frame(self.pilot_notebook, padding=12)
+        self.pilot_notebook.add(self.dashboard, text="สถานะ P.T.")
+        self._build_dashboard(self.dashboard)
+
+        for key, label in (("LISA_X_DIRECT_VERIFIED", "วิดีโอ 1 · Lisa"), ("TGA_VIDEO", "วิดีโอ 2 · TGA")):
+            frame = ttk.Frame(self.pilot_notebook, padding=12)
+            self.pilot_notebook.add(frame, text=label)
             self._build_candidate_tab(frame, key)
 
         system = ttk.Frame(self.notebook, padding=12)
@@ -193,13 +202,47 @@ class OperatorApp:
         self.footer = ttk.Label(outer, textvariable=self.status_var, anchor="w")
         self.footer.pack(fill="x", pady=(8, 0))
 
+    def _build_overview(self, parent) -> None:
+        ttk = self.ttk
+        sections = (
+            (
+                "GMK เอาไว้ทำอะไร",
+                "GMK ช่วยทำสารคดีจากงานวิจัย: วางเรื่องและช็อต ค้นและตรวจแหล่งภาพ "
+                "เตรียมเสียง ประกอบภาพ เรนเดอร์ ตรวจคุณภาพ และส่งออกไฟล์",
+            ),
+            (
+                "หน้าจอนี้ทำอะไรได้ตอนนี้",
+                "หน้าจอนี้ใช้ Narration Beats ที่เตรียมไว้ของ P.T. เพื่อสร้างคำค้นและหารายงานฟุตเทจ "
+                "จากนั้นรับไฟล์วิดีโอที่เลือกไว้ ตรวจหลักฐาน และเดินขั้นตอน media ของโครงการตัวอย่าง "
+                "การกดค้นหายังไม่ได้สร้างสารคดีสำเร็จรูป",
+            ),
+            (
+                "ทำไมมี Lisa และ TGA",
+                "สองวิดีโอนี้เป็นหลักฐานเฉพาะเรื่อง P.T. ที่โครงการตัวอย่างยังขาด "
+                "ไม่ใช่ไฟล์บังคับสำหรับสารคดีทุกเรื่อง ขณะนี้ GUI ยังไม่ได้มีขั้นตอนสร้างโครงการเรื่องใหม่",
+            ),
+        )
+        for heading, body in sections:
+            box = ttk.LabelFrame(parent, text=heading, padding=12)
+            box.pack(fill="x", pady=(0, 10))
+            ttk.Label(box, text=body, wraplength=800, justify="left").pack(anchor="w")
+
+        status = ttk.Frame(parent)
+        status.pack(fill="x", pady=(4, 8))
+        ttk.Label(status, text="ความพร้อม P.T.:", font=("Segoe UI", 10, "bold")).pack(side="left")
+        ttk.Label(status, textvariable=self.state_var).pack(side="left", padx=(8, 0))
+        actions = ttk.Frame(parent)
+        actions.pack(fill="x")
+        ttk.Button(actions, text="ค้นฟุตเทจ P.T.", command=lambda: self.notebook.select(1)).pack(side="left", padx=(0, 8))
+        ttk.Button(actions, text="ดูหลักฐานที่ยังขาด", command=lambda: self.notebook.select(2)).pack(side="left")
+
     def _build_dashboard(self, parent) -> None:
         ttk = self.ttk
         grid = ttk.Frame(parent)
         grid.pack(fill="x")
         rows = [
-            ("Readiness", self.state_var),
-            ("Manifest", self.version_var),
+            ("ความพร้อมของ P.T.", self.state_var),
+            ("สถานะโครงการ", self.version_var),
             ("ขั้นถัดไป", self.next_var),
         ]
         for r, (label, var) in enumerate(rows):
@@ -209,13 +252,13 @@ class OperatorApp:
 
         actions = ttk.Frame(parent)
         actions.pack(fill="x", pady=12)
-        ttk.Button(actions, text="Refresh readiness", command=self.refresh_readiness).pack(side="left", padx=(0, 6))
-        ttk.Button(actions, text="Preflight", command=self.run_preflight).pack(side="left", padx=6)
-        ttk.Button(actions, text="Execute media", command=self.execute_media).pack(side="left", padx=6)
+        ttk.Button(actions, text="ตรวจความพร้อม", command=self.refresh_readiness).pack(side="left", padx=(0, 6))
+        ttk.Button(actions, text="ตรวจไฟล์ก่อนดำเนินการ", command=self.run_preflight).pack(side="left", padx=6)
+        ttk.Button(actions, text="นำเข้าวิดีโอ P.T.", command=self.execute_media).pack(side="left", padx=6)
         ttk.Button(actions, text="เปิด intake folder", command=lambda: _open_path(INTAKE)).pack(side="left", padx=6)
 
         ttk.Separator(parent).pack(fill="x", pady=8)
-        ttk.Label(parent, text="Media slots", font=("Segoe UI", 12, "bold")).pack(anchor="w")
+        ttk.Label(parent, text="หลักฐานวิดีโอที่โครงการ P.T. รออยู่", font=("Segoe UI", 12, "bold")).pack(anchor="w")
         self.slot_summary = ttk.Frame(parent)
         self.slot_summary.pack(fill="x", pady=6)
 
@@ -242,11 +285,13 @@ class OperatorApp:
         }
         self.slot_vars[key] = vars_
 
-        ttk.Label(parent, text=key, font=("Segoe UI", 14, "bold")).grid(row=0, column=0, columnspan=3, sticky="w")
-        ttk.Label(parent, textvariable=vars_["source_url"], wraplength=760).grid(row=1, column=0, columnspan=3, sticky="w", pady=(2, 8))
+        title = "วิดีโอ Lisa camera hack" if key == "LISA_X_DIRECT_VERIFIED" else "วิดีโอ TGA stage statement"
+        ttk.Label(parent, text=title, font=("Segoe UI", 14, "bold")).grid(row=0, column=0, columnspan=3, sticky="w")
+        ttk.Label(parent, text="หลักฐานเฉพาะโครงการ P.T. ที่เลือกแหล่งไว้แล้ว: " + key, wraplength=760).grid(row=1, column=0, columnspan=3, sticky="w", pady=(2, 2))
+        ttk.Label(parent, textvariable=vars_["source_url"], wraplength=760).grid(row=2, column=0, columnspan=3, sticky="w", pady=(0, 8))
 
         buttons = ttk.Frame(parent)
-        buttons.grid(row=2, column=0, columnspan=3, sticky="w", pady=(0, 10))
+        buttons.grid(row=3, column=0, columnspan=3, sticky="w", pady=(0, 10))
         ttk.Button(buttons, text="เลือกวิดีโอ…", command=lambda k=key: self.select_video(k)).pack(side="left", padx=(0, 6))
         ttk.Button(buttons, text="เปิดโฟลเดอร์", command=lambda k=key: _open_path(INTAKE / k)).pack(side="left", padx=6)
         ttk.Button(buttons, text="บันทึก inspection", command=lambda k=key: self.save_inspection(k)).pack(side="left", padx=6)
@@ -257,7 +302,7 @@ class OperatorApp:
             ("End (sec)", "end_seconds"),
             ("Key (sec, optional)", "key_seconds"),
         ]
-        row = 3
+        row = 4
         for label, name in fields:
             ttk.Label(parent, text=label).grid(row=row, column=0, sticky="w", pady=4)
             ttk.Entry(parent, textvariable=vars_[name], width=36).grid(row=row, column=1, sticky="ew", pady=4)
@@ -297,8 +342,9 @@ class OperatorApp:
 
     def _build_documentary_tab(self, parent) -> None:
         ttk=self.ttk
-        ttk.Label(parent,text="Complete Documentary Maker — Footage Research",font=("Segoe UI",14,"bold")).pack(anchor="w")
-        ttk.Label(parent,text="ลำดับวัตถุดิบ: YouTube → Web/Archive Video → Still/Document → AI (last resort)",wraplength=800).pack(anchor="w",pady=(2,10))
+        ttk.Label(parent,text="ค้นฟุตเทจสำหรับโครงการ P.T.",font=("Segoe UI",14,"bold")).pack(anchor="w")
+        ttk.Label(parent,text="สร้างคำค้นจาก Narration Beats ที่มีอยู่ แล้วค้นและประเมินแหล่งภาพ ผลลัพธ์เป็นรายงานประกอบการเลือก ยังไม่ใช่วิดีโอสารคดีสำเร็จรูป",wraplength=800).pack(anchor="w",pady=(2,5))
+        ttk.Label(parent,text="ลำดับวัตถุดิบ: YouTube → Web/Archive Video → Still/Document → AI (last resort)",wraplength=800).pack(anchor="w",pady=(0,10))
         actions=ttk.Frame(parent);actions.pack(fill="x",pady=(0,10))
         ttk.Button(actions,text="1. สร้าง Footage Search Plan",command=self.generate_footage_plan).pack(side="left",padx=(0,6))
         ttk.Button(actions,text="2. ค้น YouTube + Timestamp",command=self.run_footage_research).pack(side="left",padx=6)
@@ -374,7 +420,7 @@ class OperatorApp:
                 result = fn()
             except Exception as exc:
                 tb = traceback.format_exc()
-                self.root.after(0, lambda: self._async_error(label, exc, tb))
+                self.root.after(0, lambda error=exc, detail=tb: self._async_error(label, error, detail))
                 return
             self.root.after(0, lambda: self._async_done(label, result, done))
 
@@ -404,14 +450,25 @@ class OperatorApp:
         self._async("กำลังตรวจ readiness…", run, self._display_readiness)
 
     def _display_readiness(self, result) -> None:
-        self.state_var.set(result.readiness)
+        labels = {
+            "BLOCKED_MEDIA": "BLOCKED_MEDIA — ยังขาดวิดีโอต้นฉบับ",
+            "BLOCKED_INSPECTION": "BLOCKED_INSPECTION — รอการตรวจภาพจากไฟล์จริง",
+            "BLOCKED_PREFLIGHT": "BLOCKED_PREFLIGHT — ไฟล์หรือข้อมูลตรวจไม่ผ่าน",
+            "READY_TO_EXECUTE": "READY_TO_EXECUTE — พร้อมนำเข้าวิดีโอ",
+            "ALREADY_ADVANCED": "ผ่านขั้นตอนรับวิดีโอแล้ว",
+        }
+        self.state_var.set(labels.get(result.readiness, result.readiness))
         self.version_var.set(f"{result.project_state} / manifest v{result.manifest_version}")
-        self.next_var.set(result.next_action)
+        self.next_var.set(
+            "เพิ่มวิดีโอที่ตรงแหล่งในแท็บ Lisa และ TGA แล้วบันทึกผลตรวจภาพ"
+            if result.readiness == "BLOCKED_MEDIA" else result.next_action
+        )
         for w in self.slot_summary.winfo_children():
             w.destroy()
         for idx, slot in enumerate(result.slots):
             key = slot["candidate_key"]
-            text = f"{key}: media={slot['media_state']} | inspection={'OK' if slot['inspection_complete'] else 'INCOMPLETE'}"
+            name = "Lisa camera hack" if key == "LISA_X_DIRECT_VERIFIED" else "TGA stage statement"
+            text = f"{name}: วิดีโอ={'มีแล้ว' if slot['media_state'] != 'MISSING' else 'ยังขาด'} | ตรวจภาพ={'ครบ' if slot['inspection_complete'] else 'ยังไม่ครบ'}"
             self.ttk.Label(self.slot_summary, text=text).grid(row=idx, column=0, sticky="w", pady=2)
 
     def select_video(self, key: str) -> None:
@@ -538,7 +595,7 @@ class OperatorApp:
         def run():
             return AuditRuntime(ROOT).run(profile="QUICK", timeout_seconds=120)
         def done(result):
-            messagebox.showinfo("GMK", f"Quick Audit\nPASS={result.pass_count} FAIL={result.fail_count} TIMEOUT={result.timeout_count} WARN={result.warn_count}")
+            messagebox.showinfo("GMK", f"Quick Audit\nPASS={result.pass_count} FAIL={result.fail_count} TIMEOUT={result.timeout_count} WARN={result.warning_count}")
         self._async("กำลังรัน Quick Audit…", run, done)
 
     def run(self) -> int:

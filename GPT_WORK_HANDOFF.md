@@ -1,6 +1,9 @@
 # Continuation Handoff — GMK Complete Documentary Maker
 
-## Current continuation (Build 044)
+## Current continuation (Build 045)
+The Operator now has an overview and nests Lisa/TGA under the P.T. pilot. See `CHANGELOG_BUILD_045.md`. The next product gap is still a general-project GUI/workflow and a supported automatic production entry point.
+
+## Previous continuation (Build 044)
 The user chose to continue in this Codex session. Build 043 is preserved in Git tag `build-043`; current code is Build 044. Read `CHANGELOG_BUILD_044.md` and `BUILD_044_VALIDATION.md` for changes and current verification. Historical reports below describe the imported baseline.
 
 Next: connect the existing automatic footage production runtime and optional explicitly configured vision provider to a supported CLI/operator command. Currently the CLI/operator expose footage research, while `AutomaticFootageProductionRuntime` is a Python API. Add integration tests; preserve source evidence, credits, unresolved-beat failures, and existing human review gates. Live source acquisition and Ollama inference have not been verified by this import.

@@ -64,6 +64,7 @@ class AuditRuntime:
         ('build041_cachyos', ('tests/build041',)),
         ('build042_footage_fast', ('tests/build042/test_query_planner.py','tests/build042/test_youtube_provider.py','tests/build042/test_ranker.py','tests/build042/test_source_policy.py','tests/build042/test_distribution_integration.py')),
         ('build044_frame_boundaries', ('tests/build044',)),
+        ('build045_operator', ('tests/build045',)),
     )
     FULL_BASE_PARTITIONS=(
         ('core_engines', ('tests/state','tests/dependency','tests/gate','tests/runtime','tests/semantic')),

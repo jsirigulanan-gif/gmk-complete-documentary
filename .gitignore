@@ -17,6 +17,7 @@ workspace/
 # Operator-local configuration and generated reports
 operator/GMK_OPERATOR_CONFIG.json
 pilot/PT_OPERATOR_OUTPUT/
+pilot/PT_FOOTAGE_RESEARCH/
 
 # External media staged by an operator must never be committed
 pilot/PT_MEDIA_INTAKE/*/*.mp4

@@ -4,7 +4,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT"
 
 echo "============================================================"
-echo " GMK P.T. Operator — Build 044 — CachyOS / Arch Linux Setup"
+echo " GMK P.T. Operator — Build 045 — CachyOS / Arch Linux Setup"
 echo "============================================================"
 echo
 

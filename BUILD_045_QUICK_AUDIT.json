@@ -1,0 +1,208 @@
+{
+  "checks": [
+    {
+      "detail": "build=045 schema=FROZEN_WITH_ERRATA_024_025_029_033",
+      "duration_seconds": 0.0,
+      "name": "build_status",
+      "returncode": null,
+      "status": "PASS"
+    },
+    {
+      "detail": "FROZEN_WITH_ERRATA_024_025_029_033",
+      "duration_seconds": 0.0,
+      "name": "schema_status_consistency",
+      "returncode": null,
+      "status": "PASS"
+    },
+    {
+      "detail": "NONE_CORE_PIPELINE_COMPLETE",
+      "duration_seconds": 0.0,
+      "name": "pipeline_complete_marker",
+      "returncode": null,
+      "status": "PASS"
+    },
+    {
+      "detail": "Current build:** Build 045",
+      "duration_seconds": 0.0,
+      "name": "readme_current_build",
+      "returncode": null,
+      "status": "PASS"
+    },
+    {
+      "detail": "continuous_through=045",
+      "duration_seconds": 0.0,
+      "name": "changelog_continuity_002_current",
+      "returncode": null,
+      "status": "PASS"
+    },
+    {
+      "detail": "Build 001 has README history but no standalone CHANGELOG_BUILD_001.md; retained as legacy documentation gap.",
+      "duration_seconds": 0.0,
+      "name": "legacy_build001_changelog",
+      "returncode": null,
+      "status": "WARN"
+    },
+    {
+      "detail": "errata=['024', '025', '029', '033']",
+      "duration_seconds": 0.0,
+      "name": "errata_ledger_source",
+      "returncode": null,
+      "status": "PASS"
+    },
+    {
+      "detail": "junk_entries=0",
+      "duration_seconds": 0.0,
+      "name": "package_hygiene",
+      "returncode": null,
+      "status": "PASS"
+    },
+    {
+      "detail": "declared=80; artifact_contract_files=35",
+      "duration_seconds": 0.0,
+      "name": "status_contract_count_declared",
+      "returncode": null,
+      "status": "PASS"
+    },
+    {
+      "detail": "state=ASSET_RECON pending=['LISA_X_DIRECT_VERIFIED', 'TGA_VIDEO']",
+      "duration_seconds": 0.0,
+      "name": "pilot_external_media_boundary",
+      "returncode": null,
+      "status": "PASS"
+    },
+    {
+      "detail": "missing=[]; expected=['LISA_X_DIRECT_VERIFIED', 'TGA_VIDEO']",
+      "duration_seconds": 0.0,
+      "name": "pilot_execution_pack",
+      "returncode": null,
+      "status": "PASS"
+    },
+    {
+      "detail": "keys=['LISA_X_DIRECT_VERIFIED', 'TGA_VIDEO'] source_locks_match=True slot_markers=True",
+      "duration_seconds": 0.0,
+      "name": "pilot_media_intake_pack",
+      "returncode": null,
+      "status": "PASS"
+    },
+    {
+      "detail": "one-command non-mutating-by-default processor documented and packaged",
+      "duration_seconds": 0.0,
+      "name": "pilot_media_processor",
+      "returncode": null,
+      "status": "PASS"
+    },
+    {
+      "detail": "state=ASSET_RECON manifest=104 readiness=BLOCKED_MEDIA keys=['LISA_X_DIRECT_VERIFIED', 'TGA_VIDEO']",
+      "duration_seconds": 0.0,
+      "name": "pilot_readiness_snapshot",
+      "returncode": null,
+      "status": "PASS"
+    },
+    {
+      "detail": "read-only readiness dashboard documented and packaged",
+      "duration_seconds": 0.0,
+      "name": "pilot_readiness_runtime",
+      "returncode": null,
+      "status": "PASS"
+    },
+    {
+      "detail": "missing=[]; entrypoint=True",
+      "duration_seconds": 0.0,
+      "name": "operator_release_surface",
+      "returncode": null,
+      "status": "PASS"
+    },
+    {
+      "detail": "missing=[]; documented=True",
+      "duration_seconds": 0.0,
+      "name": "complete_documentary_footage_core",
+      "returncode": null,
+      "status": "PASS"
+    },
+    {
+      "detail": "PASS: 80 schemas/contracts structurally valid; all local $refs resolved; valid fixtures passed.",
+      "duration_seconds": 2.111,
+      "name": "schema_validator",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "detail": "PASS: semantic smoke checks detected expected cross-field failures.",
+      "duration_seconds": 0.072,
+      "name": "semantic_smoke",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "detail": "PASS — Gate Engine evaluated exact evidence, authorized adjacent transition, and recorded immutable gate snapshot.",
+      "duration_seconds": 0.61,
+      "name": "gate_smoke",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "detail": "{\n  \"ok\": true,\n  \"checks\": [\n    {\n      \"check\": \"dir:schema\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:artifacts/contracts\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:config\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:fixtures\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_state\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_semantics\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_dependency\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_gate\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_runtime\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_operations\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_incident\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_recovery\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_production\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_render\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_qa\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_release\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_orchestrator\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_cli\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_workspace\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_research\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_narrative\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_footage\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_pilot\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:gmk_operator\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:operator\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:tests\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"dir:tools\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:pyproject.toml\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:START_GMK.cmd\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:INSTALL_GMK.cmd\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:START_GMK.sh\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:INSTALL_GMK.sh\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:QUICK_START_CACHYOS_TH.md\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:README_START_HERE_TH.md\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:schema/schema-registry.json\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:config/gmk_policy_bundle.yaml\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:README.md\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"file:BUILD_STATUS.json\",\n      \"ok\": true\n    },\n    {\n      \"check\": \"no_current_manifest_in_source_root\",\n      \"ok\": true\n    }\n  ]\n}",
+      "duration_seconds": 0.073,
+      "name": "repo_layout_audit",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "detail": "",
+      "duration_seconds": 0.252,
+      "name": "compileall",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "detail": "...                                                                      [100%]\n3 passed in 0.28s",
+      "duration_seconds": 0.956,
+      "name": "pytest_build035_audit",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "detail": "....                                                                     [100%]\n4 passed in 5.92s",
+      "duration_seconds": 6.624,
+      "name": "pytest_build040_operator",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "detail": "....                                                                     [100%]\n4 passed in 0.40s",
+      "duration_seconds": 0.954,
+      "name": "pytest_build041_cachyos",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "detail": "..............                                                           [100%]\n14 passed in 15.14s",
+      "duration_seconds": 15.731,
+      "name": "pytest_build042_footage_fast",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "detail": "...........                                                              [100%]\n11 passed in 3.45s",
+      "duration_seconds": 4.034,
+      "name": "pytest_build044_frame_boundaries",
+      "returncode": 0,
+      "status": "PASS"
+    },
+    {
+      "detail": ".                                                                        [100%]\n1 passed in 0.54s",
+      "duration_seconds": 1.118,
+      "name": "pytest_build045_operator",
+      "returncode": 0,
+      "status": "PASS"
+    }
+  ],
+  "fail_count": 0,
+  "overall_status": "PASS_WITH_WARNINGS",
+  "pass_count": 27,
+  "profile": "QUICK",
+  "report_sha256": "cc4d42b4d6277be4190b4264451b3b7eea31f913c9df717349060fbbe4567a54",
+  "repository": ".",
+  "timeout_count": 0,
+  "warning_count": 1
+}

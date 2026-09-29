@@ -1,8 +1,10 @@
 # Current package: Build 043
 
-# เริ่มใช้ GMK P.T. Operator — Build 044
+# เริ่มใช้ GMK P.T. Operator — Build 045
 
-Build 044 เป็น **CachyOS / Arch Linux native release + Windows-compatible release** ของ GMK Operator GUI โดย GUI เป็นเพียงหน้าควบคุม; source-lock, `ffprobe`, checksum, Gate และ workspace mutation ยังใช้ authoritative runtime ชุดเดียวกับ CLI
+Build 045 เป็น **CachyOS / Arch Linux native release + Windows-compatible release** ของ GMK Operator GUI โดย GUI เป็นเพียงหน้าควบคุม; source-lock, `ffprobe`, checksum, Gate และ workspace mutation ยังใช้ authoritative runtime ชุดเดียวกับ CLI
+
+GMK มีเป้าหมายช่วยผลิตสารคดีตั้งแต่งานวิจัยจนถึงการส่งออกวิดีโอ แต่ GUI รุ่นนี้ทำงานกับโครงการตัวอย่าง **P.T.** ที่เตรียมไว้เท่านั้น แท็บ Lisa/TGA เป็นไฟล์วิดีโอสองแหล่งที่โครงการนี้ยังขาด ไม่ใช่ข้อกำหนดของสารคดีทุกเรื่อง ส่วนแท็บค้นฟุตเทจสร้างรายงานจาก Narration Beats ของ P.T.; ยังไม่มีปุ่มสร้างสารคดีเรื่องใหม่หรือเรนเดอร์ทั้งเรื่องในครั้งเดียว
 
 ## CachyOS / Arch Linux — แนะนำสำหรับเครื่องนี้
 
