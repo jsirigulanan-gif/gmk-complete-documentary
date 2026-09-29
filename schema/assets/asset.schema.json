@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/asset",
+  "title": "GMK Asset",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "ASSET"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^AST_[A-Z0-9_-]+$"
+        },
+        "origin_search_result_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-expected-object-type": "SEARCH_RESULT",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "source_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-expected-object-type": "SOURCE",
+          "x-gmk-dependency-relation": "VISUAL_SOURCE"
+        },
+        "media_type": {
+          "$ref": "gmk://schema/v1/asset-common#/$defs/MediaType"
+        },
+        "asset_class": {
+          "$ref": "gmk://schema/v1/asset-common#/$defs/AssetClass"
+        },
+        "workflow_state": {
+          "type": "string",
+          "enum": [
+            "SELECTED",
+            "ACQUISITION_PENDING",
+            "ACQUIRED",
+            "FILE_VERIFIED",
+            "CATALOGED",
+            "APPROVED",
+            "REJECTED",
+            "MISSING"
+          ]
+        },
+        "acquisition_operation_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "original_file": {
+          "type": "object",
+          "required": [
+            "uri",
+            "checksum",
+            "immutable"
+          ],
+          "properties": {
+            "uri": {
+              "$ref": "gmk://schema/v1/reference#/$defs/LogicalUri"
+            },
+            "checksum": {
+              "$ref": "gmk://schema/v1/reference#/$defs/Sha256"
+            },
+            "immutable": {
+              "const": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "technical": {
+          "type": "object",
+          "properties": {
+            "duration_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "width": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "height": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "frame_rate": {
+              "$ref": "gmk://schema/v1/reference#/$defs/FrameRate"
+            },
+            "codec": {
+              "type": "string"
+            },
+            "container": {
+              "type": "string"
+            },
+            "audio_present": {
+              "type": "boolean"
+            },
+            "file_size_bytes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "page_count": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "rights": {
+          "type": "object",
+          "required": [
+            "status"
+          ],
+          "properties": {
+            "status": {
+              "$ref": "gmk://schema/v1/enums#/$defs/RightsStatus"
+            },
+            "basis": {
+              "type": "string"
+            },
+            "attribution_required": {
+              "type": "boolean"
+            },
+            "attribution_text": {
+              "type": "string"
+            },
+            "reviewed_at": {
+              "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+            },
+            "reviewed_by": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "x-gmk-field-class": "AUTHORITATIVE"
+        }
+      },
+      "required": [
+        "origin_search_result_ref",
+        "source_ref",
+        "media_type",
+        "asset_class",
+        "workflow_state",
+        "rights"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

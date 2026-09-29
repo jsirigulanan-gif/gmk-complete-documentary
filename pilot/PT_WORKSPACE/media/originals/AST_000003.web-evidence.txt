@@ -1,0 +1,6 @@
+GMK WEB EVIDENCE SNAPSHOT
+Candidate: MILLION_PUSH
+Source URL: https://www.pushsquare.com/news/2014/09/dont_look_now_but_ps4_demo_pt_has_been_downloaded_over_1_million_times
+Title: P.T. downloaded over 1 million times
+Capture type: bounded text evidence snapshot (not origin-server HTML bytes)
+Evidence summary: Push Square reported on Sept. 1, 2014 that Kojima announced P.T. had been downloaded over one million times.

@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/search",
+  "title": "GMK Asset Search",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "SEARCH"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^SRCH_[A-Z0-9_-]+$"
+        },
+        "target_beat_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-expected-object-type": "NARRATION_BEAT",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "priority": {
+          "type": "string",
+          "enum": [
+            "CRITICAL",
+            "MAJOR",
+            "STANDARD",
+            "SUPPORTING"
+          ]
+        },
+        "search_round": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "search_pass": {
+          "$ref": "gmk://schema/v1/asset-common#/$defs/SearchPass"
+        },
+        "query_family": {
+          "$ref": "gmk://schema/v1/asset-common#/$defs/QueryFamily"
+        },
+        "query": {
+          "type": "string",
+          "minLength": 1
+        },
+        "language": {
+          "type": "string",
+          "minLength": 2
+        },
+        "provider": {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "requested_source_families": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/asset-common#/$defs/SourceFamily"
+          }
+        },
+        "trigger": {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "INITIAL",
+                "SEARCH_AGAIN",
+                "HUMAN_REQUEST",
+                "COVERAGE_GAP",
+                "REVIEW_FIND_BETTER"
+              ]
+            },
+            "previous_search_refs": {
+              "type": "array",
+              "items": {
+                "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+                "x-gmk-dependency-relation": "DERIVED_FROM"
+              }
+            },
+            "failure_reason": {
+              "type": "string"
+            },
+            "strategy_change": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "workflow_state": {
+          "type": "string",
+          "enum": [
+            "PLANNED",
+            "RUNNING",
+            "COMPLETED",
+            "FAILED",
+            "CANCELED"
+          ]
+        }
+      },
+      "required": [
+        "target_beat_ref",
+        "priority",
+        "search_round",
+        "search_pass",
+        "query_family",
+        "query",
+        "language",
+        "provider",
+        "trigger",
+        "workflow_state"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

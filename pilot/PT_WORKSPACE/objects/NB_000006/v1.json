@@ -1,0 +1,69 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "beat_type": "FACT",
+  "claim_bindings": [
+    {
+      "claim_ref": {
+        "id": "CLM_000014",
+        "version": 1
+      },
+      "role": "PRIMARY_FACT"
+    }
+  ],
+  "created_at": "2026-09-27T10:18:33.259114Z",
+  "dependencies": [
+    {
+      "relation": "FACT_SOURCE",
+      "target": {
+        "id": "CLM_000014",
+        "version": 1
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "SCN_000004",
+        "version": 1
+      }
+    }
+  ],
+  "extensions": {
+    "rough_narrative": {
+      "batch_id": "PT_ROUGH_NARRATIVE_001",
+      "key": "BEAT_REDOWNLOAD",
+      "plan_sha256": "645459994c0d1d6d6e2211831a9c515e8a19ee1e10d2e9520bfa7e4ef4da8376",
+      "research_modes": {
+        "CLM_000014": "DIRECT"
+      },
+      "synthesis_note": ""
+    }
+  },
+  "human_constraints": [],
+  "id": "NB_000006",
+  "idea": {
+    "summary": "แก้ลำดับเวลาให้ชัดว่า re-download ถูกบล็อกภายใน 6 พฤษภาคม 2015 ไม่ใช่ต้องรอปลายปี"
+  },
+  "lock_state": "UNLOCKED",
+  "object_type": "NARRATION_BEAT",
+  "order": 2,
+  "scene_ref": {
+    "id": "SCN_000004",
+    "version": 1
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/narration-beat",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "updated_at": "2026-09-27T10:18:33.259114Z",
+  "version": 1,
+  "viewer_takeaway": "การมี P.T. ในประวัติบัญชีไม่ได้ทำให้ดาวน์โหลดกลับมาได้ภายในวันที่ 6 พฤษภาคม 2015",
+  "workflow_state": "RESEARCH_BOUND"
+}

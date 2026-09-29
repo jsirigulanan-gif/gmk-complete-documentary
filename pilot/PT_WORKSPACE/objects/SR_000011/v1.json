@@ -1,0 +1,78 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "candidate_state": "VIABLE",
+  "created_at": "2026-09-27T11:22:06.544577Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "SRCH_000007",
+        "version": 1
+      }
+    },
+    {
+      "relation": "VISUAL_SOURCE",
+      "target": {
+        "id": "SRC_000028",
+        "version": 1
+      }
+    }
+  ],
+  "discovery_locator": {
+    "type": "WEB_URI",
+    "value": "https://www.pushsquare.com/news/2019/09/lisa_is_constantly_right_behind_you_in_pt"
+  },
+  "discovery_method": "AUTOMATED_SEARCH",
+  "evaluation": {
+    "cleanliness": "CLEAN",
+    "duplicate_state": "UNIQUE",
+    "technical_quality": "UNKNOWN",
+    "visual_clarity": "HIGH"
+  },
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "beat_key": "BEAT_LISA_FINDING",
+      "candidate_key": "LISA_PUSH",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318"
+    }
+  },
+  "human_constraints": [],
+  "id": "SR_000011",
+  "inspection": {
+    "candidate_locator": {
+      "type": "FULL_SOURCE"
+    },
+    "exact_moment_found": true,
+    "match_reason": "Visually oriented secondary route to the same technical finding.",
+    "match_type": "DIRECT",
+    "viewer_takeaway_supported": true,
+    "visible_content": "Article presents/describes the free-camera finding that Lisa follows behind the player."
+  },
+  "lock_state": "UNLOCKED",
+  "object_type": "SEARCH_RESULT",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/search-result",
+    "schema_version": "1.0.0"
+  },
+  "search_ref": {
+    "id": "SRCH_000007",
+    "version": 1
+  },
+  "source_family": "NEWS_ARCHIVE",
+  "source_ref": {
+    "id": "SRC_000028",
+    "version": 1
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "Push Square: Lisa is constantly right behind you in P.T.",
+  "updated_at": "2026-09-27T11:22:06.544577Z",
+  "version": 1
+}

@@ -1,0 +1,52 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "asset_ref": {
+    "id": "AST_000001",
+    "version": 5
+  },
+  "created_at": "2026-09-27T16:11:01.727033Z",
+  "dependencies": [
+    {
+      "relation": "VISUAL_SOURCE",
+      "target": {
+        "id": "AST_000001",
+        "version": 5
+      }
+    }
+  ],
+  "extensions": {
+    "asset_acquisition": {
+      "batch_id": "PT_ASSET_ACQUISITION_017",
+      "candidate_key": "OPEN_GEMATSU",
+      "production_ready": true
+    }
+  },
+  "human_constraints": [],
+  "id": "SEG_000001",
+  "lock_state": "UNLOCKED",
+  "match_reason": "Bounded, checksummed evidence snapshot preserves the selected source claim for production planning.",
+  "match_type": "DIRECT",
+  "object_type": "SEGMENT",
+  "production_state": "VERIFIED",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/segment",
+    "schema_version": "1.0.0"
+  },
+  "selector": {
+    "type": "FULL_ASSET"
+  },
+  "source_locator": {
+    "type": "FULL_SOURCE"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "updated_at": "2026-09-27T16:11:01.727033Z",
+  "version": 1,
+  "visual_content": "Dated launch evidence showing P.T. presented as a mysterious 7780s Studio title at Gamescom 2014."
+}

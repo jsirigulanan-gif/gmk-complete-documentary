@@ -1,0 +1,37 @@
+{
+  "design_intent": {
+    "visual_thesis": "หลักฐานมาก่อน บรรยากาศหลอนเกิดจากความนิ่งและการค่อย ๆ เปิดเผยข้อมูล",
+    "audience_feeling": "สงสัย กดดัน แต่ยังเข้าใจลำดับเหตุการณ์ชัดเจน",
+    "clarity_principle": "ทุกภาพต้องช่วยยืนยันหลักฐาน อธิบายเวลา/พื้นที่ หรือรักษาอารมณ์โดยไม่สร้างข้อเท็จจริงใหม่"
+  },
+  "rules": [
+    {
+      "rule_id": "DNR_EVIDENCE_FIRST",
+      "domain": "COMPOSITION",
+      "action": "REQUIRE",
+      "statement": "ให้หลักฐานต้นทางหรือภาพที่ตรวจสอบได้เด่นกว่ากราฟิกตกแต่ง",
+      "rationale": "รักษาความน่าเชื่อถือและ traceability"
+    },
+    {
+      "rule_id": "DNR_MOTION_RESTRAINT",
+      "domain": "MOTION",
+      "action": "PREFER",
+      "statement": "ใช้ motion เมื่อช่วยอธิบายเวลา พื้นที่ หรือความสัมพันธ์ของข้อมูลเท่านั้น",
+      "rationale": "รักษาโทนสารคดีและลด motion ที่ไม่มีหน้าที่"
+    }
+  ],
+  "token_overrides": {},
+  "graphic_policy": {
+    "default_decision": "OPTIONAL",
+    "graphic_allowed_when": [
+      "อธิบาย timeline",
+      "อธิบาย spatial relation"
+    ],
+    "graphic_not_justified_by": [
+      "ตกแต่งอย่างเดียว"
+    ]
+  },
+  "motion_policy": {
+    "default": "PURPOSE_REQUIRED"
+  }
+}

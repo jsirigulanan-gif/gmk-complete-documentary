@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/incident",
+  "title": "GMK Incident",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "INCIDENT"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^INC_[A-Z0-9_-]+$"
+        },
+        "incident_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "severity": {
+          "$ref": "gmk://schema/v1/enums#/$defs/QASeverity"
+        },
+        "detected_at": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "affected_scope": {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "OBJECT",
+                "SCENE",
+                "ACT",
+                "PROJECT",
+                "SYSTEM"
+              ]
+            },
+            "target": {
+              "$ref": "gmk://schema/v1/reference#/$defs/TargetRef",
+              "x-gmk-dependency-relation": "DERIVED_FROM"
+            }
+          },
+          "additionalProperties": false
+        },
+        "related_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/TargetRef",
+            "x-gmk-dependency-relation": "DERIVED_FROM"
+          }
+        },
+        "containment": {
+          "type": "object",
+          "required": [
+            "actions"
+          ],
+          "properties": {
+            "actions": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "FREEZE_MUTATIONS",
+                  "BLOCK_EXTERNAL_OPERATIONS",
+                  "QUARANTINE_ARTIFACTS",
+                  "ISOLATE_REGISTRY",
+                  "PAUSE_RENDERING"
+                ]
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "workflow_state": {
+          "type": "string",
+          "enum": [
+            "OPEN",
+            "CONTAINED",
+            "INVESTIGATING",
+            "RECOVERY_READY",
+            "RESOLVED",
+            "CLOSED"
+          ]
+        },
+        "verification_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/TargetRef",
+            "x-gmk-dependency-relation": "DERIVED_FROM"
+          }
+        }
+      },
+      "required": [
+        "incident_type",
+        "severity",
+        "detected_at",
+        "summary",
+        "affected_scope",
+        "containment",
+        "workflow_state"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

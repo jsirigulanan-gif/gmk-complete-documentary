@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/scene-plan",
+  "title": "SCENE_PLAN",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "SCENE_PLAN"
+        },
+        "scene_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "FACT_SOURCE"
+        },
+        "voice_lock": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "TIMING_SOURCE"
+        },
+        "design_dna_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DESIGN_SOURCE"
+        },
+        "design_tokens": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "DESIGN_SOURCE"
+        },
+        "scene_asset_pool": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "VISUAL_SOURCE"
+        },
+        "shots": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "scene_ref",
+        "voice_lock",
+        "design_dna_ref",
+        "design_tokens",
+        "scene_asset_pool",
+        "shots"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

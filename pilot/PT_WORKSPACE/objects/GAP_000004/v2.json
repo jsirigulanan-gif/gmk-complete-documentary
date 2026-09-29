@@ -1,0 +1,461 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "blocked_gates": [
+    "RESEARCH_AUDIT"
+  ],
+  "blocked_targets": [
+    {
+      "id": "CLM_000001",
+      "version": 2
+    },
+    {
+      "id": "CLM_000002",
+      "version": 2
+    },
+    {
+      "id": "CLM_000003",
+      "version": 2
+    },
+    {
+      "id": "CLM_000004",
+      "version": 2
+    },
+    {
+      "id": "CLM_000005",
+      "version": 2
+    },
+    {
+      "id": "CLM_000006",
+      "version": 2
+    },
+    {
+      "id": "CLM_000007",
+      "version": 2
+    },
+    {
+      "id": "CLM_000008",
+      "version": 2
+    },
+    {
+      "id": "CLM_000009",
+      "version": 2
+    },
+    {
+      "id": "CLM_000010",
+      "version": 2
+    },
+    {
+      "id": "CLM_000011",
+      "version": 2
+    },
+    {
+      "id": "CLM_000012",
+      "version": 2
+    },
+    {
+      "id": "CLM_000013",
+      "version": 2
+    }
+  ],
+  "created_at": "2026-09-27T09:39:46.984265Z",
+  "dependencies": [
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000001",
+        "version": 2
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000002",
+        "version": 2
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000003",
+        "version": 2
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000004",
+        "version": 2
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000005",
+        "version": 2
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000006",
+        "version": 2
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000007",
+        "version": 2
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000008",
+        "version": 2
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000009",
+        "version": 2
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000010",
+        "version": 2
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000011",
+        "version": 2
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000012",
+        "version": 2
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000013",
+        "version": 2
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000014",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000015",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000016",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000017",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000018",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000019",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000020",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000021",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000022",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000023",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000024",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000025",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000026",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000027",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000028",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000029",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000030",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000031",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000032",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000033",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000034",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000035",
+        "version": 1
+      }
+    },
+    {
+      "relation": "SUPERSEDES",
+      "target": {
+        "id": "GAP_000004",
+        "version": 1
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "artifact_id": "RESEARCH_ATTEMPT_LOG_000001",
+        "artifact_type": "RESEARCH_ATTEMPT_LOG",
+        "sha256": "e38d435eee2f8b8db854ddcdd5bf8ad964cb6c0ccc92491448b3bd66dc6cea60",
+        "version": 1
+      }
+    }
+  ],
+  "extensions": {
+    "intake": {
+      "batch_id": "PT_INTAKE_0243AAD58E88E290",
+      "system_guard": true
+    },
+    "research_audit": {
+      "batch_id": "PT_RESEARCH_AUDIT_001",
+      "guard_closed": true
+    }
+  },
+  "human_constraints": [],
+  "id": "GAP_000004",
+  "importance": "CRITICAL",
+  "lock_state": "UNLOCKED",
+  "object_type": "RESEARCH_GAP",
+  "question": "Research Pack intake candidates require independent source/evidence verification before RESEARCH_AUDIT may pass.",
+  "research_attempt_refs": [
+    {
+      "artifact_id": "RESEARCH_ATTEMPT_LOG_000001",
+      "artifact_type": "RESEARCH_ATTEMPT_LOG",
+      "sha256": "e38d435eee2f8b8db854ddcdd5bf8ad964cb6c0ccc92491448b3bd66dc6cea60",
+      "version": 1
+    }
+  ],
+  "resolution": {
+    "evidence_refs": [
+      {
+        "id": "EVD_000014",
+        "version": 1
+      },
+      {
+        "id": "EVD_000015",
+        "version": 1
+      },
+      {
+        "id": "EVD_000016",
+        "version": 1
+      },
+      {
+        "id": "EVD_000017",
+        "version": 1
+      },
+      {
+        "id": "EVD_000018",
+        "version": 1
+      },
+      {
+        "id": "EVD_000019",
+        "version": 1
+      },
+      {
+        "id": "EVD_000020",
+        "version": 1
+      },
+      {
+        "id": "EVD_000021",
+        "version": 1
+      },
+      {
+        "id": "EVD_000022",
+        "version": 1
+      },
+      {
+        "id": "EVD_000023",
+        "version": 1
+      },
+      {
+        "id": "EVD_000024",
+        "version": 1
+      },
+      {
+        "id": "EVD_000025",
+        "version": 1
+      },
+      {
+        "id": "EVD_000026",
+        "version": 1
+      },
+      {
+        "id": "EVD_000027",
+        "version": 1
+      },
+      {
+        "id": "EVD_000028",
+        "version": 1
+      },
+      {
+        "id": "EVD_000029",
+        "version": 1
+      },
+      {
+        "id": "EVD_000030",
+        "version": 1
+      },
+      {
+        "id": "EVD_000031",
+        "version": 1
+      },
+      {
+        "id": "EVD_000032",
+        "version": 1
+      },
+      {
+        "id": "EVD_000033",
+        "version": 1
+      },
+      {
+        "id": "EVD_000034",
+        "version": 1
+      },
+      {
+        "id": "EVD_000035",
+        "version": 1
+      }
+    ],
+    "resolved_at": "2026-09-27T09:39:46.983909Z",
+    "summary": "Every Research Pack intake claim received an explicit independent Research Audit disposition; unsupported claims remain prohibited rather than silently accepted."
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/research-gap",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "state": "RESOLVED",
+  "status": "CURRENT",
+  "supersedes": {
+    "id": "GAP_000004",
+    "version": 1
+  },
+  "updated_at": "2026-09-27T09:39:46.984265Z",
+  "version": 2
+}

@@ -1,0 +1,49 @@
+{
+  "batch_id": "PT_MEDIA_HANDOFF_036",
+  "items": [
+    {
+      "acquisition_method": "AUTHORIZED_MANUAL_EXPORT",
+      "candidate_key": "LISA_X_DIRECT_VERIFIED",
+      "expected_sha256": "",
+      "local_path": "REPLACE_WITH_AUTHORIZED_LOCAL_FILE_FOR_LISA_X_DIRECT_VERIFIED",
+      "operator_note": "Inspect the supplied media and fill the exact usable moment before preflight/execute.",
+      "segment": {
+        "match_reason": "Verified source-locked media bytes directly depict the Lisa camera-hack relationship required by the Beat.",
+        "match_type": "DIRECT",
+        "selector": {
+          "end_seconds": null,
+          "key_seconds": null,
+          "start_seconds": null,
+          "type": "VIDEO_TIME_RANGE"
+        },
+        "source_locator": {
+          "type": "FULL_SOURCE"
+        },
+        "visual_content": "Original creator camera-hack media showing Lisa following behind the player."
+      },
+      "source_url": "https://twitter.com/manfightdragon/status/1170860592233472001"
+    },
+    {
+      "acquisition_method": "AUTHORIZED_MANUAL_EXPORT",
+      "candidate_key": "TGA_VIDEO",
+      "expected_sha256": "",
+      "local_path": "REPLACE_WITH_AUTHORIZED_LOCAL_FILE_FOR_TGA_VIDEO",
+      "operator_note": "Replace with a tighter inspected range if desired; it must remain inside the locked range.",
+      "segment": {
+        "match_reason": "Verified source-locked media bytes directly depict the selected stage statement required by the Beat.",
+        "match_type": "DIRECT",
+        "selector": {
+          "end_seconds": 135,
+          "key_seconds": 55,
+          "start_seconds": 0,
+          "type": "VIDEO_TIME_RANGE"
+        },
+        "source_locator": {
+          "type": "FULL_SOURCE"
+        },
+        "visual_content": "Audiovisual Game Awards stage statement preserving speaker, venue, and attribution context."
+      },
+      "source_url": "https://www.youtube.com/watch?v=PKl5rYdwM6c"
+    }
+  ]
+}

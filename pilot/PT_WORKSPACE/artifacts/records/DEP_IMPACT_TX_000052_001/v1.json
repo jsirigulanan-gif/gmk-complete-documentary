@@ -1,0 +1,58 @@
+{
+  "artifact_id": "DEP_IMPACT_TX_000052_001",
+  "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+  "blast_radius": "LOCAL",
+  "change_set": {
+    "changed_paths": [
+      "/extensions/asset_recon"
+    ],
+    "impact_tags": [
+      "VISUAL"
+    ],
+    "new_version": 2,
+    "object_id": "QAR_000001",
+    "previous_version": 1
+  },
+  "created_at": "2026-09-27T13:58:39.420232Z",
+  "extensions": {},
+  "frozen_stops": [],
+  "impacts": [],
+  "origin_refs": [
+    {
+      "id": "QAR_000001",
+      "version": 1
+    },
+    {
+      "id": "QAR_000001",
+      "version": 2
+    }
+  ],
+  "policy_ref": {
+    "config_id": "GMK_DEPENDENCY_POLICY",
+    "sha256": "4b368d0e008701f5fca9bfe73b7f38fb711ec1d77bc282a03be54b2d2d0ec2ee",
+    "version": "1.0.0"
+  },
+  "root_change": {
+    "new": {
+      "kind": "OBJECT",
+      "ref": {
+        "id": "QAR_000001",
+        "version": 2
+      }
+    },
+    "previous": {
+      "kind": "OBJECT",
+      "ref": {
+        "id": "QAR_000001",
+        "version": 1
+      }
+    }
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+    "schema_version": "1.0.0"
+  },
+  "sha256": "a2f4587c670461b337d48665be7117b46cd03ba58882aaf110eba8ed4eb2b8d6",
+  "uri": "gmk://artifacts/DEP_IMPACT_TX_000052_001/v1",
+  "version": 1
+}

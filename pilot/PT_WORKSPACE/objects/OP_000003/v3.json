@@ -1,0 +1,69 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "finished_at": "2026-09-27T16:11:03.079821Z",
+      "result": "ACQUIRED pilot/PT_WORKSPACE/media/originals/AST_000003.web-evidence.txt sha256=0ec45a5479dcc54861afdafc73afa9c16d6857bbada0b46695f455b4345c8ce2",
+      "started_at": "2026-09-27T16:11:02.914586Z"
+    }
+  ],
+  "authorization": {
+    "human_confirmed": false
+  },
+  "created_at": "2026-09-27T16:11:03.094314Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "AST_000003",
+        "version": 1
+      }
+    },
+    {
+      "relation": "SUPERSEDES",
+      "target": {
+        "id": "OP_000003",
+        "version": 2
+      }
+    }
+  ],
+  "extensions": {},
+  "external_target": {
+    "destination": "gmk://incoming/assets/AST_000003",
+    "provider": "GMK_ACQUISITION_ADAPTER"
+  },
+  "human_constraints": [],
+  "id": "OP_000003",
+  "idempotency_key": "ACQUIRE_AST_000003_MILLION_PUSH_PT_ASSET_SELECTION_016",
+  "lock_state": "UNLOCKED",
+  "object_type": "OPERATION",
+  "operation_type": "DOWNLOAD",
+  "request": {
+    "action": "ACQUIRE_ORIGINAL_MEDIA",
+    "input_fingerprint": "8880fc3c0d497c58589b39f2c7c05e8e2499d13aecd0ba061e85d19f1b36bf7c"
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/operation",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "subject": {
+    "id": "AST_000003",
+    "version": 1
+  },
+  "supersedes": {
+    "id": "OP_000003",
+    "version": 2
+  },
+  "updated_at": "2026-09-27T16:11:03.094314Z",
+  "version": 3,
+  "workflow_state": "SUCCEEDED"
+}

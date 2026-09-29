@@ -1,0 +1,166 @@
+{
+  "acquisition_operation_refs": [
+    {
+      "id": "OP_000001",
+      "version": 1
+    },
+    {
+      "id": "OP_000002",
+      "version": 1
+    },
+    {
+      "id": "OP_000003",
+      "version": 1
+    },
+    {
+      "id": "OP_000004",
+      "version": 1
+    },
+    {
+      "id": "OP_000005",
+      "version": 1
+    },
+    {
+      "id": "OP_000006",
+      "version": 1
+    },
+    {
+      "id": "OP_000007",
+      "version": 1
+    },
+    {
+      "id": "OP_000008",
+      "version": 1
+    },
+    {
+      "id": "OP_000009",
+      "version": 1
+    },
+    {
+      "id": "OP_000010",
+      "version": 1
+    }
+  ],
+  "acquisition_pending_count": 10,
+  "asset_refs": [
+    {
+      "id": "AST_000001",
+      "version": 2
+    },
+    {
+      "id": "AST_000002",
+      "version": 2
+    },
+    {
+      "id": "AST_000003",
+      "version": 2
+    },
+    {
+      "id": "AST_000004",
+      "version": 2
+    },
+    {
+      "id": "AST_000005",
+      "version": 2
+    },
+    {
+      "id": "AST_000006",
+      "version": 2
+    },
+    {
+      "id": "AST_000007",
+      "version": 2
+    },
+    {
+      "id": "AST_000008",
+      "version": 2
+    },
+    {
+      "id": "AST_000009",
+      "version": 2
+    },
+    {
+      "id": "AST_000010",
+      "version": 2
+    }
+  ],
+  "batch_id": "PT_ASSET_SELECTION_016",
+  "gate_result": "PASS",
+  "idempotent_replay": true,
+  "manifest_version": 54,
+  "new_result_refs": [
+    {
+      "id": "SR_000031",
+      "version": 3
+    }
+  ],
+  "next_legal_action": {
+    "action": "TRANSITION_PROJECT_STATE",
+    "blockers": [],
+    "gate_ids": [
+      "ASSET_RECON"
+    ],
+    "message": "ASSET_RECON can transition to ASSET_CATALOG_READY.",
+    "missing_requirements": [],
+    "permission_class": "AI_WITH_RULES",
+    "project_state": "ASSET_RECON",
+    "target_state": "ASSET_CATALOG_READY"
+  },
+  "project_state": "ASSET_RECON",
+  "search_again_refs": [
+    {
+      "id": "SRCH_000021",
+      "version": 1
+    }
+  ],
+  "search_completion_report_ref": {
+    "id": "QAR_000001",
+    "version": 2
+  },
+  "search_completion_result": "PASS",
+  "segment_count": 0,
+  "selected_candidate_refs": [
+    {
+      "id": "SR_000002",
+      "version": 3
+    },
+    {
+      "id": "SR_000005",
+      "version": 3
+    },
+    {
+      "id": "SR_000008",
+      "version": 3
+    },
+    {
+      "id": "SR_000013",
+      "version": 3
+    },
+    {
+      "id": "SR_000016",
+      "version": 3
+    },
+    {
+      "id": "SR_000020",
+      "version": 3
+    },
+    {
+      "id": "SR_000024",
+      "version": 3
+    },
+    {
+      "id": "SR_000025",
+      "version": 3
+    },
+    {
+      "id": "SR_000028",
+      "version": 3
+    },
+    {
+      "id": "SR_000031",
+      "version": 3
+    }
+  ],
+  "transition_deferred": true,
+  "workspace": "pilot/PT_WORKSPACE"
+}

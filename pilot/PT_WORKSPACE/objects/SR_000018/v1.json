@@ -1,0 +1,78 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "candidate_state": "VIABLE",
+  "created_at": "2026-09-27T11:22:06.546161Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "SRCH_000012",
+        "version": 1
+      }
+    },
+    {
+      "relation": "VISUAL_SOURCE",
+      "target": {
+        "id": "SRC_000031",
+        "version": 1
+      }
+    }
+  ],
+  "discovery_locator": {
+    "type": "WEB_URI",
+    "value": "https://gameranx.com/updates/id/27988/article/pt-demo-no-longer-available-to-download-in-any-form/"
+  },
+  "discovery_method": "AUTOMATED_SEARCH",
+  "evaluation": {
+    "cleanliness": "CLEAN",
+    "duplicate_state": "UNIQUE",
+    "technical_quality": "UNKNOWN",
+    "visual_clarity": "HIGH"
+  },
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "beat_key": "BEAT_REDOWNLOAD",
+      "candidate_key": "REDOWN_GRX",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318"
+    }
+  },
+  "human_constraints": [],
+  "id": "SR_000018",
+  "inspection": {
+    "candidate_locator": {
+      "type": "FULL_SOURCE"
+    },
+    "exact_moment_found": true,
+    "match_reason": "Provides a separate document-style presentation of re-download failure.",
+    "match_type": "SUPPORTING",
+    "viewer_takeaway_supported": true,
+    "visible_content": "Contemporaneous article preserves user error-report context."
+  },
+  "lock_state": "UNLOCKED",
+  "object_type": "SEARCH_RESULT",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/search-result",
+    "schema_version": "1.0.0"
+  },
+  "search_ref": {
+    "id": "SRCH_000012",
+    "version": 1
+  },
+  "source_family": "DOCUMENT",
+  "source_ref": {
+    "id": "SRC_000031",
+    "version": 1
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "Gameranx: P.T. no longer available to download in any form",
+  "updated_at": "2026-09-27T11:22:06.546161Z",
+  "version": 1
+}

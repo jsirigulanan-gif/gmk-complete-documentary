@@ -1,0 +1,103 @@
+{
+  "acquisition_operation_ref": {
+    "id": "OP_000007",
+    "version": 3
+  },
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "asset_class": "EVIDENCE",
+  "created_at": "2026-09-27T16:11:06.584109Z",
+  "dependencies": [
+    {
+      "relation": "SUPERSEDES",
+      "target": {
+        "id": "AST_000007",
+        "version": 2
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "OP_000007",
+        "version": 3
+      }
+    },
+    {
+      "relation": "VISUAL_SOURCE",
+      "target": {
+        "id": "SRC_000011",
+        "version": 1
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "SR_000020",
+        "version": 2
+      }
+    }
+  ],
+  "extensions": {
+    "asset_acquisition": {
+      "batch_id": "PT_ASSET_ACQUISITION_017",
+      "origin_bytes": false,
+      "production_ready": true,
+      "representation": "WEB_TEXT_SNAPSHOT",
+      "source_url": "https://kotaku.com/ebay-taking-down-auctions-selling-ps4s-with-p-t-1702917689",
+      "verified_sha256": "01cdcc8ec71a0d5a3e3ad6c39cd9b538374f6b1b44c2289cfbf08f064aefcfb8"
+    },
+    "asset_recon": {
+      "beat_key": "BEAT_MARKET",
+      "candidate_key": "MARKET_KOT",
+      "production_ready": true,
+      "selection_batch_id": "PT_ASSET_SELECTION_016",
+      "source_recon_batch_id": "PT_ASSET_RECON_FIRST_PASS_001"
+    }
+  },
+  "human_constraints": [],
+  "id": "AST_000007",
+  "lock_state": "UNLOCKED",
+  "media_type": "DOCUMENT",
+  "object_type": "ASSET",
+  "origin_search_result_ref": {
+    "id": "SR_000020",
+    "version": 2
+  },
+  "original_file": {
+    "checksum": "01cdcc8ec71a0d5a3e3ad6c39cd9b538374f6b1b44c2289cfbf08f064aefcfb8",
+    "immutable": true,
+    "uri": "gmk://workspace/media/originals/AST_000007.web-evidence.txt"
+  },
+  "rights": {
+    "attribution_required": true,
+    "basis": "Published news evidence; excerpt/capture usage requires review.",
+    "notes": "Selection is not rights clearance.",
+    "status": "COMMENTARY_REVIEW"
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/asset",
+    "schema_version": "1.0.0"
+  },
+  "source_ref": {
+    "id": "SRC_000011",
+    "version": 1
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "supersedes": {
+    "id": "AST_000007",
+    "version": 2
+  },
+  "technical": {
+    "container": "text/plain",
+    "file_size_bytes": 416
+  },
+  "updated_at": "2026-09-27T16:11:06.584109Z",
+  "version": 3,
+  "workflow_state": "ACQUIRED"
+}

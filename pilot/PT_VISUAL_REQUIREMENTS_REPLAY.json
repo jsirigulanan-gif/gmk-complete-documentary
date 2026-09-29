@@ -1,0 +1,70 @@
+{
+  "asset_need_counts": {
+    "DOCUMENT": 8,
+    "STILL": 8,
+    "TECHNICAL_REFERENCE": 2,
+    "THREE_D_REFERENCE": 1,
+    "VIDEO": 8
+  },
+  "batch_id": "PT_VISUAL_REQUIREMENTS_001",
+  "beat_refs": [
+    {
+      "id": "NB_000001",
+      "version": 3
+    },
+    {
+      "id": "NB_000002",
+      "version": 2
+    },
+    {
+      "id": "NB_000003",
+      "version": 2
+    },
+    {
+      "id": "NB_000004",
+      "version": 3
+    },
+    {
+      "id": "NB_000005",
+      "version": 2
+    },
+    {
+      "id": "NB_000006",
+      "version": 3
+    },
+    {
+      "id": "NB_000007",
+      "version": 2
+    },
+    {
+      "id": "NB_000008",
+      "version": 2
+    },
+    {
+      "id": "NB_000009",
+      "version": 2
+    },
+    {
+      "id": "NB_000010",
+      "version": 3
+    }
+  ],
+  "gate_result": "PASS",
+  "idempotent_replay": true,
+  "manifest_version": 9,
+  "prior_beat_refs": [],
+  "priority_counts": {
+    "CRITICAL": 6,
+    "MAJOR": 3,
+    "STANDARD": 1
+  },
+  "project_state": "VISUAL_REQUIREMENTS_READY",
+  "requirement_count": 10,
+  "source_narrative_spine_ref": {
+    "artifact_id": "NARRATIVE_SPINE_000001",
+    "artifact_type": "NARRATIVE_SPINE",
+    "sha256": "47a54f17b1a9d53c999dc69fe87676b575ae4b41f0af7442d4057823db63712d",
+    "version": 1
+  },
+  "workspace": "pilot/PT_WORKSPACE"
+}

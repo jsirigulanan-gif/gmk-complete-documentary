@@ -1,0 +1,51 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "attempts": [],
+  "authorization": {
+    "human_confirmed": false
+  },
+  "created_at": "2026-09-27T13:58:37.802105Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "AST_000008",
+        "version": 1
+      }
+    }
+  ],
+  "extensions": {},
+  "external_target": {
+    "destination": "gmk://incoming/assets/AST_000008",
+    "provider": "GMK_ACQUISITION_ADAPTER"
+  },
+  "human_constraints": [],
+  "id": "OP_000008",
+  "idempotency_key": "ACQUIRE_AST_000008_TGA_VIDEO_PT_ASSET_SELECTION_016",
+  "lock_state": "UNLOCKED",
+  "object_type": "OPERATION",
+  "operation_type": "DOWNLOAD",
+  "request": {
+    "action": "ACQUIRE_ORIGINAL_MEDIA",
+    "input_fingerprint": "2b441278c1d2f95ef2f4991196944d02b15ed7b10ef5892b45270a00611504cc"
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/operation",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "subject": {
+    "id": "AST_000008",
+    "version": 1
+  },
+  "updated_at": "2026-09-27T13:58:37.802105Z",
+  "version": 1,
+  "workflow_state": "PLANNED"
+}

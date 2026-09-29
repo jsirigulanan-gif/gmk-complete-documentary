@@ -1,0 +1,143 @@
+{
+  "artifact_id": "CANDIDATE_COMPARISON_000008",
+  "artifact_type": "CANDIDATE_COMPARISON",
+  "assessment": "MEETS_TARGET",
+  "candidate_refs": [
+    {
+      "id": "SR_000022",
+      "version": 1
+    },
+    {
+      "id": "SR_000023",
+      "version": 1
+    },
+    {
+      "id": "SR_000024",
+      "version": 1
+    }
+  ],
+  "created_at": "2026-09-27T11:22:06.550603Z",
+  "dimensions": [
+    {
+      "candidate_ref": {
+        "id": "SR_000022",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Audited",
+        "Clear attribution"
+      ],
+      "weaknesses": [
+        "Article rather than stage footage"
+      ]
+    },
+    {
+      "candidate_ref": {
+        "id": "SR_000023",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Audited",
+        "Contemporaneous"
+      ],
+      "weaknesses": [
+        "Secondary report"
+      ]
+    },
+    {
+      "candidate_ref": {
+        "id": "SR_000024",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Speaker and stage visible",
+        "Exact range located",
+        "Distinct video family"
+      ],
+      "weaknesses": [
+        "Reupload, not official TGA channel copy"
+      ]
+    }
+  ],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "beat_key": "BEAT_TGA",
+      "phase": "FIRST_PASS",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318"
+    }
+  },
+  "origin_refs": [
+    {
+      "id": "NB_000008",
+      "version": 2
+    },
+    {
+      "id": "SRCH_000015",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000016",
+      "version": 1
+    },
+    {
+      "id": "SR_000022",
+      "version": 1
+    },
+    {
+      "id": "SR_000023",
+      "version": 1
+    },
+    {
+      "id": "SR_000024",
+      "version": 1
+    }
+  ],
+  "policy_target": {
+    "source_families": 2,
+    "viable_candidates": 3
+  },
+  "priority": "CRITICAL",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/candidate-comparison",
+    "schema_version": "1.0.0"
+  },
+  "search_refs": [
+    {
+      "id": "SRCH_000015",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000016",
+      "version": 1
+    }
+  ],
+  "sha256": "46423fa255d77385e479607d1761f275cb904ffa0ee337679f73dd57dc849abc",
+  "source_families": [
+    "NEWS_ARCHIVE",
+    "REUPLOAD"
+  ],
+  "target_beat_ref": {
+    "id": "NB_000008",
+    "version": 2
+  },
+  "uri": "gmk://artifacts/CANDIDATE_COMPARISON_000008/v1",
+  "version": 1,
+  "viable_candidate_refs": [
+    {
+      "id": "SR_000022",
+      "version": 1
+    },
+    {
+      "id": "SR_000023",
+      "version": 1
+    },
+    {
+      "id": "SR_000024",
+      "version": 1
+    }
+  ]
+}

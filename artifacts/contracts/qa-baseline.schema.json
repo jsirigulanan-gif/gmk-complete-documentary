@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/qa-baseline",
+  "title": "QA_BASELINE",
+  "allOf": [
+    {"$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"},
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {"const": "QA_BASELINE"},
+        "scope": {"$ref": "gmk://schema/v1/reference#/$defs/TargetRef", "x-gmk-dependency-relation": "DERIVED_FROM"},
+        "production_lock": {"$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef", "x-gmk-dependency-relation": "RENDER_INPUT"},
+        "render_manifest_ref": {"$ref": "gmk://schema/v1/reference#/$defs/ObjectRef", "x-gmk-dependency-relation": "DERIVED_FROM"},
+        "qa_report_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "gmk://schema/v1/reference#/$defs/ObjectRef", "x-gmk-dependency-relation": "DERIVED_FROM"}
+        },
+        "output_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef", "x-gmk-dependency-relation": "DERIVED_FROM"}
+        },
+        "baseline_sha256": {"$ref": "gmk://schema/v1/reference#/$defs/Sha256"}
+      },
+      "required": ["scope", "production_lock", "render_manifest_ref", "qa_report_refs", "output_refs", "baseline_sha256"]
+    }
+  ],
+  "unevaluatedProperties": false
+}

@@ -1,0 +1,41 @@
+{
+  "bootstrap": {
+    "input_sha256": "0243aad58e88e29094461e654782ce4bd007dab6500d82a729baf870c092671e",
+    "project_ref": {
+      "id": "PROJECT_000001",
+      "version": 1
+    },
+    "research_pack_ref": {
+      "artifact_id": "RESEARCH_PACK_000001",
+      "artifact_type": "RESEARCH_PACK",
+      "sha256": "a6a28e9af9646c19c5eea4605575c798bd7ab9d9f933e5a9c6dc5aab33ab5e46",
+      "version": 1
+    }
+  },
+  "intake": {
+    "attempt_ref": {
+      "artifact_id": "RESEARCH_ATTEMPT_LOG_000001",
+      "artifact_type": "RESEARCH_ATTEMPT_LOG",
+      "sha256": "fb9ace238db3a7e524333b84ee7ace8e43b634ff6ba81b749ce607ceeb2d300b",
+      "version": 2
+    },
+    "batch_id": "PT_INTAKE_0243AAD58E88E290",
+    "claims_created": 13,
+    "evidence_created": 13,
+    "explicit_contradictions_parsed": 0,
+    "idempotent_replay": false,
+    "manifest_version": 3,
+    "project_state": "RESEARCH_INTAKE",
+    "quotes_parsed": 4,
+    "research_audit_status": "NOT_PASSED",
+    "research_gaps_created": 4,
+    "research_pack_sha256": "0243aad58e88e29094461e654782ce4bd007dab6500d82a729baf870c092671e",
+    "scope_note": "Intake records preserve Research Pack assertions as UNREVIEWED/PROHIBITED. External sources and quoted originals have not been independently verified by this runtime step.",
+    "source_leads_parsed": 5,
+    "source_ref": {
+      "id": "SRC_000001",
+      "version": 1
+    },
+    "workspace": "pilot/PT_WORKSPACE"
+  }
+}

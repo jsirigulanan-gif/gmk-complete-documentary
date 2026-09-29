@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/scene-preview",
+  "title": "SCENE_PREVIEW",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "SCENE_PREVIEW"
+        },
+        "scene_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "scene_plan": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "shots": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-dependency-relation": "DERIVED_FROM"
+          }
+        },
+        "preview": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "scene_ref",
+        "scene_plan",
+        "shots",
+        "preview"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

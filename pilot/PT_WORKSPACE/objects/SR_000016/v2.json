@@ -1,0 +1,91 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "candidate_state": "SELECTED",
+  "created_at": "2026-09-27T13:58:36.687300Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "SRCH_000011",
+        "version": 1
+      }
+    },
+    {
+      "relation": "VISUAL_SOURCE",
+      "target": {
+        "id": "SRC_000022",
+        "version": 1
+      }
+    },
+    {
+      "relation": "SUPERSEDES",
+      "target": {
+        "id": "SR_000016",
+        "version": 1
+      }
+    }
+  ],
+  "discovery_locator": {
+    "type": "WEB_URI",
+    "value": "https://www.gamespot.com/articles/p-t-can-no-longer-be-downloaded-even-from-your-ps4/1100-6427124/"
+  },
+  "discovery_method": "AUTOMATED_SEARCH",
+  "evaluation": {
+    "cleanliness": "CLEAN",
+    "duplicate_state": "UNIQUE",
+    "technical_quality": "UNKNOWN",
+    "visual_clarity": "HIGH"
+  },
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "beat_key": "BEAT_REDOWNLOAD",
+      "candidate_key": "REDOWN_GS",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318",
+      "selection_batch_id": "PT_ASSET_SELECTION_016",
+      "selection_reason": "Contemporary test evidence distinguishes re-download failure from Store delisting."
+    }
+  },
+  "human_constraints": [],
+  "id": "SR_000016",
+  "inspection": {
+    "candidate_locator": {
+      "type": "FULL_SOURCE"
+    },
+    "exact_moment_found": true,
+    "match_reason": "Direct contemporary test distinguishes re-download failure from Store delisting.",
+    "match_type": "DIRECT",
+    "viewer_takeaway_supported": true,
+    "visible_content": "GameSpot reports its May 6 test and “Cannot download” failure."
+  },
+  "lock_state": "UNLOCKED",
+  "object_type": "SEARCH_RESULT",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/search-result",
+    "schema_version": "1.0.0"
+  },
+  "search_ref": {
+    "id": "SRCH_000011",
+    "version": 1
+  },
+  "source_family": "NEWS_ARCHIVE",
+  "source_ref": {
+    "id": "SRC_000022",
+    "version": 1
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "supersedes": {
+    "id": "SR_000016",
+    "version": 1
+  },
+  "title": "GameSpot: P.T. can no longer be downloaded even from library",
+  "updated_at": "2026-09-27T13:58:36.687300Z",
+  "version": 2
+}

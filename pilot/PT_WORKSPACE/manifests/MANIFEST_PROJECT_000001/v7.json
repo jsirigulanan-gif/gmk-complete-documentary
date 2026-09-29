@@ -1,0 +1,470 @@
+{
+  "blockers": [],
+  "bootstrap_inputs": {
+    "research_pack": {
+      "artifact_id": "RESEARCH_PACK_000001",
+      "artifact_type": "RESEARCH_PACK",
+      "sha256": "a6a28e9af9646c19c5eea4605575c798bd7ab9d9f933e5a9c6dc5aab33ab5e46",
+      "version": 1
+    }
+  },
+  "created_at": "2026-09-27T08:40:32.999340Z",
+  "current": {
+    "narrative_spine": {
+      "artifact_id": "NARRATIVE_SPINE_000001",
+      "artifact_type": "NARRATIVE_SPINE",
+      "sha256": "47a54f17b1a9d53c999dc69fe87676b575ae4b41f0af7442d4057823db63712d",
+      "version": 1
+    }
+  },
+  "environment": {
+    "mode": "PRODUCTION"
+  },
+  "gates": [
+    {
+      "blocker_refs": [],
+      "evaluated_at": "2026-09-27T08:40:33.053790Z",
+      "evidence": [
+        {
+          "artifact_id": "RESEARCH_PACK_000001",
+          "artifact_type": "RESEARCH_PACK",
+          "sha256": "a6a28e9af9646c19c5eea4605575c798bd7ab9d9f933e5a9c6dc5aab33ab5e46",
+          "version": 1
+        }
+      ],
+      "gate_id": "BOOTSTRAP",
+      "result": "PASS",
+      "warning_codes": []
+    },
+    {
+      "blocker_refs": [],
+      "evaluated_at": "2026-09-27T09:39:47.166475Z",
+      "evidence": [
+        {
+          "id": "SRC_000001",
+          "version": 1
+        },
+        {
+          "id": "SRC_000002",
+          "version": 1
+        },
+        {
+          "id": "SRC_000003",
+          "version": 1
+        },
+        {
+          "id": "SRC_000004",
+          "version": 1
+        },
+        {
+          "id": "SRC_000005",
+          "version": 1
+        },
+        {
+          "id": "SRC_000006",
+          "version": 1
+        },
+        {
+          "id": "SRC_000007",
+          "version": 1
+        },
+        {
+          "id": "SRC_000008",
+          "version": 1
+        },
+        {
+          "id": "SRC_000009",
+          "version": 1
+        },
+        {
+          "id": "SRC_000010",
+          "version": 1
+        },
+        {
+          "id": "SRC_000011",
+          "version": 1
+        },
+        {
+          "id": "SRC_000012",
+          "version": 1
+        },
+        {
+          "id": "SRC_000013",
+          "version": 1
+        },
+        {
+          "id": "SRC_000014",
+          "version": 1
+        },
+        {
+          "id": "SRC_000015",
+          "version": 1
+        },
+        {
+          "id": "SRC_000016",
+          "version": 1
+        },
+        {
+          "id": "SRC_000017",
+          "version": 1
+        },
+        {
+          "id": "SRC_000018",
+          "version": 1
+        },
+        {
+          "id": "SRC_000019",
+          "version": 1
+        },
+        {
+          "id": "SRC_000020",
+          "version": 1
+        },
+        {
+          "id": "SRC_000021",
+          "version": 1
+        },
+        {
+          "id": "SRC_000022",
+          "version": 1
+        },
+        {
+          "id": "SRC_000023",
+          "version": 1
+        },
+        {
+          "id": "CLM_000001",
+          "version": 2
+        },
+        {
+          "id": "CLM_000002",
+          "version": 2
+        },
+        {
+          "id": "CLM_000003",
+          "version": 2
+        },
+        {
+          "id": "CLM_000004",
+          "version": 2
+        },
+        {
+          "id": "CLM_000005",
+          "version": 2
+        },
+        {
+          "id": "CLM_000006",
+          "version": 2
+        },
+        {
+          "id": "CLM_000007",
+          "version": 2
+        },
+        {
+          "id": "CLM_000008",
+          "version": 2
+        },
+        {
+          "id": "CLM_000009",
+          "version": 2
+        },
+        {
+          "id": "CLM_000010",
+          "version": 2
+        },
+        {
+          "id": "CLM_000011",
+          "version": 2
+        },
+        {
+          "id": "CLM_000012",
+          "version": 2
+        },
+        {
+          "id": "CLM_000013",
+          "version": 2
+        },
+        {
+          "id": "CLM_000014",
+          "version": 1
+        },
+        {
+          "id": "EVD_000001",
+          "version": 1
+        },
+        {
+          "id": "EVD_000002",
+          "version": 1
+        },
+        {
+          "id": "EVD_000003",
+          "version": 1
+        },
+        {
+          "id": "EVD_000004",
+          "version": 1
+        },
+        {
+          "id": "EVD_000005",
+          "version": 1
+        },
+        {
+          "id": "EVD_000006",
+          "version": 1
+        },
+        {
+          "id": "EVD_000007",
+          "version": 1
+        },
+        {
+          "id": "EVD_000008",
+          "version": 1
+        },
+        {
+          "id": "EVD_000009",
+          "version": 1
+        },
+        {
+          "id": "EVD_000010",
+          "version": 1
+        },
+        {
+          "id": "EVD_000011",
+          "version": 1
+        },
+        {
+          "id": "EVD_000012",
+          "version": 1
+        },
+        {
+          "id": "EVD_000013",
+          "version": 1
+        },
+        {
+          "id": "EVD_000014",
+          "version": 1
+        },
+        {
+          "id": "EVD_000015",
+          "version": 1
+        },
+        {
+          "id": "EVD_000016",
+          "version": 1
+        },
+        {
+          "id": "EVD_000017",
+          "version": 1
+        },
+        {
+          "id": "EVD_000018",
+          "version": 1
+        },
+        {
+          "id": "EVD_000019",
+          "version": 1
+        },
+        {
+          "id": "EVD_000020",
+          "version": 1
+        },
+        {
+          "id": "EVD_000021",
+          "version": 1
+        },
+        {
+          "id": "EVD_000022",
+          "version": 1
+        },
+        {
+          "id": "EVD_000023",
+          "version": 1
+        },
+        {
+          "id": "EVD_000024",
+          "version": 1
+        },
+        {
+          "id": "EVD_000025",
+          "version": 1
+        },
+        {
+          "id": "EVD_000026",
+          "version": 1
+        },
+        {
+          "id": "EVD_000027",
+          "version": 1
+        },
+        {
+          "id": "EVD_000028",
+          "version": 1
+        },
+        {
+          "id": "EVD_000029",
+          "version": 1
+        },
+        {
+          "id": "EVD_000030",
+          "version": 1
+        },
+        {
+          "id": "EVD_000031",
+          "version": 1
+        },
+        {
+          "id": "EVD_000032",
+          "version": 1
+        },
+        {
+          "id": "EVD_000033",
+          "version": 1
+        },
+        {
+          "id": "EVD_000034",
+          "version": 1
+        },
+        {
+          "id": "EVD_000035",
+          "version": 1
+        }
+      ],
+      "gate_id": "RESEARCH_AUDIT",
+      "result": "PASS",
+      "warning_codes": []
+    },
+    {
+      "blocker_refs": [],
+      "evaluated_at": "2026-09-27T10:18:33.499565Z",
+      "evidence": [
+        {
+          "artifact_id": "NARRATIVE_SPINE_000001",
+          "artifact_type": "NARRATIVE_SPINE",
+          "sha256": "47a54f17b1a9d53c999dc69fe87676b575ae4b41f0af7442d4057823db63712d",
+          "version": 1
+        }
+      ],
+      "gate_id": "ROUGH_NARRATIVE",
+      "result": "PASS",
+      "warning_codes": []
+    }
+  ],
+  "manifest_id": "MANIFEST_PROJECT_000001",
+  "manifest_version": 7,
+  "project_ref": {
+    "id": "PROJECT_000001",
+    "version": 1
+  },
+  "project_state": {
+    "current": "ROUGH_NARRATIVE_READY",
+    "entered_at": "2026-09-27T10:18:33.499832Z"
+  },
+  "registries": {
+    "ARTIFACT_REGISTRY": {
+      "id": "ARTIFACT_REGISTRY",
+      "sha256": "6178d448d04067dda3c2b98572ea571840f62b20908c87c20dc393e2e6926ec4",
+      "uri": "gmk://registries/ARTIFACT_REGISTRY/v5",
+      "version": 5
+    },
+    "ASSET_REGISTRY": {
+      "id": "ASSET_REGISTRY",
+      "sha256": "d66c3958dbaed7319d32c0415689124f6f8f92cd99a701fab1a8ec40493c650d",
+      "uri": "gmk://registries/ASSET_REGISTRY/v1",
+      "version": 1
+    },
+    "CHECKPOINT_REGISTRY": {
+      "id": "CHECKPOINT_REGISTRY",
+      "sha256": "2f85aade06cdea938bf66c98bd1a6f3c7f9db497695c39987fcdef52d4706cd6",
+      "uri": "gmk://registries/CHECKPOINT_REGISTRY/v1",
+      "version": 1
+    },
+    "DESIGN_REGISTRY": {
+      "id": "DESIGN_REGISTRY",
+      "sha256": "4281906fc9a64d1d7545fb4004db69db88651d2fc59d28d4f6ee5e4ba985ef59",
+      "uri": "gmk://registries/DESIGN_REGISTRY/v1",
+      "version": 1
+    },
+    "INCIDENT_REGISTRY": {
+      "id": "INCIDENT_REGISTRY",
+      "sha256": "106591ef90f504082eef138e1da728cb3503cdb2842e296c761f7d07aa6d1f20",
+      "uri": "gmk://registries/INCIDENT_REGISTRY/v1",
+      "version": 1
+    },
+    "NARRATIVE_REGISTRY": {
+      "id": "NARRATIVE_REGISTRY",
+      "sha256": "28a6093c95101382e3ed1adbde3bda191947c3a0a52d6c780b38f4ec7a6e1f76",
+      "uri": "gmk://registries/NARRATIVE_REGISTRY/v2",
+      "version": 2
+    },
+    "OPERATION_REGISTRY": {
+      "id": "OPERATION_REGISTRY",
+      "sha256": "5c6f8868f5e8e381d4f330cde3ee2b47937597682f4c63c63246cea86763e4ff",
+      "uri": "gmk://registries/OPERATION_REGISTRY/v1",
+      "version": 1
+    },
+    "PLANNING_REGISTRY": {
+      "id": "PLANNING_REGISTRY",
+      "sha256": "1072c5b75174b6a058e42678a8043b613b0c8f9471e61184b4329b32e76c9ae0",
+      "uri": "gmk://registries/PLANNING_REGISTRY/v1",
+      "version": 1
+    },
+    "PROJECT_REGISTRY": {
+      "id": "PROJECT_REGISTRY",
+      "sha256": "24d0a0cc8583e26df24a85b32361e24da752ac5c5b72791a58d661ea254c9118",
+      "uri": "gmk://registries/PROJECT_REGISTRY/v2",
+      "version": 2
+    },
+    "QA_REGISTRY": {
+      "id": "QA_REGISTRY",
+      "sha256": "9597d3f1afeda5d516f0fd0e8b93c5657d96380f83d2029a13d02a9893cc9424",
+      "uri": "gmk://registries/QA_REGISTRY/v1",
+      "version": 1
+    },
+    "RELEASE_REGISTRY": {
+      "id": "RELEASE_REGISTRY",
+      "sha256": "a895566a9a82507f53a4c7c8f2593c571afdc154586efb864ec70f99628573b1",
+      "uri": "gmk://registries/RELEASE_REGISTRY/v1",
+      "version": 1
+    },
+    "RENDER_REGISTRY": {
+      "id": "RENDER_REGISTRY",
+      "sha256": "d9810bd2a272f5f1b7d2b2f394ea4fd543990a6397cb7b841f16a8ceb541f5f2",
+      "uri": "gmk://registries/RENDER_REGISTRY/v1",
+      "version": 1
+    },
+    "RESEARCH_REGISTRY": {
+      "id": "RESEARCH_REGISTRY",
+      "sha256": "9336f273a3942b2b89682c224cb30d080479ee54556a42c8f3f4b49e5ca0d3a0",
+      "uri": "gmk://registries/RESEARCH_REGISTRY/v3",
+      "version": 3
+    },
+    "REVIEW_REGISTRY": {
+      "id": "REVIEW_REGISTRY",
+      "sha256": "5ee3ba62b301845ac6af454b75caabc94624b1c1c8db487a11ff704ab85e560f",
+      "uri": "gmk://registries/REVIEW_REGISTRY/v1",
+      "version": 1
+    },
+    "VOICE_REGISTRY": {
+      "id": "VOICE_REGISTRY",
+      "sha256": "c24be58c6af803fb894df4066bb5aeef449c725db9d1c3908ee2aa8f5f6ff499",
+      "uri": "gmk://registries/VOICE_REGISTRY/v1",
+      "version": 1
+    }
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/project-manifest",
+    "schema_version": "1.0.0"
+  },
+  "supersedes_manifest_version": 6,
+  "system": {
+    "master_checkpoint_id": "GMK_PIPELINE_V2_CHECKPOINT_002",
+    "master_spec_id": "GMK_MASTER_SPEC_V2",
+    "policy_bundle_ref": {
+      "config_id": "GMK_POLICY_BUNDLE",
+      "sha256": "e2fd5c293f8a4c2b20adf68589224b791c6611a06b20db786a786ee465d47d50",
+      "version": "1.0.0"
+    },
+    "schema_version": "1.0.0"
+  },
+  "updated_at": "2026-09-27T10:18:33.513219Z"
+}

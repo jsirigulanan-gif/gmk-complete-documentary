@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/qa-issue",
+  "title": "GMK QA Issue",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "QA_ISSUE"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^QAI_[A-Z0-9_-]+$"
+        },
+        "qa_domain": {
+          "type": "string"
+        },
+        "severity": {
+          "$ref": "gmk://schema/v1/enums#/$defs/QASeverity"
+        },
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        },
+        "target": {
+          "$ref": "gmk://schema/v1/reference#/$defs/TargetRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "observed_on": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "RENDER_INPUT"
+        },
+        "location": {
+          "$ref": "gmk://schema/v1/reference#/$defs/MediaTimeRange"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected": {
+          "type": "string"
+        },
+        "root_cause": {
+          "type": "object",
+          "required": [
+            "state"
+          ],
+          "properties": {
+            "state": {
+              "type": "string",
+              "enum": [
+                "UNIDENTIFIED",
+                "IDENTIFIED",
+                "BOUNDED_UNKNOWN"
+              ]
+            },
+            "category": {
+              "type": "string",
+              "enum": [
+                "SOURCE",
+                "ASSET",
+                "SEGMENT",
+                "NARRATIVE",
+                "VOICE",
+                "TIMING",
+                "DESIGN",
+                "SHOT_PLAN",
+                "LAYER",
+                "CUE_TIMING",
+                "MOTION",
+                "THREE_D",
+                "RENDERER",
+                "TECHNICAL_OUTPUT",
+                "RIGHTS",
+                "PROVENANCE",
+                "UNKNOWN"
+              ]
+            },
+            "source_ref": {
+              "$ref": "gmk://schema/v1/reference#/$defs/TargetRef",
+              "x-gmk-dependency-relation": "DERIVED_FROM"
+            }
+          },
+          "additionalProperties": false
+        },
+        "workflow_state": {
+          "type": "string",
+          "enum": [
+            "OPEN",
+            "ROOT_CAUSE_REQUIRED",
+            "REPAIR_PLANNED",
+            "REPAIR_IN_PROGRESS",
+            "RETEST_REQUIRED",
+            "RESOLVED",
+            "ACCEPTED_EXCEPTION",
+            "WONT_FIX"
+          ]
+        },
+        "verification_report_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+        }
+      },
+      "required": [
+        "qa_domain",
+        "severity",
+        "code",
+        "target",
+        "description",
+        "root_cause",
+        "workflow_state"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

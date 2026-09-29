@@ -1,0 +1,194 @@
+{
+  "batch_id": "PT_ASSET_ACQUISITION_017",
+  "source_selection_batch_id": "PT_ASSET_SELECTION_016",
+  "items": [
+    {
+      "candidate_key": "OPEN_GEMATSU",
+      "mode": "WEB_TEXT_SNAPSHOT",
+      "source_url": "https://www.gematsu.com/2014/08/p-t-announced-ps4-demo-released",
+      "snapshot_text": "GMK WEB EVIDENCE SNAPSHOT\nCandidate: OPEN_GEMATSU\nSource URL: https://www.gematsu.com/2014/08/p-t-announced-ps4-demo-released\nTitle: P.T. announced for PS4, demo released\nCapture type: bounded text evidence snapshot (not origin-server HTML bytes)\nEvidence summary: Gematsu reported on Aug. 12, 2014 that Sony announced P.T. from 7780s Studio at Gamescom and the interactive teaser was available on PlayStation Store.\n",
+      "production_ready": true,
+      "catalog": true,
+      "technical": {
+        "container": "text/plain"
+      },
+      "segment": {
+        "selector": {
+          "type": "FULL_ASSET"
+        },
+        "source_locator": {
+          "type": "FULL_SOURCE"
+        },
+        "visual_content": "Dated launch evidence showing P.T. presented as a mysterious 7780s Studio title at Gamescom 2014.",
+        "match_type": "DIRECT",
+        "match_reason": "Bounded, checksummed evidence snapshot preserves the selected source claim for production planning."
+      }
+    },
+    {
+      "candidate_key": "7780_WIRED",
+      "mode": "WEB_TEXT_SNAPSHOT",
+      "source_url": "https://www.wired.com/story/kojima-talks-on-pt-and-silent-hills/",
+      "snapshot_text": "GMK WEB EVIDENCE SNAPSHOT\nCandidate: 7780_WIRED\nSource URL: https://www.wired.com/story/kojima-talks-on-pt-and-silent-hills/\nTitle: Kojima: next Silent Hill will make you sh*t your pants\nCapture type: bounded text evidence snapshot (not origin-server HTML bytes)\nEvidence summary: WIRED reported Kojima explaining that 7780 points to the area of Shizuoka and that the S in 7780s refers to Silent Hill.\n",
+      "production_ready": true,
+      "catalog": true,
+      "technical": {
+        "container": "text/plain"
+      },
+      "segment": {
+        "selector": {
+          "type": "FULL_ASSET"
+        },
+        "source_locator": {
+          "type": "FULL_SOURCE"
+        },
+        "visual_content": "Interview evidence for the 7780s / Shizuoka wordplay and the deliberate fake-studio reveal.",
+        "match_type": "DIRECT",
+        "match_reason": "Bounded, checksummed evidence snapshot preserves the selected source claim for production planning."
+      }
+    },
+    {
+      "candidate_key": "MILLION_PUSH",
+      "mode": "WEB_TEXT_SNAPSHOT",
+      "source_url": "https://www.pushsquare.com/news/2014/09/dont_look_now_but_ps4_demo_pt_has_been_downloaded_over_1_million_times",
+      "snapshot_text": "GMK WEB EVIDENCE SNAPSHOT\nCandidate: MILLION_PUSH\nSource URL: https://www.pushsquare.com/news/2014/09/dont_look_now_but_ps4_demo_pt_has_been_downloaded_over_1_million_times\nTitle: P.T. downloaded over 1 million times\nCapture type: bounded text evidence snapshot (not origin-server HTML bytes)\nEvidence summary: Push Square reported on Sept. 1, 2014 that Kojima announced P.T. had been downloaded over one million times.\n",
+      "production_ready": true,
+      "catalog": true,
+      "technical": {
+        "container": "text/plain"
+      },
+      "segment": {
+        "selector": {
+          "type": "FULL_ASSET"
+        },
+        "source_locator": {
+          "type": "FULL_SOURCE"
+        },
+        "visual_content": "Contemporaneous report documenting the one-million-download milestone.",
+        "match_type": "DIRECT",
+        "match_reason": "Bounded, checksummed evidence snapshot preserves the selected source claim for production planning."
+      }
+    },
+    {
+      "candidate_key": "LISA_X_DIRECT_VERIFIED",
+      "mode": "DEFERRED",
+      "source_url": "https://twitter.com/manfightdragon/status/1170860592233472001",
+      "reason": "Direct embedded video bytes are not available through the current provider-neutral acquisition adapter; do not substitute a secondary clip."
+    },
+    {
+      "candidate_key": "DELIST_GEM",
+      "mode": "WEB_TEXT_SNAPSHOT",
+      "source_url": "https://www.gematsu.com/2015/04/p-t-distribution-end-april-29",
+      "snapshot_text": "GMK WEB EVIDENCE SNAPSHOT\nCandidate: DELIST_GEM\nSource URL: https://www.gematsu.com/2015/04/p-t-distribution-end-april-29\nTitle: P.T. distribution to end on April 29\nCapture type: bounded text evidence snapshot (not origin-server HTML bytes)\nEvidence summary: Gematsu reported Konami notice that P.T. distribution on PlayStation Store would expire Wednesday, April 29, 2015.\n",
+      "production_ready": true,
+      "catalog": true,
+      "technical": {
+        "container": "text/plain"
+      },
+      "segment": {
+        "selector": {
+          "type": "FULL_ASSET"
+        },
+        "source_locator": {
+          "type": "FULL_SOURCE"
+        },
+        "visual_content": "Dated distribution-end evidence separating Store delisting from later re-download blocking.",
+        "match_type": "DIRECT",
+        "match_reason": "Bounded, checksummed evidence snapshot preserves the selected source claim for production planning."
+      }
+    },
+    {
+      "candidate_key": "REDOWN_GS",
+      "mode": "WEB_TEXT_SNAPSHOT",
+      "source_url": "https://www.gamespot.com/articles/p-t-can-no-longer-be-downloaded-even-from-your-ps4/1100-6427124/",
+      "snapshot_text": "GMK WEB EVIDENCE SNAPSHOT\nCandidate: REDOWN_GS\nSource URL: https://www.gamespot.com/articles/p-t-can-no-longer-be-downloaded-even-from-your-ps4/1100-6427124/\nTitle: P.T. can no longer be downloaded even from your PS4 library\nCapture type: bounded text evidence snapshot (not origin-server HTML bytes)\nEvidence summary: GameSpot reported that after Store removal, P.T. had initially remained re-downloadable from users libraries, but that was no longer possible by May 2015.\n",
+      "production_ready": true,
+      "catalog": true,
+      "technical": {
+        "container": "text/plain"
+      },
+      "segment": {
+        "selector": {
+          "type": "FULL_ASSET"
+        },
+        "source_locator": {
+          "type": "FULL_SOURCE"
+        },
+        "visual_content": "Evidence that re-download blocking was a later access-loss event distinct from the Store delisting.",
+        "match_type": "DIRECT",
+        "match_reason": "Bounded, checksummed evidence snapshot preserves the selected source claim for production planning."
+      }
+    },
+    {
+      "candidate_key": "MARKET_KOT",
+      "mode": "WEB_TEXT_SNAPSHOT",
+      "source_url": "https://kotaku.com/ebay-taking-down-auctions-selling-ps4s-with-p-t-1702917689",
+      "snapshot_text": "GMK WEB EVIDENCE SNAPSHOT\nCandidate: MARKET_KOT\nSource URL: https://kotaku.com/ebay-taking-down-auctions-selling-ps4s-with-p-t-1702917689\nTitle: eBay Taking Down Auctions Selling PS4s With P.T.\nCapture type: bounded text evidence snapshot (not origin-server HTML bytes)\nEvidence summary: Kotaku reported on May 7, 2015 that eBay was removing listings for PS4 systems preloaded with P.T. amid the games new scarcity.\n",
+      "production_ready": true,
+      "catalog": true,
+      "technical": {
+        "container": "text/plain"
+      },
+      "segment": {
+        "selector": {
+          "type": "FULL_ASSET"
+        },
+        "source_locator": {
+          "type": "FULL_SOURCE"
+        },
+        "visual_content": "Contemporaneous evidence of the second-hand market and eBay removals after P.T. became unavailable.",
+        "match_type": "DIRECT",
+        "match_reason": "Bounded, checksummed evidence snapshot preserves the selected source claim for production planning."
+      }
+    },
+    {
+      "candidate_key": "TGA_VIDEO",
+      "mode": "DEFERRED",
+      "source_url": "https://www.youtube.com/watch?v=PKl5rYdwM6c",
+      "reason": "Selected asset is audiovisual stage footage; metadata/page evidence is not an acceptable substitute for the selected video bytes."
+    },
+    {
+      "candidate_key": "CONTRACT_GW",
+      "mode": "WEB_TEXT_SNAPSHOT",
+      "source_url": "https://game.watch.impress.co.jp/docs/news/735582.html",
+      "snapshot_text": "GMK WEB EVIDENCE SNAPSHOT\nCandidate: CONTRACT_GW\nSource URL: https://game.watch.impress.co.jp/docs/news/735582.html\nTitle: 小島秀夫氏、ＫＯＮＡＭＩを契約期間満了につき退職\nCapture type: bounded text evidence snapshot (not origin-server HTML bytes)\nEvidence summary: GAME Watch reported that Hideo Kojima left Konami after expiration of his contract in December 2015, supporting the dated contract-end beat.\n",
+      "production_ready": true,
+      "catalog": true,
+      "technical": {
+        "container": "text/plain"
+      },
+      "segment": {
+        "selector": {
+          "type": "FULL_ASSET"
+        },
+        "source_locator": {
+          "type": "FULL_SOURCE"
+        },
+        "visual_content": "Japanese contemporaneous report documenting Kojimas contract completion and departure from Konami.",
+        "match_type": "DIRECT",
+        "match_reason": "Bounded, checksummed evidence snapshot preserves the selected source claim for production planning."
+      }
+    },
+    {
+      "candidate_key": "PAYOFF_DELIST",
+      "mode": "WEB_TEXT_SNAPSHOT",
+      "source_url": "https://www.gematsu.com/2015/04/p-t-distribution-end-april-29",
+      "snapshot_text": "GMK WEB EVIDENCE SNAPSHOT\nCandidate: PAYOFF_DELIST\nSource URL: https://www.gematsu.com/2015/04/p-t-distribution-end-april-29\nTitle: P.T. distribution to end on April 29\nCapture type: bounded text evidence snapshot (not origin-server HTML bytes)\nEvidence summary: The same dated Gematsu distribution-end evidence is intentionally reused for the final payoff rather than introducing unsupported filler.\n",
+      "production_ready": true,
+      "catalog": true,
+      "technical": {
+        "container": "text/plain"
+      },
+      "segment": {
+        "selector": {
+          "type": "FULL_ASSET"
+        },
+        "source_locator": {
+          "type": "FULL_SOURCE"
+        },
+        "visual_content": "Callback evidence returning to the documented removal of P.T. for the final digital-ghost synthesis.",
+        "match_type": "DIRECT",
+        "match_reason": "Bounded, checksummed evidence snapshot preserves the selected source claim for production planning."
+      }
+    }
+  ]
+}

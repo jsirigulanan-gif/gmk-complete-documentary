@@ -1,0 +1,8 @@
+config_id: GMK_ASSET_RECON_POLICY
+version: 1.0.0
+critical_targets:
+  viable_candidates: 3
+  source_families: 2
+major_targets:
+  viable_candidates: 2
+note: Targets, not quotas; documented exhaustion/saturation may satisfy completion.

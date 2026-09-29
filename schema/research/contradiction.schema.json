@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/contradiction",
+  "title": "GMK Contradiction",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "CONTRADICTION"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^CTR_[A-Z0-9_-]+$"
+        },
+        "claim_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-dependency-relation": "FACT_SOURCE"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-dependency-relation": "EVIDENCE_SOURCE"
+          }
+        },
+        "conflict_type": {
+          "type": "string",
+          "enum": [
+            "FACTUAL_CONFLICT",
+            "TIMELINE_CONFLICT",
+            "NUMBER_CONFLICT",
+            "QUOTE_CONFLICT",
+            "SOURCE_DISAGREEMENT",
+            "TECHNICAL_CONFLICT",
+            "INTERPRETATION_CONFLICT"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "MINOR",
+            "MAJOR",
+            "CRITICAL"
+          ]
+        },
+        "resolution": {
+          "type": "object",
+          "required": [
+            "state"
+          ],
+          "properties": {
+            "state": {
+              "type": "string",
+              "enum": [
+                "OPEN",
+                "INVESTIGATING",
+                "RESOLVED",
+                "ACCEPTED_UNRESOLVED"
+              ]
+            },
+            "action": {
+              "type": "string",
+              "enum": [
+                "RESOLVE_WITH_MORE_RESEARCH",
+                "PRESENT_BOTH",
+                "NARROW_THE_CLAIM",
+                "REMOVE_FROM_SCRIPT"
+              ]
+            },
+            "resulting_claim_ref": {
+              "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+            },
+            "resolution_note": {
+              "type": "string"
+            },
+            "resolved_at": {
+              "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "claim_refs",
+        "evidence_refs",
+        "conflict_type",
+        "description",
+        "severity",
+        "resolution"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

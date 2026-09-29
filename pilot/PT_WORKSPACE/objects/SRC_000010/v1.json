@@ -1,0 +1,48 @@
+{
+  "accessed_at": "2026-09-27T09:39:46.846133Z",
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "author": "",
+  "authority_class": "REPUTABLE_SECONDARY",
+  "availability": {
+    "state": "AVAILABLE"
+  },
+  "created_at": "2026-09-27T09:39:46.846144Z",
+  "dependencies": [],
+  "extensions": {
+    "research_audit": {
+      "batch_id": "PT_RESEARCH_AUDIT_001",
+      "source_key": "EBAY_GAMESPOT",
+      "verification_role": "EXTERNAL_VERIFICATION"
+    }
+  },
+  "human_constraints": [],
+  "id": "SRC_000010",
+  "independence": {
+    "group_id": "SRCGRP_GAMESPOT_EBAY_OBSERVATION",
+    "relationship": "ORIGINAL"
+  },
+  "language": "en",
+  "lock_state": "UNLOCKED",
+  "notes": "",
+  "object_type": "SOURCE",
+  "platform": "Web",
+  "published_at": "2015-04-29",
+  "publisher": "GameSpot",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/source",
+    "schema_version": "1.0.0"
+  },
+  "source_type": "WEB_PAGE",
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "PS4s With Pre-Installed PT Listed on eBay for as Much as $1,800",
+  "updated_at": "2026-09-27T09:39:46.846144Z",
+  "url": "https://www.gamespot.com/articles/ps4s-with-pre-installed-pt-listed-on-ebay-for-as-m/1100-6426971/",
+  "version": 1
+}

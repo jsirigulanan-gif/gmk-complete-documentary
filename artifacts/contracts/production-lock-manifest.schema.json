@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/production-lock-manifest",
+  "title": "PRODUCTION_LOCK_MANIFEST",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "PRODUCTION_LOCK_MANIFEST"
+        },
+        "scope": {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "SCENE",
+                "PROJECT"
+              ]
+            },
+            "scene_ref": {
+              "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+            },
+            "project_ref": {
+              "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+            }
+          },
+          "additionalProperties": false
+        },
+        "system": {
+          "type": "object",
+          "required": [
+            "schema_version",
+            "policy_bundle"
+          ],
+          "properties": {
+            "schema_version": {
+              "$ref": "gmk://schema/v1/reference#/$defs/SemVer"
+            },
+            "policy_bundle": {
+              "$ref": "gmk://schema/v1/reference#/$defs/ConfigRef"
+            }
+          },
+          "additionalProperties": false
+        },
+        "voice_lock": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "TIMING_SOURCE"
+        },
+        "design_dna_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DESIGN_SOURCE"
+        },
+        "scene_plan": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "scene_preview": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "shots": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-dependency-relation": "RENDER_INPUT"
+          }
+        },
+        "layers": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-dependency-relation": "RENDER_INPUT"
+          }
+        },
+        "cues": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-dependency-relation": "RENDER_INPUT"
+          }
+        },
+        "approvals": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-dependency-relation": "APPROVES"
+          }
+        },
+        "dependency_snapshot_sha256": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Sha256"
+        },
+        "scene_locks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+            "x-gmk-dependency-relation": "DERIVED_FROM"
+          }
+        }
+      },
+      "required": [
+        "scope",
+        "system",
+        "shots",
+        "layers",
+        "cues",
+        "approvals",
+        "dependency_snapshot_sha256"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "scope": {
+                "properties": {
+                  "type": {
+                    "const": "SCENE"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "voice_lock",
+              "design_dna_ref",
+              "scene_plan",
+              "scene_preview"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "scope": {
+                "properties": {
+                  "type": {
+                    "const": "PROJECT"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "scene_locks"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

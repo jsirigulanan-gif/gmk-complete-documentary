@@ -1,0 +1,6 @@
+GMK WEB EVIDENCE SNAPSHOT
+Candidate: MARKET_KOT
+Source URL: https://kotaku.com/ebay-taking-down-auctions-selling-ps4s-with-p-t-1702917689
+Title: eBay Taking Down Auctions Selling PS4s With P.T.
+Capture type: bounded text evidence snapshot (not origin-server HTML bytes)
+Evidence summary: Kotaku reported on May 7, 2015 that eBay was removing listings for PS4 systems preloaded with P.T. amid the games new scarcity.

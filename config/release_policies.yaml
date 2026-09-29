@@ -1,0 +1,16 @@
+config_id: GMK_RELEASE_POLICY
+version: 1.0.0
+schema_version: 1.0.0
+rights:
+  allowed_statuses: [CLEAR, COMMENTARY_REVIEW]
+  blocking_statuses: [RESTRICTED, UNKNOWN, DO_NOT_USE]
+qa:
+  required_report_types: [FULL_FILM_QA, DELIVERY_QA]
+  acceptable_results: [PASS, WARN]
+production_lock:
+  require_project_scope: true
+  require_approval_class: PRODUCTION_LOCK
+operation:
+  required_success_states: [SUCCEEDED, PARTIALLY_SUCCEEDED]
+completion:
+  require_final_project_checkpoint: true

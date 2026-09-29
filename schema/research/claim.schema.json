@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/claim",
+  "title": "GMK Claim",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "CLAIM"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^CLM_[A-Z0-9_-]+$"
+        },
+        "claim_text": {
+          "type": "string",
+          "minLength": 1,
+          "x-gmk-field-class": "AUTHORITATIVE"
+        },
+        "claim_type": {
+          "$ref": "gmk://schema/v1/research-common#/$defs/ClaimType",
+          "x-gmk-field-class": "AUTHORITATIVE"
+        },
+        "verification_state": {
+          "$ref": "gmk://schema/v1/research-common#/$defs/VerificationState",
+          "x-gmk-field-class": "AUTHORITATIVE"
+        },
+        "evidence_links": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/research-common#/$defs/EvidenceLink"
+          },
+          "x-gmk-field-class": "AUTHORITATIVE"
+        },
+        "certainty": {
+          "type": "object",
+          "required": [
+            "level",
+            "basis"
+          ],
+          "properties": {
+            "level": {
+              "$ref": "gmk://schema/v1/research-common#/$defs/CertaintyLevel"
+            },
+            "basis": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Z][A-Z0-9_]*$"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "x-gmk-field-class": "DERIVED",
+          "x-gmk-derived-mode": "LIVE"
+        },
+        "production_use": {
+          "type": "object",
+          "required": [
+            "narration_allowed",
+            "language_mode"
+          ],
+          "properties": {
+            "narration_allowed": {
+              "type": "boolean"
+            },
+            "language_mode": {
+              "$ref": "gmk://schema/v1/research-common#/$defs/NarrationLanguageMode"
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "x-gmk-field-class": "DERIVED",
+          "x-gmk-derived-mode": "LIVE"
+        },
+        "contradiction_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+          },
+          "x-gmk-field-class": "DERIVED",
+          "x-gmk-derived-mode": "LIVE"
+        }
+      },
+      "required": [
+        "claim_text",
+        "claim_type",
+        "verification_state",
+        "evidence_links",
+        "certainty",
+        "production_use"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

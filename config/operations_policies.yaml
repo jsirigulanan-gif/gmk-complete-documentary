@@ -1,0 +1,13 @@
+config_id: GMK_OPERATIONS_POLICY
+version: 1.0.0
+schema_version: 1.0.0
+operation_rules:
+  - operation_types: [PUBLISH, DELETE_EXTERNAL]
+    human_confirmation_required: true
+    checkpoint_required: true
+  - operation_types: [UPLOAD, DOWNLOAD, COPY_EXTERNAL, ARCHIVE_EXTERNAL, TRANSCODE_SERVICE, RENDER_PROVIDER_CALL]
+    human_confirmation_required: false
+    checkpoint_required: false
+rules:
+  unknown_external_state_requires_reconciliation: true
+  idempotent_replay_returns_existing_operation: true

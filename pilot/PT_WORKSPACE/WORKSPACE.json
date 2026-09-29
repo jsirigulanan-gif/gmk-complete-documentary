@@ -1,0 +1,20 @@
+{
+  "authoritative_resume_pointer": "CURRENT_MANIFEST.json",
+  "bootstrap_input_sha256": "0243aad58e88e29094461e654782ce4bd007dab6500d82a729baf870c092671e",
+  "bootstrap_research_pack_ref": {
+    "artifact_id": "RESEARCH_PACK_000001",
+    "artifact_type": "RESEARCH_PACK",
+    "sha256": "a6a28e9af9646c19c5eea4605575c798bd7ab9d9f933e5a9c6dc5aab33ab5e46",
+    "version": 1
+  },
+  "manifest_id": "MANIFEST_PROJECT_000001",
+  "notes": [
+    "WORKSPACE.json is non-authoritative launcher metadata; PROJECT_MANIFEST is authoritative."
+  ],
+  "project_ref": {
+    "id": "PROJECT_000001",
+    "version": 1
+  },
+  "schema_version": "1.0.0",
+  "workspace_format": "GMK_WORKSPACE_V1"
+}

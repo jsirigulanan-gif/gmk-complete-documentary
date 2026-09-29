@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/layer",
+  "title": "GMK Layer",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "LAYER"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^LYR_[A-Z0-9_-]+$"
+        },
+        "stack_role": {
+          "$ref": "gmk://schema/v1/planning-common#/$defs/LayerStackRole"
+        },
+        "z_index": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "$ref": "gmk://schema/v1/planning-common#/$defs/LayerContentType"
+            },
+            "segment_ref": {
+              "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+              "x-gmk-dependency-relation": "VISUAL_SOURCE"
+            },
+            "source_ref": {
+              "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+              "x-gmk-dependency-relation": "EVIDENCE_SOURCE"
+            },
+            "text": {
+              "type": "string"
+            },
+            "evidence_basis": {
+              "type": "array",
+              "items": {
+                "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+                "x-gmk-dependency-relation": "EVIDENCE_SOURCE"
+              }
+            },
+            "known": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "unknown": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "restrictions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "comprehension_purpose": {
+          "type": "object",
+          "required": [
+            "type",
+            "description"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "IDENTIFY_SOURCE",
+                "FOCUS_ATTENTION",
+                "EXPLAIN_RELATIONSHIP",
+                "CLARIFY_TIMELINE",
+                "COMPARE_EVIDENCE",
+                "LABEL_ENTITY",
+                "EVIDENCE_CALLOUT",
+                "IMPROVE_READABILITY"
+              ]
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "presentation": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "treatment": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "motion": {
+          "type": "object",
+          "required": [
+            "decision"
+          ],
+          "properties": {
+            "decision": {
+              "$ref": "gmk://schema/v1/planning-common#/$defs/MotionDecision"
+            },
+            "purpose": {
+              "type": "string"
+            },
+            "intent": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "stack_role",
+        "z_index",
+        "content",
+        "motion"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

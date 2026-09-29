@@ -1,0 +1,35 @@
+{
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/project",
+    "schema_version": "1.0.0"
+  },
+  "id": "PROJECT_TEST",
+  "object_type": "PROJECT",
+  "version": 1,
+  "status": "CURRENT",
+  "lock_state": "UNLOCKED",
+  "created_at": "2026-09-27T11:30:00+07:00",
+  "updated_at": "2026-09-27T11:30:00+07:00",
+  "dependencies": [],
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "approval_summary": {
+    "state": "NOT_REQUIRED",
+    "approval_refs": []
+  },
+  "human_constraints": [],
+  "extensions": {},
+  "title": "GMK Test",
+  "language": {
+    "narration": "th-TH"
+  },
+  "target": {
+    "format": "LONGFORM_DOCUMENTARY",
+    "runtime_minutes": {
+      "min": 20,
+      "max": 40
+    }
+  }
+}

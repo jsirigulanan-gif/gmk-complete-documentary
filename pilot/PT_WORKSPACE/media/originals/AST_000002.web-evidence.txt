@@ -1,0 +1,6 @@
+GMK WEB EVIDENCE SNAPSHOT
+Candidate: 7780_WIRED
+Source URL: https://www.wired.com/story/kojima-talks-on-pt-and-silent-hills/
+Title: Kojima: next Silent Hill will make you sh*t your pants
+Capture type: bounded text evidence snapshot (not origin-server HTML bytes)
+Evidence summary: WIRED reported Kojima explaining that 7780 points to the area of Shizuoka and that the S in 7780s refers to Silent Hill.

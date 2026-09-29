@@ -1,0 +1,142 @@
+{
+  "artifact_id": "CANDIDATE_COMPARISON_000007",
+  "artifact_type": "CANDIDATE_COMPARISON",
+  "assessment": "MEETS_TARGET",
+  "candidate_refs": [
+    {
+      "id": "SR_000019",
+      "version": 1
+    },
+    {
+      "id": "SR_000020",
+      "version": 1
+    },
+    {
+      "id": "SR_000021",
+      "version": 1
+    }
+  ],
+  "created_at": "2026-09-27T11:22:06.550420Z",
+  "dimensions": [
+    {
+      "candidate_ref": {
+        "id": "SR_000019",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Audited",
+        "Specific listing examples"
+      ],
+      "weaknesses": [
+        "Listing prices are asks, not completed-sale market value"
+      ]
+    },
+    {
+      "candidate_ref": {
+        "id": "SR_000020",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Audited",
+        "Removal context"
+      ],
+      "weaknesses": [
+        "Secondary report"
+      ]
+    },
+    {
+      "candidate_ref": {
+        "id": "SR_000021",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Listing imagery",
+        "Specific examples"
+      ],
+      "weaknesses": [
+        "Asking-price evidence only"
+      ]
+    }
+  ],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "beat_key": "BEAT_MARKET",
+      "phase": "FIRST_PASS",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318"
+    }
+  },
+  "origin_refs": [
+    {
+      "id": "NB_000007",
+      "version": 2
+    },
+    {
+      "id": "SRCH_000013",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000014",
+      "version": 1
+    },
+    {
+      "id": "SR_000019",
+      "version": 1
+    },
+    {
+      "id": "SR_000020",
+      "version": 1
+    },
+    {
+      "id": "SR_000021",
+      "version": 1
+    }
+  ],
+  "policy_target": {
+    "source_families": 1,
+    "viable_candidates": 1
+  },
+  "priority": "STANDARD",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/candidate-comparison",
+    "schema_version": "1.0.0"
+  },
+  "search_refs": [
+    {
+      "id": "SRCH_000013",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000014",
+      "version": 1
+    }
+  ],
+  "sha256": "954900b99443f9a2b1cc85135ab9564f22bf0c69687351eeed00a01b91109ee7",
+  "source_families": [
+    "NEWS_ARCHIVE",
+    "STILL_ARCHIVE"
+  ],
+  "target_beat_ref": {
+    "id": "NB_000007",
+    "version": 2
+  },
+  "uri": "gmk://artifacts/CANDIDATE_COMPARISON_000007/v1",
+  "version": 1,
+  "viable_candidate_refs": [
+    {
+      "id": "SR_000019",
+      "version": 1
+    },
+    {
+      "id": "SR_000020",
+      "version": 1
+    },
+    {
+      "id": "SR_000021",
+      "version": 1
+    }
+  ]
+}

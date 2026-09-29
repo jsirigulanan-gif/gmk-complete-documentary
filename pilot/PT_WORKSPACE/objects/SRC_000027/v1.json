@@ -1,0 +1,49 @@
+{
+  "accessed_at": "2026-09-27T11:22:06.537454Z",
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "author": "",
+  "authority_class": "REPUTABLE_SECONDARY",
+  "availability": {
+    "state": "AVAILABLE"
+  },
+  "created_at": "2026-09-27T11:22:06.537470Z",
+  "dependencies": [],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318",
+      "source_key": "7780_PLAY3",
+      "source_verified": true
+    }
+  },
+  "human_constraints": [],
+  "id": "SRC_000027",
+  "independence": {
+    "group_id": "SRCGRP_7780_PLAY3",
+    "relationship": "INDEPENDENT"
+  },
+  "language": "de",
+  "lock_state": "UNLOCKED",
+  "notes": "Article locates Kojima explanation in embedded Gamescom video around 1:10:00.",
+  "object_type": "SOURCE",
+  "platform": "Web",
+  "published_at": "2014-08-22",
+  "publisher": "Play3",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/source",
+    "schema_version": "1.0.0"
+  },
+  "source_type": "WEB_PAGE",
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "Silent Hills: Kojima über das “7780s” im P.T.-Teaser",
+  "updated_at": "2026-09-27T11:22:06.537470Z",
+  "url": "https://www.play3.de/2014/08/22/silent-hills-kojima-uber-das-%E2%80%9C7780s%E2%80%9D-im-p-t-teaser/",
+  "version": 1
+}

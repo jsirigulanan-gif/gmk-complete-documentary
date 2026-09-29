@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+
+# Local GMK runtime workspaces and acquired source media
+workspaces/
+workspace/
+inputs/
+*.tmp
+.DS_Store
+
+# Operator-local configuration and generated reports
+operator/GMK_OPERATOR_CONFIG.json
+pilot/PT_OPERATOR_OUTPUT/
+
+# External media staged by an operator must never be committed
+pilot/PT_MEDIA_INTAKE/*/*.mp4
+pilot/PT_MEDIA_INTAKE/*/*.mov
+pilot/PT_MEDIA_INTAKE/*/*.mkv
+pilot/PT_MEDIA_INTAKE/*/*.webm
+pilot/PT_MEDIA_INTAKE/*/*.m4v
+pilot/PT_MEDIA_INTAKE/*/*.avi

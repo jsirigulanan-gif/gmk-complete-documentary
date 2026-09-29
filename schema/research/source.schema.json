@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/source",
+  "title": "GMK Source",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "SOURCE"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^SRC_[A-Z0-9_-]+$"
+        },
+        "source_type": {
+          "$ref": "gmk://schema/v1/research-common#/$defs/SourceType",
+          "x-gmk-field-class": "AUTHORITATIVE"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "published_at": {
+          "type": "string"
+        },
+        "accessed_at": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+        },
+        "authority_class": {
+          "$ref": "gmk://schema/v1/research-common#/$defs/AuthorityClass",
+          "x-gmk-field-class": "AUTHORITATIVE"
+        },
+        "independence": {
+          "type": "object",
+          "required": [
+            "group_id",
+            "relationship"
+          ],
+          "properties": {
+            "group_id": {
+              "type": "string",
+              "pattern": "^SRCGRP_[A-Z0-9_-]+$"
+            },
+            "relationship": {
+              "type": "string",
+              "enum": [
+                "ORIGINAL",
+                "INDEPENDENT",
+                "SYNDICATED_COPY",
+                "REUPLOAD",
+                "DERIVED_REPORTING",
+                "UNKNOWN"
+              ]
+            }
+          },
+          "additionalProperties": false,
+          "x-gmk-field-class": "AUTHORITATIVE"
+        },
+        "language": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 35
+        },
+        "availability": {
+          "type": "object",
+          "required": [
+            "state"
+          ],
+          "properties": {
+            "state": {
+              "type": "string",
+              "enum": [
+                "AVAILABLE",
+                "ARCHIVED",
+                "PAYWALLED",
+                "REMOVED",
+                "UNAVAILABLE",
+                "ACCESS_RESTRICTED"
+              ]
+            },
+            "archive_uri": {
+              "type": "string",
+              "format": "uri"
+            },
+            "archived_asset_ref": {
+              "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+              "x-gmk-dependency-relation": "DERIVED_FROM"
+            }
+          },
+          "additionalProperties": false,
+          "x-gmk-field-class": "AUTHORITATIVE"
+        },
+        "derived_from": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-dependency-relation": "DERIVED_FROM"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_type",
+        "title",
+        "authority_class",
+        "independence",
+        "availability",
+        "language",
+        "accessed_at"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

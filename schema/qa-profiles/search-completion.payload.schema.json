@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/qa-profile/search-completion",
+  "type": "object",
+  "required": [
+    "target_beat_ref",
+    "priority",
+    "search_refs",
+    "viable_candidate_refs",
+    "stop_reason"
+  ],
+  "properties": {
+    "target_beat_ref": {
+      "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+    },
+    "priority": {
+      "type": "string"
+    },
+    "search_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+      }
+    },
+    "viable_candidate_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+      }
+    },
+    "selected_result_ref": {
+      "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+    },
+    "stop_reason": {
+      "type": "string",
+      "enum": [
+        "STRONG_SELECTION_COMPLETE",
+        "SEARCH_SATURATED",
+        "SOURCE_EXHAUSTED",
+        "RIGHTS_CONSTRAINT",
+        "QUALITY_CONSTRAINT",
+        "EXTERNAL_BLOCKER",
+        "SCOPE_CHANGED",
+        "HUMAN_STOP_WITH_REASON"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

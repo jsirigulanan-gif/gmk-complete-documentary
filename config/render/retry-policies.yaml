@@ -1,0 +1,7 @@
+config_id: GMK_RENDER_RETRY_POLICY
+version: 1.0.0
+transient_retry_limit: 2
+retry_only:
+- NETWORK_TIMEOUT
+- TEMPORARY_PROVIDER_FAILURE
+- QUEUE_INTERRUPTION

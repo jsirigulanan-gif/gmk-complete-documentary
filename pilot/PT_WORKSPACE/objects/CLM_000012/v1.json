@@ -1,0 +1,67 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "certainty": {
+    "basis": [
+      "INTAKE_ONLY"
+    ],
+    "level": "UNKNOWN"
+  },
+  "claim_text": "ข่าวลือที่ว่า Kojima แอบใช้งบประมาณและทรัพยากรของ MGSV ในการพัฒนา P.T. โดยไม่ได้รับการอนุมัติอย่างเป็นทางการจากบอร์ดบริหารระดับสูงของ Konami จนกลายเป็นฟางเส้นสุดท้าย",
+  "claim_type": "RUMOR",
+  "contradiction_refs": [],
+  "created_at": "2026-09-27T08:40:33.058025Z",
+  "dependencies": [
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000012",
+        "version": 1
+      }
+    }
+  ],
+  "evidence_links": [
+    {
+      "evidence_ref": {
+        "id": "EVD_000012",
+        "version": 1
+      },
+      "relation": "CONTEXTUALIZES",
+      "scope": [
+        "MOTIVE"
+      ],
+      "strength": "CONTEXT_ONLY"
+    }
+  ],
+  "extensions": {
+    "intake": {
+      "batch_id": "PT_INTAKE_0243AAD58E88E290",
+      "declared_id": "RUMOR-001",
+      "declared_label": "RUMOR",
+      "source_hint": null
+    }
+  },
+  "human_constraints": [],
+  "id": "CLM_000012",
+  "lock_state": "UNLOCKED",
+  "object_type": "CLAIM",
+  "production_use": {
+    "language_mode": "PROHIBITED",
+    "narration_allowed": false,
+    "reason": "Imported from Research Pack only; independent Research Audit has not verified the underlying claim."
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/claim",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "updated_at": "2026-09-27T08:40:33.058025Z",
+  "verification_state": "UNREVIEWED",
+  "version": 1
+}

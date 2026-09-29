@@ -1,0 +1,143 @@
+{
+  "artifact_id": "CANDIDATE_COMPARISON_000002",
+  "artifact_type": "CANDIDATE_COMPARISON",
+  "assessment": "MEETS_TARGET",
+  "candidate_refs": [
+    {
+      "id": "SR_000005",
+      "version": 1
+    },
+    {
+      "id": "SR_000006",
+      "version": 1
+    },
+    {
+      "id": "SR_000007",
+      "version": 1
+    }
+  ],
+  "created_at": "2026-09-27T11:22:06.549456Z",
+  "dimensions": [
+    {
+      "candidate_ref": {
+        "id": "SR_000005",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Audited source",
+        "Kojima explanation"
+      ],
+      "weaknesses": [
+        "Article presentation"
+      ]
+    },
+    {
+      "candidate_ref": {
+        "id": "SR_000006",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Contemporaneous",
+        "Clear wording"
+      ],
+      "weaknesses": [
+        "Same broad evidence event as Gamescom explanation"
+      ]
+    },
+    {
+      "candidate_ref": {
+        "id": "SR_000007",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Time-located",
+        "Different presentation family"
+      ],
+      "weaknesses": [
+        "German wrapper page",
+        "Embedded-video availability may vary"
+      ]
+    }
+  ],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "beat_key": "BEAT_7780",
+      "phase": "FIRST_PASS",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318"
+    }
+  },
+  "origin_refs": [
+    {
+      "id": "NB_000002",
+      "version": 2
+    },
+    {
+      "id": "SRCH_000003",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000004",
+      "version": 1
+    },
+    {
+      "id": "SR_000005",
+      "version": 1
+    },
+    {
+      "id": "SR_000006",
+      "version": 1
+    },
+    {
+      "id": "SR_000007",
+      "version": 1
+    }
+  ],
+  "policy_target": {
+    "source_families": 1,
+    "viable_candidates": 2
+  },
+  "priority": "MAJOR",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/candidate-comparison",
+    "schema_version": "1.0.0"
+  },
+  "search_refs": [
+    {
+      "id": "SRCH_000003",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000004",
+      "version": 1
+    }
+  ],
+  "sha256": "ec7134419b3b2445b559842a25281978fdf8cf3117eb999390f7be9f0921227a",
+  "source_families": [
+    "DOCUMENT",
+    "NEWS_ARCHIVE"
+  ],
+  "target_beat_ref": {
+    "id": "NB_000002",
+    "version": 2
+  },
+  "uri": "gmk://artifacts/CANDIDATE_COMPARISON_000002/v1",
+  "version": 1,
+  "viable_candidate_refs": [
+    {
+      "id": "SR_000005",
+      "version": 1
+    },
+    {
+      "id": "SR_000006",
+      "version": 1
+    },
+    {
+      "id": "SR_000007",
+      "version": 1
+    }
+  ]
+}

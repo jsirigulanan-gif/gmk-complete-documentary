@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/dependency-impact-report",
+  "title": "DEPENDENCY_IMPACT_REPORT",
+  "allOf": [
+    {"$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"},
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {"const": "DEPENDENCY_IMPACT_REPORT"},
+        "root_change": {
+          "type": "object",
+          "required": ["previous", "new"],
+          "properties": {
+            "previous": {"$ref": "#/$defs/NodeDescriptor"},
+            "new": {"$ref": "#/$defs/NodeDescriptor"}
+          },
+          "additionalProperties": false
+        },
+        "change_set": {
+          "type": "object",
+          "required": ["object_id", "previous_version", "new_version", "changed_paths", "impact_tags"],
+          "properties": {
+            "object_id": {"type": "string"},
+            "previous_version": {"$ref": "gmk://schema/v1/reference#/$defs/CoreVersion"},
+            "new_version": {"$ref": "gmk://schema/v1/reference#/$defs/CoreVersion"},
+            "changed_paths": {"type": "array", "items": {"type": "string"}},
+            "impact_tags": {"type": "array", "items": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*$"}}
+          },
+          "additionalProperties": false
+        },
+        "impacts": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/ImpactRecord"}
+        },
+        "frozen_stops": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/NodeDescriptor"}
+        },
+        "blast_radius": {"type": "string", "enum": ["LOCAL", "SCENE", "ACT", "PROJECT"]},
+        "policy_ref": {"$ref": "gmk://schema/v1/reference#/$defs/ConfigRef"}
+      },
+      "required": ["root_change", "change_set", "impacts", "frozen_stops", "blast_radius", "policy_ref"]
+    }
+  ],
+  "$defs": {
+    "NodeDescriptor": {
+      "type": "object",
+      "required": ["kind", "ref"],
+      "properties": {
+        "kind": {"type": "string", "enum": ["OBJECT", "ARTIFACT"]},
+        "ref": {"$ref": "gmk://schema/v1/reference#/$defs/TargetRef"}
+      },
+      "additionalProperties": false
+    },
+    "ImpactRecord": {
+      "type": "object",
+      "required": ["node", "disposition", "relation", "depth", "immediate_dependency", "root_previous", "root_new", "reason_code", "message", "blast_radius"],
+      "properties": {
+        "node": {"$ref": "#/$defs/NodeDescriptor"},
+        "disposition": {"type": "string", "enum": ["UNAFFECTED", "REVALIDATE", "STALE", "BLOCKED"]},
+        "relation": {"$ref": "gmk://schema/v1/enums#/$defs/DependencyRelation"},
+        "depth": {"type": "integer", "minimum": 1},
+        "immediate_dependency": {"$ref": "#/$defs/NodeDescriptor"},
+        "root_previous": {"$ref": "#/$defs/NodeDescriptor"},
+        "root_new": {"$ref": "#/$defs/NodeDescriptor"},
+        "reason_code": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*$"},
+        "message": {"type": "string", "minLength": 1},
+        "blast_radius": {"type": "string", "enum": ["LOCAL", "SCENE", "ACT", "PROJECT"]},
+        "path": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "unevaluatedProperties": false
+}

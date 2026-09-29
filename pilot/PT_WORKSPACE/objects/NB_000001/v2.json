@@ -1,0 +1,90 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "beat_type": "SETUP",
+  "claim_bindings": [
+    {
+      "claim_ref": {
+        "id": "CLM_000001",
+        "version": 2
+      },
+      "role": "PRIMARY_FACT"
+    }
+  ],
+  "created_at": "2026-09-27T10:18:33.360468Z",
+  "dependencies": [
+    {
+      "relation": "FACT_SOURCE",
+      "target": {
+        "id": "CLM_000001",
+        "version": 2
+      }
+    },
+    {
+      "relation": "SUPERSEDES",
+      "target": {
+        "id": "NB_000001",
+        "version": 1
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "SCN_000001",
+        "version": 1
+      }
+    }
+  ],
+  "extensions": {
+    "rough_narrative": {
+      "batch_id": "PT_ROUGH_NARRATIVE_001",
+      "key": "BEAT_OPENING_PROMISE",
+      "plan_sha256": "645459994c0d1d6d6e2211831a9c515e8a19ee1e10d2e9520bfa7e4ef4da8376",
+      "research_modes": {
+        "CLM_000001": "DIRECT"
+      },
+      "synthesis_note": ""
+    }
+  },
+  "human_constraints": [],
+  "id": "NB_000001",
+  "idea": {
+    "summary": "เริ่มด้วยการปรากฏตัวของเดโมที่ใช้ชื่อสตูดิโออำพราง ก่อนตั้งคำถามว่าทำไมผลงานนี้จึงยังมีร่องรอยให้ตามหลายปีหลังถูกถอดออก"
+  },
+  "lock_state": "UNLOCKED",
+  "object_type": "NARRATION_BEAT",
+  "order": 1,
+  "promise_payoff": {
+    "paired_beat_ref": {
+      "id": "NB_000010",
+      "version": 1
+    },
+    "role": "PROMISE"
+  },
+  "reveal": {
+    "contains_reveal": false
+  },
+  "scene_ref": {
+    "id": "SCN_000001",
+    "version": 1
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/narration-beat",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "supersedes": {
+    "id": "NB_000001",
+    "version": 1
+  },
+  "updated_at": "2026-09-27T10:18:33.360468Z",
+  "version": 2,
+  "viewer_takeaway": "เรื่องนี้เริ่มจากเดโมที่ถูกปล่อยอย่างตั้งใจให้ตัวตนผู้สร้างไม่ชัดเจน",
+  "workflow_state": "RESEARCH_BOUND"
+}

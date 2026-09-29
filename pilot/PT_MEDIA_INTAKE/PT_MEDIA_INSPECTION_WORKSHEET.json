@@ -1,0 +1,27 @@
+{
+  "batch_id": "PT_MEDIA_HANDOFF_037",
+  "items": [
+    {
+      "candidate_key": "LISA_X_DIRECT_VERIFIED",
+      "end_seconds": null,
+      "inspection_note": "",
+      "key_seconds": null,
+      "match_reason": "",
+      "operator": "",
+      "source_url": "https://twitter.com/manfightdragon/status/1170860592233472001",
+      "start_seconds": null,
+      "visual_content": ""
+    },
+    {
+      "candidate_key": "TGA_VIDEO",
+      "end_seconds": 135,
+      "inspection_note": "",
+      "key_seconds": 55,
+      "match_reason": "",
+      "operator": "",
+      "source_url": "https://www.youtube.com/watch?v=PKl5rYdwM6c",
+      "start_seconds": 0,
+      "visual_content": ""
+    }
+  ]
+}

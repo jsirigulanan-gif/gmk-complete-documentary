@@ -1,0 +1,51 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "attempts": [],
+  "authorization": {
+    "human_confirmed": false
+  },
+  "created_at": "2026-09-27T13:58:35.620593Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "AST_000003",
+        "version": 1
+      }
+    }
+  ],
+  "extensions": {},
+  "external_target": {
+    "destination": "gmk://incoming/assets/AST_000003",
+    "provider": "GMK_ACQUISITION_ADAPTER"
+  },
+  "human_constraints": [],
+  "id": "OP_000003",
+  "idempotency_key": "ACQUIRE_AST_000003_MILLION_PUSH_PT_ASSET_SELECTION_016",
+  "lock_state": "UNLOCKED",
+  "object_type": "OPERATION",
+  "operation_type": "DOWNLOAD",
+  "request": {
+    "action": "ACQUIRE_ORIGINAL_MEDIA",
+    "input_fingerprint": "8880fc3c0d497c58589b39f2c7c05e8e2499d13aecd0ba061e85d19f1b36bf7c"
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/operation",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "subject": {
+    "id": "AST_000003",
+    "version": 1
+  },
+  "updated_at": "2026-09-27T13:58:35.620593Z",
+  "version": 1,
+  "workflow_state": "PLANNED"
+}

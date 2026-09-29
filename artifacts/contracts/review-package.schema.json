@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/review-package",
+  "title": "REVIEW_PACKAGE",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "REVIEW_PACKAGE"
+        },
+        "scope": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "scene_preview": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "scene_plan": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "shots": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "scope",
+        "scene_preview",
+        "scene_plan",
+        "shots"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

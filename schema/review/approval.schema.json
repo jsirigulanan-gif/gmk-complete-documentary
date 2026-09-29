@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/approval",
+  "title": "GMK Approval",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "APPROVAL"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^APR_[A-Z0-9_-]+$"
+        },
+        "approval_class": {
+          "type": "string",
+          "enum": [
+            "VOICE",
+            "DESIGN_DNA",
+            "SHOT_VISUAL",
+            "MOTION_PREVIS",
+            "THREE_D_PREVIS",
+            "SCENE_PREVIEW",
+            "PRODUCTION_LOCK",
+            "EXCEPTION",
+            "RELEASE"
+          ]
+        },
+        "target": {
+          "$ref": "gmk://schema/v1/reference#/$defs/TargetRef",
+          "x-gmk-dependency-relation": "APPROVES"
+        },
+        "target_decision_sha256": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Sha256"
+        },
+        "review_context": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "APPROVES"
+        },
+        "decision": {
+          "type": "string",
+          "enum": [
+            "APPROVED",
+            "REJECTED",
+            "WITHDRAWN"
+          ]
+        },
+        "actor": {
+          "type": "object",
+          "required": [
+            "type",
+            "actor_id"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "HUMAN",
+                "SYSTEM"
+              ]
+            },
+            "actor_id": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "decided_at": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+        }
+      },
+      "required": [
+        "approval_class",
+        "target",
+        "decision",
+        "actor",
+        "decided_at",
+        "review_context"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

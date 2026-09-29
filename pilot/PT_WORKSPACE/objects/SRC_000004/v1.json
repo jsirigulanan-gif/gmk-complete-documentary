@@ -1,0 +1,48 @@
+{
+  "accessed_at": "2026-09-27T09:39:46.845323Z",
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "author": "",
+  "authority_class": "REPUTABLE_SECONDARY",
+  "availability": {
+    "state": "AVAILABLE"
+  },
+  "created_at": "2026-09-27T09:39:46.845334Z",
+  "dependencies": [],
+  "extensions": {
+    "research_audit": {
+      "batch_id": "PT_RESEARCH_AUDIT_001",
+      "source_key": "DOWNLOAD_PUSH",
+      "verification_role": "EXTERNAL_VERIFICATION"
+    }
+  },
+  "human_constraints": [],
+  "id": "SRC_000004",
+  "independence": {
+    "group_id": "SRCGRP_SONY_TGS_DOWNLOAD_STAT",
+    "relationship": "DERIVED_REPORTING"
+  },
+  "language": "en",
+  "lock_state": "UNLOCKED",
+  "notes": "",
+  "object_type": "SOURCE",
+  "platform": "Web",
+  "published_at": "2014-09-01",
+  "publisher": "Push Square",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/source",
+    "schema_version": "1.0.0"
+  },
+  "source_type": "WEB_PAGE",
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "Don’t Look Now, But PS4 Demo P.T. Has Been Downloaded Over 1 Million Times",
+  "updated_at": "2026-09-27T09:39:46.845334Z",
+  "url": "https://www.pushsquare.com/news/2014/09/dont_look_now_but_ps4_demo_pt_has_been_downloaded_over_1_million_times",
+  "version": 1
+}

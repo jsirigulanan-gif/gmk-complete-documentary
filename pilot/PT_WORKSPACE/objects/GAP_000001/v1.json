@@ -1,0 +1,53 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "blocked_gates": [],
+  "blocked_targets": [],
+  "created_at": "2026-09-27T08:40:33.058468Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "artifact_id": "RESEARCH_ATTEMPT_LOG_000001",
+        "artifact_type": "RESEARCH_ATTEMPT_LOG",
+        "sha256": "e38d435eee2f8b8db854ddcdd5bf8ad964cb6c0ccc92491448b3bd66dc6cea60",
+        "version": 1
+      }
+    }
+  ],
+  "extensions": {
+    "intake": {
+      "batch_id": "PT_INTAKE_0243AAD58E88E290",
+      "paragraph": 187,
+      "source": "RESEARCH_PACK_UNRESOLVED_QUESTIONS"
+    }
+  },
+  "human_constraints": [],
+  "id": "GAP_000001",
+  "importance": "STANDARD",
+  "lock_state": "UNLOCKED",
+  "object_type": "RESEARCH_GAP",
+  "question": "งบประมาณที่แท้จริงของ P.T.: ตัวเลขงบประมาณที่ Kojima Productions ใช้ในการพัฒนาเดโม P.T. ไม่เคยถูกเปิดเผยต่อสาธารณะ",
+  "research_attempt_refs": [
+    {
+      "artifact_id": "RESEARCH_ATTEMPT_LOG_000001",
+      "artifact_type": "RESEARCH_ATTEMPT_LOG",
+      "sha256": "e38d435eee2f8b8db854ddcdd5bf8ad964cb6c0ccc92491448b3bd66dc6cea60",
+      "version": 1
+    }
+  ],
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/research-gap",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "state": "OPEN",
+  "status": "CURRENT",
+  "updated_at": "2026-09-27T08:40:33.058468Z",
+  "version": 1
+}

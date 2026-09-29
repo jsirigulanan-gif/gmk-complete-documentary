@@ -1,0 +1,276 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/project-manifest",
+  "title": "GMK Project Manifest",
+  "type": "object",
+  "required": [
+    "schema_header",
+    "manifest_id",
+    "manifest_version",
+    "project_ref",
+    "system",
+    "registries",
+    "current",
+    "project_state",
+    "gates",
+    "blockers",
+    "environment",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "schema_header": {
+      "$ref": "gmk://schema/v1/reference#/$defs/SchemaHeader"
+    },
+    "manifest_id": {
+      "type": "string",
+      "pattern": "^MANIFEST_[A-Z0-9_-]+$"
+    },
+    "manifest_version": {
+      "$ref": "gmk://schema/v1/reference#/$defs/ArtifactVersion"
+    },
+    "supersedes_manifest_version": {
+      "$ref": "gmk://schema/v1/reference#/$defs/ArtifactVersion"
+    },
+    "project_ref": {
+      "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+    },
+    "system": {
+      "type": "object",
+      "required": [
+        "master_spec_id",
+        "master_checkpoint_id",
+        "schema_version",
+        "policy_bundle_ref"
+      ],
+      "properties": {
+        "master_spec_id": {
+          "type": "string"
+        },
+        "master_checkpoint_id": {
+          "type": "string"
+        },
+        "schema_version": {
+          "$ref": "gmk://schema/v1/reference#/$defs/SemVer"
+        },
+        "policy_bundle_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ConfigRef"
+        }
+      },
+      "additionalProperties": false
+    },
+    "bootstrap_inputs": {
+      "type": "object",
+      "properties": {
+        "research_pack": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef"
+        },
+        "legacy_detection_report": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef"
+        }
+      },
+      "additionalProperties": false
+    },
+    "project_state": {
+      "type": "object",
+      "required": [
+        "current",
+        "entered_at"
+      ],
+      "properties": {
+        "current": {
+          "$ref": "gmk://schema/v1/enums#/$defs/ProjectState"
+        },
+        "entered_at": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+        }
+      },
+      "additionalProperties": false
+    },
+    "registries": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/RegistryPointer"
+      }
+    },
+    "current": {
+      "type": "object",
+      "properties": {
+        "narrative_spine": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef"
+        },
+        "voiceover_script": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef"
+        },
+        "tts_script": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef"
+        },
+        "master_voice": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef"
+        },
+        "design_dna": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+        },
+        "latest_checkpoint": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+        },
+        "current_release": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+        }
+      },
+      "additionalProperties": false
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/GateSummary"
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/BlockerRecord"
+      }
+    },
+    "environment": {
+      "type": "object",
+      "required": [
+        "mode"
+      ],
+      "properties": {
+        "mode": {
+          "$ref": "gmk://schema/v1/enums#/$defs/EnvironmentMode"
+        },
+        "config_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ConfigRef"
+        }
+      },
+      "additionalProperties": false
+    },
+    "created_at": {
+      "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+    },
+    "updated_at": {
+      "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+    }
+  },
+  "$defs": {
+    "RegistryPointer": {
+      "type": "object",
+      "required": [
+        "id",
+        "version",
+        "uri",
+        "sha256"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_-]+$"
+        },
+        "version": {
+          "$ref": "gmk://schema/v1/reference#/$defs/RegistryVersion"
+        },
+        "uri": {
+          "$ref": "gmk://schema/v1/reference#/$defs/LogicalUri"
+        },
+        "sha256": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Sha256"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GateSummary": {
+      "type": "object",
+      "required": [
+        "gate_id",
+        "result",
+        "evidence",
+        "warning_codes",
+        "blocker_refs",
+        "evaluated_at"
+      ],
+      "properties": {
+        "gate_id": {
+          "$ref": "gmk://schema/v1/enums#/$defs/GateId"
+        },
+        "result": {
+          "$ref": "gmk://schema/v1/enums#/$defs/GateStatus"
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/TargetRef"
+          }
+        },
+        "warning_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "blocker_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^BLK_[A-Z0-9_-]+$"
+          }
+        },
+        "evaluated_at": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+        }
+      },
+      "additionalProperties": false
+    },
+    "BlockerRecord": {
+      "type": "object",
+      "required": [
+        "blocker_id",
+        "code",
+        "severity",
+        "state",
+        "message",
+        "opened_at"
+      ],
+      "properties": {
+        "blocker_id": {
+          "type": "string",
+          "pattern": "^BLK_[A-Z0-9_-]+$"
+        },
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        },
+        "severity": {
+          "$ref": "gmk://schema/v1/enums#/$defs/QASeverity"
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "OPEN",
+            "RESOLVED"
+          ]
+        },
+        "target": {
+          "$ref": "gmk://schema/v1/reference#/$defs/TargetRef"
+        },
+        "source_issue_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "opened_at": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+        },
+        "resolved_at": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,121 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "certainty": {
+    "basis": [
+      "TWO_INDEPENDENT_SOURCE_GROUPS",
+      "STRONG_EVIDENCE"
+    ],
+    "level": "HIGH"
+  },
+  "claim_text": "สัญญาจ้างงานของ Hideo Kojima กับ Konami สิ้นสุดลงอย่างเป็นทางการในวันที่ 15 ธันวาคม 2015",
+  "claim_type": "FACTUAL_ASSERTION",
+  "contradiction_refs": [],
+  "created_at": "2026-09-27T09:39:46.922714Z",
+  "dependencies": [
+    {
+      "relation": "SUPERSEDES",
+      "target": {
+        "id": "CLM_000009",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000009",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000028",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000029",
+        "version": 1
+      }
+    }
+  ],
+  "evidence_links": [
+    {
+      "evidence_ref": {
+        "id": "EVD_000009",
+        "version": 1
+      },
+      "relation": "CONTEXTUALIZES",
+      "scope": [
+        "TIMELINE"
+      ],
+      "strength": "CONTEXT_ONLY"
+    },
+    {
+      "evidence_ref": {
+        "id": "EVD_000028",
+        "version": 1
+      },
+      "relation": "SUPPORTS",
+      "scope": [
+        "TIMELINE"
+      ],
+      "strength": "DIRECT"
+    },
+    {
+      "evidence_ref": {
+        "id": "EVD_000029",
+        "version": 1
+      },
+      "relation": "SUPPORTS",
+      "scope": [
+        "TIMELINE"
+      ],
+      "strength": "DIRECT"
+    }
+  ],
+  "extensions": {
+    "intake": {
+      "batch_id": "PT_INTAKE_0243AAD58E88E290",
+      "declared_id": "FACT-009",
+      "declared_label": "VERIFIED FACT",
+      "source_hint": "Nikkei, Kojima Productions Re-establishment Announcement"
+    },
+    "research_audit": {
+      "audited": true,
+      "batch_id": "PT_RESEARCH_AUDIT_001",
+      "note": "Konami-side confirmation and Kojima-side public statement are independent source groups.",
+      "original_version": 1
+    }
+  },
+  "human_constraints": [],
+  "id": "CLM_000009",
+  "lock_state": "UNLOCKED",
+  "object_type": "CLAIM",
+  "production_use": {
+    "language_mode": "DIRECT",
+    "narration_allowed": true,
+    "reason": "Research Audit established sufficient factual support for direct narration."
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/claim",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "supersedes": {
+    "id": "CLM_000009",
+    "version": 1
+  },
+  "updated_at": "2026-09-27T09:39:46.922714Z",
+  "verification_state": "CORROBORATED",
+  "version": 2
+}

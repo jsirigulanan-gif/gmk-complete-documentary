@@ -1,0 +1,88 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "created_at": "2026-09-27T13:58:34.833285Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "NB_000004",
+        "version": 3
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "SRCH_000007",
+        "version": 1
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "SRCH_000008",
+        "version": 1
+      }
+    }
+  ],
+  "extensions": {
+    "asset_recon": {
+      "beat_key": "BEAT_LISA_FINDING",
+      "plan_sha256": "d4e8a6b8086d0215b8088d7a417e2ff6cc82c3caef6089d18300c68834970f7e",
+      "search_again": true,
+      "search_key": "LISA_SEARCH_AGAIN_DIRECT",
+      "selection_batch_id": "PT_ASSET_SELECTION_016",
+      "source_recon_batch_id": "PT_ASSET_RECON_FIRST_PASS_001"
+    }
+  },
+  "human_constraints": [],
+  "id": "SRCH_000021",
+  "language": "en",
+  "lock_state": "UNLOCKED",
+  "object_type": "SEARCH",
+  "priority": "CRITICAL",
+  "provider": {
+    "type": "WEB_SEARCH"
+  },
+  "query": "Lance McDonald P.T. Lisa original September 9 2019 camera hack post video",
+  "query_family": "SOURCE_TRACE",
+  "requested_source_families": [
+    "ORIGINAL_CREATOR",
+    "RESEARCHER"
+  ],
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/search",
+    "schema_version": "1.0.0"
+  },
+  "search_pass": "TECHNICAL_RESEARCH",
+  "search_round": 2,
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "target_beat_ref": {
+    "id": "NB_000004",
+    "version": 3
+  },
+  "trigger": {
+    "failure_reason": "Critical Beat had only two viable candidates and the original direct-media lead still required inspection.",
+    "previous_search_refs": [
+      {
+        "id": "SRCH_000007",
+        "version": 1
+      },
+      {
+        "id": "SRCH_000008",
+        "version": 1
+      }
+    ],
+    "strategy_change": "Trace the original creator post and preserve the direct embedded-video source as the third viable family.",
+    "type": "SEARCH_AGAIN"
+  },
+  "updated_at": "2026-09-27T13:58:34.833285Z",
+  "version": 1,
+  "workflow_state": "COMPLETED"
+}

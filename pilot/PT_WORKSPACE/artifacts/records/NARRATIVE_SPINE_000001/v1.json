@@ -1,0 +1,217 @@
+{
+  "artifact_id": "NARRATIVE_SPINE_000001",
+  "artifact_type": "NARRATIVE_SPINE",
+  "central_mystery": "ถ้าผลงานดิจิทัลชิ้นหนึ่งถูกผู้ถือสิทธิ์ถอนออกจากระบบจนผู้ที่เคยมีสิทธิ์ยังเรียกคืนไม่ได้ มันหายไปจริงหรือเพียงเปลี่ยนรูปแบบการมีอยู่?",
+  "closing_thought": "ในสื่อดิจิทัล การลบออกจากสโตร์อาจหยุดการเข้าถึง แต่ไม่ได้รับประกันว่าจะลบหลักฐาน ความทรงจำ หรือร่องรอยทางเทคนิคที่หลงเหลืออยู่ด้วย",
+  "core_question": "P.T. กลายจากเดโมปริศนาที่แทบไม่มีชื่อ ไปเป็นผลงานดิจิทัลที่ถูกถอดออกและดาวน์โหลดซ้ำไม่ได้ แต่ยังคงถูกศึกษาผ่านหลักฐานที่หลงเหลืออยู่ได้อย่างไร?",
+  "created_at": "2026-09-27T10:18:33.426415Z",
+  "extensions": {
+    "rough_narrative": {
+      "act_refs": [
+        {
+          "id": "ACT_000001",
+          "version": 1
+        },
+        {
+          "id": "ACT_000002",
+          "version": 1
+        },
+        {
+          "id": "ACT_000003",
+          "version": 1
+        },
+        {
+          "id": "ACT_000004",
+          "version": 1
+        },
+        {
+          "id": "ACT_000005",
+          "version": 1
+        }
+      ],
+      "batch_id": "PT_ROUGH_NARRATIVE_001",
+      "beat_refs": [
+        {
+          "id": "NB_000001",
+          "version": 2
+        },
+        {
+          "id": "NB_000002",
+          "version": 1
+        },
+        {
+          "id": "NB_000003",
+          "version": 1
+        },
+        {
+          "id": "NB_000004",
+          "version": 2
+        },
+        {
+          "id": "NB_000005",
+          "version": 1
+        },
+        {
+          "id": "NB_000006",
+          "version": 2
+        },
+        {
+          "id": "NB_000007",
+          "version": 1
+        },
+        {
+          "id": "NB_000008",
+          "version": 1
+        },
+        {
+          "id": "NB_000009",
+          "version": 1
+        },
+        {
+          "id": "NB_000010",
+          "version": 2
+        }
+      ],
+      "excluded_claim_ids": [
+        "CLM_000004",
+        "CLM_000010",
+        "CLM_000011",
+        "CLM_000012",
+        "CLM_000013"
+      ],
+      "included_claim_refs": [
+        {
+          "id": "CLM_000001",
+          "version": 2
+        },
+        {
+          "id": "CLM_000003",
+          "version": 2
+        },
+        {
+          "id": "CLM_000002",
+          "version": 2
+        },
+        {
+          "id": "CLM_000008",
+          "version": 2
+        },
+        {
+          "id": "CLM_000005",
+          "version": 2
+        },
+        {
+          "id": "CLM_000014",
+          "version": 1
+        },
+        {
+          "id": "CLM_000006",
+          "version": 2
+        },
+        {
+          "id": "CLM_000007",
+          "version": 2
+        },
+        {
+          "id": "CLM_000009",
+          "version": 2
+        }
+      ],
+      "plan_sha256": "645459994c0d1d6d6e2211831a9c515e8a19ee1e10d2e9520bfa7e4ef4da8376",
+      "research_boundary": "Only current audited Claims with narration_allowed=true may enter factual Beat bindings. No final narration or visual requirement is created at this stage.",
+      "scene_refs": [
+        {
+          "id": "SCN_000001",
+          "version": 1
+        },
+        {
+          "id": "SCN_000002",
+          "version": 1
+        },
+        {
+          "id": "SCN_000003",
+          "version": 1
+        },
+        {
+          "id": "SCN_000004",
+          "version": 1
+        },
+        {
+          "id": "SCN_000005",
+          "version": 1
+        },
+        {
+          "id": "SCN_000006",
+          "version": 1
+        },
+        {
+          "id": "SCN_000007",
+          "version": 1
+        }
+      ]
+    }
+  },
+  "final_answer": "หลักฐานที่ตรวจได้ชี้ว่า P.T. ไม่ได้หายไปในเหตุการณ์เดียว แต่ค่อย ๆ ถูกตัดออกจากช่องทางจำหน่ายและการเรียกคืน ขณะที่สำเนาที่ติดตั้งอยู่ บันทึกสาธารณะ และการตรวจเชิงเทคนิคภายหลังทำให้เรื่องราวของมันยังตรวจสอบและเล่าต่อได้",
+  "major_turns": [
+    "12 สิงหาคม 2014: P.T. ปรากฏบน PlayStation Network ภายใต้ชื่อ 7780s Studio",
+    "เบาะแส 7780 เชื่อมชื่ออำพรางกับ Shizuoka / Silent Hill และตัวเดโมแพร่กระจายอย่างรวดเร็ว",
+    "การตรวจกล้องของ Lance McDonald ในปี 2019 เผยกลไก Lisa ที่ติดตามอยู่ด้านหลังผู้เล่นหลังได้ไฟฉาย โดยไม่ยืนยันระยะตัวเลขแน่นอน",
+    "29 เมษายน–6 พฤษภาคม 2015: P.T. ถูกถอดจาก Store และต่อมาดาวน์โหลดซ้ำไม่ได้แม้บัญชีเคยมีสิทธิ์",
+    "สำเนาบนเครื่อง PS4 กลายเป็นของหายากและมีตัวอย่างประกาศขายราคา £1,000 ก่อน eBay ลบประกาศจำนวนมาก",
+    "ปลายปี 2015: Geoff Keighley ระบุบนเวทีว่า Kojima ถูกทนายตัวแทน Konami ห้ามเดินทางมารับรางวัล และสัญญาของ Kojima กับ Konami สิ้นสุด 15 ธันวาคม"
+  ],
+  "opening_promise": "เรื่องจะเริ่มจากเกมปริศนาที่ถูกปล่อยแบบไม่บอกตัวตน แล้วตามรอยไปถึงการถอดออกจากสโตร์ การปิดทางดาวน์โหลดซ้ำ และสิ่งที่นักวิจัยภายหลังยังค้นพบจากตัวเกมที่เหลือรอดอยู่",
+  "origin_refs": [
+    {
+      "id": "PROJECT_000001",
+      "version": 1
+    },
+    {
+      "id": "CLM_000001",
+      "version": 2
+    },
+    {
+      "id": "CLM_000003",
+      "version": 2
+    },
+    {
+      "id": "CLM_000002",
+      "version": 2
+    },
+    {
+      "id": "CLM_000008",
+      "version": 2
+    },
+    {
+      "id": "CLM_000005",
+      "version": 2
+    },
+    {
+      "id": "CLM_000014",
+      "version": 1
+    },
+    {
+      "id": "CLM_000006",
+      "version": 2
+    },
+    {
+      "id": "CLM_000007",
+      "version": 2
+    },
+    {
+      "id": "CLM_000009",
+      "version": 2
+    }
+  ],
+  "project_ref": {
+    "id": "PROJECT_000001",
+    "version": 1
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/narrative-spine",
+    "schema_version": "1.0.0"
+  },
+  "sha256": "47a54f17b1a9d53c999dc69fe87676b575ae4b41f0af7442d4057823db63712d",
+  "uri": "gmk://artifacts/NARRATIVE_SPINE_000001/v1",
+  "version": 1
+}

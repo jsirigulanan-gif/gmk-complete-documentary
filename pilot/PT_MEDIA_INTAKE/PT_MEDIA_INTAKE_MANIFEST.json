@@ -1,0 +1,48 @@
+{
+  "build": "037",
+  "hard_boundary": "One authorized local video per source-locked candidate slot. Slot identity does not prove content; operator inspection remains mandatory.",
+  "manifest_sha256": "76afe91772960f8df02695cf1b4e4e684448be5bc165d62fd936efc1bd448ae6",
+  "purpose": "P.T. authorized external-media intake slots",
+  "requirements": [
+    {
+      "asset_ref": {
+        "id": "AST_000004",
+        "version": 2
+      },
+      "attribution_required": true,
+      "candidate_key": "LISA_X_DIRECT_VERIFIED",
+      "canonical_source_url": "https://twitter.com/manfightdragon/status/1170860592233472001",
+      "locked_locator": {
+        "type": "FULL_SOURCE"
+      },
+      "rights_status": "COMMENTARY_REVIEW",
+      "slot_dir": "pilot/PT_MEDIA_INTAKE/LISA_X_DIRECT_VERIFIED",
+      "source_result_ref": {
+        "id": "SR_000031",
+        "version": 2
+      }
+    },
+    {
+      "asset_ref": {
+        "id": "AST_000008",
+        "version": 2
+      },
+      "attribution_required": true,
+      "candidate_key": "TGA_VIDEO",
+      "canonical_source_url": "https://www.youtube.com/watch?v=PKl5rYdwM6c",
+      "locked_locator": {
+        "end_seconds": 135,
+        "key_seconds": 55,
+        "start_seconds": 0,
+        "type": "VIDEO_TIME_RANGE"
+      },
+      "rights_status": "COMMENTARY_REVIEW",
+      "slot_dir": "pilot/PT_MEDIA_INTAKE/TGA_VIDEO",
+      "source_result_ref": {
+        "id": "SR_000024",
+        "version": 2
+      }
+    }
+  ],
+  "workspace": "pilot/PT_WORKSPACE"
+}

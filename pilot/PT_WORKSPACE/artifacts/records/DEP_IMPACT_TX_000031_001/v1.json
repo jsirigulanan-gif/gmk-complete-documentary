@@ -1,0 +1,100 @@
+{
+  "artifact_id": "DEP_IMPACT_TX_000031_001",
+  "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+  "blast_radius": "LOCAL",
+  "change_set": {
+    "changed_paths": [
+      "/candidate_state",
+      "/extensions/asset_recon/selection_batch_id",
+      "/extensions/asset_recon/selection_reason"
+    ],
+    "impact_tags": [
+      "VISUAL"
+    ],
+    "new_version": 2,
+    "object_id": "SR_000016",
+    "previous_version": 1
+  },
+  "created_at": "2026-09-27T13:58:36.722360Z",
+  "extensions": {},
+  "frozen_stops": [],
+  "impacts": [
+    {
+      "blast_radius": "LOCAL",
+      "depth": 1,
+      "disposition": "REVALIDATE",
+      "immediate_dependency": {
+        "kind": "OBJECT",
+        "ref": {
+          "id": "SR_000016",
+          "version": 1
+        }
+      },
+      "message": "ART:CANDIDATE_COMPARISON_000006@1 depends on OBJ:SR_000016@1 via DERIVED_FROM; ACTIVE root changed OBJ:SR_000016@1 -> OBJ:SR_000016@2 (VISUAL).",
+      "node": {
+        "kind": "ARTIFACT",
+        "ref": {
+          "artifact_id": "CANDIDATE_COMPARISON_000006",
+          "artifact_type": "CANDIDATE_COMPARISON",
+          "sha256": "afb260e6557e12baba08b472cf97e4ae7b6f2949ff87874ced22622aa7c4a33f",
+          "version": 1
+        }
+      },
+      "path": "/origin_refs/3",
+      "reason_code": "DEPENDENCY_REVALIDATION_REQUIRED",
+      "relation": "DERIVED_FROM",
+      "root_new": {
+        "kind": "OBJECT",
+        "ref": {
+          "id": "SR_000016",
+          "version": 2
+        }
+      },
+      "root_previous": {
+        "kind": "OBJECT",
+        "ref": {
+          "id": "SR_000016",
+          "version": 1
+        }
+      }
+    }
+  ],
+  "origin_refs": [
+    {
+      "id": "SR_000016",
+      "version": 1
+    },
+    {
+      "id": "SR_000016",
+      "version": 2
+    }
+  ],
+  "policy_ref": {
+    "config_id": "GMK_DEPENDENCY_POLICY",
+    "sha256": "4b368d0e008701f5fca9bfe73b7f38fb711ec1d77bc282a03be54b2d2d0ec2ee",
+    "version": "1.0.0"
+  },
+  "root_change": {
+    "new": {
+      "kind": "OBJECT",
+      "ref": {
+        "id": "SR_000016",
+        "version": 2
+      }
+    },
+    "previous": {
+      "kind": "OBJECT",
+      "ref": {
+        "id": "SR_000016",
+        "version": 1
+      }
+    }
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+    "schema_version": "1.0.0"
+  },
+  "sha256": "1bbc87e1315eae67cc51df3e926a6d6eec3218f81c483b4a82ac3da3be2b0eb6",
+  "uri": "gmk://artifacts/DEP_IMPACT_TX_000031_001/v1",
+  "version": 1
+}

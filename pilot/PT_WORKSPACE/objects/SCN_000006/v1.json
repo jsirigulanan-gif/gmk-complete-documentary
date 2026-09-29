@@ -1,0 +1,54 @@
+{
+  "act_ref": {
+    "id": "ACT_000004",
+    "version": 1
+  },
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "created_at": "2026-09-27T10:18:33.257846Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "ACT_000004",
+        "version": 1
+      }
+    }
+  ],
+  "dynamics": {
+    "energy": "TENSE",
+    "role": "MAJOR_PEAK"
+  },
+  "extensions": {
+    "rough_narrative": {
+      "batch_id": "PT_ROUGH_NARRATIVE_001",
+      "key": "SCN_TGA_EXIT",
+      "plan_sha256": "645459994c0d1d6d6e2211831a9c515e8a19ee1e10d2e9520bfa7e4ef4da8376"
+    }
+  },
+  "human_constraints": [],
+  "id": "SCN_000006",
+  "lock_state": "UNLOCKED",
+  "narrative": {
+    "main_reveal": "แหล่งที่มาของข้อกล่าวอ้างบนเวทีถูกระบุชัดเจน",
+    "purpose": "แยก reported assertion จาก factual conclusion และต่อเข้ากับข้อเท็จจริงเรื่องสิ้นสุดสัญญา",
+    "viewer_question_entering": "เรารู้อะไรจริงเกี่ยวกับเหตุการณ์ The Game Awards และการสิ้นสุดสัญญา?",
+    "viewer_understanding_leaving": "หลักฐานรองรับว่าคำกล่าวเรื่องการห้ามเดินทางมาจาก Geoff Keighley และสัญญาของ Kojima สิ้นสุด 15 ธันวาคม 2015"
+  },
+  "object_type": "SCENE",
+  "order": 1,
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/scene",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "A Statement on Stage",
+  "updated_at": "2026-09-27T10:18:33.257846Z",
+  "version": 1
+}

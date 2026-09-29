@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/release",
+  "title": "GMK Release",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "RELEASE"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^REL_[A-Z0-9_-]+$"
+        },
+        "project_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "release_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "supersedes_release_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "SUPERSEDES"
+        },
+        "production_lock": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "RENDER_INPUT"
+        },
+        "master_output": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "RENDER_INPUT"
+        },
+        "delivery_profile": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ConfigRef"
+        },
+        "final_asset_manifest": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "provenance_manifest": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "qa_reports": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-dependency-relation": "DERIVED_FROM"
+          }
+        },
+        "release_operation_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "PREPARING",
+            "READY",
+            "RELEASED"
+          ]
+        },
+        "released_at": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+        }
+      },
+      "required": [
+        "project_ref",
+        "release_label",
+        "production_lock",
+        "master_output",
+        "delivery_profile",
+        "final_asset_manifest",
+        "provenance_manifest",
+        "qa_reports",
+        "state"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

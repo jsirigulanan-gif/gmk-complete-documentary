@@ -1,0 +1,471 @@
+{
+  "entries": {
+    "ACT_000001": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "ACT_000001",
+      "object_type": "ACT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.256006Z",
+          "decision_sha256": "effcc1ad091dfb5ca33137bb8539443e161c3f16df87336ddaae0ca15768145c",
+          "record_sha256": "38cb4ee6aae234810dd8173f3c1cc06fddb806fb75c31fadfd6909989b82bd10",
+          "updated_at": "2026-09-27T10:18:33.256006Z",
+          "uri": "gmk://objects/ACT_000001/v1",
+          "version": 1
+        }
+      }
+    },
+    "ACT_000002": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "ACT_000002",
+      "object_type": "ACT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.256322Z",
+          "decision_sha256": "c8023feeb63a2bc5c75c35d5e1067b0799b13d2f366330d6ca4869f5ba29df63",
+          "record_sha256": "dc17beb2a1f44883afa8746061ebaa56e94324d1134641c7d5b414e5f86245dd",
+          "updated_at": "2026-09-27T10:18:33.256322Z",
+          "uri": "gmk://objects/ACT_000002/v1",
+          "version": 1
+        }
+      }
+    },
+    "ACT_000003": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "ACT_000003",
+      "object_type": "ACT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.256519Z",
+          "decision_sha256": "b4b6ad2cc6423a956fff54c7020a007b54792450f22c58e91358e3fcf11704f7",
+          "record_sha256": "6f3298e891aa9e72fd30a7e283064a29ed0937d5e3dd09f671e3cb9cc3d8d076",
+          "updated_at": "2026-09-27T10:18:33.256519Z",
+          "uri": "gmk://objects/ACT_000003/v1",
+          "version": 1
+        }
+      }
+    },
+    "ACT_000004": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "ACT_000004",
+      "object_type": "ACT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.256690Z",
+          "decision_sha256": "538abf2203ad41c6dc8969b7960ada1aed17c8b667c3b5681e7e63f3ca669444",
+          "record_sha256": "e8a9663e2a422e5ebf729965e05ff288789bd4cc1f61377c04c89b9c350225a2",
+          "updated_at": "2026-09-27T10:18:33.256690Z",
+          "uri": "gmk://objects/ACT_000004/v1",
+          "version": 1
+        }
+      }
+    },
+    "ACT_000005": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "ACT_000005",
+      "object_type": "ACT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.256850Z",
+          "decision_sha256": "6e6c5db508f2b0a985f4f80c47964da6e444dfa758eed31eacc297127d35a263",
+          "record_sha256": "9f527d0b93c6dc3c7515da293ef9bcd417d32058bfa9bc40810d189cddc92c44",
+          "updated_at": "2026-09-27T10:18:33.256850Z",
+          "uri": "gmk://objects/ACT_000005/v1",
+          "version": 1
+        }
+      }
+    },
+    "NB_000001": {
+      "active_version": 3,
+      "head_version": 3,
+      "object_id": "NB_000001",
+      "object_type": "NARRATION_BEAT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.258178Z",
+          "decision_sha256": "00d8f82b0e53da1346d5b837487e4050b980dced7a878577544069e4fb5a9bf0",
+          "record_sha256": "22076dda3d1ba8532bf957278ea8a3251f7fe4e94e5c22c89ab919eff0a362d8",
+          "updated_at": "2026-09-27T10:18:33.258178Z",
+          "uri": "gmk://objects/NB_000001/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T10:18:33.360468Z",
+          "decision_sha256": "ab21f80daadef294a1e7a9fcf8e676c6ff9fb4eba60e5e864aefae534c565bcb",
+          "record_sha256": "42dd3acbcfa31b7c0db15b0e7a86d1c66538f3039c91bed4dbfdc470c25b7229",
+          "updated_at": "2026-09-27T10:18:33.360468Z",
+          "uri": "gmk://objects/NB_000001/v2",
+          "version": 2
+        },
+        "3": {
+          "created_at": "2026-09-27T10:48:17.372954Z",
+          "decision_sha256": "9cc225b3339180d25ff25ee0b2a179fdbad4029319b6ee4a5b5014a4b50f245d",
+          "record_sha256": "193f995bb2375441b1811922a963057af697c3ab4d96dc1571996c71a4e8af1e",
+          "updated_at": "2026-09-27T10:48:17.372954Z",
+          "uri": "gmk://objects/NB_000001/v3",
+          "version": 3
+        }
+      }
+    },
+    "NB_000002": {
+      "active_version": 2,
+      "head_version": 2,
+      "object_id": "NB_000002",
+      "object_type": "NARRATION_BEAT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.258372Z",
+          "decision_sha256": "a3a6d1dbbae25bd7b1100a6299ad60323db802ba43d04c45ed6f4741eae4b5c4",
+          "record_sha256": "c96cde45b1384de83bee6249971d00cb5e436b44186a11a17a36b8a346702e39",
+          "updated_at": "2026-09-27T10:18:33.258372Z",
+          "uri": "gmk://objects/NB_000002/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T10:48:17.247314Z",
+          "decision_sha256": "c1d73f8004c5046b2a5967b66f2d1bc15eca373b615ebf7fa8c760602d0e3612",
+          "record_sha256": "042ce4a6ff2815b80becced70edcd81798f40030681d52d010d07a5962902ffa",
+          "updated_at": "2026-09-27T10:48:17.247314Z",
+          "uri": "gmk://objects/NB_000002/v2",
+          "version": 2
+        }
+      }
+    },
+    "NB_000003": {
+      "active_version": 2,
+      "head_version": 2,
+      "object_id": "NB_000003",
+      "object_type": "NARRATION_BEAT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.258559Z",
+          "decision_sha256": "1324020324bb822e05f9cf1e1855b71f1ced966e8f20b0d5c575221e4e8489e2",
+          "record_sha256": "b908984b3f57bfb638b66ddeba6522ea5c6cec73dee44db8021988ce05b8b9c1",
+          "updated_at": "2026-09-27T10:18:33.258559Z",
+          "uri": "gmk://objects/NB_000003/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T10:48:17.354519Z",
+          "decision_sha256": "a8657190ce0b41489c3f08521a275fbdc5d4437790e96606052246f59f263ac0",
+          "record_sha256": "ffe5c239e326b09a5f08a43fa1c53d7d17b86f1e2287d088b34b0754e16e0393",
+          "updated_at": "2026-09-27T10:48:17.354519Z",
+          "uri": "gmk://objects/NB_000003/v2",
+          "version": 2
+        }
+      }
+    },
+    "NB_000004": {
+      "active_version": 3,
+      "head_version": 3,
+      "object_id": "NB_000004",
+      "object_type": "NARRATION_BEAT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.258740Z",
+          "decision_sha256": "a77f4ca7fcd48f92e440f6e5c06163d9c86767c51262e9211f7dd2a69c1c10a5",
+          "record_sha256": "b423c10cad7a43c108ec23c6a48553343bce73066f252b03e118e0d758beb3e6",
+          "updated_at": "2026-09-27T10:18:33.258740Z",
+          "uri": "gmk://objects/NB_000004/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T10:18:33.377317Z",
+          "decision_sha256": "d05b45097c4b50c8f03a66d6ac483a501d069457c0d5382301ec7672ece0caf4",
+          "record_sha256": "fea5553675e68220b90ca8e0d2f8f8e5945ac6089aadeec84cba9118aca766cf",
+          "updated_at": "2026-09-27T10:18:33.377317Z",
+          "uri": "gmk://objects/NB_000004/v2",
+          "version": 2
+        },
+        "3": {
+          "created_at": "2026-09-27T10:48:17.318504Z",
+          "decision_sha256": "a02fb62b5079aec7f056a344f066e9f870c8e4b2d11995af1fc1571d522e29ba",
+          "record_sha256": "acb2ad148ce9584bfcab054f9e64c3ca3236f2703a3c9a9cbabcb18b49f44c06",
+          "updated_at": "2026-09-27T10:48:17.318504Z",
+          "uri": "gmk://objects/NB_000004/v3",
+          "version": 3
+        }
+      }
+    },
+    "NB_000005": {
+      "active_version": 2,
+      "head_version": 2,
+      "object_id": "NB_000005",
+      "object_type": "NARRATION_BEAT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.258924Z",
+          "decision_sha256": "73716be4b392367a944321755f964d8ed118e3c763e83b16a61a8cc2c9445d92",
+          "record_sha256": "ac708d10f7baaf70d4bcfa876f3555bd870093655c95d96dff3166b3fb64c7e2",
+          "updated_at": "2026-09-27T10:18:33.258924Z",
+          "uri": "gmk://objects/NB_000005/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T10:48:17.283026Z",
+          "decision_sha256": "da0c214efdd57e87067d5000bdf907d5c30157fe3b5254f88757627538d047d0",
+          "record_sha256": "b444a8aa56e6fb77bc7a90840c1a1e5fabedfa104dfa9ecdc418de130fd23e0c",
+          "updated_at": "2026-09-27T10:48:17.283026Z",
+          "uri": "gmk://objects/NB_000005/v2",
+          "version": 2
+        }
+      }
+    },
+    "NB_000006": {
+      "active_version": 3,
+      "head_version": 3,
+      "object_id": "NB_000006",
+      "object_type": "NARRATION_BEAT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.259114Z",
+          "decision_sha256": "4b6cc94b77f4cc3bd1d9a298112e2c07667f7c19514d8823f5bf361718437081",
+          "record_sha256": "0fb6129435fb085abd82ebe75e1cfe5f632b9ee566021de8e95f92754cd30289",
+          "updated_at": "2026-09-27T10:18:33.259114Z",
+          "uri": "gmk://objects/NB_000006/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T10:18:33.393505Z",
+          "decision_sha256": "7f52b1510a7d303574f48045c661da09b066cb74aaac373f35acf6b7fc092eae",
+          "record_sha256": "72c25e9fd2409b49bf4a92cb4a032c6aa91dce397b3547b156101af6afc6cb1d",
+          "updated_at": "2026-09-27T10:18:33.393505Z",
+          "uri": "gmk://objects/NB_000006/v2",
+          "version": 2
+        },
+        "3": {
+          "created_at": "2026-09-27T10:48:17.391326Z",
+          "decision_sha256": "79d21b0c227ef6ef2585dc11448d855ca8f98061bc6f9ce29e5221c3546d13a9",
+          "record_sha256": "e165dd6837e25fd78f8c19f6900f02d3252ec11918d1b3d51bbad90884039161",
+          "updated_at": "2026-09-27T10:48:17.391326Z",
+          "uri": "gmk://objects/NB_000006/v3",
+          "version": 3
+        }
+      }
+    },
+    "NB_000007": {
+      "active_version": 2,
+      "head_version": 2,
+      "object_id": "NB_000007",
+      "object_type": "NARRATION_BEAT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.259292Z",
+          "decision_sha256": "425c00a5447b6c594b905c90514f7ebd11de96132f715aaf6fcd763441634a1c",
+          "record_sha256": "df86e8ae7dca48960e8386116755ee8cb7d2d1b50cc84d248bb898dc5c86037c",
+          "updated_at": "2026-09-27T10:18:33.259292Z",
+          "uri": "gmk://objects/NB_000007/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T10:48:17.336539Z",
+          "decision_sha256": "4f7563a0cbdc71f0dd5b6c29163c0b4280e9449ac28b3e8f66763182fa560efc",
+          "record_sha256": "e2a70856a187fb1166d68b5d282d0b749ee29b1714e0a4fac2ac1966c7e08c7d",
+          "updated_at": "2026-09-27T10:48:17.336539Z",
+          "uri": "gmk://objects/NB_000007/v2",
+          "version": 2
+        }
+      }
+    },
+    "NB_000008": {
+      "active_version": 2,
+      "head_version": 2,
+      "object_id": "NB_000008",
+      "object_type": "NARRATION_BEAT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.259464Z",
+          "decision_sha256": "c4741d7f2617b66eb93edeb5daa4837b5ef8a0b976746a077d41b6c8bd33fa22",
+          "record_sha256": "650fbad766b9d6c60909df1795803ddb8bb07e8e3ddc38c8920fb09d2d25b611",
+          "updated_at": "2026-09-27T10:18:33.259464Z",
+          "uri": "gmk://objects/NB_000008/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T10:48:17.409801Z",
+          "decision_sha256": "69ede687ccd61f2b38ddc4124e83c076c92d537b91612def21563fe0f5a45991",
+          "record_sha256": "60ebce1c66db615d71bfa1b9bce3ae4512839b369705ec20eaa7467c35f82520",
+          "updated_at": "2026-09-27T10:48:17.409801Z",
+          "uri": "gmk://objects/NB_000008/v2",
+          "version": 2
+        }
+      }
+    },
+    "NB_000009": {
+      "active_version": 2,
+      "head_version": 2,
+      "object_id": "NB_000009",
+      "object_type": "NARRATION_BEAT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.259637Z",
+          "decision_sha256": "ca95d7ad8298bef8b4520a895bf170b24c02f53449ebae7b3d4e187d40cbcc38",
+          "record_sha256": "0f5fab9b6bd299fb8390d89b84ccb6ee158f96f40ed5f94d34f20457ae46aefe",
+          "updated_at": "2026-09-27T10:18:33.259637Z",
+          "uri": "gmk://objects/NB_000009/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T10:48:17.265060Z",
+          "decision_sha256": "2ab6abb4ddf35fd192ba007e53e700dadfb999b711ded22f1f6d4d9a18f58ad9",
+          "record_sha256": "b7fe961e7de0799e1033d9612f8bea93b415b5ff0dcef1965971ad187b0d8f1e",
+          "updated_at": "2026-09-27T10:48:17.265060Z",
+          "uri": "gmk://objects/NB_000009/v2",
+          "version": 2
+        }
+      }
+    },
+    "NB_000010": {
+      "active_version": 3,
+      "head_version": 3,
+      "object_id": "NB_000010",
+      "object_type": "NARRATION_BEAT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.259807Z",
+          "decision_sha256": "a08672bc4693cb63edd549f83d9524bc7b564665cdb462a1da285d6ec8a0bfc1",
+          "record_sha256": "df6259f0691b17ef377b6e3d066fd87d6af26d4b5adf43b6ac480202fa08e276",
+          "updated_at": "2026-09-27T10:18:33.259807Z",
+          "uri": "gmk://objects/NB_000010/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T10:18:33.409811Z",
+          "decision_sha256": "7f0a4ec46fc8ea74a5d3a4734a90179b8b0acf44b6c71bed355f5a4beb226882",
+          "record_sha256": "709752ae59d149bb7865fca6bfaa62b4624f6e45b9e15b973622e1c5d15d3e15",
+          "updated_at": "2026-09-27T10:18:33.409811Z",
+          "uri": "gmk://objects/NB_000010/v2",
+          "version": 2
+        },
+        "3": {
+          "created_at": "2026-09-27T10:48:17.300530Z",
+          "decision_sha256": "17c499e823cc09e53ab527d42516a8e4f1e201b887b9ca70778ef674afa11a46",
+          "record_sha256": "beb564ba892554c0331e877a80d2504d748f13baa254dcf4db265fc8ae2c06ad",
+          "updated_at": "2026-09-27T10:48:17.300530Z",
+          "uri": "gmk://objects/NB_000010/v3",
+          "version": 3
+        }
+      }
+    },
+    "SCN_000001": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "SCN_000001",
+      "object_type": "SCENE",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.257010Z",
+          "decision_sha256": "ef269cbb0170661aeedebe60f947b0c3ac5a5e0494bc5959ce2ce41cbed05bd2",
+          "record_sha256": "b2a86319ffff314482bc8e8a9ef5d21d55f787023dd43c3ee0a82e96d8c16ba4",
+          "updated_at": "2026-09-27T10:18:33.257010Z",
+          "uri": "gmk://objects/SCN_000001/v1",
+          "version": 1
+        }
+      }
+    },
+    "SCN_000002": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "SCN_000002",
+      "object_type": "SCENE",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.257204Z",
+          "decision_sha256": "20e3af2dc6f08db658d0e4dc9ff4e0b1b1506a5c1cda4833ee5675e3ab1ee0db",
+          "record_sha256": "d64717065d6bc5e6d6e4b1e16bf175fd7b57c9abe8a0a6f5d377a0f9e10557df",
+          "updated_at": "2026-09-27T10:18:33.257204Z",
+          "uri": "gmk://objects/SCN_000002/v1",
+          "version": 1
+        }
+      }
+    },
+    "SCN_000003": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "SCN_000003",
+      "object_type": "SCENE",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.257363Z",
+          "decision_sha256": "2394d18d22f0ed1b2d4004b21f3fd9acb87f0b605eb2696800eaa7670d416451",
+          "record_sha256": "474624723c944520cfd0822d9f7ada116587fbb17e38a5eb9ba58929bfd56e96",
+          "updated_at": "2026-09-27T10:18:33.257363Z",
+          "uri": "gmk://objects/SCN_000003/v1",
+          "version": 1
+        }
+      }
+    },
+    "SCN_000004": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "SCN_000004",
+      "object_type": "SCENE",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.257526Z",
+          "decision_sha256": "8a029025c6a06775ba6200500a8810fd0df851a44acde0872186d126ba4fe02e",
+          "record_sha256": "a8cd1da63c22eb6fb7467bdd41dba83b6ee229bc78061b16453d421d3e196d59",
+          "updated_at": "2026-09-27T10:18:33.257526Z",
+          "uri": "gmk://objects/SCN_000004/v1",
+          "version": 1
+        }
+      }
+    },
+    "SCN_000005": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "SCN_000005",
+      "object_type": "SCENE",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.257689Z",
+          "decision_sha256": "899733268664c1b1125ba579b74273abf5b3a6bbe2b8e02a8d0345d4dc18adae",
+          "record_sha256": "c426f15c18fed35bcc0d27b9314358e5eb0c66fc6547e3fb064dcad12ae69fc5",
+          "updated_at": "2026-09-27T10:18:33.257689Z",
+          "uri": "gmk://objects/SCN_000005/v1",
+          "version": 1
+        }
+      }
+    },
+    "SCN_000006": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "SCN_000006",
+      "object_type": "SCENE",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.257846Z",
+          "decision_sha256": "8181cbfde05667b9f34e0d0716ce627a0322804157757f9ded626f446302813a",
+          "record_sha256": "5bfc81ef070109828a98789931b4fdf3c6963ae2d05a86739426658d4659c5b7",
+          "updated_at": "2026-09-27T10:18:33.257846Z",
+          "uri": "gmk://objects/SCN_000006/v1",
+          "version": 1
+        }
+      }
+    },
+    "SCN_000007": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "SCN_000007",
+      "object_type": "SCENE",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T10:18:33.258000Z",
+          "decision_sha256": "c21c6986965a7cf27be1b5777cf60ecde2fa234faa08fbae797059dbb7f19e16",
+          "record_sha256": "03ea0c7b54d0b119dceb0fdbc7603dacccebf9e28185e725f3689c0871f1ee2c",
+          "updated_at": "2026-09-27T10:18:33.258000Z",
+          "uri": "gmk://objects/SCN_000007/v1",
+          "version": 1
+        }
+      }
+    }
+  },
+  "registry_id": "NARRATIVE_REGISTRY",
+  "sha256": "2fbdea4d2b279f59ba1d65e535bef429ffd8e91b944935d6b66dcee78ea079fe",
+  "version": 3
+}

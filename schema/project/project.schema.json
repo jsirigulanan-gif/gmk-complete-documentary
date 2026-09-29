@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/project",
+  "title": "GMK Project",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "PROJECT"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^PROJECT_[A-Z0-9_-]+$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "x-gmk-field-class": "AUTHORITATIVE"
+        },
+        "working_title": {
+          "type": "string",
+          "minLength": 1,
+          "x-gmk-field-class": "AUTHORITATIVE"
+        },
+        "language": {
+          "type": "object",
+          "required": [
+            "narration"
+          ],
+          "properties": {
+            "narration": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 35
+            }
+          },
+          "additionalProperties": false,
+          "x-gmk-field-class": "AUTHORITATIVE"
+        },
+        "target": {
+          "type": "object",
+          "required": [
+            "format",
+            "runtime_minutes"
+          ],
+          "properties": {
+            "format": {
+              "type": "string",
+              "enum": [
+                "LONGFORM_DOCUMENTARY",
+                "VERTICAL_SLICE_PILOT"
+              ]
+            },
+            "runtime_minutes": {
+              "type": "object",
+              "required": [
+                "min",
+                "max"
+              ],
+              "properties": {
+                "min": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "max": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false,
+          "x-gmk-field-class": "AUTHORITATIVE"
+        },
+        "template": {
+          "type": "object",
+          "required": [
+            "id",
+            "version"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^GMK_GOLDEN_TEMPLATE[A-Z0-9_-]*$"
+            },
+            "version": {
+              "$ref": "gmk://schema/v1/reference#/$defs/SemVer"
+            }
+          },
+          "additionalProperties": false,
+          "x-gmk-field-class": "AUTHORITATIVE"
+        }
+      },
+      "required": [
+        "title",
+        "language",
+        "target"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

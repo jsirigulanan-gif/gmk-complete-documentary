@@ -1,0 +1,819 @@
+[
+  {
+    "blocker_refs": [],
+    "evaluated_at": "2026-09-27T08:40:33.053790Z",
+    "evaluation_id": "GE_000002",
+    "evidence": [
+      {
+        "artifact_id": "RESEARCH_PACK_000001",
+        "artifact_type": "RESEARCH_PACK",
+        "sha256": "a6a28e9af9646c19c5eea4605575c798bd7ab9d9f933e5a9c6dc5aab33ab5e46",
+        "version": 1
+      }
+    ],
+    "gate_id": "BOOTSTRAP",
+    "policy_ref": {
+      "config_id": "GMK_GATES_POLICY",
+      "sha256": "93c765a36019dab67ddd7bd846933e366fc653e78afd6434fe8424da0b4731d7",
+      "version": "1.0.0"
+    },
+    "requirement_results": [
+      {
+        "code": "OK",
+        "evidence": [
+          {
+            "artifact_id": "RESEARCH_PACK_000001",
+            "artifact_type": "RESEARCH_PACK",
+            "sha256": "a6a28e9af9646c19c5eea4605575c798bd7ab9d9f933e5a9c6dc5aab33ab5e46",
+            "version": 1
+          }
+        ],
+        "message": "RESEARCH_PACK_PRESENT satisfied.",
+        "non_overridable": false,
+        "requirement_id": "RESEARCH_PACK_PRESENT",
+        "result": "PASS",
+        "warning_codes": []
+      }
+    ],
+    "result": "PASS",
+    "warning_codes": []
+  },
+  {
+    "blocker_refs": [],
+    "evaluated_at": "2026-09-27T09:39:47.166475Z",
+    "evaluation_id": "GE_000003",
+    "evidence": [
+      {
+        "id": "SRC_000001",
+        "version": 1
+      },
+      {
+        "id": "SRC_000002",
+        "version": 1
+      },
+      {
+        "id": "SRC_000003",
+        "version": 1
+      },
+      {
+        "id": "SRC_000004",
+        "version": 1
+      },
+      {
+        "id": "SRC_000005",
+        "version": 1
+      },
+      {
+        "id": "SRC_000006",
+        "version": 1
+      },
+      {
+        "id": "SRC_000007",
+        "version": 1
+      },
+      {
+        "id": "SRC_000008",
+        "version": 1
+      },
+      {
+        "id": "SRC_000009",
+        "version": 1
+      },
+      {
+        "id": "SRC_000010",
+        "version": 1
+      },
+      {
+        "id": "SRC_000011",
+        "version": 1
+      },
+      {
+        "id": "SRC_000012",
+        "version": 1
+      },
+      {
+        "id": "SRC_000013",
+        "version": 1
+      },
+      {
+        "id": "SRC_000014",
+        "version": 1
+      },
+      {
+        "id": "SRC_000015",
+        "version": 1
+      },
+      {
+        "id": "SRC_000016",
+        "version": 1
+      },
+      {
+        "id": "SRC_000017",
+        "version": 1
+      },
+      {
+        "id": "SRC_000018",
+        "version": 1
+      },
+      {
+        "id": "SRC_000019",
+        "version": 1
+      },
+      {
+        "id": "SRC_000020",
+        "version": 1
+      },
+      {
+        "id": "SRC_000021",
+        "version": 1
+      },
+      {
+        "id": "SRC_000022",
+        "version": 1
+      },
+      {
+        "id": "SRC_000023",
+        "version": 1
+      },
+      {
+        "id": "CLM_000001",
+        "version": 2
+      },
+      {
+        "id": "CLM_000002",
+        "version": 2
+      },
+      {
+        "id": "CLM_000003",
+        "version": 2
+      },
+      {
+        "id": "CLM_000004",
+        "version": 2
+      },
+      {
+        "id": "CLM_000005",
+        "version": 2
+      },
+      {
+        "id": "CLM_000006",
+        "version": 2
+      },
+      {
+        "id": "CLM_000007",
+        "version": 2
+      },
+      {
+        "id": "CLM_000008",
+        "version": 2
+      },
+      {
+        "id": "CLM_000009",
+        "version": 2
+      },
+      {
+        "id": "CLM_000010",
+        "version": 2
+      },
+      {
+        "id": "CLM_000011",
+        "version": 2
+      },
+      {
+        "id": "CLM_000012",
+        "version": 2
+      },
+      {
+        "id": "CLM_000013",
+        "version": 2
+      },
+      {
+        "id": "CLM_000014",
+        "version": 1
+      },
+      {
+        "id": "EVD_000001",
+        "version": 1
+      },
+      {
+        "id": "EVD_000002",
+        "version": 1
+      },
+      {
+        "id": "EVD_000003",
+        "version": 1
+      },
+      {
+        "id": "EVD_000004",
+        "version": 1
+      },
+      {
+        "id": "EVD_000005",
+        "version": 1
+      },
+      {
+        "id": "EVD_000006",
+        "version": 1
+      },
+      {
+        "id": "EVD_000007",
+        "version": 1
+      },
+      {
+        "id": "EVD_000008",
+        "version": 1
+      },
+      {
+        "id": "EVD_000009",
+        "version": 1
+      },
+      {
+        "id": "EVD_000010",
+        "version": 1
+      },
+      {
+        "id": "EVD_000011",
+        "version": 1
+      },
+      {
+        "id": "EVD_000012",
+        "version": 1
+      },
+      {
+        "id": "EVD_000013",
+        "version": 1
+      },
+      {
+        "id": "EVD_000014",
+        "version": 1
+      },
+      {
+        "id": "EVD_000015",
+        "version": 1
+      },
+      {
+        "id": "EVD_000016",
+        "version": 1
+      },
+      {
+        "id": "EVD_000017",
+        "version": 1
+      },
+      {
+        "id": "EVD_000018",
+        "version": 1
+      },
+      {
+        "id": "EVD_000019",
+        "version": 1
+      },
+      {
+        "id": "EVD_000020",
+        "version": 1
+      },
+      {
+        "id": "EVD_000021",
+        "version": 1
+      },
+      {
+        "id": "EVD_000022",
+        "version": 1
+      },
+      {
+        "id": "EVD_000023",
+        "version": 1
+      },
+      {
+        "id": "EVD_000024",
+        "version": 1
+      },
+      {
+        "id": "EVD_000025",
+        "version": 1
+      },
+      {
+        "id": "EVD_000026",
+        "version": 1
+      },
+      {
+        "id": "EVD_000027",
+        "version": 1
+      },
+      {
+        "id": "EVD_000028",
+        "version": 1
+      },
+      {
+        "id": "EVD_000029",
+        "version": 1
+      },
+      {
+        "id": "EVD_000030",
+        "version": 1
+      },
+      {
+        "id": "EVD_000031",
+        "version": 1
+      },
+      {
+        "id": "EVD_000032",
+        "version": 1
+      },
+      {
+        "id": "EVD_000033",
+        "version": 1
+      },
+      {
+        "id": "EVD_000034",
+        "version": 1
+      },
+      {
+        "id": "EVD_000035",
+        "version": 1
+      }
+    ],
+    "gate_id": "RESEARCH_AUDIT",
+    "policy_ref": {
+      "config_id": "GMK_GATES_POLICY",
+      "sha256": "93c765a36019dab67ddd7bd846933e366fc653e78afd6434fe8424da0b4731d7",
+      "version": "1.0.0"
+    },
+    "requirement_results": [
+      {
+        "code": "OK",
+        "evidence": [
+          {
+            "id": "SRC_000001",
+            "version": 1
+          },
+          {
+            "id": "SRC_000002",
+            "version": 1
+          },
+          {
+            "id": "SRC_000003",
+            "version": 1
+          },
+          {
+            "id": "SRC_000004",
+            "version": 1
+          },
+          {
+            "id": "SRC_000005",
+            "version": 1
+          },
+          {
+            "id": "SRC_000006",
+            "version": 1
+          },
+          {
+            "id": "SRC_000007",
+            "version": 1
+          },
+          {
+            "id": "SRC_000008",
+            "version": 1
+          },
+          {
+            "id": "SRC_000009",
+            "version": 1
+          },
+          {
+            "id": "SRC_000010",
+            "version": 1
+          },
+          {
+            "id": "SRC_000011",
+            "version": 1
+          },
+          {
+            "id": "SRC_000012",
+            "version": 1
+          },
+          {
+            "id": "SRC_000013",
+            "version": 1
+          },
+          {
+            "id": "SRC_000014",
+            "version": 1
+          },
+          {
+            "id": "SRC_000015",
+            "version": 1
+          },
+          {
+            "id": "SRC_000016",
+            "version": 1
+          },
+          {
+            "id": "SRC_000017",
+            "version": 1
+          },
+          {
+            "id": "SRC_000018",
+            "version": 1
+          },
+          {
+            "id": "SRC_000019",
+            "version": 1
+          },
+          {
+            "id": "SRC_000020",
+            "version": 1
+          },
+          {
+            "id": "SRC_000021",
+            "version": 1
+          },
+          {
+            "id": "SRC_000022",
+            "version": 1
+          },
+          {
+            "id": "SRC_000023",
+            "version": 1
+          }
+        ],
+        "message": "SOURCE_PRESENT satisfied.",
+        "non_overridable": false,
+        "requirement_id": "SOURCE_PRESENT",
+        "result": "PASS",
+        "warning_codes": []
+      },
+      {
+        "code": "OK",
+        "evidence": [
+          {
+            "id": "CLM_000001",
+            "version": 2
+          },
+          {
+            "id": "CLM_000002",
+            "version": 2
+          },
+          {
+            "id": "CLM_000003",
+            "version": 2
+          },
+          {
+            "id": "CLM_000004",
+            "version": 2
+          },
+          {
+            "id": "CLM_000005",
+            "version": 2
+          },
+          {
+            "id": "CLM_000006",
+            "version": 2
+          },
+          {
+            "id": "CLM_000007",
+            "version": 2
+          },
+          {
+            "id": "CLM_000008",
+            "version": 2
+          },
+          {
+            "id": "CLM_000009",
+            "version": 2
+          },
+          {
+            "id": "CLM_000010",
+            "version": 2
+          },
+          {
+            "id": "CLM_000011",
+            "version": 2
+          },
+          {
+            "id": "CLM_000012",
+            "version": 2
+          },
+          {
+            "id": "CLM_000013",
+            "version": 2
+          },
+          {
+            "id": "CLM_000014",
+            "version": 1
+          }
+        ],
+        "message": "CLAIM_PRESENT satisfied.",
+        "non_overridable": false,
+        "requirement_id": "CLAIM_PRESENT",
+        "result": "PASS",
+        "warning_codes": []
+      },
+      {
+        "code": "OK",
+        "evidence": [
+          {
+            "id": "EVD_000001",
+            "version": 1
+          },
+          {
+            "id": "EVD_000002",
+            "version": 1
+          },
+          {
+            "id": "EVD_000003",
+            "version": 1
+          },
+          {
+            "id": "EVD_000004",
+            "version": 1
+          },
+          {
+            "id": "EVD_000005",
+            "version": 1
+          },
+          {
+            "id": "EVD_000006",
+            "version": 1
+          },
+          {
+            "id": "EVD_000007",
+            "version": 1
+          },
+          {
+            "id": "EVD_000008",
+            "version": 1
+          },
+          {
+            "id": "EVD_000009",
+            "version": 1
+          },
+          {
+            "id": "EVD_000010",
+            "version": 1
+          },
+          {
+            "id": "EVD_000011",
+            "version": 1
+          },
+          {
+            "id": "EVD_000012",
+            "version": 1
+          },
+          {
+            "id": "EVD_000013",
+            "version": 1
+          },
+          {
+            "id": "EVD_000014",
+            "version": 1
+          },
+          {
+            "id": "EVD_000015",
+            "version": 1
+          },
+          {
+            "id": "EVD_000016",
+            "version": 1
+          },
+          {
+            "id": "EVD_000017",
+            "version": 1
+          },
+          {
+            "id": "EVD_000018",
+            "version": 1
+          },
+          {
+            "id": "EVD_000019",
+            "version": 1
+          },
+          {
+            "id": "EVD_000020",
+            "version": 1
+          },
+          {
+            "id": "EVD_000021",
+            "version": 1
+          },
+          {
+            "id": "EVD_000022",
+            "version": 1
+          },
+          {
+            "id": "EVD_000023",
+            "version": 1
+          },
+          {
+            "id": "EVD_000024",
+            "version": 1
+          },
+          {
+            "id": "EVD_000025",
+            "version": 1
+          },
+          {
+            "id": "EVD_000026",
+            "version": 1
+          },
+          {
+            "id": "EVD_000027",
+            "version": 1
+          },
+          {
+            "id": "EVD_000028",
+            "version": 1
+          },
+          {
+            "id": "EVD_000029",
+            "version": 1
+          },
+          {
+            "id": "EVD_000030",
+            "version": 1
+          },
+          {
+            "id": "EVD_000031",
+            "version": 1
+          },
+          {
+            "id": "EVD_000032",
+            "version": 1
+          },
+          {
+            "id": "EVD_000033",
+            "version": 1
+          },
+          {
+            "id": "EVD_000034",
+            "version": 1
+          },
+          {
+            "id": "EVD_000035",
+            "version": 1
+          }
+        ],
+        "message": "EVIDENCE_PRESENT satisfied.",
+        "non_overridable": false,
+        "requirement_id": "EVIDENCE_PRESENT",
+        "result": "PASS",
+        "warning_codes": []
+      },
+      {
+        "code": "OK",
+        "evidence": [],
+        "message": "NO_OPEN_CRITICAL_CONTRADICTION satisfied.",
+        "non_overridable": true,
+        "requirement_id": "NO_OPEN_CRITICAL_CONTRADICTION",
+        "result": "PASS",
+        "warning_codes": []
+      }
+    ],
+    "result": "PASS",
+    "warning_codes": []
+  },
+  {
+    "blocker_refs": [],
+    "evaluated_at": "2026-09-27T10:18:33.499565Z",
+    "evaluation_id": "GE_000003",
+    "evidence": [
+      {
+        "artifact_id": "NARRATIVE_SPINE_000001",
+        "artifact_type": "NARRATIVE_SPINE",
+        "sha256": "47a54f17b1a9d53c999dc69fe87676b575ae4b41f0af7442d4057823db63712d",
+        "version": 1
+      }
+    ],
+    "gate_id": "ROUGH_NARRATIVE",
+    "policy_ref": {
+      "config_id": "GMK_GATES_POLICY",
+      "sha256": "93c765a36019dab67ddd7bd846933e366fc653e78afd6434fe8424da0b4731d7",
+      "version": "1.0.0"
+    },
+    "requirement_results": [
+      {
+        "code": "OK",
+        "evidence": [
+          {
+            "artifact_id": "NARRATIVE_SPINE_000001",
+            "artifact_type": "NARRATIVE_SPINE",
+            "sha256": "47a54f17b1a9d53c999dc69fe87676b575ae4b41f0af7442d4057823db63712d",
+            "version": 1
+          }
+        ],
+        "message": "NARRATIVE_SPINE_PRESENT satisfied.",
+        "non_overridable": false,
+        "requirement_id": "NARRATIVE_SPINE_PRESENT",
+        "result": "PASS",
+        "warning_codes": []
+      }
+    ],
+    "result": "PASS",
+    "warning_codes": []
+  },
+  {
+    "blocker_refs": [],
+    "evaluated_at": "2026-09-27T10:48:17.495667Z",
+    "evaluation_id": "GE_000003",
+    "evidence": [
+      {
+        "id": "NB_000001",
+        "version": 3
+      },
+      {
+        "id": "NB_000002",
+        "version": 2
+      },
+      {
+        "id": "NB_000003",
+        "version": 2
+      },
+      {
+        "id": "NB_000004",
+        "version": 3
+      },
+      {
+        "id": "NB_000005",
+        "version": 2
+      },
+      {
+        "id": "NB_000006",
+        "version": 3
+      },
+      {
+        "id": "NB_000007",
+        "version": 2
+      },
+      {
+        "id": "NB_000008",
+        "version": 2
+      },
+      {
+        "id": "NB_000009",
+        "version": 2
+      },
+      {
+        "id": "NB_000010",
+        "version": 3
+      }
+    ],
+    "gate_id": "VISUAL_REQUIREMENTS",
+    "policy_ref": {
+      "config_id": "GMK_GATES_POLICY",
+      "sha256": "93c765a36019dab67ddd7bd846933e366fc653e78afd6434fe8424da0b4731d7",
+      "version": "1.0.0"
+    },
+    "requirement_results": [
+      {
+        "code": "OK",
+        "evidence": [
+          {
+            "id": "NB_000001",
+            "version": 3
+          },
+          {
+            "id": "NB_000002",
+            "version": 2
+          },
+          {
+            "id": "NB_000003",
+            "version": 2
+          },
+          {
+            "id": "NB_000004",
+            "version": 3
+          },
+          {
+            "id": "NB_000005",
+            "version": 2
+          },
+          {
+            "id": "NB_000006",
+            "version": 3
+          },
+          {
+            "id": "NB_000007",
+            "version": 2
+          },
+          {
+            "id": "NB_000008",
+            "version": 2
+          },
+          {
+            "id": "NB_000009",
+            "version": 2
+          },
+          {
+            "id": "NB_000010",
+            "version": 3
+          }
+        ],
+        "message": "BEAT_VISUAL_REQUIREMENTS_READY satisfied.",
+        "non_overridable": false,
+        "requirement_id": "BEAT_VISUAL_REQUIREMENTS_READY",
+        "result": "PASS",
+        "warning_codes": []
+      }
+    ],
+    "result": "PASS",
+    "warning_codes": []
+  }
+]

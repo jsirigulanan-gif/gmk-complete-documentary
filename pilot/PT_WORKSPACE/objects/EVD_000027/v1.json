@@ -1,0 +1,47 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "content_summary": "Prima Games reported the same Lance McDonald finding that Lisa attaches to the player’s back after the flashlight. This is derivative of the same technical observation and is not an independent corroboration.",
+  "created_at": "2026-09-27T09:39:46.849856Z",
+  "dependencies": [
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "SRC_000015",
+        "version": 1
+      }
+    }
+  ],
+  "evidence_kind": "DOCUMENT_EXCERPT",
+  "extensions": {
+    "research_audit": {
+      "batch_id": "PT_RESEARCH_AUDIT_001",
+      "evidence_key": "E_LISA_PRIMA",
+      "source_key": "LISA_PRIMA"
+    }
+  },
+  "human_constraints": [],
+  "id": "EVD_000027",
+  "locator": {
+    "type": "FULL_SOURCE"
+  },
+  "lock_state": "UNLOCKED",
+  "object_type": "EVIDENCE",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/evidence",
+    "schema_version": "1.0.0"
+  },
+  "source_ref": {
+    "id": "SRC_000015",
+    "version": 1
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "updated_at": "2026-09-27T09:39:46.849856Z",
+  "version": 1
+}

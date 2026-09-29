@@ -1,0 +1,100 @@
+{
+  "artifact_id": "DEP_IMPACT_TX_000003_008",
+  "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+  "blast_radius": "LOCAL",
+  "change_set": {
+    "changed_paths": [
+      "/claim_text",
+      "/claim_type",
+      "/evidence_links",
+      "/extensions/research_audit",
+      "/verification_state"
+    ],
+    "impact_tags": [
+      "FACTUAL"
+    ],
+    "new_version": 2,
+    "object_id": "CLM_000008",
+    "previous_version": 1
+  },
+  "created_at": "2026-09-27T09:39:46.922447Z",
+  "extensions": {},
+  "frozen_stops": [],
+  "impacts": [
+    {
+      "blast_radius": "LOCAL",
+      "depth": 1,
+      "disposition": "STALE",
+      "immediate_dependency": {
+        "kind": "OBJECT",
+        "ref": {
+          "id": "CLM_000008",
+          "version": 1
+        }
+      },
+      "message": "OBJ:GAP_000004@1 depends on OBJ:CLM_000008@1 via CONSTRAINS; ACTIVE root changed OBJ:CLM_000008@1 -> OBJ:CLM_000008@2 (FACTUAL).",
+      "node": {
+        "kind": "OBJECT",
+        "ref": {
+          "id": "GAP_000004",
+          "version": 1
+        }
+      },
+      "path": "/blocked_targets/7",
+      "reason_code": "DEPENDENCY_STALE",
+      "relation": "CONSTRAINS",
+      "root_new": {
+        "kind": "OBJECT",
+        "ref": {
+          "id": "CLM_000008",
+          "version": 2
+        }
+      },
+      "root_previous": {
+        "kind": "OBJECT",
+        "ref": {
+          "id": "CLM_000008",
+          "version": 1
+        }
+      }
+    }
+  ],
+  "origin_refs": [
+    {
+      "id": "CLM_000008",
+      "version": 1
+    },
+    {
+      "id": "CLM_000008",
+      "version": 2
+    }
+  ],
+  "policy_ref": {
+    "config_id": "GMK_DEPENDENCY_POLICY",
+    "sha256": "4b368d0e008701f5fca9bfe73b7f38fb711ec1d77bc282a03be54b2d2d0ec2ee",
+    "version": "1.0.0"
+  },
+  "root_change": {
+    "new": {
+      "kind": "OBJECT",
+      "ref": {
+        "id": "CLM_000008",
+        "version": 2
+      }
+    },
+    "previous": {
+      "kind": "OBJECT",
+      "ref": {
+        "id": "CLM_000008",
+        "version": 1
+      }
+    }
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+    "schema_version": "1.0.0"
+  },
+  "sha256": "8f1f770757052f81dbbdf9cd918ffa2534f95b9e6418c64f0742bc48c2b21f96",
+  "uri": "gmk://artifacts/DEP_IMPACT_TX_000003_008/v1",
+  "version": 1
+}

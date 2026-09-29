@@ -1,0 +1,22 @@
+{
+  "loaded_artifacts": 24,
+  "loaded_objects": 119,
+  "manifest_sha256": "fe81141a27aba59d34893ae710c9753a4dbc09f22a5f815174670e3569aa8082",
+  "manifest_version": 7,
+  "next_legal_action": {
+    "action": "SATISFY_GATE_REQUIREMENTS",
+    "blockers": [],
+    "gate_ids": [
+      "VISUAL_REQUIREMENTS"
+    ],
+    "message": "Current exact evidence does not yet satisfy the next transition.",
+    "missing_requirements": [
+      "VISUAL_REQUIREMENTS:BEAT_VISUAL_REQUIREMENTS_READY:ACTIVE_OBJECT_PREDICATE_FAILED"
+    ],
+    "permission_class": "AI_WITH_RULES",
+    "project_state": "ROUGH_NARRATIVE_READY",
+    "target_state": "VISUAL_REQUIREMENTS_READY"
+  },
+  "project_state": "ROUGH_NARRATIVE_READY",
+  "safety_mode": "NORMAL"
+}

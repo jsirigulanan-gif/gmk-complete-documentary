@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/design-dna",
+  "title": "GMK Design DNA",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "DESIGN_DNA"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^DNA_[A-Z0-9_-]+$"
+        },
+        "project_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "base_design": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ConfigRef"
+        },
+        "design_intent": {
+          "type": "object",
+          "required": [
+            "visual_thesis",
+            "audience_feeling",
+            "clarity_principle"
+          ],
+          "properties": {
+            "visual_thesis": {
+              "type": "string",
+              "minLength": 1
+            },
+            "audience_feeling": {
+              "type": "string",
+              "minLength": 1
+            },
+            "clarity_principle": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "rules": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "rule_id",
+              "domain",
+              "action",
+              "statement",
+              "rationale"
+            ],
+            "properties": {
+              "rule_id": {
+                "type": "string",
+                "pattern": "^DNR_[A-Z0-9_-]+$"
+              },
+              "domain": {
+                "$ref": "gmk://schema/v1/design-common#/$defs/DesignDomain"
+              },
+              "action": {
+                "$ref": "gmk://schema/v1/design-common#/$defs/DesignRuleAction"
+              },
+              "statement": {
+                "type": "string",
+                "minLength": 1
+              },
+              "rationale": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reference_refs": {
+                "type": "array",
+                "items": {
+                  "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+                  "x-gmk-dependency-relation": "DERIVED_FROM"
+                }
+              },
+              "human_decision_ref": {
+                "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+                "x-gmk-dependency-relation": "CONSTRAINS"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "references": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+            "x-gmk-dependency-relation": "DERIVED_FROM"
+          }
+        },
+        "token_overrides": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "graphic_policy": {
+          "type": "object",
+          "required": [
+            "default_decision"
+          ],
+          "properties": {
+            "default_decision": {
+              "type": "string",
+              "enum": [
+                "REQUIRED",
+                "OPTIONAL",
+                "DISCOURAGED",
+                "NO_GRAPHICS"
+              ]
+            },
+            "graphic_allowed_when": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "graphic_not_justified_by": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "evidence_policy": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "motion_policy": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "transition_policy": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "three_d_policy": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "project_ref",
+        "base_design",
+        "design_intent",
+        "rules",
+        "references",
+        "token_overrides",
+        "graphic_policy"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/tts-ready-script",
+  "title": "TTS_READY_SCRIPT",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "TTS_READY_SCRIPT"
+        },
+        "source_script": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "FACT_SOURCE"
+        },
+        "pronunciation_dictionary": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "voice_profile_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "blocks": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "source_script",
+        "pronunciation_dictionary",
+        "voice_profile_ref",
+        "blocks"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

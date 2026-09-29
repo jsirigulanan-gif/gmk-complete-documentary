@@ -1,0 +1,22 @@
+{
+  "loaded_artifacts": 44,
+  "loaded_objects": 190,
+  "manifest_sha256": "f68ec28ddb9419cf1d7197a758bd3f15e22eae6f573328447105f0c9b8fa5fa8",
+  "manifest_version": 10,
+  "next_legal_action": {
+    "action": "SATISFY_GATE_REQUIREMENTS",
+    "blockers": [],
+    "gate_ids": [
+      "ASSET_RECON"
+    ],
+    "message": "Current exact evidence does not yet satisfy the next transition.",
+    "missing_requirements": [
+      "ASSET_RECON:SEARCH_COMPLETION_CERTIFICATE:QA_REPORT_MISSING"
+    ],
+    "permission_class": "AI_WITH_RULES",
+    "project_state": "ASSET_RECON",
+    "target_state": "ASSET_CATALOG_READY"
+  },
+  "project_state": "ASSET_RECON",
+  "safety_mode": "NORMAL"
+}

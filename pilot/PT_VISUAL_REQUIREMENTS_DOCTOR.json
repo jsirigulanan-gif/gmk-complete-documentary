@@ -1,0 +1,38 @@
+{
+  "checks": [
+    {
+      "check": "schema_registry",
+      "detail": {
+        "missing": [],
+        "registered": 75
+      },
+      "ok": true
+    },
+    {
+      "check": "policy_bundle",
+      "detail": {
+        "config_id": "GMK_POLICY_BUNDLE",
+        "sha256": "e2fd5c293f8a4c2b20adf68589224b791c6611a06b20db786a786ee465d47d50",
+        "version": "1.0.0"
+      },
+      "ok": true
+    },
+    {
+      "check": "workspace_pointer",
+      "detail": "pilot/PT_WORKSPACE/CURRENT_MANIFEST.json",
+      "ok": true
+    },
+    {
+      "check": "cold_start",
+      "detail": {
+        "loaded_artifacts": 34,
+        "loaded_objects": 129,
+        "manifest_version": 9,
+        "project_state": "VISUAL_REQUIREMENTS_READY",
+        "safety_mode": "NORMAL"
+      },
+      "ok": true
+    }
+  ],
+  "ok": true
+}

@@ -1,0 +1,60 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "created_at": "2026-09-27T11:22:06.540284Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "NB_000005",
+        "version": 2
+      }
+    }
+  ],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "beat_key": "BEAT_DELIST",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318",
+      "search_key": "DELIST_STILL"
+    }
+  },
+  "human_constraints": [],
+  "id": "SRCH_000010",
+  "language": "en",
+  "lock_state": "UNLOCKED",
+  "object_type": "SEARCH",
+  "priority": "CRITICAL",
+  "provider": {
+    "type": "WEB_SEARCH"
+  },
+  "query": "P.T. April 29 distribution end official site screenshot 2015",
+  "query_family": "ARCHIVE_STILL",
+  "requested_source_families": [
+    "STILL_ARCHIVE",
+    "NEWS_ARCHIVE"
+  ],
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/search",
+    "schema_version": "1.0.0"
+  },
+  "search_pass": "ARCHIVE_STILL_DOCUMENT",
+  "search_round": 1,
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "target_beat_ref": {
+    "id": "NB_000005",
+    "version": 2
+  },
+  "trigger": {
+    "type": "INITIAL"
+  },
+  "updated_at": "2026-09-27T11:22:06.540284Z",
+  "version": 1,
+  "workflow_state": "COMPLETED"
+}

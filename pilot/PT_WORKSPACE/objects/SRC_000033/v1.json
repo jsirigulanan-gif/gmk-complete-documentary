@@ -1,0 +1,49 @@
+{
+  "accessed_at": "2026-09-27T11:22:06.538300Z",
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "author": "",
+  "authority_class": "COMMUNITY_PRIMARY_MATERIAL",
+  "availability": {
+    "state": "AVAILABLE"
+  },
+  "created_at": "2026-09-27T11:22:06.538313Z",
+  "dependencies": [],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318",
+      "source_key": "TGA_YONGYEA_YT",
+      "source_verified": true
+    }
+  },
+  "human_constraints": [],
+  "id": "SRC_000033",
+  "independence": {
+    "group_id": "SRCGRP_TGA_2015_KEIGHLEY_VIDEO",
+    "relationship": "REUPLOAD"
+  },
+  "language": "en",
+  "lock_state": "UNLOCKED",
+  "notes": "Video reproduction of the public TGA statement; exact statement range inspected as candidate.",
+  "object_type": "SOURCE",
+  "platform": "YouTube",
+  "published_at": "2015-12-03",
+  "publisher": "YongYea",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/source",
+    "schema_version": "1.0.0"
+  },
+  "source_type": "VIDEO",
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "Geoff Keighley Says Hideo Kojima Wasn't Allowed to Come to The Game Awards 2015",
+  "updated_at": "2026-09-27T11:22:06.538313Z",
+  "url": "https://www.youtube.com/watch?v=PKl5rYdwM6c",
+  "version": 1
+}

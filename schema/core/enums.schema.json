@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/enums",
+  "title": "GMK Shared Enums",
+  "$defs": {
+    "ObjectType": {
+      "type": "string",
+      "enum": [
+        "PROJECT",
+        "ACT",
+        "SCENE",
+        "NARRATION_BEAT",
+        "SOURCE",
+        "CLAIM",
+        "EVIDENCE",
+        "CONTRADICTION",
+        "RESEARCH_GAP",
+        "SEARCH",
+        "SEARCH_RESULT",
+        "ASSET",
+        "SEGMENT",
+        "VOICE_PROFILE",
+        "VOICE_BLOCK",
+        "DESIGN_DNA",
+        "SHOT",
+        "LAYER",
+        "CUE",
+        "APPROVAL",
+        "EDIT_REQUEST",
+        "REVISION",
+        "QA_ISSUE",
+        "QA_REPORT",
+        "RENDER_JOB",
+        "RENDER_MANIFEST",
+        "CHECKPOINT",
+        "OPERATION",
+        "INCIDENT",
+        "RELEASE"
+      ]
+    },
+    "ObjectStatus": {
+      "type": "string",
+      "enum": [
+        "CURRENT",
+        "STALE",
+        "BLOCKED",
+        "SUPERSEDED",
+        "ARCHIVED",
+        "REJECTED"
+      ]
+    },
+    "LockState": {
+      "type": "string",
+      "enum": [
+        "UNLOCKED",
+        "SOFT_LOCK",
+        "HUMAN_LOCKED",
+        "SYSTEM_FROZEN"
+      ]
+    },
+    "DependencyRelation": {
+      "type": "string",
+      "enum": [
+        "FACT_SOURCE",
+        "EVIDENCE_SOURCE",
+        "VISUAL_SOURCE",
+        "TIMING_SOURCE",
+        "DESIGN_SOURCE",
+        "RENDER_INPUT",
+        "DERIVED_FROM",
+        "APPROVES",
+        "SUPERSEDES",
+        "CONSTRAINS"
+      ]
+    },
+    "ApprovalSummaryState": {
+      "type": "string",
+      "enum": [
+        "NOT_REQUIRED",
+        "REQUIRED",
+        "PARTIAL",
+        "SATISFIED",
+        "INVALIDATED"
+      ]
+    },
+    "ValidatorSeverity": {
+      "type": "string",
+      "enum": [
+        "INFO",
+        "WARNING",
+        "ERROR",
+        "CRITICAL"
+      ]
+    },
+    "QASeverity": {
+      "type": "string",
+      "enum": [
+        "INFO",
+        "MINOR",
+        "MAJOR",
+        "CRITICAL"
+      ]
+    },
+    "GateStatus": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "WARN",
+        "FAIL"
+      ]
+    },
+    "MatchType": {
+      "type": "string",
+      "enum": [
+        "DIRECT",
+        "SUPPORTING",
+        "EXPLAINER",
+        "MISMATCH"
+      ]
+    },
+    "ReviewClass": {
+      "type": "string",
+      "enum": [
+        "SIMPLE",
+        "STANDARD",
+        "CRITICAL"
+      ]
+    },
+    "RightsStatus": {
+      "type": "string",
+      "enum": [
+        "CLEAR",
+        "COMMENTARY_REVIEW",
+        "RESTRICTED",
+        "UNKNOWN",
+        "DO_NOT_USE"
+      ]
+    },
+    "CostClass": {
+      "type": "string",
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "VERY_HIGH"
+      ]
+    },
+    "EnvironmentMode": {
+      "type": "string",
+      "enum": [
+        "DEVELOPMENT",
+        "PRODUCTION",
+        "READ_ONLY",
+        "SAFE_MODE"
+      ]
+    },
+    "GateId": {
+      "type": "string",
+      "enum": [
+        "BOOTSTRAP",
+        "RESEARCH_AUDIT",
+        "ROUGH_NARRATIVE",
+        "VISUAL_REQUIREMENTS",
+        "ASSET_RECON",
+        "VISUAL_COVERAGE",
+        "SCRIPT",
+        "TTS",
+        "VOICE",
+        "DESIGN_DNA",
+        "SCENE_PLAN",
+        "SHOT_PLAN",
+        "HTML_REVIEW",
+        "PRODUCTION_LOCK",
+        "RENDER",
+        "SHOT_QA",
+        "SCENE_QA",
+        "FULL_FILM_QA",
+        "DELIVERY"
+      ]
+    },
+    "ProjectState": {
+      "type": "string",
+      "enum": [
+        "BOOTSTRAPPED",
+        "RESEARCH_INTAKE",
+        "RESEARCH_AUDITED",
+        "ROUGH_NARRATIVE_READY",
+        "VISUAL_REQUIREMENTS_READY",
+        "ASSET_RECON",
+        "ASSET_CATALOG_READY",
+        "VISUAL_COVERAGE_READY",
+        "SCRIPT_READY",
+        "TTS_READY",
+        "VOICE_LOCKED",
+        "DESIGN_DNA_APPROVED",
+        "SCENE_PLAN_READY",
+        "SHOT_PLAN_READY",
+        "HTML_REVIEW",
+        "HTML_APPROVED",
+        "PRODUCTION_RENDER",
+        "SHOT_QA_PASSED",
+        "SCENE_QA_PASSED",
+        "FULL_FILM_QA_PASSED",
+        "DELIVERY_READY",
+        "PROJECT_COMPLETED"
+      ]
+    }
+  }
+}

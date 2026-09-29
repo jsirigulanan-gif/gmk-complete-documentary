@@ -1,0 +1,60 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "created_at": "2026-09-27T11:22:06.541161Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "NB_000008",
+        "version": 2
+      }
+    }
+  ],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "beat_key": "BEAT_TGA",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318",
+      "search_key": "TGA_VIDEO"
+    }
+  },
+  "human_constraints": [],
+  "id": "SRCH_000015",
+  "language": "en",
+  "lock_state": "UNLOCKED",
+  "object_type": "SEARCH",
+  "priority": "CRITICAL",
+  "provider": {
+    "type": "VIDEO_SEARCH"
+  },
+  "query": "Geoff Keighley Hideo Kojima not allowed attend Game Awards 2015 video",
+  "query_family": "EXACT_ENTITY",
+  "requested_source_families": [
+    "REUPLOAD",
+    "ORIGINAL_CREATOR"
+  ],
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/search",
+    "schema_version": "1.0.0"
+  },
+  "search_pass": "LONG_FORM_FOOTAGE",
+  "search_round": 1,
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "target_beat_ref": {
+    "id": "NB_000008",
+    "version": 2
+  },
+  "trigger": {
+    "type": "INITIAL"
+  },
+  "updated_at": "2026-09-27T11:22:06.541161Z",
+  "version": 1,
+  "workflow_state": "COMPLETED"
+}

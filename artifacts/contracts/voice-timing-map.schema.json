@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/voice-timing-map",
+  "title": "VOICE_TIMING_MAP",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "VOICE_TIMING_MAP"
+        },
+        "master_voice": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "TIMING_SOURCE"
+        },
+        "duration_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "blocks": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "master_voice",
+        "duration_seconds",
+        "blocks"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

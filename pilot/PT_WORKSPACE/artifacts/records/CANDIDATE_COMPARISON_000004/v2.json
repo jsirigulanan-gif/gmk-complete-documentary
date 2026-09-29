@@ -1,0 +1,145 @@
+{
+  "artifact_id": "CANDIDATE_COMPARISON_000004",
+  "artifact_type": "CANDIDATE_COMPARISON",
+  "assessment": "MEETS_TARGET",
+  "candidate_refs": [
+    {
+      "id": "SR_000010",
+      "version": 1
+    },
+    {
+      "id": "SR_000011",
+      "version": 1
+    },
+    {
+      "id": "SR_000031",
+      "version": 1
+    }
+  ],
+  "created_at": "2026-09-27T14:09:02.606856Z",
+  "dimensions": [
+    {
+      "candidate_ref": {
+        "id": "SR_000010",
+        "version": 1
+      },
+      "note": "Search Again closure snapshot.",
+      "strengths": [
+        "Traceable candidate after Search Again"
+      ],
+      "weaknesses": []
+    },
+    {
+      "candidate_ref": {
+        "id": "SR_000011",
+        "version": 1
+      },
+      "note": "Search Again closure snapshot.",
+      "strengths": [
+        "Traceable candidate after Search Again"
+      ],
+      "weaknesses": []
+    },
+    {
+      "candidate_ref": {
+        "id": "SR_000031",
+        "version": 1
+      },
+      "note": "Search Again closure snapshot.",
+      "strengths": [
+        "Traceable candidate after Search Again"
+      ],
+      "weaknesses": []
+    }
+  ],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "beat_key": "BEAT_LISA_FINDING",
+      "phase": "SEARCH_AGAIN_CLOSED",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318",
+      "search_again_closed": true,
+      "selection_batch_id": "PT_ASSET_SELECTION_016"
+    }
+  },
+  "origin_refs": [
+    {
+      "id": "NB_000004",
+      "version": 3
+    },
+    {
+      "id": "SRCH_000007",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000008",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000021",
+      "version": 1
+    },
+    {
+      "id": "SR_000010",
+      "version": 1
+    },
+    {
+      "id": "SR_000011",
+      "version": 1
+    },
+    {
+      "id": "SR_000031",
+      "version": 1
+    }
+  ],
+  "policy_target": {
+    "source_families": 2,
+    "viable_candidates": 3
+  },
+  "priority": "CRITICAL",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/candidate-comparison",
+    "schema_version": "1.0.0"
+  },
+  "search_refs": [
+    {
+      "id": "SRCH_000007",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000008",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000021",
+      "version": 1
+    }
+  ],
+  "sha256": "2e6099c747e0748138d5b2fe27e8e0e2d7431ee6cd37b742735a3a3806565bc2",
+  "source_families": [
+    "NEWS_ARCHIVE",
+    "ORIGINAL_CREATOR",
+    "RESEARCHER"
+  ],
+  "supersedes_version": 1,
+  "target_beat_ref": {
+    "id": "NB_000004",
+    "version": 3
+  },
+  "uri": "gmk://artifacts/CANDIDATE_COMPARISON_000004/v2",
+  "version": 2,
+  "viable_candidate_refs": [
+    {
+      "id": "SR_000010",
+      "version": 1
+    },
+    {
+      "id": "SR_000011",
+      "version": 1
+    },
+    {
+      "id": "SR_000031",
+      "version": 1
+    }
+  ]
+}

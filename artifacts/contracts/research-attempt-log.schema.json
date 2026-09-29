@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/research-attempt-log",
+  "title": "RESEARCH_ATTEMPT_LOG",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "RESEARCH_ATTEMPT_LOG"
+        },
+        "query": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "strategy": {
+          "type": "string"
+        },
+        "sources_inspected": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-dependency-relation": "EVIDENCE_SOURCE"
+          }
+        },
+        "result": {
+          "type": "string"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "query",
+        "provider",
+        "strategy",
+        "sources_inspected",
+        "result",
+        "limitations"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

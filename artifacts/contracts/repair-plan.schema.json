@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/repair-plan",
+  "title": "REPAIR_PLAN",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "REPAIR_PLAN"
+        },
+        "qa_issue_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "root_cause": {
+          "type": "object"
+        },
+        "proposed_changes": {
+          "type": "array"
+        },
+        "affected_scope": {
+          "type": "string"
+        },
+        "required_retests": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "qa_issue_ref",
+        "root_cause",
+        "proposed_changes",
+        "affected_scope",
+        "required_retests"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

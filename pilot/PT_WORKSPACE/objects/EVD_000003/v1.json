@@ -1,0 +1,51 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "content_summary": "Research Pack declares [FACT-003]: รหัส \"7780\" อ้างอิงจากขนาดพื้นที่ของจังหวัดชิซูโอกะ (7,780 ตร.กม.) ซึ่งแปลความหมายได้ว่า \"Silent Hill\"",
+  "created_at": "2026-09-27T08:40:33.055110Z",
+  "dependencies": [
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "SRC_000001",
+        "version": 1
+      }
+    }
+  ],
+  "evidence_kind": "DOCUMENT_EXCERPT",
+  "extensions": {
+    "intake": {
+      "batch_id": "PT_INTAKE_0243AAD58E88E290",
+      "declared_id": "FACT-003",
+      "external_source_hint": "คำสัมภาษณ์ Hideo Kojima ในวิดีโอ Konami Station สิงหาคม 2014",
+      "scope": "PACK_ASSERTION_ONLY"
+    }
+  },
+  "human_constraints": [],
+  "id": "EVD_000003",
+  "locator": {
+    "paragraph": 62,
+    "quote_anchor": "FACT-003",
+    "section": "02_Verified_Facts",
+    "type": "TEXT_RANGE"
+  },
+  "lock_state": "UNLOCKED",
+  "object_type": "EVIDENCE",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/evidence",
+    "schema_version": "1.0.0"
+  },
+  "source_ref": {
+    "id": "SRC_000001",
+    "version": 1
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "updated_at": "2026-09-27T08:40:33.055110Z",
+  "version": 1
+}

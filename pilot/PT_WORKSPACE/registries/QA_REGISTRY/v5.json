@@ -1,0 +1,87 @@
+{
+  "entries": {
+    "QAI_000001": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "QAI_000001",
+      "object_type": "QA_ISSUE",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T16:11:09.740369Z",
+          "decision_sha256": "393bb0af12c0b0adb5ed5adf3249bc7ec01ea8a7a13314d6cf79e4592504ec02",
+          "record_sha256": "5f74347c71a2c636e4ec2814a9a4c50e0a0a1288e3476eacc06ac1500fda5ef0",
+          "updated_at": "2026-09-27T16:11:09.740369Z",
+          "uri": "gmk://objects/QAI_000001/v1",
+          "version": 1
+        }
+      }
+    },
+    "QAI_000002": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "QAI_000002",
+      "object_type": "QA_ISSUE",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T16:11:09.740808Z",
+          "decision_sha256": "1fd8ceb1b438ff16b4147da4945059dbd006294b31e83089fdf890a8fa5466c2",
+          "record_sha256": "5c257b464080055c80d49b6eab8c467dfcacf960eff9df28c79deb64d1053c7a",
+          "updated_at": "2026-09-27T16:11:09.740808Z",
+          "uri": "gmk://objects/QAI_000002/v1",
+          "version": 1
+        }
+      }
+    },
+    "QAR_000001": {
+      "active_version": 2,
+      "head_version": 2,
+      "object_id": "QAR_000001",
+      "object_type": "QA_REPORT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:39.266464Z",
+          "decision_sha256": "e3b377576399850c09a082b9f1cb2aa382acce561d9e14a709d5b07cfea41cbd",
+          "record_sha256": "a8afb324b8836fadcde06ebc39a369e3ac79f45439b3d1ee414cb746329d0362",
+          "updated_at": "2026-09-27T13:58:39.266464Z",
+          "uri": "gmk://objects/QAR_000001/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T13:58:39.369969Z",
+          "decision_sha256": "bb389048d86071f482c642df1c7c2d7c290d829a51ae3c182a7a3de67ee1e7e4",
+          "record_sha256": "06005aa1e32cbdabf1edc323f3ae80b1f097834a936113ce8703e6bf41e62244",
+          "updated_at": "2026-09-27T13:58:39.369969Z",
+          "uri": "gmk://objects/QAR_000001/v2",
+          "version": 2
+        }
+      }
+    },
+    "QAR_000002": {
+      "active_version": 2,
+      "head_version": 2,
+      "object_id": "QAR_000002",
+      "object_type": "QA_REPORT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T16:11:09.741151Z",
+          "decision_sha256": "4470c33c9cf0ce4a9d2b78933f836c63cb2fd1faaf56eb50e054ac69c6d22258",
+          "record_sha256": "11655e2e97f30bdc0b35513b8367c4ce5d725cf2d39e625e1fea746a9b7e4aa1",
+          "updated_at": "2026-09-27T16:11:09.741151Z",
+          "uri": "gmk://objects/QAR_000002/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T16:11:09.859605Z",
+          "decision_sha256": "44c97708318e72f3f41bbe9152b2e116ac5ce5a2f1c3b606ae4111863ff10060",
+          "record_sha256": "64e03bd1268b16dd714c0909b9e0f0aa61ae8d399f53893da5b9b89b00446f38",
+          "updated_at": "2026-09-27T16:11:09.859605Z",
+          "uri": "gmk://objects/QAR_000002/v2",
+          "version": 2
+        }
+      }
+    }
+  },
+  "registry_id": "QA_REGISTRY",
+  "sha256": "de2f6296375284e7faf462872ecc9deb1f62a145f4e6d8c61d2bc1ed7fe43b81",
+  "version": 5
+}

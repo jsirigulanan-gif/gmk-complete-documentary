@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gmk-production-pipeline"
+version = "0.3.0"
+description = "Gamer Must Know Production Pipeline v2 — frozen Schema v1 runtime"
+requires-python = ">=3.10"
+dependencies = ["jsonschema>=4.0", "PyYAML>=6.0"]
+
+[project.scripts]
+gmk = "gmk_cli.cli:main"
+gmk-operator = "gmk_operator.app:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

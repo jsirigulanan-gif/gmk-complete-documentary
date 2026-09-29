@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/motion-previs",
+  "title": "MOTION_PREVIS",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "MOTION_PREVIS"
+        },
+        "shot_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "preview": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "key_states": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "shot_ref",
+        "preview",
+        "key_states"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

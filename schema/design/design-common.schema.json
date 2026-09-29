@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/design-common",
+  "$defs": {
+    "DesignRuleAction": {
+      "type": "string",
+      "enum": [
+        "REQUIRE",
+        "PREFER",
+        "ALLOW",
+        "AVOID",
+        "FORBID"
+      ]
+    },
+    "DesignDomain": {
+      "type": "string",
+      "enum": [
+        "TYPOGRAPHY",
+        "COLOR",
+        "COMPOSITION",
+        "SOURCE_LABEL",
+        "DOCUMENT_TREATMENT",
+        "FOOTAGE_TREATMENT",
+        "STILL_TREATMENT",
+        "MOTION",
+        "TRANSITION",
+        "TWO_POINT_FIVE_D",
+        "THREE_D",
+        "UI_GRAPHICS",
+        "DATA_VISUALIZATION",
+        "TEXTURE",
+        "LIGHTING"
+      ]
+    },
+    "ReferenceRole": {
+      "type": "string",
+      "enum": [
+        "VISUAL_LANGUAGE",
+        "TYPOGRAPHY",
+        "COLOR",
+        "MOTION",
+        "COMPOSITION",
+        "DOCUMENT_TREATMENT",
+        "THREE_D",
+        "LIGHTING",
+        "NEGATIVE_REFERENCE"
+      ]
+    }
+  }
+}

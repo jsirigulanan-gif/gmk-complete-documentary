@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact-common",
+  "title": "GMK Artifact Envelope",
+  "$defs": {
+    "ArtifactRecord": {
+      "type": "object",
+      "required": [
+        "schema_header",
+        "artifact_id",
+        "artifact_type",
+        "version",
+        "uri",
+        "sha256",
+        "created_at",
+        "origin_refs",
+        "extensions"
+      ],
+      "properties": {
+        "schema_header": {
+          "$ref": "gmk://schema/v1/reference#/$defs/SchemaHeader"
+        },
+        "artifact_id": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_-]+$"
+        },
+        "artifact_type": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_-]+$"
+        },
+        "version": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactVersion"
+        },
+        "supersedes_version": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactVersion"
+        },
+        "uri": {
+          "$ref": "gmk://schema/v1/reference#/$defs/LogicalUri"
+        },
+        "sha256": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Sha256"
+        },
+        "created_at": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+        },
+        "origin_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/TargetRef",
+            "x-gmk-dependency-relation": "DERIVED_FROM"
+          }
+        },
+        "compiler": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ConfigRef"
+        },
+        "extensions": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    }
+  }
+}

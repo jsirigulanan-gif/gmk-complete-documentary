@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/search-result",
+  "title": "GMK Search Result",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "SEARCH_RESULT"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^SR_[A-Z0-9_-]+$"
+        },
+        "search_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-expected-object-type": "SEARCH",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "discovery_method": {
+          "type": "string",
+          "enum": [
+            "AUTOMATED_SEARCH",
+            "HUMAN_INJECTION"
+          ]
+        },
+        "discovery_locator": {
+          "$ref": "gmk://schema/v1/locator#/$defs/DiscoveryLocator"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_family": {
+          "$ref": "gmk://schema/v1/asset-common#/$defs/SourceFamily"
+        },
+        "source_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-expected-object-type": "SOURCE",
+          "x-gmk-dependency-relation": "VISUAL_SOURCE"
+        },
+        "candidate_state": {
+          "$ref": "gmk://schema/v1/asset-common#/$defs/CandidateState"
+        },
+        "inspection": {
+          "type": "object",
+          "required": [
+            "visible_content",
+            "exact_moment_found",
+            "match_type",
+            "match_reason",
+            "viewer_takeaway_supported"
+          ],
+          "properties": {
+            "visible_content": {
+              "type": "string",
+              "minLength": 1
+            },
+            "exact_moment_found": {
+              "type": "boolean"
+            },
+            "candidate_locator": {
+              "$ref": "gmk://schema/v1/locator#/$defs/SourceLocator"
+            },
+            "match_type": {
+              "$ref": "gmk://schema/v1/enums#/$defs/MatchType"
+            },
+            "match_reason": {
+              "type": "string",
+              "minLength": 1
+            },
+            "viewer_takeaway_supported": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "evaluation": {
+          "type": "object",
+          "properties": {
+            "visual_clarity": {
+              "type": "string",
+              "enum": [
+                "HIGH",
+                "MEDIUM",
+                "LOW"
+              ]
+            },
+            "technical_quality": {
+              "type": "string",
+              "enum": [
+                "HIGH",
+                "MEDIUM",
+                "LOW",
+                "UNKNOWN"
+              ]
+            },
+            "cleanliness": {
+              "type": "string",
+              "enum": [
+                "CLEAN",
+                "MINOR_OVERLAY",
+                "SUBTITLED",
+                "HEAVY_SUBTITLES",
+                "WATERMARKED",
+                "HEAVY_WATERMARK",
+                "REACTION_LAYOUT",
+                "COMMENTARY_OVERLAY"
+              ]
+            },
+            "duplicate_state": {
+              "type": "string",
+              "enum": [
+                "UNIQUE",
+                "SIMILAR",
+                "NEAR_DUPLICATE",
+                "DUPLICATE"
+              ]
+            },
+            "duplicate_of": {
+              "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+            }
+          },
+          "additionalProperties": false
+        },
+        "rejection": {
+          "type": "object",
+          "required": [
+            "reason"
+          ],
+          "properties": {
+            "reason": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "promoted_asset_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-field-class": "DERIVED",
+          "x-gmk-derived-mode": "LIVE"
+        }
+      },
+      "required": [
+        "search_ref",
+        "discovery_method",
+        "discovery_locator",
+        "title",
+        "source_family",
+        "candidate_state"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

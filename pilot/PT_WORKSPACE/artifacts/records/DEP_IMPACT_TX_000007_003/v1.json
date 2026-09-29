@@ -1,0 +1,60 @@
+{
+  "artifact_id": "DEP_IMPACT_TX_000007_003",
+  "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+  "blast_radius": "LOCAL",
+  "change_set": {
+    "changed_paths": [
+      "/extensions/visual_requirements",
+      "/visual_requirement",
+      "/workflow_state"
+    ],
+    "impact_tags": [
+      "GENERAL"
+    ],
+    "new_version": 2,
+    "object_id": "NB_000005",
+    "previous_version": 1
+  },
+  "created_at": "2026-09-27T10:48:17.300242Z",
+  "extensions": {},
+  "frozen_stops": [],
+  "impacts": [],
+  "origin_refs": [
+    {
+      "id": "NB_000005",
+      "version": 1
+    },
+    {
+      "id": "NB_000005",
+      "version": 2
+    }
+  ],
+  "policy_ref": {
+    "config_id": "GMK_DEPENDENCY_POLICY",
+    "sha256": "4b368d0e008701f5fca9bfe73b7f38fb711ec1d77bc282a03be54b2d2d0ec2ee",
+    "version": "1.0.0"
+  },
+  "root_change": {
+    "new": {
+      "kind": "OBJECT",
+      "ref": {
+        "id": "NB_000005",
+        "version": 2
+      }
+    },
+    "previous": {
+      "kind": "OBJECT",
+      "ref": {
+        "id": "NB_000005",
+        "version": 1
+      }
+    }
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+    "schema_version": "1.0.0"
+  },
+  "sha256": "1ffc6008b29be4e00ce0221eca184fb76a6683d3751c4555572f9040a2eb74ef",
+  "uri": "gmk://artifacts/DEP_IMPACT_TX_000007_003/v1",
+  "version": 1
+}

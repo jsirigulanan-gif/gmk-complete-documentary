@@ -1,0 +1,167 @@
+{
+  "entries": {
+    "OP_000001": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "OP_000001",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:34.980822Z",
+          "decision_sha256": "cca39ec912c7623211fce29ec038b76a21a516486c00057043dbdc056e9a7407",
+          "record_sha256": "5eae3bfc0d6d20c2b5494aaab1af1c814897a88a3d2eeb969b13202e9008fd64",
+          "updated_at": "2026-09-27T13:58:34.980822Z",
+          "uri": "gmk://objects/OP_000001/v1",
+          "version": 1
+        }
+      }
+    },
+    "OP_000002": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "OP_000002",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:35.292081Z",
+          "decision_sha256": "dfc4687f8a95eab4155cec05aa6c3fadbb1f2d230fbfe70380e96ac31f643496",
+          "record_sha256": "76acdd4f3de3f4a4d0638e602ed84e64e12aaf563afee6d7307b1c29b27bd53b",
+          "updated_at": "2026-09-27T13:58:35.292081Z",
+          "uri": "gmk://objects/OP_000002/v1",
+          "version": 1
+        }
+      }
+    },
+    "OP_000003": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "OP_000003",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:35.620593Z",
+          "decision_sha256": "eec7fdc58a9b2fc129a0179753ffa7125cba04b369147ab77852bc8fed0bf27b",
+          "record_sha256": "a021f5a341179c4bdc09ba3d0fb9e3d9a754006f49ecd21c8bcdde102fdf36b3",
+          "updated_at": "2026-09-27T13:58:35.620593Z",
+          "uri": "gmk://objects/OP_000003/v1",
+          "version": 1
+        }
+      }
+    },
+    "OP_000004": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "OP_000004",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:36.078038Z",
+          "decision_sha256": "01467aae011e2c948813501ce4326edd7e57a0aab61213418cafd9365ed62547",
+          "record_sha256": "b6f90983f5c6ab14ee159267f5d213df8440118d284e69a2beb8c85ae3683440",
+          "updated_at": "2026-09-27T13:58:36.078038Z",
+          "uri": "gmk://objects/OP_000004/v1",
+          "version": 1
+        }
+      }
+    },
+    "OP_000005": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "OP_000005",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:36.430737Z",
+          "decision_sha256": "786b57ebb48749baee169081a89c9925ed264255c015ddbfd5400d8cb7169b07",
+          "record_sha256": "174c24238997295c49fcbcd2a264133d13ef4a4c82f71a917cd77c631df2b8bc",
+          "updated_at": "2026-09-27T13:58:36.430737Z",
+          "uri": "gmk://objects/OP_000005/v1",
+          "version": 1
+        }
+      }
+    },
+    "OP_000006": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "OP_000006",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:36.796315Z",
+          "decision_sha256": "6d072f6cbd5829df92f2634201007e19c9576428c808c7802671bfca242ce1d7",
+          "record_sha256": "9cfa2a7121d3746a26b2935d5e68f8da52fb94d2dc686051a604f2501cf70ea8",
+          "updated_at": "2026-09-27T13:58:36.796315Z",
+          "uri": "gmk://objects/OP_000006/v1",
+          "version": 1
+        }
+      }
+    },
+    "OP_000007": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "OP_000007",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:37.211309Z",
+          "decision_sha256": "d3b31b8ca1551a7488b8c44dfe9267b71756dd779935c2ca486fc088172f6e9a",
+          "record_sha256": "81e611a15d2ecc0f832b1a699c790bab6365f1ba4e9d4c9abe3fe11a46e6d7b6",
+          "updated_at": "2026-09-27T13:58:37.211309Z",
+          "uri": "gmk://objects/OP_000007/v1",
+          "version": 1
+        }
+      }
+    },
+    "OP_000008": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "OP_000008",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:37.802105Z",
+          "decision_sha256": "14cf1766be9c49b74f23137cc35dd3186eb8deebef7822df4ce9cfdfcf2d4ad5",
+          "record_sha256": "9f907c3aa6c66b236dbfecda53331915e18c3d6a4377925b740fe145cd4159af",
+          "updated_at": "2026-09-27T13:58:37.802105Z",
+          "uri": "gmk://objects/OP_000008/v1",
+          "version": 1
+        }
+      }
+    },
+    "OP_000009": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "OP_000009",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:38.261161Z",
+          "decision_sha256": "bbd8ab819af2e9ce8b51944ceed4d17d8e01b840719fbbd58b4aedd41cc6b532",
+          "record_sha256": "e46cbf41c4dd5d18d8b9ea9788e8a1db518d3bbcdce047ce44d662fbe8e893b5",
+          "updated_at": "2026-09-27T13:58:38.261161Z",
+          "uri": "gmk://objects/OP_000009/v1",
+          "version": 1
+        }
+      }
+    },
+    "OP_000010": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "OP_000010",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:38.850769Z",
+          "decision_sha256": "7cf39a65cae786237d60251b73989a8a52fd6c4f6ddb6d46bc98ee9ecde19039",
+          "record_sha256": "7a0941d9181951ffd9cffff45801793c5f86a073b6fbee61b7f7e75d8465fac3",
+          "updated_at": "2026-09-27T13:58:38.850769Z",
+          "uri": "gmk://objects/OP_000010/v1",
+          "version": 1
+        }
+      }
+    }
+  },
+  "registry_id": "OPERATION_REGISTRY",
+  "sha256": "6be8bedbca966cb0b2526cc92288480e418b5f44f845ce354af1c8c473890cfd",
+  "version": 11
+}

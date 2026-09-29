@@ -1,0 +1,103 @@
+{
+  "acquisition_operation_ref": {
+    "id": "OP_000003",
+    "version": 3
+  },
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "asset_class": "EVIDENCE",
+  "created_at": "2026-09-27T16:11:03.288101Z",
+  "dependencies": [
+    {
+      "relation": "SUPERSEDES",
+      "target": {
+        "id": "AST_000003",
+        "version": 2
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "OP_000003",
+        "version": 3
+      }
+    },
+    {
+      "relation": "VISUAL_SOURCE",
+      "target": {
+        "id": "SRC_000004",
+        "version": 1
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "SR_000008",
+        "version": 2
+      }
+    }
+  ],
+  "extensions": {
+    "asset_acquisition": {
+      "batch_id": "PT_ASSET_ACQUISITION_017",
+      "origin_bytes": false,
+      "production_ready": true,
+      "representation": "WEB_TEXT_SNAPSHOT",
+      "source_url": "https://www.pushsquare.com/news/2014/09/dont_look_now_but_ps4_demo_pt_has_been_downloaded_over_1_million_times",
+      "verified_sha256": "0ec45a5479dcc54861afdafc73afa9c16d6857bbada0b46695f455b4345c8ce2"
+    },
+    "asset_recon": {
+      "beat_key": "BEAT_MILLION",
+      "candidate_key": "MILLION_PUSH",
+      "production_ready": true,
+      "selection_batch_id": "PT_ASSET_SELECTION_016",
+      "source_recon_batch_id": "PT_ASSET_RECON_FIRST_PASS_001"
+    }
+  },
+  "human_constraints": [],
+  "id": "AST_000003",
+  "lock_state": "UNLOCKED",
+  "media_type": "DOCUMENT",
+  "object_type": "ASSET",
+  "origin_search_result_ref": {
+    "id": "SR_000008",
+    "version": 2
+  },
+  "original_file": {
+    "checksum": "0ec45a5479dcc54861afdafc73afa9c16d6857bbada0b46695f455b4345c8ce2",
+    "immutable": true,
+    "uri": "gmk://workspace/media/originals/AST_000003.web-evidence.txt"
+  },
+  "rights": {
+    "attribution_required": true,
+    "basis": "Published news evidence; documentary capture requires review.",
+    "notes": "Selection is not rights clearance.",
+    "status": "COMMENTARY_REVIEW"
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/asset",
+    "schema_version": "1.0.0"
+  },
+  "source_ref": {
+    "id": "SRC_000004",
+    "version": 1
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "supersedes": {
+    "id": "AST_000003",
+    "version": 2
+  },
+  "technical": {
+    "container": "text/plain",
+    "file_size_bytes": 420
+  },
+  "updated_at": "2026-09-27T16:11:03.288101Z",
+  "version": 3,
+  "workflow_state": "ACQUIRED"
+}

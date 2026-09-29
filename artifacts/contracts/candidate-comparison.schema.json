@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/candidate-comparison",
+  "title": "CANDIDATE_COMPARISON",
+  "allOf": [
+    {"$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"},
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {"const": "CANDIDATE_COMPARISON"},
+        "target_beat_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["CRITICAL", "MAJOR", "STANDARD", "SUPPORTING"]
+        },
+        "search_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"}
+        },
+        "candidate_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"}
+        },
+        "viable_candidate_refs": {
+          "type": "array",
+          "items": {"$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"}
+        },
+        "source_families": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "gmk://schema/v1/asset-common#/$defs/SourceFamily"}
+        },
+        "policy_target": {
+          "type": "object",
+          "required": ["viable_candidates", "source_families"],
+          "properties": {
+            "viable_candidates": {"type": "integer", "minimum": 0},
+            "source_families": {"type": "integer", "minimum": 0}
+          },
+          "additionalProperties": false
+        },
+        "assessment": {
+          "type": "string",
+          "enum": ["MEETS_TARGET", "NEEDS_SEARCH_AGAIN", "SEARCH_SATURATED", "SOURCE_EXHAUSTED"]
+        },
+        "dimensions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["candidate_ref", "strengths", "weaknesses"],
+            "properties": {
+              "candidate_ref": {"$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"},
+              "strengths": {"type": "array", "items": {"type": "string"}},
+              "weaknesses": {"type": "array", "items": {"type": "string"}},
+              "note": {"type": "string"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "next_search_reason": {"type": "string"}
+      },
+      "required": [
+        "target_beat_ref", "priority", "search_refs", "candidate_refs",
+        "viable_candidate_refs", "source_families", "policy_target", "assessment", "dimensions"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

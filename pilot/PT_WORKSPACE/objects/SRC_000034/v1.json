@@ -1,0 +1,49 @@
+{
+  "accessed_at": "2026-09-27T11:22:06.538432Z",
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "author": "",
+  "authority_class": "OFFICIAL",
+  "availability": {
+    "state": "AVAILABLE"
+  },
+  "created_at": "2026-09-27T11:22:06.538445Z",
+  "dependencies": [],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318",
+      "source_key": "CONTRACT_SONY",
+      "source_verified": true
+    }
+  },
+  "human_constraints": [],
+  "id": "SRC_000034",
+  "independence": {
+    "group_id": "SRCGRP_SONY_KOJIMA_PRODUCTIONS_AGREEMENT",
+    "relationship": "ORIGINAL"
+  },
+  "language": "en",
+  "lock_state": "UNLOCKED",
+  "notes": "Official context for newly formed independent Kojima Productions and Sony agreement; supports aftermath context, not Konami contract date by itself.",
+  "object_type": "SOURCE",
+  "platform": "Web",
+  "published_at": "2015-12-16",
+  "publisher": "Sony Computer Entertainment",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/source",
+    "schema_version": "1.0.0"
+  },
+  "source_type": "PRESS_RELEASE",
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "Sony Computer Entertainment Enters Into An Agreement With Kojima Productions",
+  "updated_at": "2026-09-27T11:22:06.538445Z",
+  "url": "https://sony.mediaroom.com/2015-12-16-Sony-Computer-Entertainment-Enters-Into-An-Agreement-With-Kojima-Productions",
+  "version": 1
+}

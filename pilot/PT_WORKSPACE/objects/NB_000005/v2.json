@@ -1,0 +1,107 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "beat_type": "FACT",
+  "claim_bindings": [
+    {
+      "claim_ref": {
+        "id": "CLM_000005",
+        "version": 2
+      },
+      "role": "PRIMARY_FACT"
+    }
+  ],
+  "created_at": "2026-09-27T10:48:17.283026Z",
+  "dependencies": [
+    {
+      "relation": "FACT_SOURCE",
+      "target": {
+        "id": "CLM_000005",
+        "version": 2
+      }
+    },
+    {
+      "relation": "SUPERSEDES",
+      "target": {
+        "id": "NB_000005",
+        "version": 1
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "SCN_000004",
+        "version": 1
+      }
+    }
+  ],
+  "extensions": {
+    "rough_narrative": {
+      "batch_id": "PT_ROUGH_NARRATIVE_001",
+      "key": "BEAT_DELIST",
+      "plan_sha256": "645459994c0d1d6d6e2211831a9c515e8a19ee1e10d2e9520bfa7e4ef4da8376",
+      "research_modes": {
+        "CLM_000005": "DIRECT"
+      },
+      "synthesis_note": ""
+    },
+    "visual_requirements": {
+      "batch_id": "PT_VISUAL_REQUIREMENTS_001",
+      "plan_sha256": "3290db073b2d8c6834c8b9812d55c5f41838e12f447db01bf1d5ff2fcc83ab7f",
+      "source_narrative_beat_ref": {
+        "id": "NB_000005",
+        "version": 1
+      },
+      "source_narrative_spine_ref": {
+        "artifact_id": "NARRATIVE_SPINE_000001",
+        "artifact_type": "NARRATIVE_SPINE",
+        "sha256": "47a54f17b1a9d53c999dc69fe87676b575ae4b41f0af7442d4057823db63712d",
+        "version": 1
+      }
+    }
+  },
+  "human_constraints": [],
+  "id": "NB_000005",
+  "idea": {
+    "summary": "ยืนยันวันที่ P.T. ถูกถอดจาก PlayStation Store"
+  },
+  "lock_state": "UNLOCKED",
+  "object_type": "NARRATION_BEAT",
+  "order": 1,
+  "scene_ref": {
+    "id": "SCN_000004",
+    "version": 1
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/narration-beat",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "supersedes": {
+    "id": "NB_000005",
+    "version": 1
+  },
+  "updated_at": "2026-09-27T10:48:17.283026Z",
+  "version": 2,
+  "viewer_takeaway": "วันที่ 29 เมษายน 2015 คือจุดถอด P.T. ออกจาก Store",
+  "visual_requirement": {
+    "asset_needs": [
+      "DOCUMENT",
+      "STILL"
+    ],
+    "preferred_match": [
+      "DIRECT",
+      "SUPPORTING"
+    ],
+    "priority": "CRITICAL",
+    "viewer_must_see": "หลักฐานร่วมสมัยที่ระบุว่า P.T. จะสิ้นสุดการแจกจ่ายและถูกถอดจาก PlayStation Store วันที่ 29 เมษายน 2015 โดยควรเห็นวันที่และบริบทของประกาศต้นทางชัดเจน",
+    "viewer_must_understand": "29 เมษายน 2015 คือจุดที่ช่องทางรับ P.T. จาก Store ถูกตัดออก และนี่เป็นเหตุการณ์ที่มีหลักฐานวันที่ชัดเจน"
+  },
+  "workflow_state": "VISUAL_REQUIREMENT_READY"
+}

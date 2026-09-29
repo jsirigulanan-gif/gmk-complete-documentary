@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/full-film-qa-package",
+  "title": "FULL_FILM_QA_PACKAGE",
+  "allOf": [
+    {"$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"},
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {"const": "FULL_FILM_QA_PACKAGE"},
+        "production_lock": {"$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef", "x-gmk-dependency-relation": "RENDER_INPUT"},
+        "master_output": {"$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef", "x-gmk-dependency-relation": "RENDER_INPUT"},
+        "viewer_experience_report": {"$ref": "gmk://schema/v1/reference#/$defs/ObjectRef", "x-gmk-dependency-relation": "DERIVED_FROM"},
+        "production_integrity_report": {"$ref": "gmk://schema/v1/reference#/$defs/ObjectRef", "x-gmk-dependency-relation": "DERIVED_FROM"},
+        "delivery_integrity_report": {"$ref": "gmk://schema/v1/reference#/$defs/ObjectRef", "x-gmk-dependency-relation": "DERIVED_FROM"}
+      },
+      "required": ["production_lock", "master_output", "viewer_experience_report", "production_integrity_report", "delivery_integrity_report"]
+    }
+  ],
+  "unevaluatedProperties": false
+}

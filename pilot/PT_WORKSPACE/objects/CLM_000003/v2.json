@@ -1,0 +1,103 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "certainty": {
+    "basis": [
+      "ONE_VERIFIED_SOURCE_GROUP",
+      "PRIMARY_OR_OFFICIAL_SOURCE"
+    ],
+    "level": "HIGH"
+  },
+  "claim_text": "รหัส \"7780\" อ้างอิงจากขนาดพื้นที่ของจังหวัดชิซูโอกะ (7,780 ตร.กม.) ซึ่งแปลความหมายได้ว่า \"Silent Hill\"",
+  "claim_type": "FACTUAL_ASSERTION",
+  "contradiction_refs": [],
+  "created_at": "2026-09-27T09:39:46.867192Z",
+  "dependencies": [
+    {
+      "relation": "SUPERSEDES",
+      "target": {
+        "id": "CLM_000003",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000003",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000018",
+        "version": 1
+      }
+    }
+  ],
+  "evidence_links": [
+    {
+      "evidence_ref": {
+        "id": "EVD_000003",
+        "version": 1
+      },
+      "relation": "CONTEXTUALIZES",
+      "scope": [
+        "INTERPRETATION"
+      ],
+      "strength": "CONTEXT_ONLY"
+    },
+    {
+      "evidence_ref": {
+        "id": "EVD_000018",
+        "version": 1
+      },
+      "relation": "SUPPORTS",
+      "scope": [
+        "INTERPRETATION"
+      ],
+      "strength": "DIRECT"
+    }
+  ],
+  "extensions": {
+    "intake": {
+      "batch_id": "PT_INTAKE_0243AAD58E88E290",
+      "declared_id": "FACT-003",
+      "declared_label": "VERIFIED FACT",
+      "source_hint": "คำสัมภาษณ์ Hideo Kojima ในวิดีโอ Konami Station สิงหาคม 2014"
+    },
+    "research_audit": {
+      "audited": true,
+      "batch_id": "PT_RESEARCH_AUDIT_001",
+      "note": "Kojima explanation is directly quoted by WIRED.",
+      "original_version": 1
+    }
+  },
+  "human_constraints": [],
+  "id": "CLM_000003",
+  "lock_state": "UNLOCKED",
+  "object_type": "CLAIM",
+  "production_use": {
+    "language_mode": "DIRECT",
+    "narration_allowed": true,
+    "reason": "Research Audit established sufficient factual support for direct narration."
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/claim",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "supersedes": {
+    "id": "CLM_000003",
+    "version": 1
+  },
+  "updated_at": "2026-09-27T09:39:46.867192Z",
+  "verification_state": "SOURCE_VERIFIED",
+  "version": 2
+}

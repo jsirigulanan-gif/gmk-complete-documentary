@@ -1,0 +1,14 @@
+{
+  "action": "SATISFY_GATE_REQUIREMENTS",
+  "blockers": [],
+  "gate_ids": [
+    "ROUGH_NARRATIVE"
+  ],
+  "message": "Current exact evidence does not yet satisfy the next transition.",
+  "missing_requirements": [
+    "ROUGH_NARRATIVE:NARRATIVE_SPINE_PRESENT:ARTIFACT_EVIDENCE_MISSING"
+  ],
+  "permission_class": "AI_WITH_RULES",
+  "project_state": "RESEARCH_AUDITED",
+  "target_state": "ROUGH_NARRATIVE_READY"
+}

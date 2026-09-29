@@ -1,0 +1,70 @@
+{
+  "artifact_id": "DEP_IMPACT_TX_000007_008",
+  "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+  "blast_radius": "LOCAL",
+  "change_set": {
+    "changed_paths": [
+      "/extensions/visual_requirements",
+      "/visual_requirement",
+      "/workflow_state"
+    ],
+    "impact_tags": [
+      "GENERAL"
+    ],
+    "new_version": 3,
+    "object_id": "NB_000001",
+    "previous_version": 2
+  },
+  "created_at": "2026-09-27T10:48:17.391084Z",
+  "extensions": {},
+  "frozen_stops": [
+    {
+      "kind": "ARTIFACT",
+      "ref": {
+        "artifact_id": "DEP_IMPACT_TX_000005_001",
+        "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+        "sha256": "410bc1ff3d12ec95f3e36141610bcd79afdc0405a1909085fabb9d9b0e16e4e0",
+        "version": 1
+      }
+    }
+  ],
+  "impacts": [],
+  "origin_refs": [
+    {
+      "id": "NB_000001",
+      "version": 2
+    },
+    {
+      "id": "NB_000001",
+      "version": 3
+    }
+  ],
+  "policy_ref": {
+    "config_id": "GMK_DEPENDENCY_POLICY",
+    "sha256": "4b368d0e008701f5fca9bfe73b7f38fb711ec1d77bc282a03be54b2d2d0ec2ee",
+    "version": "1.0.0"
+  },
+  "root_change": {
+    "new": {
+      "kind": "OBJECT",
+      "ref": {
+        "id": "NB_000001",
+        "version": 3
+      }
+    },
+    "previous": {
+      "kind": "OBJECT",
+      "ref": {
+        "id": "NB_000001",
+        "version": 2
+      }
+    }
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+    "schema_version": "1.0.0"
+  },
+  "sha256": "5d68a5ad6bd39b8479b733c24a6c7042b2350fd6feb865f89396b189c5efca0d",
+  "uri": "gmk://artifacts/DEP_IMPACT_TX_000007_008/v1",
+  "version": 1
+}

@@ -1,0 +1,139 @@
+{
+  "artifact_id": "CANDIDATE_COMPARISON_000004",
+  "artifact_type": "CANDIDATE_COMPARISON",
+  "assessment": "NEEDS_SEARCH_AGAIN",
+  "candidate_refs": [
+    {
+      "id": "SR_000010",
+      "version": 1
+    },
+    {
+      "id": "SR_000011",
+      "version": 1
+    },
+    {
+      "id": "SR_000012",
+      "version": 1
+    }
+  ],
+  "created_at": "2026-09-27T11:22:06.549833Z",
+  "dimensions": [
+    {
+      "candidate_ref": {
+        "id": "SR_000010",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Audited technical source",
+        "Directly relevant mechanic"
+      ],
+      "weaknesses": [
+        "Article retelling rather than original media"
+      ]
+    },
+    {
+      "candidate_ref": {
+        "id": "SR_000011",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Clear visual framing",
+        "Independent page"
+      ],
+      "weaknesses": [
+        "Secondary to McDonald original"
+      ]
+    },
+    {
+      "candidate_ref": {
+        "id": "SR_000012",
+        "version": 1
+      },
+      "note": "Search Again should prioritize direct-media inspection/downloadable provenance.",
+      "strengths": [
+        "Original researcher source"
+      ],
+      "weaknesses": [
+        "Direct media exact moment not verified",
+        "Platform availability risk"
+      ]
+    }
+  ],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "beat_key": "BEAT_LISA_FINDING",
+      "phase": "FIRST_PASS",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318"
+    }
+  },
+  "next_search_reason": "Need 1 more viable candidate(s) and/or 0 more viable source family/families.",
+  "origin_refs": [
+    {
+      "id": "NB_000004",
+      "version": 3
+    },
+    {
+      "id": "SRCH_000007",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000008",
+      "version": 1
+    },
+    {
+      "id": "SR_000010",
+      "version": 1
+    },
+    {
+      "id": "SR_000011",
+      "version": 1
+    },
+    {
+      "id": "SR_000012",
+      "version": 1
+    }
+  ],
+  "policy_target": {
+    "source_families": 2,
+    "viable_candidates": 3
+  },
+  "priority": "CRITICAL",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/candidate-comparison",
+    "schema_version": "1.0.0"
+  },
+  "search_refs": [
+    {
+      "id": "SRCH_000007",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000008",
+      "version": 1
+    }
+  ],
+  "sha256": "0449efbd32b0d0be9052d93ccbe64fe31237d3cd7cb94b5e32f4c52500ed4079",
+  "source_families": [
+    "NEWS_ARCHIVE",
+    "RESEARCHER"
+  ],
+  "target_beat_ref": {
+    "id": "NB_000004",
+    "version": 3
+  },
+  "uri": "gmk://artifacts/CANDIDATE_COMPARISON_000004/v1",
+  "version": 1,
+  "viable_candidate_refs": [
+    {
+      "id": "SR_000010",
+      "version": 1
+    },
+    {
+      "id": "SR_000011",
+      "version": 1
+    }
+  ]
+}

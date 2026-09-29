@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/narrative-spine",
+  "title": "NARRATIVE_SPINE",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "NARRATIVE_SPINE"
+        },
+        "project_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "core_question": {
+          "type": "string"
+        },
+        "opening_promise": {
+          "type": "string"
+        },
+        "central_mystery": {
+          "type": "string"
+        },
+        "major_turns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "final_answer": {
+          "type": "string"
+        },
+        "closing_thought": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project_ref",
+        "core_question",
+        "opening_promise",
+        "major_turns"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

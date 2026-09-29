@@ -1,0 +1,54 @@
+{
+  "act_ref": {
+    "id": "ACT_000001",
+    "version": 1
+  },
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "created_at": "2026-09-27T10:18:33.257010Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "ACT_000001",
+        "version": 1
+      }
+    }
+  ],
+  "dynamics": {
+    "energy": "TENSE",
+    "role": "HOOK"
+  },
+  "extensions": {
+    "rough_narrative": {
+      "batch_id": "PT_ROUGH_NARRATIVE_001",
+      "key": "SCN_DROP",
+      "plan_sha256": "645459994c0d1d6d6e2211831a9c515e8a19ee1e10d2e9520bfa7e4ef4da8376"
+    }
+  },
+  "human_constraints": [],
+  "id": "SCN_000001",
+  "lock_state": "UNLOCKED",
+  "narrative": {
+    "main_reveal": "7780 อ้างอิงพื้นที่ของ Shizuoka ซึ่งสามารถอ่านเชิงคำว่า Silent Hill",
+    "purpose": "เปิดเรื่องด้วยข้อเท็จจริงที่ตรวจได้เกี่ยวกับการปล่อย P.T. และชื่อ 7780s Studio",
+    "viewer_question_entering": "P.T. ปรากฏขึ้นเมื่อไรและในชื่อของใคร?",
+    "viewer_understanding_leaving": "P.T. ถูกปล่อยบน PSN วันที่ 12 สิงหาคม 2014 ภายใต้ชื่อ 7780s Studio และตัวเลข 7780 มีที่มาที่ตรวจได้"
+  },
+  "object_type": "SCENE",
+  "order": 1,
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/scene",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "12 August 2014",
+  "updated_at": "2026-09-27T10:18:33.257010Z",
+  "version": 1
+}

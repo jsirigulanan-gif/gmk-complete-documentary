@@ -1,0 +1,818 @@
+{
+  "batch_id": "PT_RESEARCH_AUDIT_001",
+  "claims": [
+    {
+      "audit_note": "Two independent contemporaneous outlets support Aug. 12 Gamescom availability and 7780s presentation.",
+      "claim_id": "CLM_000001",
+      "evidence_links": [
+        {
+          "evidence_key": "E_RELEASE_ARS",
+          "relation": "SUPPORTS",
+          "scope": [
+            "EVENT",
+            "TIMELINE"
+          ],
+          "strength": "STRONG"
+        },
+        {
+          "evidence_key": "E_RELEASE_GEMATSU",
+          "relation": "SUPPORTS",
+          "scope": [
+            "EVENT",
+            "TIMELINE"
+          ],
+          "strength": "STRONG"
+        }
+      ]
+    },
+    {
+      "audit_note": "Both reports derive from the same Sony/pre-TGS announcement, so they count as one source-independence group.",
+      "claim_id": "CLM_000002",
+      "evidence_links": [
+        {
+          "evidence_key": "E_DOWNLOAD_PUSH",
+          "relation": "SUPPORTS",
+          "scope": [
+            "QUANTITY",
+            "TIMELINE"
+          ],
+          "strength": "STRONG"
+        },
+        {
+          "evidence_key": "E_DOWNLOAD_PSU",
+          "relation": "SUPPORTS",
+          "scope": [
+            "QUANTITY",
+            "TIMELINE"
+          ],
+          "strength": "CORROBORATIVE"
+        }
+      ]
+    },
+    {
+      "audit_note": "Kojima explanation is directly quoted by WIRED.",
+      "claim_id": "CLM_000003",
+      "evidence_links": [
+        {
+          "evidence_key": "E_7780_WIRED",
+          "relation": "SUPPORTS",
+          "scope": [
+            "INTERPRETATION"
+          ],
+          "strength": "DIRECT"
+        }
+      ]
+    },
+    {
+      "audit_note": "Downgraded from factual assertion to a sourced community theory; creator intent remains unverified.",
+      "claim_id": "CLM_000004",
+      "claim_text": "มีทฤษฎีในชุมชนผู้เล่นว่าเลข “204863” สามารถอ่านเป็น 24/08/63 ซึ่งตรงกับวันเกิดของ Hideo Kojima แต่การตรวจรอบนี้ไม่พบหลักฐานจาก Kojima หรือ Konami ที่ยืนยันว่าเป็นเจตนาของตัวเลขนี้",
+      "claim_type": "COMMUNITY_THEORY",
+      "evidence_links": [
+        {
+          "evidence_key": "E_204_COMMUNITY",
+          "relation": "SUPPORTS",
+          "scope": [
+            "INTERPRETATION"
+          ],
+          "strength": "STRONG"
+        }
+      ]
+    },
+    {
+      "audit_note": "Official-notice reporting plus later store-removal observation support the Apr. 29 delisting.",
+      "claim_id": "CLM_000005",
+      "evidence_links": [
+        {
+          "evidence_key": "E_DELIST_NOTICE",
+          "relation": "SUPPORTS",
+          "scope": [
+            "EVENT",
+            "TIMELINE"
+          ],
+          "strength": "STRONG"
+        },
+        {
+          "evidence_key": "E_DELIST_OBS",
+          "relation": "SUPPORTS",
+          "scope": [
+            "EVENT",
+            "TIMELINE"
+          ],
+          "strength": "STRONG"
+        }
+      ]
+    },
+    {
+      "audit_note": "Narrowed currency wording: the original pack conflated dollar and pound ranges. GameSpot supports the listing prices; Kotaku independently supports the later eBay removals.",
+      "claim_id": "CLM_000006",
+      "claim_text": "หลังการถอด P.T. มีการตั้งขาย PS4 ที่ติดตั้งเกมไว้ใน eBay โดยมีตัวอย่างประกาศในสหราชอาณาจักรที่ £1,000 (ประมาณ $1,500) และต่อมา eBay ลบประกาศลักษณะนี้จำนวนมากโดยอ้างข้อจำกัดเกี่ยวกับซอฟต์แวร์/ลิขสิทธิ์",
+      "evidence_links": [
+        {
+          "evidence_key": "E_EBAY_PRICE",
+          "relation": "SUPPORTS",
+          "scope": [
+            "QUANTITY",
+            "EVENT"
+          ],
+          "strength": "STRONG"
+        },
+        {
+          "evidence_key": "E_EBAY_REMOVAL",
+          "relation": "SUPPORTS",
+          "scope": [
+            "EVENT"
+          ],
+          "strength": "STRONG"
+        }
+      ]
+    },
+    {
+      "audit_note": "Kept as attributed reported assertion because public evidence is Keighley’s live statement; secondary reports share the same broadcast source group.",
+      "claim_id": "CLM_000007",
+      "claim_text": "ในงาน The Game Awards 2015 Geoff Keighley กล่าวบนเวทีว่า Hideo Kojima ได้รับแจ้งจากทนายที่เป็นตัวแทนของ Konami ว่าเขาไม่ได้รับอนุญาตให้เดินทางมาร่วมงานเพื่อรับรางวัล",
+      "claim_type": "REPORTED_ASSERTION",
+      "evidence_links": [
+        {
+          "evidence_key": "E_TGA_ARS",
+          "relation": "SUPPORTS",
+          "scope": [
+            "EVENT",
+            "QUOTE"
+          ],
+          "strength": "DIRECT"
+        },
+        {
+          "evidence_key": "E_TGA_GI",
+          "relation": "SUPPORTS",
+          "scope": [
+            "EVENT",
+            "QUOTE"
+          ],
+          "strength": "CORROBORATIVE"
+        }
+      ]
+    },
+    {
+      "audit_note": "Technical behavior verified; exact 0.5 m / axis implementation precision is not supported by inspected evidence.",
+      "claim_id": "CLM_000008",
+      "claim_text": "การแฮ็กมุมกล้องของ Lance McDonald ในปี 2019 แสดงให้เห็นว่า หลังผู้เล่นได้ไฟฉาย โมเดล Lisa จะติดตามอยู่ด้านหลังผู้เล่นและเคลื่อนตามไปด้วย; หลักฐานที่ตรวจรอบนี้ไม่ยืนยันระยะห่างเชิงตัวเลขที่แน่นอน",
+      "claim_type": "TECHNICAL_FINDING",
+      "evidence_links": [
+        {
+          "evidence_key": "E_LISA_GAMEDEV",
+          "relation": "SUPPORTS",
+          "scope": [
+            "TECHNICAL_BEHAVIOR"
+          ],
+          "strength": "DIRECT"
+        },
+        {
+          "evidence_key": "E_LISA_PRIMA",
+          "relation": "SUPPORTS",
+          "scope": [
+            "TECHNICAL_BEHAVIOR"
+          ],
+          "strength": "CORROBORATIVE"
+        }
+      ]
+    },
+    {
+      "audit_note": "Konami-side confirmation and Kojima-side public statement are independent source groups.",
+      "claim_id": "CLM_000009",
+      "evidence_links": [
+        {
+          "evidence_key": "E_CONTRACT_KONAMI",
+          "relation": "SUPPORTS",
+          "scope": [
+            "TIMELINE"
+          ],
+          "strength": "DIRECT"
+        },
+        {
+          "evidence_key": "E_CONTRACT_KOJIMA",
+          "relation": "SUPPORTS",
+          "scope": [
+            "TIMELINE"
+          ],
+          "strength": "DIRECT"
+        }
+      ]
+    },
+    {
+      "audit_note": "Verifies that this War of the Worlds/surveillance reading existed in community discussion, not that it is canonical.",
+      "claim_id": "CLM_000010",
+      "evidence_links": [
+        {
+          "evidence_key": "E_WOTW_COMMUNITY",
+          "relation": "SUPPORTS",
+          "scope": [
+            "INTERPRETATION"
+          ],
+          "strength": "STRONG"
+        }
+      ]
+    },
+    {
+      "audit_note": "Specific symbolic interpretation remains unsupported.",
+      "claim_id": "CLM_000011",
+      "evidence_links": [
+        {
+          "evidence_key": "E_BAG_EXISTS",
+          "relation": "QUALIFIES",
+          "scope": [
+            "INTERPRETATION"
+          ],
+          "strength": "WEAK"
+        }
+      ],
+      "force_prohibit": true,
+      "prohibit_reason": "The talking paper bag is documented, but no inspected source supports the specific “Kojima trapped by Konami” symbolism."
+    },
+    {
+      "audit_note": "Do not promote rumor existence into factual production use.",
+      "claim_id": "CLM_000012",
+      "evidence_links": [
+        {
+          "evidence_key": "E_RUMOR_DENIED",
+          "relation": "QUALIFIES",
+          "scope": [
+            "MOTIVE"
+          ],
+          "strength": "STRONG"
+        }
+      ],
+      "force_prohibit": true,
+      "prohibit_reason": "The allegation circulated as a low-credibility rumor and was denied by Kojima Productions; the audit found no reliable evidence establishing the underlying assertion."
+    },
+    {
+      "audit_note": "Specific “miscarriage of the project” interpretation remains unsupported.",
+      "claim_id": "CLM_000013",
+      "evidence_links": [
+        {
+          "evidence_key": "E_FETUS_DISCUSSION",
+          "relation": "QUALIFIES",
+          "scope": [
+            "INTERPRETATION"
+          ],
+          "strength": "WEAK"
+        }
+      ],
+      "force_prohibit": true,
+      "prohibit_reason": "Pregnancy/fetus interpretations exist, but the inspected sources do not support the specific metaphor that the fetus represents the cancelled Silent Hills project."
+    }
+  ],
+  "evidence": [
+    {
+      "content_summary": "Ars reported on Aug. 12, 2014 that Sony’s pre-Gamescom conference mentioned an immediately downloadable PS4 playable teaser P.T. from unknown 7780s studio, later revealed as Silent Hill-related.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_RELEASE_ARS",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "RELEASE_ARS"
+    },
+    {
+      "content_summary": "Gematsu reported on Aug. 12, 2014 that Sony announced P.T. from 7780s Studio during Gamescom and that the interactive teaser was available on the PlayStation Store.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_RELEASE_GEMATSU",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "RELEASE_GEMATSU"
+    },
+    {
+      "content_summary": "Push Square reported Sept. 1, 2014 that Kojima announced at Sony’s pre-TGS conference that P.T. had been downloaded over one million times.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_DOWNLOAD_PUSH",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "DOWNLOAD_PUSH"
+    },
+    {
+      "content_summary": "PlayStation Universe reported Sept. 1, 2014 that Sony announced P.T. had exceeded one million downloads since launch.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_DOWNLOAD_PSU",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "DOWNLOAD_PSU"
+    },
+    {
+      "content_summary": "WIRED quoted Kojima explaining that the “S” in 7780s points to Silent Hill/Shizuoka wordplay and that searching 7780 leads to the approximately 7,780-square-kilometre area of Shizuoka.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_7780_WIRED",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "7780_WIRED"
+    },
+    {
+      "content_summary": "A contemporaneous GameFAQs community thread proposed that 204863 can be read as 24/08/63, Kojima’s birth date. This verifies existence of a fan theory, not creator intent.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_204_COMMUNITY",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "204_COMMUNITY"
+    },
+    {
+      "content_summary": "Gematsu reported that the official P.T. site stated distribution on PlayStation Store would expire Wednesday, April 29, 2015.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_DELIST_NOTICE",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "DELIST_GEMATSU"
+    },
+    {
+      "content_summary": "GameSpot later reported that P.T. had been removed from the PlayStation Store in all regions, after Konami announced the Apr. 29 removal.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_DELIST_OBS",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "DELIST_GAMESPOT"
+    },
+    {
+      "content_summary": "GameSpot reported multiple eBay listings for PS4 consoles with P.T. installed, including two UK listings at £1,000 (about $1,500) buy-it-now and some listings up to $1,800.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_EBAY_PRICE",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "EBAY_GAMESPOT"
+    },
+    {
+      "content_summary": "Kotaku reported May 7, 2015 that eBay was taking down PS4-with-P.T. listings and relayed an eBay explanation tied to selling copyrighted software.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_EBAY_REMOVAL",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "EBAY_KOTAKU"
+    },
+    {
+      "content_summary": "Ars reported Geoff Keighley’s live statement that Kojima was informed by a lawyer representing Konami that he would not be allowed to travel to The Game Awards to accept awards.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_TGA_ARS",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "TGA_ARS"
+    },
+    {
+      "content_summary": "Game Informer independently reported the same live Keighley statement; both reports derive from the same broadcast and therefore share an independence group.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_TGA_GI",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "TGA_GAMEINFORMER"
+    },
+    {
+      "content_summary": "Game Developer reported Lance McDonald’s camera hack and quoted his finding that Lisa attaches behind the player after the flashlight and follows as the player moves. The report does not establish a precise numeric distance.",
+      "evidence_kind": "TECHNICAL_OBSERVATION",
+      "key": "E_LISA_GAMEDEV",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "LISA_GAMEDEV",
+      "technical": {
+        "assumptions": [],
+        "limitations": [
+          "Secondary report of McDonald finding; exact implementation offsets are not documented here."
+        ],
+        "method": "Camera behavior modification reported from Lance McDonald P.T. hack.",
+        "reproducibility": "PARTIALLY_REPRODUCIBLE",
+        "researcher": "Lance McDonald",
+        "tool": "Modified P.T. camera behavior"
+      }
+    },
+    {
+      "content_summary": "Prima Games reported the same Lance McDonald finding that Lisa attaches to the player’s back after the flashlight. This is derivative of the same technical observation and is not an independent corroboration.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_LISA_PRIMA",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "LISA_PRIMA"
+    },
+    {
+      "content_summary": "GAME Watch reported that Konami public relations confirmed Kojima left on Dec. 15, 2015 upon expiration of the contract period.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_CONTRACT_KONAMI",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "CONTRACT_GAMEWATCH"
+    },
+    {
+      "content_summary": "A report reproduced Kojima’s public statement that his employment contract with Konami terminated as of Dec. 15, 2015.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_CONTRACT_KOJIMA",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "CONTRACT_KOJIMA"
+    },
+    {
+      "content_summary": "A GameFAQs theory thread states that community discussion connected the Swedish radio line about a 75-year-old radio drama to Orson Welles’s 1938 War of the Worlds broadcast and surveillance/alien themes. This supports existence of the community theory, not its truth.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_WOTW_COMMUNITY",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "WOTW_COMMUNITY"
+    },
+    {
+      "content_summary": "Community discussion documents the bloody talking paper bag and speculative interpretations, but does not support the specific claim that it symbolizes Kojima being oppressed or trapped by Konami.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_BAG_EXISTS",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "BAG_COMMUNITY"
+    },
+    {
+      "content_summary": "3DJuegos reported that a 2020 allegation claimed MGSV budget/resources funded P.T. secretly, and reported Kojima Productions denied the allegation; the outlet said it had not run the original claim because it considered it low credibility.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_RUMOR_DENIED",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "RUMOR_DENIAL"
+    },
+    {
+      "content_summary": "A community thread discusses the fetus and pregnancy-related story interpretations, but does not support the specific later metaphor that the fetus represents the cancelled game project being “miscarried.”",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_FETUS_DISCUSSION",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "FETUS_COMMUNITY"
+    },
+    {
+      "content_summary": "On May 6, 2015 GameSpot reported testing that P.T. could no longer be downloaded even by users who had previously added/downloaded it.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_REDOWNLOAD_TEST",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "REDOWNLOAD_GAMESPOT"
+    },
+    {
+      "content_summary": "On May 6, 2015 Game Informer updated its report to say Konami confirmed P.T. had been completely deleted from the PlayStation Store; re-download reports were documented that day.",
+      "evidence_kind": "DOCUMENT_EXCERPT",
+      "key": "E_REDOWNLOAD_CONFIRM",
+      "locator": {
+        "type": "FULL_SOURCE"
+      },
+      "source_key": "REDOWNLOAD_GAMEINFORMER"
+    }
+  ],
+  "gaps": [
+    {
+      "importance": "MAJOR",
+      "key": "PACK_REDOWNLOAD_DATE_CONFLICT",
+      "question": "Research Pack narrative places the re-download lock in December 2015, while contemporaneous May 6, 2015 reports document that re-download was already blocked. Preserve this as an explicit source discrepancy rather than silently editing the pack.",
+      "resolution_evidence_keys": [
+        "E_REDOWNLOAD_TEST",
+        "E_REDOWNLOAD_CONFIRM"
+      ],
+      "resolution_summary": "Contemporaneous GameSpot testing and Game Informer/Konami confirmation place the no-re-download condition on May 6, 2015. The pack’s December 2015 wording should not be used as a factual timeline point.",
+      "state": "RESOLVED"
+    },
+    {
+      "blocked_gates": [],
+      "importance": "MAJOR",
+      "key": "LISA_EXACT_OFFSET_UNKNOWN",
+      "question": "What exact numeric offset and rotation constraints were used for Lisa relative to the player/camera after the flashlight? The inspected McDonald-derived evidence establishes the behind/follow relationship but not the Research Pack’s specific 0.5 m precision.",
+      "state": "OPEN"
+    }
+  ],
+  "limitations": [
+    "Web-accessible historical evidence only; paywalled/original Japanese sources may not be fully available.",
+    "A repeated secondary report of the same primary statement is not treated as independent corroboration.",
+    "Community threads can verify that a theory/rumor existed, not that the underlying interpretation is true."
+  ],
+  "new_claims": [
+    {
+      "claim_text": "ภายในวันที่ 6 พฤษภาคม 2015 P.T. ไม่สามารถดาวน์โหลดซ้ำจาก PlayStation Network ได้ แม้บัญชีนั้นจะเคยเพิ่มหรือดาวน์โหลดเกมไว้ก่อนหน้า",
+      "claim_type": "FACTUAL_ASSERTION",
+      "evidence_links": [
+        {
+          "evidence_key": "E_REDOWNLOAD_TEST",
+          "relation": "SUPPORTS",
+          "scope": [
+            "TIMELINE",
+            "EVENT"
+          ],
+          "strength": "DIRECT"
+        },
+        {
+          "evidence_key": "E_REDOWNLOAD_CONFIRM",
+          "relation": "SUPPORTS",
+          "scope": [
+            "TIMELINE",
+            "EVENT"
+          ],
+          "strength": "STRONG"
+        }
+      ],
+      "key": "REDOWNLOAD_BLOCK_MAY_2015"
+    }
+  ],
+  "provider": "GMK_WEB_RESEARCH_AUDIT",
+  "query": "Independently verify all 13 P.T. Research Pack claim candidates and record material discrepancies without silently correcting the pack.",
+  "sources": [
+    {
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_ARS_RELEASE",
+      "independence_relationship": "ORIGINAL",
+      "key": "RELEASE_ARS",
+      "language": "en",
+      "notes": "",
+      "published_at": "2014-08-12",
+      "publisher": "Ars Technica",
+      "source_type": "WEB_PAGE",
+      "title": "Metal Gear Solid’s Hideo Kojima working on new Silent Hill",
+      "url": "https://arstechnica.com/gaming/2014/08/metal-gear-solids-hideo-kojima-working-on-new-silent-hill/"
+    },
+    {
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_GEMATSU_RELEASE",
+      "independence_relationship": "ORIGINAL",
+      "key": "RELEASE_GEMATSU",
+      "language": "en",
+      "notes": "",
+      "published_at": "2014-08-12",
+      "publisher": "Gematsu",
+      "source_type": "WEB_PAGE",
+      "title": "P.T. announced for PS4, demo released [Update]",
+      "url": "https://www.gematsu.com/2014/08/p-t-announced-ps4-demo-released"
+    },
+    {
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_SONY_TGS_DOWNLOAD_STAT",
+      "independence_relationship": "DERIVED_REPORTING",
+      "key": "DOWNLOAD_PUSH",
+      "language": "en",
+      "notes": "",
+      "published_at": "2014-09-01",
+      "publisher": "Push Square",
+      "source_type": "WEB_PAGE",
+      "title": "Don’t Look Now, But PS4 Demo P.T. Has Been Downloaded Over 1 Million Times",
+      "url": "https://www.pushsquare.com/news/2014/09/dont_look_now_but_ps4_demo_pt_has_been_downloaded_over_1_million_times"
+    },
+    {
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_SONY_TGS_DOWNLOAD_STAT",
+      "independence_relationship": "DERIVED_REPORTING",
+      "key": "DOWNLOAD_PSU",
+      "language": "en",
+      "notes": "",
+      "published_at": "2014-09-01",
+      "publisher": "PlayStation Universe",
+      "source_type": "WEB_PAGE",
+      "title": "Silent Hills demo downloaded over 1 million times",
+      "url": "https://www.psu.com/news/silent-hills-demo-downloaded-over-1-million-times/"
+    },
+    {
+      "authority_class": "DIRECT_WITNESS",
+      "independence_group": "SRCGRP_KOJIMA_7780_INTERVIEW",
+      "independence_relationship": "ORIGINAL",
+      "key": "7780_WIRED",
+      "language": "en",
+      "notes": "Interview/report containing Kojima explanation of 7780s/Shizuoka wordplay.",
+      "published_at": "2014-08",
+      "publisher": "WIRED",
+      "source_type": "INTERVIEW",
+      "title": "Kojima: next Silent Hill will make you sh*t your pants",
+      "url": "https://www.wired.com/story/kojima-talks-on-pt-and-silent-hills/"
+    },
+    {
+      "authority_class": "COMMUNITY_DISCUSSION",
+      "independence_group": "SRCGRP_PT_COMMUNITY_204863",
+      "independence_relationship": "ORIGINAL",
+      "key": "204_COMMUNITY",
+      "language": "en",
+      "notes": "",
+      "published_at": "2014",
+      "publisher": "GameFAQs community",
+      "source_type": "FORUM_THREAD",
+      "title": "204863 Hideo Kojima Birthday - P.T.",
+      "url": "https://gamefaqs.gamespot.com/boards/827527-pt/69901985"
+    },
+    {
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_KONAMI_DELIST_NOTICE",
+      "independence_relationship": "DERIVED_REPORTING",
+      "key": "DELIST_GEMATSU",
+      "language": "en",
+      "notes": "",
+      "published_at": "2015-04-25",
+      "publisher": "Gematsu",
+      "source_type": "WEB_PAGE",
+      "title": "P.T. distribution to end on April 29",
+      "url": "https://www.gematsu.com/2015/04/p-t-distribution-end-april-29"
+    },
+    {
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_GAMESPOT_STORE_OBSERVATION",
+      "independence_relationship": "ORIGINAL",
+      "key": "DELIST_GAMESPOT",
+      "language": "en",
+      "notes": "",
+      "published_at": "2015-05-05",
+      "publisher": "GameSpot",
+      "source_type": "WEB_PAGE",
+      "title": "Silent Hills PS4 Teaser P.T. Now Gone From PlayStation Store",
+      "url": "https://www.gamespot.com/articles/silent-hills-ps4-teaser-p-t-now-gone-from-playstat/1100-6426990/"
+    },
+    {
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_GAMESPOT_EBAY_OBSERVATION",
+      "independence_relationship": "ORIGINAL",
+      "key": "EBAY_GAMESPOT",
+      "language": "en",
+      "notes": "",
+      "published_at": "2015-04-29",
+      "publisher": "GameSpot",
+      "source_type": "WEB_PAGE",
+      "title": "PS4s With Pre-Installed PT Listed on eBay for as Much as $1,800",
+      "url": "https://www.gamespot.com/articles/ps4s-with-pre-installed-pt-listed-on-ebay-for-as-m/1100-6426971/"
+    },
+    {
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_KOTAKU_EBAY_POLICY",
+      "independence_relationship": "ORIGINAL",
+      "key": "EBAY_KOTAKU",
+      "language": "en",
+      "notes": "",
+      "published_at": "2015-05-07",
+      "publisher": "Kotaku",
+      "source_type": "WEB_PAGE",
+      "title": "eBay Taking Down Auctions Selling PS4s With P.T.",
+      "url": "https://kotaku.com/ebay-taking-down-auctions-selling-ps4s-with-p-t-1702917689"
+    },
+    {
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_TGA_KEIGHLEY_BROADCAST",
+      "independence_relationship": "DERIVED_REPORTING",
+      "key": "TGA_ARS",
+      "language": "en",
+      "notes": "",
+      "published_at": "2015-12-03",
+      "publisher": "Ars Technica",
+      "source_type": "WEB_PAGE",
+      "title": "Geoff Keighley: Konami blocked Metal Gear creator from accepting award",
+      "url": "https://arstechnica.com/gaming/2015/12/geoff-keighley-konami-blocked-metal-gear-creator-from-accepting-award/"
+    },
+    {
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_TGA_KEIGHLEY_BROADCAST",
+      "independence_relationship": "DERIVED_REPORTING",
+      "key": "TGA_GAMEINFORMER",
+      "language": "en",
+      "notes": "",
+      "published_at": "2015-12-03",
+      "publisher": "Game Informer",
+      "source_type": "WEB_PAGE",
+      "title": "Hideo Kojima Legally Prohibited From Attending The Game Awards",
+      "url": "https://gameinformer.com/b/news/archive/2015/12/03/hideo-kojima-legally-prohibited-from-attending-the-game-awards.aspx"
+    },
+    {
+      "authority_class": "TECHNICAL_RESEARCH",
+      "independence_group": "SRCGRP_LANCE_MCDONALD_FINDING",
+      "independence_relationship": "DERIVED_REPORTING",
+      "key": "LISA_GAMEDEV",
+      "language": "en",
+      "notes": "",
+      "published_at": "2019-09",
+      "publisher": "Game Developer",
+      "source_type": "TECHNICAL_ANALYSIS",
+      "title": "Camera hack reveals P.T.’s ghost is legitimately always just offscreen",
+      "url": "https://www.gamedeveloper.com/game-platforms/camera-hack-reveals-i-pt-i-s-ghost-is-legitimately-always-just-offscreen"
+    },
+    {
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_LANCE_MCDONALD_FINDING",
+      "independence_relationship": "DERIVED_REPORTING",
+      "key": "LISA_PRIMA",
+      "language": "en",
+      "notes": "",
+      "published_at": "2019-09",
+      "publisher": "Prima Games",
+      "source_type": "WEB_PAGE",
+      "title": "Hacker Reveals Lisa is Always Following You in PT",
+      "url": "https://primagames.com/news/hacker-reveals-lisa-always-following-you-pt"
+    },
+    {
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_KONAMI_CONTRACT_CONFIRMATION",
+      "independence_relationship": "ORIGINAL",
+      "key": "CONTRACT_GAMEWATCH",
+      "language": "en",
+      "notes": "Report says Konami PR confirmed departure on Dec 15 after contract period ended.",
+      "published_at": "2015-12-16",
+      "publisher": "GAME Watch",
+      "source_type": "WEB_PAGE",
+      "title": "Hideo Kojima leaves KONAMI upon expiration of contract",
+      "url": "https://game.watch.impress.co.jp/docs/news/735582.html"
+    },
+    {
+      "authority_class": "PRIMARY",
+      "independence_group": "SRCGRP_KOJIMA_PUBLIC_STATEMENT",
+      "independence_relationship": "DERIVED_REPORTING",
+      "key": "CONTRACT_KOJIMA",
+      "language": "en",
+      "notes": "Report reproduces Kojima statement that his employment contract with Konami terminated Dec 15.",
+      "published_at": "2015-12-16",
+      "publisher": "PlayStation LifeStyle",
+      "source_type": "WEB_PAGE",
+      "title": "Hideo Kojima public statement on contract ending Dec 15",
+      "url": "https://www.playstationlifestyle.net/2015/12/16/hideo-kojima-issues-message-website-talks-new-kojima-productions-logo/"
+    },
+    {
+      "authority_class": "COMMUNITY_DISCUSSION",
+      "independence_group": "SRCGRP_PT_COMMUNITY_WOTW",
+      "independence_relationship": "ORIGINAL",
+      "key": "WOTW_COMMUNITY",
+      "language": "en",
+      "notes": "",
+      "published_at": "2015",
+      "publisher": "GameFAQs community",
+      "source_type": "FORUM_THREAD",
+      "title": "Some observations and theories about the story in P.T.",
+      "url": "https://gamefaqs.gamespot.com/boards/827527-pt/70861348"
+    },
+    {
+      "authority_class": "COMMUNITY_DISCUSSION",
+      "independence_group": "SRCGRP_PT_COMMUNITY_BAG",
+      "independence_relationship": "ORIGINAL",
+      "key": "BAG_COMMUNITY",
+      "language": "en",
+      "notes": "",
+      "published_at": "2014",
+      "publisher": "GameFAQs community",
+      "source_type": "FORUM_THREAD",
+      "title": "How to make the bag talk??",
+      "url": "https://gamefaqs.gamespot.com/boards/827527-pt/69881280"
+    },
+    {
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_KOJIPRO_RUMOR_DENIAL",
+      "independence_relationship": "DERIVED_REPORTING",
+      "key": "RUMOR_DENIAL",
+      "language": "en",
+      "notes": "",
+      "published_at": "2020-06-24",
+      "publisher": "3DJuegos",
+      "source_type": "WEB_PAGE",
+      "title": "Kojima Productions denies allegation about MGSV budget being used for P.T.",
+      "url": "https://www.3djuegos.com/juegos/silent-hills/noticias/kojima-productions-niega-que-konami-despidiera-a-kojima-por-200624-105589"
+    },
+    {
+      "authority_class": "COMMUNITY_DISCUSSION",
+      "independence_group": "SRCGRP_PT_FETUS_DISCUSSION",
+      "independence_relationship": "ORIGINAL",
+      "key": "FETUS_COMMUNITY",
+      "language": "en",
+      "notes": "",
+      "published_at": "2015",
+      "publisher": "GameFAQs community",
+      "source_type": "FORUM_THREAD",
+      "title": "My theory on this plot and how it relates to Silent Hills",
+      "url": "https://gamefaqs.gamespot.com/boards/827527-pt/71332379"
+    },
+    {
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_GAMESPOT_REDOWNLOAD_TEST",
+      "independence_relationship": "ORIGINAL",
+      "key": "REDOWNLOAD_GAMESPOT",
+      "language": "en",
+      "notes": "",
+      "published_at": "2015-05-06",
+      "publisher": "GameSpot",
+      "source_type": "WEB_PAGE",
+      "title": "P.T. Can No Longer Be Downloaded, Even From Your PS4 Library",
+      "url": "https://www.gamespot.com/articles/p-t-can-no-longer-be-downloaded-even-from-your-ps4/1100-6427124/"
+    },
+    {
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_KONAMI_REDOWNLOAD_CONFIRMATION",
+      "independence_relationship": "ORIGINAL",
+      "key": "REDOWNLOAD_GAMEINFORMER",
+      "language": "en",
+      "notes": "Updated report says Konami confirmed P.T. was completely deleted from the store.",
+      "published_at": "2015-05-06",
+      "publisher": "Game Informer",
+      "source_type": "WEB_PAGE",
+      "title": "P.T. Completely Removed From PlayStation Store, Cannot Be Re-Downloaded",
+      "url": "https://gameinformer.com/b/news/archive/2015/05/06/report-p-t-completely-removed-from-playstation-store-cannot-be-re-downloaded.aspx"
+    }
+  ],
+  "strategy": "Prefer direct/official or contemporaneous sources; track derivative reports in the same independence group; verify existence of theories separately from truth; narrow composite claims; reject unsupported numerical precision."
+}

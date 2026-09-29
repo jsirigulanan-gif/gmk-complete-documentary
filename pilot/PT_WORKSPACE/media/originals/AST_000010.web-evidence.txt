@@ -1,0 +1,6 @@
+GMK WEB EVIDENCE SNAPSHOT
+Candidate: PAYOFF_DELIST
+Source URL: https://www.gematsu.com/2015/04/p-t-distribution-end-april-29
+Title: P.T. distribution to end on April 29
+Capture type: bounded text evidence snapshot (not origin-server HTML bytes)
+Evidence summary: The same dated Gematsu distribution-end evidence is intentionally reused for the final payoff rather than introducing unsupported filler.

@@ -1,0 +1,14 @@
+{
+  "action": "SATISFY_GATE_REQUIREMENTS",
+  "blockers": [],
+  "gate_ids": [
+    "ASSET_RECON"
+  ],
+  "message": "Current exact evidence does not yet satisfy the next transition.",
+  "missing_requirements": [
+    "ASSET_RECON:SEARCH_COMPLETION_CERTIFICATE:QA_REPORT_MISSING"
+  ],
+  "permission_class": "AI_WITH_RULES",
+  "project_state": "ASSET_RECON",
+  "target_state": "ASSET_CATALOG_READY"
+}

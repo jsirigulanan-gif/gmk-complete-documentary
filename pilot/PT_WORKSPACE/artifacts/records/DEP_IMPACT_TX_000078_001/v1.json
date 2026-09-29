@@ -1,0 +1,107 @@
+{
+  "artifact_id": "DEP_IMPACT_TX_000078_001",
+  "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+  "blast_radius": "LOCAL",
+  "change_set": {
+    "changed_paths": [
+      "/attempts",
+      "/workflow_state"
+    ],
+    "impact_tags": [
+      "GENERAL"
+    ],
+    "new_version": 2,
+    "object_id": "OP_000006",
+    "previous_version": 1
+  },
+  "created_at": "2026-09-27T16:11:05.202044Z",
+  "extensions": {},
+  "frozen_stops": [
+    {
+      "kind": "ARTIFACT",
+      "ref": {
+        "artifact_id": "DEP_IMPACT_TX_000033_001",
+        "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+        "sha256": "873bbbf7feaa9f8a5d3580eb13208ef8f11ce5f9b13834255934386556f3da44",
+        "version": 1
+      }
+    }
+  ],
+  "impacts": [
+    {
+      "blast_radius": "LOCAL",
+      "depth": 1,
+      "disposition": "REVALIDATE",
+      "immediate_dependency": {
+        "kind": "OBJECT",
+        "ref": {
+          "id": "OP_000006",
+          "version": 1
+        }
+      },
+      "message": "OBJ:AST_000006@2 depends on OBJ:OP_000006@1 via DERIVED_FROM; ACTIVE root changed OBJ:OP_000006@1 -> OBJ:OP_000006@2 (GENERAL).",
+      "node": {
+        "kind": "OBJECT",
+        "ref": {
+          "id": "AST_000006",
+          "version": 2
+        }
+      },
+      "path": "/acquisition_operation_ref",
+      "reason_code": "DEPENDENCY_REVALIDATION_REQUIRED",
+      "relation": "DERIVED_FROM",
+      "root_new": {
+        "kind": "OBJECT",
+        "ref": {
+          "id": "OP_000006",
+          "version": 2
+        }
+      },
+      "root_previous": {
+        "kind": "OBJECT",
+        "ref": {
+          "id": "OP_000006",
+          "version": 1
+        }
+      }
+    }
+  ],
+  "origin_refs": [
+    {
+      "id": "OP_000006",
+      "version": 1
+    },
+    {
+      "id": "OP_000006",
+      "version": 2
+    }
+  ],
+  "policy_ref": {
+    "config_id": "GMK_DEPENDENCY_POLICY",
+    "sha256": "4b368d0e008701f5fca9bfe73b7f38fb711ec1d77bc282a03be54b2d2d0ec2ee",
+    "version": "1.0.0"
+  },
+  "root_change": {
+    "new": {
+      "kind": "OBJECT",
+      "ref": {
+        "id": "OP_000006",
+        "version": 2
+      }
+    },
+    "previous": {
+      "kind": "OBJECT",
+      "ref": {
+        "id": "OP_000006",
+        "version": 1
+      }
+    }
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+    "schema_version": "1.0.0"
+  },
+  "sha256": "62e14b0defcb1b4e7073319c1be3dc6a8c1f6b2563eb092af60b005c7b2deee0",
+  "uri": "gmk://artifacts/DEP_IMPACT_TX_000078_001/v1",
+  "version": 1
+}

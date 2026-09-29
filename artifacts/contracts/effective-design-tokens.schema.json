@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/effective-design-tokens",
+  "title": "EFFECTIVE_DESIGN_TOKENS",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "EFFECTIVE_DESIGN_TOKENS"
+        },
+        "base_design": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ConfigRef"
+        },
+        "design_dna_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DESIGN_SOURCE"
+        },
+        "tokens": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "base_design",
+        "design_dna_ref",
+        "tokens"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

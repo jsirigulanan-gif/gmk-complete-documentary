@@ -1,0 +1,67 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "certainty": {
+    "basis": [
+      "INTAKE_ONLY"
+    ],
+    "level": "UNKNOWN"
+  },
+  "claim_text": "ตัวเลข \"204863\" ตรงกับวันเกิดของ Hideo Kojima (24 สิงหาคม 1963)",
+  "claim_type": "FACTUAL_ASSERTION",
+  "contradiction_refs": [],
+  "created_at": "2026-09-27T08:40:33.055559Z",
+  "dependencies": [
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000004",
+        "version": 1
+      }
+    }
+  ],
+  "evidence_links": [
+    {
+      "evidence_ref": {
+        "id": "EVD_000004",
+        "version": 1
+      },
+      "relation": "CONTEXTUALIZES",
+      "scope": [
+        "EVENT"
+      ],
+      "strength": "CONTEXT_ONLY"
+    }
+  ],
+  "extensions": {
+    "intake": {
+      "batch_id": "PT_INTAKE_0243AAD58E88E290",
+      "declared_id": "FACT-004",
+      "declared_label": "VERIFIED FACT",
+      "source_hint": "บันทึกข้อมูลส่วนตัว Hideo Kojima, MGS Secret Ciphers"
+    }
+  },
+  "human_constraints": [],
+  "id": "CLM_000004",
+  "lock_state": "UNLOCKED",
+  "object_type": "CLAIM",
+  "production_use": {
+    "language_mode": "PROHIBITED",
+    "narration_allowed": false,
+    "reason": "Imported from Research Pack only; independent Research Audit has not verified the underlying claim."
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/claim",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "updated_at": "2026-09-27T08:40:33.055559Z",
+  "verification_state": "UNREVIEWED",
+  "version": 1
+}

@@ -1,0 +1,173 @@
+{
+  "artifact_id": "RESEARCH_ATTEMPT_LOG_000001",
+  "artifact_type": "RESEARCH_ATTEMPT_LOG",
+  "created_at": "2026-09-27T08:40:33.059369Z",
+  "extensions": {
+    "intake_batch_id": "PT_INTAKE_0243AAD58E88E290",
+    "intake_summary": {
+      "claim_refs": [
+        {
+          "id": "CLM_000001",
+          "version": 1
+        },
+        {
+          "id": "CLM_000002",
+          "version": 1
+        },
+        {
+          "id": "CLM_000003",
+          "version": 1
+        },
+        {
+          "id": "CLM_000004",
+          "version": 1
+        },
+        {
+          "id": "CLM_000005",
+          "version": 1
+        },
+        {
+          "id": "CLM_000006",
+          "version": 1
+        },
+        {
+          "id": "CLM_000007",
+          "version": 1
+        },
+        {
+          "id": "CLM_000008",
+          "version": 1
+        },
+        {
+          "id": "CLM_000009",
+          "version": 1
+        },
+        {
+          "id": "CLM_000010",
+          "version": 1
+        },
+        {
+          "id": "CLM_000011",
+          "version": 1
+        },
+        {
+          "id": "CLM_000012",
+          "version": 1
+        },
+        {
+          "id": "CLM_000013",
+          "version": 1
+        }
+      ],
+      "evidence_refs": [
+        {
+          "id": "EVD_000001",
+          "version": 1
+        },
+        {
+          "id": "EVD_000002",
+          "version": 1
+        },
+        {
+          "id": "EVD_000003",
+          "version": 1
+        },
+        {
+          "id": "EVD_000004",
+          "version": 1
+        },
+        {
+          "id": "EVD_000005",
+          "version": 1
+        },
+        {
+          "id": "EVD_000006",
+          "version": 1
+        },
+        {
+          "id": "EVD_000007",
+          "version": 1
+        },
+        {
+          "id": "EVD_000008",
+          "version": 1
+        },
+        {
+          "id": "EVD_000009",
+          "version": 1
+        },
+        {
+          "id": "EVD_000010",
+          "version": 1
+        },
+        {
+          "id": "EVD_000011",
+          "version": 1
+        },
+        {
+          "id": "EVD_000012",
+          "version": 1
+        },
+        {
+          "id": "EVD_000013",
+          "version": 1
+        }
+      ],
+      "explicit_contradictions": 0,
+      "gap_refs": [
+        {
+          "id": "GAP_000001",
+          "version": 1
+        },
+        {
+          "id": "GAP_000002",
+          "version": 1
+        },
+        {
+          "id": "GAP_000003",
+          "version": 1
+        },
+        {
+          "id": "GAP_000004",
+          "version": 1
+        }
+      ],
+      "pack_source_ref": {
+        "id": "SRC_000001",
+        "version": 1
+      },
+      "quotes": 4,
+      "source_leads": 5
+    }
+  },
+  "limitations": [
+    "No external URLs were fetched during intake.",
+    "Research Pack labels such as VERIFIED FACT are not accepted as GMK verification states.",
+    "Declared source authority/confidence and quote authenticity remain unverified.",
+    "No contradiction is created unless the pack explicitly supplies conflicting evidence; absence of a contradiction object is not proof of consistency."
+  ],
+  "origin_refs": [
+    {
+      "id": "SRC_000001",
+      "version": 1
+    }
+  ],
+  "provider": "GMK_LOCAL_RESEARCH_PACK_PARSER",
+  "query": "Parse supplied P.T. Research Pack into safe GMK research-intake candidates.",
+  "result": "{\"parsed_counts\": {\"claims\": 13, \"explicit_contradictions\": 0, \"quotes\": 4, \"source_leads\": 5, \"unresolved_questions\": 3}, \"quotes\": [{\"context\": \"3 ธันวาคม 2015 - The Game Awards\", \"paragraph\": 170, \"quote\": \"Mr. Kojima had every intention of being with us tonight, but unfortunately he was informed by a lawyer representing Konami just recently that he would not be allowed to travel to tonight's awards ceremony to accept any awards.\", \"source_hint\": \"[SRC-003]\", \"speaker\": \"Geoff Keighley\"}, {\"context\": \"26 เมษายน 2015 - San Francisco Film Society\", \"paragraph\": 173, \"quote\": \"It's not gonna happen and that breaks my greasy heart.\", \"source_hint\": \"[SRC-005]\", \"speaker\": \"Guillermo del Toro\"}, {\"context\": \"พฤษภาคม 2015 - Nikkei Trendy Interview\", \"paragraph\": 176, \"quote\": \"Gaming has spread to a number of platforms, but at the end of the day, the platform that is always closest to us is mobile. Mobile is where the future of gaming lies.\", \"source_hint\": \"Nikkei Trendy\", \"speaker\": \"Hideki Hayakawa\"}, {\"context\": \"12 สิงหาคม 2014 - In-Game Broadcast\", \"paragraph\": 179, \"quote\": \"Don't touch that dial now, we're just getting started.\\\" / \\\"Look behind you. I said, look behind you.\", \"source_hint\": \"P.T. Game Script\", \"speaker\": \"P.T. Radio Voice\"}], \"source_leads\": [{\"declared_authority\": \"Primary\", \"declared_confidence\": \"High\", \"declared_id\": \"SRC-001\", \"paragraph\": 134, \"published_at\": \"12 สิงหาคม 2014\", \"publisher\": \"Sony Interactive Entertainment\", \"summary\": \"ข้อมูลยืนยันการเปิดตัว P.T. ภายใต้ชื่อ 7780s Studio\", \"title\": \"PlayStation Blog (Official Announcement)\", \"url\": \"https://blog.playstation.com/2014/08/12/gamescom-2014-press-conference-recap/\"}, {\"declared_authority\": \"Secondary\", \"declared_confidence\": \"High\", \"declared_id\": \"SRC-002\", \"paragraph\": 135, \"published_at\": \"3 สิงหาคม 2015\", \"publisher\": \"The Nikkei (แปลโดย Kotaku/GameDeveloper)\", \"summary\": \"รายงานเจาะลึกวัฒนธรรมการสอดส่องและบีบพนักงานใน Konami\", \"title\": \"Nikkei Report on Konami Corporate Culture\", \"url\": \"https://kotaku.com/report-konami-is-treating-its-staff-like-prisoners-1721700073\"}, {\"declared_authority\": \"Primary\", \"declared_confidence\": \"High\", \"declared_id\": \"SRC-003\", \"paragraph\": 136, \"published_at\": \"3 ธันวาคม 2015\", \"publisher\": \"The Game Awards 2015 Broadcast\", \"summary\": \"คำแถลงสดของ Geoff Keighley เรื่องทนาย Konami สั่งห้าม Kojima\", \"title\": \"Geoff Keighley The Game Awards Speech\", \"url\": \"https://www.youtube.com/watch?v=PKl5rYdwM6c\"}, {\"declared_authority\": \"Primary\", \"declared_confidence\": \"High\", \"declared_id\": \"SRC-004\", \"paragraph\": 137, \"published_at\": \"9 กันยายน 2019\", \"publisher\": \"Lance McDonald YouTube Channel\", \"summary\": \"การพิสูจน์โค้ดทางเทคนิคเรื่องโมเดล Lisa ติดหลังกล้อง\", \"title\": \"P.T. Camera Hack: Lisa Follows You\", \"url\": \"https://www.youtube.com/watch?v=kYJvM9e5q1k\"}, {\"declared_authority\": \"Secondary\", \"declared_confidence\": \"High\", \"declared_id\": \"SRC-005\", \"paragraph\": 138, \"published_at\": \"26 เมษายน 2015\", \"publisher\": \"Polygon\", \"summary\": \"แถลงการณ์ Konami เรื่องการถอดเกมและการยกเลิก Silent Hills\", \"title\": \"Konami Delisting P.T. Confirmation\", \"url\": \"https://www.polygon.com/2015/4/26/8499253/silent-hills-cancelled-pt-removed-playstation-store\"}]}",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/research-attempt-log",
+    "schema_version": "1.0.0"
+  },
+  "sha256": "fb9ace238db3a7e524333b84ee7ace8e43b634ff6ba81b749ce607ceeb2d300b",
+  "sources_inspected": [
+    {
+      "id": "SRC_000001",
+      "version": 1
+    }
+  ],
+  "strategy": "Deterministic DOCX paragraph extraction. Preserve declared labels as intake metadata; do not perform external verification.",
+  "supersedes_version": 1,
+  "uri": "gmk://artifacts/RESEARCH_ATTEMPT_LOG_000001/v2",
+  "version": 2
+}

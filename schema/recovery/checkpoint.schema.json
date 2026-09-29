@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/checkpoint",
+  "title": "GMK Checkpoint",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "CHECKPOINT"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^CP_[A-Z0-9_-]+$"
+        },
+        "checkpoint_class": {
+          "type": "string",
+          "enum": [
+            "PROJECT_STATE",
+            "PRE_HIGH_RISK_OPERATION",
+            "PRE_PRODUCTION_LOCK_BREAK",
+            "PRE_RELEASE",
+            "FINAL_PROJECT"
+          ]
+        },
+        "project_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "manifest_snapshot": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "system_pins": {
+          "type": "object",
+          "required": [
+            "schema_version",
+            "policy_bundle_ref"
+          ],
+          "properties": {
+            "schema_version": {
+              "$ref": "gmk://schema/v1/reference#/$defs/SemVer"
+            },
+            "policy_bundle_ref": {
+              "$ref": "gmk://schema/v1/reference#/$defs/ConfigRef"
+            }
+          },
+          "additionalProperties": false
+        },
+        "registry_snapshots": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+            "x-gmk-dependency-relation": "DERIVED_FROM"
+          }
+        },
+        "important_artifact_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+            "x-gmk-dependency-relation": "DERIVED_FROM"
+          }
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "integrity_summary": {
+          "type": "string",
+          "enum": [
+            "UNKNOWN",
+            "PASS",
+            "FAIL"
+          ],
+          "x-gmk-field-class": "DERIVED",
+          "x-gmk-derived-mode": "LIVE"
+        }
+      },
+      "required": [
+        "checkpoint_class",
+        "project_ref",
+        "manifest_snapshot",
+        "system_pins",
+        "registry_snapshots",
+        "important_artifact_refs",
+        "reason",
+        "integrity_summary"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

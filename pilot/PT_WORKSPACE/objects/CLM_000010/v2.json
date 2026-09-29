@@ -1,0 +1,101 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "certainty": {
+    "basis": [
+      "ONE_VERIFIED_SOURCE_GROUP"
+    ],
+    "level": "MEDIUM"
+  },
+  "claim_text": "การถอดรหัสข้อความวิทยุภาษาสวีเดน (\"Close your eyes...\"): ชุมชนเชื่อว่าเป็นสัญลักษณ์เชื่อมโยงถึง The War of the Worlds (1938) และเป็นการส่งสัญญาณเตือนถึงการถูกจับตามอง (Surveillance) ขององค์กร",
+  "claim_type": "COMMUNITY_THEORY",
+  "contradiction_refs": [],
+  "created_at": "2026-09-27T09:39:46.932902Z",
+  "dependencies": [
+    {
+      "relation": "SUPERSEDES",
+      "target": {
+        "id": "CLM_000010",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000010",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000030",
+        "version": 1
+      }
+    }
+  ],
+  "evidence_links": [
+    {
+      "evidence_ref": {
+        "id": "EVD_000010",
+        "version": 1
+      },
+      "relation": "CONTEXTUALIZES",
+      "scope": [
+        "INTERPRETATION"
+      ],
+      "strength": "CONTEXT_ONLY"
+    },
+    {
+      "evidence_ref": {
+        "id": "EVD_000030",
+        "version": 1
+      },
+      "relation": "SUPPORTS",
+      "scope": [
+        "INTERPRETATION"
+      ],
+      "strength": "STRONG"
+    }
+  ],
+  "extensions": {
+    "intake": {
+      "batch_id": "PT_INTAKE_0243AAD58E88E290",
+      "declared_id": "THEORY-001",
+      "declared_label": "THEORY"
+    },
+    "research_audit": {
+      "audited": true,
+      "batch_id": "PT_RESEARCH_AUDIT_001",
+      "note": "Verifies that this War of the Worlds/surveillance reading existed in community discussion, not that it is canonical.",
+      "original_version": 1
+    }
+  },
+  "human_constraints": [],
+  "id": "CLM_000010",
+  "lock_state": "UNLOCKED",
+  "object_type": "CLAIM",
+  "production_use": {
+    "language_mode": "THEORY",
+    "narration_allowed": true,
+    "reason": "Audit verifies the existence of the community theory, not the theory as fact."
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/claim",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "supersedes": {
+    "id": "CLM_000010",
+    "version": 1
+  },
+  "updated_at": "2026-09-27T09:39:46.932902Z",
+  "verification_state": "SOURCE_VERIFIED",
+  "version": 2
+}

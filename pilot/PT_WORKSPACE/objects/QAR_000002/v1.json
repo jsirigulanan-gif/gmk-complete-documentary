@@ -1,0 +1,73 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "created_at": "2026-09-27T16:11:09.741151Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "PROJECT_000001",
+        "version": 1
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "QAI_000001",
+        "version": 1
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "QAI_000002",
+        "version": 1
+      }
+    }
+  ],
+  "evaluated_at": "2026-09-27T16:11:09.741118Z",
+  "extensions": {},
+  "human_constraints": [],
+  "id": "QAR_000002",
+  "issue_refs": [
+    {
+      "id": "QAI_000001",
+      "version": 1
+    },
+    {
+      "id": "QAI_000002",
+      "version": 1
+    }
+  ],
+  "lock_state": "UNLOCKED",
+  "object_type": "QA_REPORT",
+  "qa_profile": {
+    "config_id": "GMK_ASSET_COVERAGE_REPORT_PROFILE",
+    "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "version": "1.0.0"
+  },
+  "report_type": "ASSET_COVERAGE_REPORT",
+  "result": "FAIL",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/qa-report",
+    "schema_version": "1.0.0"
+  },
+  "scope": {
+    "id": "PROJECT_000001",
+    "version": 1
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "summary": {
+    "critical": 0,
+    "major": 2,
+    "minor": 0
+  },
+  "updated_at": "2026-09-27T16:11:09.741151Z",
+  "version": 1
+}

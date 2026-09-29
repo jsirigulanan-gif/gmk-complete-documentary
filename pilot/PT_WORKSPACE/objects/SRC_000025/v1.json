@@ -1,0 +1,49 @@
+{
+  "accessed_at": "2026-09-27T11:22:06.537112Z",
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "author": "",
+  "authority_class": "UNKNOWN",
+  "availability": {
+    "state": "AVAILABLE"
+  },
+  "created_at": "2026-09-27T11:22:06.537136Z",
+  "dependencies": [],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318",
+      "source_key": "OPENING_R3D_YT",
+      "source_verified": true
+    }
+  },
+  "human_constraints": [],
+  "id": "SRC_000025",
+  "independence": {
+    "group_id": "SRCGRP_PT_GAMESCOM_VIDEO_REUPLOAD",
+    "relationship": "REUPLOAD"
+  },
+  "language": "en",
+  "lock_state": "UNLOCKED",
+  "notes": "Reupload contains trailer plus ending reveal; exact safe opening range must be isolated before use to prevent early reveal.",
+  "object_type": "SOURCE",
+  "platform": "YouTube",
+  "published_at": "2014-08-12",
+  "publisher": "R3D Gaming",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/source",
+    "schema_version": "1.0.0"
+  },
+  "source_type": "VIDEO",
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "Silent Hills P.T. – 2014 Gamescom Trailer & Ending (Norman Reedus Reveal) HD",
+  "updated_at": "2026-09-27T11:22:06.537136Z",
+  "url": "https://www.youtube.com/watch?v=HvZ09gERgw4",
+  "version": 1
+}

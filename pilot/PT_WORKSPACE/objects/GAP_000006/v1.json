@@ -1,0 +1,52 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "blocked_gates": [],
+  "blocked_targets": [],
+  "created_at": "2026-09-27T09:39:46.983720Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "artifact_id": "RESEARCH_ATTEMPT_LOG_000002",
+        "artifact_type": "RESEARCH_ATTEMPT_LOG",
+        "sha256": "b0834d5a80cb1e4c9337b002c55a7ed0933e271985f9f9645219d64b59275b24",
+        "version": 1
+      }
+    }
+  ],
+  "extensions": {
+    "research_audit": {
+      "batch_id": "PT_RESEARCH_AUDIT_001",
+      "finding_key": "LISA_EXACT_OFFSET_UNKNOWN"
+    }
+  },
+  "human_constraints": [],
+  "id": "GAP_000006",
+  "importance": "MAJOR",
+  "lock_state": "UNLOCKED",
+  "object_type": "RESEARCH_GAP",
+  "question": "What exact numeric offset and rotation constraints were used for Lisa relative to the player/camera after the flashlight? The inspected McDonald-derived evidence establishes the behind/follow relationship but not the Research Pack’s specific 0.5 m precision.",
+  "research_attempt_refs": [
+    {
+      "artifact_id": "RESEARCH_ATTEMPT_LOG_000002",
+      "artifact_type": "RESEARCH_ATTEMPT_LOG",
+      "sha256": "b0834d5a80cb1e4c9337b002c55a7ed0933e271985f9f9645219d64b59275b24",
+      "version": 1
+    }
+  ],
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/research-gap",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "state": "OPEN",
+  "status": "CURRENT",
+  "updated_at": "2026-09-27T09:39:46.983720Z",
+  "version": 1
+}

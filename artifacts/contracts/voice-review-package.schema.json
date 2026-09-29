@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/voice-review-package",
+  "title": "VOICE_REVIEW_PACKAGE",
+  "allOf": [
+    { "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord" },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": { "const": "VOICE_REVIEW_PACKAGE" },
+        "scope": {
+          "type": "object",
+          "required": ["type"],
+          "properties": { "type": { "const": "VOICE_LOCK" } },
+          "additionalProperties": true
+        },
+        "voice_lock": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "master_voice": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "timing_map": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "tts_script": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "FACT_SOURCE"
+        },
+        "review_summary": {
+          "type": "object",
+          "properties": {
+            "block_count": { "type": "integer", "minimum": 1 },
+            "duration_seconds": { "type": "number", "exclusiveMinimum": 0 },
+            "audio_sha256": { "$ref": "gmk://schema/v1/reference#/$defs/Sha256" }
+          },
+          "required": ["block_count", "duration_seconds", "audio_sha256"],
+          "additionalProperties": true
+        }
+      },
+      "required": ["scope", "voice_lock", "master_voice", "timing_map", "tts_script", "review_summary"]
+    }
+  ],
+  "unevaluatedProperties": false
+}

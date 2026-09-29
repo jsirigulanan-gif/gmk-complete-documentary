@@ -1,0 +1,6 @@
+GMK WEB EVIDENCE SNAPSHOT
+Candidate: REDOWN_GS
+Source URL: https://www.gamespot.com/articles/p-t-can-no-longer-be-downloaded-even-from-your-ps4/1100-6427124/
+Title: P.T. can no longer be downloaded even from your PS4 library
+Capture type: bounded text evidence snapshot (not origin-server HTML bytes)
+Evidence summary: GameSpot reported that after Store removal, P.T. had initially remained re-downloadable from users libraries, but that was no longer possible by May 2015.

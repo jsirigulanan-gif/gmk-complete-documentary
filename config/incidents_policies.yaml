@@ -1,0 +1,16 @@
+config_id: GMK_INCIDENTS_POLICY
+version: 1.0.0
+schema_version: 1.0.0
+mode_rules:
+  - minimum_severity: CRITICAL
+    requires_actions: [FREEZE_MUTATIONS, BLOCK_EXTERNAL_OPERATIONS]
+    mode: EMERGENCY_STOP
+  - minimum_severity: MAJOR
+    requires_actions: [FREEZE_MUTATIONS]
+    mode: READ_ONLY
+  - minimum_severity: MAJOR
+    requires_actions: [BLOCK_EXTERNAL_OPERATIONS]
+    mode: SAFE_MODE
+rules:
+  resolved_incidents_require_verification: true
+  incident_safety_mode_is_derived: true

@@ -1,0 +1,208 @@
+{
+  "artifact_id": "RESEARCH_ATTEMPT_LOG_000002",
+  "artifact_type": "RESEARCH_ATTEMPT_LOG",
+  "created_at": "2026-09-27T09:39:46.850995Z",
+  "extensions": {
+    "research_audit": {
+      "batch_id": "PT_RESEARCH_AUDIT_001",
+      "batch_sha256": "43b8c6e9c38289571f17c389d253696d66e864cb3774a679140bb2567a2e9dca",
+      "phase": "APPLIED"
+    }
+  },
+  "limitations": [
+    "Web-accessible historical evidence only; paywalled/original Japanese sources may not be fully available.",
+    "A repeated secondary report of the same primary statement is not treated as independent corroboration.",
+    "Community threads can verify that a theory/rumor existed, not that the underlying interpretation is true."
+  ],
+  "origin_refs": [
+    {
+      "id": "SRC_000002",
+      "version": 1
+    },
+    {
+      "id": "SRC_000003",
+      "version": 1
+    },
+    {
+      "id": "SRC_000004",
+      "version": 1
+    },
+    {
+      "id": "SRC_000005",
+      "version": 1
+    },
+    {
+      "id": "SRC_000006",
+      "version": 1
+    },
+    {
+      "id": "SRC_000007",
+      "version": 1
+    },
+    {
+      "id": "SRC_000008",
+      "version": 1
+    },
+    {
+      "id": "SRC_000009",
+      "version": 1
+    },
+    {
+      "id": "SRC_000010",
+      "version": 1
+    },
+    {
+      "id": "SRC_000011",
+      "version": 1
+    },
+    {
+      "id": "SRC_000012",
+      "version": 1
+    },
+    {
+      "id": "SRC_000013",
+      "version": 1
+    },
+    {
+      "id": "SRC_000014",
+      "version": 1
+    },
+    {
+      "id": "SRC_000015",
+      "version": 1
+    },
+    {
+      "id": "SRC_000016",
+      "version": 1
+    },
+    {
+      "id": "SRC_000017",
+      "version": 1
+    },
+    {
+      "id": "SRC_000018",
+      "version": 1
+    },
+    {
+      "id": "SRC_000019",
+      "version": 1
+    },
+    {
+      "id": "SRC_000020",
+      "version": 1
+    },
+    {
+      "id": "SRC_000021",
+      "version": 1
+    },
+    {
+      "id": "SRC_000022",
+      "version": 1
+    },
+    {
+      "id": "SRC_000023",
+      "version": 1
+    }
+  ],
+  "provider": "GMK_WEB_RESEARCH_AUDIT",
+  "query": "Independently verify all 13 P.T. Research Pack claim candidates and record material discrepancies without silently correcting the pack.",
+  "result": "{\"batch_id\": \"PT_RESEARCH_AUDIT_001\", \"claim_decisions\": 13, \"evidence_count\": 22, \"source_count\": 22}",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/research-attempt-log",
+    "schema_version": "1.0.0"
+  },
+  "sha256": "b0834d5a80cb1e4c9337b002c55a7ed0933e271985f9f9645219d64b59275b24",
+  "sources_inspected": [
+    {
+      "id": "SRC_000002",
+      "version": 1
+    },
+    {
+      "id": "SRC_000003",
+      "version": 1
+    },
+    {
+      "id": "SRC_000004",
+      "version": 1
+    },
+    {
+      "id": "SRC_000005",
+      "version": 1
+    },
+    {
+      "id": "SRC_000006",
+      "version": 1
+    },
+    {
+      "id": "SRC_000007",
+      "version": 1
+    },
+    {
+      "id": "SRC_000008",
+      "version": 1
+    },
+    {
+      "id": "SRC_000009",
+      "version": 1
+    },
+    {
+      "id": "SRC_000010",
+      "version": 1
+    },
+    {
+      "id": "SRC_000011",
+      "version": 1
+    },
+    {
+      "id": "SRC_000012",
+      "version": 1
+    },
+    {
+      "id": "SRC_000013",
+      "version": 1
+    },
+    {
+      "id": "SRC_000014",
+      "version": 1
+    },
+    {
+      "id": "SRC_000015",
+      "version": 1
+    },
+    {
+      "id": "SRC_000016",
+      "version": 1
+    },
+    {
+      "id": "SRC_000017",
+      "version": 1
+    },
+    {
+      "id": "SRC_000018",
+      "version": 1
+    },
+    {
+      "id": "SRC_000019",
+      "version": 1
+    },
+    {
+      "id": "SRC_000020",
+      "version": 1
+    },
+    {
+      "id": "SRC_000021",
+      "version": 1
+    },
+    {
+      "id": "SRC_000022",
+      "version": 1
+    },
+    {
+      "id": "SRC_000023",
+      "version": 1
+    }
+  ],
+  "strategy": "Prefer direct/official or contemporaneous sources; track derivative reports in the same independence group; verify existence of theories separately from truth; narrow composite claims; reject unsupported numerical precision.",
+  "uri": "gmk://artifacts/RESEARCH_ATTEMPT_LOG_000002/v1",
+  "version": 1
+}

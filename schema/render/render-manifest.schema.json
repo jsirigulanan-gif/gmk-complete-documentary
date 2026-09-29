@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/render-manifest",
+  "title": "GMK Render Manifest",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "RENDER_MANIFEST"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^RM_[A-Z0-9_-]+$"
+        },
+        "render_job_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "RENDER_INPUT"
+        },
+        "execution": {
+          "type": "object",
+          "required": [
+            "attempt",
+            "started_at",
+            "finished_at"
+          ],
+          "properties": {
+            "attempt": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "mode": {
+              "type": "string",
+              "enum": [
+                "EXECUTED",
+                "CACHE_HIT"
+              ]
+            },
+            "started_at": {
+              "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+            },
+            "finished_at": {
+              "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+            },
+            "cache_source": {
+              "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+              "x-gmk-dependency-relation": "DERIVED_FROM"
+            }
+          },
+          "additionalProperties": false
+        },
+        "outcome": {
+          "type": "string",
+          "enum": [
+            "SUCCESS",
+            "PARTIAL",
+            "FAILED"
+          ]
+        },
+        "inputs_snapshot_sha256": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Sha256"
+        },
+        "outputs": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef"
+          }
+        },
+        "technical_validation": {
+          "type": "object",
+          "required": [
+            "state"
+          ],
+          "properties": {
+            "state": {
+              "type": "string",
+              "enum": [
+                "PENDING",
+                "PASS",
+                "FAIL"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "execution_log": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef"
+        }
+      },
+      "required": [
+        "render_job_ref",
+        "execution",
+        "outcome",
+        "inputs_snapshot_sha256",
+        "outputs",
+        "technical_validation"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

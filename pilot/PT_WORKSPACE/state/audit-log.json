@@ -1,0 +1,6932 @@
+[
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "PROJECT_000001@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_ARTIFACT",
+        "detail": {
+          "artifact_type": "RESEARCH_PACK"
+        },
+        "result_refs": [
+          "RESEARCH_PACK_000001@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T08:40:33.003227Z",
+    "manifest_version_after": 2,
+    "manifest_version_before": 1,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 2,
+      "PROJECT_REGISTRY": 2
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 1,
+      "PROJECT_REGISTRY": 1
+    },
+    "transaction_id": "TX_000001"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "TRANSITION_PROJECT_STATE",
+        "detail": {
+          "from": "BOOTSTRAPPED",
+          "gate_evaluation_ids": [
+            "GE_000002"
+          ],
+          "permission_class": "AI_WITH_RULES",
+          "to": "RESEARCH_INTAKE"
+        },
+        "result_refs": []
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000001@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_ARTIFACT",
+        "detail": {
+          "artifact_type": "RESEARCH_ATTEMPT_LOG"
+        },
+        "result_refs": [
+          "RESEARCH_ATTEMPT_LOG_000001@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000001@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "CLM_000001@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000002@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "CLM_000002@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000003@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "CLM_000003@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000004@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "CLM_000004@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000005@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "CLM_000005@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000006@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "CLM_000006@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000007@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "CLM_000007@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000008@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "CLM_000008@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000009@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "CLM_000009@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000010@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "CLM_000010@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000011@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "CLM_000011@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000012@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "CLM_000012@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000013@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "CLM_000013@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "GAP_000001@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "GAP_000002@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "GAP_000003@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "GAP_000004@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_ARTIFACT_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "RESEARCH_ATTEMPT_LOG_000001@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T08:40:33.113948Z",
+    "manifest_version_after": 3,
+    "manifest_version_before": 2,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 3,
+      "RESEARCH_REGISTRY": 2
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 2,
+      "RESEARCH_REGISTRY": 1
+    },
+    "transaction_id": "TX_000002"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000002@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000003@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000004@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000005@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000006@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000007@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000008@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000009@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000010@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000011@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000012@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000013@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000014@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000015@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000016@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000017@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000018@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000019@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000020@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000021@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000022@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000023@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000014@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000015@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000016@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000017@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000018@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000019@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000020@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000021@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000022@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000023@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000024@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000025@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000026@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000027@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000028@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000029@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000030@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000031@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000032@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000033@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000034@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "EVD_000035@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_ARTIFACT",
+        "detail": {
+          "artifact_type": "RESEARCH_ATTEMPT_LOG"
+        },
+        "result_refs": [
+          "RESEARCH_ATTEMPT_LOG_000002@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "CLM_000001@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/evidence_links",
+            "/extensions/research_audit",
+            "/verification_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000003_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "eee8ab69b5bdb357b2df91580e37b6512b046a30fcce5828d4aeb9a61362943d",
+            "version": 1
+          },
+          "impact_tags": [
+            "FACTUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "CLM_000001@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "CLM_000002@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/evidence_links",
+            "/extensions/research_audit",
+            "/verification_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000003_002",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "49c20019e72a7a623b9b893474b5c06fc561f58f1da1d9856adb5dca5a669561",
+            "version": 1
+          },
+          "impact_tags": [
+            "FACTUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "CLM_000002@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "CLM_000003@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/evidence_links",
+            "/extensions/research_audit",
+            "/verification_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000003_003",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "7f7c7422e8da364b639c73c1b0a48339e85ca9e57798af0895eb81de04a86605",
+            "version": 1
+          },
+          "impact_tags": [
+            "FACTUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "CLM_000003@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "CLM_000004@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/claim_text",
+            "/claim_type",
+            "/evidence_links",
+            "/extensions/research_audit",
+            "/verification_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000003_004",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "d89a4fbf561832a08bdfe927e2632b8e5a97db6e454b309181d17e803008ba1b",
+            "version": 1
+          },
+          "impact_tags": [
+            "FACTUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "CLM_000004@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "CLM_000005@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/evidence_links",
+            "/extensions/research_audit",
+            "/verification_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000003_005",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "9b12741acd887887e0e6c844d8836ddf16a8a08f8d03445922530c8f4edbbb69",
+            "version": 1
+          },
+          "impact_tags": [
+            "FACTUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "CLM_000005@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "CLM_000006@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/claim_text",
+            "/evidence_links",
+            "/extensions/research_audit",
+            "/verification_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000003_006",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "2f0af1f35b244a237e9d4b868cbe30dbd58e87c65a6d9a0475ab69442823cef8",
+            "version": 1
+          },
+          "impact_tags": [
+            "FACTUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "CLM_000006@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "CLM_000007@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/claim_text",
+            "/claim_type",
+            "/evidence_links",
+            "/extensions/research_audit",
+            "/verification_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000003_007",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "977575e6b56bfb75ea9cd97dd536e42b73890f0d4c1908cede942bb580478540",
+            "version": 1
+          },
+          "impact_tags": [
+            "FACTUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "CLM_000007@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "CLM_000008@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/claim_text",
+            "/claim_type",
+            "/evidence_links",
+            "/extensions/research_audit",
+            "/verification_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000003_008",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "8f1f770757052f81dbbdf9cd918ffa2534f95b9e6418c64f0742bc48c2b21f96",
+            "version": 1
+          },
+          "impact_tags": [
+            "FACTUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "CLM_000008@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "CLM_000009@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/evidence_links",
+            "/extensions/research_audit",
+            "/verification_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000003_009",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "62f5c8a4ffc98e33a1f994507fff7cf34d5f02cc11e4f3f6d0850c8bd5c21143",
+            "version": 1
+          },
+          "impact_tags": [
+            "FACTUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "CLM_000009@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "CLM_000010@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/evidence_links",
+            "/extensions/intake/source_hint",
+            "/extensions/research_audit",
+            "/verification_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000003_010",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "350ddf7312ad3975c178b2705433c95349f937963bcb3cc4ee9fe59aa784fb66",
+            "version": 1
+          },
+          "impact_tags": [
+            "FACTUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "CLM_000010@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "CLM_000011@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/evidence_links",
+            "/extensions/intake/source_hint",
+            "/extensions/research_audit",
+            "/verification_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000003_011",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "47ca3b520a8da52566ef6f2ef684a9494f37869469c3e8f98528113461807893",
+            "version": 1
+          },
+          "impact_tags": [
+            "FACTUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "CLM_000011@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "CLM_000012@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/evidence_links",
+            "/extensions/intake/source_hint",
+            "/extensions/research_audit",
+            "/verification_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000003_012",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "f0e62fd47e1cc85cbb305505f83e70333f3030598043e0e57d865f5984b77302",
+            "version": 1
+          },
+          "impact_tags": [
+            "FACTUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "CLM_000012@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "CLM_000013@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/evidence_links",
+            "/extensions/intake/source_hint",
+            "/extensions/research_audit",
+            "/verification_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000003_013",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "845b9f5f95f749b20044327c968ac9b7fcd11e22aee6fe0ccadff4091b598627",
+            "version": 1
+          },
+          "impact_tags": [
+            "FACTUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "CLM_000013@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "CLM_000014@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "GAP_000005@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "GAP_000006@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "GAP_000004@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/blocked_targets",
+            "/extensions/research_audit",
+            "/resolution",
+            "/state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000003_014",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "a5c478a6daed597c590117af0914e70c42ec8127b4aa741e1b487aab4cd71481",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "GAP_000004@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_ARTIFACT_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "RESEARCH_ATTEMPT_LOG_000002@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T09:39:47.155026Z",
+    "manifest_version_after": 4,
+    "manifest_version_before": 3,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 4,
+      "RESEARCH_REGISTRY": 3
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 3,
+      "RESEARCH_REGISTRY": 2
+    },
+    "transaction_id": "TX_000003"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "TRANSITION_PROJECT_STATE",
+        "detail": {
+          "from": "RESEARCH_INTAKE",
+          "gate_evaluation_ids": [
+            "GE_000003"
+          ],
+          "permission_class": "AI_WITH_RULES",
+          "to": "RESEARCH_AUDITED"
+        },
+        "result_refs": []
+      }
+    ],
+    "committed_at": "2026-09-27T09:39:47.178186Z",
+    "manifest_version_after": 5,
+    "manifest_version_before": 4,
+    "registry_versions_after": {},
+    "registry_versions_before": {},
+    "transaction_id": "TX_000004"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "ACT_000001@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "ACT_000002@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "ACT_000003@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "ACT_000004@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "ACT_000005@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SCN_000001@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SCN_000002@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SCN_000003@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SCN_000004@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SCN_000005@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SCN_000006@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SCN_000007@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "NB_000001@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "NB_000002@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "NB_000003@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "NB_000004@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "NB_000005@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "NB_000006@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "NB_000007@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "NB_000008@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "NB_000009@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "NB_000010@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "NB_000001@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/promise_payoff"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000005_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "410bc1ff3d12ec95f3e36141610bcd79afdc0405a1909085fabb9d9b0e16e4e0",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "NB_000001@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "NB_000004@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/narrative_links"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000005_002",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "26184eb036328042985f17ba2294e41761ad9ebc08ee1137d1534244f5f54a49",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "NB_000004@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "NB_000006@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/narrative_links"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000005_003",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "4f7ba09ad44db27b6c9c9a4f2cbea4deef53ea6f2640373b9e1c1a13e82c3c70",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "NB_000006@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "NB_000010@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/narrative_links",
+            "/promise_payoff"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000005_004",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "864f253b5cd81a4fe7ececc1113b9258030f06870ee730a989a1cfe2ea17aade",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "NB_000010@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_ARTIFACT",
+        "detail": {
+          "artifact_type": "NARRATIVE_SPINE"
+        },
+        "result_refs": [
+          "NARRATIVE_SPINE_000001@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T10:18:33.485271Z",
+    "manifest_version_after": 6,
+    "manifest_version_before": 5,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 5,
+      "NARRATIVE_REGISTRY": 2
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 4,
+      "NARRATIVE_REGISTRY": 1
+    },
+    "transaction_id": "TX_000005"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "TRANSITION_PROJECT_STATE",
+        "detail": {
+          "from": "RESEARCH_AUDITED",
+          "gate_evaluation_ids": [
+            "GE_000003"
+          ],
+          "permission_class": "AI_WITH_RULES",
+          "to": "ROUGH_NARRATIVE_READY"
+        },
+        "result_refs": []
+      }
+    ],
+    "committed_at": "2026-09-27T10:18:33.513219Z",
+    "manifest_version_after": 7,
+    "manifest_version_before": 6,
+    "registry_versions_after": {},
+    "registry_versions_before": {},
+    "transaction_id": "TX_000006"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "NB_000002@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/extensions/visual_requirements",
+            "/visual_requirement",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000007_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "0c04474fc17287ef3a7096a69a9a265bd57c90fcb163412be2f5646432734d4c",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "NB_000002@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "NB_000009@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/extensions/visual_requirements",
+            "/visual_requirement",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000007_002",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "6e67bd728d16c158209d0c09a703272a84270c5509b4664e87836c7475f6050b",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "NB_000009@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "NB_000005@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/extensions/visual_requirements",
+            "/visual_requirement",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000007_003",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "1ffc6008b29be4e00ce0221eca184fb76a6683d3751c4555572f9040a2eb74ef",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "NB_000005@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "NB_000010@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/extensions/visual_requirements",
+            "/visual_requirement",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000007_004",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "8e5a5b02c2cf4f30343461e087f88054123f650e2a5548fd2f6b0107bc71aeb6",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "NB_000010@3"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "NB_000004@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/extensions/visual_requirements",
+            "/visual_requirement",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000007_005",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "11f7e483e4c324a232e1392cf965c32ab35064d84630b00a56ffdc094aec1a50",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "NB_000004@3"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "NB_000007@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/extensions/visual_requirements",
+            "/visual_requirement",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000007_006",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "9700661666ea85adc7b34cafed2b877100ecfe1a2beb8257def65da00a7a9f08",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "NB_000007@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "NB_000003@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/extensions/visual_requirements",
+            "/visual_requirement",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000007_007",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "8abac473653ac8c0624f3a7b286b238a4ca89f57b8012a6c467a90be44b27073",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "NB_000003@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "NB_000001@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/extensions/visual_requirements",
+            "/visual_requirement",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000007_008",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "5d68a5ad6bd39b8479b733c24a6c7042b2350fd6feb865f89396b189c5efca0d",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "NB_000001@3"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "NB_000006@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/extensions/visual_requirements",
+            "/visual_requirement",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000007_009",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "d09155bea41c623ccfe32af17659ed216dbd5a887913dcb8f6e21b22058ec1e6",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "NB_000006@3"
+        ]
+      },
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "NB_000008@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/extensions/visual_requirements",
+            "/visual_requirement",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000007_010",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "c5b309774cb06181e934b106ac9e78c5ef7735c4f17b04e0b906b2c1a77fe2e6",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "NB_000008@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T10:48:17.478484Z",
+    "manifest_version_after": 8,
+    "manifest_version_before": 7,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 6,
+      "NARRATIVE_REGISTRY": 3
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 5,
+      "NARRATIVE_REGISTRY": 2
+    },
+    "transaction_id": "TX_000007"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "TRANSITION_PROJECT_STATE",
+        "detail": {
+          "from": "ROUGH_NARRATIVE_READY",
+          "gate_evaluation_ids": [
+            "GE_000003"
+          ],
+          "permission_class": "AI_WITH_RULES",
+          "to": "VISUAL_REQUIREMENTS_READY"
+        },
+        "result_refs": []
+      }
+    ],
+    "committed_at": "2026-09-27T10:48:17.511420Z",
+    "manifest_version_after": 9,
+    "manifest_version_before": 8,
+    "registry_versions_after": {},
+    "registry_versions_before": {},
+    "transaction_id": "TX_000008"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "TRANSITION_PROJECT_STATE",
+        "detail": {
+          "from": "VISUAL_REQUIREMENTS_READY",
+          "gate_evaluation_ids": [],
+          "permission_class": "AUTO_ALLOWED",
+          "to": "ASSET_RECON"
+        },
+        "result_refs": []
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000024@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000025@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000026@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000027@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000028@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000029@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000030@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000031@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000032@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000033@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000034@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000001@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000002@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000003@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000004@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000005@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000006@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000007@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000008@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000009@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000010@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000011@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000012@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000013@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000014@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000015@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000016@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000017@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000018@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000019@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000020@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000001@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000002@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000003@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000004@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000005@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000006@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000007@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000008@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000009@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000010@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000011@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000012@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000013@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000014@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000015@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000016@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000017@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000018@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000019@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000020@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000021@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000022@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000023@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000024@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000025@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000026@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000027@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000028@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000029@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000030@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_ARTIFACT",
+        "detail": {
+          "artifact_type": "CANDIDATE_COMPARISON"
+        },
+        "result_refs": [
+          "CANDIDATE_COMPARISON_000001@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_ARTIFACT",
+        "detail": {
+          "artifact_type": "CANDIDATE_COMPARISON"
+        },
+        "result_refs": [
+          "CANDIDATE_COMPARISON_000002@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_ARTIFACT",
+        "detail": {
+          "artifact_type": "CANDIDATE_COMPARISON"
+        },
+        "result_refs": [
+          "CANDIDATE_COMPARISON_000003@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_ARTIFACT",
+        "detail": {
+          "artifact_type": "CANDIDATE_COMPARISON"
+        },
+        "result_refs": [
+          "CANDIDATE_COMPARISON_000004@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_ARTIFACT",
+        "detail": {
+          "artifact_type": "CANDIDATE_COMPARISON"
+        },
+        "result_refs": [
+          "CANDIDATE_COMPARISON_000005@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_ARTIFACT",
+        "detail": {
+          "artifact_type": "CANDIDATE_COMPARISON"
+        },
+        "result_refs": [
+          "CANDIDATE_COMPARISON_000006@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_ARTIFACT",
+        "detail": {
+          "artifact_type": "CANDIDATE_COMPARISON"
+        },
+        "result_refs": [
+          "CANDIDATE_COMPARISON_000007@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_ARTIFACT",
+        "detail": {
+          "artifact_type": "CANDIDATE_COMPARISON"
+        },
+        "result_refs": [
+          "CANDIDATE_COMPARISON_000008@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_ARTIFACT",
+        "detail": {
+          "artifact_type": "CANDIDATE_COMPARISON"
+        },
+        "result_refs": [
+          "CANDIDATE_COMPARISON_000009@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_ARTIFACT",
+        "detail": {
+          "artifact_type": "CANDIDATE_COMPARISON"
+        },
+        "result_refs": [
+          "CANDIDATE_COMPARISON_000010@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T11:22:06.694048Z",
+    "manifest_version_after": 10,
+    "manifest_version_before": 9,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 7,
+      "ASSET_REGISTRY": 2,
+      "RESEARCH_REGISTRY": 4
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 6,
+      "ASSET_REGISTRY": 1,
+      "RESEARCH_REGISTRY": 3
+    },
+    "transaction_id": "TX_000009"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRC_000035@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SRCH_000021@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SR_000031@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:34.861957Z",
+    "manifest_version_after": 11,
+    "manifest_version_before": 10,
+    "registry_versions_after": {
+      "ASSET_REGISTRY": 3,
+      "RESEARCH_REGISTRY": 5
+    },
+    "registry_versions_before": {
+      "ASSET_REGISTRY": 2,
+      "RESEARCH_REGISTRY": 4
+    },
+    "transaction_id": "TX_000010"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "SR_000002@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/selection_batch_id",
+            "/extensions/asset_recon/selection_reason"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000011_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "a5d81b74e8cde90d03b32a53be4634a5e15b0886c1afd51b591fe28e3b1c3781",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "SR_000002@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "AST_000001@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:34.946296Z",
+    "manifest_version_after": 12,
+    "manifest_version_before": 11,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 8,
+      "ASSET_REGISTRY": 4
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 7,
+      "ASSET_REGISTRY": 3
+    },
+    "transaction_id": "TX_000011"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "OP_000001@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:35.004789Z",
+    "manifest_version_after": 13,
+    "manifest_version_before": 12,
+    "registry_versions_after": {
+      "OPERATION_REGISTRY": 2
+    },
+    "registry_versions_before": {
+      "OPERATION_REGISTRY": 1
+    },
+    "transaction_id": "TX_000012"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "AST_000001@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "PROJECT",
+          "changed_paths": [
+            "/acquisition_operation_ref",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000013_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "9d067e5092dddb1d891d812b2f712d14335e5abab11e326d44a21cb923c44cd0",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 2,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "AST_000001@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:35.085011Z",
+    "manifest_version_after": 14,
+    "manifest_version_before": 13,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 9,
+      "ASSET_REGISTRY": 5
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 8,
+      "ASSET_REGISTRY": 4
+    },
+    "transaction_id": "TX_000013"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "SR_000002@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/promoted"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000014_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "59adc6558e30fa587ef81a6b1ba8cfdf3499e52f13289e9e8037763cb33e4b6a",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "SR_000002@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:35.173995Z",
+    "manifest_version_after": 15,
+    "manifest_version_before": 14,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 10,
+      "ASSET_REGISTRY": 6
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 9,
+      "ASSET_REGISTRY": 5
+    },
+    "transaction_id": "TX_000014"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "SR_000005@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/selection_batch_id",
+            "/extensions/asset_recon/selection_reason"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000015_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "0a06e06459c988303ad93e5f9b9d70171db7ba376b576da8562b8838c1805911",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "SR_000005@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "AST_000002@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:35.257489Z",
+    "manifest_version_after": 16,
+    "manifest_version_before": 15,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 11,
+      "ASSET_REGISTRY": 7
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 10,
+      "ASSET_REGISTRY": 6
+    },
+    "transaction_id": "TX_000015"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "OP_000002@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:35.317652Z",
+    "manifest_version_after": 17,
+    "manifest_version_before": 16,
+    "registry_versions_after": {
+      "OPERATION_REGISTRY": 3
+    },
+    "registry_versions_before": {
+      "OPERATION_REGISTRY": 2
+    },
+    "transaction_id": "TX_000016"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "AST_000002@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "PROJECT",
+          "changed_paths": [
+            "/acquisition_operation_ref",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000017_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "22227e8b0d956d7cc64c12902b14ec8c06c5eb604627ed269b2f435d831af16a",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 2,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "AST_000002@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:35.401562Z",
+    "manifest_version_after": 18,
+    "manifest_version_before": 17,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 12,
+      "ASSET_REGISTRY": 8
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 11,
+      "ASSET_REGISTRY": 7
+    },
+    "transaction_id": "TX_000017"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "SR_000005@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/promoted"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000018_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "a209ee9af4848f6be83285d9d60244ad6aa2996fb7d549be830f11777d5211c3",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "SR_000005@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:35.495016Z",
+    "manifest_version_after": 19,
+    "manifest_version_before": 18,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 13,
+      "ASSET_REGISTRY": 9
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 12,
+      "ASSET_REGISTRY": 8
+    },
+    "transaction_id": "TX_000018"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "SR_000008@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/selection_batch_id",
+            "/extensions/asset_recon/selection_reason"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000019_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "a2e86de0e8ed6e7423f2fe48a8036356ac4ecff31550ec54074ec52a7be29d09",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "SR_000008@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "AST_000003@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:35.584138Z",
+    "manifest_version_after": 20,
+    "manifest_version_before": 19,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 14,
+      "ASSET_REGISTRY": 10
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 13,
+      "ASSET_REGISTRY": 9
+    },
+    "transaction_id": "TX_000019"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "OP_000003@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:35.645948Z",
+    "manifest_version_after": 21,
+    "manifest_version_before": 20,
+    "registry_versions_after": {
+      "OPERATION_REGISTRY": 4
+    },
+    "registry_versions_before": {
+      "OPERATION_REGISTRY": 3
+    },
+    "transaction_id": "TX_000020"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "AST_000003@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "PROJECT",
+          "changed_paths": [
+            "/acquisition_operation_ref",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000021_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "d2e125ae3c877cd961204d0d3c75654f600451506f4cd88b35dd5b03096c70be",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 2,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "AST_000003@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:35.733049Z",
+    "manifest_version_after": 22,
+    "manifest_version_before": 21,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 15,
+      "ASSET_REGISTRY": 11
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 14,
+      "ASSET_REGISTRY": 10
+    },
+    "transaction_id": "TX_000021"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "SR_000008@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/promoted"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000022_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "8c85d8841dc0da043938fa87e8418098aa30fb77855a2bf61008f427793ad392",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "SR_000008@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:35.833530Z",
+    "manifest_version_after": 23,
+    "manifest_version_before": 22,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 16,
+      "ASSET_REGISTRY": 12
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 15,
+      "ASSET_REGISTRY": 11
+    },
+    "transaction_id": "TX_000022"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "SR_000031@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/selection_reason"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000023_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "4686605ef7443c0017d4bd8c09f2b12979245b974f3adb4a8794868992ed8add",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "SR_000031@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "AST_000004@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:35.928734Z",
+    "manifest_version_after": 24,
+    "manifest_version_before": 23,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 17,
+      "ASSET_REGISTRY": 13
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 16,
+      "ASSET_REGISTRY": 12
+    },
+    "transaction_id": "TX_000023"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "OP_000004@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:36.106151Z",
+    "manifest_version_after": 25,
+    "manifest_version_before": 24,
+    "registry_versions_after": {
+      "OPERATION_REGISTRY": 5
+    },
+    "registry_versions_before": {
+      "OPERATION_REGISTRY": 4
+    },
+    "transaction_id": "TX_000024"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "AST_000004@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "PROJECT",
+          "changed_paths": [
+            "/acquisition_operation_ref",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000025_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "16d3c7a86b8b563107e57cb47a24b1741d4fc2aec9cbb93f3bd34b510ec6c6c1",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 2,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "AST_000004@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:36.197334Z",
+    "manifest_version_after": 26,
+    "manifest_version_before": 25,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 18,
+      "ASSET_REGISTRY": 14
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 17,
+      "ASSET_REGISTRY": 13
+    },
+    "transaction_id": "TX_000025"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "SR_000031@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/promoted"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000026_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "a70e5bde72281354736680bb9f6437ba5a5410543069ac0054c939c65373bf13",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "SR_000031@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:36.297930Z",
+    "manifest_version_after": 27,
+    "manifest_version_before": 26,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 19,
+      "ASSET_REGISTRY": 15
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 18,
+      "ASSET_REGISTRY": 14
+    },
+    "transaction_id": "TX_000026"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "SR_000013@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/selection_batch_id",
+            "/extensions/asset_recon/selection_reason"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000027_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "87e3622e519b2664138c101b068f498333bf2846e345b8036d9ce9fe6a94cc79",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "SR_000013@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "AST_000005@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:36.391851Z",
+    "manifest_version_after": 28,
+    "manifest_version_before": 27,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 20,
+      "ASSET_REGISTRY": 16
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 19,
+      "ASSET_REGISTRY": 15
+    },
+    "transaction_id": "TX_000027"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "OP_000005@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:36.458089Z",
+    "manifest_version_after": 29,
+    "manifest_version_before": 28,
+    "registry_versions_after": {
+      "OPERATION_REGISTRY": 6
+    },
+    "registry_versions_before": {
+      "OPERATION_REGISTRY": 5
+    },
+    "transaction_id": "TX_000028"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "AST_000005@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "PROJECT",
+          "changed_paths": [
+            "/acquisition_operation_ref",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000029_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "a913229d8f16fd661a28347c67e5664e3b2a5caed01f3ea9d286d03340fcc5b2",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 2,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "AST_000005@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:36.551834Z",
+    "manifest_version_after": 30,
+    "manifest_version_before": 29,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 21,
+      "ASSET_REGISTRY": 17
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 20,
+      "ASSET_REGISTRY": 16
+    },
+    "transaction_id": "TX_000029"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "SR_000013@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/promoted"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000030_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "78b9462bc047b6c20b5d867974798684703bc03d8c283b8ab5792a7d40467237",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "SR_000013@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:36.656633Z",
+    "manifest_version_after": 31,
+    "manifest_version_before": 30,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 22,
+      "ASSET_REGISTRY": 18
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 21,
+      "ASSET_REGISTRY": 17
+    },
+    "transaction_id": "TX_000030"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "SR_000016@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/selection_batch_id",
+            "/extensions/asset_recon/selection_reason"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000031_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "1bbc87e1315eae67cc51df3e926a6d6eec3218f81c483b4a82ac3da3be2b0eb6",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "SR_000016@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "AST_000006@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:36.754570Z",
+    "manifest_version_after": 32,
+    "manifest_version_before": 31,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 23,
+      "ASSET_REGISTRY": 19
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 22,
+      "ASSET_REGISTRY": 18
+    },
+    "transaction_id": "TX_000031"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "OP_000006@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:36.826512Z",
+    "manifest_version_after": 33,
+    "manifest_version_before": 32,
+    "registry_versions_after": {
+      "OPERATION_REGISTRY": 7
+    },
+    "registry_versions_before": {
+      "OPERATION_REGISTRY": 6
+    },
+    "transaction_id": "TX_000032"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "AST_000006@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "PROJECT",
+          "changed_paths": [
+            "/acquisition_operation_ref",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000033_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "873bbbf7feaa9f8a5d3580eb13208ef8f11ce5f9b13834255934386556f3da44",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 2,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "AST_000006@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:36.936041Z",
+    "manifest_version_after": 34,
+    "manifest_version_before": 33,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 24,
+      "ASSET_REGISTRY": 20
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 23,
+      "ASSET_REGISTRY": 19
+    },
+    "transaction_id": "TX_000033"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "SR_000016@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/promoted"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000034_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "07f6bcf0c3dd16f8190a5dbc98791516337d897d389ea3bd2e84d3e925a05b51",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "SR_000016@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:37.056704Z",
+    "manifest_version_after": 35,
+    "manifest_version_before": 34,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 25,
+      "ASSET_REGISTRY": 21
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 24,
+      "ASSET_REGISTRY": 20
+    },
+    "transaction_id": "TX_000034"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "SR_000020@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/selection_batch_id",
+            "/extensions/asset_recon/selection_reason"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000035_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "9a6fa210d74de3766227afe69ad35976d2b0fbb2f6712f1fca15f7dec520f93d",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "SR_000020@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "AST_000007@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:37.167784Z",
+    "manifest_version_after": 36,
+    "manifest_version_before": 35,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 26,
+      "ASSET_REGISTRY": 22
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 25,
+      "ASSET_REGISTRY": 21
+    },
+    "transaction_id": "TX_000035"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "OP_000007@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:37.240169Z",
+    "manifest_version_after": 37,
+    "manifest_version_before": 36,
+    "registry_versions_after": {
+      "OPERATION_REGISTRY": 8
+    },
+    "registry_versions_before": {
+      "OPERATION_REGISTRY": 7
+    },
+    "transaction_id": "TX_000036"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "AST_000007@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "PROJECT",
+          "changed_paths": [
+            "/acquisition_operation_ref",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000037_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "6abd753391d4ef5867883b76a5f8a59651bd4cfa819eb6a0fc1fcba45595e9cc",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 2,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "AST_000007@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:37.472061Z",
+    "manifest_version_after": 38,
+    "manifest_version_before": 37,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 27,
+      "ASSET_REGISTRY": 23
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 26,
+      "ASSET_REGISTRY": 22
+    },
+    "transaction_id": "TX_000037"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "SR_000020@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/promoted"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000038_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "a08da0129ccf54558f58896b8e774c7424e122a81594a6d41a9fe489c29d6a8d",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "SR_000020@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:37.600956Z",
+    "manifest_version_after": 39,
+    "manifest_version_before": 38,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 28,
+      "ASSET_REGISTRY": 24
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 27,
+      "ASSET_REGISTRY": 23
+    },
+    "transaction_id": "TX_000038"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "SR_000024@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/selection_batch_id",
+            "/extensions/asset_recon/selection_reason"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000039_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "71c702d845f09d4df5d7501b5d8aef1aa644836ad907b4dd36aca9fda33a321e",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "SR_000024@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "AST_000008@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:37.734984Z",
+    "manifest_version_after": 40,
+    "manifest_version_before": 39,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 29,
+      "ASSET_REGISTRY": 25
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 28,
+      "ASSET_REGISTRY": 24
+    },
+    "transaction_id": "TX_000039"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "OP_000008@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:37.836042Z",
+    "manifest_version_after": 41,
+    "manifest_version_before": 40,
+    "registry_versions_after": {
+      "OPERATION_REGISTRY": 9
+    },
+    "registry_versions_before": {
+      "OPERATION_REGISTRY": 8
+    },
+    "transaction_id": "TX_000040"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "AST_000008@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "PROJECT",
+          "changed_paths": [
+            "/acquisition_operation_ref",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000041_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "c5aa7db33938cd4c8117051bec4df17759d0d061edc40c02529f92f4de63ba86",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 2,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "AST_000008@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:37.947706Z",
+    "manifest_version_after": 42,
+    "manifest_version_before": 41,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 30,
+      "ASSET_REGISTRY": 26
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 29,
+      "ASSET_REGISTRY": 25
+    },
+    "transaction_id": "TX_000041"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "SR_000024@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/promoted"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000042_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "84ad6b6580458378fb73d624ae1387bd2e6bb4a1c8f7dcc5cb53f63ef3df465d",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "SR_000024@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:38.096969Z",
+    "manifest_version_after": 43,
+    "manifest_version_before": 42,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 31,
+      "ASSET_REGISTRY": 27
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 30,
+      "ASSET_REGISTRY": 26
+    },
+    "transaction_id": "TX_000042"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "SR_000025@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/selection_batch_id",
+            "/extensions/asset_recon/selection_reason"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000043_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "8c4486553d951db6d936815b737ba4076f2c260d9e7b00450a640a58a26479c9",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "SR_000025@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "AST_000009@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:38.213071Z",
+    "manifest_version_after": 44,
+    "manifest_version_before": 43,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 32,
+      "ASSET_REGISTRY": 28
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 31,
+      "ASSET_REGISTRY": 27
+    },
+    "transaction_id": "TX_000043"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "OP_000009@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:38.291335Z",
+    "manifest_version_after": 45,
+    "manifest_version_before": 44,
+    "registry_versions_after": {
+      "OPERATION_REGISTRY": 10
+    },
+    "registry_versions_before": {
+      "OPERATION_REGISTRY": 9
+    },
+    "transaction_id": "TX_000044"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "AST_000009@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "PROJECT",
+          "changed_paths": [
+            "/acquisition_operation_ref",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000045_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "2ad924bf7a1cc25cc52feccc7dbeb1e340c340d42837add66c99ffd99d97008c",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 2,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "AST_000009@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:38.407636Z",
+    "manifest_version_after": 46,
+    "manifest_version_before": 45,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 33,
+      "ASSET_REGISTRY": 29
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 32,
+      "ASSET_REGISTRY": 28
+    },
+    "transaction_id": "TX_000045"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "SR_000025@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/promoted"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000046_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "138125f66588f50e6124ce06333496916e491b0020540ff5a78d00d7da68dea5",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "SR_000025@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:38.534983Z",
+    "manifest_version_after": 47,
+    "manifest_version_before": 46,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 34,
+      "ASSET_REGISTRY": 30
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 33,
+      "ASSET_REGISTRY": 29
+    },
+    "transaction_id": "TX_000046"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "SR_000028@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/selection_batch_id",
+            "/extensions/asset_recon/selection_reason"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000047_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "9a2f3df6cb11208119ae90b16f41eb849f188ea136021d549cd41a52ab3358fe",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "SR_000028@2"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "AST_000010@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:38.661211Z",
+    "manifest_version_after": 48,
+    "manifest_version_before": 47,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 35,
+      "ASSET_REGISTRY": 31
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 34,
+      "ASSET_REGISTRY": 30
+    },
+    "transaction_id": "TX_000047"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "OP_000010@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:38.905473Z",
+    "manifest_version_after": 49,
+    "manifest_version_before": 48,
+    "registry_versions_after": {
+      "OPERATION_REGISTRY": 11
+    },
+    "registry_versions_before": {
+      "OPERATION_REGISTRY": 10
+    },
+    "transaction_id": "TX_000048"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "AST_000010@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "PROJECT",
+          "changed_paths": [
+            "/acquisition_operation_ref",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000049_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "be6e657499a57fc41d20745a49f9680f36527d992b35e26e7098d4e4c49966de",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 2,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "AST_000010@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:39.038815Z",
+    "manifest_version_after": 50,
+    "manifest_version_before": 49,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 36,
+      "ASSET_REGISTRY": 32
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 35,
+      "ASSET_REGISTRY": 31
+    },
+    "transaction_id": "TX_000049"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "SR_000028@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/candidate_state",
+            "/extensions/asset_recon/promoted"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000050_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "098b3a603bfb9274854c5d41cfe870a23c32953c0c87705f2d8d9a287487d1ac",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "SR_000028@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:39.212775Z",
+    "manifest_version_after": 51,
+    "manifest_version_before": 50,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 37,
+      "ASSET_REGISTRY": 33
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 36,
+      "ASSET_REGISTRY": 32
+    },
+    "transaction_id": "TX_000050"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "QAR_000001@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:39.312328Z",
+    "manifest_version_after": 52,
+    "manifest_version_before": 51,
+    "registry_versions_after": {
+      "QA_REGISTRY": 2
+    },
+    "registry_versions_before": {
+      "QA_REGISTRY": 1
+    },
+    "transaction_id": "TX_000051"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "QAR_000001@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/extensions/asset_recon"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000052_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "a2f4587c670461b337d48665be7117b46cd03ba58882aaf110eba8ed4eb2b8d6",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "QAR_000001@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T13:58:39.460601Z",
+    "manifest_version_after": 53,
+    "manifest_version_before": 52,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 38,
+      "QA_REGISTRY": 3
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 37,
+      "QA_REGISTRY": 2
+    },
+    "transaction_id": "TX_000052"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_ARTIFACT_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "CANDIDATE_COMPARISON_000004@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T14:09:02.641204Z",
+    "manifest_version_after": 54,
+    "manifest_version_before": 53,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 39
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 38
+    },
+    "transaction_id": "TX_000053"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "OP_000001@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/attempts",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000054_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "322f94357760aea53695c64923197636aaf5249376050213c33d80ef026d0b6d",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "OP_000001@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:01.050886Z",
+    "manifest_version_after": 55,
+    "manifest_version_before": 54,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 40,
+      "OPERATION_REGISTRY": 12
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 39,
+      "OPERATION_REGISTRY": 11
+    },
+    "transaction_id": "TX_000054"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "OP_000001@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/attempts",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000055_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "096e8d8d3eda232efad12c4bfab89c533eff7f9df73f5191560ddb2f3a248f62",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "OP_000001@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:01.213318Z",
+    "manifest_version_after": 56,
+    "manifest_version_before": 55,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 41,
+      "OPERATION_REGISTRY": 13
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 40,
+      "OPERATION_REGISTRY": 12
+    },
+    "transaction_id": "TX_000055"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "AST_000001@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/acquisition_operation_ref/version",
+            "/extensions/asset_acquisition",
+            "/extensions/asset_recon/production_ready",
+            "/original_file",
+            "/technical",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000056_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "efbd8e0a2df50d4231a1c7de3a5157c43915dbdfb7084b0453c55948c987ba28",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "AST_000001@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:01.382472Z",
+    "manifest_version_after": 57,
+    "manifest_version_before": 56,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 42,
+      "ASSET_REGISTRY": 34
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 41,
+      "ASSET_REGISTRY": 33
+    },
+    "transaction_id": "TX_000056"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 3
+        },
+        "result_refs": [
+          "AST_000001@4"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000057_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "7369942aed026e6afde26b9ba5a78cf158b53d155e5bd36e5b6829c5fd9c425d",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 3
+        },
+        "result_refs": [
+          "AST_000001@4"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:01.538507Z",
+    "manifest_version_after": 58,
+    "manifest_version_before": 57,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 43,
+      "ASSET_REGISTRY": 35
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 42,
+      "ASSET_REGISTRY": 34
+    },
+    "transaction_id": "TX_000057"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 4
+        },
+        "result_refs": [
+          "AST_000001@5"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000058_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "2bdfc1d6f53469998ac85341f959361c95ef16ca3548d7cf45ca7e8a802e4a70",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 4
+        },
+        "result_refs": [
+          "AST_000001@5"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:01.681838Z",
+    "manifest_version_after": 59,
+    "manifest_version_before": 58,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 44,
+      "ASSET_REGISTRY": 36
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 43,
+      "ASSET_REGISTRY": 35
+    },
+    "transaction_id": "TX_000058"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SEG_000001@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:01.777997Z",
+    "manifest_version_after": 60,
+    "manifest_version_before": 59,
+    "registry_versions_after": {
+      "ASSET_REGISTRY": 37
+    },
+    "registry_versions_before": {
+      "ASSET_REGISTRY": 36
+    },
+    "transaction_id": "TX_000059"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "OP_000002@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/attempts",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000060_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "42c8203fc15d05e134f7eeb7bdb70163e666996589ec3df8d953ba231b166c07",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "OP_000002@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:01.978375Z",
+    "manifest_version_after": 61,
+    "manifest_version_before": 60,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 45,
+      "OPERATION_REGISTRY": 14
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 44,
+      "OPERATION_REGISTRY": 13
+    },
+    "transaction_id": "TX_000060"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "OP_000002@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/attempts",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000061_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "6bcf7c14e9f927c93ea9da7c98117e0083d9e89643c78de3912919debd5a78ff",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "OP_000002@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:02.228134Z",
+    "manifest_version_after": 62,
+    "manifest_version_before": 61,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 46,
+      "OPERATION_REGISTRY": 15
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 45,
+      "OPERATION_REGISTRY": 14
+    },
+    "transaction_id": "TX_000061"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "AST_000002@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/acquisition_operation_ref/version",
+            "/extensions/asset_acquisition",
+            "/extensions/asset_recon/production_ready",
+            "/original_file",
+            "/technical",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000062_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "37c8bb4d4fb3412efc12a149798e5dc055414e5db289004810d647c8614c9d3c",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "AST_000002@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:02.418797Z",
+    "manifest_version_after": 63,
+    "manifest_version_before": 62,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 47,
+      "ASSET_REGISTRY": 38
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 46,
+      "ASSET_REGISTRY": 37
+    },
+    "transaction_id": "TX_000062"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 3
+        },
+        "result_refs": [
+          "AST_000002@4"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000063_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "7e523e5594270b1977a0497b984b676c5704c391649c5c0595f998939bbcacee",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 3
+        },
+        "result_refs": [
+          "AST_000002@4"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:02.579735Z",
+    "manifest_version_after": 64,
+    "manifest_version_before": 63,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 48,
+      "ASSET_REGISTRY": 39
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 47,
+      "ASSET_REGISTRY": 38
+    },
+    "transaction_id": "TX_000063"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 4
+        },
+        "result_refs": [
+          "AST_000002@5"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000064_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "7540e4f61b27a9c244d47faa0b5b0cf7b64cd1d2a7610301205258cfdd2d3249",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 4
+        },
+        "result_refs": [
+          "AST_000002@5"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:02.733287Z",
+    "manifest_version_after": 65,
+    "manifest_version_before": 64,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 49,
+      "ASSET_REGISTRY": 40
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 48,
+      "ASSET_REGISTRY": 39
+    },
+    "transaction_id": "TX_000064"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SEG_000002@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:02.832012Z",
+    "manifest_version_after": 66,
+    "manifest_version_before": 65,
+    "registry_versions_after": {
+      "ASSET_REGISTRY": 41
+    },
+    "registry_versions_before": {
+      "ASSET_REGISTRY": 40
+    },
+    "transaction_id": "TX_000065"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "OP_000003@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/attempts",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000066_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "3995c35ce2a45f6fa21789978e94a8dfb49d580c26e8e8719e8315df2e88c8a3",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "OP_000003@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:03.048791Z",
+    "manifest_version_after": 67,
+    "manifest_version_before": 66,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 50,
+      "OPERATION_REGISTRY": 16
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 49,
+      "OPERATION_REGISTRY": 15
+    },
+    "transaction_id": "TX_000066"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "OP_000003@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/attempts",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000067_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "d5ada932b164123c4d0c8e0747d50c858559fb5bf5b2ba5b378be740c8012dff",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "OP_000003@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:03.211613Z",
+    "manifest_version_after": 68,
+    "manifest_version_before": 67,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 51,
+      "OPERATION_REGISTRY": 17
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 50,
+      "OPERATION_REGISTRY": 16
+    },
+    "transaction_id": "TX_000067"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "AST_000003@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/acquisition_operation_ref/version",
+            "/extensions/asset_acquisition",
+            "/extensions/asset_recon/production_ready",
+            "/original_file",
+            "/technical",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000068_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "0624416de3ad7b0cfb6c1e4bbc882e80a1676b9b55b57bbeab3a724e5dd023bb",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "AST_000003@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:03.398097Z",
+    "manifest_version_after": 69,
+    "manifest_version_before": 68,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 52,
+      "ASSET_REGISTRY": 42
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 51,
+      "ASSET_REGISTRY": 41
+    },
+    "transaction_id": "TX_000068"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 3
+        },
+        "result_refs": [
+          "AST_000003@4"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000069_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "1b744abe45aab04e7cbe1f03c541e9efe78e5fa8a99a236201635258e05ca58d",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 3
+        },
+        "result_refs": [
+          "AST_000003@4"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:03.569225Z",
+    "manifest_version_after": 70,
+    "manifest_version_before": 69,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 53,
+      "ASSET_REGISTRY": 43
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 52,
+      "ASSET_REGISTRY": 42
+    },
+    "transaction_id": "TX_000069"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 4
+        },
+        "result_refs": [
+          "AST_000003@5"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000070_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "f54782f39758c0ee12a665cdb9fe65b7a9c67894f61140deb31af0499707d3e0",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 4
+        },
+        "result_refs": [
+          "AST_000003@5"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:03.814556Z",
+    "manifest_version_after": 71,
+    "manifest_version_before": 70,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 54,
+      "ASSET_REGISTRY": 44
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 53,
+      "ASSET_REGISTRY": 43
+    },
+    "transaction_id": "TX_000070"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SEG_000003@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:03.912462Z",
+    "manifest_version_after": 72,
+    "manifest_version_before": 71,
+    "registry_versions_after": {
+      "ASSET_REGISTRY": 45
+    },
+    "registry_versions_before": {
+      "ASSET_REGISTRY": 44
+    },
+    "transaction_id": "TX_000071"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "OP_000005@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/attempts",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000072_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "3305715096e6e1d86790af65f4c9b7dffcb66040ba2878bf69f6a737ebccdb0d",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "OP_000005@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:04.144977Z",
+    "manifest_version_after": 73,
+    "manifest_version_before": 72,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 55,
+      "OPERATION_REGISTRY": 18
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 54,
+      "OPERATION_REGISTRY": 17
+    },
+    "transaction_id": "TX_000072"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "OP_000005@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/attempts",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000073_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "21c20aab5ae33a85e2c246ad894d88f9cd69fd441e1ccfbb6b742ef572053f28",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "OP_000005@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:04.307220Z",
+    "manifest_version_after": 74,
+    "manifest_version_before": 73,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 56,
+      "OPERATION_REGISTRY": 19
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 55,
+      "OPERATION_REGISTRY": 18
+    },
+    "transaction_id": "TX_000073"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "AST_000005@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/acquisition_operation_ref/version",
+            "/extensions/asset_acquisition",
+            "/extensions/asset_recon/production_ready",
+            "/original_file",
+            "/technical",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000074_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "f7ff7c3e7405c46eed9b07343f0a58a5c055df40c2cd68c2ad2d77896e2069d9",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "AST_000005@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:04.491555Z",
+    "manifest_version_after": 75,
+    "manifest_version_before": 74,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 57,
+      "ASSET_REGISTRY": 46
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 56,
+      "ASSET_REGISTRY": 45
+    },
+    "transaction_id": "TX_000074"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 3
+        },
+        "result_refs": [
+          "AST_000005@4"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000075_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "38a6e2e9a84beffe5ac6e99aa94d5d98653c3b4db4f28bd65c92d4f8beb553bc",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 3
+        },
+        "result_refs": [
+          "AST_000005@4"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:04.664423Z",
+    "manifest_version_after": 76,
+    "manifest_version_before": 75,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 58,
+      "ASSET_REGISTRY": 47
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 57,
+      "ASSET_REGISTRY": 46
+    },
+    "transaction_id": "TX_000075"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 4
+        },
+        "result_refs": [
+          "AST_000005@5"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000076_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "d61ca581c92cb7ffe90dc6f1c4a033e41eee849b52d409764a16c1c351a73c01",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 4
+        },
+        "result_refs": [
+          "AST_000005@5"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:04.836830Z",
+    "manifest_version_after": 77,
+    "manifest_version_before": 76,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 59,
+      "ASSET_REGISTRY": 48
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 58,
+      "ASSET_REGISTRY": 47
+    },
+    "transaction_id": "TX_000076"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SEG_000004@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:04.940110Z",
+    "manifest_version_after": 78,
+    "manifest_version_before": 77,
+    "registry_versions_after": {
+      "ASSET_REGISTRY": 49
+    },
+    "registry_versions_before": {
+      "ASSET_REGISTRY": 48
+    },
+    "transaction_id": "TX_000077"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "OP_000006@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/attempts",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000078_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "62e14b0defcb1b4e7073319c1be3dc6a8c1f6b2563eb092af60b005c7b2deee0",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "OP_000006@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:05.260139Z",
+    "manifest_version_after": 79,
+    "manifest_version_before": 78,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 60,
+      "OPERATION_REGISTRY": 20
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 59,
+      "OPERATION_REGISTRY": 19
+    },
+    "transaction_id": "TX_000078"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "OP_000006@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/attempts",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000079_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "04effd45c84ba5336a69f0e306dc068f3645e6ccd88ec7c8225adeaa87d5c572",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "OP_000006@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:05.429833Z",
+    "manifest_version_after": 80,
+    "manifest_version_before": 79,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 61,
+      "OPERATION_REGISTRY": 21
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 60,
+      "OPERATION_REGISTRY": 20
+    },
+    "transaction_id": "TX_000079"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "AST_000006@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/acquisition_operation_ref/version",
+            "/extensions/asset_acquisition",
+            "/extensions/asset_recon/production_ready",
+            "/original_file",
+            "/technical",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000080_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "85f1354818d63e707be6605d718fe7dc88df0954f489ce45dbc292f00db7b6d0",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "AST_000006@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:05.622316Z",
+    "manifest_version_after": 81,
+    "manifest_version_before": 80,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 62,
+      "ASSET_REGISTRY": 50
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 61,
+      "ASSET_REGISTRY": 49
+    },
+    "transaction_id": "TX_000080"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 3
+        },
+        "result_refs": [
+          "AST_000006@4"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000081_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "7711e2f3066bbe1e996e29756836640dc0dcb16f5386b332be9f475d8ebfb923",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 3
+        },
+        "result_refs": [
+          "AST_000006@4"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:05.801281Z",
+    "manifest_version_after": 82,
+    "manifest_version_before": 81,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 63,
+      "ASSET_REGISTRY": 51
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 62,
+      "ASSET_REGISTRY": 50
+    },
+    "transaction_id": "TX_000081"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 4
+        },
+        "result_refs": [
+          "AST_000006@5"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000082_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "a1b4a93108e8054ddf344779452e75b9e9920dd1270d156f96ff31502e455ec8",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 4
+        },
+        "result_refs": [
+          "AST_000006@5"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:05.979575Z",
+    "manifest_version_after": 83,
+    "manifest_version_before": 82,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 64,
+      "ASSET_REGISTRY": 52
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 63,
+      "ASSET_REGISTRY": 51
+    },
+    "transaction_id": "TX_000082"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SEG_000005@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:06.095362Z",
+    "manifest_version_after": 84,
+    "manifest_version_before": 83,
+    "registry_versions_after": {
+      "ASSET_REGISTRY": 53
+    },
+    "registry_versions_before": {
+      "ASSET_REGISTRY": 52
+    },
+    "transaction_id": "TX_000083"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "OP_000007@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/attempts",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000084_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "e7b7a74c18224d3a80fc8bcd8aac2291674c8b52c76b3971e14fc00171675f17",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "OP_000007@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:06.329623Z",
+    "manifest_version_after": 85,
+    "manifest_version_before": 84,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 65,
+      "OPERATION_REGISTRY": 22
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 64,
+      "OPERATION_REGISTRY": 21
+    },
+    "transaction_id": "TX_000084"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "OP_000007@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/attempts",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000085_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "8a9f12d87a34ca2be42f8c4cda266fd5ab2fc657c41e71ee09f9e60031b37c10",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "OP_000007@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:06.508295Z",
+    "manifest_version_after": 86,
+    "manifest_version_before": 85,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 66,
+      "OPERATION_REGISTRY": 23
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 65,
+      "OPERATION_REGISTRY": 22
+    },
+    "transaction_id": "TX_000085"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "AST_000007@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/acquisition_operation_ref/version",
+            "/extensions/asset_acquisition",
+            "/extensions/asset_recon/production_ready",
+            "/original_file",
+            "/technical",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000086_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "15371d1307c722d41beb2b56e10095c53325ac69dd4479c5b3ee3a286d34caa6",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "AST_000007@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:06.704546Z",
+    "manifest_version_after": 87,
+    "manifest_version_before": 86,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 67,
+      "ASSET_REGISTRY": 54
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 66,
+      "ASSET_REGISTRY": 53
+    },
+    "transaction_id": "TX_000086"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 3
+        },
+        "result_refs": [
+          "AST_000007@4"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000087_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "b91ba90920b0b81bbfe5d257fa3e7c5546d4e216b6bf0cd7315eaca5b20762d0",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 3
+        },
+        "result_refs": [
+          "AST_000007@4"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:06.974530Z",
+    "manifest_version_after": 88,
+    "manifest_version_before": 87,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 68,
+      "ASSET_REGISTRY": 55
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 67,
+      "ASSET_REGISTRY": 54
+    },
+    "transaction_id": "TX_000087"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 4
+        },
+        "result_refs": [
+          "AST_000007@5"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000088_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "55dd886d2a9603cb08622caa75b6aacf966099edd467bbd8ff4f2d311b2de110",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 4
+        },
+        "result_refs": [
+          "AST_000007@5"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:07.161958Z",
+    "manifest_version_after": 89,
+    "manifest_version_before": 88,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 69,
+      "ASSET_REGISTRY": 56
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 68,
+      "ASSET_REGISTRY": 55
+    },
+    "transaction_id": "TX_000088"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SEG_000006@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:07.268762Z",
+    "manifest_version_after": 90,
+    "manifest_version_before": 89,
+    "registry_versions_after": {
+      "ASSET_REGISTRY": 57
+    },
+    "registry_versions_before": {
+      "ASSET_REGISTRY": 56
+    },
+    "transaction_id": "TX_000089"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "OP_000009@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/attempts",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000090_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "3686770cd7fb7e5f12db53d0ad66e9136ed7ed233dc98321bc71c564312cf43d",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "OP_000009@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:07.523905Z",
+    "manifest_version_after": 91,
+    "manifest_version_before": 90,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 70,
+      "OPERATION_REGISTRY": 24
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 69,
+      "OPERATION_REGISTRY": 23
+    },
+    "transaction_id": "TX_000090"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "OP_000009@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/attempts",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000091_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "d0130246292a81cf821ee20bfc1c453afc76fa4a3811695e718d057fd02c553b",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "OP_000009@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:07.711544Z",
+    "manifest_version_after": 92,
+    "manifest_version_before": 91,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 71,
+      "OPERATION_REGISTRY": 25
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 70,
+      "OPERATION_REGISTRY": 24
+    },
+    "transaction_id": "TX_000091"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "AST_000009@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/acquisition_operation_ref/version",
+            "/extensions/asset_acquisition",
+            "/extensions/asset_recon/production_ready",
+            "/original_file",
+            "/technical",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000092_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "a635cd3a26a4c9e32b84a444176d796ea07912db7935b9b89b815e893a019cda",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "AST_000009@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:07.921754Z",
+    "manifest_version_after": 93,
+    "manifest_version_before": 92,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 72,
+      "ASSET_REGISTRY": 58
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 71,
+      "ASSET_REGISTRY": 57
+    },
+    "transaction_id": "TX_000092"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 3
+        },
+        "result_refs": [
+          "AST_000009@4"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000093_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "3fcc06c88aaa87f3c353a56471bb0528169bb12e48cd19fef2317de79e514197",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 3
+        },
+        "result_refs": [
+          "AST_000009@4"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:08.120711Z",
+    "manifest_version_after": 94,
+    "manifest_version_before": 93,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 73,
+      "ASSET_REGISTRY": 59
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 72,
+      "ASSET_REGISTRY": 58
+    },
+    "transaction_id": "TX_000093"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 4
+        },
+        "result_refs": [
+          "AST_000009@5"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000094_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "b2d1ed123f9be01dfbece7fc91f440071cb940f3a06e2f9d0e6d2b114ce6ee50",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 4
+        },
+        "result_refs": [
+          "AST_000009@5"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:08.310112Z",
+    "manifest_version_after": 95,
+    "manifest_version_before": 94,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 74,
+      "ASSET_REGISTRY": 60
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 73,
+      "ASSET_REGISTRY": 59
+    },
+    "transaction_id": "TX_000094"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SEG_000007@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:08.505559Z",
+    "manifest_version_after": 96,
+    "manifest_version_before": 95,
+    "registry_versions_after": {
+      "ASSET_REGISTRY": 61
+    },
+    "registry_versions_before": {
+      "ASSET_REGISTRY": 60
+    },
+    "transaction_id": "TX_000095"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "OP_000010@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/attempts",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000096_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "5ee50128a1fa74cefb1818cb43c15c79f868107a7dbb7c93ba7e74ae7068c509",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 1,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "OP_000010@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:08.761161Z",
+    "manifest_version_after": 97,
+    "manifest_version_before": 96,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 75,
+      "OPERATION_REGISTRY": 26
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 74,
+      "OPERATION_REGISTRY": 25
+    },
+    "transaction_id": "TX_000096"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "OP_000010@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/attempts",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000097_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "8ddb1d9e9abb3a89e7e54e4cfdace3dff4192bf76531fc9f10e89fcd7be8924c",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "OP_000010@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:08.942272Z",
+    "manifest_version_after": 98,
+    "manifest_version_before": 97,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 76,
+      "OPERATION_REGISTRY": 27
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 75,
+      "OPERATION_REGISTRY": 26
+    },
+    "transaction_id": "TX_000097"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 2
+        },
+        "result_refs": [
+          "AST_000010@3"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/acquisition_operation_ref/version",
+            "/extensions/asset_acquisition",
+            "/extensions/asset_recon/production_ready",
+            "/original_file",
+            "/technical",
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000098_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "4100e1e0dc44acfc5783b323cffdda0148b53c900c35e1a53cff08b1126ee975",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 2
+        },
+        "result_refs": [
+          "AST_000010@3"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:09.159092Z",
+    "manifest_version_after": 99,
+    "manifest_version_before": 98,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 77,
+      "ASSET_REGISTRY": 62
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 76,
+      "ASSET_REGISTRY": 61
+    },
+    "transaction_id": "TX_000098"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 3
+        },
+        "result_refs": [
+          "AST_000010@4"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000099_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "203c7b4e60e014d22e6093fbe22e782b91ab2d2a05a8d9f8498f90d47ab6583f",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 3
+        },
+        "result_refs": [
+          "AST_000010@4"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:09.346160Z",
+    "manifest_version_after": 100,
+    "manifest_version_before": 99,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 78,
+      "ASSET_REGISTRY": 63
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 77,
+      "ASSET_REGISTRY": 62
+    },
+    "transaction_id": "TX_000099"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 4
+        },
+        "result_refs": [
+          "AST_000010@5"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/workflow_state"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000100_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "565e8d36aa597135b3bf74f258185e243abd802ae24a4f6f18b59dd17fad8cae",
+            "version": 1
+          },
+          "impact_tags": [
+            "GENERAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 4
+        },
+        "result_refs": [
+          "AST_000010@5"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:09.570996Z",
+    "manifest_version_after": 101,
+    "manifest_version_before": 100,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 79,
+      "ASSET_REGISTRY": 64
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 78,
+      "ASSET_REGISTRY": 63
+    },
+    "transaction_id": "TX_000100"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "SEG_000008@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:09.680467Z",
+    "manifest_version_after": 102,
+    "manifest_version_before": 101,
+    "registry_versions_after": {
+      "ASSET_REGISTRY": 65
+    },
+    "registry_versions_before": {
+      "ASSET_REGISTRY": 64
+    },
+    "transaction_id": "TX_000101"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "QAI_000001@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "QAI_000002@1"
+        ]
+      },
+      {
+        "action_type": "CREATE_OBJECT",
+        "detail": {
+          "activate": true
+        },
+        "result_refs": [
+          "QAR_000002@1"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:09.804035Z",
+    "manifest_version_after": 103,
+    "manifest_version_before": 102,
+    "registry_versions_after": {
+      "QA_REGISTRY": 4
+    },
+    "registry_versions_before": {
+      "QA_REGISTRY": 3
+    },
+    "transaction_id": "TX_000102"
+  },
+  {
+    "actions": [
+      {
+        "action_type": "CREATE_VERSION",
+        "detail": {
+          "base_version": 1
+        },
+        "result_refs": [
+          "QAR_000002@2"
+        ]
+      },
+      {
+        "action_type": "PROMOTE_ACTIVE_VERSION",
+        "detail": {
+          "blast_radius": "LOCAL",
+          "changed_paths": [
+            "/extensions/asset_acquisition"
+          ],
+          "dependency_impact_report": {
+            "artifact_id": "DEP_IMPACT_TX_000103_001",
+            "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+            "sha256": "742fe0f22008e88122618bfe96cff35a32c16ae3d502c2f06e41cd6498984527",
+            "version": 1
+          },
+          "impact_tags": [
+            "VISUAL"
+          ],
+          "impacted_nodes": 0,
+          "previous_active_version": 1
+        },
+        "result_refs": [
+          "QAR_000002@2"
+        ]
+      }
+    ],
+    "committed_at": "2026-09-27T16:11:09.990332Z",
+    "manifest_version_after": 104,
+    "manifest_version_before": 103,
+    "registry_versions_after": {
+      "ARTIFACT_REGISTRY": 80,
+      "QA_REGISTRY": 5
+    },
+    "registry_versions_before": {
+      "ARTIFACT_REGISTRY": 79,
+      "QA_REGISTRY": 4
+    },
+    "transaction_id": "TX_000103"
+  }
+]

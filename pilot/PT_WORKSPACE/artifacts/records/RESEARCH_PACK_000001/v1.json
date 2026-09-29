@@ -1,0 +1,23 @@
+{
+  "artifact_id": "RESEARCH_PACK_000001",
+  "artifact_type": "RESEARCH_PACK",
+  "created_at": "2026-09-27T08:40:33.000395Z",
+  "extensions": {},
+  "notes": [
+    "input_path=inputs/research/[Research Pack] The Ghost of P.T. & The Erasure of Hideo Kojima (LEMiNO Pipeline).docx",
+    "input_sha256=0243aad58e88e29094461e654782ce4bd007dab6500d82a729baf870c092671e",
+    "input_bytes=331159",
+    "bootstrap_registration_only=true"
+  ],
+  "origin_refs": [],
+  "research_summary": "Bootstrap research pack registered as an immutable pilot input. Domain ingestion and Research Audit are still pending.",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/research-pack",
+    "schema_version": "1.0.0"
+  },
+  "sha256": "a6a28e9af9646c19c5eea4605575c798bd7ab9d9f933e5a9c6dc5aab33ab5e46",
+  "source_refs": [],
+  "title": "[Research Pack] The Ghost of P.T. & The Erasure of Hideo Kojima (LEMiNO Pipeline)",
+  "uri": "gmk://artifacts/RESEARCH_PACK_000001/v1",
+  "version": 1
+}

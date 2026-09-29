@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/voice-lock-manifest",
+  "title": "VOICE_LOCK_MANIFEST",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "VOICE_LOCK_MANIFEST"
+        },
+        "voice_profile_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "voiceover_script": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "FACT_SOURCE"
+        },
+        "tts_script": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "FACT_SOURCE"
+        },
+        "pronunciation_dictionary": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "voice_blocks": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-dependency-relation": "TIMING_SOURCE"
+          }
+        },
+        "master_voice": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "TIMING_SOURCE"
+        },
+        "timing_map": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "TIMING_SOURCE"
+        }
+      },
+      "required": [
+        "voice_profile_ref",
+        "voiceover_script",
+        "tts_script",
+        "pronunciation_dictionary",
+        "voice_blocks",
+        "master_voice",
+        "timing_map"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/design-dna-review-package",
+  "title": "DESIGN_DNA_REVIEW_PACKAGE",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "DESIGN_DNA_REVIEW_PACKAGE"
+        },
+        "scope": {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "const": "DESIGN_DNA"
+            }
+          },
+          "additionalProperties": true
+        },
+        "design_dna_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "voice_lock": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "FACT_SOURCE"
+        },
+        "narrative_spine": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "FACT_SOURCE"
+        },
+        "effective_tokens": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "review_summary": {
+          "type": "object",
+          "required": [
+            "rule_count",
+            "reference_count",
+            "visual_thesis"
+          ],
+          "properties": {
+            "rule_count": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "reference_count": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "visual_thesis": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "scope",
+        "design_dna_ref",
+        "voice_lock",
+        "narrative_spine",
+        "effective_tokens",
+        "review_summary"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

@@ -1,0 +1,45 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "code": "PRODUCTION_READY_VISUAL_MISSING",
+  "created_at": "2026-09-27T16:11:09.740808Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "NB_000008",
+        "version": 2
+      }
+    }
+  ],
+  "description": "BEAT_TGA has no production-ready verified Segment yet.",
+  "extensions": {},
+  "human_constraints": [],
+  "id": "QAI_000002",
+  "lock_state": "UNLOCKED",
+  "object_type": "QA_ISSUE",
+  "qa_domain": "ASSET_COVERAGE_REPORT",
+  "root_cause": {
+    "category": "ASSET",
+    "state": "IDENTIFIED"
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/qa-issue",
+    "schema_version": "1.0.0"
+  },
+  "severity": "MAJOR",
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "target": {
+    "id": "NB_000008",
+    "version": 2
+  },
+  "updated_at": "2026-09-27T16:11:09.740808Z",
+  "version": 1,
+  "workflow_state": "OPEN"
+}

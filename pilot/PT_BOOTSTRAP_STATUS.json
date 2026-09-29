@@ -1,0 +1,20 @@
+{
+  "loaded_artifacts": 1,
+  "loaded_objects": 1,
+  "manifest_sha256": "97cbdde564c8da7dfe66f30c6fb9b87236e7acf2e05ebe4994ed0acd2a4b8ba1",
+  "manifest_version": 2,
+  "next_legal_action": {
+    "action": "TRANSITION_PROJECT_STATE",
+    "blockers": [],
+    "gate_ids": [
+      "BOOTSTRAP"
+    ],
+    "message": "BOOTSTRAPPED can transition to RESEARCH_INTAKE.",
+    "missing_requirements": [],
+    "permission_class": "AI_WITH_RULES",
+    "project_state": "BOOTSTRAPPED",
+    "target_state": "RESEARCH_INTAKE"
+  },
+  "project_state": "BOOTSTRAPPED",
+  "safety_mode": "NORMAL"
+}

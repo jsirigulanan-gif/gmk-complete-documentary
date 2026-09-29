@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/delivery-review-package",
+  "title": "DELIVERY_REVIEW_PACKAGE",
+  "allOf": [
+    {"$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"},
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {"const": "DELIVERY_REVIEW_PACKAGE"},
+        "scope": {
+          "type": "object",
+          "required": ["type", "project_ref"],
+          "properties": {
+            "type": {"const": "DELIVERY"},
+            "project_ref": {"$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"}
+          },
+          "additionalProperties": false
+        },
+        "project_lock": {"$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef", "x-gmk-dependency-relation": "DERIVED_FROM"},
+        "master_output": {"$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef", "x-gmk-dependency-relation": "DERIVED_FROM"},
+        "full_film_qa": {"$ref": "gmk://schema/v1/reference#/$defs/ObjectRef", "x-gmk-dependency-relation": "QA_EVIDENCE"},
+        "delivery_qa": {"$ref": "gmk://schema/v1/reference#/$defs/ObjectRef", "x-gmk-dependency-relation": "QA_EVIDENCE"},
+        "delivery_profile": {"$ref": "gmk://schema/v1/reference#/$defs/ConfigRef"},
+        "final_asset_manifest": {"$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef", "x-gmk-dependency-relation": "DERIVED_FROM"},
+        "provenance_manifest": {"$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef", "x-gmk-dependency-relation": "DERIVED_FROM"},
+        "delivery_package": {"$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef", "x-gmk-dependency-relation": "DERIVED_FROM"},
+        "pre_release_checkpoint": {"$ref": "gmk://schema/v1/reference#/$defs/ObjectRef", "x-gmk-dependency-relation": "DERIVED_FROM"},
+        "metadata": {"type": "object", "additionalProperties": true},
+        "candidate_sha256": {"$ref": "gmk://schema/v1/reference#/$defs/Sha256"},
+        "review_summary": {
+          "type": "object",
+          "required": ["delivery_qa_result", "asset_count", "provenance_entry_count", "disclosure_count"],
+          "properties": {
+            "delivery_qa_result": {"type": "string", "enum": ["PASS", "WARN", "FAIL"]},
+            "asset_count": {"type": "integer", "minimum": 0},
+            "provenance_entry_count": {"type": "integer", "minimum": 0},
+            "disclosure_count": {"type": "integer", "minimum": 0}
+          },
+          "additionalProperties": true
+        }
+      },
+      "required": ["scope", "project_lock", "master_output", "full_film_qa", "delivery_qa", "delivery_profile", "final_asset_manifest", "provenance_manifest", "delivery_package", "pre_release_checkpoint", "metadata", "candidate_sha256", "review_summary"]
+    }
+  ],
+  "unevaluatedProperties": false
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/delivery-package",
+  "title": "DELIVERY_PACKAGE",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "DELIVERY_PACKAGE"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+            "x-gmk-dependency-relation": "DERIVED_FROM"
+          }
+        }
+      },
+      "required": [
+        "items"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

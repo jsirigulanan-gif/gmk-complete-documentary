@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/evidence",
+  "title": "GMK Evidence",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "EVIDENCE"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^EVD_[A-Z0-9_-]+$"
+        },
+        "source_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-field-class": "AUTHORITATIVE",
+          "x-gmk-expected-object-type": "SOURCE",
+          "x-gmk-dependency-relation": "EVIDENCE_SOURCE"
+        },
+        "locator": {
+          "$ref": "gmk://schema/v1/locator#/$defs/SourceLocator",
+          "x-gmk-field-class": "AUTHORITATIVE"
+        },
+        "evidence_kind": {
+          "type": "string",
+          "enum": [
+            "MEDIA_OBSERVATION",
+            "DOCUMENT_EXCERPT",
+            "QUOTE",
+            "TECHNICAL_OBSERVATION"
+          ]
+        },
+        "content_summary": {
+          "type": "string",
+          "minLength": 1,
+          "x-gmk-field-class": "AUTHORITATIVE"
+        },
+        "quote": {
+          "type": "object",
+          "required": [
+            "speaker",
+            "original_text",
+            "language",
+            "translation_status"
+          ],
+          "properties": {
+            "speaker": {
+              "type": "string",
+              "minLength": 1
+            },
+            "original_text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "translated_text": {
+              "type": "string"
+            },
+            "language": {
+              "type": "string",
+              "minLength": 2
+            },
+            "context_before": {
+              "type": "string"
+            },
+            "context_after": {
+              "type": "string"
+            },
+            "translation_status": {
+              "type": "string",
+              "enum": [
+                "ORIGINAL_LANGUAGE",
+                "SOURCE_TRANSLATION",
+                "MACHINE_TRANSLATED",
+                "HUMAN_REVIEWED"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "technical": {
+          "type": "object",
+          "required": [
+            "method",
+            "reproducibility",
+            "assumptions",
+            "limitations"
+          ],
+          "properties": {
+            "method": {
+              "type": "string",
+              "minLength": 1
+            },
+            "researcher": {
+              "type": "string"
+            },
+            "tool": {
+              "type": "string"
+            },
+            "reproducibility": {
+              "type": "string",
+              "enum": [
+                "REPRODUCIBLE",
+                "PARTIALLY_REPRODUCIBLE",
+                "NOT_REPRODUCIBLE",
+                "UNKNOWN"
+              ]
+            },
+            "assumptions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "limitations": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "source_ref",
+        "locator",
+        "evidence_kind",
+        "content_summary"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

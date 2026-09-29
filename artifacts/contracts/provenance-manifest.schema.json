@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/provenance-manifest",
+  "title": "PROVENANCE_MANIFEST",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "PROVENANCE_MANIFEST"
+        },
+        "entries": {
+          "type": "array"
+        },
+        "disclosures": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "entries",
+        "disclosures"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

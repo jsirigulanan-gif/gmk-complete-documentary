@@ -1,0 +1,96 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "beat_type": "TECHNICAL_EXPLANATION",
+  "claim_bindings": [
+    {
+      "claim_ref": {
+        "id": "CLM_000008",
+        "version": 2
+      },
+      "role": "TECHNICAL_BASIS"
+    }
+  ],
+  "created_at": "2026-09-27T10:18:33.377317Z",
+  "dependencies": [
+    {
+      "relation": "FACT_SOURCE",
+      "target": {
+        "id": "CLM_000008",
+        "version": 2
+      }
+    },
+    {
+      "relation": "SUPERSEDES",
+      "target": {
+        "id": "NB_000004",
+        "version": 1
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "SCN_000003",
+        "version": 1
+      }
+    }
+  ],
+  "extensions": {
+    "rough_narrative": {
+      "batch_id": "PT_ROUGH_NARRATIVE_001",
+      "key": "BEAT_LISA_FINDING",
+      "plan_sha256": "645459994c0d1d6d6e2211831a9c515e8a19ee1e10d2e9520bfa7e4ef4da8376",
+      "research_modes": {
+        "CLM_000008": "ATTRIBUTED"
+      },
+      "synthesis_note": "Narration ต้อง ATTRIBUTED และห้ามระบุระยะตัวเลขที่ Claim ไม่รองรับ"
+    }
+  },
+  "human_constraints": [],
+  "id": "NB_000004",
+  "idea": {
+    "summary": "เล่าผลการตรวจกล้องโดย attribution ถึง Lance McDonald และย้ำว่าหลักฐานไม่รองรับระยะ 0.5 เมตรที่แน่นอน"
+  },
+  "lock_state": "UNLOCKED",
+  "narrative_links": [
+    {
+      "target_beat_ref": {
+        "id": "NB_000010",
+        "version": 1
+      },
+      "type": "CAUSE_EFFECT"
+    }
+  ],
+  "object_type": "NARRATION_BEAT",
+  "order": 1,
+  "reveal": {
+    "contains_reveal": true,
+    "forbidden_visual_concepts_before": [
+      "THIRD_PERSON_LISA_POSITION"
+    ],
+    "reveal_key": "LISA_BEHIND_PLAYER"
+  },
+  "scene_ref": {
+    "id": "SCN_000003",
+    "version": 1
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/narration-beat",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "supersedes": {
+    "id": "NB_000004",
+    "version": 1
+  },
+  "updated_at": "2026-09-27T10:18:33.377317Z",
+  "version": 2,
+  "viewer_takeaway": "ความสัมพันธ์ Lisa-ผู้เล่นมีหลักฐานเชิงเทคนิค แต่ precision เชิงระยะต้องไม่ถูกแต่งเพิ่ม",
+  "workflow_state": "RESEARCH_BOUND"
+}

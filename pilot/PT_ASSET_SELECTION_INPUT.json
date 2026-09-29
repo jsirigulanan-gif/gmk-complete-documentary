@@ -1,0 +1,166 @@
+{
+  "batch_id": "PT_ASSET_SELECTION_016",
+  "source_recon_batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+  "search_again": [
+    {
+      "beat_key": "BEAT_LISA_FINDING",
+      "search_key": "LISA_SEARCH_AGAIN_DIRECT",
+      "priority": "CRITICAL",
+      "search_round": 2,
+      "search_pass": "TECHNICAL_RESEARCH",
+      "query_family": "SOURCE_TRACE",
+      "query": "Lance McDonald P.T. Lisa original September 9 2019 camera hack post video",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": ["ORIGINAL_CREATOR", "RESEARCHER"],
+      "previous_search_keys": ["LISA_TECH", "LISA_ORIGINAL"],
+      "failure_reason": "Critical Beat had only two viable candidates and the original direct-media lead still required inspection.",
+      "strategy_change": "Trace the original creator post and preserve the direct embedded-video source as the third viable family.",
+      "new_sources": [
+        {
+          "key": "LISA_LANCE_X_DIRECT",
+          "title": "Lance McDonald original P.T. camera-hack post",
+          "url": "https://twitter.com/manfightdragon/status/1170860592233472001",
+          "publisher": "Lance McDonald",
+          "author": "Lance McDonald",
+          "platform": "X / Twitter",
+          "published_at": "2019-09-09T00:00:00Z",
+          "source_type": "SOCIAL_POST",
+          "authority_class": "PRIMARY",
+          "independence_group": "SRCGRP_LANCE_MCDONALD_DIRECT_PT_2019",
+          "independence_relationship": "INDEPENDENT",
+          "language": "en",
+          "availability": "AVAILABLE",
+          "notes": "Original creator post traced through contemporary reporting; embedded clip demonstrates the camera hack. Do not infer an exact numeric Lisa distance."
+        }
+      ],
+      "results": [
+        {
+          "key": "LISA_X_DIRECT_VERIFIED",
+          "source_key": "LISA_LANCE_X_DIRECT",
+          "title": "Lance McDonald direct P.T. Lisa camera-hack post",
+          "discovery_url": "https://twitter.com/manfightdragon/status/1170860592233472001",
+          "source_family": "ORIGINAL_CREATOR",
+          "candidate_state": "VIABLE",
+          "inspection": {
+            "visible_content": "Original creator post with embedded P.T. camera-hack clip; the stationary camera reveals Lisa following behind the player.",
+            "exact_moment_found": true,
+            "candidate_locator": {"type": "FULL_SOURCE"},
+            "match_type": "DIRECT",
+            "match_reason": "Original creator media directly demonstrates the technical relationship required by the Beat.",
+            "viewer_takeaway_supported": true
+          },
+          "evaluation": {
+            "visual_clarity": "HIGH",
+            "technical_quality": "UNKNOWN",
+            "cleanliness": "CLEAN",
+            "duplicate_state": "UNIQUE"
+          }
+        }
+      ]
+    }
+  ],
+  "selections": [
+    {
+      "beat_key": "BEAT_OPENING_PROMISE",
+      "candidate_key": "OPEN_GEMATSU",
+      "media_type": "DOCUMENT",
+      "asset_class": "EVIDENCE",
+      "selection_reason": "Contemporaneous launch evidence with clear P.T./7780s framing.",
+      "rights_status": "COMMENTARY_REVIEW",
+      "rights_basis": "Editorial/news page selected for documentary commentary; final usage and capture scope require review.",
+      "attribution_required": true
+    },
+    {
+      "beat_key": "BEAT_7780",
+      "candidate_key": "7780_WIRED",
+      "media_type": "DOCUMENT",
+      "asset_class": "EVIDENCE",
+      "selection_reason": "Strongest source for Kojima's explanation of 7780s/Shizuoka wordplay.",
+      "rights_status": "COMMENTARY_REVIEW",
+      "rights_basis": "Published interview/report; documentary excerpt usage requires review.",
+      "attribution_required": true
+    },
+    {
+      "beat_key": "BEAT_MILLION",
+      "candidate_key": "MILLION_PUSH",
+      "media_type": "DOCUMENT",
+      "asset_class": "EVIDENCE",
+      "selection_reason": "Contemporaneous report with the one-million-download statistic in auditable wording.",
+      "rights_status": "COMMENTARY_REVIEW",
+      "rights_basis": "Published news evidence; documentary capture requires review.",
+      "attribution_required": true
+    },
+    {
+      "beat_key": "BEAT_LISA_FINDING",
+      "candidate_key": "LISA_X_DIRECT_VERIFIED",
+      "media_type": "VIDEO",
+      "asset_class": "DIRECT_FOOTAGE",
+      "selection_reason": "Original creator media is the strongest direct technical visual for the Lisa reveal.",
+      "rights_status": "COMMENTARY_REVIEW",
+      "rights_basis": "Original social-post media; usage requires explicit commentary/fair-use review and attribution.",
+      "attribution_required": true,
+      "rights_notes": "Do not encode an exact 0.5 m distance; evidence supports attachment/following relationship only."
+    },
+    {
+      "beat_key": "BEAT_DELIST",
+      "candidate_key": "DELIST_GEM",
+      "media_type": "DOCUMENT",
+      "asset_class": "EVIDENCE",
+      "selection_reason": "Clear contemporary April 29 distribution-end evidence.",
+      "rights_status": "COMMENTARY_REVIEW",
+      "rights_basis": "Published news evidence; capture scope requires review.",
+      "attribution_required": true
+    },
+    {
+      "beat_key": "BEAT_REDOWNLOAD",
+      "candidate_key": "REDOWN_GS",
+      "media_type": "DOCUMENT",
+      "asset_class": "EVIDENCE",
+      "selection_reason": "Contemporary test evidence distinguishes re-download failure from Store delisting.",
+      "rights_status": "COMMENTARY_REVIEW",
+      "rights_basis": "Published test/report; documentary excerpt usage requires review.",
+      "attribution_required": true
+    },
+    {
+      "beat_key": "BEAT_MARKET",
+      "candidate_key": "MARKET_KOT",
+      "media_type": "DOCUMENT",
+      "asset_class": "EVIDENCE",
+      "selection_reason": "Documents eBay auction removal and preserves the market-afterlife beat.",
+      "rights_status": "COMMENTARY_REVIEW",
+      "rights_basis": "Published news evidence; excerpt/capture usage requires review.",
+      "attribution_required": true
+    },
+    {
+      "beat_key": "BEAT_TGA",
+      "candidate_key": "TGA_VIDEO",
+      "media_type": "VIDEO",
+      "asset_class": "DIRECT_FOOTAGE",
+      "selection_reason": "Audiovisual stage statement preserves speaker, venue, and attribution context.",
+      "rights_status": "COMMENTARY_REVIEW",
+      "rights_basis": "Reuploaded broadcast footage; source-chain and excerpt rights require review before production.",
+      "attribution_required": true
+    },
+    {
+      "beat_key": "BEAT_CONTRACT_END",
+      "candidate_key": "CONTRACT_GW",
+      "media_type": "DOCUMENT",
+      "asset_class": "EVIDENCE",
+      "selection_reason": "Date-specific Japanese reporting supports the December 15 contract-end Beat.",
+      "rights_status": "COMMENTARY_REVIEW",
+      "rights_basis": "Published news evidence; translated/contextual capture requires review.",
+      "attribution_required": true
+    },
+    {
+      "beat_key": "BEAT_FINAL_PAYOFF",
+      "candidate_key": "PAYOFF_DELIST",
+      "media_type": "DOCUMENT",
+      "asset_class": "EVIDENCE",
+      "selection_reason": "Reuses the strongest dated access-loss evidence for the final synthesis rather than inventing a new filler visual.",
+      "rights_status": "COMMENTARY_REVIEW",
+      "rights_basis": "Published news evidence; reuse and sequence treatment require review.",
+      "attribution_required": true
+    }
+  ]
+}

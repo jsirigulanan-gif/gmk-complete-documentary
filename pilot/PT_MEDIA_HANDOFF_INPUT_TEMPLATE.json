@@ -1,0 +1,41 @@
+{
+  "batch_id": "PT_MEDIA_HANDOFF_018",
+  "items": [
+    {
+      "candidate_key": "LISA_X_DIRECT_VERIFIED",
+      "local_path": "REPLACE_WITH_AUTHORIZED_LOCAL_VIDEO_FILE",
+      "source_url": "https://twitter.com/manfightdragon/status/1170860592233472001",
+      "acquisition_method": "REPLACE_WITH_ACTUAL_ACQUISITION_METHOD",
+      "segment": {
+        "selector": {
+          "type": "VIDEO_TIME_RANGE",
+          "start_seconds": 0,
+          "end_seconds": 0,
+          "key_seconds": 0
+        },
+        "source_locator": {"type": "FULL_SOURCE"},
+        "visual_content": "Original creator camera-hack clip showing Lisa following behind the player.",
+        "match_type": "DIRECT",
+        "match_reason": "Verified original-media bytes directly depict the Lisa camera-hack relationship required by the Beat."
+      }
+    },
+    {
+      "candidate_key": "TGA_VIDEO",
+      "local_path": "REPLACE_WITH_AUTHORIZED_LOCAL_VIDEO_FILE",
+      "source_url": "https://www.youtube.com/watch?v=PKl5rYdwM6c",
+      "acquisition_method": "REPLACE_WITH_ACTUAL_ACQUISITION_METHOD",
+      "segment": {
+        "selector": {
+          "type": "VIDEO_TIME_RANGE",
+          "start_seconds": 0,
+          "end_seconds": 0,
+          "key_seconds": 0
+        },
+        "source_locator": {"type": "FULL_SOURCE"},
+        "visual_content": "Audiovisual Game Awards stage statement preserving speaker, venue, and attribution context.",
+        "match_type": "DIRECT",
+        "match_reason": "Verified original-media bytes directly depict the selected stage statement required by the Beat."
+      }
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "batch_id": "PT_VISUAL_REQUIREMENTS_001",
+  "source_narrative_batch_id": "PT_ROUGH_NARRATIVE_001",
+  "narrative_spine_ref": {
+    "artifact_id": "NARRATIVE_SPINE_000001",
+    "artifact_type": "NARRATIVE_SPINE",
+    "version": 1,
+    "sha256": "47a54f17b1a9d53c999dc69fe87676b575ae4b41f0af7442d4057823db63712d"
+  },
+  "requirements": [
+    {
+      "beat_key": "BEAT_OPENING_PROMISE",
+      "viewer_must_see": "หลักฐานภาพหรือเอกสารร่วมสมัยที่ทำให้ผู้ชมเห็นว่า P.T. ปรากฏบน PlayStation Network ในฐานะเดโมปริศนาภายใต้ชื่อ 7780s Studio โดยยังไม่เฉลยความหมายของ 7780 ก่อน Beat ถัดไป",
+      "viewer_must_understand": "นี่คือการเปิดเรื่องด้วยวัตถุดิจิทัลที่ถูกปล่อยโดยจงใจให้ตัวตนผู้สร้างไม่ชัด และปริศนานี้คือจุดเริ่มของเรื่องทั้งหมด",
+      "preferred_match": ["DIRECT", "SUPPORTING"],
+      "asset_needs": ["VIDEO", "DOCUMENT", "STILL"],
+      "priority": "CRITICAL"
+    },
+    {
+      "beat_key": "BEAT_7780",
+      "viewer_must_see": "หลักฐานต้นทางที่ Kojima อธิบายความหมายของเลข 7780 หรือเอกสารร่วมสมัยที่ถ่ายทอดคำอธิบายนั้นอย่างชัดเจน พร้อมภาพประกอบเชิงอธิบายที่เชื่อม 7780 กับ Shizuoka / Silent Hill โดยไม่ใช้ทฤษฎีเลขอื่น",
+      "viewer_must_understand": "ชื่อ 7780s Studio มีเบาะแสที่ตรวจสอบได้และการเฉลยนี้มาจากคำอธิบายที่มีแหล่งอ้างอิง ไม่ใช่การถอดรหัสที่หนังแต่งขึ้นเอง",
+      "preferred_match": ["DIRECT", "EXPLAINER"],
+      "asset_needs": ["VIDEO", "DOCUMENT", "STILL"],
+      "priority": "MAJOR"
+    },
+    {
+      "beat_key": "BEAT_MILLION",
+      "viewer_must_see": "ประกาศหรือรายงานร่วมสมัยที่ระบุยอดดาวน์โหลด P.T. มากกว่าหนึ่งล้านครั้งในช่วงต้นกันยายน 2014 และภาพสนับสนุนที่สื่อการแพร่กระจายของเดโมโดยไม่ทำให้ตัวเลขดูเป็นสถิติที่แม่นยำเกินหลักฐาน",
+      "viewer_must_understand": "P.T. ไม่ได้อยู่ในวงแคบ แต่แพร่ถึงผู้เล่นจำนวนมากอย่างรวดเร็ว โดยถ้อยคำบนภาพต้องคงระดับความเชื่อมั่นตามหลักฐานที่ audit แล้ว",
+      "preferred_match": ["DIRECT", "SUPPORTING"],
+      "asset_needs": ["DOCUMENT", "STILL", "VIDEO"],
+      "priority": "MAJOR"
+    },
+    {
+      "beat_key": "BEAT_LISA_FINDING",
+      "viewer_must_see": "ฟุตเทจหรือหลักฐานเชิงเทคนิคจากการแฮ็กกล้องของ Lance McDonald ที่ทำให้เห็น Lisa อยู่ด้านหลังผู้เล่นหลังได้ไฟฉาย ควบคู่กับมุมมองเกมปกติ เพื่อเปรียบเทียบสิ่งที่ผู้เล่นเห็นกับสิ่งที่ระบบกำลังทำจริง โดยห้ามระบุระยะ 0.5 เมตรหรือค่าตัวเลขที่หลักฐานไม่รองรับ",
+      "viewer_must_understand": "ความหลอนส่วนนี้มีความสัมพันธ์เชิงพื้นที่ที่ตรวจพบจริง แต่หลักฐานรองรับเพียงการอยู่ด้านหลังและติดตาม ไม่รองรับ precision เชิงตัวเลขที่เจาะจง",
+      "preferred_match": ["DIRECT", "EXPLAINER"],
+      "asset_needs": ["VIDEO", "TECHNICAL_REFERENCE", "THREE_D_REFERENCE"],
+      "priority": "CRITICAL"
+    },
+    {
+      "beat_key": "BEAT_DELIST",
+      "viewer_must_see": "หลักฐานร่วมสมัยที่ระบุว่า P.T. จะสิ้นสุดการแจกจ่ายและถูกถอดจาก PlayStation Store วันที่ 29 เมษายน 2015 โดยควรเห็นวันที่และบริบทของประกาศต้นทางชัดเจน",
+      "viewer_must_understand": "29 เมษายน 2015 คือจุดที่ช่องทางรับ P.T. จาก Store ถูกตัดออก และนี่เป็นเหตุการณ์ที่มีหลักฐานวันที่ชัดเจน",
+      "preferred_match": ["DIRECT", "SUPPORTING"],
+      "asset_needs": ["DOCUMENT", "STILL"],
+      "priority": "CRITICAL"
+    },
+    {
+      "beat_key": "BEAT_REDOWNLOAD",
+      "viewer_must_see": "หลักฐานร่วมสมัยจากวันที่ 6 พฤษภาคม 2015 หรือใกล้เคียงที่แสดงว่าผู้ใช้ซึ่งเคยมี P.T. ไม่สามารถดาวน์โหลดซ้ำได้ เช่น รายงานการทดสอบ ข้อความ error หรือภาพระบบที่ตรวจสอบที่มาได้",
+      "viewer_must_understand": "การหายจาก Store และการบล็อก re-download เป็นคนละขั้น และขั้นหลังทำให้สิทธิ์ในประวัติบัญชีไม่เพียงพอสำหรับการเรียกไฟล์กลับมา",
+      "preferred_match": ["DIRECT", "SUPPORTING"],
+      "asset_needs": ["DOCUMENT", "STILL", "VIDEO"],
+      "priority": "CRITICAL"
+    },
+    {
+      "beat_key": "BEAT_MARKET",
+      "viewer_must_see": "ภาพหรือรายงานที่ตรวจสอบที่มาได้ของเครื่อง PS4 ที่ยังติดตั้ง P.T. และตัวอย่างประกาศราคาสูง เช่น £1,000 พร้อมหลักฐานว่า eBay ลบประกาศลักษณะนี้ โดยหลีกเลี่ยงการทำกราฟเหมารวมราคาทุกเครื่อง",
+      "viewer_must_understand": "เมื่อดาวน์โหลดใหม่ไม่ได้ คุณค่าของสำเนาที่ติดตั้งอยู่ถูกย้ายไปผูกกับฮาร์ดแวร์บางเครื่อง และตัวอย่างราคาสูงเป็นหลักฐานเฉพาะกรณี ไม่ใช่ราคาตลาดตายตัว",
+      "preferred_match": ["DIRECT", "SUPPORTING"],
+      "asset_needs": ["DOCUMENT", "STILL"],
+      "priority": "STANDARD"
+    },
+    {
+      "beat_key": "BEAT_TGA",
+      "viewer_must_see": "ฟุตเทจ The Game Awards 2015 ตอน Geoff Keighley กล่าวถึงเหตุที่ Kojima ไม่ได้มาร่วมงาน โดยเห็นผู้พูดและบริบทเวทีชัดเจน และมี source label ที่ทำให้ผู้ชมรู้ว่าข้อความนี้เป็นคำกล่าวของ Keighley",
+      "viewer_must_understand": "หนังไม่ได้อ้างรู้แรงจูงใจของ Konami เอง แต่กำลังรายงานคำกล่าวสาธารณะของ Geoff Keighley ตามหลักฐานที่มี",
+      "preferred_match": ["DIRECT"],
+      "asset_needs": ["VIDEO"],
+      "priority": "CRITICAL"
+    },
+    {
+      "beat_key": "BEAT_CONTRACT_END",
+      "viewer_must_see": "เอกสารหรือรายงานร่วมสมัยที่ยืนยันวันที่ 15 ธันวาคม 2015 ว่าสัญญาของ Hideo Kojima กับ Konami สิ้นสุดลง พร้อมภาพบริบทการประกาศ Kojima Productions อิสระหากแหล่งนั้นตรวจสอบได้",
+      "viewer_must_understand": "วันที่สิ้นสุดสัญญาเป็นข้อเท็จจริงที่ corroborated และเป็นปลายทางที่ตรวจสอบได้ของเส้นเวลาในปี 2015",
+      "preferred_match": ["DIRECT", "SUPPORTING"],
+      "asset_needs": ["DOCUMENT", "STILL", "VIDEO"],
+      "priority": "MAJOR"
+    },
+    {
+      "beat_key": "BEAT_FINAL_PAYOFF",
+      "viewer_must_see": "ลำดับภาพที่ย้อนกลับไปยังหลักฐานหลักของเรื่อง ได้แก่ การถอด Store การบล็อก re-download เครื่องที่ยังเก็บสำเนา และฟุตเทจการตรวจ Lisa โดยแต่ละภาพต้องมาจาก Segment หรือหลักฐานที่ตรวจสอบได้ และต้องแยกภาพอธิบายออกจากหลักฐานจริงอย่างชัดเจน",
+      "viewer_must_understand": "สิ่งที่ถูกลบคือช่องทางการเข้าถึงบางส่วน ไม่ใช่ทุกสำเนา บันทึก หรือร่องรอยทางเทคนิค ดังนั้นการหายจาก Store กับการหายจากประวัติเป็นคนละเรื่อง",
+      "preferred_match": ["DIRECT", "SUPPORTING", "EXPLAINER"],
+      "asset_needs": ["VIDEO", "DOCUMENT", "STILL", "TECHNICAL_REFERENCE"],
+      "priority": "CRITICAL"
+    }
+  ]
+}

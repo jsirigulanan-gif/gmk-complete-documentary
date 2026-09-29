@@ -1,0 +1,90 @@
+config_id: GMK_DEPENDENCY_POLICY
+version: 1.0.0
+schema_version: 1.0.0
+
+# Relation is interpreted from the dependent's point of view: the dependent
+# stores an exact ref to its upstream target.
+relation_defaults:
+  FACT_SOURCE: STALE
+  EVIDENCE_SOURCE: STALE
+  VISUAL_SOURCE: STALE
+  TIMING_SOURCE: STALE
+  DESIGN_SOURCE: STALE
+  RENDER_INPUT: BLOCKED
+  DERIVED_FROM: REVALIDATE
+  APPROVES: REVALIDATE
+  SUPERSEDES: UNAFFECTED
+  CONSTRAINS: REVALIDATE
+
+# Safety / rights changes may block use even when a Human Lock exists. Factual
+# changes must at least stale downstream production decisions.
+non_impact_tags:
+  - NON_PRODUCTION
+
+critical_tag_overrides:
+  RIGHTS: BLOCKED
+  SAFETY: BLOCKED
+  FACTUAL: STALE
+
+path_tag_rules:
+  - contains: /notes
+    tag: NON_PRODUCTION
+  - contains: /working_title
+    tag: NON_PRODUCTION
+  - contains: rights
+    tag: RIGHTS
+  - contains: license
+    tag: RIGHTS
+  - contains: provenance
+    tag: RIGHTS
+  - contains: verification_state
+    tag: FACTUAL
+  - contains: claim_text
+    tag: FACTUAL
+  - contains: evidence_links
+    tag: FACTUAL
+  - contains: evidence_anchor
+    tag: FACTUAL
+  - contains: evidence_basis
+    tag: FACTUAL
+  - contains: source_ref
+    tag: FACTUAL
+  - contains: narration
+    tag: NARRATIVE
+  - contains: viewer_takeaway
+    tag: NARRATIVE
+  - contains: timing
+    tag: TIMING
+  - contains: cue
+    tag: TIMING
+  - contains: voice
+    tag: TIMING
+  - contains: segment
+    tag: VISUAL
+  - contains: asset
+    tag: VISUAL
+  - contains: layer
+    tag: VISUAL
+  - contains: design
+    tag: DESIGN
+  - contains: rule
+    tag: DESIGN
+  - contains: token
+    tag: DESIGN
+  - contains: human_constraints
+    tag: HUMAN_CONSTRAINT
+  - contains: lock_state
+    tag: SAFETY
+
+# Historical releases and final recovery checkpoints are frozen graph
+# boundaries. Production Lock artifacts are immutable snapshots but remain
+# eligible for effective invalidation before release, so they are intentionally
+# not a frozen propagation boundary here.
+frozen_artifact_types: []
+frozen_object_rules:
+  - object_type: RELEASE
+    field: state
+    equals: RELEASED
+  - object_type: CHECKPOINT
+    field: checkpoint_class
+    equals: FINAL_PROJECT

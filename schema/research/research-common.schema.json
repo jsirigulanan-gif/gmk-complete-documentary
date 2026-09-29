@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/research-common",
+  "$defs": {
+    "SourceType": {
+      "type": "string",
+      "enum": [
+        "WEB_PAGE",
+        "VIDEO",
+        "INTERVIEW",
+        "PRESS_RELEASE",
+        "SOCIAL_POST",
+        "DOCUMENT",
+        "GAME_FILE",
+        "TECHNICAL_ANALYSIS",
+        "FORUM_THREAD",
+        "DATABASE",
+        "ARCHIVE",
+        "OTHER"
+      ]
+    },
+    "AuthorityClass": {
+      "type": "string",
+      "enum": [
+        "PRIMARY",
+        "OFFICIAL",
+        "DIRECT_WITNESS",
+        "REPUTABLE_SECONDARY",
+        "TECHNICAL_RESEARCH",
+        "COMMUNITY_PRIMARY_MATERIAL",
+        "COMMUNITY_DISCUSSION",
+        "UNKNOWN"
+      ]
+    },
+    "VerificationState": {
+      "type": "string",
+      "enum": [
+        "UNREVIEWED",
+        "SOURCE_FOUND",
+        "SOURCE_VERIFIED",
+        "CORROBORATED",
+        "CONTESTED",
+        "INSUFFICIENT_EVIDENCE",
+        "DISPROVEN",
+        "UNRESOLVED"
+      ]
+    },
+    "ClaimType": {
+      "type": "string",
+      "enum": [
+        "FACTUAL_ASSERTION",
+        "REPORTED_ASSERTION",
+        "PRIMARY_STATEMENT",
+        "TECHNICAL_FINDING",
+        "COMMUNITY_THEORY",
+        "RUMOR",
+        "INTERPRETATION"
+      ]
+    },
+    "EvidenceRelation": {
+      "type": "string",
+      "enum": [
+        "SUPPORTS",
+        "CONTRADICTS",
+        "QUALIFIES",
+        "CONTEXTUALIZES"
+      ]
+    },
+    "EvidenceStrength": {
+      "type": "string",
+      "enum": [
+        "DIRECT",
+        "STRONG",
+        "CORROBORATIVE",
+        "WEAK",
+        "CONTEXT_ONLY"
+      ]
+    },
+    "EvidenceScope": {
+      "type": "string",
+      "enum": [
+        "EVENT",
+        "TIMELINE",
+        "IDENTITY",
+        "QUOTE",
+        "TECHNICAL_BEHAVIOR",
+        "LOCATION",
+        "QUANTITY",
+        "CAUSATION",
+        "INTENT",
+        "MOTIVE",
+        "INTERPRETATION"
+      ]
+    },
+    "NarrationLanguageMode": {
+      "type": "string",
+      "enum": [
+        "DIRECT",
+        "ATTRIBUTED",
+        "QUALIFIED",
+        "THEORY",
+        "INTERPRETIVE",
+        "UNRESOLVED",
+        "PROHIBITED"
+      ]
+    },
+    "CertaintyLevel": {
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW",
+        "UNKNOWN"
+      ]
+    },
+    "EvidenceLink": {
+      "type": "object",
+      "required": [
+        "evidence_ref",
+        "relation",
+        "scope",
+        "strength"
+      ],
+      "properties": {
+        "evidence_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-field-class": "AUTHORITATIVE",
+          "x-gmk-expected-object-type": "EVIDENCE",
+          "x-gmk-dependency-relation": "EVIDENCE_SOURCE"
+        },
+        "relation": {
+          "$ref": "#/$defs/EvidenceRelation"
+        },
+        "scope": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/EvidenceScope"
+          }
+        },
+        "strength": {
+          "$ref": "#/$defs/EvidenceStrength"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,46 @@
+config_id: GMK_POLICY_BUNDLE
+version: 1.0.0
+schema_version: 1.0.0
+policies:
+  activation:
+    version: 1.0.0
+    sha256: 44d0813c719e0ae4a4f852b1ace2aea767306adf3d9da79c3e5df062571febd4
+  dependency:
+    version: 1.0.0
+    sha256: 4b368d0e008701f5fca9bfe73b7f38fb711ec1d77bc282a03be54b2d2d0ec2ee
+  gates:
+    version: 1.0.0
+    sha256: 93c765a36019dab67ddd7bd846933e366fc653e78afd6434fe8424da0b4731d7
+  research:
+    version: 1.0.0
+    sha256: 9a6fd8cd7c30024f125f036f32923052c671267a3b02d5ca24de5ee334158464
+  assets:
+    version: 1.0.0
+    sha256: ff2e080d3fc848c28587db42c4f599b152d79b25c39fec3c317a6586abafae8e
+  voice:
+    version: 1.0.0
+    sha256: 1bcb70ca506f0eb79827272deb38e099f6f9495a4b9970648576172ed0233231
+  design:
+    version: 1.0.0
+    sha256: df200abb08dc2d80a72610823fb3bd19127519f0a7a2840164fe0ac16911a566
+  planning:
+    version: 1.0.0
+    sha256: 814bd15a6c6343d916d7af8b339e6b7c8bbf62991b30aa8e1c8d05b0a586978b
+  review:
+    version: 1.0.0
+    sha256: d1355b3c913f8218cbf27ebd451ad909ecab7b5b51a14c76e1c139fa693b4fea
+  render:
+    version: 1.0.0
+    sha256: b549dbbf66c252a23255009ef568790be4f0f7f47d9431eebb31a50bc1362b31
+  qa:
+    version: 1.0.0
+    sha256: dee0d2c700ccc90c0f2fa13ddad8a62ada39bd18f11b436b877393473cfb4fce
+  operations:
+    version: 1.0.0
+    sha256: 11ac44e03eb8d7d2afa16a0eeaaca5e6e5faa3d9b0387fa7abdbb07cab1454f5
+  incidents:
+    version: 1.0.0
+    sha256: b053ee247cc92f889a6bfae09815bd57cd42ef9b2d308fc9b9bab7e954afa9ec
+  release:
+    version: 1.0.0
+    sha256: 3709b7b6717e0a76a3d83cc3da838eee4d775a8c2274d659e37acf398b7bc3a8

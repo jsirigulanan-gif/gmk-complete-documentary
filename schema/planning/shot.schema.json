@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/shot",
+  "title": "GMK Shot",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "SHOT"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^SHT_[A-Z0-9_-]+$"
+        },
+        "scene_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "beat_bindings": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "beat_ref",
+              "role"
+            ],
+            "properties": {
+              "beat_ref": {
+                "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+                "x-gmk-dependency-relation": "FACT_SOURCE"
+              },
+              "role": {
+                "type": "string",
+                "enum": [
+                  "PRIMARY",
+                  "SUPPORTING"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "visual_job": {
+          "type": "string",
+          "minLength": 1
+        },
+        "viewer_takeaway": {
+          "type": "string",
+          "minLength": 1
+        },
+        "visual_strategy": {
+          "$ref": "gmk://schema/v1/planning-common#/$defs/VisualStrategy"
+        },
+        "timing": {
+          "type": "object",
+          "required": [
+            "voice_lock_manifest",
+            "timing_map",
+            "start",
+            "end"
+          ],
+          "properties": {
+            "voice_lock_manifest": {
+              "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+              "x-gmk-dependency-relation": "TIMING_SOURCE"
+            },
+            "timing_map": {
+              "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+              "x-gmk-dependency-relation": "TIMING_SOURCE"
+            },
+            "start": {
+              "$ref": "#/$defs/TimingPoint"
+            },
+            "end": {
+              "$ref": "#/$defs/TimingPoint"
+            }
+          },
+          "additionalProperties": false
+        },
+        "layer_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-dependency-relation": "VISUAL_SOURCE"
+          }
+        },
+        "cue_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-dependency-relation": "TIMING_SOURCE"
+          }
+        },
+        "transition_out": {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "$ref": "gmk://schema/v1/planning-common#/$defs/TransitionType"
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "review_class": {
+          "type": "object",
+          "required": [
+            "value",
+            "derivation"
+          ],
+          "properties": {
+            "value": {
+              "$ref": "gmk://schema/v1/enums#/$defs/ReviewClass"
+            },
+            "derivation": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false,
+          "x-gmk-field-class": "DERIVED",
+          "x-gmk-derived-mode": "LIVE"
+        }
+      },
+      "required": [
+        "scene_ref",
+        "order",
+        "beat_bindings",
+        "visual_job",
+        "viewer_takeaway",
+        "visual_strategy",
+        "timing",
+        "layer_refs",
+        "cue_refs",
+        "transition_out",
+        "review_class"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false,
+  "$defs": {
+    "TimingPoint": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "anchor_id",
+            "offset_seconds"
+          ],
+          "properties": {
+            "type": {
+              "const": "VOICE_ANCHOR_OFFSET"
+            },
+            "anchor_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "offset_seconds": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "seconds"
+          ],
+          "properties": {
+            "type": {
+              "const": "ABSOLUTE_MASTER_TIME"
+            },
+            "seconds": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

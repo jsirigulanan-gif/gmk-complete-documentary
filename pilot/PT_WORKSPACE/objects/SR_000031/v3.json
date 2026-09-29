@@ -1,0 +1,97 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "candidate_state": "PROMOTED_TO_ASSET",
+  "created_at": "2026-09-27T13:58:36.234683Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "SRCH_000021",
+        "version": 1
+      }
+    },
+    {
+      "relation": "VISUAL_SOURCE",
+      "target": {
+        "id": "SRC_000035",
+        "version": 1
+      }
+    },
+    {
+      "relation": "SUPERSEDES",
+      "target": {
+        "id": "SR_000031",
+        "version": 2
+      }
+    }
+  ],
+  "discovery_locator": {
+    "type": "WEB_URI",
+    "value": "https://twitter.com/manfightdragon/status/1170860592233472001"
+  },
+  "discovery_method": "AUTOMATED_SEARCH",
+  "evaluation": {
+    "cleanliness": "CLEAN",
+    "duplicate_state": "UNIQUE",
+    "technical_quality": "UNKNOWN",
+    "visual_clarity": "HIGH"
+  },
+  "extensions": {
+    "asset_recon": {
+      "beat_key": "BEAT_LISA_FINDING",
+      "candidate_key": "LISA_X_DIRECT_VERIFIED",
+      "plan_sha256": "d4e8a6b8086d0215b8088d7a417e2ff6cc82c3caef6089d18300c68834970f7e",
+      "promoted": true,
+      "search_again": true,
+      "selection_batch_id": "PT_ASSET_SELECTION_016",
+      "selection_reason": "Original creator media is the strongest direct technical visual for the Lisa reveal.",
+      "source_recon_batch_id": "PT_ASSET_RECON_FIRST_PASS_001"
+    }
+  },
+  "human_constraints": [],
+  "id": "SR_000031",
+  "inspection": {
+    "candidate_locator": {
+      "type": "FULL_SOURCE"
+    },
+    "exact_moment_found": true,
+    "match_reason": "Original creator media directly demonstrates the technical relationship required by the Beat.",
+    "match_type": "DIRECT",
+    "viewer_takeaway_supported": true,
+    "visible_content": "Original creator post with embedded P.T. camera-hack clip; the stationary camera reveals Lisa following behind the player."
+  },
+  "lock_state": "UNLOCKED",
+  "object_type": "SEARCH_RESULT",
+  "promoted_asset_ref": {
+    "id": "AST_000004",
+    "version": 2
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/search-result",
+    "schema_version": "1.0.0"
+  },
+  "search_ref": {
+    "id": "SRCH_000021",
+    "version": 1
+  },
+  "source_family": "ORIGINAL_CREATOR",
+  "source_ref": {
+    "id": "SRC_000035",
+    "version": 1
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "supersedes": {
+    "id": "SR_000031",
+    "version": 2
+  },
+  "title": "Lance McDonald direct P.T. Lisa camera-hack post",
+  "updated_at": "2026-09-27T13:58:36.234683Z",
+  "version": 3
+}

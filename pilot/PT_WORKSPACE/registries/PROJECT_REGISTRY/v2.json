@@ -1,0 +1,23 @@
+{
+  "entries": {
+    "PROJECT_000001": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "PROJECT_000001",
+      "object_type": "PROJECT",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T08:40:32.999340Z",
+          "decision_sha256": "43ed894510b4fc5f498bdc697d9fba1a847379c6a3729f285771e16fe786c82c",
+          "record_sha256": "5dd348150aa9664498dc1e048bbc393d0981c74716c3c9efdfb56f59fd75b064",
+          "updated_at": "2026-09-27T08:40:32.999340Z",
+          "uri": "gmk://objects/PROJECT_000001/v1",
+          "version": 1
+        }
+      }
+    }
+  },
+  "registry_id": "PROJECT_REGISTRY",
+  "sha256": "24d0a0cc8583e26df24a85b32361e24da752ac5c5b72791a58d661ea254c9118",
+  "version": 2
+}

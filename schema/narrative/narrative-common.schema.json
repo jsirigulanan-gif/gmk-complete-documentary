@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/narrative-common",
+  "$defs": {
+    "DynamicsRole": {
+      "type": "string",
+      "enum": [
+        "HOOK",
+        "PROMISE",
+        "SETUP",
+        "BUILD",
+        "MINI_PEAK",
+        "REST",
+        "ESCALATION",
+        "MAJOR_PEAK",
+        "CONSEQUENCE",
+        "REFLECTION",
+        "PAYOFF"
+      ]
+    },
+    "Energy": {
+      "type": "string",
+      "enum": [
+        "CALM",
+        "BUILD",
+        "TENSE",
+        "REVEAL",
+        "REFLECTIVE"
+      ]
+    },
+    "BeatType": {
+      "type": "string",
+      "enum": [
+        "FACT",
+        "TECHNICAL_EXPLANATION",
+        "QUOTE",
+        "INTERPRETATION",
+        "TRANSITION",
+        "REFLECTION",
+        "NARRATIVE_PAUSE",
+        "SETUP",
+        "PAYOFF"
+      ]
+    },
+    "NarrativeLinkType": {
+      "type": "string",
+      "enum": [
+        "FORESHADOW",
+        "CALLBACK",
+        "COMPARE",
+        "CAUSE_EFFECT",
+        "QUESTION_ANSWER"
+      ]
+    },
+    "VisualPriority": {
+      "type": "string",
+      "enum": [
+        "CRITICAL",
+        "MAJOR",
+        "STANDARD",
+        "SUPPORTING"
+      ]
+    },
+    "AssetNeed": {
+      "type": "string",
+      "enum": [
+        "VIDEO",
+        "STILL",
+        "DOCUMENT",
+        "TECHNICAL_REFERENCE",
+        "THREE_D_REFERENCE"
+      ]
+    }
+  }
+}

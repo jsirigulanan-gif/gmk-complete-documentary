@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/renderer-prompt",
+  "title": "RENDERER_PROMPT",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "RENDERER_PROMPT"
+        },
+        "production_lock": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "RENDER_INPUT"
+        },
+        "renderer_adapter": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ConfigRef"
+        },
+        "compiled_payload": {}
+      },
+      "required": [
+        "production_lock",
+        "renderer_adapter",
+        "compiled_payload"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

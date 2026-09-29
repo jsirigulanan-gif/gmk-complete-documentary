@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/regression-compare",
+  "title": "REGRESSION_COMPARE",
+  "allOf": [
+    {"$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"},
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {"const": "REGRESSION_COMPARE"},
+        "baseline": {"$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef", "x-gmk-dependency-relation": "DERIVED_FROM"},
+        "candidate_output": {"$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef", "x-gmk-dependency-relation": "DERIVED_FROM"},
+        "expected_changed_scope": {"type": "array", "items": {"type": "string"}},
+        "observed_changed_scope": {"type": "array", "items": {"type": "string"}},
+        "unexpected_changes": {"type": "array", "items": {"type": "string"}},
+        "result": {"type": "string", "enum": ["PASS", "WARN", "FAIL"]}
+      },
+      "required": ["baseline", "candidate_output", "expected_changed_scope", "observed_changed_scope", "unexpected_changes", "result"]
+    }
+  ],
+  "unevaluatedProperties": false
+}

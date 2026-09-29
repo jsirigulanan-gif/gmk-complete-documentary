@@ -1,0 +1,273 @@
+{
+  "attempt_ref": {
+    "artifact_id": "RESEARCH_ATTEMPT_LOG_000002",
+    "artifact_type": "RESEARCH_ATTEMPT_LOG",
+    "sha256": "3b7f786d2324e9acd396ad8c7e4883ebfbef23b2fb2cc91373cad5f02ec1f3ad",
+    "version": 2
+  },
+  "batch_id": "PT_RESEARCH_AUDIT_001",
+  "claim_refs": [
+    {
+      "id": "CLM_000001",
+      "version": 2
+    },
+    {
+      "id": "CLM_000002",
+      "version": 2
+    },
+    {
+      "id": "CLM_000003",
+      "version": 2
+    },
+    {
+      "id": "CLM_000004",
+      "version": 2
+    },
+    {
+      "id": "CLM_000005",
+      "version": 2
+    },
+    {
+      "id": "CLM_000006",
+      "version": 2
+    },
+    {
+      "id": "CLM_000007",
+      "version": 2
+    },
+    {
+      "id": "CLM_000008",
+      "version": 2
+    },
+    {
+      "id": "CLM_000009",
+      "version": 2
+    },
+    {
+      "id": "CLM_000010",
+      "version": 2
+    },
+    {
+      "id": "CLM_000011",
+      "version": 2
+    },
+    {
+      "id": "CLM_000012",
+      "version": 2
+    },
+    {
+      "id": "CLM_000013",
+      "version": 2
+    }
+  ],
+  "created_claim_refs": [
+    {
+      "id": "CLM_000014",
+      "version": 1
+    }
+  ],
+  "disposition_counts": {
+    "CORROBORATED": 5,
+    "INSUFFICIENT_EVIDENCE": 3,
+    "SOURCE_VERIFIED": 6
+  },
+  "evidence_refs": [
+    {
+      "id": "EVD_000014",
+      "version": 1
+    },
+    {
+      "id": "EVD_000015",
+      "version": 1
+    },
+    {
+      "id": "EVD_000016",
+      "version": 1
+    },
+    {
+      "id": "EVD_000017",
+      "version": 1
+    },
+    {
+      "id": "EVD_000018",
+      "version": 1
+    },
+    {
+      "id": "EVD_000019",
+      "version": 1
+    },
+    {
+      "id": "EVD_000020",
+      "version": 1
+    },
+    {
+      "id": "EVD_000021",
+      "version": 1
+    },
+    {
+      "id": "EVD_000022",
+      "version": 1
+    },
+    {
+      "id": "EVD_000023",
+      "version": 1
+    },
+    {
+      "id": "EVD_000024",
+      "version": 1
+    },
+    {
+      "id": "EVD_000025",
+      "version": 1
+    },
+    {
+      "id": "EVD_000026",
+      "version": 1
+    },
+    {
+      "id": "EVD_000027",
+      "version": 1
+    },
+    {
+      "id": "EVD_000028",
+      "version": 1
+    },
+    {
+      "id": "EVD_000029",
+      "version": 1
+    },
+    {
+      "id": "EVD_000030",
+      "version": 1
+    },
+    {
+      "id": "EVD_000031",
+      "version": 1
+    },
+    {
+      "id": "EVD_000032",
+      "version": 1
+    },
+    {
+      "id": "EVD_000033",
+      "version": 1
+    },
+    {
+      "id": "EVD_000034",
+      "version": 1
+    },
+    {
+      "id": "EVD_000035",
+      "version": 1
+    }
+  ],
+  "gap_refs": [
+    {
+      "id": "GAP_000005",
+      "version": 1
+    },
+    {
+      "id": "GAP_000006",
+      "version": 1
+    },
+    {
+      "id": "GAP_000004",
+      "version": 2
+    }
+  ],
+  "gate_result": "PASS",
+  "idempotent_replay": true,
+  "manifest_version": 5,
+  "project_state": "RESEARCH_AUDITED",
+  "source_refs": [
+    {
+      "id": "SRC_000002",
+      "version": 1
+    },
+    {
+      "id": "SRC_000003",
+      "version": 1
+    },
+    {
+      "id": "SRC_000004",
+      "version": 1
+    },
+    {
+      "id": "SRC_000005",
+      "version": 1
+    },
+    {
+      "id": "SRC_000006",
+      "version": 1
+    },
+    {
+      "id": "SRC_000007",
+      "version": 1
+    },
+    {
+      "id": "SRC_000008",
+      "version": 1
+    },
+    {
+      "id": "SRC_000009",
+      "version": 1
+    },
+    {
+      "id": "SRC_000010",
+      "version": 1
+    },
+    {
+      "id": "SRC_000011",
+      "version": 1
+    },
+    {
+      "id": "SRC_000012",
+      "version": 1
+    },
+    {
+      "id": "SRC_000013",
+      "version": 1
+    },
+    {
+      "id": "SRC_000014",
+      "version": 1
+    },
+    {
+      "id": "SRC_000015",
+      "version": 1
+    },
+    {
+      "id": "SRC_000016",
+      "version": 1
+    },
+    {
+      "id": "SRC_000017",
+      "version": 1
+    },
+    {
+      "id": "SRC_000018",
+      "version": 1
+    },
+    {
+      "id": "SRC_000019",
+      "version": 1
+    },
+    {
+      "id": "SRC_000020",
+      "version": 1
+    },
+    {
+      "id": "SRC_000021",
+      "version": 1
+    },
+    {
+      "id": "SRC_000022",
+      "version": 1
+    },
+    {
+      "id": "SRC_000023",
+      "version": 1
+    }
+  ],
+  "workspace": "pilot/PT_WORKSPACE"
+}

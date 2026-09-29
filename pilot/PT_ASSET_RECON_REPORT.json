@@ -1,0 +1,307 @@
+{
+  "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+  "candidate_count": 30,
+  "comparison_refs": [
+    {
+      "artifact_id": "CANDIDATE_COMPARISON_000001",
+      "artifact_type": "CANDIDATE_COMPARISON",
+      "sha256": "a49f88bffa01897fba31dedf3ce0ee038d4e42e505be1d2545fdd9123386d60d",
+      "version": 1
+    },
+    {
+      "artifact_id": "CANDIDATE_COMPARISON_000002",
+      "artifact_type": "CANDIDATE_COMPARISON",
+      "sha256": "ec7134419b3b2445b559842a25281978fdf8cf3117eb999390f7be9f0921227a",
+      "version": 1
+    },
+    {
+      "artifact_id": "CANDIDATE_COMPARISON_000003",
+      "artifact_type": "CANDIDATE_COMPARISON",
+      "sha256": "22d3ecc5e7c5fd833bacd8b8e07efba4de5095befa7e8d8db829e383c65549dd",
+      "version": 1
+    },
+    {
+      "artifact_id": "CANDIDATE_COMPARISON_000004",
+      "artifact_type": "CANDIDATE_COMPARISON",
+      "sha256": "0449efbd32b0d0be9052d93ccbe64fe31237d3cd7cb94b5e32f4c52500ed4079",
+      "version": 1
+    },
+    {
+      "artifact_id": "CANDIDATE_COMPARISON_000005",
+      "artifact_type": "CANDIDATE_COMPARISON",
+      "sha256": "a30424f533b7ab10f9d2b3edaa2c0da2280a2daa699297df0fe3a0747acc0b2b",
+      "version": 1
+    },
+    {
+      "artifact_id": "CANDIDATE_COMPARISON_000006",
+      "artifact_type": "CANDIDATE_COMPARISON",
+      "sha256": "afb260e6557e12baba08b472cf97e4ae7b6f2949ff87874ced22622aa7c4a33f",
+      "version": 1
+    },
+    {
+      "artifact_id": "CANDIDATE_COMPARISON_000007",
+      "artifact_type": "CANDIDATE_COMPARISON",
+      "sha256": "954900b99443f9a2b1cc85135ab9564f22bf0c69687351eeed00a01b91109ee7",
+      "version": 1
+    },
+    {
+      "artifact_id": "CANDIDATE_COMPARISON_000008",
+      "artifact_type": "CANDIDATE_COMPARISON",
+      "sha256": "46423fa255d77385e479607d1761f275cb904ffa0ee337679f73dd57dc849abc",
+      "version": 1
+    },
+    {
+      "artifact_id": "CANDIDATE_COMPARISON_000009",
+      "artifact_type": "CANDIDATE_COMPARISON",
+      "sha256": "2eda620e3dd6e8a87facc55212f172f5a6357e7b966c982a144458b66691edcd",
+      "version": 1
+    },
+    {
+      "artifact_id": "CANDIDATE_COMPARISON_000010",
+      "artifact_type": "CANDIDATE_COMPARISON",
+      "sha256": "c36e112fa33c4e8af92bd8ef1337c74d68bddd75d05b92126b2fe2397a5c5ada",
+      "version": 1
+    }
+  ],
+  "gate_result": "FAIL",
+  "idempotent_replay": true,
+  "inspection_required_count": 2,
+  "manifest_version": 10,
+  "meet_target_beats": [
+    "BEAT_7780",
+    "BEAT_CONTRACT_END",
+    "BEAT_DELIST",
+    "BEAT_FINAL_PAYOFF",
+    "BEAT_MARKET",
+    "BEAT_MILLION",
+    "BEAT_OPENING_PROMISE",
+    "BEAT_REDOWNLOAD",
+    "BEAT_TGA"
+  ],
+  "new_source_refs": [],
+  "next_legal_action": {
+    "action": "SATISFY_GATE_REQUIREMENTS",
+    "blockers": [],
+    "gate_ids": [
+      "ASSET_RECON"
+    ],
+    "message": "Current exact evidence does not yet satisfy the next transition.",
+    "missing_requirements": [
+      "ASSET_RECON:SEARCH_COMPLETION_CERTIFICATE:QA_REPORT_MISSING"
+    ],
+    "permission_class": "AI_WITH_RULES",
+    "project_state": "ASSET_RECON",
+    "target_state": "ASSET_CATALOG_READY"
+  },
+  "project_state": "ASSET_RECON",
+  "result_refs": [
+    {
+      "id": "SR_000001",
+      "version": 1
+    },
+    {
+      "id": "SR_000002",
+      "version": 1
+    },
+    {
+      "id": "SR_000003",
+      "version": 1
+    },
+    {
+      "id": "SR_000004",
+      "version": 1
+    },
+    {
+      "id": "SR_000005",
+      "version": 1
+    },
+    {
+      "id": "SR_000006",
+      "version": 1
+    },
+    {
+      "id": "SR_000007",
+      "version": 1
+    },
+    {
+      "id": "SR_000008",
+      "version": 1
+    },
+    {
+      "id": "SR_000009",
+      "version": 1
+    },
+    {
+      "id": "SR_000010",
+      "version": 1
+    },
+    {
+      "id": "SR_000011",
+      "version": 1
+    },
+    {
+      "id": "SR_000012",
+      "version": 1
+    },
+    {
+      "id": "SR_000013",
+      "version": 1
+    },
+    {
+      "id": "SR_000014",
+      "version": 1
+    },
+    {
+      "id": "SR_000015",
+      "version": 1
+    },
+    {
+      "id": "SR_000016",
+      "version": 1
+    },
+    {
+      "id": "SR_000017",
+      "version": 1
+    },
+    {
+      "id": "SR_000018",
+      "version": 1
+    },
+    {
+      "id": "SR_000019",
+      "version": 1
+    },
+    {
+      "id": "SR_000020",
+      "version": 1
+    },
+    {
+      "id": "SR_000021",
+      "version": 1
+    },
+    {
+      "id": "SR_000022",
+      "version": 1
+    },
+    {
+      "id": "SR_000023",
+      "version": 1
+    },
+    {
+      "id": "SR_000024",
+      "version": 1
+    },
+    {
+      "id": "SR_000025",
+      "version": 1
+    },
+    {
+      "id": "SR_000026",
+      "version": 1
+    },
+    {
+      "id": "SR_000027",
+      "version": 1
+    },
+    {
+      "id": "SR_000028",
+      "version": 1
+    },
+    {
+      "id": "SR_000029",
+      "version": 1
+    },
+    {
+      "id": "SR_000030",
+      "version": 1
+    }
+  ],
+  "search_again_beats": [
+    "BEAT_LISA_FINDING"
+  ],
+  "search_count": 20,
+  "search_refs": [
+    {
+      "id": "SRCH_000001",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000002",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000003",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000004",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000005",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000006",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000007",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000008",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000009",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000010",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000011",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000012",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000013",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000014",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000015",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000016",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000017",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000018",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000019",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000020",
+      "version": 1
+    }
+  ],
+  "viable_count": 28,
+  "workspace": "pilot/PT_WORKSPACE"
+}

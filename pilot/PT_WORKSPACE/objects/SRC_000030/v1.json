@@ -1,0 +1,49 @@
+{
+  "accessed_at": "2026-09-27T11:22:06.537877Z",
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "author": "",
+  "authority_class": "REPUTABLE_SECONDARY",
+  "availability": {
+    "state": "AVAILABLE"
+  },
+  "created_at": "2026-09-27T11:22:06.537890Z",
+  "dependencies": [],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318",
+      "source_key": "DELIST_FAMITSU",
+      "source_verified": true
+    }
+  },
+  "human_constraints": [],
+  "id": "SRC_000030",
+  "independence": {
+    "group_id": "SRCGRP_DELIST_FAMITSU",
+    "relationship": "INDEPENDENT"
+  },
+  "language": "ja",
+  "lock_state": "UNLOCKED",
+  "notes": "Contemporaneous article preserving/capturing official distribution-end notice.",
+  "object_type": "SOURCE",
+  "platform": "Web",
+  "published_at": "2015-04-26",
+  "publisher": "Famitsu",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/source",
+    "schema_version": "1.0.0"
+  },
+  "source_type": "WEB_PAGE",
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "「P.T.」配信終了に関する報道（公式サイト告知画面を含む）",
+  "updated_at": "2026-09-27T11:22:06.537890Z",
+  "url": "https://www.famitsu.com/news/201504/26077575.html",
+  "version": 1
+}

@@ -1,0 +1,295 @@
+{
+  "entries": {
+    "OP_000001": {
+      "active_version": 3,
+      "head_version": 3,
+      "object_id": "OP_000001",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:34.980822Z",
+          "decision_sha256": "cca39ec912c7623211fce29ec038b76a21a516486c00057043dbdc056e9a7407",
+          "record_sha256": "5eae3bfc0d6d20c2b5494aaab1af1c814897a88a3d2eeb969b13202e9008fd64",
+          "updated_at": "2026-09-27T13:58:34.980822Z",
+          "uri": "gmk://objects/OP_000001/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T16:11:00.937609Z",
+          "decision_sha256": "e48af8762cda98ea9023a75f42fc66f6d219b5214247e677e6df664be9e3de47",
+          "record_sha256": "c22a9831a0226d303ee0abc6eb74fe87390cfb7d5338b9b19991baad0e592fa1",
+          "updated_at": "2026-09-27T16:11:00.937609Z",
+          "uri": "gmk://objects/OP_000001/v2",
+          "version": 2
+        },
+        "3": {
+          "created_at": "2026-09-27T16:11:01.092121Z",
+          "decision_sha256": "d049ff69d5fd4d71d8a0a42d60a1919d332d9f526f6730f9b3bba183184b18f7",
+          "record_sha256": "5e987a8cb39b743f18e5be7c23f697d45251349d1783f4b27644ce3740b2b8c0",
+          "updated_at": "2026-09-27T16:11:01.092121Z",
+          "uri": "gmk://objects/OP_000001/v3",
+          "version": 3
+        }
+      }
+    },
+    "OP_000002": {
+      "active_version": 3,
+      "head_version": 3,
+      "object_id": "OP_000002",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:35.292081Z",
+          "decision_sha256": "dfc4687f8a95eab4155cec05aa6c3fadbb1f2d230fbfe70380e96ac31f643496",
+          "record_sha256": "76acdd4f3de3f4a4d0638e602ed84e64e12aaf563afee6d7307b1c29b27bd53b",
+          "updated_at": "2026-09-27T13:58:35.292081Z",
+          "uri": "gmk://objects/OP_000002/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T16:11:01.870583Z",
+          "decision_sha256": "73b24319845c6a45a292051d1997413e0e0c2f788389d1e3ac191b02af99a063",
+          "record_sha256": "af157bd9572afe6733f5f594619880b08d9c3e8909ec7174d74f14e453602b18",
+          "updated_at": "2026-09-27T16:11:01.870583Z",
+          "uri": "gmk://objects/OP_000002/v2",
+          "version": 2
+        },
+        "3": {
+          "created_at": "2026-09-27T16:11:02.116857Z",
+          "decision_sha256": "9d727890908cb7c1c2c97a6fe6d4e651161b28fb6a378eeb6d09c450ebb7ca9f",
+          "record_sha256": "6b394dec3cc7505c15ad3afe9f76c6cf8b8d35df7e1b86bb05835f2dbf4dfb9f",
+          "updated_at": "2026-09-27T16:11:02.116857Z",
+          "uri": "gmk://objects/OP_000002/v3",
+          "version": 3
+        }
+      }
+    },
+    "OP_000003": {
+      "active_version": 3,
+      "head_version": 3,
+      "object_id": "OP_000003",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:35.620593Z",
+          "decision_sha256": "eec7fdc58a9b2fc129a0179753ffa7125cba04b369147ab77852bc8fed0bf27b",
+          "record_sha256": "a021f5a341179c4bdc09ba3d0fb9e3d9a754006f49ecd21c8bcdde102fdf36b3",
+          "updated_at": "2026-09-27T13:58:35.620593Z",
+          "uri": "gmk://objects/OP_000003/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T16:11:02.929553Z",
+          "decision_sha256": "e3eba4996988b9b02eeedebb941c49108cdc17e6bb181c60f44ad5ad95ac53f7",
+          "record_sha256": "cb5bd2b13c888a396110d5559066055dcb92f6a53cb3e7fd79e6e45c5fb4da00",
+          "updated_at": "2026-09-27T16:11:02.929553Z",
+          "uri": "gmk://objects/OP_000003/v2",
+          "version": 2
+        },
+        "3": {
+          "created_at": "2026-09-27T16:11:03.094314Z",
+          "decision_sha256": "ff6e3c1bd5d59ac2b063429543f8a06368fb9d56a036484c2b57182125e875d1",
+          "record_sha256": "e57fc8a28265b3c536f8358b35aca1dae5c9a5ec2ac0a6a5e49dc037bf82d01f",
+          "updated_at": "2026-09-27T16:11:03.094314Z",
+          "uri": "gmk://objects/OP_000003/v3",
+          "version": 3
+        }
+      }
+    },
+    "OP_000004": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "OP_000004",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:36.078038Z",
+          "decision_sha256": "01467aae011e2c948813501ce4326edd7e57a0aab61213418cafd9365ed62547",
+          "record_sha256": "b6f90983f5c6ab14ee159267f5d213df8440118d284e69a2beb8c85ae3683440",
+          "updated_at": "2026-09-27T13:58:36.078038Z",
+          "uri": "gmk://objects/OP_000004/v1",
+          "version": 1
+        }
+      }
+    },
+    "OP_000005": {
+      "active_version": 3,
+      "head_version": 3,
+      "object_id": "OP_000005",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:36.430737Z",
+          "decision_sha256": "786b57ebb48749baee169081a89c9925ed264255c015ddbfd5400d8cb7169b07",
+          "record_sha256": "174c24238997295c49fcbcd2a264133d13ef4a4c82f71a917cd77c631df2b8bc",
+          "updated_at": "2026-09-27T13:58:36.430737Z",
+          "uri": "gmk://objects/OP_000005/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T16:11:04.035937Z",
+          "decision_sha256": "e8c387b0d6ca347be9f7e93f6093b3c12c5a9685ea2fa16e295319218ec2b7be",
+          "record_sha256": "01718e2767c6e8d46c13252451edb54d50f5ad65311fead300f325d4831c9be9",
+          "updated_at": "2026-09-27T16:11:04.035937Z",
+          "uri": "gmk://objects/OP_000005/v2",
+          "version": 2
+        },
+        "3": {
+          "created_at": "2026-09-27T16:11:04.191080Z",
+          "decision_sha256": "4d29ba4d0a663956e90f2d46a600016059e1f47ec3a6908682849134faa78b8e",
+          "record_sha256": "e584c3ebbff7f84fee7e1e172d6443e1c9245d5a432c80e678efbb6202e27a17",
+          "updated_at": "2026-09-27T16:11:04.191080Z",
+          "uri": "gmk://objects/OP_000005/v3",
+          "version": 3
+        }
+      }
+    },
+    "OP_000006": {
+      "active_version": 3,
+      "head_version": 3,
+      "object_id": "OP_000006",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:36.796315Z",
+          "decision_sha256": "6d072f6cbd5829df92f2634201007e19c9576428c808c7802671bfca242ce1d7",
+          "record_sha256": "9cfa2a7121d3746a26b2935d5e68f8da52fb94d2dc686051a604f2501cf70ea8",
+          "updated_at": "2026-09-27T13:58:36.796315Z",
+          "uri": "gmk://objects/OP_000006/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T16:11:05.138631Z",
+          "decision_sha256": "dbf33d93fa39dad1b60e021f014b02bbf104c0a31fd8420f3864c1774065b028",
+          "record_sha256": "4e2572551d913a8303055c73b7c3c8c591262ea48c8fa0cb40ec51f7d84630a4",
+          "updated_at": "2026-09-27T16:11:05.138631Z",
+          "uri": "gmk://objects/OP_000006/v2",
+          "version": 2
+        },
+        "3": {
+          "created_at": "2026-09-27T16:11:05.315628Z",
+          "decision_sha256": "6823b26fc75c1b238b17c0102146fe9c1ac09f0c3c182e6713df2cafe7b465ce",
+          "record_sha256": "7aba42eb918c128053b6aff30c8e0bceec6e9e88f71ed069d719b1f5cca2fcb1",
+          "updated_at": "2026-09-27T16:11:05.315628Z",
+          "uri": "gmk://objects/OP_000006/v3",
+          "version": 3
+        }
+      }
+    },
+    "OP_000007": {
+      "active_version": 3,
+      "head_version": 3,
+      "object_id": "OP_000007",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:37.211309Z",
+          "decision_sha256": "d3b31b8ca1551a7488b8c44dfe9267b71756dd779935c2ca486fc088172f6e9a",
+          "record_sha256": "81e611a15d2ecc0f832b1a699c790bab6365f1ba4e9d4c9abe3fe11a46e6d7b6",
+          "updated_at": "2026-09-27T13:58:37.211309Z",
+          "uri": "gmk://objects/OP_000007/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T16:11:06.200258Z",
+          "decision_sha256": "e967338fbd8ff9b9de70b1d8064887d084d8cd6dd82197e8c8348484d1bdf48d",
+          "record_sha256": "00fb8ce642e0a33b90d31c539da9cdf610d30ad71c532f375502cf598446228e",
+          "updated_at": "2026-09-27T16:11:06.200258Z",
+          "uri": "gmk://objects/OP_000007/v2",
+          "version": 2
+        },
+        "3": {
+          "created_at": "2026-09-27T16:11:06.385025Z",
+          "decision_sha256": "a39179d87b0416272f39de47627a8bba54d0751165e6c2e3a0cfb7235b012b11",
+          "record_sha256": "84de9a5b9ab728a79e66fc8723348e3a45496cd2b0ee198a7173a557d3e496bc",
+          "updated_at": "2026-09-27T16:11:06.385025Z",
+          "uri": "gmk://objects/OP_000007/v3",
+          "version": 3
+        }
+      }
+    },
+    "OP_000008": {
+      "active_version": 1,
+      "head_version": 1,
+      "object_id": "OP_000008",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:37.802105Z",
+          "decision_sha256": "14cf1766be9c49b74f23137cc35dd3186eb8deebef7822df4ce9cfdfcf2d4ad5",
+          "record_sha256": "9f907c3aa6c66b236dbfecda53331915e18c3d6a4377925b740fe145cd4159af",
+          "updated_at": "2026-09-27T13:58:37.802105Z",
+          "uri": "gmk://objects/OP_000008/v1",
+          "version": 1
+        }
+      }
+    },
+    "OP_000009": {
+      "active_version": 3,
+      "head_version": 3,
+      "object_id": "OP_000009",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:38.261161Z",
+          "decision_sha256": "bbd8ab819af2e9ce8b51944ceed4d17d8e01b840719fbbd58b4aedd41cc6b532",
+          "record_sha256": "e46cbf41c4dd5d18d8b9ea9788e8a1db518d3bbcdce047ce44d662fbe8e893b5",
+          "updated_at": "2026-09-27T13:58:38.261161Z",
+          "uri": "gmk://objects/OP_000009/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T16:11:07.397887Z",
+          "decision_sha256": "fcb4a22c9ba7c1a6b9413df270ce7d9fd1266324c75e0500289549d37a3db65c",
+          "record_sha256": "224827f5193767937bb77c8adf3c0f1d4d467f3f14de5e8a5ff613a299c2f97a",
+          "updated_at": "2026-09-27T16:11:07.397887Z",
+          "uri": "gmk://objects/OP_000009/v2",
+          "version": 2
+        },
+        "3": {
+          "created_at": "2026-09-27T16:11:07.586181Z",
+          "decision_sha256": "fa10c89ce0f383742a2e52bc30299a7e06b17174a59e7ade4a1fb2339688d41b",
+          "record_sha256": "c6c1d5d514df08fbff1d6bb630c811304d7838db2603fd99f254afc294c47f56",
+          "updated_at": "2026-09-27T16:11:07.586181Z",
+          "uri": "gmk://objects/OP_000009/v3",
+          "version": 3
+        }
+      }
+    },
+    "OP_000010": {
+      "active_version": 3,
+      "head_version": 3,
+      "object_id": "OP_000010",
+      "object_type": "OPERATION",
+      "versions": {
+        "1": {
+          "created_at": "2026-09-27T13:58:38.850769Z",
+          "decision_sha256": "7cf39a65cae786237d60251b73989a8a52fd6c4f6ddb6d46bc98ee9ecde19039",
+          "record_sha256": "7a0941d9181951ffd9cffff45801793c5f86a073b6fbee61b7f7e75d8465fac3",
+          "updated_at": "2026-09-27T13:58:38.850769Z",
+          "uri": "gmk://objects/OP_000010/v1",
+          "version": 1
+        },
+        "2": {
+          "created_at": "2026-09-27T16:11:08.635149Z",
+          "decision_sha256": "fc10504a5c1ef85bb7676823efebc76462524d106313fb307727233f8182cc1a",
+          "record_sha256": "546c0fad9aad1b8e51a9e4a72863365ce61fa20b03dc8254d592a747a255aaf5",
+          "updated_at": "2026-09-27T16:11:08.635149Z",
+          "uri": "gmk://objects/OP_000010/v2",
+          "version": 2
+        },
+        "3": {
+          "created_at": "2026-09-27T16:11:08.819373Z",
+          "decision_sha256": "ce31ee23bacb3402ba5899957317b89bd7c315ca6fb3b655a4bdcd0e5d85565a",
+          "record_sha256": "e1b64f21a273c4cd84eeeeecaecf18dc0979c7befcc29ba2eccb7c4b9737ea7e",
+          "updated_at": "2026-09-27T16:11:08.819373Z",
+          "uri": "gmk://objects/OP_000010/v3",
+          "version": 3
+        }
+      }
+    }
+  },
+  "registry_id": "OPERATION_REGISTRY",
+  "sha256": "46a4dfce49ee033374e5117e42ffa97a1bc3a0e3d66d6061d8eee8eeae9128e6",
+  "version": 27
+}

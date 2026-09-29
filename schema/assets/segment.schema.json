@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/segment",
+  "title": "GMK Segment",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "SEGMENT"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^SEG_[A-Z0-9_-]+$"
+        },
+        "asset_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-expected-object-type": "ASSET",
+          "x-gmk-dependency-relation": "VISUAL_SOURCE"
+        },
+        "selector": {
+          "$ref": "gmk://schema/v1/locator#/$defs/AssetSelector"
+        },
+        "source_locator": {
+          "$ref": "gmk://schema/v1/locator#/$defs/SourceLocator"
+        },
+        "visual_content": {
+          "type": "string",
+          "minLength": 1
+        },
+        "match_type": {
+          "$ref": "gmk://schema/v1/enums#/$defs/MatchType"
+        },
+        "match_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "production_state": {
+          "type": "string",
+          "enum": [
+            "UNVERIFIED",
+            "VERIFIED",
+            "REJECTED"
+          ]
+        },
+        "frames": {
+          "type": "object",
+          "properties": {
+            "entry_uri": {
+              "$ref": "gmk://schema/v1/reference#/$defs/LogicalUri"
+            },
+            "key_uri": {
+              "$ref": "gmk://schema/v1/reference#/$defs/LogicalUri"
+            },
+            "exit_uri": {
+              "$ref": "gmk://schema/v1/reference#/$defs/LogicalUri"
+            }
+          },
+          "additionalProperties": false
+        },
+        "handles": {
+          "type": "object",
+          "properties": {
+            "before_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "after_seconds": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "asset_ref",
+        "selector",
+        "visual_content",
+        "match_type",
+        "match_reason",
+        "production_state"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

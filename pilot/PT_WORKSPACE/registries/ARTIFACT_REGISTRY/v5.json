@@ -1,0 +1,353 @@
+{
+  "entries": {
+    "DEP_IMPACT_TX_000003_001": {
+      "artifact_id": "DEP_IMPACT_TX_000003_001",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "eee8ab69b5bdb357b2df91580e37b6512b046a30fcce5828d4aeb9a61362943d",
+          "created_at": "2026-09-27T09:39:46.859113Z",
+          "record_sha256": "fedfd4573936e47334a9889bd89c27682a1648f90acc7eb8052cf1824bf2a83e",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000003_001/v1",
+          "version": 1
+        }
+      }
+    },
+    "DEP_IMPACT_TX_000003_002": {
+      "artifact_id": "DEP_IMPACT_TX_000003_002",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "49c20019e72a7a623b9b893474b5c06fc561f58f1da1d9856adb5dca5a669561",
+          "created_at": "2026-09-27T09:39:46.866912Z",
+          "record_sha256": "63f59774627bb8d4901c3e008999522d2f8c8d6012fd585a1f0f876e336d1717",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000003_002/v1",
+          "version": 1
+        }
+      }
+    },
+    "DEP_IMPACT_TX_000003_003": {
+      "artifact_id": "DEP_IMPACT_TX_000003_003",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "7f7c7422e8da364b639c73c1b0a48339e85ca9e57798af0895eb81de04a86605",
+          "created_at": "2026-09-27T09:39:46.875214Z",
+          "record_sha256": "349683d6d27482984790f549be598691fc32ce9662c9521cfdb52ec7957cd9ed",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000003_003/v1",
+          "version": 1
+        }
+      }
+    },
+    "DEP_IMPACT_TX_000003_004": {
+      "artifact_id": "DEP_IMPACT_TX_000003_004",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "d89a4fbf561832a08bdfe927e2632b8e5a97db6e454b309181d17e803008ba1b",
+          "created_at": "2026-09-27T09:39:46.884443Z",
+          "record_sha256": "c6e6584f8392f52ffad11952a7cdc58178553aae21184b83761a4682e0451707",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000003_004/v1",
+          "version": 1
+        }
+      }
+    },
+    "DEP_IMPACT_TX_000003_005": {
+      "artifact_id": "DEP_IMPACT_TX_000003_005",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "9b12741acd887887e0e6c844d8836ddf16a8a08f8d03445922530c8f4edbbb69",
+          "created_at": "2026-09-27T09:39:46.893328Z",
+          "record_sha256": "2e67420c3e303c70dd7818bb0093f81c53d710021c210f17f8e09d1d1ebbad4b",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000003_005/v1",
+          "version": 1
+        }
+      }
+    },
+    "DEP_IMPACT_TX_000003_006": {
+      "artifact_id": "DEP_IMPACT_TX_000003_006",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "2f0af1f35b244a237e9d4b868cbe30dbd58e87c65a6d9a0475ab69442823cef8",
+          "created_at": "2026-09-27T09:39:46.902534Z",
+          "record_sha256": "cfe4a3d6f6ed604d860c0b3cfd38ea33d4d8f201029e7614170d2d2544746333",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000003_006/v1",
+          "version": 1
+        }
+      }
+    },
+    "DEP_IMPACT_TX_000003_007": {
+      "artifact_id": "DEP_IMPACT_TX_000003_007",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "977575e6b56bfb75ea9cd97dd536e42b73890f0d4c1908cede942bb580478540",
+          "created_at": "2026-09-27T09:39:46.912466Z",
+          "record_sha256": "cd25af20f2c1cca808c4c04e1a8f9771e1e03e7a60b9881af2980ce71792fe77",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000003_007/v1",
+          "version": 1
+        }
+      }
+    },
+    "DEP_IMPACT_TX_000003_008": {
+      "artifact_id": "DEP_IMPACT_TX_000003_008",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "8f1f770757052f81dbbdf9cd918ffa2534f95b9e6418c64f0742bc48c2b21f96",
+          "created_at": "2026-09-27T09:39:46.922447Z",
+          "record_sha256": "c3e0eed758b383d204c1a60dc12ea60f6ef517d997a240bf4164fd1b2a7d07a9",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000003_008/v1",
+          "version": 1
+        }
+      }
+    },
+    "DEP_IMPACT_TX_000003_009": {
+      "artifact_id": "DEP_IMPACT_TX_000003_009",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "62f5c8a4ffc98e33a1f994507fff7cf34d5f02cc11e4f3f6d0850c8bd5c21143",
+          "created_at": "2026-09-27T09:39:46.932639Z",
+          "record_sha256": "e02f65eac45d961858319c5c66352332fc0b6b9d7804dbc88dba236456226339",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000003_009/v1",
+          "version": 1
+        }
+      }
+    },
+    "DEP_IMPACT_TX_000003_010": {
+      "artifact_id": "DEP_IMPACT_TX_000003_010",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "350ddf7312ad3975c178b2705433c95349f937963bcb3cc4ee9fe59aa784fb66",
+          "created_at": "2026-09-27T09:39:46.943621Z",
+          "record_sha256": "07a6a6bac4da213539963a5419677639387f0d17cc9812d2f1609e89e08cecfb",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000003_010/v1",
+          "version": 1
+        }
+      }
+    },
+    "DEP_IMPACT_TX_000003_011": {
+      "artifact_id": "DEP_IMPACT_TX_000003_011",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "47ca3b520a8da52566ef6f2ef684a9494f37869469c3e8f98528113461807893",
+          "created_at": "2026-09-27T09:39:46.957485Z",
+          "record_sha256": "cee4a6c937f8455aa45a3383142a5451b6a56530a58990f1be3a4db4d59b7edf",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000003_011/v1",
+          "version": 1
+        }
+      }
+    },
+    "DEP_IMPACT_TX_000003_012": {
+      "artifact_id": "DEP_IMPACT_TX_000003_012",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "f0e62fd47e1cc85cbb305505f83e70333f3030598043e0e57d865f5984b77302",
+          "created_at": "2026-09-27T09:39:46.970063Z",
+          "record_sha256": "df83c552c6fdab3a51cd1623acc92c247f2c557603594b0b457b198c7a396249",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000003_012/v1",
+          "version": 1
+        }
+      }
+    },
+    "DEP_IMPACT_TX_000003_013": {
+      "artifact_id": "DEP_IMPACT_TX_000003_013",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "845b9f5f95f749b20044327c968ac9b7fcd11e22aee6fe0ccadff4091b598627",
+          "created_at": "2026-09-27T09:39:46.982963Z",
+          "record_sha256": "11c7365dec5303383906fa3ab2db4d257b9dc8195c85416b09e29786b81a7d8a",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000003_013/v1",
+          "version": 1
+        }
+      }
+    },
+    "DEP_IMPACT_TX_000003_014": {
+      "artifact_id": "DEP_IMPACT_TX_000003_014",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "a5c478a6daed597c590117af0914e70c42ec8127b4aa741e1b487aab4cd71481",
+          "created_at": "2026-09-27T09:39:46.998630Z",
+          "record_sha256": "910c9a14431817221ad2b01d227f6f82afa96c9c0b6839c686bed352471f9c03",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000003_014/v1",
+          "version": 1
+        }
+      }
+    },
+    "DEP_IMPACT_TX_000005_001": {
+      "artifact_id": "DEP_IMPACT_TX_000005_001",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "410bc1ff3d12ec95f3e36141610bcd79afdc0405a1909085fabb9d9b0e16e4e0",
+          "created_at": "2026-09-27T10:18:33.377066Z",
+          "record_sha256": "e48f2e93b96cd2d84e9391f005247db7f60f0ee30b18617d256d718b016c26cc",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000005_001/v1",
+          "version": 1
+        }
+      }
+    },
+    "DEP_IMPACT_TX_000005_002": {
+      "artifact_id": "DEP_IMPACT_TX_000005_002",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "26184eb036328042985f17ba2294e41761ad9ebc08ee1137d1534244f5f54a49",
+          "created_at": "2026-09-27T10:18:33.393305Z",
+          "record_sha256": "bc0642ec6f8166ff115b6323e9b0cfbd6798333ede0774e79c326e1ec3c817c3",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000005_002/v1",
+          "version": 1
+        }
+      }
+    },
+    "DEP_IMPACT_TX_000005_003": {
+      "artifact_id": "DEP_IMPACT_TX_000005_003",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "4f7ba09ad44db27b6c9c9a4f2cbea4deef53ea6f2640373b9e1c1a13e82c3c70",
+          "created_at": "2026-09-27T10:18:33.409573Z",
+          "record_sha256": "31cbb551ae8e717d49945ef1189a1f3087a1873aa79d862737ceddc800cbeab3",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000005_003/v1",
+          "version": 1
+        }
+      }
+    },
+    "DEP_IMPACT_TX_000005_004": {
+      "artifact_id": "DEP_IMPACT_TX_000005_004",
+      "artifact_type": "DEPENDENCY_IMPACT_REPORT",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "864f253b5cd81a4fe7ececc1113b9258030f06870ee730a989a1cfe2ea17aade",
+          "created_at": "2026-09-27T10:18:33.426271Z",
+          "record_sha256": "240d45791922dd58123dc9b3a3e1968286f054a2546be47b60e71c5b8a0cca10",
+          "schema_id": "gmk://schema/v1/artifact/dependency-impact-report",
+          "uri": "gmk://artifacts/DEP_IMPACT_TX_000005_004/v1",
+          "version": 1
+        }
+      }
+    },
+    "NARRATIVE_SPINE_000001": {
+      "artifact_id": "NARRATIVE_SPINE_000001",
+      "artifact_type": "NARRATIVE_SPINE",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "47a54f17b1a9d53c999dc69fe87676b575ae4b41f0af7442d4057823db63712d",
+          "created_at": "2026-09-27T10:18:33.426415Z",
+          "record_sha256": "68da518b7de728b4a7723272f72844d025113f22c95e4a7f6645963b705ee13d",
+          "schema_id": "gmk://schema/v1/artifact/narrative-spine",
+          "uri": "gmk://artifacts/NARRATIVE_SPINE_000001/v1",
+          "version": 1
+        }
+      }
+    },
+    "RESEARCH_ATTEMPT_LOG_000001": {
+      "artifact_id": "RESEARCH_ATTEMPT_LOG_000001",
+      "artifact_type": "RESEARCH_ATTEMPT_LOG",
+      "head_version": 2,
+      "versions": {
+        "1": {
+          "artifact_sha256": "e38d435eee2f8b8db854ddcdd5bf8ad964cb6c0ccc92491448b3bd66dc6cea60",
+          "created_at": "2026-09-27T08:40:33.054210Z",
+          "record_sha256": "4322dd798777636e3f06cfb3459ad70724d319b5e7d4e3f5b61e312428bf3f65",
+          "schema_id": "gmk://schema/v1/artifact/research-attempt-log",
+          "uri": "gmk://artifacts/RESEARCH_ATTEMPT_LOG_000001/v1",
+          "version": 1
+        },
+        "2": {
+          "artifact_sha256": "fb9ace238db3a7e524333b84ee7ace8e43b634ff6ba81b749ce607ceeb2d300b",
+          "created_at": "2026-09-27T08:40:33.059369Z",
+          "record_sha256": "f7ff9aceca08ed27f2bfacf037cd83540ab85ee8d1249f2ff503ec5773ccbafd",
+          "schema_id": "gmk://schema/v1/artifact/research-attempt-log",
+          "uri": "gmk://artifacts/RESEARCH_ATTEMPT_LOG_000001/v2",
+          "version": 2
+        }
+      }
+    },
+    "RESEARCH_ATTEMPT_LOG_000002": {
+      "artifact_id": "RESEARCH_ATTEMPT_LOG_000002",
+      "artifact_type": "RESEARCH_ATTEMPT_LOG",
+      "head_version": 2,
+      "versions": {
+        "1": {
+          "artifact_sha256": "b0834d5a80cb1e4c9337b002c55a7ed0933e271985f9f9645219d64b59275b24",
+          "created_at": "2026-09-27T09:39:46.850995Z",
+          "record_sha256": "bd5d0a7c81d26a86b9ca4a1457837146dbdc4d497740ba4abd5a0845a0eda8a7",
+          "schema_id": "gmk://schema/v1/artifact/research-attempt-log",
+          "uri": "gmk://artifacts/RESEARCH_ATTEMPT_LOG_000002/v1",
+          "version": 1
+        },
+        "2": {
+          "artifact_sha256": "3b7f786d2324e9acd396ad8c7e4883ebfbef23b2fb2cc91373cad5f02ec1f3ad",
+          "created_at": "2026-09-27T09:39:46.999070Z",
+          "record_sha256": "e86a6946d54626612137619be07feedd03d4515404b4764ff972c5c9a592517e",
+          "schema_id": "gmk://schema/v1/artifact/research-attempt-log",
+          "uri": "gmk://artifacts/RESEARCH_ATTEMPT_LOG_000002/v2",
+          "version": 2
+        }
+      }
+    },
+    "RESEARCH_PACK_000001": {
+      "artifact_id": "RESEARCH_PACK_000001",
+      "artifact_type": "RESEARCH_PACK",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "a6a28e9af9646c19c5eea4605575c798bd7ab9d9f933e5a9c6dc5aab33ab5e46",
+          "created_at": "2026-09-27T08:40:33.000395Z",
+          "record_sha256": "cab45b65238eb081b821339cc265d4238346935dca359bfd185c789ffbff329f",
+          "schema_id": "gmk://schema/v1/artifact/research-pack",
+          "uri": "gmk://artifacts/RESEARCH_PACK_000001/v1",
+          "version": 1
+        }
+      }
+    }
+  },
+  "registry_id": "ARTIFACT_REGISTRY",
+  "sha256": "6178d448d04067dda3c2b98572ea571840f62b20908c87c20dc393e2e6926ec4",
+  "version": 5
+}

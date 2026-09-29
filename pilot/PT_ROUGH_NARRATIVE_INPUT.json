@@ -1,0 +1,301 @@
+{
+  "batch_id": "PT_ROUGH_NARRATIVE_001",
+  "spine": {
+    "core_question": "P.T. กลายจากเดโมปริศนาที่แทบไม่มีชื่อ ไปเป็นผลงานดิจิทัลที่ถูกถอดออกและดาวน์โหลดซ้ำไม่ได้ แต่ยังคงถูกศึกษาผ่านหลักฐานที่หลงเหลืออยู่ได้อย่างไร?",
+    "opening_promise": "เรื่องจะเริ่มจากเกมปริศนาที่ถูกปล่อยแบบไม่บอกตัวตน แล้วตามรอยไปถึงการถอดออกจากสโตร์ การปิดทางดาวน์โหลดซ้ำ และสิ่งที่นักวิจัยภายหลังยังค้นพบจากตัวเกมที่เหลือรอดอยู่",
+    "central_mystery": "ถ้าผลงานดิจิทัลชิ้นหนึ่งถูกผู้ถือสิทธิ์ถอนออกจากระบบจนผู้ที่เคยมีสิทธิ์ยังเรียกคืนไม่ได้ มันหายไปจริงหรือเพียงเปลี่ยนรูปแบบการมีอยู่?",
+    "major_turns": [
+      "12 สิงหาคม 2014: P.T. ปรากฏบน PlayStation Network ภายใต้ชื่อ 7780s Studio",
+      "เบาะแส 7780 เชื่อมชื่ออำพรางกับ Shizuoka / Silent Hill และตัวเดโมแพร่กระจายอย่างรวดเร็ว",
+      "การตรวจกล้องของ Lance McDonald ในปี 2019 เผยกลไก Lisa ที่ติดตามอยู่ด้านหลังผู้เล่นหลังได้ไฟฉาย โดยไม่ยืนยันระยะตัวเลขแน่นอน",
+      "29 เมษายน–6 พฤษภาคม 2015: P.T. ถูกถอดจาก Store และต่อมาดาวน์โหลดซ้ำไม่ได้แม้บัญชีเคยมีสิทธิ์",
+      "สำเนาบนเครื่อง PS4 กลายเป็นของหายากและมีตัวอย่างประกาศขายราคา £1,000 ก่อน eBay ลบประกาศจำนวนมาก",
+      "ปลายปี 2015: Geoff Keighley ระบุบนเวทีว่า Kojima ถูกทนายตัวแทน Konami ห้ามเดินทางมารับรางวัล และสัญญาของ Kojima กับ Konami สิ้นสุด 15 ธันวาคม"
+    ],
+    "final_answer": "หลักฐานที่ตรวจได้ชี้ว่า P.T. ไม่ได้หายไปในเหตุการณ์เดียว แต่ค่อย ๆ ถูกตัดออกจากช่องทางจำหน่ายและการเรียกคืน ขณะที่สำเนาที่ติดตั้งอยู่ บันทึกสาธารณะ และการตรวจเชิงเทคนิคภายหลังทำให้เรื่องราวของมันยังตรวจสอบและเล่าต่อได้",
+    "closing_thought": "ในสื่อดิจิทัล การลบออกจากสโตร์อาจหยุดการเข้าถึง แต่ไม่ได้รับประกันว่าจะลบหลักฐาน ความทรงจำ หรือร่องรอยทางเทคนิคที่หลงเหลืออยู่ด้วย"
+  },
+  "excluded_claim_ids": ["CLM_000004", "CLM_000010", "CLM_000011", "CLM_000012", "CLM_000013"],
+  "acts": [
+    {
+      "key": "ACT_ANONYMOUS_DROP",
+      "order": 1,
+      "title": "The Demo With No Name",
+      "narrative": {
+        "job": "ตั้งปริศนาว่าเกมสั้น ๆ ที่ปรากฏอย่างไม่เปิดเผยตัวตนคืออะไร และทำไมผู้ชมควรสนใจเส้นทางของมัน",
+        "audience_question": "เกมที่ชื่อ P.T. และสตูดิโอ 7780s Studio มาจากไหน?",
+        "knowledge_before": "ผู้ชมยังไม่รู้ว่าตัวเลขและชื่ออำพรางมีความหมายอย่างไร",
+        "knowledge_after": "ผู้ชมรู้วันเปิดตัว ชื่ออำพราง เบาะแส 7780 และรู้ว่าเดโมถูกดาวน์โหลดมากกว่า 1 ล้านครั้งในช่วงแรก",
+        "main_reveal": "7780s Studio ไม่ใช่ชื่อที่ว่างเปล่า: 7780 เชื่อมกับพื้นที่ Shizuoka และคำเล่น Silent Hill",
+        "peak": "เดโมปริศนากลายเป็นปรากฏการณ์ดาวน์โหลดมากกว่าหนึ่งล้านครั้ง",
+        "exit_question": "แล้วภายในเดโมเล็ก ๆ นี้มีอะไรที่ทำให้มันยังถูกชำแหละอีกหลายปีต่อมา?"
+      },
+      "scenes": [
+        {
+          "key": "SCN_DROP",
+          "order": 1,
+          "title": "12 August 2014",
+          "narrative": {
+            "purpose": "เปิดเรื่องด้วยข้อเท็จจริงที่ตรวจได้เกี่ยวกับการปล่อย P.T. และชื่อ 7780s Studio",
+            "viewer_question_entering": "P.T. ปรากฏขึ้นเมื่อไรและในชื่อของใคร?",
+            "viewer_understanding_leaving": "P.T. ถูกปล่อยบน PSN วันที่ 12 สิงหาคม 2014 ภายใต้ชื่อ 7780s Studio และตัวเลข 7780 มีที่มาที่ตรวจได้",
+            "main_reveal": "7780 อ้างอิงพื้นที่ของ Shizuoka ซึ่งสามารถอ่านเชิงคำว่า Silent Hill"
+          },
+          "dynamics": {"role": "HOOK", "energy": "TENSE"},
+          "beats": [
+            {
+              "key": "BEAT_OPENING_PROMISE",
+              "order": 1,
+              "beat_type": "SETUP",
+              "idea": "เริ่มด้วยการปรากฏตัวของเดโมที่ใช้ชื่อสตูดิโออำพราง ก่อนตั้งคำถามว่าทำไมผลงานนี้จึงยังมีร่องรอยให้ตามหลายปีหลังถูกถอดออก",
+              "viewer_takeaway": "เรื่องนี้เริ่มจากเดโมที่ถูกปล่อยอย่างตั้งใจให้ตัวตนผู้สร้างไม่ชัดเจน",
+              "claims": [{"claim_id": "CLM_000001", "role": "PRIMARY_FACT"}],
+              "promise_payoff": {"role": "PROMISE", "paired_beat_key": "BEAT_FINAL_PAYOFF"},
+              "reveal": {"contains_reveal": false}
+            },
+            {
+              "key": "BEAT_7780",
+              "order": 2,
+              "beat_type": "FACT",
+              "idea": "อธิบายความหมายที่ตรวจได้ของเลข 7780 โดยไม่ขยายไปยังทฤษฎีเลข 204863 ที่ไม่ได้จำเป็นต่อแกนเรื่อง",
+              "viewer_takeaway": "ชื่อ 7780s Studio มีเบาะแสที่เชื่อมกับ Shizuoka / Silent Hill",
+              "claims": [{"claim_id": "CLM_000003", "role": "PRIMARY_FACT"}],
+              "reveal": {"contains_reveal": true, "reveal_key": "7780_MEANING", "forbidden_visual_concepts_before": ["SILENT_HILL_WORDPLAY_EXPLANATION"]}
+            }
+          ]
+        },
+        {
+          "key": "SCN_SPREAD",
+          "order": 2,
+          "title": "A Million Downloads",
+          "narrative": {
+            "purpose": "แสดงขนาดการแพร่กระจายโดยใช้ถ้อยคำตามระดับความเชื่อมั่นของหลักฐาน",
+            "viewer_question_entering": "เดโมที่ไม่มีแบรนด์ชัดเจนเข้าถึงผู้เล่นมากแค่ไหน?",
+            "viewer_understanding_leaving": "มีรายงานร่วมสมัยรองรับว่าดาวน์โหลดทะลุหนึ่งล้านครั้งภายในต้นกันยายน 2014",
+            "peak": "ตัวเลขดาวน์โหลดแสดงว่า P.T. ไม่ได้เป็นเพียงของทดลองวงแคบ"
+          },
+          "dynamics": {"role": "BUILD", "energy": "BUILD"},
+          "beats": [
+            {
+              "key": "BEAT_MILLION",
+              "order": 1,
+              "beat_type": "FACT",
+              "idea": "วางยอดดาวน์โหลดมากกว่าหนึ่งล้านเป็นหลักฐานของการแพร่กระจาย โดยคงระดับภาษาที่เหมาะกับ SOURCE_VERIFIED",
+              "viewer_takeaway": "P.T. แพร่ไปถึงผู้เล่นจำนวนมากอย่างรวดเร็ว",
+              "claims": [{"claim_id": "CLM_000002", "role": "PRIMARY_FACT"}],
+              "synthesis_note": "เมื่อเขียน narration จริงต้องใช้ภาษาที่ไม่แรงเกิน QUALIFIED ตาม Claim ceiling"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ACT_BEHIND_CAMERA",
+      "order": 2,
+      "title": "The Ghost Behind the Camera",
+      "narrative": {
+        "job": "เปลี่ยนจากประวัติการเปิดตัวไปสู่หลักฐานเชิงเทคนิคที่อธิบายกลไกความหลอนโดยไม่สร้าง precision ที่ไม่มีหลักฐาน",
+        "audience_question": "หลายปีต่อมา นักวิจัยพบอะไรในวิธีที่ P.T. จัดวาง Lisa?",
+        "knowledge_before": "ผู้ชมรู้ว่าเกมแพร่กระจาย แต่ยังไม่รู้ว่ามีกลไกหลังกล้องที่ถูกเปิดเผยภายหลัง",
+        "knowledge_after": "ผู้ชมรู้ว่าการตรวจกล้องของ Lance McDonald แสดง Lisa ติดตามด้านหลังผู้เล่นหลังได้ไฟฉาย และรู้ว่าระยะตัวเลขแน่นอนยังไม่มีหลักฐาน",
+        "main_reveal": "สิ่งที่ผู้เล่นกลัวว่าอยู่ข้างหลังมีโมเดลตัวละครตามหลังอยู่จริงในเงื่อนไขที่ตรวจพบ",
+        "peak": "เปิดภาพความสัมพันธ์เชิงพื้นที่ที่ผู้เล่นไม่เห็นในมุมกล้องปกติ",
+        "exit_question": "แต่สิ่งที่น่ากลัวกว่ากลไกในเกม คือสิ่งที่เกิดขึ้นกับตัวเกมเองในปีถัดมา"
+      },
+      "scenes": [
+        {
+          "key": "SCN_LISA",
+          "order": 1,
+          "title": "What the Camera Hack Showed",
+          "narrative": {
+            "purpose": "แยกสิ่งที่การตรวจทางเทคนิคแสดงจริงออกจากตัวเลขหรือกลไกที่ Research Pack เคยระบุเกินหลักฐาน",
+            "viewer_question_entering": "Lisa อยู่ตรงไหนเมื่อผู้เล่นมองไม่เห็นเธอ?",
+            "viewer_understanding_leaving": "การแฮ็กกล้องของ Lance McDonald แสดง Lisa ตามอยู่ด้านหลังหลังผู้เล่นได้ไฟฉาย แต่ไม่ยืนยันระยะห่างตัวเลขที่แน่นอน",
+            "main_reveal": "Lisa ตามอยู่ด้านหลังผู้เล่น",
+            "rest_point": "เว้นพื้นที่ให้ผู้ชมดูความสัมพันธ์เชิงพื้นที่ก่อนเข้าสู่ช่วงการลบเกม"
+          },
+          "dynamics": {"role": "MINI_PEAK", "energy": "REVEAL"},
+          "beats": [
+            {
+              "key": "BEAT_LISA_FINDING",
+              "order": 1,
+              "beat_type": "TECHNICAL_EXPLANATION",
+              "idea": "เล่าผลการตรวจกล้องโดย attribution ถึง Lance McDonald และย้ำว่าหลักฐานไม่รองรับระยะ 0.5 เมตรที่แน่นอน",
+              "viewer_takeaway": "ความสัมพันธ์ Lisa-ผู้เล่นมีหลักฐานเชิงเทคนิค แต่ precision เชิงระยะต้องไม่ถูกแต่งเพิ่ม",
+              "claims": [{"claim_id": "CLM_000008", "role": "TECHNICAL_BASIS"}],
+              "reveal": {"contains_reveal": true, "reveal_key": "LISA_BEHIND_PLAYER", "forbidden_visual_concepts_before": ["THIRD_PERSON_LISA_POSITION"]},
+              "narrative_links": [{"type": "CAUSE_EFFECT", "target_beat_key": "BEAT_FINAL_PAYOFF"}],
+              "synthesis_note": "Narration ต้อง ATTRIBUTED และห้ามระบุระยะตัวเลขที่ Claim ไม่รองรับ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ACT_ERASURE",
+      "order": 3,
+      "title": "The Disappearing Download",
+      "narrative": {
+        "job": "แสดงการเปลี่ยนจากผลงานที่คนจำนวนมากดาวน์โหลดไปสู่ผลงานที่ถูกถอนออกและเรียกคืนไม่ได้",
+        "audience_question": "P.T. หายออกจากระบบในทางปฏิบัติอย่างไร?",
+        "knowledge_before": "ผู้ชมรู้ว่าเกมเคยแพร่กว้างและยังถูกศึกษาทางเทคนิค",
+        "knowledge_after": "ผู้ชมรู้วันที่ถอดจาก Store, รู้ว่าภายใน 6 พฤษภาคมการดาวน์โหลดซ้ำถูกบล็อก และเห็นผลข้างเคียงผ่านตลาดเครื่องที่ยังติดตั้งเกม",
+        "main_reveal": "การลบไม่หยุดแค่หน้า Store แต่ขยายไปถึงความสามารถในการดาวน์โหลดซ้ำ",
+        "peak": "สิทธิ์ที่เคยมีไม่ได้รับประกันว่าจะเรียกไฟล์กลับมาได้",
+        "exit_question": "เมื่อซอฟต์แวร์เรียกคืนไม่ได้ สิ่งที่ยังติดอยู่ในเครื่องเดิมมีค่าขึ้นมาแค่ไหน?"
+      },
+      "scenes": [
+        {
+          "key": "SCN_DELIST",
+          "order": 1,
+          "title": "29 April — 6 May",
+          "narrative": {
+            "purpose": "วางลำดับการถอด Store และการบล็อก re-download ให้ตรงกับ Research Audit ที่แก้ timeline เดิม",
+            "viewer_question_entering": "การหายไปของ P.T. เกิดขึ้นในขั้นไหนบ้าง?",
+            "viewer_understanding_leaving": "P.T. ถูกถอดจาก Store วันที่ 29 เมษายน 2015 และภายในวันที่ 6 พฤษภาคมผู้ที่เคยมีเกมก็ไม่สามารถดาวน์โหลดซ้ำได้",
+            "main_reveal": "การเข้าถึงสำเนาใหม่ถูกตัดออกแม้กับบัญชีที่เคยมีสิทธิ์"
+          },
+          "dynamics": {"role": "ESCALATION", "energy": "TENSE"},
+          "beats": [
+            {
+              "key": "BEAT_DELIST",
+              "order": 1,
+              "beat_type": "FACT",
+              "idea": "ยืนยันวันที่ P.T. ถูกถอดจาก PlayStation Store",
+              "viewer_takeaway": "วันที่ 29 เมษายน 2015 คือจุดถอด P.T. ออกจาก Store",
+              "claims": [{"claim_id": "CLM_000005", "role": "PRIMARY_FACT"}]
+            },
+            {
+              "key": "BEAT_REDOWNLOAD",
+              "order": 2,
+              "beat_type": "FACT",
+              "idea": "แก้ลำดับเวลาให้ชัดว่า re-download ถูกบล็อกภายใน 6 พฤษภาคม 2015 ไม่ใช่ต้องรอปลายปี",
+              "viewer_takeaway": "การมี P.T. ในประวัติบัญชีไม่ได้ทำให้ดาวน์โหลดกลับมาได้ภายในวันที่ 6 พฤษภาคม 2015",
+              "claims": [{"claim_id": "CLM_000014", "role": "PRIMARY_FACT"}],
+              "narrative_links": [{"type": "CAUSE_EFFECT", "target_beat_key": "BEAT_MARKET"}]
+            }
+          ]
+        },
+        {
+          "key": "SCN_MARKET",
+          "order": 2,
+          "title": "The Installed Copy Becomes the Object",
+          "narrative": {
+            "purpose": "แสดงผลเชิงรูปธรรมเมื่อสำเนาที่ติดตั้งอยู่ในฮาร์ดแวร์กลายเป็นสิ่งที่เข้าถึงได้ยาก",
+            "viewer_question_entering": "เมื่อดาวน์โหลดใหม่ไม่ได้ สำเนาที่เหลืออยู่มีสถานะอย่างไร?",
+            "viewer_understanding_leaving": "มีตัวอย่าง PS4 ที่ติดตั้ง P.T. ถูกเสนอขายที่ £1,000 และ eBay ลบประกาศลักษณะนี้จำนวนมาก",
+            "peak": "มูลค่าถูกย้ายจากไฟล์ดาวน์โหลดไปอยู่กับเครื่องที่ยังเก็บสำเนาไว้"
+          },
+          "dynamics": {"role": "CONSEQUENCE", "energy": "BUILD"},
+          "beats": [
+            {
+              "key": "BEAT_MARKET",
+              "order": 1,
+              "beat_type": "FACT",
+              "idea": "ใช้ตลาดเครื่องที่ติดตั้ง P.T. เป็นผลตามหลังของการเข้าถึงที่ถูกตัดลง โดยไม่เหมารวมราคาทุกประกาศ",
+              "viewer_takeaway": "มีหลักฐานตัวอย่างว่าความหายากของสำเนาที่ติดตั้งอยู่ถูกสะท้อนเป็นราคาขายเครื่องสูงมาก",
+              "claims": [{"claim_id": "CLM_000006", "role": "PRIMARY_FACT"}]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ACT_KOJIMA_EXIT",
+      "order": 4,
+      "title": "The Creator Outside the Door",
+      "narrative": {
+        "job": "ปิดเส้นความสัมพันธ์ P.T.-Kojima ด้วยข้อเท็จจริงที่ตรวจได้และถ้อยคำที่ attribution ถูกต้อง",
+        "audience_question": "ปลายปี 2015 สถานะของ Kojima กับ Konami ไปถึงจุดไหน?",
+        "knowledge_before": "ผู้ชมรู้ว่าตัวเกมถูกถอนออก แต่ยังไม่ได้เห็นปลายทางของความสัมพันธ์กับผู้สร้าง",
+        "knowledge_after": "ผู้ชมรู้ว่า Geoff Keighley กล่าวถึงข้อห้ามเดินทางมางาน TGA และรู้วันที่สัญญา Kojima กับ Konami สิ้นสุด",
+        "main_reveal": "เรื่องที่บนเวที TGA ต้องเล่าเป็นคำกล่าวของ Geoff Keighley ไม่ใช่ข้อสรุปแรงจูงใจของ Konami โดยผู้บรรยาย",
+        "peak": "15 ธันวาคม 2015 สัญญาของ Kojima กับ Konami สิ้นสุดลง",
+        "exit_question": "เมื่อผู้สร้างออกไปและการเข้าถึงเกมถูกตัด สิ่งใดยังเหลือเป็นหลักฐาน?"
+      },
+      "scenes": [
+        {
+          "key": "SCN_TGA_EXIT",
+          "order": 1,
+          "title": "A Statement on Stage",
+          "narrative": {
+            "purpose": "แยก reported assertion จาก factual conclusion และต่อเข้ากับข้อเท็จจริงเรื่องสิ้นสุดสัญญา",
+            "viewer_question_entering": "เรารู้อะไรจริงเกี่ยวกับเหตุการณ์ The Game Awards และการสิ้นสุดสัญญา?",
+            "viewer_understanding_leaving": "หลักฐานรองรับว่าคำกล่าวเรื่องการห้ามเดินทางมาจาก Geoff Keighley และสัญญาของ Kojima สิ้นสุด 15 ธันวาคม 2015",
+            "main_reveal": "แหล่งที่มาของข้อกล่าวอ้างบนเวทีถูกระบุชัดเจน"
+          },
+          "dynamics": {"role": "MAJOR_PEAK", "energy": "TENSE"},
+          "beats": [
+            {
+              "key": "BEAT_TGA",
+              "order": 1,
+              "beat_type": "FACT",
+              "idea": "รายงานคำกล่าวของ Geoff Keighley ว่า Kojima ได้รับแจ้งจากทนายตัวแทน Konami ว่าไม่อนุญาตให้มาร่วมงาน",
+              "viewer_takeaway": "ข้อห้ามนี้ต้องเล่าโดย attribution ถึง Keighley ไม่ใช่ในฐานะข้อสรุปอิสระของหนัง",
+              "claims": [{"claim_id": "CLM_000007", "role": "PRIMARY_FACT"}],
+              "synthesis_note": "Narration ceiling = ATTRIBUTED"
+            },
+            {
+              "key": "BEAT_CONTRACT_END",
+              "order": 2,
+              "beat_type": "FACT",
+              "idea": "ยืนยันวันที่สัญญาจ้างงานของ Kojima กับ Konami สิ้นสุด",
+              "viewer_takeaway": "15 ธันวาคม 2015 คือจุดสิ้นสุดสัญญาที่มีหลักฐาน corroborated",
+              "claims": [{"claim_id": "CLM_000009", "role": "PRIMARY_FACT"}]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "ACT_DIGITAL_GHOST",
+      "order": 5,
+      "title": "The Digital Ghost",
+      "narrative": {
+        "job": "ตอบคำถามเปิดเรื่องด้วย synthesis ที่ยึดกับหลักฐานการถอด การบล็อก re-download สำเนาที่เหลือ และการตรวจทางเทคนิคภายหลัง",
+        "audience_question": "ถ้าเกมถูกถอนและเรียกคืนไม่ได้ ทำไมเรายังพูดถึงและตรวจสอบมันได้?",
+        "knowledge_before": "ผู้ชมมีเหตุการณ์หลักครบ แต่ยังต้องเชื่อมให้เป็นคำตอบเดียว",
+        "knowledge_after": "ผู้ชมเห็นความต่างระหว่างการลบช่องทางเข้าถึงกับการลบร่องรอยที่มีอยู่แล้ว",
+        "main_reveal": "การลบจากระบบจำหน่ายไม่เท่ากับการลบสำเนา บันทึก และข้อมูลที่รอดอยู่ทั้งหมด",
+        "peak": "เรื่องราวของ P.T. ดำรงอยู่ผ่านร่องรอยหลายชนิด ไม่ใช่ผ่าน Store เพียงอย่างเดียว",
+        "exit_question": "เราควรนิยามการอนุรักษ์งานดิจิทัลอย่างไร เมื่อผู้ถือแพลตฟอร์มสามารถปิดช่องทางเข้าถึงได้?"
+      },
+      "scenes": [
+        {
+          "key": "SCN_PAYOFF",
+          "order": 1,
+          "title": "What Was Actually Erased?",
+          "narrative": {
+            "purpose": "รวมหลักฐานที่ตรวจแล้วเป็นคำตอบเชิงสารคดี โดยไม่เพิ่ม claim เรื่องอิทธิพลต่อเกมอื่นที่ยังไม่ได้ audit",
+            "viewer_question_entering": "P.T. หายไปจริงหรือไม่?",
+            "viewer_understanding_leaving": "ช่องทางเข้าถึงถูกตัดจริง แต่หลักฐานทางกายภาพ/ดิจิทัลและการตรวจเทคนิคที่เกิดภายหลังทำให้ตัวงานไม่ได้หายจากประวัติทั้งหมด",
+            "main_reveal": "สิ่งที่ถูกลบอย่างชัดเจนคือการเข้าถึงผ่านระบบ ไม่ใช่ทุกหลักฐานของการมีอยู่"
+          },
+          "dynamics": {"role": "PAYOFF", "energy": "REFLECTIVE"},
+          "beats": [
+            {
+              "key": "BEAT_FINAL_PAYOFF",
+              "order": 1,
+              "beat_type": "PAYOFF",
+              "idea": "สังเคราะห์ว่า delisting + blocked re-download ลดการเข้าถึง ขณะที่ installed copies และการตรวจทางเทคนิคภายหลังยังสร้างหลักฐานที่ตรวจสอบได้",
+              "viewer_takeaway": "การหายจาก Store กับการหายจากประวัติเป็นคนละเรื่อง",
+              "claims": [
+                {"claim_id": "CLM_000005", "role": "SUPPORTING_FACT"},
+                {"claim_id": "CLM_000014", "role": "SUPPORTING_FACT"},
+                {"claim_id": "CLM_000006", "role": "CONTEXT"},
+                {"claim_id": "CLM_000008", "role": "TECHNICAL_BASIS"}
+              ],
+              "promise_payoff": {"role": "PAYOFF", "paired_beat_key": "BEAT_OPENING_PROMISE"},
+              "narrative_links": [
+                {"type": "CALLBACK", "target_beat_key": "BEAT_OPENING_PROMISE"},
+                {"type": "CALLBACK", "target_beat_key": "BEAT_LISA_FINDING"}
+              ],
+              "pause": {"purpose": "ABSORB_REVEAL"},
+              "synthesis_note": "นี่คือ narrative synthesis จาก Claim ที่ audit แล้ว ไม่ใช่ Claim ใหม่ว่า P.T. มีอิทธิพลต่อเกมสยองขวัญอื่น"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

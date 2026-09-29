@@ -1,0 +1,53 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "created_at": "2026-09-27T10:18:33.256690Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "PROJECT_000001",
+        "version": 1
+      }
+    }
+  ],
+  "extensions": {
+    "rough_narrative": {
+      "batch_id": "PT_ROUGH_NARRATIVE_001",
+      "key": "ACT_KOJIMA_EXIT",
+      "plan_sha256": "645459994c0d1d6d6e2211831a9c515e8a19ee1e10d2e9520bfa7e4ef4da8376"
+    }
+  },
+  "human_constraints": [],
+  "id": "ACT_000004",
+  "lock_state": "UNLOCKED",
+  "narrative": {
+    "audience_question": "ปลายปี 2015 สถานะของ Kojima กับ Konami ไปถึงจุดไหน?",
+    "exit_question": "เมื่อผู้สร้างออกไปและการเข้าถึงเกมถูกตัด สิ่งใดยังเหลือเป็นหลักฐาน?",
+    "job": "ปิดเส้นความสัมพันธ์ P.T.-Kojima ด้วยข้อเท็จจริงที่ตรวจได้และถ้อยคำที่ attribution ถูกต้อง",
+    "knowledge_after": "ผู้ชมรู้ว่า Geoff Keighley กล่าวถึงข้อห้ามเดินทางมางาน TGA และรู้วันที่สัญญา Kojima กับ Konami สิ้นสุด",
+    "knowledge_before": "ผู้ชมรู้ว่าตัวเกมถูกถอนออก แต่ยังไม่ได้เห็นปลายทางของความสัมพันธ์กับผู้สร้าง",
+    "main_reveal": "เรื่องที่บนเวที TGA ต้องเล่าเป็นคำกล่าวของ Geoff Keighley ไม่ใช่ข้อสรุปแรงจูงใจของ Konami โดยผู้บรรยาย",
+    "peak": "15 ธันวาคม 2015 สัญญาของ Kojima กับ Konami สิ้นสุดลง"
+  },
+  "object_type": "ACT",
+  "order": 4,
+  "project_ref": {
+    "id": "PROJECT_000001",
+    "version": 1
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/act",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "The Creator Outside the Door",
+  "updated_at": "2026-09-27T10:18:33.256690Z",
+  "version": 1
+}

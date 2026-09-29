@@ -1,0 +1,48 @@
+{
+  "accessed_at": "2026-09-27T09:39:46.845859Z",
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "author": "",
+  "authority_class": "REPUTABLE_SECONDARY",
+  "availability": {
+    "state": "AVAILABLE"
+  },
+  "created_at": "2026-09-27T09:39:46.845868Z",
+  "dependencies": [],
+  "extensions": {
+    "research_audit": {
+      "batch_id": "PT_RESEARCH_AUDIT_001",
+      "source_key": "DELIST_GEMATSU",
+      "verification_role": "EXTERNAL_VERIFICATION"
+    }
+  },
+  "human_constraints": [],
+  "id": "SRC_000008",
+  "independence": {
+    "group_id": "SRCGRP_KONAMI_DELIST_NOTICE",
+    "relationship": "DERIVED_REPORTING"
+  },
+  "language": "en",
+  "lock_state": "UNLOCKED",
+  "notes": "",
+  "object_type": "SOURCE",
+  "platform": "Web",
+  "published_at": "2015-04-25",
+  "publisher": "Gematsu",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/source",
+    "schema_version": "1.0.0"
+  },
+  "source_type": "WEB_PAGE",
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "P.T. distribution to end on April 29",
+  "updated_at": "2026-09-27T09:39:46.845868Z",
+  "url": "https://www.gematsu.com/2015/04/p-t-distribution-end-april-29",
+  "version": 1
+}

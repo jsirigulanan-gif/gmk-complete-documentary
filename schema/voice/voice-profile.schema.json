@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/voice-profile",
+  "title": "GMK Voice Profile",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "VOICE_PROFILE"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^VP_[A-Z0-9_-]+$"
+        },
+        "profile_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "engine_class": {
+          "$ref": "gmk://schema/v1/voice-common#/$defs/VoiceEngineClass"
+        },
+        "language": {
+          "type": "string",
+          "minLength": 2
+        },
+        "provider": {
+          "type": "object",
+          "properties": {
+            "provider_id": {
+              "type": "string"
+            },
+            "voice_id": {
+              "type": "string"
+            },
+            "model_id": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "delivery": {
+          "type": "object",
+          "required": [
+            "default_style",
+            "speech_rate"
+          ],
+          "properties": {
+            "default_style": {
+              "$ref": "gmk://schema/v1/voice-common#/$defs/DeliveryStyle"
+            },
+            "speech_rate": {
+              "$ref": "gmk://schema/v1/voice-common#/$defs/SpeechRateClass"
+            },
+            "pitch_guidance": {
+              "type": "string"
+            },
+            "energy_guidance": {
+              "type": "string"
+            },
+            "pause_guidance": {
+              "type": "string"
+            },
+            "emphasis_guidance": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "technical_constraints": {
+          "type": "object",
+          "required": [
+            "sample_rate_hz",
+            "channels"
+          ],
+          "properties": {
+            "sample_rate_hz": {
+              "type": "integer",
+              "minimum": 8000
+            },
+            "channels": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 2
+            },
+            "target_loudness_lufs": {
+              "type": "number"
+            },
+            "peak_limit_dbfs": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "profile_name",
+        "engine_class",
+        "language",
+        "delivery",
+        "technical_constraints"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

@@ -1,0 +1,48 @@
+{
+  "accessed_at": "2026-09-27T09:39:46.847505Z",
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "author": "",
+  "authority_class": "COMMUNITY_DISCUSSION",
+  "availability": {
+    "state": "AVAILABLE"
+  },
+  "created_at": "2026-09-27T09:39:46.847514Z",
+  "dependencies": [],
+  "extensions": {
+    "research_audit": {
+      "batch_id": "PT_RESEARCH_AUDIT_001",
+      "source_key": "FETUS_COMMUNITY",
+      "verification_role": "EXTERNAL_VERIFICATION"
+    }
+  },
+  "human_constraints": [],
+  "id": "SRC_000021",
+  "independence": {
+    "group_id": "SRCGRP_PT_FETUS_DISCUSSION",
+    "relationship": "ORIGINAL"
+  },
+  "language": "en",
+  "lock_state": "UNLOCKED",
+  "notes": "",
+  "object_type": "SOURCE",
+  "platform": "Web",
+  "published_at": "2015",
+  "publisher": "GameFAQs community",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/source",
+    "schema_version": "1.0.0"
+  },
+  "source_type": "FORUM_THREAD",
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "My theory on this plot and how it relates to Silent Hills",
+  "updated_at": "2026-09-27T09:39:46.847514Z",
+  "url": "https://gamefaqs.gamespot.com/boards/827527-pt/71332379",
+  "version": 1
+}

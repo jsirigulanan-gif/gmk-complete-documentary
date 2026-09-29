@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/edit-request",
+  "title": "GMK Edit Request",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "EDIT_REQUEST"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^EDR_[A-Z0-9_-]+$"
+        },
+        "target": {
+          "$ref": "gmk://schema/v1/reference#/$defs/TargetRef",
+          "x-gmk-dependency-relation": "CONSTRAINS"
+        },
+        "review_context": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "directive": {
+          "type": "object",
+          "required": [
+            "type",
+            "instruction"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "CHANGE",
+                "PRESERVE",
+                "RELEASE_CONSTRAINT"
+              ]
+            },
+            "operation": {
+              "type": "string"
+            },
+            "instruction": {
+              "type": "string",
+              "minLength": 1
+            },
+            "constraint_id": {
+              "type": "string",
+              "pattern": "^HC_[A-Z0-9_-]+$"
+            }
+          },
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "RELEASE_CONSTRAINT"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "then": {
+                "required": [
+                  "constraint_id"
+                ]
+              }
+            }
+          ]
+        },
+        "affected_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "priority": {
+          "type": "string",
+          "enum": [
+            "MINOR",
+            "MAJOR",
+            "CRITICAL"
+          ]
+        },
+        "workflow_state": {
+          "type": "string",
+          "enum": [
+            "OPEN",
+            "IN_PROGRESS",
+            "SATISFIED",
+            "CANCELED"
+          ]
+        },
+        "requested_by": {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "const": "HUMAN"
+            },
+            "actor_id": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "target",
+        "directive",
+        "priority",
+        "workflow_state",
+        "requested_by"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

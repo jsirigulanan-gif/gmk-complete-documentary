@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/restore-plan",
+  "title": "RESTORE_PLAN",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "RESTORE_PLAN"
+        },
+        "checkpoint_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "current_manifest_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "target_baseline_manifest_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "changes": {
+          "type": "object"
+        },
+        "risk": {
+          "type": "string",
+          "enum": [
+            "LOW",
+            "MEDIUM",
+            "HIGH",
+            "CRITICAL"
+          ]
+        },
+        "human_confirmation_required": {
+          "const": true
+        }
+      },
+      "required": [
+        "checkpoint_ref",
+        "current_manifest_version",
+        "target_baseline_manifest_version",
+        "changes",
+        "risk",
+        "human_confirmation_required"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

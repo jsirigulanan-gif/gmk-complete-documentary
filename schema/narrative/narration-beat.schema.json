@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/narration-beat",
+  "title": "GMK Narration Beat",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "NARRATION_BEAT"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^NB_[A-Z0-9_-]+$"
+        },
+        "scene_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "beat_type": {
+          "$ref": "gmk://schema/v1/narrative-common#/$defs/BeatType"
+        },
+        "idea": {
+          "type": "object",
+          "required": [
+            "summary"
+          ],
+          "properties": {
+            "summary": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "viewer_takeaway": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim_bindings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "claim_ref",
+              "role"
+            ],
+            "properties": {
+              "claim_ref": {
+                "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+                "x-gmk-dependency-relation": "FACT_SOURCE"
+              },
+              "role": {
+                "type": "string",
+                "enum": [
+                  "PRIMARY_FACT",
+                  "SUPPORTING_FACT",
+                  "CONTEXT",
+                  "TECHNICAL_BASIS"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "evidence_anchor_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-expected-object-type": "EVIDENCE",
+            "x-gmk-dependency-relation": "EVIDENCE_SOURCE"
+          }
+        },
+        "narration": {
+          "type": "object",
+          "required": [
+            "text",
+            "language_mode"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "language_mode": {
+              "$ref": "gmk://schema/v1/research-common#/$defs/NarrationLanguageMode",
+              "x-gmk-field-class": "DERIVED",
+              "x-gmk-derived-mode": "LIVE"
+            }
+          },
+          "additionalProperties": false
+        },
+        "visual_requirement": {
+          "type": "object",
+          "required": [
+            "viewer_must_see",
+            "viewer_must_understand",
+            "preferred_match",
+            "asset_needs",
+            "priority"
+          ],
+          "properties": {
+            "viewer_must_see": {
+              "type": "string",
+              "minLength": 1
+            },
+            "viewer_must_understand": {
+              "type": "string",
+              "minLength": 1
+            },
+            "preferred_match": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "DIRECT",
+                  "SUPPORTING",
+                  "EXPLAINER"
+                ]
+              }
+            },
+            "asset_needs": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "gmk://schema/v1/narrative-common#/$defs/AssetNeed"
+              }
+            },
+            "priority": {
+              "$ref": "gmk://schema/v1/narrative-common#/$defs/VisualPriority"
+            }
+          },
+          "additionalProperties": false
+        },
+        "promise_payoff": {
+          "type": "object",
+          "required": [
+            "role"
+          ],
+          "properties": {
+            "role": {
+              "type": "string",
+              "enum": [
+                "PROMISE",
+                "PAYOFF",
+                "NONE"
+              ]
+            },
+            "paired_beat_ref": {
+              "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+            }
+          },
+          "additionalProperties": false
+        },
+        "narrative_links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "type",
+              "target_beat_ref"
+            ],
+            "properties": {
+              "type": {
+                "$ref": "gmk://schema/v1/narrative-common#/$defs/NarrativeLinkType"
+              },
+              "target_beat_ref": {
+                "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "reveal": {
+          "type": "object",
+          "required": [
+            "contains_reveal"
+          ],
+          "properties": {
+            "contains_reveal": {
+              "type": "boolean"
+            },
+            "reveal_key": {
+              "type": "string"
+            },
+            "forbidden_visual_concepts_before": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "pause": {
+          "type": "object",
+          "required": [
+            "purpose"
+          ],
+          "properties": {
+            "purpose": {
+              "type": "string",
+              "enum": [
+                "ABSORB_REVEAL",
+                "EMOTIONAL_SPACE",
+                "SUSPENSE",
+                "TRANSITION",
+                "VISUAL_OBSERVATION"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "workflow_state": {
+          "type": "string",
+          "enum": [
+            "DRAFT",
+            "RESEARCH_BOUND",
+            "VISUAL_REQUIREMENT_READY",
+            "NARRATION_DRAFT",
+            "NARRATION_FINAL"
+          ]
+        }
+      },
+      "required": [
+        "scene_ref",
+        "order",
+        "beat_type",
+        "idea",
+        "viewer_takeaway",
+        "claim_bindings",
+        "workflow_state"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

@@ -1,0 +1,45 @@
+{
+  "entries": {
+    "RESEARCH_ATTEMPT_LOG_000001": {
+      "artifact_id": "RESEARCH_ATTEMPT_LOG_000001",
+      "artifact_type": "RESEARCH_ATTEMPT_LOG",
+      "head_version": 2,
+      "versions": {
+        "1": {
+          "artifact_sha256": "e38d435eee2f8b8db854ddcdd5bf8ad964cb6c0ccc92491448b3bd66dc6cea60",
+          "created_at": "2026-09-27T08:40:33.054210Z",
+          "record_sha256": "4322dd798777636e3f06cfb3459ad70724d319b5e7d4e3f5b61e312428bf3f65",
+          "schema_id": "gmk://schema/v1/artifact/research-attempt-log",
+          "uri": "gmk://artifacts/RESEARCH_ATTEMPT_LOG_000001/v1",
+          "version": 1
+        },
+        "2": {
+          "artifact_sha256": "fb9ace238db3a7e524333b84ee7ace8e43b634ff6ba81b749ce607ceeb2d300b",
+          "created_at": "2026-09-27T08:40:33.059369Z",
+          "record_sha256": "f7ff9aceca08ed27f2bfacf037cd83540ab85ee8d1249f2ff503ec5773ccbafd",
+          "schema_id": "gmk://schema/v1/artifact/research-attempt-log",
+          "uri": "gmk://artifacts/RESEARCH_ATTEMPT_LOG_000001/v2",
+          "version": 2
+        }
+      }
+    },
+    "RESEARCH_PACK_000001": {
+      "artifact_id": "RESEARCH_PACK_000001",
+      "artifact_type": "RESEARCH_PACK",
+      "head_version": 1,
+      "versions": {
+        "1": {
+          "artifact_sha256": "a6a28e9af9646c19c5eea4605575c798bd7ab9d9f933e5a9c6dc5aab33ab5e46",
+          "created_at": "2026-09-27T08:40:33.000395Z",
+          "record_sha256": "cab45b65238eb081b821339cc265d4238346935dca359bfd185c789ffbff329f",
+          "schema_id": "gmk://schema/v1/artifact/research-pack",
+          "uri": "gmk://artifacts/RESEARCH_PACK_000001/v1",
+          "version": 1
+        }
+      }
+    }
+  },
+  "registry_id": "ARTIFACT_REGISTRY",
+  "sha256": "bd39dd54b8d9860f7c31b7e4a1225bc526dafa8eefad294ca44d0906ba9035a3",
+  "version": 3
+}

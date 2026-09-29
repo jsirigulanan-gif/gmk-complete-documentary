@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/final-asset-manifest",
+  "title": "FINAL_ASSET_MANIFEST",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "FINAL_ASSET_MANIFEST"
+        },
+        "assets": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "assets"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

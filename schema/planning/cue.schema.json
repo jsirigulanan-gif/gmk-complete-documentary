@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/cue",
+  "title": "GMK Cue",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "CUE"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^CUE_[A-Z0-9_-]+$"
+        },
+        "timing_source": {
+          "type": "object",
+          "required": [
+            "master_voice",
+            "timing_map"
+          ],
+          "properties": {
+            "master_voice": {
+              "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+              "x-gmk-dependency-relation": "TIMING_SOURCE"
+            },
+            "timing_map": {
+              "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+              "x-gmk-dependency-relation": "TIMING_SOURCE"
+            }
+          },
+          "additionalProperties": false
+        },
+        "semantic_trigger": {
+          "type": "object",
+          "required": [
+            "type",
+            "anchor_id",
+            "offset_seconds"
+          ],
+          "properties": {
+            "type": {
+              "const": "PHRASE_ANCHOR"
+            },
+            "anchor_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "offset_seconds": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        },
+        "action": {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "$ref": "gmk://schema/v1/planning-common#/$defs/CueAction"
+            }
+          },
+          "additionalProperties": false
+        },
+        "target_layer_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-dependency-relation": "VISUAL_SOURCE"
+          }
+        },
+        "animation": {
+          "type": "object",
+          "properties": {
+            "start_offset_seconds": {
+              "type": "number"
+            },
+            "key_offset_seconds": {
+              "type": "number"
+            },
+            "end_offset_seconds": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "timing_source",
+        "semantic_trigger",
+        "action",
+        "target_layer_refs"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

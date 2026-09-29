@@ -1,0 +1,31 @@
+{
+  "batch_id": "PT_TTS_022",
+  "language": "th-TH",
+  "voice_profile": {
+    "profile_name": "GMK Thai Documentary Voice",
+    "engine_class": "TTS",
+    "delivery": {
+      "default_style": "NEUTRAL_DOCUMENTARY",
+      "speech_rate": "NATURAL",
+      "pause_guidance": "Preserve sentence punctuation and documentary pacing."
+    },
+    "technical_constraints": {
+      "sample_rate_hz": 48000,
+      "channels": 1,
+      "target_loudness_lufs": -16.0,
+      "peak_limit_dbfs": -1.0
+    }
+  },
+  "pronunciations": [
+    {
+      "term": "P.T.",
+      "normalized_key": "pt",
+      "pronunciation": {"method": "PLAIN_TEXT", "value": "พี ที"}
+    },
+    {
+      "term": "Kojima",
+      "normalized_key": "kojima",
+      "pronunciation": {"method": "PLAIN_TEXT", "value": "โคจิมะ"}
+    }
+  ]
+}

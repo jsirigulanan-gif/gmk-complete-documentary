@@ -1,0 +1,36 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "created_at": "2026-09-27T08:40:32.999340Z",
+  "dependencies": [],
+  "extensions": {},
+  "human_constraints": [],
+  "id": "PROJECT_000001",
+  "language": {
+    "narration": "th-TH"
+  },
+  "lock_state": "UNLOCKED",
+  "object_type": "PROJECT",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/project",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "target": {
+    "format": "LONGFORM_DOCUMENTARY",
+    "runtime_minutes": {
+      "max": 25.0,
+      "min": 20.0
+    }
+  },
+  "title": "The Ghost of P.T. & The Erasure of Hideo Kojima",
+  "updated_at": "2026-09-27T08:40:32.999340Z",
+  "version": 1,
+  "working_title": "The Ghost of P.T."
+}

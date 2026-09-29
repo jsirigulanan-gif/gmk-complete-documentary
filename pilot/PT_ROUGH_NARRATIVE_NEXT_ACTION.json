@@ -1,0 +1,14 @@
+{
+  "action": "SATISFY_GATE_REQUIREMENTS",
+  "blockers": [],
+  "gate_ids": [
+    "VISUAL_REQUIREMENTS"
+  ],
+  "message": "Current exact evidence does not yet satisfy the next transition.",
+  "missing_requirements": [
+    "VISUAL_REQUIREMENTS:BEAT_VISUAL_REQUIREMENTS_READY:ACTIVE_OBJECT_PREDICATE_FAILED"
+  ],
+  "permission_class": "AI_WITH_RULES",
+  "project_state": "ROUGH_NARRATIVE_READY",
+  "target_state": "VISUAL_REQUIREMENTS_READY"
+}

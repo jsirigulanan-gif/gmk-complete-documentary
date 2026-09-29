@@ -1,0 +1,65 @@
+{
+  "allowed_automatic_progression": [
+    "ASSET_RECON",
+    "ASSET_CATALOG_READY",
+    "VISUAL_COVERAGE_READY"
+  ],
+  "blockers": [
+    "MEDIA_REQUIRED:LISA_X_DIRECT_VERIFIED",
+    "MEDIA_REQUIRED:TGA_VIDEO"
+  ],
+  "build": "036",
+  "execution_manifest_sha256": "27f1b6fafb02939183f0d5d4852745b28c6de4e16cdd2627b94e5c8bc921e8c3",
+  "human_boundary_note": "No Human Approval stage is auto-executed by this pack.",
+  "project_state": "ASSET_RECON",
+  "purpose": "P.T. source-locked external-media execution pack",
+  "requirements": [
+    {
+      "asset_ref": {
+        "id": "AST_000004",
+        "version": 2
+      },
+      "attribution_required": true,
+      "beat_key": "BEAT_LISA_FINDING",
+      "candidate_key": "LISA_X_DIRECT_VERIFIED",
+      "candidate_locator": {
+        "type": "FULL_SOURCE"
+      },
+      "canonical_source_url": "https://twitter.com/manfightdragon/status/1170860592233472001",
+      "media_type": "VIDEO",
+      "rights_status": "COMMENTARY_REVIEW",
+      "source_family": "ORIGINAL_CREATOR",
+      "source_result_ref": {
+        "id": "SR_000031",
+        "version": 2
+      },
+      "source_title": "Lance McDonald direct P.T. Lisa camera-hack post"
+    },
+    {
+      "asset_ref": {
+        "id": "AST_000008",
+        "version": 2
+      },
+      "attribution_required": true,
+      "beat_key": "BEAT_TGA",
+      "candidate_key": "TGA_VIDEO",
+      "candidate_locator": {
+        "end_seconds": 135,
+        "key_seconds": 55,
+        "start_seconds": 0,
+        "type": "VIDEO_TIME_RANGE"
+      },
+      "canonical_source_url": "https://www.youtube.com/watch?v=PKl5rYdwM6c",
+      "media_type": "VIDEO",
+      "rights_status": "COMMENTARY_REVIEW",
+      "source_family": "REUPLOAD",
+      "source_result_ref": {
+        "id": "SR_000024",
+        "version": 2
+      },
+      "source_title": "Video of Geoff Keighley's TGA 2015 statement"
+    }
+  ],
+  "schema_status": "FROZEN_WITH_ERRATA_024_025_029_033",
+  "workspace": "pilot/PT_WORKSPACE"
+}

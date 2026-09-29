@@ -1,0 +1,53 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "created_at": "2026-09-27T10:18:33.256322Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "PROJECT_000001",
+        "version": 1
+      }
+    }
+  ],
+  "extensions": {
+    "rough_narrative": {
+      "batch_id": "PT_ROUGH_NARRATIVE_001",
+      "key": "ACT_BEHIND_CAMERA",
+      "plan_sha256": "645459994c0d1d6d6e2211831a9c515e8a19ee1e10d2e9520bfa7e4ef4da8376"
+    }
+  },
+  "human_constraints": [],
+  "id": "ACT_000002",
+  "lock_state": "UNLOCKED",
+  "narrative": {
+    "audience_question": "หลายปีต่อมา นักวิจัยพบอะไรในวิธีที่ P.T. จัดวาง Lisa?",
+    "exit_question": "แต่สิ่งที่น่ากลัวกว่ากลไกในเกม คือสิ่งที่เกิดขึ้นกับตัวเกมเองในปีถัดมา",
+    "job": "เปลี่ยนจากประวัติการเปิดตัวไปสู่หลักฐานเชิงเทคนิคที่อธิบายกลไกความหลอนโดยไม่สร้าง precision ที่ไม่มีหลักฐาน",
+    "knowledge_after": "ผู้ชมรู้ว่าการตรวจกล้องของ Lance McDonald แสดง Lisa ติดตามด้านหลังผู้เล่นหลังได้ไฟฉาย และรู้ว่าระยะตัวเลขแน่นอนยังไม่มีหลักฐาน",
+    "knowledge_before": "ผู้ชมรู้ว่าเกมแพร่กระจาย แต่ยังไม่รู้ว่ามีกลไกหลังกล้องที่ถูกเปิดเผยภายหลัง",
+    "main_reveal": "สิ่งที่ผู้เล่นกลัวว่าอยู่ข้างหลังมีโมเดลตัวละครตามหลังอยู่จริงในเงื่อนไขที่ตรวจพบ",
+    "peak": "เปิดภาพความสัมพันธ์เชิงพื้นที่ที่ผู้เล่นไม่เห็นในมุมกล้องปกติ"
+  },
+  "object_type": "ACT",
+  "order": 2,
+  "project_ref": {
+    "id": "PROJECT_000001",
+    "version": 1
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/act",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "The Ghost Behind the Camera",
+  "updated_at": "2026-09-27T10:18:33.256322Z",
+  "version": 1
+}

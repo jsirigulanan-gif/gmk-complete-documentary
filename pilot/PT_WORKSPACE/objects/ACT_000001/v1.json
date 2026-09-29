@@ -1,0 +1,53 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "created_at": "2026-09-27T10:18:33.256006Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "PROJECT_000001",
+        "version": 1
+      }
+    }
+  ],
+  "extensions": {
+    "rough_narrative": {
+      "batch_id": "PT_ROUGH_NARRATIVE_001",
+      "key": "ACT_ANONYMOUS_DROP",
+      "plan_sha256": "645459994c0d1d6d6e2211831a9c515e8a19ee1e10d2e9520bfa7e4ef4da8376"
+    }
+  },
+  "human_constraints": [],
+  "id": "ACT_000001",
+  "lock_state": "UNLOCKED",
+  "narrative": {
+    "audience_question": "เกมที่ชื่อ P.T. และสตูดิโอ 7780s Studio มาจากไหน?",
+    "exit_question": "แล้วภายในเดโมเล็ก ๆ นี้มีอะไรที่ทำให้มันยังถูกชำแหละอีกหลายปีต่อมา?",
+    "job": "ตั้งปริศนาว่าเกมสั้น ๆ ที่ปรากฏอย่างไม่เปิดเผยตัวตนคืออะไร และทำไมผู้ชมควรสนใจเส้นทางของมัน",
+    "knowledge_after": "ผู้ชมรู้วันเปิดตัว ชื่ออำพราง เบาะแส 7780 และรู้ว่าเดโมถูกดาวน์โหลดมากกว่า 1 ล้านครั้งในช่วงแรก",
+    "knowledge_before": "ผู้ชมยังไม่รู้ว่าตัวเลขและชื่ออำพรางมีความหมายอย่างไร",
+    "main_reveal": "7780s Studio ไม่ใช่ชื่อที่ว่างเปล่า: 7780 เชื่อมกับพื้นที่ Shizuoka และคำเล่น Silent Hill",
+    "peak": "เดโมปริศนากลายเป็นปรากฏการณ์ดาวน์โหลดมากกว่าหนึ่งล้านครั้ง"
+  },
+  "object_type": "ACT",
+  "order": 1,
+  "project_ref": {
+    "id": "PROJECT_000001",
+    "version": 1
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/act",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "The Demo With No Name",
+  "updated_at": "2026-09-27T10:18:33.256006Z",
+  "version": 1
+}

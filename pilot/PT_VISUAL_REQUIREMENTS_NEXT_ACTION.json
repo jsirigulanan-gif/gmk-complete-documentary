@@ -1,0 +1,10 @@
+{
+  "action": "TRANSITION_PROJECT_STATE",
+  "blockers": [],
+  "gate_ids": [],
+  "message": "VISUAL_REQUIREMENTS_READY can transition to ASSET_RECON.",
+  "missing_requirements": [],
+  "permission_class": "AUTO_ALLOWED",
+  "project_state": "VISUAL_REQUIREMENTS_READY",
+  "target_state": "ASSET_RECON"
+}

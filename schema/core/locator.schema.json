@@ -1,0 +1,295 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/locator",
+  "title": "GMK Shared Locators",
+  "$defs": {
+    "SourceLocator": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "start_seconds",
+            "end_seconds"
+          ],
+          "properties": {
+            "type": {
+              "const": "VIDEO_TIME_RANGE"
+            },
+            "start_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "end_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "key_seconds": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "page"
+          ],
+          "properties": {
+            "type": {
+              "const": "DOCUMENT_PAGE"
+            },
+            "page": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "region_description": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "quote_anchor"
+          ],
+          "properties": {
+            "type": {
+              "const": "TEXT_RANGE"
+            },
+            "section": {
+              "type": "string"
+            },
+            "paragraph": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "quote_anchor": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "normalized"
+          ],
+          "properties": {
+            "type": {
+              "const": "IMAGE_REGION"
+            },
+            "normalized": {
+              "$ref": "#/$defs/NormalizedRegion"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "path"
+          ],
+          "properties": {
+            "type": {
+              "const": "FILE_PATH"
+            },
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "object": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "const": "FULL_SOURCE"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "AssetSelector": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "start_seconds",
+            "end_seconds"
+          ],
+          "properties": {
+            "type": {
+              "const": "VIDEO_TIME_RANGE"
+            },
+            "start_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "end_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "key_seconds": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "page"
+          ],
+          "properties": {
+            "type": {
+              "const": "DOCUMENT_PAGE"
+            },
+            "page": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "normalized"
+          ],
+          "properties": {
+            "type": {
+              "const": "IMAGE_REGION"
+            },
+            "normalized": {
+              "$ref": "#/$defs/NormalizedRegion"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "const": "FULL_ASSET"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "DiscoveryLocator": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "const": "WEB_URI"
+            },
+            "value": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "const": "LOGICAL_URI"
+            },
+            "value": {
+              "$ref": "gmk://schema/v1/reference#/$defs/LogicalUri"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "provider",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "const": "EXTERNAL_PROVIDER_LOCATOR"
+            },
+            "provider": {
+              "type": "string",
+              "minLength": 1
+            },
+            "value": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "NormalizedRegion": {
+      "type": "object",
+      "required": [
+        "x",
+        "y",
+        "width",
+        "height"
+      ],
+      "properties": {
+        "x": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "y": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "width": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "height": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

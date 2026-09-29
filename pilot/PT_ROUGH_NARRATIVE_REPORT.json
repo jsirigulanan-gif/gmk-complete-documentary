@@ -1,0 +1,153 @@
+{
+  "act_refs": [
+    {
+      "id": "ACT_000001",
+      "version": 1
+    },
+    {
+      "id": "ACT_000002",
+      "version": 1
+    },
+    {
+      "id": "ACT_000003",
+      "version": 1
+    },
+    {
+      "id": "ACT_000004",
+      "version": 1
+    },
+    {
+      "id": "ACT_000005",
+      "version": 1
+    }
+  ],
+  "batch_id": "PT_ROUGH_NARRATIVE_001",
+  "beat_refs": [
+    {
+      "id": "NB_000001",
+      "version": 2
+    },
+    {
+      "id": "NB_000002",
+      "version": 1
+    },
+    {
+      "id": "NB_000003",
+      "version": 1
+    },
+    {
+      "id": "NB_000004",
+      "version": 2
+    },
+    {
+      "id": "NB_000005",
+      "version": 1
+    },
+    {
+      "id": "NB_000006",
+      "version": 2
+    },
+    {
+      "id": "NB_000007",
+      "version": 1
+    },
+    {
+      "id": "NB_000008",
+      "version": 1
+    },
+    {
+      "id": "NB_000009",
+      "version": 1
+    },
+    {
+      "id": "NB_000010",
+      "version": 2
+    }
+  ],
+  "excluded_claim_ids": [
+    "CLM_000004",
+    "CLM_000010",
+    "CLM_000011",
+    "CLM_000012",
+    "CLM_000013"
+  ],
+  "gate_result": "PASS",
+  "idempotent_replay": false,
+  "included_claim_refs": [
+    {
+      "id": "CLM_000001",
+      "version": 2
+    },
+    {
+      "id": "CLM_000003",
+      "version": 2
+    },
+    {
+      "id": "CLM_000002",
+      "version": 2
+    },
+    {
+      "id": "CLM_000008",
+      "version": 2
+    },
+    {
+      "id": "CLM_000005",
+      "version": 2
+    },
+    {
+      "id": "CLM_000014",
+      "version": 1
+    },
+    {
+      "id": "CLM_000006",
+      "version": 2
+    },
+    {
+      "id": "CLM_000007",
+      "version": 2
+    },
+    {
+      "id": "CLM_000009",
+      "version": 2
+    }
+  ],
+  "manifest_version": 7,
+  "narrative_spine_ref": {
+    "artifact_id": "NARRATIVE_SPINE_000001",
+    "artifact_type": "NARRATIVE_SPINE",
+    "sha256": "47a54f17b1a9d53c999dc69fe87676b575ae4b41f0af7442d4057823db63712d",
+    "version": 1
+  },
+  "project_state": "ROUGH_NARRATIVE_READY",
+  "scene_refs": [
+    {
+      "id": "SCN_000001",
+      "version": 1
+    },
+    {
+      "id": "SCN_000002",
+      "version": 1
+    },
+    {
+      "id": "SCN_000003",
+      "version": 1
+    },
+    {
+      "id": "SCN_000004",
+      "version": 1
+    },
+    {
+      "id": "SCN_000005",
+      "version": 1
+    },
+    {
+      "id": "SCN_000006",
+      "version": 1
+    },
+    {
+      "id": "SCN_000007",
+      "version": 1
+    }
+  ],
+  "workspace": "pilot/PT_WORKSPACE"
+}

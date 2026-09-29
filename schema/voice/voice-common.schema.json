@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/voice-common",
+  "$defs": {
+    "VoiceEngineClass": {
+      "type": "string",
+      "enum": [
+        "HUMAN",
+        "TTS",
+        "HYBRID"
+      ]
+    },
+    "DeliveryStyle": {
+      "type": "string",
+      "enum": [
+        "NEUTRAL_DOCUMENTARY",
+        "CALM",
+        "INTIMATE",
+        "TENSE",
+        "URGENT",
+        "REFLECTIVE",
+        "REVEAL",
+        "SOMBER",
+        "TECHNICAL_EXPLANATION"
+      ]
+    },
+    "SpeechRateClass": {
+      "type": "string",
+      "enum": [
+        "SLOW",
+        "MEDIUM_SLOW",
+        "NATURAL",
+        "MEDIUM_FAST",
+        "FAST"
+      ]
+    },
+    "VoiceBlockState": {
+      "type": "string",
+      "enum": [
+        "PLANNED",
+        "TTS_READY",
+        "SCRATCH_RENDERED",
+        "AUDITIONED",
+        "APPROVED_FOR_MASTER",
+        "MASTER_RENDERED",
+        "LOCKED"
+      ]
+    }
+  }
+}

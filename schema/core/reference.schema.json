@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/reference",
+  "title": "GMK Reference Primitives",
+  "$defs": {
+    "SemVer": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
+    "CoreVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "ArtifactVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "RegistryVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "Timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "LogicalUri": {
+      "type": "string",
+      "pattern": "^gmk://.+"
+    },
+    "Sha256": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "SchemaHeader": {
+      "type": "object",
+      "required": [
+        "schema_id",
+        "schema_version"
+      ],
+      "properties": {
+        "schema_id": {
+          "type": "string",
+          "pattern": "^gmk://schema/v1/.+"
+        },
+        "schema_version": {
+          "$ref": "#/$defs/SemVer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ObjectRef": {
+      "type": "object",
+      "required": [
+        "id",
+        "version"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_-]+$"
+        },
+        "version": {
+          "$ref": "#/$defs/CoreVersion"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ArtifactRef": {
+      "type": "object",
+      "required": [
+        "artifact_id",
+        "artifact_type",
+        "version",
+        "sha256"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_-]+$"
+        },
+        "artifact_type": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_-]+$"
+        },
+        "version": {
+          "$ref": "#/$defs/ArtifactVersion"
+        },
+        "sha256": {
+          "$ref": "#/$defs/Sha256"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ConfigRef": {
+      "type": "object",
+      "required": [
+        "config_id",
+        "version",
+        "sha256"
+      ],
+      "properties": {
+        "config_id": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_-]+$"
+        },
+        "version": {
+          "$ref": "#/$defs/SemVer"
+        },
+        "sha256": {
+          "$ref": "#/$defs/Sha256"
+        }
+      },
+      "additionalProperties": false
+    },
+    "TargetRef": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/ObjectRef"
+        },
+        {
+          "$ref": "#/$defs/ArtifactRef"
+        }
+      ]
+    },
+    "FrameRate": {
+      "type": "object",
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "properties": {
+        "numerator": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "MediaTimeRange": {
+      "type": "object",
+      "required": [
+        "start_seconds",
+        "end_seconds"
+      ],
+      "properties": {
+        "start_seconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "end_seconds": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/research-gap",
+  "title": "GMK Research Gap",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "RESEARCH_GAP"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^GAP_[A-Z0-9_-]+$"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "importance": {
+          "type": "string",
+          "enum": [
+            "CRITICAL",
+            "MAJOR",
+            "STANDARD",
+            "OPTIONAL"
+          ]
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "OPEN",
+            "RESOLVED",
+            "PARTIALLY_RESOLVED",
+            "SEARCH_EXHAUSTED",
+            "UNRESOLVED",
+            "REMOVED_FROM_SCOPE"
+          ]
+        },
+        "blocked_targets": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/TargetRef",
+            "x-gmk-dependency-relation": "CONSTRAINS"
+          }
+        },
+        "blocked_gates": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/enums#/$defs/GateId"
+          }
+        },
+        "research_attempt_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+            "x-gmk-dependency-relation": "DERIVED_FROM"
+          }
+        },
+        "resolution": {
+          "type": "object",
+          "required": [
+            "summary"
+          ],
+          "properties": {
+            "summary": {
+              "type": "string",
+              "minLength": 1
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+                "x-gmk-dependency-relation": "EVIDENCE_SOURCE"
+              }
+            },
+            "resolved_at": {
+              "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "question",
+        "importance",
+        "state",
+        "blocked_targets",
+        "blocked_gates",
+        "research_attempt_refs"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

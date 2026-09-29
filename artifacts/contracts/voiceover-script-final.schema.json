@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/voiceover-script-final",
+  "title": "VOICEOVER_SCRIPT_FINAL",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "VOICEOVER_SCRIPT_FINAL"
+        },
+        "project_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "language": {
+          "type": "string"
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "beat_ref",
+              "decision_sha256",
+              "narration_text"
+            ],
+            "properties": {
+              "beat_ref": {
+                "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+                "x-gmk-dependency-relation": "FACT_SOURCE"
+              },
+              "decision_sha256": {
+                "$ref": "gmk://schema/v1/reference#/$defs/Sha256"
+              },
+              "narration_text": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "project_ref",
+        "language",
+        "blocks"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

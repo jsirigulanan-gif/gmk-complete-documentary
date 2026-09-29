@@ -1,0 +1,15 @@
+config_id: GMK_YOUTUBE_4K
+version: 1.0.0
+schema_version: 1.0.0
+video:
+  width: 3840
+  height: 2160
+  allowed_codecs: [h264, h265, prores]
+  min_duration_seconds: 0.1
+audio:
+  required: false
+metadata:
+  required_fields: [title, description]
+release:
+  required_destinations: [PRIMARY]
+  optional_destinations: [ARCHIVE]

@@ -1,0 +1,86 @@
+{
+  "acquisition_operation_ref": {
+    "id": "OP_000002",
+    "version": 1
+  },
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "asset_class": "EVIDENCE",
+  "created_at": "2026-09-27T13:58:35.342340Z",
+  "dependencies": [
+    {
+      "relation": "SUPERSEDES",
+      "target": {
+        "id": "AST_000002",
+        "version": 1
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "OP_000002",
+        "version": 1
+      }
+    },
+    {
+      "relation": "VISUAL_SOURCE",
+      "target": {
+        "id": "SRC_000006",
+        "version": 1
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "SR_000005",
+        "version": 2
+      }
+    }
+  ],
+  "extensions": {
+    "asset_recon": {
+      "beat_key": "BEAT_7780",
+      "candidate_key": "7780_WIRED",
+      "production_ready": false,
+      "selection_batch_id": "PT_ASSET_SELECTION_016",
+      "source_recon_batch_id": "PT_ASSET_RECON_FIRST_PASS_001"
+    }
+  },
+  "human_constraints": [],
+  "id": "AST_000002",
+  "lock_state": "UNLOCKED",
+  "media_type": "DOCUMENT",
+  "object_type": "ASSET",
+  "origin_search_result_ref": {
+    "id": "SR_000005",
+    "version": 2
+  },
+  "rights": {
+    "attribution_required": true,
+    "basis": "Published interview/report; documentary excerpt usage requires review.",
+    "notes": "Selection is not rights clearance.",
+    "status": "COMMENTARY_REVIEW"
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/asset",
+    "schema_version": "1.0.0"
+  },
+  "source_ref": {
+    "id": "SRC_000006",
+    "version": 1
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "supersedes": {
+    "id": "AST_000002",
+    "version": 1
+  },
+  "updated_at": "2026-09-27T13:58:35.342340Z",
+  "version": 2,
+  "workflow_state": "ACQUISITION_PENDING"
+}

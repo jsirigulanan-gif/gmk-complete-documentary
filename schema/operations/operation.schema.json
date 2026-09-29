@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/operation",
+  "title": "GMK Operation",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "OPERATION"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^OP_[A-Z0-9_-]+$"
+        },
+        "operation_type": {
+          "type": "string",
+          "enum": [
+            "DOWNLOAD",
+            "UPLOAD",
+            "PUBLISH",
+            "DELETE_EXTERNAL",
+            "RENDER_PROVIDER_CALL",
+            "TRANSCODE_SERVICE",
+            "COPY_EXTERNAL",
+            "ARCHIVE_EXTERNAL"
+          ]
+        },
+        "subject": {
+          "$ref": "gmk://schema/v1/reference#/$defs/TargetRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "external_target": {
+          "type": "object",
+          "required": [
+            "provider"
+          ],
+          "properties": {
+            "provider": {
+              "type": "string",
+              "minLength": 1
+            },
+            "destination": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "request": {
+          "type": "object",
+          "required": [
+            "action",
+            "input_fingerprint"
+          ],
+          "properties": {
+            "action": {
+              "type": "string",
+              "minLength": 1
+            },
+            "input_fingerprint": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "idempotency_key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "workflow_state": {
+          "type": "string",
+          "enum": [
+            "PLANNED",
+            "RUNNING",
+            "SUCCEEDED",
+            "PARTIALLY_SUCCEEDED",
+            "FAILED",
+            "CANCELED",
+            "UNKNOWN_EXTERNAL_STATE"
+          ]
+        },
+        "attempts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "attempt",
+              "started_at"
+            ],
+            "properties": {
+              "attempt": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "started_at": {
+                "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+              },
+              "finished_at": {
+                "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+              },
+              "result": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "compensation": {
+          "type": "object",
+          "required": [
+            "supported"
+          ],
+          "properties": {
+            "supported": {
+              "type": "boolean"
+            },
+            "action": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "authorization": {
+          "type": "object",
+          "required": [
+            "human_confirmed"
+          ],
+          "properties": {
+            "human_confirmed": {
+              "type": "boolean"
+            },
+            "confirmed_at": {
+              "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+            },
+            "checkpoint_ref": {
+              "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+              "x-gmk-dependency-relation": "DERIVED_FROM"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "operation_type",
+        "subject",
+        "external_target",
+        "request",
+        "idempotency_key",
+        "workflow_state",
+        "attempts",
+        "authorization"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

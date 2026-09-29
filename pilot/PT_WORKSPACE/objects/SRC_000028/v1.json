@@ -1,0 +1,49 @@
+{
+  "accessed_at": "2026-09-27T11:22:06.537598Z",
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "author": "",
+  "authority_class": "REPUTABLE_SECONDARY",
+  "availability": {
+    "state": "AVAILABLE"
+  },
+  "created_at": "2026-09-27T11:22:06.537612Z",
+  "dependencies": [],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318",
+      "source_key": "LISA_PUSH",
+      "source_verified": true
+    }
+  },
+  "human_constraints": [],
+  "id": "SRC_000028",
+  "independence": {
+    "group_id": "SRCGRP_LISA_PUSH",
+    "relationship": "INDEPENDENT"
+  },
+  "language": "en",
+  "lock_state": "UNLOCKED",
+  "notes": "Report explaining and embedding/describing Lance McDonald free-camera findings.",
+  "object_type": "SOURCE",
+  "platform": "Web",
+  "published_at": "2019-09",
+  "publisher": "Push Square",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/source",
+    "schema_version": "1.0.0"
+  },
+  "source_type": "WEB_PAGE",
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "Lisa Is Constantly Right Behind You in P.T.",
+  "updated_at": "2026-09-27T11:22:06.537612Z",
+  "url": "https://www.pushsquare.com/news/2019/09/lisa_is_constantly_right_behind_you_in_pt",
+  "version": 1
+}

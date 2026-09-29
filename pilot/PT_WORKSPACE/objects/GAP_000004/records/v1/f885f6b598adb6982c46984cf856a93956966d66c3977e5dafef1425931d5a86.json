@@ -1,0 +1,355 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "blocked_gates": [
+    "RESEARCH_AUDIT"
+  ],
+  "blocked_targets": [
+    {
+      "id": "CLM_000001",
+      "version": 1
+    },
+    {
+      "id": "CLM_000002",
+      "version": 1
+    },
+    {
+      "id": "CLM_000003",
+      "version": 1
+    },
+    {
+      "id": "CLM_000004",
+      "version": 1
+    },
+    {
+      "id": "CLM_000005",
+      "version": 1
+    },
+    {
+      "id": "CLM_000006",
+      "version": 1
+    },
+    {
+      "id": "CLM_000007",
+      "version": 1
+    },
+    {
+      "id": "CLM_000008",
+      "version": 1
+    },
+    {
+      "id": "CLM_000009",
+      "version": 1
+    },
+    {
+      "id": "CLM_000010",
+      "version": 1
+    },
+    {
+      "id": "CLM_000011",
+      "version": 1
+    },
+    {
+      "id": "CLM_000012",
+      "version": 1
+    },
+    {
+      "id": "CLM_000013",
+      "version": 1
+    }
+  ],
+  "created_at": "2026-09-27T08:40:33.058858Z",
+  "dependencies": [
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000001",
+        "version": 1
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000002",
+        "version": 1
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000003",
+        "version": 1
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000004",
+        "version": 1
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000005",
+        "version": 1
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000006",
+        "version": 1
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000007",
+        "version": 1
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000008",
+        "version": 1
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000009",
+        "version": 1
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000010",
+        "version": 1
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000011",
+        "version": 1
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000012",
+        "version": 1
+      }
+    },
+    {
+      "relation": "CONSTRAINS",
+      "target": {
+        "id": "CLM_000013",
+        "version": 1
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "artifact_id": "RESEARCH_ATTEMPT_LOG_000001",
+        "artifact_type": "RESEARCH_ATTEMPT_LOG",
+        "sha256": "e38d435eee2f8b8db854ddcdd5bf8ad964cb6c0ccc92491448b3bd66dc6cea60",
+        "version": 1
+      }
+    }
+  ],
+  "extensions": {
+    "intake": {
+      "batch_id": "PT_INTAKE_0243AAD58E88E290",
+      "system_guard": true
+    }
+  },
+  "human_constraints": [],
+  "id": "GAP_000004",
+  "importance": "CRITICAL",
+  "lock_state": "UNLOCKED",
+  "object_type": "RESEARCH_GAP",
+  "question": "Research Pack intake candidates require independent source/evidence verification before RESEARCH_AUDIT may pass.",
+  "research_attempt_refs": [
+    {
+      "artifact_id": "RESEARCH_ATTEMPT_LOG_000001",
+      "artifact_type": "RESEARCH_ATTEMPT_LOG",
+      "sha256": "e38d435eee2f8b8db854ddcdd5bf8ad964cb6c0ccc92491448b3bd66dc6cea60",
+      "version": 1
+    }
+  ],
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/research-gap",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": true,
+    "reasons": [
+      {
+        "code": "DEPENDENCY_STALE",
+        "dependency": {
+          "relation": "CONSTRAINS",
+          "target": {
+            "id": "CLM_000001",
+            "version": 1
+          }
+        },
+        "detected_at": "2026-09-27T09:39:46.858945Z",
+        "message": "OBJ:GAP_000004@1 depends on OBJ:CLM_000001@1 via CONSTRAINS; ACTIVE root changed OBJ:CLM_000001@1 -> OBJ:CLM_000001@2 (FACTUAL)."
+      },
+      {
+        "code": "DEPENDENCY_STALE",
+        "dependency": {
+          "relation": "CONSTRAINS",
+          "target": {
+            "id": "CLM_000002",
+            "version": 1
+          }
+        },
+        "detected_at": "2026-09-27T09:39:46.866776Z",
+        "message": "OBJ:GAP_000004@1 depends on OBJ:CLM_000002@1 via CONSTRAINS; ACTIVE root changed OBJ:CLM_000002@1 -> OBJ:CLM_000002@2 (FACTUAL)."
+      },
+      {
+        "code": "DEPENDENCY_STALE",
+        "dependency": {
+          "relation": "CONSTRAINS",
+          "target": {
+            "id": "CLM_000003",
+            "version": 1
+          }
+        },
+        "detected_at": "2026-09-27T09:39:46.875061Z",
+        "message": "OBJ:GAP_000004@1 depends on OBJ:CLM_000003@1 via CONSTRAINS; ACTIVE root changed OBJ:CLM_000003@1 -> OBJ:CLM_000003@2 (FACTUAL)."
+      },
+      {
+        "code": "DEPENDENCY_STALE",
+        "dependency": {
+          "relation": "CONSTRAINS",
+          "target": {
+            "id": "CLM_000004",
+            "version": 1
+          }
+        },
+        "detected_at": "2026-09-27T09:39:46.884290Z",
+        "message": "OBJ:GAP_000004@1 depends on OBJ:CLM_000004@1 via CONSTRAINS; ACTIVE root changed OBJ:CLM_000004@1 -> OBJ:CLM_000004@2 (FACTUAL)."
+      },
+      {
+        "code": "DEPENDENCY_STALE",
+        "dependency": {
+          "relation": "CONSTRAINS",
+          "target": {
+            "id": "CLM_000005",
+            "version": 1
+          }
+        },
+        "detected_at": "2026-09-27T09:39:46.893176Z",
+        "message": "OBJ:GAP_000004@1 depends on OBJ:CLM_000005@1 via CONSTRAINS; ACTIVE root changed OBJ:CLM_000005@1 -> OBJ:CLM_000005@2 (FACTUAL)."
+      },
+      {
+        "code": "DEPENDENCY_STALE",
+        "dependency": {
+          "relation": "CONSTRAINS",
+          "target": {
+            "id": "CLM_000006",
+            "version": 1
+          }
+        },
+        "detected_at": "2026-09-27T09:39:46.902372Z",
+        "message": "OBJ:GAP_000004@1 depends on OBJ:CLM_000006@1 via CONSTRAINS; ACTIVE root changed OBJ:CLM_000006@1 -> OBJ:CLM_000006@2 (FACTUAL)."
+      },
+      {
+        "code": "DEPENDENCY_STALE",
+        "dependency": {
+          "relation": "CONSTRAINS",
+          "target": {
+            "id": "CLM_000007",
+            "version": 1
+          }
+        },
+        "detected_at": "2026-09-27T09:39:46.912293Z",
+        "message": "OBJ:GAP_000004@1 depends on OBJ:CLM_000007@1 via CONSTRAINS; ACTIVE root changed OBJ:CLM_000007@1 -> OBJ:CLM_000007@2 (FACTUAL)."
+      },
+      {
+        "code": "DEPENDENCY_STALE",
+        "dependency": {
+          "relation": "CONSTRAINS",
+          "target": {
+            "id": "CLM_000008",
+            "version": 1
+          }
+        },
+        "detected_at": "2026-09-27T09:39:46.922274Z",
+        "message": "OBJ:GAP_000004@1 depends on OBJ:CLM_000008@1 via CONSTRAINS; ACTIVE root changed OBJ:CLM_000008@1 -> OBJ:CLM_000008@2 (FACTUAL)."
+      },
+      {
+        "code": "DEPENDENCY_STALE",
+        "dependency": {
+          "relation": "CONSTRAINS",
+          "target": {
+            "id": "CLM_000009",
+            "version": 1
+          }
+        },
+        "detected_at": "2026-09-27T09:39:46.932454Z",
+        "message": "OBJ:GAP_000004@1 depends on OBJ:CLM_000009@1 via CONSTRAINS; ACTIVE root changed OBJ:CLM_000009@1 -> OBJ:CLM_000009@2 (FACTUAL)."
+      },
+      {
+        "code": "DEPENDENCY_STALE",
+        "dependency": {
+          "relation": "CONSTRAINS",
+          "target": {
+            "id": "CLM_000010",
+            "version": 1
+          }
+        },
+        "detected_at": "2026-09-27T09:39:46.943424Z",
+        "message": "OBJ:GAP_000004@1 depends on OBJ:CLM_000010@1 via CONSTRAINS; ACTIVE root changed OBJ:CLM_000010@1 -> OBJ:CLM_000010@2 (FACTUAL)."
+      },
+      {
+        "code": "DEPENDENCY_STALE",
+        "dependency": {
+          "relation": "CONSTRAINS",
+          "target": {
+            "id": "CLM_000011",
+            "version": 1
+          }
+        },
+        "detected_at": "2026-09-27T09:39:46.957198Z",
+        "message": "OBJ:GAP_000004@1 depends on OBJ:CLM_000011@1 via CONSTRAINS; ACTIVE root changed OBJ:CLM_000011@1 -> OBJ:CLM_000011@2 (FACTUAL)."
+      },
+      {
+        "code": "DEPENDENCY_STALE",
+        "dependency": {
+          "relation": "CONSTRAINS",
+          "target": {
+            "id": "CLM_000012",
+            "version": 1
+          }
+        },
+        "detected_at": "2026-09-27T09:39:46.969737Z",
+        "message": "OBJ:GAP_000004@1 depends on OBJ:CLM_000012@1 via CONSTRAINS; ACTIVE root changed OBJ:CLM_000012@1 -> OBJ:CLM_000012@2 (FACTUAL)."
+      },
+      {
+        "code": "DEPENDENCY_STALE",
+        "dependency": {
+          "relation": "CONSTRAINS",
+          "target": {
+            "id": "CLM_000013",
+            "version": 1
+          }
+        },
+        "detected_at": "2026-09-27T09:39:46.982664Z",
+        "message": "OBJ:GAP_000004@1 depends on OBJ:CLM_000013@1 via CONSTRAINS; ACTIVE root changed OBJ:CLM_000013@1 -> OBJ:CLM_000013@2 (FACTUAL)."
+      }
+    ]
+  },
+  "state": "OPEN",
+  "status": "STALE",
+  "updated_at": "2026-09-27T09:39:46.982664Z",
+  "version": 1
+}

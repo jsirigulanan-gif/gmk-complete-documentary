@@ -1,0 +1,48 @@
+{
+  "accessed_at": "2026-09-27T09:39:46.847385Z",
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "author": "",
+  "authority_class": "REPUTABLE_SECONDARY",
+  "availability": {
+    "state": "AVAILABLE"
+  },
+  "created_at": "2026-09-27T09:39:46.847393Z",
+  "dependencies": [],
+  "extensions": {
+    "research_audit": {
+      "batch_id": "PT_RESEARCH_AUDIT_001",
+      "source_key": "RUMOR_DENIAL",
+      "verification_role": "EXTERNAL_VERIFICATION"
+    }
+  },
+  "human_constraints": [],
+  "id": "SRC_000020",
+  "independence": {
+    "group_id": "SRCGRP_KOJIPRO_RUMOR_DENIAL",
+    "relationship": "DERIVED_REPORTING"
+  },
+  "language": "en",
+  "lock_state": "UNLOCKED",
+  "notes": "",
+  "object_type": "SOURCE",
+  "platform": "Web",
+  "published_at": "2020-06-24",
+  "publisher": "3DJuegos",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/source",
+    "schema_version": "1.0.0"
+  },
+  "source_type": "WEB_PAGE",
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "Kojima Productions denies allegation about MGSV budget being used for P.T.",
+  "updated_at": "2026-09-27T09:39:46.847393Z",
+  "url": "https://www.3djuegos.com/juegos/silent-hills/noticias/kojima-productions-niega-que-konami-despidiera-a-kojima-por-200624-105589",
+  "version": 1
+}

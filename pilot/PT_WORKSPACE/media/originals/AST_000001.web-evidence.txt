@@ -1,0 +1,6 @@
+GMK WEB EVIDENCE SNAPSHOT
+Candidate: OPEN_GEMATSU
+Source URL: https://www.gematsu.com/2014/08/p-t-announced-ps4-demo-released
+Title: P.T. announced for PS4, demo released
+Capture type: bounded text evidence snapshot (not origin-server HTML bytes)
+Evidence summary: Gematsu reported on Aug. 12, 2014 that Sony announced P.T. from 7780s Studio at Gamescom and the interactive teaser was available on PlayStation Store.

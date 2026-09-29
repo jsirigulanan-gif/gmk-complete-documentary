@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/render-output",
+  "title": "RENDER_OUTPUT",
+  "allOf": [
+    {"$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"},
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {"const": "RENDER_OUTPUT"},
+        "render_job_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "RENDER_INPUT"
+        },
+        "media_uri": {"type": "string", "minLength": 1},
+        "media_sha256": {"$ref": "gmk://schema/v1/reference#/$defs/Sha256"},
+        "media_type": {"type": "string", "enum": ["VIDEO", "AUDIO", "IMAGE", "DOCUMENT", "DATA"]},
+        "technical": {
+          "type": "object",
+          "properties": {
+            "width": {"type": "integer", "minimum": 1},
+            "height": {"type": "integer", "minimum": 1},
+            "duration_seconds": {"type": "number", "minimum": 0},
+            "frame_rate": {"$ref": "gmk://schema/v1/reference#/$defs/FrameRate"},
+            "codec": {"type": "string"},
+            "container": {"type": "string"},
+            "audio_present": {"type": "boolean"}
+          },
+          "additionalProperties": true
+        },
+        "render_key_sha256": {"$ref": "gmk://schema/v1/reference#/$defs/Sha256"}
+      },
+      "required": ["render_job_ref", "media_uri", "media_sha256", "media_type", "technical", "render_key_sha256"]
+    }
+  ],
+  "unevaluatedProperties": false
+}

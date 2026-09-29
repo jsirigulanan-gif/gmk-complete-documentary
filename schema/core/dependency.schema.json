@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/dependency",
+  "title": "GMK Dependencies",
+  "$defs": {
+    "DependencyRef": {
+      "type": "object",
+      "required": [
+        "target",
+        "relation"
+      ],
+      "properties": {
+        "target": {
+          "$ref": "gmk://schema/v1/reference#/$defs/TargetRef"
+        },
+        "relation": {
+          "$ref": "gmk://schema/v1/enums#/$defs/DependencyRelation"
+        }
+      },
+      "additionalProperties": false
+    },
+    "StaleReason": {
+      "type": "object",
+      "required": [
+        "code",
+        "message",
+        "detected_at"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dependency": {
+          "$ref": "#/$defs/DependencyRef"
+        },
+        "detected_at": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+        }
+      },
+      "additionalProperties": false
+    },
+    "StaleState": {
+      "type": "object",
+      "required": [
+        "is_stale",
+        "reasons"
+      ],
+      "properties": {
+        "is_stale": {
+          "type": "boolean"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/StaleReason"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "is_stale": {
+                "const": true
+              }
+            },
+            "required": [
+              "is_stale"
+            ]
+          },
+          "then": {
+            "properties": {
+              "reasons": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "is_stale": {
+                "const": false
+              }
+            },
+            "required": [
+              "is_stale"
+            ]
+          },
+          "then": {
+            "properties": {
+              "reasons": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  }
+}

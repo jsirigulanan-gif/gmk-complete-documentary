@@ -1,0 +1,18 @@
+{
+  "loaded_artifacts": 34,
+  "loaded_objects": 129,
+  "manifest_sha256": "4e3bb002d8dd3d3bbb4d2cfa276489bc846f28da25981e0bf07350e46891280a",
+  "manifest_version": 9,
+  "next_legal_action": {
+    "action": "TRANSITION_PROJECT_STATE",
+    "blockers": [],
+    "gate_ids": [],
+    "message": "VISUAL_REQUIREMENTS_READY can transition to ASSET_RECON.",
+    "missing_requirements": [],
+    "permission_class": "AUTO_ALLOWED",
+    "project_state": "VISUAL_REQUIREMENTS_READY",
+    "target_state": "ASSET_RECON"
+  },
+  "project_state": "VISUAL_REQUIREMENTS_READY",
+  "safety_mode": "NORMAL"
+}

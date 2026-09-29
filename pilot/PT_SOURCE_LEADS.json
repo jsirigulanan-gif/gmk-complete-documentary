@@ -1,0 +1,57 @@
+[
+  {
+    "declared_authority": "Primary",
+    "declared_confidence": "High",
+    "declared_id": "SRC-001",
+    "paragraph": 134,
+    "published_at": "12 สิงหาคม 2014",
+    "publisher": "Sony Interactive Entertainment",
+    "summary": "ข้อมูลยืนยันการเปิดตัว P.T. ภายใต้ชื่อ 7780s Studio",
+    "title": "PlayStation Blog (Official Announcement)",
+    "url": "https://blog.playstation.com/2014/08/12/gamescom-2014-press-conference-recap/"
+  },
+  {
+    "declared_authority": "Secondary",
+    "declared_confidence": "High",
+    "declared_id": "SRC-002",
+    "paragraph": 135,
+    "published_at": "3 สิงหาคม 2015",
+    "publisher": "The Nikkei (แปลโดย Kotaku/GameDeveloper)",
+    "summary": "รายงานเจาะลึกวัฒนธรรมการสอดส่องและบีบพนักงานใน Konami",
+    "title": "Nikkei Report on Konami Corporate Culture",
+    "url": "https://kotaku.com/report-konami-is-treating-its-staff-like-prisoners-1721700073"
+  },
+  {
+    "declared_authority": "Primary",
+    "declared_confidence": "High",
+    "declared_id": "SRC-003",
+    "paragraph": 136,
+    "published_at": "3 ธันวาคม 2015",
+    "publisher": "The Game Awards 2015 Broadcast",
+    "summary": "คำแถลงสดของ Geoff Keighley เรื่องทนาย Konami สั่งห้าม Kojima",
+    "title": "Geoff Keighley The Game Awards Speech",
+    "url": "https://www.youtube.com/watch?v=PKl5rYdwM6c"
+  },
+  {
+    "declared_authority": "Primary",
+    "declared_confidence": "High",
+    "declared_id": "SRC-004",
+    "paragraph": 137,
+    "published_at": "9 กันยายน 2019",
+    "publisher": "Lance McDonald YouTube Channel",
+    "summary": "การพิสูจน์โค้ดทางเทคนิคเรื่องโมเดล Lisa ติดหลังกล้อง",
+    "title": "P.T. Camera Hack: Lisa Follows You",
+    "url": "https://www.youtube.com/watch?v=kYJvM9e5q1k"
+  },
+  {
+    "declared_authority": "Secondary",
+    "declared_confidence": "High",
+    "declared_id": "SRC-005",
+    "paragraph": 138,
+    "published_at": "26 เมษายน 2015",
+    "publisher": "Polygon",
+    "summary": "แถลงการณ์ Konami เรื่องการถอดเกมและการยกเลิก Silent Hills",
+    "title": "Konami Delisting P.T. Confirmation",
+    "url": "https://www.polygon.com/2015/4/26/8499253/silent-hills-cancelled-pt-removed-playstation-store"
+  }
+]

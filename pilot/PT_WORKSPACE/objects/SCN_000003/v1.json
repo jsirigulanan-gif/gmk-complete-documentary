@@ -1,0 +1,55 @@
+{
+  "act_ref": {
+    "id": "ACT_000002",
+    "version": 1
+  },
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "created_at": "2026-09-27T10:18:33.257363Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "ACT_000002",
+        "version": 1
+      }
+    }
+  ],
+  "dynamics": {
+    "energy": "REVEAL",
+    "role": "MINI_PEAK"
+  },
+  "extensions": {
+    "rough_narrative": {
+      "batch_id": "PT_ROUGH_NARRATIVE_001",
+      "key": "SCN_LISA",
+      "plan_sha256": "645459994c0d1d6d6e2211831a9c515e8a19ee1e10d2e9520bfa7e4ef4da8376"
+    }
+  },
+  "human_constraints": [],
+  "id": "SCN_000003",
+  "lock_state": "UNLOCKED",
+  "narrative": {
+    "main_reveal": "Lisa ตามอยู่ด้านหลังผู้เล่น",
+    "purpose": "แยกสิ่งที่การตรวจทางเทคนิคแสดงจริงออกจากตัวเลขหรือกลไกที่ Research Pack เคยระบุเกินหลักฐาน",
+    "rest_point": "เว้นพื้นที่ให้ผู้ชมดูความสัมพันธ์เชิงพื้นที่ก่อนเข้าสู่ช่วงการลบเกม",
+    "viewer_question_entering": "Lisa อยู่ตรงไหนเมื่อผู้เล่นมองไม่เห็นเธอ?",
+    "viewer_understanding_leaving": "การแฮ็กกล้องของ Lance McDonald แสดง Lisa ตามอยู่ด้านหลังหลังผู้เล่นได้ไฟฉาย แต่ไม่ยืนยันระยะห่างตัวเลขที่แน่นอน"
+  },
+  "object_type": "SCENE",
+  "order": 1,
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/scene",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "What the Camera Hack Showed",
+  "updated_at": "2026-09-27T10:18:33.257363Z",
+  "version": 1
+}

@@ -1,0 +1,91 @@
+{
+  "workspace": "pilot/PT_WORKSPACE",
+  "batch_id": "PT_ASSET_ACQUISITION_017",
+  "project_state": "ASSET_RECON",
+  "acquired_asset_refs": [
+    {
+      "id": "AST_000001",
+      "version": 5
+    },
+    {
+      "id": "AST_000002",
+      "version": 5
+    },
+    {
+      "id": "AST_000003",
+      "version": 5
+    },
+    {
+      "id": "AST_000005",
+      "version": 5
+    },
+    {
+      "id": "AST_000006",
+      "version": 5
+    },
+    {
+      "id": "AST_000007",
+      "version": 5
+    },
+    {
+      "id": "AST_000009",
+      "version": 5
+    },
+    {
+      "id": "AST_000010",
+      "version": 5
+    }
+  ],
+  "pending_asset_refs": [
+    {
+      "id": "AST_000004",
+      "version": 2
+    },
+    {
+      "id": "AST_000008",
+      "version": 2
+    }
+  ],
+  "segment_refs": [
+    {
+      "id": "SEG_000001",
+      "version": 1
+    },
+    {
+      "id": "SEG_000002",
+      "version": 1
+    },
+    {
+      "id": "SEG_000003",
+      "version": 1
+    },
+    {
+      "id": "SEG_000004",
+      "version": 1
+    },
+    {
+      "id": "SEG_000005",
+      "version": 1
+    },
+    {
+      "id": "SEG_000006",
+      "version": 1
+    },
+    {
+      "id": "SEG_000007",
+      "version": 1
+    },
+    {
+      "id": "SEG_000008",
+      "version": 1
+    }
+  ],
+  "coverage_report_ref": {
+    "id": "QAR_000002",
+    "version": 2
+  },
+  "coverage_result": "FAIL",
+  "asset_catalog_transitioned": false,
+  "manifest_version": 104,
+  "idempotent_replay": false
+}

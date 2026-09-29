@@ -1,0 +1,78 @@
+{
+  "blockers": [
+    "MEDIA_MISSING:LISA_X_DIRECT_VERIFIED",
+    "INSPECTION_INCOMPLETE:LISA_X_DIRECT_VERIFIED:operator|inspection_note|visual_content|match_reason|start_seconds|end_seconds",
+    "MEDIA_MISSING:TGA_VIDEO",
+    "INSPECTION_INCOMPLETE:TGA_VIDEO:operator|inspection_note|visual_content|match_reason"
+  ],
+  "build": "039",
+  "intake_dir": "pilot/PT_MEDIA_INTAKE",
+  "manifest_version": 104,
+  "next_action": "Place exactly one authorized source-locked video in every missing intake slot.",
+  "project_state": "ASSET_RECON",
+  "readiness": "BLOCKED_MEDIA",
+  "ready_to_execute": false,
+  "report_json": "pilot/PT_PILOT_READINESS/PT_PILOT_READINESS.json",
+  "report_markdown": "pilot/PT_PILOT_READINESS/PT_PILOT_READINESS.md",
+  "slots": [
+    {
+      "asset_ref": {
+        "id": "AST_000004",
+        "version": 2
+      },
+      "candidate_key": "LISA_X_DIRECT_VERIFIED",
+      "canonical_source_url": "https://twitter.com/manfightdragon/status/1170860592233472001",
+      "inspection_complete": false,
+      "inspection_missing_fields": [
+        "operator",
+        "inspection_note",
+        "visual_content",
+        "match_reason",
+        "start_seconds",
+        "end_seconds"
+      ],
+      "locked_locator": {
+        "type": "FULL_SOURCE"
+      },
+      "media_file": null,
+      "media_state": "MISSING",
+      "slot_dir": "pilot/PT_MEDIA_INTAKE/LISA_X_DIRECT_VERIFIED",
+      "source_result_ref": {
+        "id": "SR_000031",
+        "version": 2
+      },
+      "source_url_matches_lock": true
+    },
+    {
+      "asset_ref": {
+        "id": "AST_000008",
+        "version": 2
+      },
+      "candidate_key": "TGA_VIDEO",
+      "canonical_source_url": "https://www.youtube.com/watch?v=PKl5rYdwM6c",
+      "inspection_complete": false,
+      "inspection_missing_fields": [
+        "operator",
+        "inspection_note",
+        "visual_content",
+        "match_reason"
+      ],
+      "locked_locator": {
+        "end_seconds": 135,
+        "key_seconds": 55,
+        "start_seconds": 0,
+        "type": "VIDEO_TIME_RANGE"
+      },
+      "media_file": null,
+      "media_state": "MISSING",
+      "slot_dir": "pilot/PT_MEDIA_INTAKE/TGA_VIDEO",
+      "source_result_ref": {
+        "id": "SR_000024",
+        "version": 2
+      },
+      "source_url_matches_lock": true
+    }
+  ],
+  "workspace": "pilot/PT_WORKSPACE",
+  "workspace_mutated": false
+}

@@ -1,0 +1,8 @@
+config_id: GMK_AUTO_REPAIR_POLICY
+version: 1.0.0
+max_auto_repair_cycles: 2
+forbidden:
+- REPLACE_EVIDENCE
+- REWRITE_NARRATIVE
+- ALTER_HUMAN_LOCK
+- CHANGE_FACTUAL_3D_ASSUMPTION

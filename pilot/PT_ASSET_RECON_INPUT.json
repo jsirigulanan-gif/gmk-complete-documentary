@@ -1,0 +1,1531 @@
+{
+  "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+  "source_visual_requirements_batch_id": "PT_VISUAL_REQUIREMENTS_001",
+  "new_sources": [
+    {
+      "key": "OPENING_SONYRUMORS",
+      "title": "Silent Hills Playable Teaser",
+      "url": "https://www.sonyrumors.net/2014/08/13/silent-hills-playable-teaser/",
+      "publisher": "SonyRumors",
+      "source_type": "WEB_PAGE",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_OPENING_SONYRUMORS",
+      "independence_relationship": "INDEPENDENT",
+      "language": "en",
+      "published_at": "2014-08-13",
+      "platform": "Web",
+      "notes": "Contemporaneous page with P.T./7780s imagery and embedded video; useful as still/archive context.",
+      "availability": "AVAILABLE"
+    },
+    {
+      "key": "OPENING_R3D_YT",
+      "title": "Silent Hills P.T. – 2014 Gamescom Trailer & Ending (Norman Reedus Reveal) HD",
+      "url": "https://www.youtube.com/watch?v=HvZ09gERgw4",
+      "publisher": "R3D Gaming",
+      "source_type": "VIDEO",
+      "authority_class": "UNKNOWN",
+      "independence_group": "SRCGRP_PT_GAMESCOM_VIDEO_REUPLOAD",
+      "independence_relationship": "REUPLOAD",
+      "language": "en",
+      "published_at": "2014-08-12",
+      "platform": "YouTube",
+      "notes": "Reupload contains trailer plus ending reveal; exact safe opening range must be isolated before use to prevent early reveal.",
+      "availability": "AVAILABLE"
+    },
+    {
+      "key": "7780_GAMEINFORMER",
+      "title": "Hideo Kojima Discusses Silent Hills, P.T., And The 7780s Studio Name",
+      "url": "https://www.gameinformer.com/b/news/archive/2014/08/13/hideo-kojima-discusses-silent-hills-p-t-and-the-7780s-studio-name.aspx",
+      "publisher": "Game Informer",
+      "source_type": "WEB_PAGE",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_7780_GAMEINFORMER",
+      "independence_relationship": "INDEPENDENT",
+      "language": "en",
+      "published_at": "2014-08-13",
+      "platform": "Web",
+      "notes": "Contemporaneous reporting of Kojima explanation of 7780/Shizuoka wordplay.",
+      "availability": "AVAILABLE"
+    },
+    {
+      "key": "7780_PLAY3",
+      "title": "Silent Hills: Kojima über das “7780s” im P.T.-Teaser",
+      "url": "https://www.play3.de/2014/08/22/silent-hills-kojima-uber-das-%E2%80%9C7780s%E2%80%9D-im-p-t-teaser/",
+      "publisher": "Play3",
+      "source_type": "WEB_PAGE",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_7780_PLAY3",
+      "independence_relationship": "INDEPENDENT",
+      "language": "de",
+      "published_at": "2014-08-22",
+      "platform": "Web",
+      "notes": "Article locates Kojima explanation in embedded Gamescom video around 1:10:00.",
+      "availability": "AVAILABLE"
+    },
+    {
+      "key": "LISA_PUSH",
+      "title": "Lisa Is Constantly Right Behind You in P.T.",
+      "url": "https://www.pushsquare.com/news/2019/09/lisa_is_constantly_right_behind_you_in_pt",
+      "publisher": "Push Square",
+      "source_type": "WEB_PAGE",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_LISA_PUSH",
+      "independence_relationship": "INDEPENDENT",
+      "language": "en",
+      "published_at": "2019-09",
+      "platform": "Web",
+      "notes": "Report explaining and embedding/describing Lance McDonald free-camera findings.",
+      "availability": "AVAILABLE"
+    },
+    {
+      "key": "LISA_MCDONALD_X",
+      "title": "Lance McDonald P.T. free-camera Lisa post",
+      "url": "https://twitter.com/manfightdragon/status/1170860592233472001",
+      "publisher": "Lance McDonald",
+      "source_type": "SOCIAL_POST",
+      "authority_class": "TECHNICAL_RESEARCH",
+      "independence_group": "SRCGRP_LANCE_MCDONALD_PT_LISA",
+      "independence_relationship": "ORIGINAL",
+      "language": "en",
+      "published_at": "2019-09-09",
+      "platform": "X/Twitter",
+      "notes": "Original researcher post is preferred direct technical source, but direct media exact moment remains inspection-required in this batch.",
+      "availability": "AVAILABLE"
+    },
+    {
+      "key": "DELIST_FAMITSU",
+      "title": "「P.T.」配信終了に関する報道（公式サイト告知画面を含む）",
+      "url": "https://www.famitsu.com/news/201504/26077575.html",
+      "publisher": "Famitsu",
+      "source_type": "WEB_PAGE",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_DELIST_FAMITSU",
+      "independence_relationship": "INDEPENDENT",
+      "language": "ja",
+      "published_at": "2015-04-26",
+      "platform": "Web",
+      "notes": "Contemporaneous article preserving/capturing official distribution-end notice.",
+      "availability": "AVAILABLE"
+    },
+    {
+      "key": "REDOWNLOAD_GAMERANX",
+      "title": "P.T. Demo No Longer Available To Download In Any Form",
+      "url": "https://gameranx.com/updates/id/27988/article/pt-demo-no-longer-available-to-download-in-any-form/",
+      "publisher": "Gameranx",
+      "source_type": "WEB_PAGE",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_REDOWNLOAD_GAMERANX",
+      "independence_relationship": "INDEPENDENT",
+      "language": "en",
+      "published_at": "2015-05-06",
+      "platform": "Web",
+      "notes": "Contemporaneous reporting preserving user error evidence for failed re-download.",
+      "availability": "AVAILABLE"
+    },
+    {
+      "key": "MARKET_ARS",
+      "title": "eBay reportedly removes auctions for PlayStations with P.T. installed",
+      "url": "https://arstechnica.com/gaming/2015/05/ebay-reportedly-removes-auctions-for-playstations-with-p-t-installed/",
+      "publisher": "Ars Technica",
+      "source_type": "WEB_PAGE",
+      "authority_class": "REPUTABLE_SECONDARY",
+      "independence_group": "SRCGRP_MARKET_ARS",
+      "independence_relationship": "INDEPENDENT",
+      "language": "en",
+      "published_at": "2015-05-08",
+      "platform": "Web",
+      "notes": "Contemporaneous report with listing imagery and >$1,000 examples plus eBay-removal context.",
+      "availability": "AVAILABLE"
+    },
+    {
+      "key": "TGA_YONGYEA_YT",
+      "title": "Geoff Keighley Says Hideo Kojima Wasn't Allowed to Come to The Game Awards 2015",
+      "url": "https://www.youtube.com/watch?v=PKl5rYdwM6c",
+      "publisher": "YongYea",
+      "source_type": "VIDEO",
+      "authority_class": "COMMUNITY_PRIMARY_MATERIAL",
+      "independence_group": "SRCGRP_TGA_2015_KEIGHLEY_VIDEO",
+      "independence_relationship": "REUPLOAD",
+      "language": "en",
+      "published_at": "2015-12-03",
+      "platform": "YouTube",
+      "notes": "Video reproduction of the public TGA statement; exact statement range inspected as candidate.",
+      "availability": "AVAILABLE"
+    },
+    {
+      "key": "CONTRACT_SONY",
+      "title": "Sony Computer Entertainment Enters Into An Agreement With Kojima Productions",
+      "url": "https://sony.mediaroom.com/2015-12-16-Sony-Computer-Entertainment-Enters-Into-An-Agreement-With-Kojima-Productions",
+      "publisher": "Sony Computer Entertainment",
+      "source_type": "PRESS_RELEASE",
+      "authority_class": "OFFICIAL",
+      "independence_group": "SRCGRP_SONY_KOJIMA_PRODUCTIONS_AGREEMENT",
+      "independence_relationship": "ORIGINAL",
+      "language": "en",
+      "published_at": "2015-12-16",
+      "platform": "Web",
+      "notes": "Official context for newly formed independent Kojima Productions and Sony agreement; supports aftermath context, not Konami contract date by itself.",
+      "availability": "AVAILABLE"
+    }
+  ],
+  "searches": [
+    {
+      "key": "OPEN_EXACT",
+      "beat_key": "BEAT_OPENING_PROMISE",
+      "priority": "CRITICAL",
+      "search_round": 1,
+      "search_pass": "EXACT_OFFICIAL",
+      "query_family": "EXACT_ENTITY",
+      "query": "P.T. 7780s Studio August 12 2014 PS4 playable teaser launch contemporaneous",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "OFFICIAL",
+        "NEWS_ARCHIVE",
+        "STILL_ARCHIVE"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "OPEN_VIDEO",
+      "beat_key": "BEAT_OPENING_PROMISE",
+      "priority": "CRITICAL",
+      "search_round": 1,
+      "search_pass": "LONG_FORM_FOOTAGE",
+      "query_family": "VISUAL_DESCRIPTION",
+      "query": "P.T. Gamescom 2014 playable teaser 7780s Studio opening footage before Silent Hills reveal",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "GAMEPLAY_CAPTURE",
+        "REUPLOAD"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "7780_SOURCE",
+      "beat_key": "BEAT_7780",
+      "priority": "MAJOR",
+      "search_round": 1,
+      "search_pass": "EXACT_OFFICIAL",
+      "query_family": "SOURCE_TRACE",
+      "query": "Kojima 7780s Shizuoka Silent Hill explanation Gamescom 2014",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "ORIGINAL_CREATOR",
+        "NEWS_ARCHIVE",
+        "DOCUMENT"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "7780_VIDEO",
+      "beat_key": "BEAT_7780",
+      "priority": "MAJOR",
+      "search_round": 1,
+      "search_pass": "LONG_FORM_FOOTAGE",
+      "query_family": "PERSON_RESEARCHER",
+      "query": "Kojima Gamescom 2014 7780 Shizuoka explanation video 1:10:00",
+      "language": "de",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "REUPLOAD",
+        "DOCUMENT"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "MILLION_NEWS",
+      "beat_key": "BEAT_MILLION",
+      "priority": "MAJOR",
+      "search_round": 1,
+      "search_pass": "ARCHIVE_STILL_DOCUMENT",
+      "query_family": "EVENT_TIMELINE",
+      "query": "P.T. one million downloads September 2014 Sony announcement",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "NEWS_ARCHIVE",
+        "DOCUMENT"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "MILLION_ALT",
+      "beat_key": "BEAT_MILLION",
+      "priority": "MAJOR",
+      "search_round": 1,
+      "search_pass": "QUERY_EXPANSION",
+      "query_family": "DATE_VARIANT",
+      "query": "P.T. downloaded over 1 million times September 1 2014",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "NEWS_ARCHIVE"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "LISA_TECH",
+      "beat_key": "BEAT_LISA_FINDING",
+      "priority": "CRITICAL",
+      "search_round": 1,
+      "search_pass": "TECHNICAL_RESEARCH",
+      "query_family": "TECHNICAL",
+      "query": "P.T. Lisa always behind player Lance McDonald camera hack flashlight",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "RESEARCHER",
+        "NEWS_ARCHIVE"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "LISA_ORIGINAL",
+      "beat_key": "BEAT_LISA_FINDING",
+      "priority": "CRITICAL",
+      "search_round": 1,
+      "search_pass": "TECHNICAL_RESEARCH",
+      "query_family": "PERSON_RESEARCHER",
+      "query": "Lance McDonald original P.T. free camera Lisa Twitter video September 2019",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "RESEARCHER",
+        "ORIGINAL_CREATOR"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "DELIST_NOTICE",
+      "beat_key": "BEAT_DELIST",
+      "priority": "CRITICAL",
+      "search_round": 1,
+      "search_pass": "EXACT_OFFICIAL",
+      "query_family": "EVENT_TIMELINE",
+      "query": "P.T. distribution ends April 29 2015 official notice",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "OFFICIAL",
+        "NEWS_ARCHIVE",
+        "DOCUMENT"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "DELIST_STILL",
+      "beat_key": "BEAT_DELIST",
+      "priority": "CRITICAL",
+      "search_round": 1,
+      "search_pass": "ARCHIVE_STILL_DOCUMENT",
+      "query_family": "ARCHIVE_STILL",
+      "query": "P.T. April 29 distribution end official site screenshot 2015",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "STILL_ARCHIVE",
+        "NEWS_ARCHIVE"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "REDOWN_TEST",
+      "beat_key": "BEAT_REDOWNLOAD",
+      "priority": "CRITICAL",
+      "search_round": 1,
+      "search_pass": "EXACT_OFFICIAL",
+      "query_family": "EVENT_TIMELINE",
+      "query": "P.T. cannot redownload May 6 2015 Cannot download test screenshot",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "NEWS_ARCHIVE",
+        "STILL_ARCHIVE",
+        "DOCUMENT"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "REDOWN_ALT",
+      "beat_key": "BEAT_REDOWNLOAD",
+      "priority": "CRITICAL",
+      "search_round": 1,
+      "search_pass": "ARCHIVE_STILL_DOCUMENT",
+      "query_family": "DOCUMENT",
+      "query": "P.T. May 6 2015 re-download blocked error users report",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "NEWS_ARCHIVE",
+        "DOCUMENT"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "MARKET_PRICE",
+      "beat_key": "BEAT_MARKET",
+      "priority": "STANDARD",
+      "search_round": 1,
+      "search_pass": "ARCHIVE_STILL_DOCUMENT",
+      "query_family": "ARCHIVE_STILL",
+      "query": "PS4 with P.T. installed eBay 1000 listing May 2015",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "STILL_ARCHIVE",
+        "NEWS_ARCHIVE"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "MARKET_REMOVE",
+      "beat_key": "BEAT_MARKET",
+      "priority": "STANDARD",
+      "search_round": 1,
+      "search_pass": "QUERY_EXPANSION",
+      "query_family": "EVENT_TIMELINE",
+      "query": "eBay removes PS4 P.T. installed auctions May 2015",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "NEWS_ARCHIVE"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "TGA_VIDEO",
+      "beat_key": "BEAT_TGA",
+      "priority": "CRITICAL",
+      "search_round": 1,
+      "search_pass": "LONG_FORM_FOOTAGE",
+      "query_family": "EXACT_ENTITY",
+      "query": "Geoff Keighley Hideo Kojima not allowed attend Game Awards 2015 video",
+      "language": "en",
+      "provider": "VIDEO_SEARCH",
+      "requested_source_families": [
+        "REUPLOAD",
+        "ORIGINAL_CREATOR"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "TGA_REPORT",
+      "beat_key": "BEAT_TGA",
+      "priority": "CRITICAL",
+      "search_round": 1,
+      "search_pass": "ARCHIVE_STILL_DOCUMENT",
+      "query_family": "SOURCE_TRACE",
+      "query": "Geoff Keighley Konami lawyer Kojima Game Awards 2015 report",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "NEWS_ARCHIVE",
+        "DOCUMENT"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "CONTRACT_DATE",
+      "beat_key": "BEAT_CONTRACT_END",
+      "priority": "MAJOR",
+      "search_round": 1,
+      "search_pass": "EXACT_OFFICIAL",
+      "query_family": "EVENT_TIMELINE",
+      "query": "Hideo Kojima Konami contract ended December 15 2015 report",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "NEWS_ARCHIVE",
+        "DOCUMENT"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "CONTRACT_NEW",
+      "beat_key": "BEAT_CONTRACT_END",
+      "priority": "MAJOR",
+      "search_round": 1,
+      "search_pass": "EXACT_OFFICIAL",
+      "query_family": "OFFICIAL",
+      "query": "Sony agreement newly formed Kojima Productions December 16 2015",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "OFFICIAL",
+        "DOCUMENT"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "PAYOFF_ERASURE",
+      "beat_key": "BEAT_FINAL_PAYOFF",
+      "priority": "CRITICAL",
+      "search_round": 1,
+      "search_pass": "ARCHIVE_STILL_DOCUMENT",
+      "query_family": "EVENT_TIMELINE",
+      "query": "P.T. delisted redownload blocked PS4 installed copies evidence sequence",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "NEWS_ARCHIVE",
+        "STILL_ARCHIVE",
+        "DOCUMENT"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    },
+    {
+      "key": "PAYOFF_TRACE",
+      "beat_key": "BEAT_FINAL_PAYOFF",
+      "priority": "CRITICAL",
+      "search_round": 1,
+      "search_pass": "TECHNICAL_RESEARCH",
+      "query_family": "TECHNICAL",
+      "query": "P.T. Lisa camera hack technical trace Lance McDonald",
+      "language": "en",
+      "provider": "WEB_SEARCH",
+      "requested_source_families": [
+        "RESEARCHER",
+        "NEWS_ARCHIVE"
+      ],
+      "trigger": {
+        "type": "INITIAL"
+      }
+    }
+  ],
+  "results": [
+    {
+      "key": "OPEN_ARS",
+      "search_key": "OPEN_EXACT",
+      "title": "Ars Technica contemporary P.T./Silent Hills announcement",
+      "discovery_url": "https://arstechnica.com/gaming/2014/08/metal-gear-solids-hideo-kojima-working-on-new-silent-hill/",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "RELEASE_ARS",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Contemporaneous report of P.T. release and reveal context.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Direct contemporary documentation of the mystery teaser/reveal context.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Contemporaneous reporting",
+        "Existing audited source"
+      ],
+      "weaknesses": [
+        "Article page rather than native PSN UI"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "OPEN_GEMATSU",
+      "search_key": "OPEN_EXACT",
+      "title": "Gematsu: P.T. announced for PS4, demo released",
+      "discovery_url": "https://www.gematsu.com/2014/08/p-t-announced-ps4-demo-released",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "RELEASE_GEMATSU",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Contemporaneous launch report naming P.T. and 7780s Studio.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Supports launch timing and mystery-studio framing.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Contemporaneous",
+        "Existing audited source"
+      ],
+      "weaknesses": [
+        "Secondary page"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "OPEN_SONYRUMORS",
+      "search_key": "OPEN_VIDEO",
+      "title": "SonyRumors playable teaser page with P.T./7780s imagery",
+      "discovery_url": "https://www.sonyrumors.net/2014/08/13/silent-hills-playable-teaser/",
+      "source_family": "STILL_ARCHIVE",
+      "source_key": "OPENING_SONYRUMORS",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Article page preserves P.T./7780s visual context and embedded teaser material.",
+        "exact_moment_found": true,
+        "match_type": "SUPPORTING",
+        "match_reason": "Provides usable still/archive context distinct from text-only news sources.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Visual context",
+        "Separate source family"
+      ],
+      "weaknesses": [
+        "Not official PlayStation page"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "OPEN_R3D",
+      "search_key": "OPEN_VIDEO",
+      "title": "R3D Gamescom trailer and ending reupload",
+      "discovery_url": "https://www.youtube.com/watch?v=HvZ09gERgw4",
+      "source_family": "REUPLOAD",
+      "source_key": "OPENING_R3D_YT",
+      "candidate_state": "INSPECTION_REQUIRED",
+      "inspection": {
+        "visible_content": "Video combines Gamescom P.T. material with ending reveal.",
+        "exact_moment_found": false,
+        "match_type": "DIRECT",
+        "match_reason": "Potential footage source, but safe pre-reveal range has not been isolated in this batch.",
+        "viewer_takeaway_supported": false
+      },
+      "evaluation": {
+        "visual_clarity": "MEDIUM",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Motion footage"
+      ],
+      "weaknesses": [
+        "Contains Norman Reedus/Silent Hills ending reveal",
+        "Reupload",
+        "Exact safe range not verified"
+      ],
+      "comparison_note": "Do not use until a reveal-safe range is inspected."
+    },
+    {
+      "key": "7780_WIRED",
+      "search_key": "7780_SOURCE",
+      "title": "WIRED: Kojima explanation of 7780s/Shizuoka wordplay",
+      "discovery_url": "https://www.wired.com/story/kojima-talks-on-pt-and-silent-hills/",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "7780_WIRED",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Interview/report preserves Kojima explanation of 7780s and Shizuoka/Silent Hill wordplay.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Directly supports the intended explanation without relying on community numerology.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Audited source",
+        "Kojima explanation"
+      ],
+      "weaknesses": [
+        "Article presentation"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "7780_GI",
+      "search_key": "7780_SOURCE",
+      "title": "Game Informer: Kojima discusses 7780s Studio name",
+      "discovery_url": "https://www.gameinformer.com/b/news/archive/2014/08/13/hideo-kojima-discusses-silent-hills-p-t-and-the-7780s-studio-name.aspx",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "7780_GAMEINFORMER",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Contemporaneous article reports Kojima explanation of 7780s.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Independent contemporary presentation of the same explanation.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Contemporaneous",
+        "Clear wording"
+      ],
+      "weaknesses": [
+        "Same broad evidence event as Gamescom explanation"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "7780_PLAY3",
+      "search_key": "7780_VIDEO",
+      "title": "Play3 page locating 7780 explanation in Gamescom video",
+      "discovery_url": "https://www.play3.de/2014/08/22/silent-hills-kojima-uber-das-%E2%80%9C7780s%E2%80%9D-im-p-t-teaser/",
+      "source_family": "DOCUMENT",
+      "source_key": "7780_PLAY3",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Embedded conference/video segment around 1:10:00 accompanies the 7780 explanation.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Gives a time-located audiovisual route to the explanation.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "VIDEO_TIME_RANGE",
+          "start_seconds": 4200,
+          "end_seconds": 4265,
+          "key_seconds": 4230
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Time-located",
+        "Different presentation family"
+      ],
+      "weaknesses": [
+        "German wrapper page",
+        "Embedded-video availability may vary"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "MILLION_PUSH",
+      "search_key": "MILLION_NEWS",
+      "title": "Push Square: P.T. downloaded over 1 million times",
+      "discovery_url": "https://www.pushsquare.com/news/2014/09/dont_look_now_but_ps4_demo_pt_has_been_downloaded_over_1_million_times",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "DOWNLOAD_PUSH",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Contemporaneous report states P.T. exceeded one million downloads.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Supports scale while preserving “over one million” wording.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Audited",
+        "Contemporaneous"
+      ],
+      "weaknesses": [
+        "Derived reporting of Sony statistic"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "MILLION_PSU",
+      "search_key": "MILLION_ALT",
+      "title": "PlayStation Universe: Silent Hills demo downloaded over 1 million times",
+      "discovery_url": "https://www.psu.com/news/silent-hills-demo-downloaded-over-1-million-times/",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "DOWNLOAD_PSU",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Separate contemporary report on the one-million-download milestone.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Provides corroborating contemporary reporting.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Audited",
+        "Corroborating report"
+      ],
+      "weaknesses": [
+        "Shares underlying Sony statistic"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "LISA_GAMEDEV",
+      "search_key": "LISA_TECH",
+      "title": "GameDeveloper: P.T. ghost is always just offscreen",
+      "discovery_url": "https://www.gamedeveloper.com/game-platforms/camera-hack-reveals-i-pt-i-s-ghost-is-legitimately-always-just-offscreen",
+      "source_family": "RESEARCHER",
+      "source_key": "LISA_GAMEDEV",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Technical report describes McDonald camera hack showing Lisa attached behind the player.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Technical reporting supports the behind-player relationship without numeric-distance invention.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Audited technical source",
+        "Directly relevant mechanic"
+      ],
+      "weaknesses": [
+        "Article retelling rather than original media"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "LISA_PUSH",
+      "search_key": "LISA_TECH",
+      "title": "Push Square: Lisa is constantly right behind you in P.T.",
+      "discovery_url": "https://www.pushsquare.com/news/2019/09/lisa_is_constantly_right_behind_you_in_pt",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "LISA_PUSH",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Article presents/describes the free-camera finding that Lisa follows behind the player.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Visually oriented secondary route to the same technical finding.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Clear visual framing",
+        "Independent page"
+      ],
+      "weaknesses": [
+        "Secondary to McDonald original"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "LISA_X",
+      "search_key": "LISA_ORIGINAL",
+      "title": "Lance McDonald original Lisa free-camera post",
+      "discovery_url": "https://twitter.com/manfightdragon/status/1170860592233472001",
+      "source_family": "RESEARCHER",
+      "source_key": "LISA_MCDONALD_X",
+      "candidate_state": "INSPECTION_REQUIRED",
+      "inspection": {
+        "visible_content": "Original researcher post is identified, but direct media/time range has not been inspected in this batch.",
+        "exact_moment_found": false,
+        "match_type": "DIRECT",
+        "match_reason": "Preferred direct technical evidence requires media inspection before viability.",
+        "viewer_takeaway_supported": false
+      },
+      "evaluation": {
+        "visual_clarity": "MEDIUM",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Original researcher source"
+      ],
+      "weaknesses": [
+        "Direct media exact moment not verified",
+        "Platform availability risk"
+      ],
+      "comparison_note": "Search Again should prioritize direct-media inspection/downloadable provenance."
+    },
+    {
+      "key": "DELIST_GEM",
+      "search_key": "DELIST_NOTICE",
+      "title": "Gematsu: P.T. distribution to end April 29",
+      "discovery_url": "https://www.gematsu.com/2015/04/p-t-distribution-end-april-29",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "DELIST_GEMATSU",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Contemporaneous report preserves April 29 distribution-end date.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Directly supports the delisting date required by the Beat.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Audited",
+        "Clear date"
+      ],
+      "weaknesses": [
+        "Secondary report"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "DELIST_GS",
+      "search_key": "DELIST_NOTICE",
+      "title": "GameSpot: P.T. gone from PlayStation Store",
+      "discovery_url": "https://www.gamespot.com/articles/silent-hills-ps4-teaser-p-t-now-gone-from-playstat/1100-6426990/",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "DELIST_GAMESPOT",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Contemporaneous report documents disappearance from PlayStation Store.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Supports the Store removal event and timing.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Audited",
+        "Contemporaneous"
+      ],
+      "weaknesses": [
+        "Article page"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "DELIST_FAM",
+      "search_key": "DELIST_STILL",
+      "title": "Famitsu page preserving official-site delisting notice",
+      "discovery_url": "https://www.famitsu.com/news/201504/26077575.html",
+      "source_family": "STILL_ARCHIVE",
+      "source_key": "DELIST_FAMITSU",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Japanese article includes/preserves official distribution-end notice context.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Adds a visual/archive family useful for showing the dated notice.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Notice imagery/context",
+        "Different source family"
+      ],
+      "weaknesses": [
+        "Japanese text requires translated source label/context"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "REDOWN_GS",
+      "search_key": "REDOWN_TEST",
+      "title": "GameSpot: P.T. can no longer be downloaded even from library",
+      "discovery_url": "https://www.gamespot.com/articles/p-t-can-no-longer-be-downloaded-even-from-your-ps4/1100-6427124/",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "REDOWNLOAD_GAMESPOT",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "GameSpot reports its May 6 test and “Cannot download” failure.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Direct contemporary test distinguishes re-download failure from Store delisting.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Audited",
+        "Test/error evidence"
+      ],
+      "weaknesses": [
+        "Secondary platform presentation"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "REDOWN_GI",
+      "search_key": "REDOWN_TEST",
+      "title": "Game Informer: P.T. completely removed and cannot be re-downloaded",
+      "discovery_url": "https://gameinformer.com/b/news/archive/2015/05/06/report-p-t-completely-removed-from-playstation-store-cannot-be-re-downloaded.aspx",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "REDOWNLOAD_GAMEINFORMER",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Contemporaneous report on re-download failure and later Konami confirmation.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Corroborates the May 6 access change.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Audited",
+        "Contemporaneous"
+      ],
+      "weaknesses": [
+        "Article presentation"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "REDOWN_GRX",
+      "search_key": "REDOWN_ALT",
+      "title": "Gameranx: P.T. no longer available to download in any form",
+      "discovery_url": "https://gameranx.com/updates/id/27988/article/pt-demo-no-longer-available-to-download-in-any-form/",
+      "source_family": "DOCUMENT",
+      "source_key": "REDOWNLOAD_GAMERANX",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Contemporaneous article preserves user error-report context.",
+        "exact_moment_found": true,
+        "match_type": "SUPPORTING",
+        "match_reason": "Provides a separate document-style presentation of re-download failure.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "User-error context",
+        "Different source family"
+      ],
+      "weaknesses": [
+        "Secondary reporting"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "MARKET_GS",
+      "search_key": "MARKET_PRICE",
+      "title": "GameSpot: PS4s with P.T. listed for high prices",
+      "discovery_url": "https://www.gamespot.com/articles/ps4s-with-pre-installed-pt-listed-on-ebay-for-as-m/1100-6426971/",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "EBAY_GAMESPOT",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Report shows high-price examples for PS4 hardware with P.T. installed.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Supports specific high-price listing examples without asserting a universal market price.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Audited",
+        "Specific listing examples"
+      ],
+      "weaknesses": [
+        "Listing prices are asks, not completed-sale market value"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "MARKET_KOT",
+      "search_key": "MARKET_REMOVE",
+      "title": "Kotaku: eBay taking down auctions selling PS4s with P.T.",
+      "discovery_url": "https://kotaku.com/ebay-taking-down-auctions-selling-ps4s-with-p-t-1702917689",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "EBAY_KOTAKU",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Report documents eBay removing P.T.-installed PS4 auctions.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Supports the removal side of the Beat.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Audited",
+        "Removal context"
+      ],
+      "weaknesses": [
+        "Secondary report"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "MARKET_ARS",
+      "search_key": "MARKET_PRICE",
+      "title": "Ars Technica: eBay removes auctions for PlayStations with P.T. installed",
+      "discovery_url": "https://arstechnica.com/gaming/2015/05/ebay-reportedly-removes-auctions-for-playstations-with-p-t-installed/",
+      "source_family": "STILL_ARCHIVE",
+      "source_key": "MARKET_ARS",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Article includes listing imagery and reports examples above $1,000 plus removal context.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Provides visual listing context and a distinct still/archive family.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Listing imagery",
+        "Specific examples"
+      ],
+      "weaknesses": [
+        "Asking-price evidence only"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "TGA_ARS",
+      "search_key": "TGA_REPORT",
+      "title": "Ars Technica: Keighley says Konami blocked Kojima from accepting award",
+      "discovery_url": "https://arstechnica.com/gaming/2015/12/geoff-keighley-konami-blocked-metal-gear-creator-from-accepting-award/",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "TGA_ARS",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Contemporaneous report quotes/attributes Geoff Keighley’s on-stage statement.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Supports attributed wording and event context.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Audited",
+        "Clear attribution"
+      ],
+      "weaknesses": [
+        "Article rather than stage footage"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "TGA_GI",
+      "search_key": "TGA_REPORT",
+      "title": "Game Informer: Kojima legally prohibited from attending The Game Awards",
+      "discovery_url": "https://gameinformer.com/b/news/archive/2015/12/03/hideo-kojima-legally-prohibited-from-attending-the-game-awards.aspx",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "TGA_GAMEINFORMER",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Contemporaneous report on Keighley’s statement at TGA 2015.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Corroborating report for attribution/context.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Audited",
+        "Contemporaneous"
+      ],
+      "weaknesses": [
+        "Secondary report"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "TGA_VIDEO",
+      "search_key": "TGA_VIDEO",
+      "title": "Video of Geoff Keighley's TGA 2015 statement",
+      "discovery_url": "https://www.youtube.com/watch?v=PKl5rYdwM6c",
+      "source_family": "REUPLOAD",
+      "source_key": "TGA_YONGYEA_YT",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "On-stage Geoff Keighley statement about Kojima’s absence and Konami lawyer, with stage context visible.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Direct audiovisual presentation of the attributed public statement.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "VIDEO_TIME_RANGE",
+          "start_seconds": 0,
+          "end_seconds": 135,
+          "key_seconds": 55
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Speaker and stage visible",
+        "Exact range located",
+        "Distinct video family"
+      ],
+      "weaknesses": [
+        "Reupload, not official TGA channel copy"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "CONTRACT_GW",
+      "search_key": "CONTRACT_DATE",
+      "title": "Game Watch: Kojima contract with Konami ended December 15, 2015",
+      "discovery_url": "https://game.watch.impress.co.jp/docs/news/735582.html",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "CONTRACT_GAMEWATCH",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Japanese report documents December 15 contract end and independent Kojima Productions context.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Audited source directly supports the date.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Audited",
+        "Date-specific"
+      ],
+      "weaknesses": [
+        "Japanese source requires translation context"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "CONTRACT_KOJ",
+      "search_key": "CONTRACT_DATE",
+      "title": "Public Kojima Productions re-establishment message",
+      "discovery_url": "https://www.playstationlifestyle.net/2015/12/16/hideo-kojima-issues-message-website-talks-new-kojima-productions-logo/",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "CONTRACT_KOJIMA",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Public-facing message/report around the independent Kojima Productions restart.",
+        "exact_moment_found": true,
+        "match_type": "SUPPORTING",
+        "match_reason": "Supports immediate post-contract independent-studio context.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Audited contextual source"
+      ],
+      "weaknesses": [
+        "Host/reporting page rather than Konami HR record"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "CONTRACT_SONY",
+      "search_key": "CONTRACT_NEW",
+      "title": "Sony official agreement with newly formed Kojima Productions",
+      "discovery_url": "https://sony.mediaroom.com/2015-12-16-Sony-Computer-Entertainment-Enters-Into-An-Agreement-With-Kojima-Productions",
+      "source_family": "OFFICIAL",
+      "source_key": "CONTRACT_SONY",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Official Sony press release names newly formed Kojima Productions and agreement.",
+        "exact_moment_found": true,
+        "match_type": "SUPPORTING",
+        "match_reason": "Official source supports the independent-studio aftermath context.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Official",
+        "Primary context"
+      ],
+      "weaknesses": [
+        "Does not independently prove exact Konami contract-end date"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "PAYOFF_DELIST",
+      "search_key": "PAYOFF_ERASURE",
+      "title": "Callback: April 29 P.T. distribution-end evidence",
+      "discovery_url": "https://www.gematsu.com/2015/04/p-t-distribution-end-april-29",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "DELIST_GEMATSU",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Dated delisting evidence for callback montage.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Supports first access-loss step in final synthesis.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Audited",
+        "Known date"
+      ],
+      "weaknesses": [
+        "Reuse; sequence QA must prevent repetitive presentation"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "PAYOFF_RED",
+      "search_key": "PAYOFF_ERASURE",
+      "title": "Callback: May 6 re-download failure evidence",
+      "discovery_url": "https://www.gamespot.com/articles/p-t-can-no-longer-be-downloaded-even-from-your-ps4/1100-6427124/",
+      "source_family": "NEWS_ARCHIVE",
+      "source_key": "REDOWNLOAD_GAMESPOT",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Re-download failure test/error evidence for callback montage.",
+        "exact_moment_found": true,
+        "match_type": "DIRECT",
+        "match_reason": "Supports distinction between Store removal and inability to restore the file.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Audited",
+        "Different access-loss phase"
+      ],
+      "weaknesses": [
+        "Reuse"
+      ],
+      "comparison_note": ""
+    },
+    {
+      "key": "PAYOFF_LISA",
+      "search_key": "PAYOFF_TRACE",
+      "title": "Callback: Lisa camera-hack technical trace",
+      "discovery_url": "https://www.gamedeveloper.com/game-platforms/camera-hack-reveals-i-pt-i-s-ghost-is-legitimately-always-just-offscreen",
+      "source_family": "RESEARCHER",
+      "source_key": "LISA_GAMEDEV",
+      "candidate_state": "VIABLE",
+      "inspection": {
+        "visible_content": "Technical trace showing knowledge survived through later analysis even after distribution ended.",
+        "exact_moment_found": true,
+        "match_type": "SUPPORTING",
+        "match_reason": "Supports payoff that technical traces remained even as access paths disappeared.",
+        "viewer_takeaway_supported": true,
+        "candidate_locator": {
+          "type": "FULL_SOURCE"
+        }
+      },
+      "evaluation": {
+        "visual_clarity": "HIGH",
+        "technical_quality": "UNKNOWN",
+        "cleanliness": "CLEAN",
+        "duplicate_state": "UNIQUE"
+      },
+      "strengths": [
+        "Audited technical source",
+        "Different source family"
+      ],
+      "weaknesses": [
+        "Reuse",
+        "Not original McDonald media"
+      ],
+      "comparison_note": ""
+    }
+  ]
+}

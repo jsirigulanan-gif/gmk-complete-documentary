@@ -1,0 +1,80 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "blocked_gates": [],
+  "blocked_targets": [],
+  "created_at": "2026-09-27T09:39:46.983512Z",
+  "dependencies": [
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000034",
+        "version": 1
+      }
+    },
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "EVD_000035",
+        "version": 1
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "artifact_id": "RESEARCH_ATTEMPT_LOG_000002",
+        "artifact_type": "RESEARCH_ATTEMPT_LOG",
+        "sha256": "b0834d5a80cb1e4c9337b002c55a7ed0933e271985f9f9645219d64b59275b24",
+        "version": 1
+      }
+    }
+  ],
+  "extensions": {
+    "research_audit": {
+      "batch_id": "PT_RESEARCH_AUDIT_001",
+      "finding_key": "PACK_REDOWNLOAD_DATE_CONFLICT"
+    }
+  },
+  "human_constraints": [],
+  "id": "GAP_000005",
+  "importance": "MAJOR",
+  "lock_state": "UNLOCKED",
+  "object_type": "RESEARCH_GAP",
+  "question": "Research Pack narrative places the re-download lock in December 2015, while contemporaneous May 6, 2015 reports document that re-download was already blocked. Preserve this as an explicit source discrepancy rather than silently editing the pack.",
+  "research_attempt_refs": [
+    {
+      "artifact_id": "RESEARCH_ATTEMPT_LOG_000002",
+      "artifact_type": "RESEARCH_ATTEMPT_LOG",
+      "sha256": "b0834d5a80cb1e4c9337b002c55a7ed0933e271985f9f9645219d64b59275b24",
+      "version": 1
+    }
+  ],
+  "resolution": {
+    "evidence_refs": [
+      {
+        "id": "EVD_000034",
+        "version": 1
+      },
+      {
+        "id": "EVD_000035",
+        "version": 1
+      }
+    ],
+    "resolved_at": "2026-09-27T09:39:46.983488Z",
+    "summary": "Contemporaneous GameSpot testing and Game Informer/Konami confirmation place the no-re-download condition on May 6, 2015. The pack’s December 2015 wording should not be used as a factual timeline point."
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/research-gap",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "state": "RESOLVED",
+  "status": "CURRENT",
+  "updated_at": "2026-09-27T09:39:46.983512Z",
+  "version": 1
+}

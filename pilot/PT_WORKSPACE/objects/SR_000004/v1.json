@@ -1,0 +1,75 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "candidate_state": "INSPECTION_REQUIRED",
+  "created_at": "2026-09-27T11:22:06.542927Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "SRCH_000002",
+        "version": 1
+      }
+    },
+    {
+      "relation": "VISUAL_SOURCE",
+      "target": {
+        "id": "SRC_000025",
+        "version": 1
+      }
+    }
+  ],
+  "discovery_locator": {
+    "type": "WEB_URI",
+    "value": "https://www.youtube.com/watch?v=HvZ09gERgw4"
+  },
+  "discovery_method": "AUTOMATED_SEARCH",
+  "evaluation": {
+    "cleanliness": "CLEAN",
+    "duplicate_state": "UNIQUE",
+    "technical_quality": "UNKNOWN",
+    "visual_clarity": "MEDIUM"
+  },
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "beat_key": "BEAT_OPENING_PROMISE",
+      "candidate_key": "OPEN_R3D",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318"
+    }
+  },
+  "human_constraints": [],
+  "id": "SR_000004",
+  "inspection": {
+    "exact_moment_found": false,
+    "match_reason": "Potential footage source, but safe pre-reveal range has not been isolated in this batch.",
+    "match_type": "DIRECT",
+    "viewer_takeaway_supported": false,
+    "visible_content": "Video combines Gamescom P.T. material with ending reveal."
+  },
+  "lock_state": "UNLOCKED",
+  "object_type": "SEARCH_RESULT",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/search-result",
+    "schema_version": "1.0.0"
+  },
+  "search_ref": {
+    "id": "SRCH_000002",
+    "version": 1
+  },
+  "source_family": "REUPLOAD",
+  "source_ref": {
+    "id": "SRC_000025",
+    "version": 1
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "R3D Gamescom trailer and ending reupload",
+  "updated_at": "2026-09-27T11:22:06.542927Z",
+  "version": 1
+}

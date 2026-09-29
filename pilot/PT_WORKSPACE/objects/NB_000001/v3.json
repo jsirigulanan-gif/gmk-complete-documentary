@@ -1,0 +1,118 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "beat_type": "SETUP",
+  "claim_bindings": [
+    {
+      "claim_ref": {
+        "id": "CLM_000001",
+        "version": 2
+      },
+      "role": "PRIMARY_FACT"
+    }
+  ],
+  "created_at": "2026-09-27T10:48:17.372954Z",
+  "dependencies": [
+    {
+      "relation": "FACT_SOURCE",
+      "target": {
+        "id": "CLM_000001",
+        "version": 2
+      }
+    },
+    {
+      "relation": "SUPERSEDES",
+      "target": {
+        "id": "NB_000001",
+        "version": 2
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "SCN_000001",
+        "version": 1
+      }
+    }
+  ],
+  "extensions": {
+    "rough_narrative": {
+      "batch_id": "PT_ROUGH_NARRATIVE_001",
+      "key": "BEAT_OPENING_PROMISE",
+      "plan_sha256": "645459994c0d1d6d6e2211831a9c515e8a19ee1e10d2e9520bfa7e4ef4da8376",
+      "research_modes": {
+        "CLM_000001": "DIRECT"
+      },
+      "synthesis_note": ""
+    },
+    "visual_requirements": {
+      "batch_id": "PT_VISUAL_REQUIREMENTS_001",
+      "plan_sha256": "3290db073b2d8c6834c8b9812d55c5f41838e12f447db01bf1d5ff2fcc83ab7f",
+      "source_narrative_beat_ref": {
+        "id": "NB_000001",
+        "version": 2
+      },
+      "source_narrative_spine_ref": {
+        "artifact_id": "NARRATIVE_SPINE_000001",
+        "artifact_type": "NARRATIVE_SPINE",
+        "sha256": "47a54f17b1a9d53c999dc69fe87676b575ae4b41f0af7442d4057823db63712d",
+        "version": 1
+      }
+    }
+  },
+  "human_constraints": [],
+  "id": "NB_000001",
+  "idea": {
+    "summary": "เริ่มด้วยการปรากฏตัวของเดโมที่ใช้ชื่อสตูดิโออำพราง ก่อนตั้งคำถามว่าทำไมผลงานนี้จึงยังมีร่องรอยให้ตามหลายปีหลังถูกถอดออก"
+  },
+  "lock_state": "UNLOCKED",
+  "object_type": "NARRATION_BEAT",
+  "order": 1,
+  "promise_payoff": {
+    "paired_beat_ref": {
+      "id": "NB_000010",
+      "version": 1
+    },
+    "role": "PROMISE"
+  },
+  "reveal": {
+    "contains_reveal": false
+  },
+  "scene_ref": {
+    "id": "SCN_000001",
+    "version": 1
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/narration-beat",
+    "schema_version": "1.0.0"
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "supersedes": {
+    "id": "NB_000001",
+    "version": 2
+  },
+  "updated_at": "2026-09-27T10:48:17.372954Z",
+  "version": 3,
+  "viewer_takeaway": "เรื่องนี้เริ่มจากเดโมที่ถูกปล่อยอย่างตั้งใจให้ตัวตนผู้สร้างไม่ชัดเจน",
+  "visual_requirement": {
+    "asset_needs": [
+      "VIDEO",
+      "DOCUMENT",
+      "STILL"
+    ],
+    "preferred_match": [
+      "DIRECT",
+      "SUPPORTING"
+    ],
+    "priority": "CRITICAL",
+    "viewer_must_see": "หลักฐานภาพหรือเอกสารร่วมสมัยที่ทำให้ผู้ชมเห็นว่า P.T. ปรากฏบน PlayStation Network ในฐานะเดโมปริศนาภายใต้ชื่อ 7780s Studio โดยยังไม่เฉลยความหมายของ 7780 ก่อน Beat ถัดไป",
+    "viewer_must_understand": "นี่คือการเปิดเรื่องด้วยวัตถุดิจิทัลที่ถูกปล่อยโดยจงใจให้ตัวตนผู้สร้างไม่ชัด และปริศนานี้คือจุดเริ่มของเรื่องทั้งหมด"
+  },
+  "workflow_state": "VISUAL_REQUIREMENT_READY"
+}

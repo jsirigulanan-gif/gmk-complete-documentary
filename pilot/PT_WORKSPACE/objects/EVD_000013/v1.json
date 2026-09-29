@@ -1,0 +1,51 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "content_summary": "Research Pack declares [INTERPRETATION-001]: ฉากห้องน้ำและทารกที่ผิดรูปในอ่างล้างหน้า สื่อถึง \"การแท้งบุตร\" ของโปรเจกต์เกมที่ถูกขัดขวางไม่ให้ลืมตาดูโลก",
+  "created_at": "2026-09-27T08:40:33.058184Z",
+  "dependencies": [
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "SRC_000001",
+        "version": 1
+      }
+    }
+  ],
+  "evidence_kind": "DOCUMENT_EXCERPT",
+  "extensions": {
+    "intake": {
+      "batch_id": "PT_INTAKE_0243AAD58E88E290",
+      "declared_id": "INTERPRETATION-001",
+      "external_source_hint": null,
+      "scope": "PACK_ASSERTION_ONLY"
+    }
+  },
+  "human_constraints": [],
+  "id": "EVD_000013",
+  "locator": {
+    "paragraph": 108,
+    "quote_anchor": "INTERPRETATION-001",
+    "section": "05_Community_Theories_and_Rumors",
+    "type": "TEXT_RANGE"
+  },
+  "lock_state": "UNLOCKED",
+  "object_type": "EVIDENCE",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/evidence",
+    "schema_version": "1.0.0"
+  },
+  "source_ref": {
+    "id": "SRC_000001",
+    "version": 1
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "updated_at": "2026-09-27T08:40:33.058184Z",
+  "version": 1
+}

@@ -1,0 +1,48 @@
+{
+  "accessed_at": "2026-09-27T09:39:46.846870Z",
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "author": "",
+  "authority_class": "REPUTABLE_SECONDARY",
+  "availability": {
+    "state": "AVAILABLE"
+  },
+  "created_at": "2026-09-27T09:39:46.846879Z",
+  "dependencies": [],
+  "extensions": {
+    "research_audit": {
+      "batch_id": "PT_RESEARCH_AUDIT_001",
+      "source_key": "CONTRACT_GAMEWATCH",
+      "verification_role": "EXTERNAL_VERIFICATION"
+    }
+  },
+  "human_constraints": [],
+  "id": "SRC_000016",
+  "independence": {
+    "group_id": "SRCGRP_KONAMI_CONTRACT_CONFIRMATION",
+    "relationship": "ORIGINAL"
+  },
+  "language": "en",
+  "lock_state": "UNLOCKED",
+  "notes": "Report says Konami PR confirmed departure on Dec 15 after contract period ended.",
+  "object_type": "SOURCE",
+  "platform": "Web",
+  "published_at": "2015-12-16",
+  "publisher": "GAME Watch",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/source",
+    "schema_version": "1.0.0"
+  },
+  "source_type": "WEB_PAGE",
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "Hideo Kojima leaves KONAMI upon expiration of contract",
+  "updated_at": "2026-09-27T09:39:46.846879Z",
+  "url": "https://game.watch.impress.co.jp/docs/news/735582.html",
+  "version": 1
+}

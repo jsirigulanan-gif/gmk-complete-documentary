@@ -1,0 +1,115 @@
+{
+  "artifact_id": "CANDIDATE_COMPARISON_000003",
+  "artifact_type": "CANDIDATE_COMPARISON",
+  "assessment": "MEETS_TARGET",
+  "candidate_refs": [
+    {
+      "id": "SR_000008",
+      "version": 1
+    },
+    {
+      "id": "SR_000009",
+      "version": 1
+    }
+  ],
+  "created_at": "2026-09-27T11:22:06.549659Z",
+  "dimensions": [
+    {
+      "candidate_ref": {
+        "id": "SR_000008",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Audited",
+        "Contemporaneous"
+      ],
+      "weaknesses": [
+        "Derived reporting of Sony statistic"
+      ]
+    },
+    {
+      "candidate_ref": {
+        "id": "SR_000009",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Audited",
+        "Corroborating report"
+      ],
+      "weaknesses": [
+        "Shares underlying Sony statistic"
+      ]
+    }
+  ],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "beat_key": "BEAT_MILLION",
+      "phase": "FIRST_PASS",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318"
+    }
+  },
+  "origin_refs": [
+    {
+      "id": "NB_000003",
+      "version": 2
+    },
+    {
+      "id": "SRCH_000005",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000006",
+      "version": 1
+    },
+    {
+      "id": "SR_000008",
+      "version": 1
+    },
+    {
+      "id": "SR_000009",
+      "version": 1
+    }
+  ],
+  "policy_target": {
+    "source_families": 1,
+    "viable_candidates": 2
+  },
+  "priority": "MAJOR",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/candidate-comparison",
+    "schema_version": "1.0.0"
+  },
+  "search_refs": [
+    {
+      "id": "SRCH_000005",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000006",
+      "version": 1
+    }
+  ],
+  "sha256": "22d3ecc5e7c5fd833bacd8b8e07efba4de5095befa7e8d8db829e383c65549dd",
+  "source_families": [
+    "NEWS_ARCHIVE"
+  ],
+  "target_beat_ref": {
+    "id": "NB_000003",
+    "version": 2
+  },
+  "uri": "gmk://artifacts/CANDIDATE_COMPARISON_000003/v1",
+  "version": 1,
+  "viable_candidate_refs": [
+    {
+      "id": "SR_000008",
+      "version": 1
+    },
+    {
+      "id": "SR_000009",
+      "version": 1
+    }
+  ]
+}

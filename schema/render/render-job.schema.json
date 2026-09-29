@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/render-job",
+  "title": "GMK Render Job",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "RENDER_JOB"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^RJ_[A-Z0-9_-]+$"
+        },
+        "render_level": {
+          "type": "string",
+          "enum": [
+            "PREVIS",
+            "PROXY",
+            "FINAL"
+          ]
+        },
+        "scope": {
+          "type": "object",
+          "required": [
+            "type",
+            "target"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "SHOT",
+                "SCENE",
+                "PROJECT"
+              ]
+            },
+            "target": {
+              "$ref": "gmk://schema/v1/reference#/$defs/TargetRef",
+              "x-gmk-dependency-relation": "RENDER_INPUT"
+            }
+          },
+          "additionalProperties": false
+        },
+        "production_lock": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "RENDER_INPUT"
+        },
+        "input_snapshot": {
+          "type": "object",
+          "required": [
+            "snapshot_sha256"
+          ],
+          "properties": {
+            "snapshot_sha256": {
+              "$ref": "gmk://schema/v1/reference#/$defs/Sha256"
+            },
+            "inputs": {
+              "type": "array",
+              "items": {
+                "$ref": "gmk://schema/v1/reference#/$defs/TargetRef",
+                "x-gmk-dependency-relation": "RENDER_INPUT"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "renderer": {
+          "type": "object",
+          "required": [
+            "adapter_id",
+            "adapter_version"
+          ],
+          "properties": {
+            "adapter_id": {
+              "type": "string"
+            },
+            "adapter_version": {
+              "$ref": "gmk://schema/v1/reference#/$defs/SemVer"
+            }
+          },
+          "additionalProperties": false
+        },
+        "renderer_prompt": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "RENDER_INPUT"
+        },
+        "output_profile": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ConfigRef"
+        },
+        "cost_class": {
+          "$ref": "gmk://schema/v1/enums#/$defs/CostClass"
+        },
+        "workflow_state": {
+          "type": "string",
+          "enum": [
+            "QUEUED",
+            "RUNNING",
+            "SUCCEEDED",
+            "FAILED",
+            "CANCELED"
+          ]
+        },
+        "execution_policy": {
+          "type": "object",
+          "properties": {
+            "transient_retry_limit": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 2
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "render_level",
+        "scope",
+        "input_snapshot",
+        "renderer",
+        "renderer_prompt",
+        "output_profile",
+        "cost_class",
+        "workflow_state"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

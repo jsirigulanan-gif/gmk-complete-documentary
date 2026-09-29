@@ -1,0 +1,143 @@
+{
+  "artifact_id": "CANDIDATE_COMPARISON_000010",
+  "artifact_type": "CANDIDATE_COMPARISON",
+  "assessment": "MEETS_TARGET",
+  "candidate_refs": [
+    {
+      "id": "SR_000028",
+      "version": 1
+    },
+    {
+      "id": "SR_000029",
+      "version": 1
+    },
+    {
+      "id": "SR_000030",
+      "version": 1
+    }
+  ],
+  "created_at": "2026-09-27T11:22:06.551083Z",
+  "dimensions": [
+    {
+      "candidate_ref": {
+        "id": "SR_000028",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Audited",
+        "Known date"
+      ],
+      "weaknesses": [
+        "Reuse; sequence QA must prevent repetitive presentation"
+      ]
+    },
+    {
+      "candidate_ref": {
+        "id": "SR_000029",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Audited",
+        "Different access-loss phase"
+      ],
+      "weaknesses": [
+        "Reuse"
+      ]
+    },
+    {
+      "candidate_ref": {
+        "id": "SR_000030",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Audited technical source",
+        "Different source family"
+      ],
+      "weaknesses": [
+        "Reuse",
+        "Not original McDonald media"
+      ]
+    }
+  ],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "beat_key": "BEAT_FINAL_PAYOFF",
+      "phase": "FIRST_PASS",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318"
+    }
+  },
+  "origin_refs": [
+    {
+      "id": "NB_000010",
+      "version": 3
+    },
+    {
+      "id": "SRCH_000019",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000020",
+      "version": 1
+    },
+    {
+      "id": "SR_000028",
+      "version": 1
+    },
+    {
+      "id": "SR_000029",
+      "version": 1
+    },
+    {
+      "id": "SR_000030",
+      "version": 1
+    }
+  ],
+  "policy_target": {
+    "source_families": 2,
+    "viable_candidates": 3
+  },
+  "priority": "CRITICAL",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/candidate-comparison",
+    "schema_version": "1.0.0"
+  },
+  "search_refs": [
+    {
+      "id": "SRCH_000019",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000020",
+      "version": 1
+    }
+  ],
+  "sha256": "c36e112fa33c4e8af92bd8ef1337c74d68bddd75d05b92126b2fe2397a5c5ada",
+  "source_families": [
+    "NEWS_ARCHIVE",
+    "RESEARCHER"
+  ],
+  "target_beat_ref": {
+    "id": "NB_000010",
+    "version": 3
+  },
+  "uri": "gmk://artifacts/CANDIDATE_COMPARISON_000010/v1",
+  "version": 1,
+  "viable_candidate_refs": [
+    {
+      "id": "SR_000028",
+      "version": 1
+    },
+    {
+      "id": "SR_000029",
+      "version": 1
+    },
+    {
+      "id": "SR_000030",
+      "version": 1
+    }
+  ]
+}

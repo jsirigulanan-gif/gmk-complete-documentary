@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/master-voice",
+  "title": "MASTER_VOICE",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "MASTER_VOICE"
+        },
+        "project_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "source_voice_blocks": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-dependency-relation": "TIMING_SOURCE"
+          }
+        },
+        "audio": {
+          "type": "object",
+          "required": [
+            "uri",
+            "sha256",
+            "duration_seconds",
+            "sample_rate_hz",
+            "channels"
+          ],
+          "properties": {
+            "uri": {
+              "$ref": "gmk://schema/v1/reference#/$defs/LogicalUri"
+            },
+            "sha256": {
+              "$ref": "gmk://schema/v1/reference#/$defs/Sha256"
+            },
+            "duration_seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "sample_rate_hz": {
+              "type": "integer",
+              "minimum": 8000
+            },
+            "channels": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "project_ref",
+        "source_voice_blocks",
+        "audio"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

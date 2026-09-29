@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/common",
+  "title": "GMK Base Object",
+  "$defs": {
+    "HumanConstraint": {
+      "type": "object",
+      "required": [
+        "constraint_id",
+        "scope",
+        "rule",
+        "lock_state"
+      ],
+      "properties": {
+        "constraint_id": {
+          "type": "string",
+          "pattern": "^HC_[A-Z0-9_-]+$"
+        },
+        "source_edit_request_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "CONSTRAINS"
+        },
+        "scope": {
+          "type": "object",
+          "required": [
+            "path"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "rule": {
+          "type": "object",
+          "required": [
+            "type",
+            "statement"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "PRESERVE",
+                "FORBID",
+                "REQUIRE"
+              ]
+            },
+            "statement": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "lock_state": {
+          "const": "HUMAN_LOCKED"
+        }
+      },
+      "additionalProperties": false
+    },
+    "ApprovalSummary": {
+      "type": "object",
+      "required": [
+        "state"
+      ],
+      "properties": {
+        "state": {
+          "$ref": "gmk://schema/v1/enums#/$defs/ApprovalSummaryState"
+        },
+        "approval_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "Extensions": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "BaseObject": {
+      "type": "object",
+      "required": [
+        "schema_header",
+        "id",
+        "object_type",
+        "version",
+        "status",
+        "lock_state",
+        "created_at",
+        "updated_at",
+        "dependencies",
+        "stale",
+        "approval_summary",
+        "human_constraints",
+        "extensions"
+      ],
+      "properties": {
+        "schema_header": {
+          "$ref": "gmk://schema/v1/reference#/$defs/SchemaHeader"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_-]+$"
+        },
+        "object_type": {
+          "$ref": "gmk://schema/v1/enums#/$defs/ObjectType"
+        },
+        "version": {
+          "$ref": "gmk://schema/v1/reference#/$defs/CoreVersion"
+        },
+        "supersedes": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "SUPERSEDES"
+        },
+        "status": {
+          "$ref": "gmk://schema/v1/enums#/$defs/ObjectStatus"
+        },
+        "lock_state": {
+          "$ref": "gmk://schema/v1/enums#/$defs/LockState"
+        },
+        "created_at": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+        },
+        "updated_at": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/dependency#/$defs/DependencyRef"
+          }
+        },
+        "stale": {
+          "$ref": "gmk://schema/v1/dependency#/$defs/StaleState"
+        },
+        "approval_summary": {
+          "$ref": "#/$defs/ApprovalSummary"
+        },
+        "human_constraints": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/HumanConstraint"
+          }
+        },
+        "extensions": {
+          "$ref": "#/$defs/Extensions"
+        }
+      }
+    }
+  }
+}

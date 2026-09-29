@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/qa-report",
+  "title": "GMK QA Report",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "QA_REPORT"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^QAR_[A-Z0-9_-]+$"
+        },
+        "report_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "$ref": "gmk://schema/v1/reference#/$defs/TargetRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "observed_artifact": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "RENDER_INPUT"
+        },
+        "qa_profile": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ConfigRef"
+        },
+        "issue_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-dependency-relation": "DERIVED_FROM"
+          }
+        },
+        "result": {
+          "$ref": "gmk://schema/v1/enums#/$defs/GateStatus",
+          "x-gmk-field-class": "DERIVED",
+          "x-gmk-derived-mode": "SNAPSHOT"
+        },
+        "summary": {
+          "type": "object",
+          "required": [
+            "critical",
+            "major",
+            "minor"
+          ],
+          "properties": {
+            "critical": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "major": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "minor": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        "evaluated_at": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Timestamp"
+        }
+      },
+      "required": [
+        "report_type",
+        "scope",
+        "qa_profile",
+        "issue_refs",
+        "result",
+        "summary",
+        "evaluated_at"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

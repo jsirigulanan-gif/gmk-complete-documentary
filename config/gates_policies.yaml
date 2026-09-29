@@ -1,0 +1,401 @@
+config_id: GMK_GATES_POLICY
+version: 1.0.0
+schema_version: 1.0.0
+
+project_states:
+  - BOOTSTRAPPED
+  - RESEARCH_INTAKE
+  - RESEARCH_AUDITED
+  - ROUGH_NARRATIVE_READY
+  - VISUAL_REQUIREMENTS_READY
+  - ASSET_RECON
+  - ASSET_CATALOG_READY
+  - VISUAL_COVERAGE_READY
+  - SCRIPT_READY
+  - TTS_READY
+  - VOICE_LOCKED
+  - DESIGN_DNA_APPROVED
+  - SCENE_PLAN_READY
+  - SHOT_PLAN_READY
+  - HTML_REVIEW
+  - HTML_APPROVED
+  - PRODUCTION_RENDER
+  - SHOT_QA_PASSED
+  - SCENE_QA_PASSED
+  - FULL_FILM_QA_PASSED
+  - DELIVERY_READY
+  - PROJECT_COMPLETED
+
+gates:
+  - gate_id: BOOTSTRAP
+    requirements:
+      - id: RESEARCH_PACK_PRESENT
+        kind: ARTIFACT_TYPE_EXISTS
+        artifact_type: RESEARCH_PACK
+        min_count: 1
+        on_fail: FAIL
+
+  - gate_id: RESEARCH_AUDIT
+    requirements:
+      - id: SOURCE_PRESENT
+        kind: ACTIVE_OBJECT_TYPE_EXISTS
+        object_type: SOURCE
+        min_count: 1
+        on_fail: FAIL
+      - id: CLAIM_PRESENT
+        kind: ACTIVE_OBJECT_TYPE_EXISTS
+        object_type: CLAIM
+        min_count: 1
+        on_fail: FAIL
+      - id: EVIDENCE_PRESENT
+        kind: ACTIVE_OBJECT_TYPE_EXISTS
+        object_type: EVIDENCE
+        min_count: 1
+        on_fail: FAIL
+      - id: NO_OPEN_CRITICAL_CONTRADICTION
+        kind: NO_ACTIVE_OBJECT_MATCH
+        object_type: CONTRADICTION
+        code: CRITICAL_CONTRADICTION_OPEN
+        predicates:
+          - path: /severity
+            equals: CRITICAL
+          - path: /resolution/state
+            in: [OPEN, INVESTIGATING]
+        on_fail: FAIL
+        non_overridable: true
+
+  - gate_id: ROUGH_NARRATIVE
+    requirements:
+      - id: NARRATIVE_SPINE_PRESENT
+        kind: ARTIFACT_TYPE_EXISTS
+        artifact_type: NARRATIVE_SPINE
+        min_count: 1
+        on_fail: FAIL
+
+  - gate_id: VISUAL_REQUIREMENTS
+    requirements:
+      - id: BEAT_VISUAL_REQUIREMENTS_READY
+        kind: ACTIVE_OBJECTS_MATCH
+        object_type: NARRATION_BEAT
+        min_count: 1
+        predicates:
+          - path: /visual_requirement
+            exists: true
+          - path: /workflow_state
+            in: [VISUAL_REQUIREMENT_READY, NARRATION_DRAFT, NARRATION_FINAL]
+        on_fail: FAIL
+
+  - gate_id: ASSET_RECON
+    requirements:
+      - id: SEARCH_COMPLETION_CERTIFICATE
+        kind: QA_REPORT_RESULT
+        report_type: SEARCH_COMPLETION_CERTIFICATE
+        on_fail: FAIL
+
+  - gate_id: VISUAL_COVERAGE
+    requirements:
+      - id: ASSET_COVERAGE_REPORT
+        kind: QA_REPORT_RESULT
+        report_type: ASSET_COVERAGE_REPORT
+        on_fail: FAIL
+
+  - gate_id: SCRIPT
+    requirements:
+      - id: FINAL_SCRIPT_PRESENT
+        kind: ARTIFACT_TYPE_EXISTS
+        artifact_type: VOICEOVER_SCRIPT_FINAL
+        min_count: 1
+        on_fail: FAIL
+
+  - gate_id: TTS
+    requirements:
+      - id: TTS_READY_SCRIPT_PRESENT
+        kind: ARTIFACT_TYPE_EXISTS
+        artifact_type: TTS_READY_SCRIPT
+        min_count: 1
+        on_fail: FAIL
+
+  - gate_id: VOICE
+    requirements:
+      - id: VOICE_LOCK_PRESENT
+        kind: ARTIFACT_TYPE_EXISTS
+        artifact_type: VOICE_LOCK_MANIFEST
+        min_count: 1
+        on_fail: FAIL
+      - id: VOICE_LOCK_APPROVED
+        kind: APPROVAL_COVERAGE
+        approval_class: VOICE
+        target_artifact_type: VOICE_LOCK_MANIFEST
+        on_fail: FAIL
+
+  - gate_id: DESIGN_DNA
+    requirements:
+      - id: DESIGN_DNA_ACTIVE
+        kind: ACTIVE_OBJECT_TYPE_EXISTS
+        object_type: DESIGN_DNA
+        min_count: 1
+        on_fail: FAIL
+      - id: DESIGN_DNA_APPROVED
+        kind: APPROVAL_COVERAGE
+        approval_class: DESIGN_DNA
+        target_object_type: DESIGN_DNA
+        on_fail: FAIL
+
+  - gate_id: SCENE_PLAN
+    requirements:
+      - id: SCENE_PLAN_COVERAGE
+        kind: ARTIFACT_COVERAGE_FOR_ACTIVE_TYPE
+        object_type: SCENE
+        artifact_type: SCENE_PLAN
+        ref_path: /scene_ref
+        require_objects: true
+        on_fail: FAIL
+
+  - gate_id: SHOT_PLAN
+    requirements:
+      - id: SHOT_ACTIVE
+        kind: ACTIVE_OBJECT_TYPE_EXISTS
+        object_type: SHOT
+        min_count: 1
+        on_fail: FAIL
+
+  - gate_id: HTML_REVIEW
+    requirements:
+      - id: SCENE_PREVIEW_COVERAGE
+        kind: ARTIFACT_COVERAGE_FOR_ACTIVE_TYPE
+        object_type: SCENE
+        artifact_type: SCENE_PREVIEW
+        ref_path: /scene_ref
+        require_objects: true
+        on_fail: FAIL
+      - id: REVIEW_PACKAGE_PRESENT
+        kind: ARTIFACT_TYPE_EXISTS
+        artifact_type: REVIEW_PACKAGE
+        min_count: 1
+        on_fail: FAIL
+      - id: SCENE_PREVIEW_APPROVED
+        kind: APPROVAL_COVERAGE
+        approval_class: SCENE_PREVIEW
+        target_artifact_type: SCENE_PREVIEW
+        on_fail: FAIL
+
+  - gate_id: PRODUCTION_LOCK
+    requirements:
+      - id: PRODUCTION_LOCK_PRESENT
+        kind: ARTIFACT_TYPE_EXISTS
+        artifact_type: PRODUCTION_LOCK_MANIFEST
+        min_count: 1
+        on_fail: FAIL
+        non_overridable: true
+      - id: PRODUCTION_LOCK_APPROVED
+        kind: APPROVAL_COVERAGE
+        approval_class: PRODUCTION_LOCK
+        target_artifact_type: PRODUCTION_LOCK_MANIFEST
+        on_fail: FAIL
+        non_overridable: true
+
+  - gate_id: RENDER
+    requirements:
+      - id: SUCCESSFUL_RENDER_PRESENT
+        kind: RENDER_SUCCESS
+        min_count: 1
+        on_fail: FAIL
+
+  - gate_id: SHOT_QA
+    requirements:
+      - id: ALL_ACTIVE_SHOTS_QA
+        kind: QA_REPORT_RESULT
+        report_type: SHOT_QA
+        cover_active_type: SHOT
+        on_fail: FAIL
+
+  - gate_id: SCENE_QA
+    requirements:
+      - id: ALL_ACTIVE_SCENES_QA
+        kind: QA_REPORT_RESULT
+        report_type: SCENE_QA
+        cover_active_type: SCENE
+        on_fail: FAIL
+
+  - gate_id: FULL_FILM_QA
+    requirements:
+      - id: FULL_FILM_QA_PASS
+        kind: QA_REPORT_RESULT
+        report_type: FULL_FILM_QA
+        on_fail: FAIL
+
+  - gate_id: DELIVERY
+    requirements:
+      - id: DELIVERY_QA_PASS
+        kind: QA_REPORT_RESULT
+        report_type: DELIVERY_QA
+        on_fail: FAIL
+
+transitions:
+  - from: BOOTSTRAPPED
+    to: RESEARCH_INTAKE
+    gates: [BOOTSTRAP]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: AI_WITH_RULES
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: RESEARCH_INTAKE
+    to: RESEARCH_AUDITED
+    gates: [RESEARCH_AUDIT]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: AI_WITH_RULES
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: RESEARCH_AUDITED
+    to: ROUGH_NARRATIVE_READY
+    gates: [ROUGH_NARRATIVE]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: AI_WITH_RULES
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: ROUGH_NARRATIVE_READY
+    to: VISUAL_REQUIREMENTS_READY
+    gates: [VISUAL_REQUIREMENTS]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: AI_WITH_RULES
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: VISUAL_REQUIREMENTS_READY
+    to: ASSET_RECON
+    gates: []
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: AUTO_ALLOWED
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: ASSET_RECON
+    to: ASSET_CATALOG_READY
+    gates: [ASSET_RECON]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: AI_WITH_RULES
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: ASSET_CATALOG_READY
+    to: VISUAL_COVERAGE_READY
+    gates: [VISUAL_COVERAGE]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: AI_WITH_RULES
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: VISUAL_COVERAGE_READY
+    to: SCRIPT_READY
+    gates: [SCRIPT]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: AI_WITH_RULES
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: SCRIPT_READY
+    to: TTS_READY
+    gates: [TTS]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: AI_WITH_RULES
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: TTS_READY
+    to: VOICE_LOCKED
+    gates: [VOICE]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: HUMAN_APPROVAL_REQUIRED
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: VOICE_LOCKED
+    to: DESIGN_DNA_APPROVED
+    gates: [DESIGN_DNA]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: HUMAN_APPROVAL_REQUIRED
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: DESIGN_DNA_APPROVED
+    to: SCENE_PLAN_READY
+    gates: [SCENE_PLAN]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: AI_WITH_RULES
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: SCENE_PLAN_READY
+    to: SHOT_PLAN_READY
+    gates: [SHOT_PLAN]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: AI_WITH_RULES
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: SHOT_PLAN_READY
+    to: HTML_REVIEW
+    gates: []
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: AUTO_ALLOWED
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: HTML_REVIEW
+    to: HTML_APPROVED
+    gates: [HTML_REVIEW]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: HUMAN_APPROVAL_REQUIRED
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: HTML_APPROVED
+    to: PRODUCTION_RENDER
+    gates: [PRODUCTION_LOCK]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: HUMAN_APPROVAL_REQUIRED
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: PRODUCTION_RENDER
+    to: SHOT_QA_PASSED
+    gates: [RENDER, SHOT_QA]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: AI_WITH_RULES
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: SHOT_QA_PASSED
+    to: SCENE_QA_PASSED
+    gates: [SCENE_QA]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: AI_WITH_RULES
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: SCENE_QA_PASSED
+    to: FULL_FILM_QA_PASSED
+    gates: [FULL_FILM_QA]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: AI_WITH_RULES
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: FULL_FILM_QA_PASSED
+    to: DELIVERY_READY
+    gates: [DELIVERY]
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS]
+    permission: HUMAN_APPROVAL_REQUIRED
+    warn_policy: REQUIRE_EXCEPTION
+
+  - from: DELIVERY_READY
+    to: PROJECT_COMPLETED
+    gates: []
+    predicates: [SAFETY_NORMAL, NO_BLOCKERS, PROJECT_COMPLETION_READY]
+    permission: AUTO_ALLOWED
+    warn_policy: REQUIRE_EXCEPTION
+
+blocker_rules:
+  - code: CRITICAL_INCIDENT_OPEN
+    object_type: INCIDENT
+    min_severity: CRITICAL
+    predicates:
+      - path: /workflow_state
+        not_in: [RESOLVED, CLOSED]
+    message: A Critical Incident is open and blocks state transitions until contained/resolved by policy.
+    action_ids: [TRANSITION_PROJECT_STATE, REENTER_STAGE]
+    non_overridable: true
+
+  - code: CRITICAL_QA_ISSUE_OPEN
+    object_type: QA_ISSUE
+    min_severity: CRITICAL
+    predicates:
+      - path: /workflow_state
+        not_in: [RESOLVED, ACCEPTED_EXCEPTION, WONT_FIX]
+    gate_ids: [PRODUCTION_LOCK, RENDER, SHOT_QA, SCENE_QA, FULL_FILM_QA, DELIVERY]
+    message: An unresolved Critical QA issue blocks production/delivery gates.
+    non_overridable: true

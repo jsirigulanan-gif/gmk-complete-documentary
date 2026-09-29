@@ -1,0 +1,48 @@
+{
+  "accessed_at": "2026-09-27T13:58:34.832913Z",
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "author": "Lance McDonald",
+  "authority_class": "PRIMARY",
+  "availability": {
+    "state": "AVAILABLE"
+  },
+  "created_at": "2026-09-27T13:58:34.832972Z",
+  "dependencies": [],
+  "extensions": {
+    "asset_recon": {
+      "selection_batch_id": "PT_ASSET_SELECTION_016",
+      "source_key": "LISA_LANCE_X_DIRECT",
+      "source_verified": true
+    }
+  },
+  "human_constraints": [],
+  "id": "SRC_000035",
+  "independence": {
+    "group_id": "SRCGRP_LANCE_MCDONALD_DIRECT_PT_2019",
+    "relationship": "INDEPENDENT"
+  },
+  "language": "en",
+  "lock_state": "UNLOCKED",
+  "notes": "Original creator post traced through contemporary reporting; embedded clip demonstrates the camera hack. Do not infer an exact numeric Lisa distance.",
+  "object_type": "SOURCE",
+  "platform": "X / Twitter",
+  "published_at": "2019-09-09T00:00:00Z",
+  "publisher": "Lance McDonald",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/source",
+    "schema_version": "1.0.0"
+  },
+  "source_type": "SOCIAL_POST",
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "Lance McDonald original P.T. camera-hack post",
+  "updated_at": "2026-09-27T13:58:34.832972Z",
+  "url": "https://twitter.com/manfightdragon/status/1170860592233472001",
+  "version": 1
+}

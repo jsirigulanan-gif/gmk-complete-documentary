@@ -1,0 +1,23 @@
+{
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/narrative-spine",
+    "schema_version": "1.0.0"
+  },
+  "artifact_id": "NARRATIVE_SPINE",
+  "artifact_type": "NARRATIVE_SPINE",
+  "version": 1,
+  "uri": "gmk://artifacts/narrative/spine/v1.json",
+  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "created_at": "2026-09-27T11:30:00+07:00",
+  "origin_refs": [],
+  "extensions": {},
+  "project_ref": {
+    "id": "PROJECT_TEST",
+    "version": 1
+  },
+  "core_question": "What happened?",
+  "opening_promise": "We will explain it.",
+  "major_turns": [
+    "Reveal"
+  ]
+}

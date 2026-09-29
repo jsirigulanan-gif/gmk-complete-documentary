@@ -1,0 +1,48 @@
+{
+  "accessed_at": "2026-09-27T09:39:46.847625Z",
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "author": "",
+  "authority_class": "REPUTABLE_SECONDARY",
+  "availability": {
+    "state": "AVAILABLE"
+  },
+  "created_at": "2026-09-27T09:39:46.847633Z",
+  "dependencies": [],
+  "extensions": {
+    "research_audit": {
+      "batch_id": "PT_RESEARCH_AUDIT_001",
+      "source_key": "REDOWNLOAD_GAMESPOT",
+      "verification_role": "EXTERNAL_VERIFICATION"
+    }
+  },
+  "human_constraints": [],
+  "id": "SRC_000022",
+  "independence": {
+    "group_id": "SRCGRP_GAMESPOT_REDOWNLOAD_TEST",
+    "relationship": "ORIGINAL"
+  },
+  "language": "en",
+  "lock_state": "UNLOCKED",
+  "notes": "",
+  "object_type": "SOURCE",
+  "platform": "Web",
+  "published_at": "2015-05-06",
+  "publisher": "GameSpot",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/source",
+    "schema_version": "1.0.0"
+  },
+  "source_type": "WEB_PAGE",
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "title": "P.T. Can No Longer Be Downloaded, Even From Your PS4 Library",
+  "updated_at": "2026-09-27T09:39:46.847633Z",
+  "url": "https://www.gamespot.com/articles/p-t-can-no-longer-be-downloaded-even-from-your-ps4/1100-6427124/",
+  "version": 1
+}

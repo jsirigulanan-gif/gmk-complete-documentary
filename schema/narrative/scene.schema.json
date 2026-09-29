@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/scene",
+  "title": "GMK Scene",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "SCENE"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^SCN_[A-Z0-9_-]+$"
+        },
+        "act_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "title": {
+          "type": "string"
+        },
+        "narrative": {
+          "type": "object",
+          "required": [
+            "purpose",
+            "viewer_question_entering",
+            "viewer_understanding_leaving"
+          ],
+          "properties": {
+            "purpose": {
+              "type": "string",
+              "minLength": 1
+            },
+            "viewer_question_entering": {
+              "type": "string",
+              "minLength": 1
+            },
+            "viewer_understanding_leaving": {
+              "type": "string",
+              "minLength": 1
+            },
+            "main_reveal": {
+              "type": "string"
+            },
+            "peak": {
+              "type": "string"
+            },
+            "rest_point": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "dynamics": {
+          "type": "object",
+          "required": [
+            "role",
+            "energy"
+          ],
+          "properties": {
+            "role": {
+              "$ref": "gmk://schema/v1/narrative-common#/$defs/DynamicsRole"
+            },
+            "energy": {
+              "$ref": "gmk://schema/v1/narrative-common#/$defs/Energy"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "act_ref",
+        "order",
+        "narrative",
+        "dynamics"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

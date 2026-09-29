@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/asset-common",
+  "$defs": {
+    "SearchPass": {
+      "type": "string",
+      "enum": [
+        "EXACT_OFFICIAL",
+        "LONG_FORM_FOOTAGE",
+        "TECHNICAL_RESEARCH",
+        "ARCHIVE_STILL_DOCUMENT",
+        "QUERY_EXPANSION"
+      ]
+    },
+    "QueryFamily": {
+      "type": "string",
+      "enum": [
+        "EXACT_ENTITY",
+        "OFFICIAL",
+        "EVENT_TIMELINE",
+        "MECHANIC",
+        "TECHNICAL",
+        "PERSON_RESEARCHER",
+        "VISUAL_DESCRIPTION",
+        "ARCHIVE_STILL",
+        "DOCUMENT",
+        "ALIAS",
+        "LANGUAGE_VARIANT",
+        "DATE_VARIANT",
+        "SOURCE_TRACE"
+      ]
+    },
+    "SourceFamily": {
+      "type": "string",
+      "enum": [
+        "OFFICIAL",
+        "DEVELOPER",
+        "PLATFORM",
+        "ORIGINAL_CREATOR",
+        "RESEARCHER",
+        "NEWS_ARCHIVE",
+        "GAMEPLAY_CAPTURE",
+        "COMMUNITY_ARCHIVE",
+        "REUPLOAD",
+        "DOCUMENT",
+        "STILL_ARCHIVE"
+      ]
+    },
+    "CandidateState": {
+      "type": "string",
+      "enum": [
+        "DISCOVERED",
+        "INSPECTION_REQUIRED",
+        "INSPECTED",
+        "VIABLE",
+        "NON_VIABLE",
+        "SELECTED",
+        "REJECTED",
+        "PROMOTED_TO_ASSET"
+      ]
+    },
+    "MediaType": {
+      "type": "string",
+      "enum": [
+        "VIDEO",
+        "STILL",
+        "DOCUMENT",
+        "AUDIO",
+        "IMAGE_SEQUENCE",
+        "OTHER"
+      ]
+    },
+    "AssetClass": {
+      "type": "string",
+      "enum": [
+        "EVIDENCE",
+        "DIRECT_FOOTAGE",
+        "CONTEXTUAL_B_ROLL",
+        "ILLUSTRATIVE",
+        "DOCUMENTARY_RECONSTRUCTION_2_5D",
+        "EXPLAINER_RECONSTRUCTION_3D"
+      ]
+    },
+    "DurationBasis": {
+      "type": "string",
+      "enum": [
+        "ROUGH_ESTIMATE",
+        "SCRIPT_ESTIMATE",
+        "SCRATCH_VOICE",
+        "MASTER_VOICE"
+      ]
+    },
+    "CoverageState": {
+      "type": "string",
+      "enum": [
+        "DIRECT_COVERED",
+        "SUPPORTING_COVERED",
+        "EXPLAINER_COVERED",
+        "PARTIAL",
+        "UNRESOLVED"
+      ]
+    }
+  }
+}

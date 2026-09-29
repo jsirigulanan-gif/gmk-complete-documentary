@@ -1,0 +1,165 @@
+{
+  "artifact_id": "CANDIDATE_COMPARISON_000001",
+  "artifact_type": "CANDIDATE_COMPARISON",
+  "assessment": "MEETS_TARGET",
+  "candidate_refs": [
+    {
+      "id": "SR_000001",
+      "version": 1
+    },
+    {
+      "id": "SR_000002",
+      "version": 1
+    },
+    {
+      "id": "SR_000003",
+      "version": 1
+    },
+    {
+      "id": "SR_000004",
+      "version": 1
+    }
+  ],
+  "created_at": "2026-09-27T11:22:06.549193Z",
+  "dimensions": [
+    {
+      "candidate_ref": {
+        "id": "SR_000001",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Contemporaneous reporting",
+        "Existing audited source"
+      ],
+      "weaknesses": [
+        "Article page rather than native PSN UI"
+      ]
+    },
+    {
+      "candidate_ref": {
+        "id": "SR_000002",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Contemporaneous",
+        "Existing audited source"
+      ],
+      "weaknesses": [
+        "Secondary page"
+      ]
+    },
+    {
+      "candidate_ref": {
+        "id": "SR_000003",
+        "version": 1
+      },
+      "note": "",
+      "strengths": [
+        "Visual context",
+        "Separate source family"
+      ],
+      "weaknesses": [
+        "Not official PlayStation page"
+      ]
+    },
+    {
+      "candidate_ref": {
+        "id": "SR_000004",
+        "version": 1
+      },
+      "note": "Do not use until a reveal-safe range is inspected.",
+      "strengths": [
+        "Motion footage"
+      ],
+      "weaknesses": [
+        "Contains Norman Reedus/Silent Hills ending reveal",
+        "Reupload",
+        "Exact safe range not verified"
+      ]
+    }
+  ],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "beat_key": "BEAT_OPENING_PROMISE",
+      "phase": "FIRST_PASS",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318"
+    }
+  },
+  "origin_refs": [
+    {
+      "id": "NB_000001",
+      "version": 3
+    },
+    {
+      "id": "SRCH_000001",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000002",
+      "version": 1
+    },
+    {
+      "id": "SR_000001",
+      "version": 1
+    },
+    {
+      "id": "SR_000002",
+      "version": 1
+    },
+    {
+      "id": "SR_000003",
+      "version": 1
+    },
+    {
+      "id": "SR_000004",
+      "version": 1
+    }
+  ],
+  "policy_target": {
+    "source_families": 2,
+    "viable_candidates": 3
+  },
+  "priority": "CRITICAL",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/candidate-comparison",
+    "schema_version": "1.0.0"
+  },
+  "search_refs": [
+    {
+      "id": "SRCH_000001",
+      "version": 1
+    },
+    {
+      "id": "SRCH_000002",
+      "version": 1
+    }
+  ],
+  "sha256": "a49f88bffa01897fba31dedf3ce0ee038d4e42e505be1d2545fdd9123386d60d",
+  "source_families": [
+    "NEWS_ARCHIVE",
+    "STILL_ARCHIVE"
+  ],
+  "target_beat_ref": {
+    "id": "NB_000001",
+    "version": 3
+  },
+  "uri": "gmk://artifacts/CANDIDATE_COMPARISON_000001/v1",
+  "version": 1,
+  "viable_candidate_refs": [
+    {
+      "id": "SR_000001",
+      "version": 1
+    },
+    {
+      "id": "SR_000002",
+      "version": 1
+    },
+    {
+      "id": "SR_000003",
+      "version": 1
+    }
+  ]
+}

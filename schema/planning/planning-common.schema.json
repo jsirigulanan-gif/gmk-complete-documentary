@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/planning-common",
+  "$defs": {
+    "VisualStrategy": {
+      "type": "string",
+      "enum": [
+        "DIRECT_EVIDENCE",
+        "DIRECT_FOOTAGE",
+        "CONTEXTUAL_BROLL",
+        "DOCUMENT",
+        "STILL",
+        "TWO_POINT_FIVE_D",
+        "GRAPHIC_EXPLAINER",
+        "THREE_D_EXPLAINER",
+        "DATA_VISUALIZATION"
+      ]
+    },
+    "LayerStackRole": {
+      "type": "string",
+      "enum": [
+        "BASE",
+        "CONTENT",
+        "ANNOTATION",
+        "LABEL",
+        "EFFECT"
+      ]
+    },
+    "LayerContentType": {
+      "type": "string",
+      "enum": [
+        "MEDIA_SEGMENT",
+        "TEXT",
+        "SOURCE_LABEL",
+        "GRAPHIC_PRIMITIVE",
+        "THREE_D"
+      ]
+    },
+    "MotionDecision": {
+      "type": "string",
+      "enum": [
+        "NO_MOTION",
+        "MOTION_REQUIRED"
+      ]
+    },
+    "TransitionType": {
+      "type": "string",
+      "enum": [
+        "CUT",
+        "DISSOLVE",
+        "MATCH_CUT",
+        "MOTIVATED_GRAPHIC"
+      ]
+    },
+    "CueAction": {
+      "type": "string",
+      "enum": [
+        "SHOW",
+        "HIDE",
+        "EMPHASIZE",
+        "MOVE",
+        "CAMERA",
+        "TRANSITION",
+        "REVEAL"
+      ]
+    }
+  }
+}

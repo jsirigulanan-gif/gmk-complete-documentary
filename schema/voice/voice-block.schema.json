@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/voice-block",
+  "title": "GMK Voice Block",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "VOICE_BLOCK"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^VB_[A-Z0-9_-]+$"
+        },
+        "voice_profile_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "tts_script_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+          "x-gmk-dependency-relation": "FACT_SOURCE"
+        },
+        "source_beat_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+            "x-gmk-dependency-relation": "FACT_SOURCE"
+          }
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "delivery": {
+          "type": "object",
+          "properties": {
+            "style_override": {
+              "$ref": "gmk://schema/v1/voice-common#/$defs/DeliveryStyle"
+            },
+            "speech_rate_override": {
+              "$ref": "gmk://schema/v1/voice-common#/$defs/SpeechRateClass"
+            },
+            "performance_note": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "selected_take": {
+          "type": "object",
+          "properties": {
+            "take_key": {
+              "type": "string"
+            },
+            "audio_artifact_ref": {
+              "$ref": "gmk://schema/v1/reference#/$defs/ArtifactRef",
+              "x-gmk-dependency-relation": "DERIVED_FROM"
+            }
+          },
+          "additionalProperties": false
+        },
+        "workflow_state": {
+          "$ref": "gmk://schema/v1/voice-common#/$defs/VoiceBlockState"
+        }
+      },
+      "required": [
+        "voice_profile_ref",
+        "tts_script_ref",
+        "source_beat_refs",
+        "order",
+        "delivery",
+        "workflow_state"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

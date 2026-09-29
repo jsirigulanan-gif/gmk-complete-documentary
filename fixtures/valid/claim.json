@@ -1,0 +1,37 @@
+{
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/claim",
+    "schema_version": "1.0.0"
+  },
+  "id": "CLM_TEST",
+  "object_type": "CLAIM",
+  "version": 1,
+  "status": "CURRENT",
+  "lock_state": "UNLOCKED",
+  "created_at": "2026-09-27T11:30:00+07:00",
+  "updated_at": "2026-09-27T11:30:00+07:00",
+  "dependencies": [],
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "approval_summary": {
+    "state": "NOT_REQUIRED",
+    "approval_refs": []
+  },
+  "human_constraints": [],
+  "extensions": {},
+  "claim_text": "A factual assertion.",
+  "claim_type": "FACTUAL_ASSERTION",
+  "verification_state": "UNREVIEWED",
+  "evidence_links": [],
+  "certainty": {
+    "level": "UNKNOWN",
+    "basis": []
+  },
+  "production_use": {
+    "narration_allowed": false,
+    "language_mode": "PROHIBITED",
+    "reason": "UNREVIEWED"
+  }
+}

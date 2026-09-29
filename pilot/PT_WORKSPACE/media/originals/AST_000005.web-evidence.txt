@@ -1,0 +1,6 @@
+GMK WEB EVIDENCE SNAPSHOT
+Candidate: DELIST_GEM
+Source URL: https://www.gematsu.com/2015/04/p-t-distribution-end-april-29
+Title: P.T. distribution to end on April 29
+Capture type: bounded text evidence snapshot (not origin-server HTML bytes)
+Evidence summary: Gematsu reported Konami notice that P.T. distribution on PlayStation Store would expire Wednesday, April 29, 2015.

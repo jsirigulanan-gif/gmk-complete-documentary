@@ -1,0 +1,47 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "content_summary": "GameSpot reported multiple eBay listings for PS4 consoles with P.T. installed, including two UK listings at £1,000 (about $1,500) buy-it-now and some listings up to $1,800.",
+  "created_at": "2026-09-27T09:39:46.849091Z",
+  "dependencies": [
+    {
+      "relation": "EVIDENCE_SOURCE",
+      "target": {
+        "id": "SRC_000010",
+        "version": 1
+      }
+    }
+  ],
+  "evidence_kind": "DOCUMENT_EXCERPT",
+  "extensions": {
+    "research_audit": {
+      "batch_id": "PT_RESEARCH_AUDIT_001",
+      "evidence_key": "E_EBAY_PRICE",
+      "source_key": "EBAY_GAMESPOT"
+    }
+  },
+  "human_constraints": [],
+  "id": "EVD_000022",
+  "locator": {
+    "type": "FULL_SOURCE"
+  },
+  "lock_state": "UNLOCKED",
+  "object_type": "EVIDENCE",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/evidence",
+    "schema_version": "1.0.0"
+  },
+  "source_ref": {
+    "id": "SRC_000010",
+    "version": 1
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "updated_at": "2026-09-27T09:39:46.849091Z",
+  "version": 1
+}

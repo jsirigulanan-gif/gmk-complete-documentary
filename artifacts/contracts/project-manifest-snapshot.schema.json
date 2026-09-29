@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/project-manifest-snapshot",
+  "title": "PROJECT_MANIFEST_SNAPSHOT",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "PROJECT_MANIFEST_SNAPSHOT"
+        },
+        "manifest": {
+          "$ref": "gmk://schema/v1/project-manifest"
+        },
+        "manifest_sha256": {
+          "$ref": "gmk://schema/v1/reference#/$defs/Sha256"
+        }
+      },
+      "required": [
+        "manifest",
+        "manifest_sha256"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

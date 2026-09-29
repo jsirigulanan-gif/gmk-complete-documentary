@@ -1,0 +1,103 @@
+{
+  "acquisition_operation_ref": {
+    "id": "OP_000001",
+    "version": 3
+  },
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "asset_class": "EVIDENCE",
+  "created_at": "2026-09-27T16:11:01.581653Z",
+  "dependencies": [
+    {
+      "relation": "SUPERSEDES",
+      "target": {
+        "id": "AST_000001",
+        "version": 4
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "OP_000001",
+        "version": 3
+      }
+    },
+    {
+      "relation": "VISUAL_SOURCE",
+      "target": {
+        "id": "SRC_000003",
+        "version": 1
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "SR_000002",
+        "version": 2
+      }
+    }
+  ],
+  "extensions": {
+    "asset_acquisition": {
+      "batch_id": "PT_ASSET_ACQUISITION_017",
+      "origin_bytes": false,
+      "production_ready": true,
+      "representation": "WEB_TEXT_SNAPSHOT",
+      "source_url": "https://www.gematsu.com/2014/08/p-t-announced-ps4-demo-released",
+      "verified_sha256": "513649ea6aced2f195d0ebf8b7640c1d8d78cd5288e7d2054d8117326ba143ab"
+    },
+    "asset_recon": {
+      "beat_key": "BEAT_OPENING_PROMISE",
+      "candidate_key": "OPEN_GEMATSU",
+      "production_ready": true,
+      "selection_batch_id": "PT_ASSET_SELECTION_016",
+      "source_recon_batch_id": "PT_ASSET_RECON_FIRST_PASS_001"
+    }
+  },
+  "human_constraints": [],
+  "id": "AST_000001",
+  "lock_state": "UNLOCKED",
+  "media_type": "DOCUMENT",
+  "object_type": "ASSET",
+  "origin_search_result_ref": {
+    "id": "SR_000002",
+    "version": 2
+  },
+  "original_file": {
+    "checksum": "513649ea6aced2f195d0ebf8b7640c1d8d78cd5288e7d2054d8117326ba143ab",
+    "immutable": true,
+    "uri": "gmk://workspace/media/originals/AST_000001.web-evidence.txt"
+  },
+  "rights": {
+    "attribution_required": true,
+    "basis": "Editorial/news page selected for documentary commentary; final usage and capture scope require review.",
+    "notes": "Selection is not rights clearance.",
+    "status": "COMMENTARY_REVIEW"
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/asset",
+    "schema_version": "1.0.0"
+  },
+  "source_ref": {
+    "id": "SRC_000003",
+    "version": 1
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "supersedes": {
+    "id": "AST_000001",
+    "version": 4
+  },
+  "technical": {
+    "container": "text/plain",
+    "file_size_bytes": 417
+  },
+  "updated_at": "2026-09-27T16:11:01.581653Z",
+  "version": 5,
+  "workflow_state": "CATALOGED"
+}

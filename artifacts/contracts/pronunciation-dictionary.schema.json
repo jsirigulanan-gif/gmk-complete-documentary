@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/artifact/pronunciation-dictionary",
+  "title": "PRONUNCIATION_DICTIONARY",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/artifact-common#/$defs/ArtifactRecord"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "artifact_type": {
+          "const": "PRONUNCIATION_DICTIONARY"
+        },
+        "language": {
+          "type": "string"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "term",
+              "normalized_key",
+              "pronunciation"
+            ],
+            "properties": {
+              "term": {
+                "type": "string"
+              },
+              "normalized_key": {
+                "type": "string"
+              },
+              "pronunciation": {
+                "type": "object",
+                "required": [
+                  "method",
+                  "value"
+                ],
+                "properties": {
+                  "method": {
+                    "type": "string",
+                    "enum": [
+                      "PLAIN_TEXT",
+                      "PHONETIC",
+                      "IPA",
+                      "SSML_PHONEME",
+                      "PROVIDER_ALIAS"
+                    ]
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "required": [
+        "language",
+        "entries"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

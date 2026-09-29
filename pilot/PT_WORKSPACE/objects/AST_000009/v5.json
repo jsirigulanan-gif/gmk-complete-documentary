@@ -1,0 +1,103 @@
+{
+  "acquisition_operation_ref": {
+    "id": "OP_000009",
+    "version": 3
+  },
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "asset_class": "EVIDENCE",
+  "created_at": "2026-09-27T16:11:08.175995Z",
+  "dependencies": [
+    {
+      "relation": "SUPERSEDES",
+      "target": {
+        "id": "AST_000009",
+        "version": 4
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "OP_000009",
+        "version": 3
+      }
+    },
+    {
+      "relation": "VISUAL_SOURCE",
+      "target": {
+        "id": "SRC_000016",
+        "version": 1
+      }
+    },
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "SR_000025",
+        "version": 2
+      }
+    }
+  ],
+  "extensions": {
+    "asset_acquisition": {
+      "batch_id": "PT_ASSET_ACQUISITION_017",
+      "origin_bytes": false,
+      "production_ready": true,
+      "representation": "WEB_TEXT_SNAPSHOT",
+      "source_url": "https://game.watch.impress.co.jp/docs/news/735582.html",
+      "verified_sha256": "e1053fb43c9149191384ea0c05494b1d824bb87cd9cc8545fe13198aa2560f88"
+    },
+    "asset_recon": {
+      "beat_key": "BEAT_CONTRACT_END",
+      "candidate_key": "CONTRACT_GW",
+      "production_ready": true,
+      "selection_batch_id": "PT_ASSET_SELECTION_016",
+      "source_recon_batch_id": "PT_ASSET_RECON_FIRST_PASS_001"
+    }
+  },
+  "human_constraints": [],
+  "id": "AST_000009",
+  "lock_state": "UNLOCKED",
+  "media_type": "DOCUMENT",
+  "object_type": "ASSET",
+  "origin_search_result_ref": {
+    "id": "SR_000025",
+    "version": 2
+  },
+  "original_file": {
+    "checksum": "e1053fb43c9149191384ea0c05494b1d824bb87cd9cc8545fe13198aa2560f88",
+    "immutable": true,
+    "uri": "gmk://workspace/media/originals/AST_000009.web-evidence.txt"
+  },
+  "rights": {
+    "attribution_required": true,
+    "basis": "Published news evidence; translated/contextual capture requires review.",
+    "notes": "Selection is not rights clearance.",
+    "status": "COMMENTARY_REVIEW"
+  },
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/asset",
+    "schema_version": "1.0.0"
+  },
+  "source_ref": {
+    "id": "SRC_000016",
+    "version": 1
+  },
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "supersedes": {
+    "id": "AST_000009",
+    "version": 4
+  },
+  "technical": {
+    "container": "text/plain",
+    "file_size_bytes": 431
+  },
+  "updated_at": "2026-09-27T16:11:08.175995Z",
+  "version": 5,
+  "workflow_state": "CATALOGED"
+}

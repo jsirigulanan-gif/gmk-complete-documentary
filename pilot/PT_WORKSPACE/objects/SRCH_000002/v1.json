@@ -1,0 +1,60 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "created_at": "2026-09-27T11:22:06.538828Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "NB_000001",
+        "version": 3
+      }
+    }
+  ],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "beat_key": "BEAT_OPENING_PROMISE",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318",
+      "search_key": "OPEN_VIDEO"
+    }
+  },
+  "human_constraints": [],
+  "id": "SRCH_000002",
+  "language": "en",
+  "lock_state": "UNLOCKED",
+  "object_type": "SEARCH",
+  "priority": "CRITICAL",
+  "provider": {
+    "type": "WEB_SEARCH"
+  },
+  "query": "P.T. Gamescom 2014 playable teaser 7780s Studio opening footage before Silent Hills reveal",
+  "query_family": "VISUAL_DESCRIPTION",
+  "requested_source_families": [
+    "GAMEPLAY_CAPTURE",
+    "REUPLOAD"
+  ],
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/search",
+    "schema_version": "1.0.0"
+  },
+  "search_pass": "LONG_FORM_FOOTAGE",
+  "search_round": 1,
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "target_beat_ref": {
+    "id": "NB_000001",
+    "version": 3
+  },
+  "trigger": {
+    "type": "INITIAL"
+  },
+  "updated_at": "2026-09-27T11:22:06.538828Z",
+  "version": 1,
+  "workflow_state": "COMPLETED"
+}

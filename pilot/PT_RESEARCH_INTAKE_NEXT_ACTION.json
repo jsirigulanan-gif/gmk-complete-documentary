@@ -1,0 +1,14 @@
+{
+  "action": "RESOLVE_BLOCKER",
+  "blockers": [
+    "BLK_57D99309AFF6"
+  ],
+  "gate_ids": [
+    "RESEARCH_AUDIT"
+  ],
+  "message": "Resolve scoped blockers before transition.",
+  "missing_requirements": [],
+  "permission_class": "AI_WITH_RULES",
+  "project_state": "RESEARCH_INTAKE",
+  "target_state": "RESEARCH_AUDITED"
+}

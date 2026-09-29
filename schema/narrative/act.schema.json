@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gmk://schema/v1/act",
+  "title": "GMK Act",
+  "allOf": [
+    {
+      "$ref": "gmk://schema/v1/common#/$defs/BaseObject"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "object_type": {
+          "const": "ACT"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^ACT_[A-Z0-9_-]+$"
+        },
+        "project_ref": {
+          "$ref": "gmk://schema/v1/reference#/$defs/ObjectRef",
+          "x-gmk-dependency-relation": "DERIVED_FROM"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "title": {
+          "type": "string"
+        },
+        "working_title": {
+          "type": "string"
+        },
+        "narrative": {
+          "type": "object",
+          "required": [
+            "job",
+            "audience_question",
+            "knowledge_before",
+            "knowledge_after"
+          ],
+          "properties": {
+            "job": {
+              "type": "string",
+              "minLength": 1
+            },
+            "audience_question": {
+              "type": "string",
+              "minLength": 1
+            },
+            "knowledge_before": {
+              "type": "string",
+              "minLength": 1
+            },
+            "knowledge_after": {
+              "type": "string",
+              "minLength": 1
+            },
+            "main_reveal": {
+              "type": "string"
+            },
+            "peak": {
+              "type": "string"
+            },
+            "exit_question": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "project_ref",
+        "order",
+        "narrative"
+      ]
+    }
+  ],
+  "unevaluatedProperties": false
+}

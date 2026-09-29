@@ -1,0 +1,470 @@
+{
+  "artifact_id": "RESEARCH_ATTEMPT_LOG_000002",
+  "artifact_type": "RESEARCH_ATTEMPT_LOG",
+  "created_at": "2026-09-27T09:39:46.999070Z",
+  "extensions": {
+    "research_audit": {
+      "batch_id": "PT_RESEARCH_AUDIT_001",
+      "batch_sha256": "43b8c6e9c38289571f17c389d253696d66e864cb3774a679140bb2567a2e9dca",
+      "phase": "COMPLETE",
+      "summary": {
+        "claim_refs": [
+          {
+            "id": "CLM_000001",
+            "version": 2
+          },
+          {
+            "id": "CLM_000002",
+            "version": 2
+          },
+          {
+            "id": "CLM_000003",
+            "version": 2
+          },
+          {
+            "id": "CLM_000004",
+            "version": 2
+          },
+          {
+            "id": "CLM_000005",
+            "version": 2
+          },
+          {
+            "id": "CLM_000006",
+            "version": 2
+          },
+          {
+            "id": "CLM_000007",
+            "version": 2
+          },
+          {
+            "id": "CLM_000008",
+            "version": 2
+          },
+          {
+            "id": "CLM_000009",
+            "version": 2
+          },
+          {
+            "id": "CLM_000010",
+            "version": 2
+          },
+          {
+            "id": "CLM_000011",
+            "version": 2
+          },
+          {
+            "id": "CLM_000012",
+            "version": 2
+          },
+          {
+            "id": "CLM_000013",
+            "version": 2
+          }
+        ],
+        "created_claim_refs": [
+          {
+            "id": "CLM_000014",
+            "version": 1
+          }
+        ],
+        "disposition_counts": {
+          "CORROBORATED": 5,
+          "INSUFFICIENT_EVIDENCE": 3,
+          "SOURCE_VERIFIED": 6
+        },
+        "evidence_refs": [
+          {
+            "id": "EVD_000014",
+            "version": 1
+          },
+          {
+            "id": "EVD_000015",
+            "version": 1
+          },
+          {
+            "id": "EVD_000016",
+            "version": 1
+          },
+          {
+            "id": "EVD_000017",
+            "version": 1
+          },
+          {
+            "id": "EVD_000018",
+            "version": 1
+          },
+          {
+            "id": "EVD_000019",
+            "version": 1
+          },
+          {
+            "id": "EVD_000020",
+            "version": 1
+          },
+          {
+            "id": "EVD_000021",
+            "version": 1
+          },
+          {
+            "id": "EVD_000022",
+            "version": 1
+          },
+          {
+            "id": "EVD_000023",
+            "version": 1
+          },
+          {
+            "id": "EVD_000024",
+            "version": 1
+          },
+          {
+            "id": "EVD_000025",
+            "version": 1
+          },
+          {
+            "id": "EVD_000026",
+            "version": 1
+          },
+          {
+            "id": "EVD_000027",
+            "version": 1
+          },
+          {
+            "id": "EVD_000028",
+            "version": 1
+          },
+          {
+            "id": "EVD_000029",
+            "version": 1
+          },
+          {
+            "id": "EVD_000030",
+            "version": 1
+          },
+          {
+            "id": "EVD_000031",
+            "version": 1
+          },
+          {
+            "id": "EVD_000032",
+            "version": 1
+          },
+          {
+            "id": "EVD_000033",
+            "version": 1
+          },
+          {
+            "id": "EVD_000034",
+            "version": 1
+          },
+          {
+            "id": "EVD_000035",
+            "version": 1
+          }
+        ],
+        "gap_refs": [
+          {
+            "id": "GAP_000005",
+            "version": 1
+          },
+          {
+            "id": "GAP_000006",
+            "version": 1
+          },
+          {
+            "id": "GAP_000004",
+            "version": 2
+          }
+        ],
+        "source_refs": [
+          {
+            "id": "SRC_000002",
+            "version": 1
+          },
+          {
+            "id": "SRC_000003",
+            "version": 1
+          },
+          {
+            "id": "SRC_000004",
+            "version": 1
+          },
+          {
+            "id": "SRC_000005",
+            "version": 1
+          },
+          {
+            "id": "SRC_000006",
+            "version": 1
+          },
+          {
+            "id": "SRC_000007",
+            "version": 1
+          },
+          {
+            "id": "SRC_000008",
+            "version": 1
+          },
+          {
+            "id": "SRC_000009",
+            "version": 1
+          },
+          {
+            "id": "SRC_000010",
+            "version": 1
+          },
+          {
+            "id": "SRC_000011",
+            "version": 1
+          },
+          {
+            "id": "SRC_000012",
+            "version": 1
+          },
+          {
+            "id": "SRC_000013",
+            "version": 1
+          },
+          {
+            "id": "SRC_000014",
+            "version": 1
+          },
+          {
+            "id": "SRC_000015",
+            "version": 1
+          },
+          {
+            "id": "SRC_000016",
+            "version": 1
+          },
+          {
+            "id": "SRC_000017",
+            "version": 1
+          },
+          {
+            "id": "SRC_000018",
+            "version": 1
+          },
+          {
+            "id": "SRC_000019",
+            "version": 1
+          },
+          {
+            "id": "SRC_000020",
+            "version": 1
+          },
+          {
+            "id": "SRC_000021",
+            "version": 1
+          },
+          {
+            "id": "SRC_000022",
+            "version": 1
+          },
+          {
+            "id": "SRC_000023",
+            "version": 1
+          }
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Web-accessible historical evidence only; paywalled/original Japanese sources may not be fully available.",
+    "A repeated secondary report of the same primary statement is not treated as independent corroboration.",
+    "Community threads can verify that a theory/rumor existed, not that the underlying interpretation is true."
+  ],
+  "origin_refs": [
+    {
+      "id": "SRC_000002",
+      "version": 1
+    },
+    {
+      "id": "SRC_000003",
+      "version": 1
+    },
+    {
+      "id": "SRC_000004",
+      "version": 1
+    },
+    {
+      "id": "SRC_000005",
+      "version": 1
+    },
+    {
+      "id": "SRC_000006",
+      "version": 1
+    },
+    {
+      "id": "SRC_000007",
+      "version": 1
+    },
+    {
+      "id": "SRC_000008",
+      "version": 1
+    },
+    {
+      "id": "SRC_000009",
+      "version": 1
+    },
+    {
+      "id": "SRC_000010",
+      "version": 1
+    },
+    {
+      "id": "SRC_000011",
+      "version": 1
+    },
+    {
+      "id": "SRC_000012",
+      "version": 1
+    },
+    {
+      "id": "SRC_000013",
+      "version": 1
+    },
+    {
+      "id": "SRC_000014",
+      "version": 1
+    },
+    {
+      "id": "SRC_000015",
+      "version": 1
+    },
+    {
+      "id": "SRC_000016",
+      "version": 1
+    },
+    {
+      "id": "SRC_000017",
+      "version": 1
+    },
+    {
+      "id": "SRC_000018",
+      "version": 1
+    },
+    {
+      "id": "SRC_000019",
+      "version": 1
+    },
+    {
+      "id": "SRC_000020",
+      "version": 1
+    },
+    {
+      "id": "SRC_000021",
+      "version": 1
+    },
+    {
+      "id": "SRC_000022",
+      "version": 1
+    },
+    {
+      "id": "SRC_000023",
+      "version": 1
+    }
+  ],
+  "provider": "GMK_WEB_RESEARCH_AUDIT",
+  "query": "Independently verify all 13 P.T. Research Pack claim candidates and record material discrepancies without silently correcting the pack.",
+  "result": "{\"batch_id\": \"PT_RESEARCH_AUDIT_001\", \"claim_decisions\": 13, \"evidence_count\": 22, \"source_count\": 22}",
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/artifact/research-attempt-log",
+    "schema_version": "1.0.0"
+  },
+  "sha256": "3b7f786d2324e9acd396ad8c7e4883ebfbef23b2fb2cc91373cad5f02ec1f3ad",
+  "sources_inspected": [
+    {
+      "id": "SRC_000002",
+      "version": 1
+    },
+    {
+      "id": "SRC_000003",
+      "version": 1
+    },
+    {
+      "id": "SRC_000004",
+      "version": 1
+    },
+    {
+      "id": "SRC_000005",
+      "version": 1
+    },
+    {
+      "id": "SRC_000006",
+      "version": 1
+    },
+    {
+      "id": "SRC_000007",
+      "version": 1
+    },
+    {
+      "id": "SRC_000008",
+      "version": 1
+    },
+    {
+      "id": "SRC_000009",
+      "version": 1
+    },
+    {
+      "id": "SRC_000010",
+      "version": 1
+    },
+    {
+      "id": "SRC_000011",
+      "version": 1
+    },
+    {
+      "id": "SRC_000012",
+      "version": 1
+    },
+    {
+      "id": "SRC_000013",
+      "version": 1
+    },
+    {
+      "id": "SRC_000014",
+      "version": 1
+    },
+    {
+      "id": "SRC_000015",
+      "version": 1
+    },
+    {
+      "id": "SRC_000016",
+      "version": 1
+    },
+    {
+      "id": "SRC_000017",
+      "version": 1
+    },
+    {
+      "id": "SRC_000018",
+      "version": 1
+    },
+    {
+      "id": "SRC_000019",
+      "version": 1
+    },
+    {
+      "id": "SRC_000020",
+      "version": 1
+    },
+    {
+      "id": "SRC_000021",
+      "version": 1
+    },
+    {
+      "id": "SRC_000022",
+      "version": 1
+    },
+    {
+      "id": "SRC_000023",
+      "version": 1
+    }
+  ],
+  "strategy": "Prefer direct/official or contemporaneous sources; track derivative reports in the same independence group; verify existence of theories separately from truth; narrow composite claims; reject unsupported numerical precision.",
+  "supersedes_version": 1,
+  "uri": "gmk://artifacts/RESEARCH_ATTEMPT_LOG_000002/v2",
+  "version": 2
+}

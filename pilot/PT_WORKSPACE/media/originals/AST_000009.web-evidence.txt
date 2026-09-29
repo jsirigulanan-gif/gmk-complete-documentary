@@ -1,0 +1,6 @@
+GMK WEB EVIDENCE SNAPSHOT
+Candidate: CONTRACT_GW
+Source URL: https://game.watch.impress.co.jp/docs/news/735582.html
+Title: 小島秀夫氏、ＫＯＮＡＭＩを契約期間満了につき退職
+Capture type: bounded text evidence snapshot (not origin-server HTML bytes)
+Evidence summary: GAME Watch reported that Hideo Kojima left Konami after expiration of his contract in December 2015, supporting the dated contract-end beat.

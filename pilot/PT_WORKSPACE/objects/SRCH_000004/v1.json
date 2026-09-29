@@ -1,0 +1,60 @@
+{
+  "approval_summary": {
+    "approval_refs": [],
+    "state": "NOT_REQUIRED"
+  },
+  "created_at": "2026-09-27T11:22:06.539212Z",
+  "dependencies": [
+    {
+      "relation": "DERIVED_FROM",
+      "target": {
+        "id": "NB_000002",
+        "version": 2
+      }
+    }
+  ],
+  "extensions": {
+    "asset_recon": {
+      "batch_id": "PT_ASSET_RECON_FIRST_PASS_001",
+      "beat_key": "BEAT_7780",
+      "plan_sha256": "c84e71ea3ffde4be27111676b1bd8c7cf3f2d0f928b32197ca666259a724b318",
+      "search_key": "7780_VIDEO"
+    }
+  },
+  "human_constraints": [],
+  "id": "SRCH_000004",
+  "language": "de",
+  "lock_state": "UNLOCKED",
+  "object_type": "SEARCH",
+  "priority": "MAJOR",
+  "provider": {
+    "type": "WEB_SEARCH"
+  },
+  "query": "Kojima Gamescom 2014 7780 Shizuoka explanation video 1:10:00",
+  "query_family": "PERSON_RESEARCHER",
+  "requested_source_families": [
+    "REUPLOAD",
+    "DOCUMENT"
+  ],
+  "schema_header": {
+    "schema_id": "gmk://schema/v1/search",
+    "schema_version": "1.0.0"
+  },
+  "search_pass": "LONG_FORM_FOOTAGE",
+  "search_round": 1,
+  "stale": {
+    "is_stale": false,
+    "reasons": []
+  },
+  "status": "CURRENT",
+  "target_beat_ref": {
+    "id": "NB_000002",
+    "version": 2
+  },
+  "trigger": {
+    "type": "INITIAL"
+  },
+  "updated_at": "2026-09-27T11:22:06.539212Z",
+  "version": 1,
+  "workflow_state": "COMPLETED"
+}
