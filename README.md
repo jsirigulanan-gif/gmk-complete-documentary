@@ -1,6 +1,8 @@
-# GMK Complete Documentary Maker — Build 045
+# GMK Complete Documentary Maker — Build 046
 
-> **Current build:** Build 045 — Clear Operator navigation for the P.T. pilot. Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
+> **Current build:** Build 046 — Drive project intake and verified file storage. **End-to-end automatic documentary production is not ready.** Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
+
+The new **โปรเจกต์ Drive** tab imports LEMiNO Script documents, creates projects independently of P.T., generates Thai narration through optional Edge TTS, and uploads registered research/media files to a per-project Google Drive folder. It verifies uploaded sizes and MD5 checksums, keeps local files on failures, and records immutable manifest snapshots. See [Drive project usage and remaining work](DRIVE_PROJECTS.md). Automatic story rewriting, footage orchestration, music mixing, and complete-film production remain incomplete.
 
 Build 045 adds a purpose and scope overview in the Operator. The two source-locked Lisa/TGA video slots now live under the P.T. pilot instead of appearing as top-level product features. This GUI currently operates on the bundled P.T. project; it does not yet create arbitrary documentary projects or produce a full film with one click. See [Build 045 changelog](CHANGELOG_BUILD_045.md).
 
@@ -44,7 +46,7 @@ Verified Segments              8
 Pending keys                   LISA_X_DIRECT_VERIFIED, TGA_VIDEO
 ```
 
-The remaining blocker is external media, not missing pipeline code. Build 036 generated `pilot/PT_EXECUTION_PACK/` directly from the durable workspace. Build 037 adds `pilot/PT_MEDIA_INTAKE/`, with one source-locked candidate slot per pending video. Build 038 adds `pilot-media-process`, which combines intake build + receipt + authoritative preflight in one command and mutates the workspace only when `--execute` is explicitly supplied. Build 039 adds `pilot-readiness`, a read-only dashboard plus packaged readiness snapshot under `pilot/PT_PILOT_READINESS/`.
+The P.T. pilot's immediate media-stage blocker is external media; the full documentary product also requires integrations described above. Build 036 generated `pilot/PT_EXECUTION_PACK/` directly from the durable workspace. Build 037 adds `pilot/PT_MEDIA_INTAKE/`, with one source-locked candidate slot per pending video. Build 038 adds `pilot-media-process`, which combines intake build + receipt + authoritative preflight in one command and mutates the workspace only when `--execute` is explicitly supplied. Build 039 adds `pilot-readiness`, a read-only dashboard plus packaged readiness snapshot under `pilot/PT_PILOT_READINESS/`.
 
 
 ## Start the Operator app on Windows

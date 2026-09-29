@@ -82,15 +82,20 @@ class YouTubeAcquirer:
             files=[p for p in files if p.is_file() and p.suffix.lower() not in {'.json','.vtt','.srt','.part'}]
             if files:candidates=[files[0]]
         if not candidates:raise FootageAcquisitionError(f'ACQUIRE_OUTPUT_MISSING: {candidate.video_id}')
-        media=candidates[0];raw=media.read_bytes();sha=hashlib.sha256(raw).hexdigest();dur=self._duration(media)
+        media=candidates[0]
+        hasher=hashlib.sha256();size=0
+        with media.open('rb') as stream:
+            for chunk in iter(lambda:stream.read(1024*1024),b''):
+                hasher.update(chunk);size+=len(chunk)
+        sha=hasher.hexdigest();dur=self._duration(media)
         receipt=out/f'{candidate.video_id}.acquisition.json'
         body={
             'provider':'YOUTUBE','video_id':candidate.video_id,'source_url':candidate.webpage_url,
             'title':candidate.title,'creator':candidate.channel,'query':candidate.query,'query_family':candidate.query_family,
-            'local_path':str(media.resolve()),'sha256':sha,'size_bytes':len(raw),'duration_seconds':dur,
+            'local_path':str(media.resolve()),'sha256':sha,'size_bytes':size,'duration_seconds':dur,
             'permission_status':'PENDING_PERMISSION',
             'attribution':{'creator':candidate.channel,'title':candidate.title,'source_url':candidate.webpage_url,'required_in_credits':True},
             'access_controls_bypassed':False,
         }
         receipt.write_text(json.dumps(body,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-        return AcquiredFootage(candidate,media,sha,len(raw),dur,'PENDING_PERMISSION',body['attribution'],receipt)
+        return AcquiredFootage(candidate,media,sha,size,dur,'PENDING_PERMISSION',body['attribution'],receipt)

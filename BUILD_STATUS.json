@@ -2,8 +2,8 @@
   "architecture_blocker": "RESOLVED_BY_VOICE_AND_DESIGN_REVIEW_PACKAGE_ERRATA",
   "audit_runtime": "IMPLEMENTED_STATIC_QUICK_FULL",
   "automatic_roughcut": "IMPLEMENTED_TRANSCRIPT_FIRST_VISUAL_SECOND_NO_METADATA_ONLY_GUESSING",
-  "build": "045",
-  "build_focus": "Explain product purpose and isolate P.T. pilot media slots in the Operator UI",
+  "build": "046",
+  "build_focus": "Drive project intake and verified storage; full documentary production incomplete",
   "cataloged_assets": 8,
   "cli_surface": "PASS",
   "coverage_issue_retest_resolution": "IMPLEMENTED",
@@ -23,7 +23,7 @@
   "next_frozen_stage": "NONE_CORE_PIPELINE_COMPLETE",
   "next_legal_target": "ASSET_CATALOG_READY",
   "operator_cachyos_setup": "IMPLEMENTED_PACMAN_NATIVE_INSTALL_WITH_YT_DLP_AND_DESKTOP_LAUNCHER",
-  "operator_gui": "IMPLEMENTED_WITH_OVERVIEW_AND_NESTED_PT_PILOT_TABS",
+  "operator_gui": "DRIVE_PROJECT_INTAKE_STORAGE_AND_NESTED_PT_PILOT",
   "operator_handoff": "DOCUMENTED",
   "operator_windows_setup": "PRESERVED_INSTALL_AND_START_CMD",
   "pending_assets": 2,
@@ -53,7 +53,7 @@
   "semantic_validation": "PASS",
   "shot_plan_runtime": "IMPLEMENTED",
   "source_lock_enforced": true,
-  "status": "PASS_QUICK_WITH_LEGACY_WARNING_EXTERNAL_MEDIA_PENDING",
+  "status": "PASS_QUICK_WITH_LEGACY_WARNING_DRIVE_QUOTA_AND_VOICE_CONSENT_PENDING",
   "still_document_fallback": "IMPLEMENTED_WIKIMEDIA_NASA_RESEARCH_ACQUIRE_STILL_TO_CLIP",
   "targeted_regression_tests": "Build 040/041 operator tests, Build 042 distribution tests, QUICK audit, desktop UI inspection",
   "tested_completion_path": [
@@ -75,7 +75,7 @@
     "DELIVERY_READY",
     "PROJECT_COMPLETED"
   ],
-  "tts_runtime": "IMPLEMENTED",
+  "tts_runtime": "CORE_PLANNING_PLUS_OPTIONAL_EDGE_TTS_PROJECT_AUDIO",
   "validated_target_state": "PROJECT_COMPLETED",
   "validation": {
     "build_008_009_compatibility": "7 PASS",
@@ -226,7 +226,11 @@
     "build_044_cachyos_operator": "INSTALL_GMK.sh PASS; system check 7/7; GUI startup smoke stayed open 8 seconds; QUICK audit 26 PASS / 0 FAIL / 1 legacy WARN",
     "build_045_operator_targeted": "13 PASS: Build 045 error callback, Build 040/041 operator compatibility, Build 042 distribution",
     "build_045_quick_audit": "27 PASS / 0 FAIL / 0 TIMEOUT / 1 documented legacy WARN",
-    "build_045_gui_tabs": "LIVE_DESKTOP_VERIFIED: overview, P.T. footage search, nested P.T. status/Lisa/TGA"
+    "build_045_gui_tabs": "LIVE_DESKTOP_VERIFIED: overview, P.T. footage search, nested P.T. status/Lisa/TGA",
+    "build_046_targeted": "32 PASS",
+    "build_046_quick_audit": "28 PASS / 0 FAIL / 0 TIMEOUT / 1 documented legacy WARN",
+    "build_046_gui": "LIVE_DESKTOP_CONSTRUCTION_PASSED",
+    "build_046_voice_sample": "GENERIC_THAI_AUDIO_10.536_SECONDS_63216_BYTES"
   },
   "verified_segments": 8,
   "visual_coverage_runtime": "IMPLEMENTED",
@@ -239,5 +243,8 @@
   "youtube_caption_timestamp": "IMPLEMENTED_VTT_FETCH_AND_TIMESTAMP_NOMINATION",
   "youtube_discovery_provider": "IMPLEMENTED_METADATA_ONLY_YTDLP",
   "visual_semantic_provider_local": "IMPLEMENTED_OLLAMA_EXPLICIT_MODEL_LOCALHOST_ONLY",
-  "visual_semantic_matcher_previous_gap": "CLOSED_WITH_CONFIGURED_VISION_PROVIDER"
+  "visual_semantic_matcher_previous_gap": "CLOSED_WITH_CONFIGURED_VISION_PROVIDER",
+  "product_end_to_end_ready": false,
+  "drive_storage_live": "BLOCKED_SHARED_RCLONE_CLIENT_QUOTA_403",
+  "voice_live": "GENERIC_THAI_SAMPLE_GENERATED_PROJECT_SCRIPT_AWAITING_CONSENT"
 }

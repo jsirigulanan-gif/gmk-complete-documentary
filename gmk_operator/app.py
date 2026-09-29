@@ -66,6 +66,9 @@ def apply_operator_config() -> dict[str, Any]:
     ffprobe = str(cfg.get("ffprobe_path") or "").strip()
     if ffprobe:
         os.environ["GMK_FFPROBE"] = ffprobe
+    edge_tts = str(cfg.get('edge_tts_path') or '').strip()
+    if edge_tts:
+        os.environ['GMK_EDGE_TTS'] = edge_tts
     return cfg
 
 
@@ -161,7 +164,7 @@ class OperatorApp:
         title.pack(anchor="w")
         ttk.Label(
             outer,
-            text=f"Build {BUILD} — หน้าควบคุมโครงการตัวอย่าง P.T. สำหรับค้นฟุตเทจและตรวจหลักฐาน",
+            text=f"Build {BUILD} — นำเข้าบท จัดเก็บโปรเจกต์บน Drive และเครื่องมือโครงการตัวอย่าง",
         ).pack(anchor="w", pady=(0, 10))
 
         self.notebook = ttk.Notebook(outer)
@@ -171,14 +174,19 @@ class OperatorApp:
         self.notebook.add(overview, text="เริ่มต้น")
         self._build_overview(overview)
 
-        documentary = ttk.Frame(self.notebook, padding=12)
-        self.notebook.add(documentary, text="ค้นฟุตเทจ P.T.")
-        self._build_documentary_tab(documentary)
+        projects = ttk.Frame(self.notebook, padding=12)
+        self.notebook.add(projects, text="โปรเจกต์ Drive")
+        from .projects import ProjectsPanel
+        self.projects_panel = ProjectsPanel(self, projects)
 
         pilot = ttk.Frame(self.notebook, padding=12)
         self.notebook.add(pilot, text="โครงการตัวอย่าง P.T.")
         self.pilot_notebook = ttk.Notebook(pilot)
         self.pilot_notebook.pack(fill="both", expand=True)
+
+        documentary = ttk.Frame(self.pilot_notebook, padding=12)
+        self.pilot_notebook.add(documentary, text="ค้นฟุตเทจ P.T.")
+        self._build_documentary_tab(documentary)
 
         self.dashboard = ttk.Frame(self.pilot_notebook, padding=12)
         self.pilot_notebook.add(self.dashboard, text="สถานะ P.T.")
@@ -212,14 +220,14 @@ class OperatorApp:
             ),
             (
                 "หน้าจอนี้ทำอะไรได้ตอนนี้",
-                "หน้าจอนี้ใช้ Narration Beats ที่เตรียมไว้ของ P.T. เพื่อสร้างคำค้นและหารายงานฟุตเทจ "
-                "จากนั้นรับไฟล์วิดีโอที่เลือกไว้ ตรวจหลักฐาน และเดินขั้นตอน media ของโครงการตัวอย่าง "
-                "การกดค้นหายังไม่ได้สร้างสารคดีสำเร็จรูป",
+                "แท็บโปรเจกต์ Drive ใช้นำเข้าเอกสาร LEMiNO Script และเก็บไฟล์แยกตามเรื่อง "
+                "พร้อมตรวจไฟล์หลังอัปโหลด และสร้างเสียงไทยผ่านบริการฟรี ส่วนเลือกภาพ ดนตรี และตัดต่ออัตโนมัติยังไม่เชื่อมครบ "
+                "การนำเข้าบทหรือส่งไฟล์สำเร็จยังไม่ได้หมายถึงสร้างสารคดีเสร็จแล้ว",
             ),
             (
                 "ทำไมมี Lisa และ TGA",
                 "สองวิดีโอนี้เป็นหลักฐานเฉพาะเรื่อง P.T. ที่โครงการตัวอย่างยังขาด "
-                "ไม่ใช่ไฟล์บังคับสำหรับสารคดีทุกเรื่อง ขณะนี้ GUI ยังไม่ได้มีขั้นตอนสร้างโครงการเรื่องใหม่",
+                "ไม่ใช่ไฟล์บังคับสำหรับสารคดีทุกเรื่อง สร้างโปรเจกต์เรื่องใหม่ได้ในแท็บโปรเจกต์ Drive",
             ),
         )
         for heading, body in sections:
@@ -233,7 +241,7 @@ class OperatorApp:
         ttk.Label(status, textvariable=self.state_var).pack(side="left", padx=(8, 0))
         actions = ttk.Frame(parent)
         actions.pack(fill="x")
-        ttk.Button(actions, text="ค้นฟุตเทจ P.T.", command=lambda: self.notebook.select(1)).pack(side="left", padx=(0, 8))
+        ttk.Button(actions, text="เปิดโปรเจกต์ Drive", command=lambda: self.notebook.select(1)).pack(side="left", padx=(0, 8))
         ttk.Button(actions, text="ดูหลักฐานที่ยังขาด", command=lambda: self.notebook.select(2)).pack(side="left")
 
     def _build_dashboard(self, parent) -> None:
@@ -430,6 +438,8 @@ class OperatorApp:
         from tkinter import messagebox
         self._set_busy(False, "เกิดข้อผิดพลาด")
         self.log_line(tb)
+        if hasattr(self, 'projects_panel') and self.projects_panel.selection.current() >= 0:
+            self.projects_panel.show()
         messagebox.showerror("GMK", f"{label}\n\n{type(exc).__name__}: {exc}")
 
     def _async_done(self, label: str, result: Any, done: Callable[[Any], None] | None) -> None:
