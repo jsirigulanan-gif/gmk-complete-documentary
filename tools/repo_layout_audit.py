@@ -7,8 +7,7 @@ required_files=['pyproject.toml','START_GMK.cmd','INSTALL_GMK.cmd','START_GMK.sh
 checks=[]
 for rel in required_dirs:checks.append({'check':f'dir:{rel}','ok':(ROOT/rel).is_dir()})
 for rel in required_files:checks.append({'check':f'file:{rel}','ok':(ROOT/rel).is_file()})
-# GitHub/repo init is intentionally deferred; this audit only reviews local layout.
-checks.append({'check':'git_metadata_absent','ok':not (ROOT/'.git').exists()})
+# Both Git checkouts (including worktrees) and extracted release archives are valid.
 # No runtime workspace is allowed in the source tree.
 checks.append({'check':'no_current_manifest_in_source_root','ok':not (ROOT/'CURRENT_MANIFEST.json').exists()})
 print(json.dumps({'ok':all(x['ok'] for x in checks),'checks':checks},indent=2))

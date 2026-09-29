@@ -10,7 +10,7 @@ build/
 # Local GMK runtime workspaces and acquired source media
 workspaces/
 workspace/
-inputs/
+/inputs/
 *.tmp
 .DS_Store
 

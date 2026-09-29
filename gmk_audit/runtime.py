@@ -63,13 +63,14 @@ class AuditRuntime:
         ('build040_operator', ('tests/build040',)),
         ('build041_cachyos', ('tests/build041',)),
         ('build042_footage_fast', ('tests/build042/test_query_planner.py','tests/build042/test_youtube_provider.py','tests/build042/test_ranker.py','tests/build042/test_source_policy.py','tests/build042/test_distribution_integration.py')),
+        ('build044_frame_boundaries', ('tests/build044',)),
     )
     FULL_BASE_PARTITIONS=(
         ('core_engines', ('tests/state','tests/dependency','tests/gate','tests/runtime','tests/semantic')),
         ('build007_010', ('tests/build007','tests/build008','tests/build009','tests/build010')),
         ('build011_015', ('tests/build011','tests/build012','tests/build013','tests/build014','tests/build015')),
     )
-    HEAVY_PARTITIONS=tuple((f'build{n:03d}',(f'tests/build{n:03d}',)) for n in range(16,43))
+    HEAVY_PARTITIONS=tuple((f'build{n:03d}',(f'tests/build{n:03d}',)) for n in range(16,44))
 
     def __init__(self, root: Path):
         self.root=Path(root).resolve()

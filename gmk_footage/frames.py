@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any
 import hashlib
 import json
+import math
 import shutil
 import subprocess
 import tempfile
@@ -53,10 +54,12 @@ class FrameSampler:
     def sample(self,source:Path,output_dir:Path,*,start:float=0.0,end:float|None=None,interval:float=5.0,max_frames:int=60)->FrameInspectionBundle:
         dur=self.duration(source);start=max(0.0,float(start));end=min(dur,float(end) if end is not None else dur)
         if not (end>start):raise FrameSamplingError('FRAME_RANGE_INVALID')
-        if interval<=0 or max_frames<1:raise FrameSamplingError('FRAME_SAMPLING_CONFIG_INVALID')
+        if not math.isfinite(interval) or interval<=0 or max_frames<1:raise FrameSamplingError('FRAME_SAMPLING_CONFIG_INVALID')
         out=Path(output_dir);out.mkdir(parents=True,exist_ok=True)
         times=[];t=start
-        while t<=end+1e-6 and len(times)<max_frames:
+        # The duration is an exclusive media boundary: there is no frame at EOF.
+        # Check the rounded seek time too, since ffmpeg receives milliseconds.
+        while t<=end+1e-6 and round(t,3)<dur and len(times)<max_frames:
             times.append(round(t,3));t+=interval
         frames=[]
         for idx,t in enumerate(times,1):

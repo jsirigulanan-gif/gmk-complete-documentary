@@ -1,10 +1,10 @@
-# Current package: Build 043
+# GMK Complete Documentary Maker — Build 044
 
-# Gamer Must Know — Schema v1 Build 042
+> **Current build:** Build 044 — Reliable frame sampling and Git checkout audit. Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
 
-> **Current build:** Build 042 — Complete Documentary Maker Footage + Auto-Rough-Cut Core. Core pipeline remains complete through `PROJECT_COMPLETED`; Build 042 restores YouTube-first automatic footage research/acquisition/editing as a first-class production path. Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
+Build 044 fixes frame sampling at the end of a video and enables audits in Git checkouts. The imported baseline is preserved as tag `build-043`. See [Build 044 changelog](CHANGELOG_BUILD_044.md).
 
-Build 042 adds the documentary material engine: Narration Beat → YouTube-first search → candidate ranking → caption/timestamp inspection → acquisition → segment extraction → automatic rough-cut assembly/export. Fallback research proceeds to web/archive video, then real still/document assets, with AI reserved as the final material tier. Rights are recorded as metadata/credits and do not replace provenance. Pipeline semantics and Schema v1 contracts remain unchanged.
+Build 043 adds pixel-grounded frame descriptions, visual timestamp matching, and an optional Ollama vision provider to the Build 042 footage runtime. Automatic production tries transcript timestamps first, then configured visual matching; insufficient evidence remains unresolved. See [Build 043 changelog](CHANGELOG_BUILD_043.md) and [continuation handoff](GPT_WORK_HANDOFF.md).
 
 Physical runtime implementation of the GMK Schema v1 production pipeline.
 
@@ -117,6 +117,8 @@ Human approvals remain mandatory at their frozen boundaries.
 - 040 — Operator Release Candidate: desktop GUI, Windows launcher/setup, media-slot inspection UX, and shared ffprobe resolution
 - 041 — CachyOS/Arch native installer and desktop launcher
 - 042 — YouTube-first footage discovery, ranking, timestamp inspection, acquisition, web/still fallbacks, automatic rough-cut assembly and credits
+- 043 — Visual semantic frame matching and evidence manifests for transcript-poor footage
+- 044 — End-of-file frame sampling fix, Git checkout audit support, and regression coverage
 
 ## Audit
 ```bash
@@ -126,4 +128,4 @@ python -m gmk_cli audit --profile QUICK --json
 `FULL` runs heavy build partitions independently and reports `TIMEOUT` separately from `FAIL`/`PASS`.
 
 ## Repository status
-GitHub has intentionally not been created. Remote publication is also not fabricated; the final built-in adapter is `LOCAL_EXPORT` unless an authorized external integration is added.
+Repository: [jsirigulanan-gif/gmk-complete-documentary](https://github.com/jsirigulanan-gif/gmk-complete-documentary). This repository import does not publish documentary outputs; the final built-in media delivery adapter remains `LOCAL_EXPORT`.

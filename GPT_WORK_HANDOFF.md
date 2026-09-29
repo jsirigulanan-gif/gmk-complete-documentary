@@ -1,9 +1,14 @@
-# GPT Work Handoff — GMK Complete Documentary Maker Build 043
+# Continuation Handoff — GMK Complete Documentary Maker
+
+## Current continuation (Build 044)
+The user chose to continue in this Codex session. Build 043 is preserved in Git tag `build-043`; current code is Build 044. Read `CHANGELOG_BUILD_044.md` and `BUILD_044_VALIDATION.md` for changes and current verification. Historical reports below describe the imported baseline.
+
+Next: connect the existing automatic footage production runtime and optional explicitly configured vision provider to a supported CLI/operator command. Currently the CLI/operator expose footage research, while `AutomaticFootageProductionRuntime` is a Python API. Add integration tests; preserve source evidence, credits, unresolved-beat failures, and existing human review gates. Live source acquisition and Ollama inference have not been verified by this import.
 
 ## Repository target
 `jsirigulanan-gif/gmk-complete-documentary`
 
-## Authoritative baseline
+## Imported baseline (tag `build-043`)
 - Package/build: **Build 043**
 - Schema: `FROZEN_WITH_ERRATA_024_025_029_033`
 - Frozen Schema v1 contract count: **80**
@@ -32,7 +37,7 @@ See `CHANGELOG_BUILD_043.md`. Key additions:
 - production manifests now record `selection_mode` and visual-match evidence
 
 ## Important compatibility note
-`OPERATOR_HANDOFF.md` and `BUILD_REPORT.md` contain older Build 040/041 baseline labels. Treat them as historical/operator material, not the current build number. Build 043 is authoritative for continuation. Do not delete those files unless intentionally replacing historical documentation.
+`OPERATOR_HANDOFF.md` and `BUILD_REPORT.md` contain older Build 040/041 baseline labels. Treat them as historical/operator material, not the current build number. Build 043 is the authoritative imported baseline; the current continuation is recorded above. Do not delete those files unless intentionally replacing historical documentation.
 
 ## Current P.T. pilot boundary
 The packaged P.T. workspace has historically been at `ASSET_RECON` and required two source-locked external videos:
