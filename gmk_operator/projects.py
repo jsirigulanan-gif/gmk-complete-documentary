@@ -36,6 +36,7 @@ class ProjectsPanel:
         ttk.Button(row, text='เพิ่มไฟล์', command=self.add_file).pack(side='left', padx=6)
         ttk.Button(row, text='ส่งไฟล์และตรวจสอบบน Drive', command=self.sync).pack(side='left')
         ttk.Button(row, text='รีเฟรช', command=self.reload).pack(side='left', padx=6)
+        self.connect_button = ttk.Button(row, text='เชื่อมโปรเจกต์รุ่นเดิม', command=self.connect_production)
         voice_row = ttk.Frame(parent)
         voice_row.pack(fill='x', pady=6)
         self.voice = ttk.Combobox(voice_row, state='readonly', values=['เสียงชาย · Niwat', 'เสียงหญิง · Premwadee'], width=23)
@@ -67,13 +68,27 @@ class ProjectsPanel:
         if p is None:
             return
         data = p.read()
+        from gmk_projects.production import ProductionProject
+        try:
+            production = ProductionProject(p).status()
+            if production['connected']:
+                self.connect_button.pack_forget()
+            else:
+                self.connect_button.pack(side='left')
+            state_labels = {'NOT_CONNECTED': 'โปรเจกต์รุ่นเดิม — กดเชื่อมโปรเจกต์รุ่นเดิมเพื่อทำงานต่อ',
+                            'BOOTSTRAPPED': 'ตั้งโปรเจกต์แล้ว — รอนำเข้ารีเสิร์ช',
+                            'RESEARCH_INTAKE': 'รับรีเสิร์ชแล้ว — ขั้นถัดไปคือตรวจหลักฐานและข้อกล่าวอ้าง'}
+            production_label = state_labels.get(production['production_state'], production['production_state'])
+        except Exception:
+            production_label = 'อ่านสถานะการผลิตไม่ได้ — ต้องตรวจหรือกู้คืนข้อมูลก่อนทำงานต่อ'
         statuses = {'LOCAL_ONLY': 'ยังอยู่ในเครื่อง', 'PENDING_UPLOAD': 'มีไฟล์รอส่ง',
                     'UPLOADING': 'กำลังส่ง', 'UPLOAD_FAILED': 'ส่งไม่สำเร็จ — ไฟล์ยังอยู่ในเครื่อง กดส่งซ้ำได้',
                     'VERIFIED': 'ส่งและตรวจไฟล์ครบแล้ว'}
         lines = [data['title'], 'สถานะ Drive: ' + statuses.get(data['storage_status'], data['storage_status']),
                  'โฟลเดอร์ Drive: ' + data['drive']['root'] + '/' + data['project_id'],
                  'ในเครื่อง: ' + str(p.root),
-                 'สถานะการผลิต: รับข้อมูลแล้ว — ยังไม่ใช่วิดีโอสำเร็จรูป', '']
+                 'สถานะการผลิต: ' + production_label,
+                 'การส่งออกสารคดีครบกระบวนการ: ยังไม่ได้ยืนยัน', '']
         lines += [('✓ ' if a['upload_status'] == 'VERIFIED' else 'รอส่ง: ') + a['original_name'] for a in data['assets']]
         self.details.configure(state='normal')
         self.details.delete('1.0', 'end')
@@ -131,6 +146,12 @@ class ProjectsPanel:
         project = self.current()
         if project:
             self.app._async('กำลังส่งและตรวจไฟล์บน Drive…', project.sync, lambda _: self.show())
+
+    def connect_production(self):
+        from gmk_projects.production import ProductionProject
+        project = self.current()
+        if project:
+            self.app._async('กำลังเชื่อมสถานะการผลิต…', ProductionProject(project).connect_existing, lambda _: self.show())
 
     def narrate(self, limit):
         from gmk_projects.voice import EdgeVoice, generate_voice

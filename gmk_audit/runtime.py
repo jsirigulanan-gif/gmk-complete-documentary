@@ -66,6 +66,7 @@ class AuditRuntime:
         ('build044_frame_boundaries', ('tests/build044',)),
         ('build045_operator', ('tests/build045',)),
         ('build046_projects', ('tests/build046',)),
+        ('build047_production_binding', ('tests/build047',)),
     )
     FULL_BASE_PARTITIONS=(
         ('core_engines', ('tests/state','tests/dependency','tests/gate','tests/runtime','tests/semantic')),

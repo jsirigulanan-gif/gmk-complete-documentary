@@ -1,6 +1,10 @@
-# GMK Complete Documentary Maker — Build 046
+# GMK Complete Documentary Maker — Build 047
 
-> **Current build:** Build 046 — Drive project intake and verified file storage. **End-to-end automatic documentary production is not ready.** Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
+> **Current build:** Build 047 — General projects connected to the authoritative production runtime. **End-to-end automatic documentary production is not ready.** Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
+
+The final product requirement is a coherent **Topic / Brief → Research → Evidence / Claims → Narrative → Script → Narration Beats → Visual Requirements → Footage Research → Footage Selection → Footage Acquisition → Scene Planning → Shot Planning → Timeline / Edit Assembly → Voice / TTS → Design / Graphics → Render → Full-film QA → Delivery → Export → Completed Documentary** workflow. See [product requirements and acceptance criteria](PRODUCT_REQUIREMENTS.md) and [integration roadmap](IMPLEMENTATION_ROADMAP.md).
+
+Build 047 binds each new Drive project to a persistent StateEngine workspace. Research import registers original bytes and enters Research Intake; it does not claim factual audit or downstream completion. Project status comes from the core manifest, and Drive sync includes a production-record checkpoint. Old projects can be connected through the project panel or `python -m gmk_projects connect-production /path/to/project`.
 
 The new **โปรเจกต์ Drive** tab imports LEMiNO Script documents, creates projects independently of P.T., generates Thai narration through optional Edge TTS, and uploads registered research/media files to a per-project Google Drive folder. It verifies uploaded sizes and MD5 checksums, keeps local files on failures, and records immutable manifest snapshots. See [Drive project usage and remaining work](DRIVE_PROJECTS.md). Automatic story rewriting, footage orchestration, music mixing, and complete-film production remain incomplete.
 

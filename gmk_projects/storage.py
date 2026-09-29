@@ -144,8 +144,10 @@ class Project:
         atomic_json(p.manifest, {'version': 1, 'project_id': key, 'title': title.strip(),
                     'source_url': source_url, 'created_at': datetime.now(timezone.utc).isoformat(),
                     'drive': {'remote': remote, 'root': drive_root}, 'assets': [],
-                    'storage_status': 'LOCAL_ONLY', 'production_status': 'RESEARCH_INTAKE',
+                    'storage_status': 'LOCAL_ONLY',
                     'last_snapshot': None})
+        from .production import ProductionProject
+        ProductionProject(p).initialize()
         return p
 
     def add_file(self, source: Path, role: str, *, source_url: str = '', scenes: list[str] | None = None) -> dict:
@@ -186,8 +188,16 @@ class Project:
                 tmp.unlink(missing_ok=True)
 
     def sync(self, drive: RcloneDrive | None = None) -> dict:
+        checkpoint = None
+        if self.read().get('production_runtime'):
+            from .production import ProductionProject
+            checkpoint = ProductionProject(self).checkpoint()
         with self._lock():
             data = self.read()
+            if checkpoint:
+                pointer = json.loads((self.root/'production'/'CURRENT_MANIFEST.json').read_text(encoding='utf-8'))
+                if pointer['sha256'] != checkpoint['manifest_sha256']:
+                    raise StorageError('Production changed while checkpointing; retry sync before claiming current backup')
             drive = drive or RcloneDrive(**data['drive'])
             data['storage_status'] = 'UPLOADING'
             atomic_json(self.manifest, data)

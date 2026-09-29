@@ -1,6 +1,16 @@
 # Continuation Handoff — GMK Complete Documentary Maker
 
-## Current continuation (Build 045)
+## Current continuation (Build 047)
+
+The user's complete lifecycle is authoritative in `PRODUCT_REQUIREMENTS.md`; use `IMPLEMENTATION_ROADMAP.md` for the integration sequence. Do not equate a component runtime or fixture release with a completed documentary.
+
+General Drive projects now have a `production/` StateEngine workspace. Its `CURRENT_MANIFEST.json` governs production state; `project.json` governs storage/catalog metadata. Original source imports are registered as RESEARCH_PACK, with Research Intake as the current real stage. `ProductionProject.checkpoint()` archives the persistent core records for Drive sync. This is the first integration step; parsed scripts/voice, claims, media selection, timeline, render and delivery still need canonical object adapters.
+
+Build 046 added real Google Docs research intake, project asset storage, and optional free Edge TTS narration. A generic Thai sample was generated; private project narration still needs user consent for Edge TTS. Actual Drive upload hit the pre-existing shared rclone OAuth client's quota (403); local files remain available. Do not silently claim these blockers are resolved or move private research into Git.
+
+Next: general research/evidence/claim intake and a project-specific beat/visual requirement pipeline, then footage/timeline/voice/render integration as described in the roadmap. Keep one production authority and require real output verification for final completion.
+
+## Historical continuation (Build 045)
 The Operator now has an overview and nests Lisa/TGA under the P.T. pilot. See `CHANGELOG_BUILD_045.md`. The next product gap is still a general-project GUI/workflow and a supported automatic production entry point.
 
 ## Previous continuation (Build 044)

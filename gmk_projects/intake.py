@@ -92,7 +92,11 @@ def parse_script(text: str, links: list[dict]) -> dict:
 def import_research(project: Project, source: Path) -> dict:
     text, links = read_source(source)
     parsed = parse_script(text, links)
-    project.add_file(source, 'research', source_url=project.read()['source_url'])
+    source_asset = project.add_file(source, 'research', source_url=project.read()['source_url'])
+    from .production import ProductionProject
+    production = ProductionProject(project)
+    production.initialize()
+    production.register_research(source_asset['path'])
     # Stored source is immutable; this human-readable working derivative can be edited.
     working = project.root / 'script.json'
     atomic_json(working, parsed)

@@ -17,7 +17,7 @@ def main():
     new.add_argument('--source-url', default='')
     new.add_argument('--remote', default='gdrive:')
     new.add_argument('--drive-root', default='GMK Documentary Projects')
-    for action in ('status', 'sync', 'add', 'voice'):
+    for action in ('status', 'sync', 'add', 'voice', 'connect-production'):
         p = sub.add_parser(action)
         p.add_argument('project', type=Path)
         if action == 'voice':
@@ -38,7 +38,10 @@ def main():
         result = {'local_project': str(project.root), **project.read()}
     else:
         project = Project(args.project)
-        if args.action == 'voice':
+        if args.action == 'connect-production':
+            from .production import ProductionProject
+            result = ProductionProject(project).connect_existing()
+        elif args.action == 'voice':
             from .voice import EdgeVoice, generate_voice
             result = generate_voice(project, EdgeVoice(args.voice), limit=args.limit)
         elif args.action == 'sync':
@@ -46,7 +49,8 @@ def main():
         elif args.action == 'add':
             result = project.add_file(args.file, args.role, source_url=args.source_url, scenes=args.scene)
         else:
-            result = project.read()
+            from .production import ProductionProject
+            result = {**project.read(), 'production': ProductionProject(project).status()}
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 

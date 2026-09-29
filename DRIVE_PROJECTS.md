@@ -2,7 +2,7 @@
 
 ## Scope
 
-The new project workflow is independent of the frozen P.T. schema and example. The current milestone provides research intake and file storage, not end-to-end documentary generation.
+Projects are independent of the P.T. example but use the same existing production StateEngine and schema. The current milestone provides registered research intake, production state, file storage, and optional narration, not end-to-end documentary generation. The complete target is in PRODUCT_REQUIREMENTS.md.
 
 Open **โปรเจกต์ Drive** in the Operator. Search the root of the configured `gdrive:` connection for `[LEMiNO Script]` Google Docs, select one, and create a project. Alternatively, import DOCX, plain text, or a Google Docs API JSON snapshot. Each project keeps the original source, extracted text and hyperlinks, and a working `script.json`.
 
@@ -15,6 +15,10 @@ Local projects live under `~/GMK Projects/project-<unique ID>/`. Registered file
 - `timeline`: editing data
 - `exports`: finished video exports
 - `manifests`: immutable project inventory snapshots
+
+`production/CURRENT_MANIFEST.json` is the authoritative local production-state pointer. The Drive catalog no longer stores a hardcoded production-state label. Before sync, the core records and research inputs are frozen into a registered `production-checkpoint.zip` asset under `timeline`. Repeating sync without core changes reuses that checkpoint. This backup is not a complete restore UI or a final film export.
+
+New projects are bound automatically. Existing Build 046 projects can be connected once with **เชื่อมโปรเจกต์รุ่นเดิม** or `python -m gmk_projects connect-production /path/to/project`. Migration preserves their registered media and is safe to repeat. Status reads do not silently migrate a project. Missing or corrupt core records fail rather than resetting the project's history.
 
 The Drive directory is created by the first successful upload. Empty local folders are not claimed as existing remote folders. The directory ID is unique per project so duplicate documentary titles do not overwrite another project.
 

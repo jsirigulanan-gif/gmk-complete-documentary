@@ -2,8 +2,8 @@
   "architecture_blocker": "RESOLVED_BY_VOICE_AND_DESIGN_REVIEW_PACKAGE_ERRATA",
   "audit_runtime": "IMPLEMENTED_STATIC_QUICK_FULL",
   "automatic_roughcut": "IMPLEMENTED_TRANSCRIPT_FIRST_VISUAL_SECOND_NO_METADATA_ONLY_GUESSING",
-  "build": "046",
-  "build_focus": "Drive project intake and verified storage; full documentary production incomplete",
+  "build": "047",
+  "build_focus": "Bind general Drive projects to the authoritative production runtime and record complete product requirements",
   "cataloged_assets": 8,
   "cli_surface": "PASS",
   "coverage_issue_retest_resolution": "IMPLEMENTED",
@@ -15,7 +15,7 @@
   "gate_runtime_core_tests": "19 PASSED",
   "github": "jsirigulanan-gif/gmk-complete-documentary",
   "html_review_runtime": "IMPLEMENTED_PREPARE_DECIDE",
-  "latest_stage_runtime": "CORE_PIPELINE_COMPLETE_PLUS_AUTOMATED_FOOTAGE_ROUGHCUT_AND_VISUAL_SEMANTIC_MATCHING",
+  "latest_stage_runtime": "PERSISTENT_CORE_AND_GENERAL_PROJECT_BINDING_PRODUCT_INTEGRATION_INCOMPLETE",
   "manifest_version": 104,
   "material_priority": "YOUTUBE>WEB_VIDEO>STILL_DOCUMENT>AI_GENERATED_LAST",
   "media_handoff_runtime": "IMPLEMENTED",
@@ -53,7 +53,7 @@
   "semantic_validation": "PASS",
   "shot_plan_runtime": "IMPLEMENTED",
   "source_lock_enforced": true,
-  "status": "PASS_QUICK_WITH_LEGACY_WARNING_DRIVE_QUOTA_AND_VOICE_CONSENT_PENDING",
+  "status": "PASS_QUICK_WITH_LEGACY_WARNING_PRODUCT_INTEGRATION_INCOMPLETE",
   "still_document_fallback": "IMPLEMENTED_WIKIMEDIA_NASA_RESEARCH_ACQUIRE_STILL_TO_CLIP",
   "targeted_regression_tests": "Build 040/041 operator tests, Build 042 distribution tests, QUICK audit, desktop UI inspection",
   "tested_completion_path": [
@@ -230,7 +230,11 @@
     "build_046_targeted": "32 PASS",
     "build_046_quick_audit": "28 PASS / 0 FAIL / 0 TIMEOUT / 1 documented legacy WARN",
     "build_046_gui": "LIVE_DESKTOP_CONSTRUCTION_PASSED",
-    "build_046_voice_sample": "GENERIC_THAI_AUDIO_10.536_SECONDS_63216_BYTES"
+    "build_046_voice_sample": "GENERIC_THAI_AUDIO_10.536_SECONDS_63216_BYTES",
+    "build_047_targeted": "39 PASS",
+    "build_047_quick_audit": "29 PASS / 0 FAIL / 0 TIMEOUT / 1 documented legacy WARN",
+    "build_047_live_project": "BOUND_RESEARCH_INTAKE_SOURCE_REGISTERED_NOT_AUDITED",
+    "build_047_gui": "LIVE_CORE_STATE_VISIBLE_LEGACY_MIGRATION_ACTION_HIDDEN_FOR_CONNECTED_PROJECT"
   },
   "verified_segments": 8,
   "visual_coverage_runtime": "IMPLEMENTED",
@@ -246,5 +250,10 @@
   "visual_semantic_matcher_previous_gap": "CLOSED_WITH_CONFIGURED_VISION_PROVIDER",
   "product_end_to_end_ready": false,
   "drive_storage_live": "BLOCKED_SHARED_RCLONE_CLIENT_QUOTA_403",
-  "voice_live": "GENERIC_THAI_SAMPLE_GENERATED_PROJECT_SCRIPT_AWAITING_CONSENT"
+  "voice_live": "GENERIC_THAI_SAMPLE_GENERATED_PROJECT_SCRIPT_AWAITING_CONSENT",
+  "product_requirements": "PRODUCT_REQUIREMENTS.md",
+  "integration_roadmap": "IMPLEMENTATION_ROADMAP.md",
+  "production_state_authority": "PER_PROJECT_STATE_ENGINE_CURRENT_MANIFEST",
+  "next_product_milestone": "GENERAL_RESEARCH_EVIDENCE_CLAIMS_AND_BEAT_VISUAL_ADAPTERS",
+  "validated_target_state_scope": "LEGACY_FIXTURE_RUNTIME_TESTS_NOT_REAL_DOCUMENTARY_DELIVERY"
 }

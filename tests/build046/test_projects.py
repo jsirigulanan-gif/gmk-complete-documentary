@@ -39,7 +39,7 @@ def test_failure_retry_preserves_media_and_never_claims_success(tmp_path):
     drive.fail = False
     result = project.sync(drive)
     assert result['storage_status'] == 'VERIFIED'
-    assert result['production_status'] == 'RESEARCH_INTAKE'
+    assert result['production_runtime']['state_authority'] == 'production/CURRENT_MANIFEST.json'
     count = len(drive.files)
     project.sync(drive)
     assert len(drive.files) == count
@@ -102,7 +102,7 @@ def test_candidate_is_archived_before_being_returned(tmp_path):
     result = acquirer.acquire(SimpleNamespace(webpage_url='https://example.com/video'), tmp_path)
     assert result is acquired
     assert p.read()['storage_status'] == 'VERIFIED'
-    assert {a['role'] for a in p.read()['assets']} == {'research', 'footage'}
+    assert {a['role'] for a in p.read()['assets']} == {'research', 'footage', 'timeline'}
 
 
 def test_intake_preserves_links_and_does_not_trust_verified(tmp_path):
