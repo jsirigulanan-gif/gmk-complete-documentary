@@ -17,7 +17,7 @@ def main():
     new.add_argument('--source-url', default='')
     new.add_argument('--remote', default='gdrive:')
     new.add_argument('--drive-root', default='GMK Documentary Projects')
-    for action in ('status', 'sync', 'add', 'voice', 'connect-production'):
+    for action in ('status', 'sync', 'add', 'voice', 'connect-production', 'research-intake', 'research-review'):
         p = sub.add_parser(action)
         p.add_argument('project', type=Path)
         if action == 'voice':
@@ -38,7 +38,10 @@ def main():
         result = {'local_project': str(project.root), **project.read()}
     else:
         project = Project(args.project)
-        if args.action == 'connect-production':
+        if args.action in ('research-intake', 'research-review'):
+            from .research import analyze_research, research_review
+            result = (analyze_research if args.action == 'research-intake' else research_review)(project)
+        elif args.action == 'connect-production':
             from .production import ProductionProject
             result = ProductionProject(project).connect_existing()
         elif args.action == 'voice':

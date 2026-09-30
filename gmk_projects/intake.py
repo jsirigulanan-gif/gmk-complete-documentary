@@ -93,6 +93,10 @@ def import_research(project: Project, source: Path) -> dict:
     text, links = read_source(source)
     parsed = parse_script(text, links)
     source_asset = project.add_file(source, 'research', source_url=project.read()['source_url'])
+    # The source may be edited while being imported. Derive script and claims
+    # from the same frozen bytes, rather than from the earlier validation read.
+    text, links = read_source(project.root / source_asset['path'])
+    parsed = parse_script(text, links)
     from .production import ProductionProject
     production = ProductionProject(project)
     production.initialize()
@@ -101,4 +105,6 @@ def import_research(project: Project, source: Path) -> dict:
     working = project.root / 'script.json'
     atomic_json(working, parsed)
     project.add_file(working, 'research', source_url=project.read()['source_url'])
+    from .research import analyze_research
+    analyze_research(project)
     return parsed

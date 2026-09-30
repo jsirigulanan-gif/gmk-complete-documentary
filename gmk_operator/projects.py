@@ -37,6 +37,10 @@ class ProjectsPanel:
         ttk.Button(row, text='ส่งไฟล์และตรวจสอบบน Drive', command=self.sync).pack(side='left')
         ttk.Button(row, text='รีเฟรช', command=self.reload).pack(side='left', padx=6)
         self.connect_button = ttk.Button(row, text='เชื่อมโปรเจกต์รุ่นเดิม', command=self.connect_production)
+        research_row = ttk.Frame(parent)
+        research_row.pack(fill='x', pady=6)
+        ttk.Button(research_row, text='แยกข้อกล่าวอ้างจากรีเสิร์ช', command=self.analyze_research).pack(side='left')
+        ttk.Button(research_row, text='เปิดรายการตรวจรีเสิร์ช', command=self.review_research).pack(side='left', padx=6)
         voice_row = ttk.Frame(parent)
         voice_row.pack(fill='x', pady=6)
         self.voice = ttk.Combobox(voice_row, state='readonly', values=['เสียงชาย · Niwat', 'เสียงหญิง · Premwadee'], width=23)
@@ -68,6 +72,7 @@ class ProjectsPanel:
         if p is None:
             return
         data = p.read()
+        research_label = 'ยังไม่มีข้อมูลตรวจรีเสิร์ช'
         from gmk_projects.production import ProductionProject
         try:
             production = ProductionProject(p).status()
@@ -79,6 +84,8 @@ class ProjectsPanel:
                             'BOOTSTRAPPED': 'ตั้งโปรเจกต์แล้ว — รอนำเข้ารีเสิร์ช',
                             'RESEARCH_INTAKE': 'รับรีเสิร์ชแล้ว — ขั้นถัดไปคือตรวจหลักฐานและข้อกล่าวอ้าง'}
             production_label = state_labels.get(production['production_state'], production['production_state'])
+            if production['connected']:
+                research_label = f'ข้อความรอตรวจ {production["unreviewed_claim_count"]} / ทั้งหมด {production["claim_count"]} รายการ'
         except Exception:
             production_label = 'อ่านสถานะการผลิตไม่ได้ — ต้องตรวจหรือกู้คืนข้อมูลก่อนทำงานต่อ'
         statuses = {'LOCAL_ONLY': 'ยังอยู่ในเครื่อง', 'PENDING_UPLOAD': 'มีไฟล์รอส่ง',
@@ -88,6 +95,7 @@ class ProjectsPanel:
                  'โฟลเดอร์ Drive: ' + data['drive']['root'] + '/' + data['project_id'],
                  'ในเครื่อง: ' + str(p.root),
                  'สถานะการผลิต: ' + production_label,
+                 'รีเสิร์ช: ' + research_label,
                  'การส่งออกสารคดีครบกระบวนการ: ยังไม่ได้ยืนยัน', '']
         lines += [('✓ ' if a['upload_status'] == 'VERIFIED' else 'รอส่ง: ') + a['original_name'] for a in data['assets']]
         self.details.configure(state='normal')
@@ -163,3 +171,20 @@ class ProjectsPanel:
             self.show()
             messagebox.showinfo('GMK', f'สร้างเสียงแล้ว {len(result["scenes"])} ฉาก รวม {result["duration_seconds"]:.1f} วินาที\nไฟล์อยู่ในโฟลเดอร์ voice ของโปรเจกต์ กรุณาฟังก่อนตัดต่อ')
         self.app._async('กำลังสร้างเสียงภาษาไทยผ่านบริการออนไลน์ฟรี…', lambda: generate_voice(project, provider, limit=limit), done)
+
+    def analyze_research(self):
+        from gmk_projects.research import analyze_research
+        project = self.current()
+        if project:
+            def done(result):
+                self.show()
+                messagebox.showinfo('GMK', f'มีข้อความรอตรวจ {result["claims_for_review"]} รายการ และลิงก์อ้างอิง {result["source_leads"]} แหล่ง\nกดเปิดรายการตรวจรีเสิร์ชเพื่อดูตำแหน่งต้นฉบับ ยังไม่ได้ตรวจข้อเท็จจริง')
+            self.app._async('กำลังแยกข้อความและแหล่งอ้างอิง…', lambda: analyze_research(project), done)
+
+    def review_research(self):
+        import webbrowser
+        from gmk_projects.research import research_review
+        project = self.current()
+        if project:
+            self.app._async('กำลังเปิดรายการตรวจรีเสิร์ช…', lambda: research_review(project),
+                            lambda result: webbrowser.open(Path(result['review_path']).as_uri()))

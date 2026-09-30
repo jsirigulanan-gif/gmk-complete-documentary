@@ -281,6 +281,20 @@ class ResearchIntakeRuntime:
     UNREVIEWED and prohibited from narration until a later Research Audit revision.
     """
 
+    batch_prefix = 'PT_INTAKE_'
+    source_relationship = 'ORIGINAL'
+    query = 'Parse supplied P.T. Research Pack into safe GMK research-intake candidates.'
+    strategy = 'Deterministic DOCX paragraph extraction. Preserve declared labels as intake metadata; do not perform external verification.'
+
+    def evidence_scope(self, item):
+        return _evidence_scope(item)
+
+    def declared_label(self, item):
+        return 'VERIFIED FACT' if item.declared_id.startswith('FACT-') else item.declared_id.split('-', 1)[0]
+
+    def source_group(self, batch_id):
+        return 'SRCGRP_RESEARCH_PACK_PT'
+
     def __init__(self, runtime_root: Path, workspace: Path):
         self.root = Path(runtime_root)
         self.workspace = Path(workspace)
@@ -320,7 +334,7 @@ class ResearchIntakeRuntime:
         pack_art = self._research_pack_artifact(state)
         pack_path = self._research_pack_path(pack_art)
         pack_sha = _sha256_file(pack_path)
-        batch_id = 'PT_INTAKE_' + pack_sha[:16].upper()
+        batch_id = self.batch_prefix + pack_sha[:16].upper()
         parsed = self.parser.parse(pack_path)
 
         existing = self._find_existing_attempt(state, batch_id)
@@ -347,7 +361,7 @@ class ResearchIntakeRuntime:
             'publisher': 'User-supplied Research Pack',
             'platform': 'GMK Workspace',
             'authority_class': 'UNKNOWN',
-            'independence': {'group_id': 'SRCGRP_RESEARCH_PACK_PT', 'relationship': 'ORIGINAL'},
+            'independence': {'group_id': self.source_group(batch_id), 'relationship': self.source_relationship},
             'language': 'th-TH',
             'availability': {'state': 'ARCHIVED'},
             'accessed_at': engine.now(),
@@ -375,9 +389,9 @@ class ResearchIntakeRuntime:
             for q in parsed.quotes
         ]
         attempt_ref = tx.create_artifact('RESEARCH_ATTEMPT_LOG', {
-            'query': 'Parse supplied P.T. Research Pack into safe GMK research-intake candidates.',
+            'query': self.query,
             'provider': 'GMK_LOCAL_RESEARCH_PACK_PARSER',
-            'strategy': 'Deterministic DOCX paragraph extraction. Preserve declared labels as intake metadata; do not perform external verification.',
+            'strategy': self.strategy,
             'sources_inspected': [pack_source_ref],
             'result': json.dumps({'parsed_counts': parsed.counts(), 'source_leads': source_lead_payload, 'quotes': quote_payload}, ensure_ascii=False, sort_keys=True),
             'limitations': [
@@ -414,7 +428,7 @@ class ResearchIntakeRuntime:
                 'evidence_links': [{
                     'evidence_ref': ev,
                     'relation': 'CONTEXTUALIZES',
-                    'scope': _evidence_scope(item),
+                    'scope': self.evidence_scope(item),
                     'strength': 'CONTEXT_ONLY',
                 }],
                 'certainty': {'level': 'UNKNOWN', 'basis': ['INTAKE_ONLY']},
@@ -428,7 +442,7 @@ class ResearchIntakeRuntime:
                     'intake': {
                         'batch_id': batch_id,
                         'declared_id': item.declared_id,
-                        'declared_label': 'VERIFIED FACT' if item.declared_id.startswith('FACT-') else item.declared_id.split('-', 1)[0],
+                        'declared_label': self.declared_label(item),
                         'source_hint': item.source_hint,
                     }
                 },

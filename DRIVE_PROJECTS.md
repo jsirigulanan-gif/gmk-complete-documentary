@@ -57,3 +57,16 @@ Each scene's generated audio is measured with ffprobe, registered in the project
 The product target is: select a research document, refine a sourced narrative, download relevant footage, generate Thai voice, time pictures to measured speech, mix music, allow review/edits, and export a playable MP4 back to the same project. First prove this with a 2–3 minute film, then scale to 30 minutes.
 
 Outstanding: automatic research verification/story rewriting, project scene-to-footage orchestration, measured narration-to-picture assembly, music selection/mixing, integrated preview/editor, large interrupted transfer recovery, remote project restore, and an end-to-end real documentary acceptance run. Upload retry currently retries failed files; it does not guarantee byte-offset resume after a process restart. Original research and acquired media are private project data and must not be committed to Git.
+
+## Research intake and review (Build 048)
+
+New source imports create canonical research records automatically. For an existing connected project, choose **แยกข้อกล่าวอ้างจากรีเสิร์ช**, then **เปิดรายการตรวจรีเสิร์ช**. The report opens locally and shows imported text, scene/line locations, source links and outstanding research questions. It does not submit text to an AI service or fetch bibliography URLs automatically.
+
+```bash
+python -m gmk_projects research-intake '/path/to/project'
+python -m gmk_projects research-review '/path/to/project'
+```
+
+The parser supports LEMiNO `SHOT-001 | ...` narration, or explicit `CLAIM:`, `FACT:`, `ข้อกล่าวอ้าง:` and `ข้อเท็จจริง:` lines. Use `QUESTION:`, `GAP:`, `คำถาม:` or `ประเด็นที่ต้องตรวจสอบ:` for open questions. In bilingual scenes it selects Thai narration; paragraphs remain candidate review units, not necessarily atomic facts. Unsupported freeform briefs are preserved and flagged for claim extraction. Independent evidence retrieval, claim splitting and editorial review remain separate work.
+
+The derived `review/research.html` and `review/research.json` can be regenerated from the authoritative production records. Production checkpoints include the source/evidence/claim records. Imported draft voice previews still do not constitute an audited script or completed film.

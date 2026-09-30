@@ -153,10 +153,18 @@ class ProductionProject:
                     'next_action': {'action': 'CONNECT_EXISTING_PROJECT'}, 'documentary_completed': False}
         loaded = self._load()
         engine = loaded.engine
+        claims = {}
+        for obj in engine.snapshot().objects.values():
+            if obj.get('object_type') == 'CLAIM':
+                previous = claims.get(obj['id'])
+                if previous is None or obj['version'] > previous['version']:
+                    claims[obj['id']] = obj
         return {'connected': True, 'production_state': engine.project_state,
                 'project_ref': loaded.manifest['project_ref'], 'manifest_version': engine.manifest_version,
                 'manifest_sha256': loaded.manifest_sha256,
                 'research_pack_count': sum(a.get('artifact_type') == 'RESEARCH_PACK' for a in engine.snapshot().artifacts.values()),
+                'claim_count': len(claims),
+                'unreviewed_claim_count': sum(c['verification_state'] == 'UNREVIEWED' for c in claims.values()),
                 'next_action': engine.next_legal_action(actor_type='AI').to_dict(),
                 # The Drive release/export receipt adapter is still missing. A legacy core release
                 # or a successful upload alone must not claim that the user's full product is done.

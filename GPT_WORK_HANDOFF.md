@@ -1,6 +1,12 @@
 # Continuation Handoff — GMK Complete Documentary Maker
 
-## Current continuation (Build 047)
+## Current continuation (Build 048)
+
+General document intake now uses the existing research runtime through `gmk_projects/research.py`. New imports automatically create canonical source/document evidence, UNREVIEWED claim review units and audit-blocking research gaps. Source links are unfetched leads in the intake log, not independently verified SOURCE objects. The local read-only review page and GUI actions expose exact scene/line locations and outstanding questions. Existing projects can run `python -m gmk_projects research-intake /path/to/project`; retries do not duplicate claims. A real source produced 13 review units and 7 source leads locally.
+
+The next work is external evidence collection and editorial claim splitting/review, then narrative/script/beat/visual adapters. Current paragraphs can include multiple assertions or narrative devices; do not call them atomically extracted or verified facts. The full lifecycle remains incomplete; existing Drive quota and private-text TTS consent blockers remain unchanged.
+
+## Previous continuation (Build 047)
 
 The user's complete lifecycle is authoritative in `PRODUCT_REQUIREMENTS.md`; use `IMPLEMENTATION_ROADMAP.md` for the integration sequence. Do not equate a component runtime or fixture release with a completed documentary.
 

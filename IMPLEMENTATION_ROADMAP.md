@@ -5,6 +5,7 @@ See PRODUCT_REQUIREMENTS.md for the complete user requirement. This plan keeps a
 ## Current evidence
 
 - The legacy StateEngine supports versioned core objects, evidence/dependencies, gates, persistent manifests, QA and release records. Many component tests operate on supplied plans and fixtures.
+- Build 048 connects general source intake to canonical document evidence, unreviewed claim paragraphs and research gaps, with a local read-only review. External verification, atomic claim splitting and editorial decisions still need integration.
 - The general Drive project UI currently imports a real source document, preserves its links, catalogs files, and can synthesize Thai narration. Live narration verification used a generic test passage; private project text still awaits consent for Edge TTS.
 - Footage research/acquisition and rough-cut assembly exist, but the general Drive project workflow does not orchestrate them through a complete film.
 - Actual Drive upload currently fails on the pre-existing shared rclone client's Google API quota. No complete exported documentary has been verified.

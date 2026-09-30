@@ -2,8 +2,8 @@
   "architecture_blocker": "RESOLVED_BY_VOICE_AND_DESIGN_REVIEW_PACKAGE_ERRATA",
   "audit_runtime": "IMPLEMENTED_STATIC_QUICK_FULL",
   "automatic_roughcut": "IMPLEMENTED_TRANSCRIPT_FIRST_VISUAL_SECOND_NO_METADATA_ONLY_GUESSING",
-  "build": "047",
-  "build_focus": "Bind general Drive projects to the authoritative production runtime and record complete product requirements",
+  "build": "048",
+  "build_focus": "General documentary research intake and local claim/source review",
   "cataloged_assets": 8,
   "cli_surface": "PASS",
   "coverage_issue_retest_resolution": "IMPLEMENTED",
@@ -15,7 +15,7 @@
   "gate_runtime_core_tests": "19 PASSED",
   "github": "jsirigulanan-gif/gmk-complete-documentary",
   "html_review_runtime": "IMPLEMENTED_PREPARE_DECIDE",
-  "latest_stage_runtime": "PERSISTENT_CORE_AND_GENERAL_PROJECT_BINDING_PRODUCT_INTEGRATION_INCOMPLETE",
+  "latest_stage_runtime": "GENERAL_RESEARCH_INTAKE_CONNECTED_EXTERNAL_AUDIT_AND_PRODUCT_INTEGRATION_INCOMPLETE",
   "manifest_version": 104,
   "material_priority": "YOUTUBE>WEB_VIDEO>STILL_DOCUMENT>AI_GENERATED_LAST",
   "media_handoff_runtime": "IMPLEMENTED",
@@ -234,7 +234,11 @@
     "build_047_targeted": "39 PASS",
     "build_047_quick_audit": "29 PASS / 0 FAIL / 0 TIMEOUT / 1 documented legacy WARN",
     "build_047_live_project": "BOUND_RESEARCH_INTAKE_SOURCE_REGISTERED_NOT_AUDITED",
-    "build_047_gui": "LIVE_CORE_STATE_VISIBLE_LEGACY_MIGRATION_ACTION_HIDDEN_FOR_CONNECTED_PROJECT"
+    "build_047_gui": "LIVE_CORE_STATE_VISIBLE_LEGACY_MIGRATION_ACTION_HIDDEN_FOR_CONNECTED_PROJECT",
+    "build_048_targeted": "61 PASS across bounded partitions",
+    "build_048_quick_audit": "30 PASS / 0 FAIL / 0 TIMEOUT / 1 documented legacy WARN",
+    "build_048_live_project": "13 IMPORTED_REVIEW_UNITS / 7 UNFETCHED_SOURCE_LEADS / AUDIT_NOT_PASSED / REPLAY_IDEMPOTENT",
+    "build_048_gui": "LIVE_RESEARCH_ACTIONS_AND_CANONICAL_COUNTS_VISIBLE"
   },
   "verified_segments": 8,
   "visual_coverage_runtime": "IMPLEMENTED",
@@ -254,6 +258,6 @@
   "product_requirements": "PRODUCT_REQUIREMENTS.md",
   "integration_roadmap": "IMPLEMENTATION_ROADMAP.md",
   "production_state_authority": "PER_PROJECT_STATE_ENGINE_CURRENT_MANIFEST",
-  "next_product_milestone": "GENERAL_RESEARCH_EVIDENCE_CLAIMS_AND_BEAT_VISUAL_ADAPTERS",
+  "next_product_milestone": "EXTERNAL_EVIDENCE_REVIEW_NARRATIVE_AND_BEAT_VISUAL_ADAPTERS",
   "validated_target_state_scope": "LEGACY_FIXTURE_RUNTIME_TESTS_NOT_REAL_DOCUMENTARY_DELIVERY"
 }
