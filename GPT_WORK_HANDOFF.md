@@ -6,7 +6,7 @@
 
 `Project.sync` now validates adapter receipts for both assets and the manifest snapshot before reporting VERIFIED. Failed transfers are retryable without recreating the package. Concurrent edits/research changes invalidate delivery; successful draft storage still returns `documentary_completed: false`. No new live Drive/TTS/model run was made. The final canonical production/release integration and real-film acceptance remain unfinished.
 
-The user's IDE also references `/home/keng/โครงการ/Veocut/ui/static/index.html`, a separate non-Git project. A clarification was requested; without a reply the continuation used the established GMK repo. Veocut was inspected read-only and was not changed.
+The user's IDE also references `/home/keng/โครงการ/Veocut/ui/static/index.html`, a separate non-Git project. The user explicitly confirmed continuing GMK Build 049 in this conversation; Build 050 continues that repository. Veocut was inspected read-only and was not changed. Do not ask which project to continue again unless the user changes scope.
 
 ## Previous continuation (Build 049)
 
