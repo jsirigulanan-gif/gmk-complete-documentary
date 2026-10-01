@@ -1,6 +1,14 @@
 # Continuation Handoff — GMK Complete Documentary Maker
 
-## Current continuation (Build 049)
+## Current continuation (Build 050)
+
+`gmk_projects/delivery.py` verifies archived render/QA/snapshot records, current editorial review, all ZIP member bytes, and exact Drive receipts. `export_delivery` writes deterministic ZIPs and an immutable registered delivery record referenced by `project.json.active_delivery_asset`. CLI `delivery-verify` is local/read-only; `delivery-sync` explicitly transfers the full project including retained candidates and validates the current draft afterward. Editor buttons expose both actions.
+
+`Project.sync` now validates adapter receipts for both assets and the manifest snapshot before reporting VERIFIED. Failed transfers are retryable without recreating the package. Concurrent edits/research changes invalidate delivery; successful draft storage still returns `documentary_completed: false`. No new live Drive/TTS/model run was made. The final canonical production/release integration and real-film acceptance remain unfinished.
+
+The user's IDE also references `/home/keng/โครงการ/Veocut/ui/static/index.html`, a separate non-Git project. A clarification was requested; without a reply the continuation used the established GMK repo. Veocut was inspected read-only and was not changed.
+
+## Previous continuation (Build 049)
 
 The general workflow now has `gmk_projects/edit.py`, `story.py`, `evidence.py`, `script_review.py`, `footage.py`, `render.py`, and the Operator editor/research windows. See EDITOR_GUIDE_TH.md and CHANGELOG_BUILD_049.md. It preserves the canonical research StateEngine while connecting draft scene editing, opt-in Codex story generation, exact-text voice caching/import, manual or caption-nominated cuts, music, measured timeline conform, actual MP4 rendering, technical QA and explicitly reviewed local ZIP export.
 

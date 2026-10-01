@@ -54,6 +54,12 @@ def relative_path(value: str) -> str:
     return str(p)
 
 
+def validate_drive_receipt(receipt, expected):
+    if (not isinstance(receipt, dict) or not receipt.get('id')
+            or receipt.get('size') != expected['size'] or receipt.get('md5') != expected['md5']):
+        raise StorageError('Drive adapter did not return matching file ID, size and checksum')
+
+
 class RcloneDrive:
     """Copy immutable files; never sync/delete unrelated Drive files or share them."""
 
@@ -216,6 +222,7 @@ class Project:
                         raise StorageError('Local asset changed; register the new version before uploading')
                     # Recheck even previously uploaded files: a user may have removed a Drive copy.
                     receipt = drive.put(local, data['project_id'] + '/' + a['path'], actual)
+                    validate_drive_receipt(receipt, actual)
                     a.update(upload_status='VERIFIED', drive_file=receipt)
                     atomic_json(self.manifest, data)
                 snapshot = {k: v for k, v in data.items() if k not in ('last_snapshot', 'storage_status', 'last_error')}
@@ -224,6 +231,7 @@ class Project:
                 atomic_json(snap_path, snapshot)
                 meta = digest(snap_path)
                 receipt = drive.put(snap_path, data['project_id'] + '/manifests/' + meta['sha256'] + '.json', meta)
+                validate_drive_receipt(receipt, meta)
                 data.update(storage_status='VERIFIED', last_snapshot=receipt)
                 data.pop('last_error', None)
             except Exception:

@@ -69,6 +69,7 @@ class AuditRuntime:
         ('build047_production_binding', ('tests/build047',)),
         ('build048_general_research', ('tests/build048',)),
         ('build049_editor_records', ('tests/build049/test_story_footage.py', 'tests/build049/test_evidence_review.py', 'tests/build049/test_edit_checkpoint.py', 'tests/build049/test_script_review.py')),
+        ('build050_delivery_receipts', ('tests/build050/test_storage_receipts.py', 'tests/build050/test_delivery.py::test_missing_export_has_actionable_error_without_creating_edit')),
     )
     FULL_BASE_PARTITIONS=(
         ('core_engines', ('tests/state','tests/dependency','tests/gate','tests/runtime','tests/semantic')),
@@ -77,6 +78,7 @@ class AuditRuntime:
     )
     HEAVY_PARTITIONS=tuple((f'build{n:03d}',(f'tests/build{n:03d}',)) for n in range(16,44)) + (
         ('build049_media_render', ('tests/build049/test_edit_render.py',)),
+        ('build050_draft_delivery', ('tests/build050/test_delivery.py',)),
     )
 
     def __init__(self, root: Path):

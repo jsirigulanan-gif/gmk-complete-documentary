@@ -1,8 +1,10 @@
-# GMK Complete Documentary Maker — Build 049
+# GMK Complete Documentary Maker — Build 050
 
-> **Current build:** Build 049 — Connected documentary editing desk, measured-voice rendering and local delivery. **End-to-end automatic documentary production is not ready.** Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
+> **Current build:** Build 050 — Exact draft export verification and retryable Drive delivery. **End-to-end automatic documentary production is not ready.** Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
 
 The final product requirement is a coherent **Topic / Brief → Research → Evidence / Claims → Narrative → Script → Narration Beats → Visual Requirements → Footage Research → Footage Selection → Footage Acquisition → Scene Planning → Shot Planning → Timeline / Edit Assembly → Voice / TTS → Design / Graphics → Render → Full-film QA → Delivery → Export → Completed Documentary** workflow. See [product requirements and acceptance criteria](PRODUCT_REQUIREMENTS.md) and [integration roadmap](IMPLEMENTATION_ROADMAP.md).
+
+Build 050 validates every ZIP member against the exact rendered files and current reviewed edit/research. Repeat exports are byte-identical. The new delivery action uploads the project, validates Drive receipts for the package/master/manifest, and checks for changes after transfer. This is verified **draft storage**, not final documentary release. See [Build 050 changes](CHANGELOG_BUILD_050.md).
 
 Build 049 adds a general editing desk for evidence review, opt-in Codex story drafts, narration, scene/cut editing, footage research/acquisition, caption-based shot proposals, measured audio timing, music ducking, titles/subtitles, technical QA and reviewed local delivery packages. See [Thai editor guide](EDITOR_GUIDE_TH.md) and [Build 049 changes](CHANGELOG_BUILD_049.md). Provider-backed real-film acceptance, complete visual-semantic automation, and canonical final Drive release remain incomplete.
 

@@ -133,6 +133,10 @@ class EditorWindow:
         ttk.Button(row, text='ยืนยันว่าดูและฟังทั้งเรื่องแล้ว', command=self.approve).pack(side='left')
         ttk.Button(row, text='สร้างชุดส่งออกฉบับร่าง', command=self.export).pack(side='left', padx=5)
         ttk.Button(row, text='อัปโหลดและตรวจไฟล์บน Drive', command=self.sync).pack(side='left')
+        row = ttk.Frame(finish)
+        row.pack(fill='x', pady=4)
+        ttk.Button(row, text='ตรวจชุดส่งออกกับงานรุ่นปัจจุบัน', command=self.verify_delivery).pack(side='left')
+        ttk.Button(row, text='ส่งชุดฉบับร่างและตรวจสำเนาบน Drive', command=self.deliver).pack(side='left', padx=5)
         ttk.Label(finish, text='การตรวจไฟล์ทางเทคนิคไม่ใช่การตรวจข้อเท็จจริง ต้องตรวจภาพ เสียง คำบรรยาย และแหล่งอ้างอิงก่อนส่งมอบ', wraplength=1000).pack(anchor='w', pady=8)
         self.window.protocol('WM_DELETE_WINDOW', self.close)
         self.reload()
@@ -432,6 +436,29 @@ class EditorWindow:
 
     def sync(self):
         self.run('กำลังอัปโหลดและตรวจ Drive',self.project.sync)
+
+    def show_delivery(self, result):
+        lines = ['ตรวจชุดส่งออกฉบับร่างผ่านแล้ว',
+                 'ไฟล์ ZIP, MP4, บท และผลตรวจเป็นรุ่นเดียวกัน',
+                 'บทผ่านการเทียบหลักฐานทุกฉาก: '+str(result['script_review_ready']),
+                 'ชุดไฟล์: '+str(self.project.root/result['package']['path'])]
+        if result.get('drive_receipts'):
+            lines += ['ส่งและตรวจเลขไฟล์ ขนาด และ checksum บน Drive สำเร็จในการส่งครั้งนี้']
+        else:
+            lines += ['การตรวจครั้งนี้ตรวจไฟล์ในเครื่อง ยังไม่ได้ตรวจ Drive สด']
+        lines += ['ชุดนี้เป็นฉบับร่าง ยังไม่ใช่การอนุมัติส่งมอบสารคดีขั้นสุดท้าย']
+        self.timeline.configure(state='normal')
+        self.timeline.delete('1.0', 'end')
+        self.timeline.insert('1.0', '\n'.join(lines))
+        self.timeline.configure(state='disabled')
+
+    def verify_delivery(self):
+        from gmk_projects.delivery import verify_delivery
+        self.run('กำลังตรวจชุดส่งออก', lambda: verify_delivery(self.project), self.show_delivery)
+
+    def deliver(self):
+        from gmk_projects.delivery import deliver_project
+        self.run('กำลังส่งชุดฉบับร่างและตรวจ Drive', lambda: deliver_project(self.project), self.show_delivery)
 
     def close(self):
         if self.app._busy:

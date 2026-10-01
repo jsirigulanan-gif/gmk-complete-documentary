@@ -2,8 +2,8 @@
   "architecture_blocker": "RESOLVED_BY_VOICE_AND_DESIGN_REVIEW_PACKAGE_ERRATA",
   "audit_runtime": "IMPLEMENTED_STATIC_QUICK_FULL",
   "automatic_roughcut": "IMPLEMENTED_TRANSCRIPT_FIRST_VISUAL_SECOND_NO_METADATA_ONLY_GUESSING",
-  "build": "049",
-  "build_focus": "Connected research/story/edit/voice/footage/render/local-delivery desk",
+  "build": "050",
+  "build_focus": "Exact draft export validation and retryable verified Drive delivery",
   "cataloged_assets": 8,
   "cli_surface": "PASS",
   "coverage_issue_retest_resolution": "IMPLEMENTED",
@@ -15,7 +15,7 @@
   "gate_runtime_core_tests": "19 PASSED",
   "github": "jsirigulanan-gif/gmk-complete-documentary",
   "html_review_runtime": "IMPLEMENTED_PREPARE_DECIDE",
-  "latest_stage_runtime": "CONNECTED_DRAFT_EDITING_AND_RENDER_LOCAL_DELIVERY_REAL_FILM_ACCEPTANCE_PENDING",
+  "latest_stage_runtime": "CONNECTED_EDITOR_WITH_EXACT_DRAFT_DELIVERY_CHECKS_REAL_FILM_ACCEPTANCE_PENDING",
   "manifest_version": 104,
   "material_priority": "YOUTUBE>WEB_VIDEO>STILL_DOCUMENT>AI_GENERATED_LAST",
   "media_handoff_runtime": "IMPLEMENTED",
@@ -55,7 +55,7 @@
   "source_lock_enforced": true,
   "status": "PASS_QUICK_WITH_LEGACY_WARNING_PRODUCT_INTEGRATION_INCOMPLETE",
   "still_document_fallback": "IMPLEMENTED_WIKIMEDIA_NASA_RESEARCH_ACQUIRE_STILL_TO_CLIP",
-  "targeted_regression_tests": "Build 049: 22 new cases passed in bounded partitions; QUICK audit: 31 PASS, 0 FAIL, 0 TIMEOUT, 1 legacy WARN",
+  "targeted_regression_tests": "Build 050 delivery + affected Build 049/046 suites: 34 PASS; 4 additional new snapshot-receipt tests PASS; QUICK: 32 PASS / 0 FAIL / 1 legacy WARN",
   "tested_completion_path": [
     "ASSET_RECON",
     "ASSET_CATALOG_READY",
@@ -242,7 +242,11 @@
     "build_049_new_tests": "22 PASS: 13 editor/research/storage records + 9 real-media/edit/render cases",
     "build_049_quick_audit": "31 PASS / 0 FAIL / 0 TIMEOUT / 1 documented legacy WARN; 84 pytest cases in its partitions",
     "build_049_gui": "LIVE_13_SCENES_13_CLAIMS_EDITOR_EVIDENCE_AND_SCENE_CLAIM_DIALOG_CONSTRUCTED_NO_EXTERNAL_PROVIDER_CALL",
-    "build_049_render": "SYNTHETIC_FFMPEG_MP4_MUSIC_SUBTITLES_MIXED_THAI_LATIN_TITLE_FULL_DECODE_AND_LOCAL_ZIP_PASS_NOT_REAL_FILM_ACCEPTANCE"
+    "build_049_render": "SYNTHETIC_FFMPEG_MP4_MUSIC_SUBTITLES_MIXED_THAI_LATIN_TITLE_FULL_DECODE_AND_LOCAL_ZIP_PASS_NOT_REAL_FILM_ACCEPTANCE",
+    "build_050_targeted": "34 PASS in 90.20 seconds across new delivery and affected media/storage suites",
+    "build_050_new_tests": "13 distinct PASS; no real Drive/model/TTS acceptance claimed",
+    "build_050_quick_audit": "32 PASS / 0 FAIL / 0 TIMEOUT / 1 documented legacy WARN",
+    "build_050_gui": "LIVE_13_SCENE_PROJECT_ALL_EDITOR_BUTTONS_VISIBLE_NO_NETWORK_ACTION_INVOKED"
   },
   "verified_segments": 8,
   "visual_coverage_runtime": "IMPLEMENTED",
@@ -273,7 +277,7 @@
     "timeline": "MEASURED_SPEECH_FRAME_AND_SAMPLE_CONFORM",
     "render": "REAL_FFMPEG_FIXTURE_MP4_MUSIC_DUCKING_SUBTITLES_TITLES",
     "qa": "FULL_FILE_TECHNICAL_DECODE_PLUS_EXPLICIT_EDITORIAL_REVIEW",
-    "delivery": "REVIEWED_LOCAL_DRAFT_PACKAGE_WITH_SCRIPT_EVIDENCE_REPORT_NOT_FINAL_CORE_RELEASE",
+    "delivery": "EXACT_LOCAL_DRAFT_PACKAGE_VALIDATION_AND_VERIFIED_DRIVE_DELIVERY_ADAPTER_FINAL_CORE_RELEASE_STILL_PENDING",
     "drive": "LIVE_403_SHARED_CLIENT_QUOTA_RECONFIRMED_2026_09_30",
     "completed_documentary": "NOT_VERIFIED"
   }

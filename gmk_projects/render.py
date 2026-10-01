@@ -10,7 +10,7 @@ import shutil
 import subprocess
 import tempfile
 from uuid import uuid4
-from zipfile import ZIP_DEFLATED, ZipFile
+from zipfile import ZIP_DEFLATED, ZIP_STORED, ZipFile, ZipInfo
 
 from .edit import EditError, EditSession, asset_file, fingerprint, media_ref, probe
 from .storage import atomic_json, digest
@@ -242,28 +242,38 @@ def approve_editorial_review(project, *, expected_master_sha256: str) -> dict:
 
 
 def export_delivery(project) -> dict:
-    render = json.loads((project.root/'last_render.json').read_text(encoding='utf-8'))
-    decision = json.loads((project.root/'editorial_review.json').read_text(encoding='utf-8'))
-    if (decision['master_sha256'] != render['technical_qa']['sha256']
-            or decision['edit_sha256'] != fingerprint(EditSession(project).load())
-            or decision['edit_sha256'] != render['edit_sha256'] or not render['technical_qa']['passed']):
-        raise EditError('ต้องตรวจวิดีโอรุ่นปัจจุบันก่อนสร้างชุดส่งออก')
-    if decision['research_manifest_sha256'] != ProductionProject(project).status()['manifest_sha256']:
-        raise EditError('รีเสิร์ชเปลี่ยนแล้ว ต้องตรวจวิดีโอรุ่นใหม่ก่อนส่งออก')
+    from .delivery import current_reviewed_render
+    render, decision, files, script = current_reviewed_render(project)
     destination = project.root/'deliveries'
     destination.mkdir(exist_ok=True)
     with tempfile.TemporaryDirectory(dir=destination,prefix='.package-') as folder:
         archive = Path(folder)/'documentary-delivery.zip'
-        with ZipFile(archive, 'w', compression=ZIP_DEFLATED) as bundle:
-            for name, ref in render['registered'].items():
-                source = asset_file(project, ref)
-                bundle.write(source, 'documentary.mp4' if name == 'preview.mp4' else name)
-            bundle.writestr('editorial-review.json', json.dumps(decision, ensure_ascii=False, indent=2))
+        with ZipFile(archive, 'w') as bundle:
+            for name, source in sorted(files.items()):
+                info = ZipInfo('documentary.mp4' if name == 'preview.mp4' else name, date_time=(1980, 1, 1, 0, 0, 0))
+                info.compress_type = ZIP_STORED if name.endswith('.mp4') else ZIP_DEFLATED
+                with source.open('rb') as stream, bundle.open(info, 'w', force_zip64=True) as dest:
+                    shutil.copyfileobj(stream, dest, length=1024*1024)
+            bundle.writestr(ZipInfo('editorial-review.json', date_time=(1980, 1, 1, 0, 0, 0)),
+                            json.dumps(decision, ensure_ascii=False, indent=2, sort_keys=True)+'\n')
         asset = project.add_file(archive, 'exports')
-    result = {'package': media_ref(asset), 'master': render['registered']['preview.mp4'],
+    result = {'project_id': project.read()['project_id'],
+              'package': media_ref(asset), 'master': render['registered']['preview.mp4'],
               'edit_sha256': render['edit_sha256'], 'drive_status': 'PENDING_UPLOAD',
+              'research_manifest_sha256': render['research_manifest_sha256'],
+              'registered': render['registered'], 'editorial_review': decision,
               'package_kind': 'REVIEWED_LOCAL_DRAFT',
-              'script_review_ready': render.get('script_review_ready', False),
+              'script_review_ready': script.get('ready') is True,
               'documentary_completed': False}
-    atomic_json(destination/(asset['sha256']+'.json'), result)
+    record_path = destination/('delivery-'+asset['sha256']+'.json')
+    atomic_json(record_path, result)
+    record = project.add_file(record_path, 'timeline')
+    with project._lock():
+        current, current_decision, _, _ = current_reviewed_render(project)
+        if current['registered'] != render['registered'] or current_decision != decision:
+            raise EditError('วิดีโอหรือผลตรวจเปลี่ยนระหว่างสร้างชุดส่งออก กรุณาสร้างชุดใหม่')
+        data = project.read()
+        data['active_delivery_asset'] = media_ref(record)
+        data['storage_status'] = 'PENDING_UPLOAD'
+        atomic_json(project.manifest, data)
     return result

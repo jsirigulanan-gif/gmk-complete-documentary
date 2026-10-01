@@ -19,7 +19,7 @@ def main():
     new.add_argument('--drive-root', default='GMK Documentary Projects')
     for action in ('status', 'sync', 'add', 'voice', 'connect-production', 'research-intake', 'research-review',
                    'edit-init', 'edit-preflight', 'edit-voice', 'render', 'editorial-approve', 'delivery',
-                   'footage-search', 'footage-download'):
+                   'footage-search', 'footage-download', 'delivery-verify', 'delivery-sync'):
         p = sub.add_parser(action)
         p.add_argument('project', type=Path)
         if action == 'voice':
@@ -60,6 +60,9 @@ def main():
                 result = session.synthesize(EdgeVoice(args.voice), scene_ids=args.scene)
             else:
                 result = session.load() if args.action == 'edit-init' else session.preflight()
+        elif args.action in ('delivery-verify', 'delivery-sync'):
+            from .delivery import verify_delivery, deliver_project
+            result = (verify_delivery if args.action == 'delivery-verify' else deliver_project)(project)
         elif args.action in ('render', 'editorial-approve', 'delivery'):
             from .render import render_project, approve_editorial_review, export_delivery
             result = (render_project(project) if args.action == 'render' else
