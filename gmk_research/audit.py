@@ -162,7 +162,8 @@ class ResearchAuditRuntime:
         # A persisted historical gate is not enough; this is filled after runtime evaluation in run().
         return 'UNKNOWN'
 
-    def run(self, verification_batch: dict[str,Any], *, transition_if_ready: bool=True) -> ResearchAuditResult:
+    def run(self, verification_batch: dict[str,Any], *, transition_if_ready: bool=True,
+            reopen_early_stage: bool=False) -> ResearchAuditResult:
         batch=deepcopy(verification_batch)
         batch_id=str(batch.get('batch_id') or ('AUDIT_'+_sha256_json(batch)[:16].upper()))
         batch_sha256=_sha256_json(batch)
@@ -171,6 +172,12 @@ class ResearchAuditRuntime:
         if replay:
             gate=engine.gates.evaluate_gate(state,'RESEARCH_AUDIT',engine.now()).result
             return ResearchAuditResult(replay.workspace,replay.batch_id,engine.project_state,engine.manifest_version,replay.claim_refs,replay.source_refs,replay.evidence_refs,replay.created_claim_refs,replay.gap_refs,replay.attempt_ref,gate,replay.disposition_counts,True)
+        if reopen_early_stage and engine.project_state in {'RESEARCH_AUDITED','ROUGH_NARRATIVE_READY','VISUAL_REQUIREMENTS_READY'}:
+            # Explicit operator re-review: keep history and let claim promotion
+            # invalidate dependent narrative objects. Never reopen locked production.
+            reopening=engine.begin()
+            reopening.reenter_stage('RESEARCH_INTAKE',actor_type='HUMAN')
+            reopening.commit()
         if engine.project_state!='RESEARCH_INTAKE':
             raise ResearchAuditError(f'RESEARCH_AUDIT_STATE_INVALID: expected RESEARCH_INTAKE, found {engine.project_state}')
 

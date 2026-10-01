@@ -108,6 +108,7 @@ def review_claim(project,claim_id: str,expected_version: int,claim_text: str,*,s
         current=max(candidates,key=lambda c:c['version'])
         batch['claims'][0]['replace_external_evidence_links'] = claim_text.strip()!=current['claim_text'] or disposition=='INSUFFICIENT'
         batch['batch_id']='OPERATOR_REVIEW_'+fingerprint({**batch,'expected_version':expected_version})[:20].upper()
-        result=ResearchAuditRuntime(RUNTIME_ROOT,production.workspace).run(batch,transition_if_ready=False).to_dict()
+        result=ResearchAuditRuntime(RUNTIME_ROOT,production.workspace).run(
+            batch,transition_if_ready=False,reopen_early_stage=True).to_dict()
         data=project.read();data['storage_status']='PENDING_UPLOAD';atomic_json(project.manifest,data)
     return result

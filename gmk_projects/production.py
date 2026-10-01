@@ -153,6 +153,7 @@ class ProductionProject:
                     'next_action': {'action': 'CONNECT_EXISTING_PROJECT'}, 'documentary_completed': False}
         loaded = self._load()
         engine = loaded.engine
+        from .production_bridge import binding_status
         claims = {}
         for obj in engine.snapshot().objects.values():
             if obj.get('object_type') == 'CLAIM':
@@ -160,6 +161,7 @@ class ProductionProject:
                 if previous is None or obj['version'] > previous['version']:
                     claims[obj['id']] = obj
         return {'connected': True, 'production_state': engine.project_state,
+                'story_binding': binding_status(self.project, engine.snapshot()),
                 'project_ref': loaded.manifest['project_ref'], 'manifest_version': engine.manifest_version,
                 'manifest_sha256': loaded.manifest_sha256,
                 'research_pack_count': sum(a.get('artifact_type') == 'RESEARCH_PACK' for a in engine.snapshot().artifacts.values()),

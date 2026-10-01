@@ -94,7 +94,7 @@ class EditSession:
                 'audio_direction': '', 'included': True, 'shots': [], 'voice': None,
                 'hold_last_frame': False, 'show_title': False}
 
-    def save(self, data: dict, *, expected_revision: int) -> dict:
+    def save(self, data: dict, *, expected_revision: int, expected_production_manifest_sha256: str | None = None) -> dict:
         data = deepcopy(data)
         ids = [s['id'] for s in data['scenes']]
         if not ids or len(set(ids)) != len(ids):
@@ -105,6 +105,10 @@ class EditSession:
             raise EditError('ขนาดภาพหรือเฟรมเรตไม่รองรับ')
         with self.project._lock():
             current = self.load()
+            if expected_production_manifest_sha256 is not None:
+                from .production import ProductionProject
+                if ProductionProject(self.project)._load().manifest_sha256 != expected_production_manifest_sha256:
+                    raise EditError('หลักฐานหรือข้อมูลผลิตเปลี่ยนระหว่างเตรียมภาพ กรุณาตรวจแล้วลองใหม่ ไฟล์ที่ดาวน์โหลดยังอยู่ในคลัง')
             if current['revision'] != expected_revision or data.get('project_id') != current['project_id']:
                 raise EditError('มีการแก้โปรเจกต์จากหน้าต่างอื่น กรุณาโหลดใหม่ก่อนบันทึก')
             old = {s['id']: s for s in current['scenes']}

@@ -205,7 +205,11 @@ class StateTransaction:
             raise StateEngineError('PROMOTION_LOCKED_IMPACT_CONFIRMATION_REQUIRED','Promotion affects Human-locked downstream decisions; review the dry-run impact and confirm explicitly.',details={'locked_targets':locked,'impact':report.to_payload()})
         entry.active_version=version; self.dirty_registries.add(rid)
         applied=self.engine.dependency.apply_report(self.staged,report,self.engine.now())
-        for key in applied['changed_objects']:
+        # A dependent may still pin an older version than the previous ACTIVE
+        # head. Reconcile all exact refs after promotion, as cold start does,
+        # so repeated upstream revisions persist the same derived envelope.
+        reconciled=self.engine.dependency.recompute_live_state(self.staged,self.engine.semantic,self.engine.now())
+        for key in set(applied['changed_objects']) | set(reconciled['changed_objects']):
             obj=self.staged.objects[key]; rrid=global_index(self.staged.registries).get(obj['id'])
             if rrid:
                 dec=self.engine.semantic.decision_hash(obj)

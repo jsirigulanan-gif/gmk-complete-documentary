@@ -19,7 +19,8 @@ def main():
     new.add_argument('--drive-root', default='GMK Documentary Projects')
     for action in ('status', 'sync', 'add', 'voice', 'connect-production', 'research-intake', 'research-review',
                    'edit-init', 'edit-preflight', 'edit-voice', 'render', 'editorial-approve', 'delivery',
-                   'footage-search', 'footage-download', 'delivery-verify', 'delivery-sync'):
+                   'footage-search', 'footage-download', 'delivery-verify', 'delivery-sync',
+                   'production-inspect', 'production-connect-story'):
         p = sub.add_parser(action)
         p.add_argument('project', type=Path)
         if action == 'voice':
@@ -31,6 +32,9 @@ def main():
             p.add_argument('--scene', action='append')
         if action == 'editorial-approve':
             p.add_argument('--master-sha256', required=True)
+        if action == 'production-connect-story':
+            p.add_argument('--edit-sha256', required=True)
+            p.add_argument('--manifest-sha256', required=True)
         if action == 'footage-search':
             p.add_argument('--query', required=True)
         if action == 'footage-download':
@@ -60,6 +64,10 @@ def main():
                 result = session.synthesize(EdgeVoice(args.voice), scene_ids=args.scene)
             else:
                 result = session.load() if args.action == 'edit-init' else session.preflight()
+        elif args.action in ('production-inspect', 'production-connect-story'):
+            from .production_bridge import inspect_story, connect_story
+            result = inspect_story(project) if args.action == 'production-inspect' else connect_story(
+                project, expected_edit_sha256=args.edit_sha256, expected_manifest_sha256=args.manifest_sha256)
         elif args.action in ('delivery-verify', 'delivery-sync'):
             from .delivery import verify_delivery, deliver_project
             result = (verify_delivery if args.action == 'delivery-verify' else deliver_project)(project)

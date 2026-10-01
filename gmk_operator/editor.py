@@ -39,6 +39,7 @@ class EditorWindow:
         for label, action in [('เพิ่มฉาก', self.add_scene), ('เลื่อนขึ้น', lambda: self.move_scene(-1)), ('เลื่อนลง', lambda: self.move_scene(1))]:
             ttk.Button(left, text=label, command=action).pack(fill='x', pady=3)
         ttk.Button(left, text='ให้ AI สร้างโครงเรื่อง', command=self.generate_story).pack(fill='x', pady=8)
+        ttk.Button(left, text='เชื่อมบทเข้าระบบผลิต', command=self.production_story).pack(fill='x', pady=3)
         right = ttk.Frame(story)
         right.pack(fill='both', expand=True)
         self.title = tk.StringVar()
@@ -497,6 +498,76 @@ class EditorWindow:
             return consent.get('allowed') is True and consent.get('project_id')==self.project.read()['project_id']
         except (OSError,ValueError,AttributeError):
             return False
+
+    def production_story(self):
+        if self.app._busy or not self.save():
+            return
+        from copy import deepcopy
+        from gmk_projects.production_bridge import inspect_story, connect_story
+        tk, ttk = self.app.tk, self.app.ttk
+        dialog = tk.Toplevel(self.window)
+        dialog.title('บท → ฉาก → ข้อกำหนดภาพ')
+        dialog.geometry('850x620')
+        dialog.transient(self.window)
+        dialog.grab_set()
+        question = tk.StringVar(value=self.data.get('central_question', ''))
+        arc = tk.StringVar(value=self.data.get('narrative_arc', ''))
+        for label, variable in [('คำถามหลักที่สารคดีจะตอบ', question), ('แนวทางการเล่าเรื่องและจุดเปลี่ยน', arc)]:
+            ttk.Label(dialog, text=label).pack(anchor='w', padx=12, pady=(10, 0))
+            ttk.Entry(dialog, textvariable=variable).pack(fill='x', padx=12, pady=4)
+        ttk.Label(dialog, text='ตรวจหลักฐานและถ้อยคำของทุกฉากก่อนเชื่อม การเชื่อมยังไม่ใช่การอนุมัติภาพหรือสารคดีสำเร็จ',
+                  wraplength=800).pack(fill='x', padx=12, pady=8)
+        details = tk.Text(dialog, wrap='word', state='disabled')
+        row = ttk.Frame(dialog)
+        row.pack(side='bottom', fill='x', padx=12, pady=12)
+        details.pack(fill='both', expand=True, padx=12, pady=6)
+        preview = {}
+        def show(text):
+            details.configure(state='normal')
+            details.delete('1.0', 'end'); details.insert('1.0', text)
+            details.configure(state='disabled')
+        def invalidate(*_):
+            preview.clear()
+            connect_button.configure(state='disabled')
+        def display(result):
+            if not dialog.winfo_exists():
+                return
+            if (question.get().strip(), arc.get().strip()) != (self.data.get('central_question', ''), self.data.get('narrative_arc', '')):
+                invalidate()
+                show('ข้อมูลเปลี่ยนระหว่างตรวจ กรุณาบันทึกและตรวจความพร้อมใหม่')
+                return
+            preview.clear(); preview.update(result)
+            show('ขั้นปัจจุบัน: '+result['production_state']+'\n'+result['binding']['reason']+
+                 f'\nฉากที่เลือก: {result["scene_count"]}\n\n'+
+                 ('พร้อมเชื่อมเป็นฉากและข้อกำหนดภาพ' if result['ready'] else '\n'.join('• '+x for x in result['issues'])))
+            connect_button.configure(state='normal' if result['ready'] else 'disabled')
+        def inspect():
+            if self.app._busy:
+                return
+            invalidate()
+            draft = deepcopy(self.data)
+            draft.update(central_question=question.get().strip(), narrative_arc=arc.get().strip())
+            def operation():
+                self.session.save(draft, expected_revision=draft['revision'])
+                return inspect_story(self.project)
+            self.run('กำลังตรวจความพร้อมของบท', operation, display)
+        def connect():
+            if not preview.get('ready'):
+                return
+            tokens = dict(preview)
+            def done(result):
+                if dialog.winfo_exists():
+                    invalidate()
+                    show('เชื่อมบทแล้ว: '+result['production_state']+'\n'+result['binding']['reason']+
+                         '\n\nขั้นถัดไป: ค้นภาพจากข้อกำหนดของแต่ละฉาก แล้วตรวจว่าภาพตรงบท')
+            self.run('กำลังเชื่อมบทเข้าระบบผลิต', lambda: connect_story(self.project,
+                     expected_edit_sha256=tokens['edit_sha256'], expected_manifest_sha256=tokens['manifest_sha256']), done)
+        ttk.Button(row, text='บันทึกและตรวจความพร้อม', command=inspect).pack(side='left')
+        connect_button = ttk.Button(row, text='เชื่อมบทที่ตรวจแล้ว', command=connect, state='disabled')
+        connect_button.pack(side='left', padx=8)
+        question.trace_add('write', invalidate); arc.trace_add('write', invalidate)
+        show('ระบุคำถามหลักและแนวทางการเล่าเรื่อง แล้วกดบันทึกและตรวจความพร้อม')
+        return dialog
 
     def review_claims(self):
         if not self.save(): return

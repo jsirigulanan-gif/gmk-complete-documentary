@@ -70,6 +70,7 @@ class AuditRuntime:
         ('build048_general_research', ('tests/build048',)),
         ('build049_editor_records', ('tests/build049/test_story_footage.py', 'tests/build049/test_evidence_review.py', 'tests/build049/test_edit_checkpoint.py', 'tests/build049/test_script_review.py')),
         ('build050_delivery_receipts', ('tests/build050/test_storage_receipts.py', 'tests/build050/test_delivery.py::test_missing_export_has_actionable_error_without_creating_edit')),
+        ('build051_story_bridge', ('tests/build051', 'tests/dependency/test_dependency_engine.py::test_repeated_promotions_persist_same_stale_envelope_as_cold_start')),
     )
     FULL_BASE_PARTITIONS=(
         ('core_engines', ('tests/state','tests/dependency','tests/gate','tests/runtime','tests/semantic')),

@@ -1,8 +1,10 @@
-# GMK Complete Documentary Maker — Build 050
+# GMK Complete Documentary Maker — Build 051
 
-> **Current build:** Build 050 — Exact draft export verification and retryable Drive delivery. **End-to-end automatic documentary production is not ready.** Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
+> **Current build:** Build 051 — Reviewed story and visual requirements connected to canonical production. **End-to-end automatic documentary production is not ready.** Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
 
 The final product requirement is a coherent **Topic / Brief → Research → Evidence / Claims → Narrative → Script → Narration Beats → Visual Requirements → Footage Research → Footage Selection → Footage Acquisition → Scene Planning → Shot Planning → Timeline / Edit Assembly → Voice / TTS → Design / Graphics → Render → Full-film QA → Delivery → Export → Completed Documentary** workflow. See [product requirements and acceptance criteria](PRODUCT_REQUIREMENTS.md) and [integration roadmap](IMPLEMENTATION_ROADMAP.md).
+
+Build 051 connects reviewed editor scenes to canonical Acts, Scenes, Narration Beats and visual requirements through existing production gates. The editor previews missing evidence and narrative inputs before an explicit connection. Footage planning then uses those exact beat/claim versions; repeated evidence revisions remain reloadable. See [Build 051 changes](CHANGELOG_BUILD_051.md) and [validation](BUILD_051_VALIDATION.md). Canonical integration beyond visual requirements and real-film acceptance remain pending.
 
 Build 050 validates every ZIP member against the exact rendered files and current reviewed edit/research. Repeat exports are byte-identical. The new delivery action uploads the project, validates Drive receipts for the package/master/manifest, and checks for changes after transfer. This is verified **draft storage**, not final documentary release. See [Build 050 changes](CHANGELOG_BUILD_050.md).
 

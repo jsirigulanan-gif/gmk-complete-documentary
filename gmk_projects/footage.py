@@ -67,7 +67,10 @@ def prepare_scene_footage(project, scene_id: str, *, provider=None, subtitle_fet
     if not voice or voice.get('text_sha256')!=fingerprint(scene['narration']):
         raise EditError('สร้างหรือนำเข้าเสียงที่ตรงบทก่อน เพื่อให้ระบบเตรียมช่วงภาพตามระยะเสียงจริง')
     needed=probe(asset_file(project,voice,'voice'))['duration_seconds']
-    queries=(scene.get('search_queries') or [scene['visual'] or scene['title']])[:2]
+    from .production_bridge import scene_search_context
+    canonical_intent, production_sha = scene_search_context(project, scene_id)
+    queries=(scene.get('search_queries') or
+             ([q['query'] for q in canonical_intent.youtube_queries] if canonical_intent else [scene['visual'] or scene['title']]))[:2]
     provider=provider or YouTubeDiscoveryProvider()
     subtitle_fetcher=subtitle_fetcher or YouTubeSubtitleFetcher()
     progress=progress or (lambda _:None)
@@ -76,7 +79,7 @@ def prepare_scene_footage(project, scene_id: str, *, provider=None, subtitle_fet
         progress('กำลังค้น: '+query[:100])
         for row in provider.search(query,family='DRAFT_SCENE',limit=4):
             candidates.setdefault(row.video_id,row)
-    intent=BeatSearchIntent(scene_id,{},'STANDARD',scene['visual'],scene['narration'],
+    intent=canonical_intent or BeatSearchIntent(scene_id,{},'STANDARD',scene['visual'],scene['narration'],
                             tuple(scene.get('claim_refs',[])),(),(),tuple(queries),(),('YOUTUBE',),True)
     inspected=[];nominations=[]
     for candidate in list(candidates.values())[:3]:
@@ -102,6 +105,7 @@ def prepare_scene_footage(project, scene_id: str, *, provider=None, subtitle_fet
             # A failed candidate does not invent a match or discard other candidates.
             inspected.append({'candidate':candidate.to_dict(),'error':str(exc)[:500],'matches':[]})
     report={'scene_id':scene_id,'base_edit_sha256':fingerprint(edit),'queries':queries,
+            'canonical_beat_ref': canonical_intent.beat_ref if canonical_intent else None,
             'inspected':inspected,'visual_review':'PENDING','selection_basis':'CAPTION_NOMINATION_ONLY'}
     directory=project.root/'footage_research';directory.mkdir(exist_ok=True)
     path=directory/(fingerprint(report)+'.json');atomic_json(path,report)
@@ -129,7 +133,7 @@ def prepare_scene_footage(project, scene_id: str, *, provider=None, subtitle_fet
     if not cuts:
         return {'prepared':False,'reason':'ช่วงที่เสนออยู่นอกไฟล์วิดีโอที่ได้รับ','report':media_ref(report_asset)}
     scene['shots']=cuts
-    session.save(edit,expected_revision=edit['revision'])
+    session.save(edit,expected_revision=edit['revision'],expected_production_manifest_sha256=production_sha)
     return {'prepared':True,'scene_id':scene_id,'cuts':len(cuts),'uncovered_seconds':max(0,remaining),
             'visual_review':'PENDING','drive_status':'PENDING_UPLOAD','report':media_ref(report_asset)}
 

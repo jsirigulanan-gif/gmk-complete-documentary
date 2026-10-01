@@ -1,6 +1,16 @@
 # Continuation Handoff — GMK Complete Documentary Maker
 
-## Current continuation (Build 050)
+## Current continuation (Build 051)
+
+`gmk_projects/production_bridge.py` connects explicitly reviewed draft scenes to the existing StateEngine: RESEARCH_AUDITED → ROUGH_NARRATIVE_READY → VISUAL_REQUIREMENTS_READY. `inspect_story` previews blockers and pins edit/manifest hashes. `connect_story` uses those tokens, validates every gate in memory, and persists only after success. It retains stable scene/beat IDs through reorder, exclusion and reinclusion. It does not grant final script, asset, shot, voice, render or release approval.
+
+The editor exposes **เชื่อมบทเข้าระบบผลิต** with editable central question/narrative arc, readiness preview and an explicit connect action. CLI: `production-inspect` and `production-connect-story --edit-sha256 ... --manifest-sha256 ...`. Connected footage searches use canonical beat/claim versions; stale story bindings block automatic search. Saving prepared shots checks the production manifest under the project lock, preserving downloaded bytes when research changed in flight.
+
+Explicit claim re-review can reopen the three early stages, retaining history and invalidating downstream story bindings; later locked stages remain blocked. StateTransaction promotion now reconciles derived dependencies from all exact refs, fixing cold-start registry drift when a dependent still pins a claim older than the previous active version. No schema changes or alternative state authority were introduced.
+
+The actual 13-scene project remains RESEARCH_INTAKE: 29 readiness issues, including unreviewed scene/claim bindings and missing narrative inputs. Inspection left its canonical manifest unchanged. No private facts were approved, provider called, or Drive quota issue resolved. Next integration: selected/acquired assets → canonical coverage/script → scene/shot/timeline and render/QA/release receipts. Keep private projects/media outside Git and continue GMK despite the separate Veocut file shown in the IDE.
+
+## Previous continuation (Build 050)
 
 `gmk_projects/delivery.py` verifies archived render/QA/snapshot records, current editorial review, all ZIP member bytes, and exact Drive receipts. `export_delivery` writes deterministic ZIPs and an immutable registered delivery record referenced by `project.json.active_delivery_asset`. CLI `delivery-verify` is local/read-only; `delivery-sync` explicitly transfers the full project including retained candidates and validates the current draft afterward. Editor buttons expose both actions.
 

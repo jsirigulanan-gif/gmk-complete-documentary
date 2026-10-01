@@ -76,6 +76,24 @@ def test_derived_from_marks_revalidate_not_stale_and_can_be_explicitly_cleared(e
     assert before_hash==after_hash
 
 
+def test_repeated_promotions_persist_same_stale_envelope_as_cold_start(engine,payloads,tmp_path):
+    from gmk_runtime import RuntimeStore, ColdStartLoader
+    tx=engine.begin(); tx.create_object('PROJECT',payloads['project']()); tx.commit()
+    src,ev,cl=make_source_evidence_claim(engine,payloads)
+    store=RuntimeStore(engine.root,tmp_path/'workspace')
+    for version in (2,3):
+        tx=engine.begin()
+        tx.create_version(src['id'],base_version=version-1,patch={'title':f'Corrected source {version}'})
+        tx.promote_active_version(src['id'],version); tx.commit()
+        store.persist(engine)
+        loaded=ColdStartLoader(engine.root,store.workspace).load()
+        assert loaded.dependency_summary['changed_objects']==0
+        assert loaded.engine.registry_snapshots()==engine.registry_snapshots()
+        for ref in (ev,cl):
+            assert loaded.engine.snapshot().objects[(ref['id'],ref['version'])]['stale']['is_stale']
+        assert loaded.engine.snapshot().objects[(ev['id'],1)]['source_ref']==src
+
+
 def test_human_locked_creative_impact_requires_explicit_promotion_confirmation(engine,payloads):
     c={'constraint_id':'HC_EVIDENCE_SUMMARY','scope':{'path':'/content_summary'},'rule':{'type':'PRESERVE','statement':'Preserve reviewed evidence summary'},'lock_state':'HUMAN_LOCKED'}
     tx=engine.begin(); src=tx.create_object('SOURCE',payloads['source']()); tx.commit()
