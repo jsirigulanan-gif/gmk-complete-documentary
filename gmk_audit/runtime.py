@@ -68,13 +68,16 @@ class AuditRuntime:
         ('build046_projects', ('tests/build046',)),
         ('build047_production_binding', ('tests/build047',)),
         ('build048_general_research', ('tests/build048',)),
+        ('build049_editor_records', ('tests/build049/test_story_footage.py', 'tests/build049/test_evidence_review.py', 'tests/build049/test_edit_checkpoint.py', 'tests/build049/test_script_review.py')),
     )
     FULL_BASE_PARTITIONS=(
         ('core_engines', ('tests/state','tests/dependency','tests/gate','tests/runtime','tests/semantic')),
         ('build007_010', ('tests/build007','tests/build008','tests/build009','tests/build010')),
         ('build011_015', ('tests/build011','tests/build012','tests/build013','tests/build014','tests/build015')),
     )
-    HEAVY_PARTITIONS=tuple((f'build{n:03d}',(f'tests/build{n:03d}',)) for n in range(16,44))
+    HEAVY_PARTITIONS=tuple((f'build{n:03d}',(f'tests/build{n:03d}',)) for n in range(16,44)) + (
+        ('build049_media_render', ('tests/build049/test_edit_render.py',)),
+    )
 
     def __init__(self, root: Path):
         self.root=Path(root).resolve()

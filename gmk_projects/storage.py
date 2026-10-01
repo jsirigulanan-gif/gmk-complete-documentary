@@ -189,6 +189,7 @@ class Project:
 
     def sync(self, drive: RcloneDrive | None = None) -> dict:
         checkpoint = None
+        edit_checkpoint = self.add_file(self.root/'edit.json', 'timeline') if (self.root/'edit.json').is_file() else None
         if self.read().get('production_runtime'):
             from .production import ProductionProject
             checkpoint = ProductionProject(self).checkpoint()
@@ -198,6 +199,10 @@ class Project:
                 pointer = json.loads((self.root/'production'/'CURRENT_MANIFEST.json').read_text(encoding='utf-8'))
                 if pointer['sha256'] != checkpoint['manifest_sha256']:
                     raise StorageError('Production changed while checkpointing; retry sync before claiming current backup')
+            if edit_checkpoint:
+                if digest(self.root/'edit.json')['sha256'] != edit_checkpoint['sha256']:
+                    raise StorageError('Edit changed while checkpointing; retry sync before claiming current backup')
+                data['active_edit_asset'] = {'path': edit_checkpoint['path'], 'sha256': edit_checkpoint['sha256']}
             drive = drive or RcloneDrive(**data['drive'])
             data['storage_status'] = 'UPLOADING'
             atomic_json(self.manifest, data)

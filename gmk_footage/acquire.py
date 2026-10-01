@@ -42,8 +42,11 @@ class YouTubeAcquirer:
     No cookies, credentials, impersonation or DRM-bypass flags are accepted here. Rights are
     tracked separately as PENDING_PERMISSION and do not masquerade as verified permission.
     """
-    def __init__(self,yt_dlp:str='yt-dlp',ffprobe:str='ffprobe',*,timeout_seconds:int=900):
+    def __init__(self,yt_dlp:str='yt-dlp',ffprobe:str='ffprobe',*,timeout_seconds:int=900,max_height:int|None=None):
         self.yt_dlp=yt_dlp;self.ffprobe=ffprobe;self.timeout_seconds=int(timeout_seconds)
+        self.max_height=max_height
+        if max_height is not None and max_height not in (360,480,720,1080):
+            raise FootageAcquisitionError('ACQUIRE_RESOLUTION_INVALID')
 
     def _require(self):
         for x in (self.yt_dlp,self.ffprobe):
@@ -59,11 +62,16 @@ class YouTubeAcquirer:
     def acquire(self,candidate:YouTubeCandidate,output_dir:Path)->AcquiredFootage:
         self._require()
         u=urlparse(candidate.webpage_url)
-        if u.scheme not in {'http','https'} or not (u.hostname or '').casefold().endswith(('youtube.com','youtu.be')):
+        host=(u.hostname or '').casefold()
+        if u.scheme not in {'http','https'} or not (host in {'youtube.com','youtu.be'} or host.endswith('.youtube.com')):
             raise FootageAcquisitionError(f'ACQUIRE_YOUTUBE_URL_INVALID: {candidate.webpage_url}')
+        import re
+        if not re.fullmatch(r'[A-Za-z0-9_-]{1,128}', candidate.video_id):
+            raise FootageAcquisitionError('ACQUIRE_VIDEO_ID_INVALID')
         out=Path(output_dir);out.mkdir(parents=True,exist_ok=True)
         template=str(out/f'{candidate.video_id}.%(ext)s')
-        cmd=[self.yt_dlp,'--no-playlist','--no-warnings','-f','bv*+ba/b','--merge-output-format','mp4','-o',template,'--print','after_move:filepath',candidate.webpage_url]
+        format_spec='bv*+ba/b' if self.max_height is None else f'bv*[height<={self.max_height}]+ba/b[height<={self.max_height}]'
+        cmd=[self.yt_dlp,'--no-playlist','--no-warnings','-f',format_spec,'--merge-output-format','mp4','-o',template,'--print','after_move:filepath',candidate.webpage_url]
         # Deliberately no cookies / username / password / DRM options.
         forbidden={'--cookies','--cookies-from-browser','--username','--password','--video-password','--allow-unplayable-formats'}
         if forbidden & set(cmd):raise FootageAcquisitionError('ACQUIRE_ACCESS_CONTROL_OPTION_FORBIDDEN')

@@ -1,6 +1,16 @@
 # Continuation Handoff — GMK Complete Documentary Maker
 
-## Current continuation (Build 048)
+## Current continuation (Build 049)
+
+The general workflow now has `gmk_projects/edit.py`, `story.py`, `evidence.py`, `script_review.py`, `footage.py`, `render.py`, and the Operator editor/research windows. See EDITOR_GUIDE_TH.md and CHANGELOG_BUILD_049.md. It preserves the canonical research StateEngine while connecting draft scene editing, opt-in Codex story generation, exact-text voice caching/import, manual or caption-nominated cuts, music, measured timeline conform, actual MP4 rendering, technical QA and explicitly reviewed local ZIP export.
+
+Scene-to-claim review now compares exact narration and reference digests with current canonical claim versions. Preflight and exported `script-review.json` expose missing/stale/prohibited bindings. This derived report does not advance a second state machine.
+
+The actual local project opens with 13 scenes, 13 claim review units and 7 source links. No private text was sent to Edge or a new Codex story invocation: provider selection/consent questions remain pending. Drive `about` was retried on 2026-09-30 and still returned quota 403 for the shared rclone client. Do not claim those live blockers or the real-film acceptance are resolved.
+
+Important remaining integration: canonical final release/Drive completion, full visual-semantic shot validation, provider-backed narrative/audio/media acceptance. `documentary_completed` remains false; a reviewed local ZIP is not the frozen core's final release. Keep user work/private media outside Git. Never mark every imported paragraph as a verified atomic fact.
+
+## Previous continuation (Build 048)
 
 General document intake now uses the existing research runtime through `gmk_projects/research.py`. New imports automatically create canonical source/document evidence, UNREVIEWED claim review units and audit-blocking research gaps. Source links are unfetched leads in the intake log, not independently verified SOURCE objects. The local read-only review page and GUI actions expose exact scene/line locations and outstanding questions. Existing projects can run `python -m gmk_projects research-intake /path/to/project`; retries do not duplicate claims. A real source produced 13 review units and 7 source leads locally.
 

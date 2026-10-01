@@ -12,7 +12,7 @@ class ProjectsPanel:
         self.scripts, self.projects = [], []
         tk, ttk = app.tk, app.ttk
         ttk.Label(parent, text='โปรเจกต์สารคดีบน Google Drive', font=('Segoe UI', 14, 'bold')).pack(anchor='w')
-        ttk.Label(parent, text='นำเข้าบท สร้างเสียงไทย และจัดเก็บไฟล์ — การเลือกภาพและตัดต่ออัตโนมัติยังไม่เชื่อมครบ',
+        ttk.Label(parent, text='นำเข้ารีเสิร์ช แล้วเปิดโต๊ะตัดต่อเพื่อสร้างเรื่อง แก้บท ค้นภาพ ใส่เสียงและดนตรี เรนเดอร์ และส่งออก',
                   wraplength=800).pack(anchor='w', pady=6)
         ttk.Button(parent, text='ค้นเอกสาร LEMiNO Script ใน Drive', command=self.search).pack(anchor='w')
         self.sources = ttk.Combobox(parent, state='readonly', width=95)
@@ -41,13 +41,7 @@ class ProjectsPanel:
         research_row.pack(fill='x', pady=6)
         ttk.Button(research_row, text='แยกข้อกล่าวอ้างจากรีเสิร์ช', command=self.analyze_research).pack(side='left')
         ttk.Button(research_row, text='เปิดรายการตรวจรีเสิร์ช', command=self.review_research).pack(side='left', padx=6)
-        voice_row = ttk.Frame(parent)
-        voice_row.pack(fill='x', pady=6)
-        self.voice = ttk.Combobox(voice_row, state='readonly', values=['เสียงชาย · Niwat', 'เสียงหญิง · Premwadee'], width=23)
-        self.voice.current(0)
-        self.voice.pack(side='left')
-        ttk.Button(voice_row, text='ทดลองเสียงฉากแรก (ฟรี)', command=lambda: self.narrate(1)).pack(side='left', padx=6)
-        ttk.Button(voice_row, text='สร้างเสียงทุกฉาก (ฟรี)', command=lambda: self.narrate(None)).pack(side='left')
+        ttk.Button(research_row, text='เปิดโต๊ะตัดต่อสารคดี', command=self.open_editor).pack(side='left')
         self.details = tk.Text(parent, height=12, wrap='word', state='disabled')
         self.details.pack(fill='both', expand=True, pady=10)
         self.reload()
@@ -161,17 +155,6 @@ class ProjectsPanel:
         if project:
             self.app._async('กำลังเชื่อมสถานะการผลิต…', ProductionProject(project).connect_existing, lambda _: self.show())
 
-    def narrate(self, limit):
-        from gmk_projects.voice import EdgeVoice, generate_voice
-        project = self.current()
-        if not project:
-            return
-        provider = EdgeVoice('th-TH-NiwatNeural' if self.voice.current() == 0 else 'th-TH-PremwadeeNeural')
-        def done(result):
-            self.show()
-            messagebox.showinfo('GMK', f'สร้างเสียงแล้ว {len(result["scenes"])} ฉาก รวม {result["duration_seconds"]:.1f} วินาที\nไฟล์อยู่ในโฟลเดอร์ voice ของโปรเจกต์ กรุณาฟังก่อนตัดต่อ')
-        self.app._async('กำลังสร้างเสียงภาษาไทยผ่านบริการออนไลน์ฟรี…', lambda: generate_voice(project, provider, limit=limit), done)
-
     def analyze_research(self):
         from gmk_projects.research import analyze_research
         project = self.current()
@@ -188,3 +171,12 @@ class ProjectsPanel:
         if project:
             self.app._async('กำลังเปิดรายการตรวจรีเสิร์ช…', lambda: research_review(project),
                             lambda result: webbrowser.open(Path(result['review_path']).as_uri()))
+
+    def open_editor(self):
+        project = self.current()
+        if project:
+            from .editor import EditorWindow
+            try:
+                EditorWindow(self.app, project)
+            except Exception as exc:
+                messagebox.showerror('GMK', str(exc))

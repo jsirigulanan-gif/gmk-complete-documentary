@@ -1,14 +1,16 @@
-# GMK Complete Documentary Maker — Build 048
+# GMK Complete Documentary Maker — Build 049
 
-> **Current build:** Build 048 — General research intake and local claim/source review. **End-to-end automatic documentary production is not ready.** Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
+> **Current build:** Build 049 — Connected documentary editing desk, measured-voice rendering and local delivery. **End-to-end automatic documentary production is not ready.** Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
 
 The final product requirement is a coherent **Topic / Brief → Research → Evidence / Claims → Narrative → Script → Narration Beats → Visual Requirements → Footage Research → Footage Selection → Footage Acquisition → Scene Planning → Shot Planning → Timeline / Edit Assembly → Voice / TTS → Design / Graphics → Render → Full-film QA → Delivery → Export → Completed Documentary** workflow. See [product requirements and acceptance criteria](PRODUCT_REQUIREMENTS.md) and [integration roadmap](IMPLEMENTATION_ROADMAP.md).
+
+Build 049 adds a general editing desk for evidence review, opt-in Codex story drafts, narration, scene/cut editing, footage research/acquisition, caption-based shot proposals, measured audio timing, music ducking, titles/subtitles, technical QA and reviewed local delivery packages. See [Thai editor guide](EDITOR_GUIDE_TH.md) and [Build 049 changes](CHANGELOG_BUILD_049.md). Provider-backed real-film acceptance, complete visual-semantic automation, and canonical final Drive release remain incomplete.
 
 Build 048 imports general documentary narration or explicitly labeled claims into canonical research records, preserving source locations and unverified bibliography links. The project panel can open a local research review showing imported paragraphs, source leads and unresolved questions. Paragraphs may require splitting; independent evidence verification and editorial decisions remain pending. See [Build 048 changelog](CHANGELOG_BUILD_048.md).
 
 Build 047 binds each new Drive project to a persistent StateEngine workspace. Research import registers original bytes and enters Research Intake; it does not claim factual audit or downstream completion. Project status comes from the core manifest, and Drive sync includes a production-record checkpoint. Old projects can be connected through the project panel or `python -m gmk_projects connect-production /path/to/project`.
 
-The new **โปรเจกต์ Drive** tab imports LEMiNO Script documents, creates projects independently of P.T., generates Thai narration through optional Edge TTS, and uploads registered research/media files to a per-project Google Drive folder. It verifies uploaded sizes and MD5 checksums, keeps local files on failures, and records immutable manifest snapshots. See [Drive project usage and remaining work](DRIVE_PROJECTS.md). Automatic story rewriting, footage orchestration, music mixing, and complete-film production remain incomplete.
+The new **โปรเจกต์ Drive** tab imports LEMiNO Script documents, creates projects independently of P.T., generates Thai narration through optional Edge TTS, and uploads registered research/media files to a per-project Google Drive folder. It verifies uploaded sizes and MD5 checksums, keeps local files on failures, and records immutable manifest snapshots. See [Drive project usage and remaining work](DRIVE_PROJECTS.md). The new editor connects local editing/rendering; a real full-lifecycle documentary has not yet passed acceptance.
 
 Build 045 added a purpose and scope overview in the Operator. The two source-locked Lisa/TGA video slots now live under the P.T. pilot. General project creation was added in Build 046; producing a full film with one click remains incomplete. See [Build 045 changelog](CHANGELOG_BUILD_045.md).
 

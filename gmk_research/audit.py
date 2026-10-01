@@ -217,6 +217,10 @@ class ResearchAuditRuntime:
         audited_ids=set()
         for dec in batch.get('claims') or []:
             oid=str(dec['claim_id']); before=_head_object(tx.staged,oid); links=deepcopy(before.get('evidence_links') or [])
+            if dec.get('replace_external_evidence_links'):
+                # A changed assertion must not inherit support for the old wording.
+                # Old links remain in immutable prior claim versions.
+                links=[link for link in links if link.get('relation')=='CONTEXTUALIZES' and link.get('strength')=='CONTEXT_ONLY']
             for l in dec.get('evidence_links') or []:
                 eref=ev_ref_by_key[l['evidence_key']]
                 links.append({'evidence_ref':eref,'relation':l.get('relation','SUPPORTS'),'scope':list(l.get('scope') or ['EVENT']),'strength':l.get('strength','STRONG')})

@@ -7,7 +7,7 @@ from .storage import Project, RcloneDrive
 
 
 def main():
-    parser = argparse.ArgumentParser(description='GMK Drive projects (research/storage; film production not yet automated)')
+    parser = argparse.ArgumentParser(description='GMK documentary project research, editing, media, render and draft delivery')
     sub = parser.add_subparsers(dest='action', required=True)
     sub.add_parser('list-scripts')
     new = sub.add_parser('create')
@@ -17,12 +17,24 @@ def main():
     new.add_argument('--source-url', default='')
     new.add_argument('--remote', default='gdrive:')
     new.add_argument('--drive-root', default='GMK Documentary Projects')
-    for action in ('status', 'sync', 'add', 'voice', 'connect-production', 'research-intake', 'research-review'):
+    for action in ('status', 'sync', 'add', 'voice', 'connect-production', 'research-intake', 'research-review',
+                   'edit-init', 'edit-preflight', 'edit-voice', 'render', 'editorial-approve', 'delivery',
+                   'footage-search', 'footage-download'):
         p = sub.add_parser(action)
         p.add_argument('project', type=Path)
         if action == 'voice':
             p.add_argument('--limit', type=int)
             p.add_argument('--voice', default='th-TH-NiwatNeural')
+        if action == 'edit-voice':
+            p.add_argument('--allow-online-tts', action='store_true')
+            p.add_argument('--voice', default='th-TH-NiwatNeural')
+            p.add_argument('--scene', action='append')
+        if action == 'editorial-approve':
+            p.add_argument('--master-sha256', required=True)
+        if action == 'footage-search':
+            p.add_argument('--query', required=True)
+        if action == 'footage-download':
+            p.add_argument('--url', required=True)
         if action == 'add':
             p.add_argument('file', type=Path)
             p.add_argument('--role', required=True)
@@ -38,7 +50,26 @@ def main():
         result = {'local_project': str(project.root), **project.read()}
     else:
         project = Project(args.project)
-        if args.action in ('research-intake', 'research-review'):
+        if args.action in ('edit-init', 'edit-preflight', 'edit-voice'):
+            from .edit import EditSession, EditError
+            session = EditSession(project)
+            if args.action == 'edit-voice':
+                if not args.allow_online_tts:
+                    raise EditError('Use --allow-online-tts to explicitly permit sending narration to Microsoft Edge TTS')
+                from .voice import EdgeVoice
+                result = session.synthesize(EdgeVoice(args.voice), scene_ids=args.scene)
+            else:
+                result = session.load() if args.action == 'edit-init' else session.preflight()
+        elif args.action in ('render', 'editorial-approve', 'delivery'):
+            from .render import render_project, approve_editorial_review, export_delivery
+            result = (render_project(project) if args.action == 'render' else
+                      approve_editorial_review(project, expected_master_sha256=args.master_sha256)
+                      if args.action == 'editorial-approve' else export_delivery(project))
+        elif args.action in ('footage-search', 'footage-download'):
+            from .footage import search_footage, acquire_footage, candidate_from_url
+            result = (search_footage(project, args.query) if args.action == 'footage-search' else
+                      acquire_footage(project, candidate_from_url(args.url)))
+        elif args.action in ('research-intake', 'research-review'):
             from .research import analyze_research, research_review
             result = (analyze_research if args.action == 'research-intake' else research_review)(project)
         elif args.action == 'connect-production':

@@ -152,7 +152,7 @@ class OperatorApp:
         self.next_var = tk.StringVar(value="-")
         self.slot_vars: dict[str, dict[str, Any]] = {}
         self._build_ui()
-        self.root.after(150, self.refresh_readiness)
+        self.status_var.set('พร้อม — เลือกโปรเจกต์และเปิดโต๊ะตัดต่อเพื่อทำงานต่อ')
 
     def _build_ui(self) -> None:
         tk = self.tk
@@ -164,7 +164,7 @@ class OperatorApp:
         title.pack(anchor="w")
         ttk.Label(
             outer,
-            text=f"Build {BUILD} — นำเข้าบท จัดเก็บโปรเจกต์บน Drive และเครื่องมือโครงการตัวอย่าง",
+            text=f"Build {BUILD} — รีเสิร์ช บท ภาพ เสียง ตัดต่อ และวิดีโอสารคดี",
         ).pack(anchor="w", pady=(0, 10))
 
         self.notebook = ttk.Notebook(outer)
@@ -220,9 +220,10 @@ class OperatorApp:
             ),
             (
                 "หน้าจอนี้ทำอะไรได้ตอนนี้",
-                "แท็บโปรเจกต์ Drive ใช้นำเข้าเอกสาร LEMiNO Script และเก็บไฟล์แยกตามเรื่อง "
-                "พร้อมตรวจไฟล์หลังอัปโหลด และสร้างเสียงไทยผ่านบริการฟรี ส่วนเลือกภาพ ดนตรี และตัดต่ออัตโนมัติยังไม่เชื่อมครบ "
-                "การนำเข้าบทหรือส่งไฟล์สำเร็จยังไม่ได้หมายถึงสร้างสารคดีเสร็จแล้ว",
+                "เลือกโปรเจกต์ในแท็บโปรเจกต์ Drive แล้วเปิดโต๊ะตัดต่อสารคดี "
+                "เพื่อตรวจหลักฐาน สร้างร่างเรื่องด้วย AI แก้บท เลือกช่วงฟุตเทจ ใส่เสียงและดนตรี "
+                "ตรวจไทม์ไลน์ เรนเดอร์ ดูวิดีโอ และสร้างชุดส่งออก "
+                "AI และเสียงออนไลน์ต้องเปิดใช้งานตามบัญชี ส่วน Drive ต้องเชื่อมต่อและตรวจอัปโหลดสำเร็จก่อนส่งมอบ",
             ),
             (
                 "ทำไมมี Lisa และ TGA",
@@ -235,14 +236,10 @@ class OperatorApp:
             box.pack(fill="x", pady=(0, 10))
             ttk.Label(box, text=body, wraplength=800, justify="left").pack(anchor="w")
 
-        status = ttk.Frame(parent)
-        status.pack(fill="x", pady=(4, 8))
-        ttk.Label(status, text="ความพร้อม P.T.:", font=("Segoe UI", 10, "bold")).pack(side="left")
-        ttk.Label(status, textvariable=self.state_var).pack(side="left", padx=(8, 0))
         actions = ttk.Frame(parent)
         actions.pack(fill="x")
         ttk.Button(actions, text="เปิดโปรเจกต์ Drive", command=lambda: self.notebook.select(1)).pack(side="left", padx=(0, 8))
-        ttk.Button(actions, text="ดูหลักฐานที่ยังขาด", command=lambda: self.notebook.select(2)).pack(side="left")
+        ttk.Button(actions, text="ดูโครงการตัวอย่างเดิม", command=lambda: self.notebook.select(2)).pack(side="left")
 
     def _build_dashboard(self, parent) -> None:
         ttk = self.ttk
