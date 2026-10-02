@@ -79,9 +79,11 @@ class AuditRuntime:
             'tests/build052/test_workflow.py::test_missing_media_never_counts_as_acquired_or_reviewed',
             'tests/build052/test_audit_timeout.py')),
         ('build052_workflow_delivery', (
-            'tests/build052/test_workflow.py::test_reviewed_project_runs_through_render_checklist_and_local_delivery',
-            'tests/build052/test_workflow.py::test_missing_voice_routes_back_to_voice_even_with_prior_listening_review',
-            'tests/build052/test_workflow.py::test_recovery_targets_the_later_scene_with_missing_audio')),
+            'tests/build052/test_workflow.py::test_reviewed_project_runs_through_render_checklist_and_local_delivery',)),
+        ('build052_workflow_voice_recovery', (
+            'tests/build052/test_workflow.py::test_missing_voice_routes_back_to_voice_even_with_prior_listening_review',)),
+        ('build052_workflow_later_recovery', (
+            'tests/build052/test_workflow.py::test_recovery_targets_the_later_scene_with_missing_audio',)),
         ('build052_research_draft', ('tests/build052/test_research_draft.py', 'tests/build052/test_asset_recovery.py')),
         ('build053_media_bridge', ('tests/build053/test_media_bridge.py', 'tests/build053/test_drive_discovery.py', 'tests/dependency/test_dependency_engine.py::test_archived_dependent_is_retained_history_on_promotion_and_cold_start')),
         ('build053_media_revisions', ('tests/build053/test_media_revisions.py',)),
@@ -106,6 +108,13 @@ class AuditRuntime:
         ('build055_final_revisions', (
             'tests/build055/test_final_production.py::test_rejected_or_approved_voice_can_reopen_without_reusing_old_approval',
             'tests/build055/test_final_production.py::test_changes_during_assembly_and_foreign_records_cannot_publish')),
+        ('build056_design_plan', ('tests/build056/test_design_planning.py::test_actual_design_preview_human_decision_and_exact_cut_plan',)),
+        ('build056_design_rejection', ('tests/build056/test_design_planning.py::test_rejection_reopen_and_style_edit_preserve_voice_without_old_design_approval',)),
+        ('build056_design_guards', ('tests/build056/test_design_planning.py::test_preview_bytes_stale_tokens_and_foreign_records_cannot_be_approved',)),
+        ('build056_plan_revisions', ('tests/build056/test_design_planning.py::test_failed_staging_and_explicit_plan_revisions_retain_identities',)),
+        ('build056_exact_cuts', ('tests/build056/test_design_planning.py::test_multiple_selected_cuts_and_explicit_hold_follow_frame_clock',)),
+        ('build056_design_concurrency', ('tests/build056/test_design_planning.py::test_design_preview_in_flight_edit_does_not_publish',)),
+        ('build056_voice_review_revision', ('tests/build056/test_design_planning.py::test_superseded_voice_review_context_invalidates_design_and_plans',)),
     )
     FULL_BASE_PARTITIONS=(
         ('core_engines', ('tests/state','tests/dependency','tests/gate','tests/runtime','tests/semantic')),

@@ -18,6 +18,7 @@ from .storage import StorageError, atomic_json
 
 MEDIA_EDITABLE_STATES = {'VISUAL_REQUIREMENTS_READY', 'ASSET_RECON', 'ASSET_CATALOG_READY', 'VISUAL_COVERAGE_READY', 'SCRIPT_READY', 'TTS_READY', 'VOICE_LOCKED'}
 OWNED_MEDIA_STATES = MEDIA_EDITABLE_STATES - {'VISUAL_REQUIREMENTS_READY'}
+MEDIA_READABLE_STATES = MEDIA_EDITABLE_STATES | {'DESIGN_DNA_APPROVED', 'SCENE_PLAN_READY', 'SHOT_PLAN_READY'}
 
 
 def owned_media_recon(state):
@@ -61,7 +62,7 @@ def media_binding_status(project, state, *, edit=None, verify_files=True):
     selected = [s for s in edit['scenes'] if s['included']]
     signature = fingerprint(media_input(edit))
     live = _active(state)
-    current = bool(pools) and state.project_state in MEDIA_EDITABLE_STATES and binding_status(project, state)['current']
+    current = bool(pools) and state.project_state in MEDIA_READABLE_STATES and binding_status(project, state)['current']
     rows = []
     for scene in selected:
         pool = pools.get(scene['id'])

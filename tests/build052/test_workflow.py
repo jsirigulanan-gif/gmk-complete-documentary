@@ -51,6 +51,12 @@ def review_media(p, session, scene, shot):
         final = inspect_final(p);master = _heads(ProductionProject(p)._load().engine.snapshot(), 'MASTER_VOICE')[0]
         decide_final_voice(p, expected_edit_sha256=final['edit_sha256'], expected_manifest_sha256=final['manifest_sha256'],
                           expected_master_sha256=master['audio']['sha256'], decision='APPROVED', actor_id='Synthetic fixture reviewer')
+        from gmk_projects.design_planning import inspect_design, prepare_design, decide_design, prepare_plans
+        design = inspect_design(p)
+        if design['ready']:
+            for operation, kwargs in ((prepare_design, {}), (decide_design, {'decision': 'APPROVED', 'actor_id': 'Synthetic fixture designer'}), (prepare_plans, {})):
+                design = inspect_design(p)
+                operation(p, expected_edit_sha256=design['edit_sha256'], expected_manifest_sha256=design['manifest_sha256'], **kwargs)
 
 
 def test_new_topic_brief_and_real_readiness_preserve_core_state(tmp_path):

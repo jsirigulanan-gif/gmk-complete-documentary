@@ -30,6 +30,7 @@ from .storage import StorageError, atomic_json, digest, relative_path
 ARTIFACTS = {'VOICEOVER_SCRIPT_FINAL', 'PRONUNCIATION_DICTIONARY', 'TTS_READY_SCRIPT',
              'MASTER_VOICE', 'VOICE_TIMING_MAP', 'VOICE_LOCK_MANIFEST', 'VOICE_REVIEW_PACKAGE'}
 STATES = {'SCRIPT_READY', 'TTS_READY', 'VOICE_LOCKED'}
+READABLE_STATES = STATES | {'DESIGN_DNA_APPROVED', 'SCENE_PLAN_READY', 'SHOT_PLAN_READY'}
 
 
 def _ref(obj):
@@ -60,6 +61,8 @@ def owns_final(state):
 
 def retire_final(tx):
     """Retire only our prior plans/decisions during an explicit upstream revision."""
+    from .design_planning import retire_design
+    retire_design(tx)
     for obj in _active(tx.staged).values():
         if _tag(obj) and obj['object_type'] in {'VOICE_PROFILE', 'VOICE_BLOCK', 'APPROVAL'}:
             tx.archive_object(obj['id'])
@@ -92,8 +95,9 @@ def final_binding_status(project, state, *, edit=None, story_status=None, media_
         try: edit = json.loads((project.root/'edit.json').read_text(encoding='utf-8'))
         except (OSError, ValueError): edit = None
     current = bool(lock and edit and not _tag(lock).get('retired')
+                   and owns_final(state)
                    and _tag(lock).get('input_sha256') == fingerprint(final_input(edit, state))
-                   and state.project_state in STATES
+                   and state.project_state in READABLE_STATES
                    and (story_status if story_status is not None else story_binding(project, state))['current']
                    and (media_status if media_status is not None else media_binding_status(project, state, edit=edit))['current']
                    and (coverage_status if coverage_status is not None else coverage_binding_status(project, state, edit=edit, media_status=media_status))['ready'])
@@ -111,9 +115,15 @@ def final_binding_status(project, state, *, edit=None, story_status=None, media_
     if current:
         try: master_file(ProductionProject(project), master)
         except (OSError, StorageError, KeyError): current = False
+    reviews = [a for a in _heads(state, 'VOICE_REVIEW_PACKAGE') if _tag(a) and not _tag(a).get('retired')
+               and a.get('voice_lock') == (_aref(lock) if lock else None)]
+    review = reviews[0] if len(reviews) == 1 else None
     approvals = [o for o in _active(state).values() if o['object_type'] == 'APPROVAL' and _tag(o)
                  and o.get('target') == (_aref(lock) if lock else None)]
-    approved = bool(current and state.project_state == 'VOICE_LOCKED'
+    if not review or any(o.get('review_context') != _aref(review) or o.get('stale', {}).get('is_stale')
+                         or o['status'] in {'STALE', 'BLOCKED', 'ARCHIVED', 'REJECTED'} for o in approvals):
+        current = False
+    approved = bool(current and state.project_state in READABLE_STATES - {'SCRIPT_READY', 'TTS_READY'}
                     and any(a['decision'] == 'APPROVED' for a in approvals)
                     and not any(a['decision'] == 'REJECTED' for a in approvals))
     rejected = bool(current and any(a['decision'] == 'REJECTED' for a in approvals))
@@ -354,7 +364,10 @@ def reopen_final(project, *, expected_edit_sha256, expected_manifest_sha256):
         edit = EditSession(project).load(); loaded = production._load(); engine = loaded.engine
         if fingerprint(edit) != expected_edit_sha256 or loaded.manifest_sha256 != expected_manifest_sha256:
             raise EditError('งานเปลี่ยนหลังเปิดตรวจ กรุณาตรวจใหม่ก่อนกลับไปแก้')
-        if engine.project_state not in STATES or not owns_final(engine.snapshot()):
+        from .design_planning import design_present, owns_design
+        state = engine.snapshot()
+        if (engine.project_state not in READABLE_STATES or not owns_final(state)
+                or (design_present(state) and not owns_design(state))):
             raise EditError('กลับไปแก้ได้เฉพาะบทและเสียงขั้นต้นที่เตรียมจากโปรเจกต์นี้')
         tx = engine.begin(); retire_coverage(tx)
         tx.reenter_stage('ASSET_RECON', actor_type='HUMAN'); tx.commit()

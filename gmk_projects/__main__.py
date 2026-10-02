@@ -22,7 +22,8 @@ def main():
                    'footage-search', 'footage-download', 'delivery-verify', 'delivery-sync',
                    'production-inspect', 'production-connect-story', 'media-inspect', 'media-connect', 'coverage-inspect', 'coverage-record',
                    'workflow', 'brief-save', 'shot-review', 'voice-review', 'research-add-claim',
-                   'final-inspect', 'final-prepare', 'final-voice-decide', 'final-reopen'):
+                   'final-inspect', 'final-prepare', 'final-voice-decide', 'final-reopen',
+                   'design-inspect', 'design-prepare', 'design-decide', 'design-reopen', 'plan-prepare'):
         p = sub.add_parser(action)
         p.add_argument('project', type=Path)
         if action == 'research-add-claim':
@@ -54,7 +55,8 @@ def main():
             p.add_argument('--visible-content', required=True)
             p.add_argument('--match-reason', required=True)
             p.add_argument('--match-type', choices=('DIRECT', 'SUPPORTING', 'CONTEXT'), required=True)
-        if action in ('production-connect-story', 'media-connect', 'coverage-record', 'final-prepare', 'final-voice-decide', 'final-reopen'):
+        if action in ('production-connect-story', 'media-connect', 'coverage-record', 'final-prepare', 'final-voice-decide', 'final-reopen',
+                      'design-prepare', 'design-decide', 'design-reopen', 'plan-prepare'):
             p.add_argument('--edit-sha256', required=True)
             p.add_argument('--manifest-sha256', required=True)
         if action == 'coverage-record':
@@ -62,6 +64,9 @@ def main():
             p.add_argument('--stop-reason', default='')
         if action == 'final-voice-decide':
             p.add_argument('--master-sha256', required=True)
+            p.add_argument('--decision', choices=('APPROVED', 'REJECTED'), required=True)
+            p.add_argument('--actor-id', required=True)
+        if action == 'design-decide':
             p.add_argument('--decision', choices=('APPROVED', 'REJECTED'), required=True)
             p.add_argument('--actor-id', required=True)
         if action == 'footage-search':
@@ -131,6 +136,15 @@ def main():
             else: result = decide_final_voice(project, expected_edit_sha256=args.edit_sha256,
                 expected_manifest_sha256=args.manifest_sha256, expected_master_sha256=args.master_sha256,
                 decision=args.decision, actor_id=args.actor_id)
+        elif args.action in ('design-inspect', 'design-prepare', 'design-decide', 'design-reopen', 'plan-prepare'):
+            from .design_planning import inspect_design, prepare_design, decide_design, reopen_design, prepare_plans
+            if args.action == 'design-inspect': result = inspect_design(project)
+            else:
+                operation = {'design-prepare': prepare_design, 'design-decide': decide_design,
+                             'design-reopen': reopen_design, 'plan-prepare': prepare_plans}[args.action]
+                kwargs = {'decision': args.decision, 'actor_id': args.actor_id} if args.action == 'design-decide' else {}
+                result = operation(project, expected_edit_sha256=args.edit_sha256,
+                    expected_manifest_sha256=args.manifest_sha256, **kwargs)
         elif args.action in ('delivery-verify', 'delivery-sync'):
             from .delivery import verify_delivery, deliver_project
             result = (verify_delivery if args.action == 'delivery-verify' else deliver_project)(project)

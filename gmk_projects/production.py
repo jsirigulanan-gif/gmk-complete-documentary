@@ -170,6 +170,9 @@ class ProductionProject:
         media = media_binding_status(self.project, state)
         coverage = coverage_binding_status(self.project, state, media_status=media)
         final = final_binding_status(self.project, state, story_status=story, media_status=media, coverage_status=coverage)
+        from .design_planning import design_binding_status, plan_binding_status
+        design = design_binding_status(self.project, state, final_status=final)
+        plans = plan_binding_status(self.project, state, design_status=design)
         claims = {}
         for obj in engine.snapshot().objects.values():
             if obj.get('object_type') == 'CLAIM':
@@ -181,6 +184,8 @@ class ProductionProject:
                 'media_binding': media,
                 'coverage_binding': coverage,
                 'final_binding': final,
+                'design_binding': design,
+                'plan_binding': plans,
                 'project_ref': loaded.manifest['project_ref'], 'manifest_version': engine.manifest_version,
                 'manifest_sha256': loaded.manifest_sha256,
                 'research_pack_count': sum(a.get('artifact_type') == 'RESEARCH_PACK' for a in engine.snapshot().artifacts.values()),

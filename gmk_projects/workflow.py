@@ -68,10 +68,13 @@ def workflow_status(project):
     acquisition_action = 'PRODUCTION_MEDIA' if all_shots and not media_issues else 'FOOTAGE'
     stage('ACQUISITION', 'ไฟล์ฟุตเทจและข้อมูลผลิต', all_shots and not media_issues and media_binding['current'], acquisition_action,
           '; '.join(media_issues) or media_binding['reason'])
-    stage('SCENE_PLAN', 'ลำดับฉาก', narrative, 'SCRIPT', 'เรียงฉากและกำหนดการพาคนดูจากคำถามไปสู่คำตอบ')
+    plans = production['plan_binding']
+    design = production['design_binding']
+    stage('SCENE_PLAN', 'แผนฉากขั้นผลิต', plans['scene_plan_ready'], 'PRODUCTION_PLANS', plans['reason'])
     coverage = production['coverage_binding']
-    stage('SHOT_PLAN', 'ช็อตและความครอบคลุมภาพ', reviews and not media_issues and coverage['ready'], 'COVERAGE', coverage['reason'])
-    stage('TIMELINE', 'ไทม์ไลน์', plan['ready_to_render'], 'TIMELINE',
+    stage('SHOT_PLAN', 'แผนช็อตขั้นผลิต', plans['shot_plan_ready'], 'PRODUCTION_PLANS', plans['reason'])
+    stage('TIMELINE', 'ไทม์ไลน์', plan['ready_to_render'] and plans['shot_plan_ready'],
+          'PRODUCTION_PLANS' if plan['ready_to_render'] else 'TIMELINE',
           '; '.join(x['detail'] for x in plan['issues']) or f'ความยาวจริง {plan["duration_seconds"]:.2f} วินาที')
     voices = bool(scenes) and all(s.get('voice') and s['voice'].get('text_sha256') == fingerprint(s['narration']) for s in scenes)
     voice_issues, missing_voice = [], set()
@@ -97,8 +100,9 @@ def workflow_status(project):
             music_ready = any(x['codec_type'] == 'audio' for x in info['streams'])
         except (ValueError, OSError, StorageError, subprocess.SubprocessError):
             music_ready = False
-    stage('DESIGN', 'ดนตรีและกราฟิก', music_ready, 'DESIGN',
-          'เลือกดนตรี ระดับเสียง และชื่อฉาก หรือระบุว่าตั้งใจไม่ใช้ดนตรี')
+    stage('DESIGN', 'รูปแบบภาพ ดนตรี และกราฟิก', music_ready and design['approved'],
+          'DESIGN_PRODUCTION' if music_ready else 'DESIGN',
+          design['reason'] if music_ready else 'เลือกดนตรี ระดับเสียง และชื่อฉาก หรือระบุว่าตั้งใจไม่ใช้ดนตรี')
     render_ready, render_issue = False, 'ยังไม่มีวิดีโอจากบทและไทม์ไลน์รุ่นปัจจุบัน'
     try:
         render = json.loads((project.root/'last_render.json').read_text())
@@ -139,6 +143,10 @@ def workflow_status(project):
         pending = next(s for s in stages if s['key'] == 'VOICE')
     if pending and pending['action'] == 'COVERAGE' and not listening_ready:
         pending = next(s for s in stages if s['key'] == 'VOICE')
+    if pending and pending['action'] in {'PRODUCTION_PLANS', 'DESIGN_PRODUCTION'} and not final['voice_locked']:
+        pending = next(s for s in stages if s['key'] == 'VOICE')
+    if pending and pending['action'] == 'PRODUCTION_PLANS' and not design['approved']:
+        pending = next(s for s in stages if s['key'] == 'DESIGN')
     target = None
     if pending:
         if pending['action'] == 'VOICE':
@@ -159,4 +167,6 @@ def workflow_status(project):
             'media_binding': media_binding,
             'coverage_binding': coverage,
             'final_binding': final,
+            'design_binding': design,
+            'plan_binding': plans,
             'issues': media_issues}

@@ -1,6 +1,16 @@
 # Continuation Handoff — GMK Complete Documentary Maker
 
-## Current continuation (Build 055)
+## Current continuation (Build 056)
+
+Continue GMK only, keep private projects/research/media out of Git. `gmk_projects/design_planning.py` connects renderer-derived design settings, actual PNG preview, explicit named DESIGN_DNA approval and exact measured scene/shot plans. The wrapper stages frozen objects/gates in memory under exact edit/core tokens and publishes once; no alternate state machine or provider call. Render code/config hashes participate in design inputs. Stable identities/history survive explicit design reopening; current voice approval is retained for style-only changes. Full upstream reopening through the existing voice dialog retires owned design/planning/voice and reenters ASSET_RECON. Foreign records and later locks remain protected.
+
+Read-only media/voice currentness now recognizes design/scene/shot stages separately from editable upstream stages. Readiness routes voice → actual design review → canonical plans before local draft render. Plans consume all used preflight cuts in actual order, not one arbitrary Segment per Beat. Source in/out, used frames, explicit hold frames, absolute master timing, relative voice cues, current title text/style and stable Shot/Layer/Cue IDs are recorded. Unused cuts remain in the library. SUPPORTING maps to CONTEXTUAL_BROLL, never DIRECT_EVIDENCE; rights remain UNKNOWN. Subtitle mode is soft mov_text/SRT; timing uncertainty still requires full-film review. The single PNG is not whole-film/semantic approval.
+
+CLI: design-inspect/design-prepare/design-decide/design-reopen/plan-prepare. GUI: **ตรวจรูปแบบภาพและเชื่อมแผนฉากช็อต**, with explicit preview/check/name/approval and plan action. A rejected design needs explicit reopening and a new decision. Exact replay does not publish. Failed staging and in-flight changes keep the persisted core unchanged; a complete unreferenced cached PNG may remain after a late failure. See BUILD_056_VALIDATION.md for actual results.
+
+Next: canonical HTML review/production lock, binding actual render snapshots and exact full-film QA/delivery/release. Use the current measured plans and tokens, not legacy fixture plans. Do not simply extend upstream mutation into locked states. Real 2–3 minute and 30 minute film acceptance and live verified Drive delivery still remain. Real project retains 13 UNREVIEWED claims / RESEARCH_INTAKE; no private fact was approved. Most recent live Drive quota check remains Build 054, 2026-10-02 shared-client403; this build does not repair that account.
+
+## Previous continuation (Build 055)
 
 Continue GMK at `/home/keng/gmk-complete-documentary`, not Veocut/Sunshine. `gmk_projects/final_production.py` stages exact reviewed editor text in scene order into canonical final-script/TTS artifacts; refreshes promoted Beat refs throughout current story/media/coverage; carries forward the unchanged explicit library selection; and assembles actual mono 48 kHz PCM master bytes with per-block frame/sample timing. Scene audio is frozen and checked before conversion. A complete derived master is cached atomically, then the core manifest is published once after rechecking exact inputs. Failed staging may retain an unreferenced derived audio file, never a current approval or partial final master.
 

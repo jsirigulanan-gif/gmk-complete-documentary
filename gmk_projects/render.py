@@ -42,10 +42,14 @@ def _seconds(value):
     return int(h)*3600 + int(m)*60 + float(s)
 
 
+def _title_text(title):
+    return title[:120].replace('\\', '/').replace('{', '(').replace('}', ')').replace('\n', ' ')
+
+
 def _title_ass(title, width, height):
     # libass performs font fallback for mixed Thai/Latin text. A script-only Thai
     # font in drawtext can otherwise render Latin headings as missing-glyph boxes.
-    text=title[:120].replace('\\','/').replace('{','(').replace('}',')').replace('\n',' ')
+    text = _title_text(title)
     return (f'[Script Info]\nScriptType: v4.00+\nPlayResX: {width}\nPlayResY: {height}\nWrapStyle: 0\n'
             '[V4+ Styles]\nFormat: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding\n'
             f'Style: Title,Noto Sans,{max(16,height//28)},&H00FFFFFF,&H00FFFFFF,&H99000000,&H99000000,0,0,0,0,100,100,0,0,3,8,0,1,{width//20},{width//20},{height//10},1\n'

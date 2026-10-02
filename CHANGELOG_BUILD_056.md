@@ -1,0 +1,9 @@
+# Build 056 — Actual design review and selected-cut production plans
+
+The general project previously ended canonical integration at voice approval. Its new design action uses current resolution, scene-title settings, subtitle mode and music choice, and generates a real PNG preview with the existing renderer. A named human decision is required for DESIGN_DNA_APPROVED. The PNG is one frame; whole-film, subtitle timing and music quality review remain pending.
+
+The new planner registers all used selected cuts in edit order, with exact source intervals, frame counts, explicit held frames, voice-anchored cues and current title layers through SCENE_PLAN_READY/SHOT_PLAN_READY. It does not use the legacy planner's one-segment-per-Beat nomination. SUPPORTING stays CONTEXTUAL_BROLL and rights stay UNKNOWN. Unused tails and original media remain in the library.
+
+Exact previews, verified bytes and staged publication reject stale or in-flight changes. Style-only reopening retains unchanged voice approval. Full upstream reopening retires obsolete owned design/planning/voice while preserving original media and history. Stable identities survive new versions; foreign records and later locks are protected. Status separates read-only downstream recognition from upstream mutation. Guided readiness requires the real voice/design/plan bindings before draft render.
+
+CLI: design-inspect/design-prepare/design-decide/design-reopen/plan-prepare. Existing frozen contracts and gates are retained. Renderer/config hashes participate in design inputs, and title normalization is shared with rendering. No model/TTS/image provider is called or new graphics fabricated. Canonical review/production lock/render/full-film QA/final release, real short/long-film acceptance and live Drive delivery remain unfinished. See [validation](BUILD_056_VALIDATION.md).

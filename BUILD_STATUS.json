@@ -1,12 +1,12 @@
 {
-  "build": "055",
+  "build": "056",
   "status": "VALIDATED_LOCAL_WORKFLOW_CANONICAL_PRODUCTION_INTEGRATION_INCOMPLETE",
   "product_end_to_end_ready": false,
-  "build_focus": "Exact reviewed final script, frame-aligned real master narration and explicit canonical voice approval",
+  "build_focus": "Actual renderer design preview, explicit human approval and exact selected-cut scene/shot plans",
   "production_state_authority": "PER_PROJECT_STATE_ENGINE_CURRENT_MANIFEST",
-  "next_product_milestone": "CANONICAL_DESIGN_SCENE_SHOT_RENDER_QA_RELEASE_AND_REAL_ACCEPTANCE",
+  "next_product_milestone": "CANONICAL_REVIEW_PRODUCTION_LOCK_RENDER_QA_RELEASE_AND_REAL_ACCEPTANCE",
   "validated_target_state_scope": "LEGACY_FIXTURE_RUNTIME_TESTS_NOT_REAL_DOCUMENTARY_DELIVERY",
-  "next_legal_target": "DESIGN_DNA_APPROVED",
+  "next_legal_target": "HTML_REVIEW_READY",
   "legacy_pipeline_fields_scope": "Bundled pilot/component fixtures only: project_state, manifest_version, asset counts, next_frozen_stage and tested_completion_path below do not describe a completed real user documentary. next_frozen_stage refers to existing core runtimes; general-project adapters remain pending as recorded above.",
   "architecture_blocker": "RESOLVED_BY_VOICE_AND_DESIGN_REVIEW_PACKAGE_ERRATA",
   "audit_runtime": "IMPLEMENTED_STATIC_QUICK_FULL",
@@ -22,7 +22,7 @@
   "gate_runtime_core_tests": "19 PASSED",
   "github": "jsirigulanan-gif/gmk-complete-documentary",
   "html_review_runtime": "IMPLEMENTED_PREPARE_DECIDE",
-  "latest_stage_runtime": "CANONICAL_VOICE_LOCKED_WITH_EXPLICIT_MASTER_REVIEW_DESIGN_AND_FINAL_RELEASE_PENDING",
+  "latest_stage_runtime": "CANONICAL_SHOT_PLAN_READY_WITH_EXPLICIT_DESIGN_AND_VOICE_REVIEW_FINAL_RELEASE_PENDING",
   "manifest_version": 104,
   "material_priority": "YOUTUBE>WEB_VIDEO>STILL_DOCUMENT>AI_GENERATED_LAST",
   "media_handoff_runtime": "IMPLEMENTED",
@@ -60,7 +60,7 @@
   "shot_plan_runtime": "IMPLEMENTED",
   "source_lock_enforced": true,
   "still_document_fallback": "IMPLEMENTED_WIKIMEDIA_NASA_RESEARCH_ACQUIRE_STILL_TO_CLIP",
-  "targeted_regression_tests": "All 6 new final-production cases PASS across completed runs; live synthetic GUI PASS; initial QUICK 41 PASS / 0 FAIL / 1 TIMEOUT / 1 legacy WARN; split timeout group retest 1+2 tests PASS; additional legacy pilot regression timeout 300s",
+  "targeted_regression_tests": "31 distinct PASS across focused runs: 7 new design/planning/voice-context cases + 15 affected workflow/voice cases + 9 media/render cases; live synthetic GUI to SHOT_PLAN_READY/MP4/ZIP PASS; STATIC 16 PASS / 0 FAIL / 0 TIMEOUT / 1 legacy WARN; no new whole QUICK/FULL audit claimed",
   "tested_completion_path": [
     "ASSET_RECON",
     "ASSET_CATALOG_READY",
@@ -290,7 +290,14 @@
     "build_055_initial_quick_audit": "41 PASS / 0 FAIL / 1 TIMEOUT / 1 documented legacy WARN; 624.68 seconds; last final-revision group split for retest",
     "build_055_legacy_script": "Additional legacy Build 021 pilot compile/replay regression: timeout 300 seconds / exit 124 / no completed pytest summary; not counted as PASS",
     "build_055_partition_retest": "Scene order 1 PASS in 39.13s; revisions/in-flight/foreign records 2 PASS in 59.43s; current QUICK partitions covered across initial audit and focused rerun, not a second full QUICK run",
-    "build_055_final_new_cases": "6 distinct PASS on final code: QUICK first 3 PASS in 80.59s plus focused 1 PASS in 39.13s and 2 PASS in 59.43s; overlapping initial 6-case run is not added"
+    "build_055_final_new_cases": "6 distinct PASS on final code: QUICK first 3 PASS in 80.59s plus focused 1 PASS in 39.13s and 2 PASS in 59.43s; overlapping initial 6-case run is not added",
+    "build_056_design_planning": "6 distinct cases PASS in bounded sequential partitions: 40.63s, 46.41s, 27.30s, 51.47s, 44.30s, 16.90s; no double-counting preliminary 5-case run",
+    "build_056_affected_workflow_voice": "15 cases PASS in 7 partitions; 404.97s total; focused checks, not a new full QUICK/FULL audit",
+    "build_056_gui": "LIVE_GUIDED_ACTUAL_PNG_EXPLICIT_DESIGN_APPROVAL_EXACT_CUT_SHOT_PLAN_READY_MP4_EIGHT_CHECK_QA_LOCAL_ZIP_PASS_SYNTHETIC_NO_NETWORK_URI_OPEN_INTERCEPTED",
+    "build_056_real_project": "2026-10-02 READ_ONLY: RESEARCH_INTAKE / 13 CLAIMS / 13 UNREVIEWED / MANIFEST_UNCHANGED",
+    "build_056_static_tools": "16 STATIC PASS / 0 FAIL / 0 TIMEOUT / 1 legacy WARN; 80 frozen schema/contracts PASS; semantic/gate/layout smokes and 8 installed tool checks PASS",
+    "build_056_final_guard_render": "10 PASS in 139.81s: seventh new voice-review-context invalidation case plus 9 existing media/render cases",
+    "build_056_distinct_tests": "31 distinct PASS across complementary final focused runs; 7 new + 15 affected workflow/voice + 9 media/render; preliminary overlapping results not added"
   },
   "verified_segments": 8,
   "visual_coverage_runtime": "IMPLEMENTED",
@@ -325,9 +332,11 @@
     "media_recovery": "EXACT_ORIGINAL_REIMPORT_RESTORES_MISSING_BYTES_RETAINS_REFS_REJECTS_CHANGED_EXISTING_FILES",
     "drive_script_discovery": "PLAIN_OR_BRACKETED_LEMINO_SCRIPT_TITLES_RECURSIVE_FOLDER_DISCOVERY",
     "coverage": "MEASURED_USED_FRAME_RANGES_UNIQUE_BYTES_CURRENT_PICTURE_LISTENING_REVIEWS_CANONICAL_PASS_FAIL_QA_EXPLICIT_HUMAN_LIBRARY_STOP",
-    "canonical_integration": "REVIEWED_STORY_MEDIA_COVERAGE_FINAL_SCRIPT_AND_REAL_MASTER_TO_EXPLICIT_VOICE_LOCKED_DESIGN_AND_FINAL_RELEASE_PENDING"
+    "canonical_integration": "REVIEWED_STORY_MEDIA_COVERAGE_SCRIPT_VOICE_DESIGN_EXACT_CUT_PLANS_TO_SHOT_PLAN_READY_FINAL_RELEASE_PENDING",
+    "design": "ACTUAL_RENDERER_BOUND_SETTINGS_AND_PNG_EXPLICIT_HUMAN_REVIEW_NO_NEW_GRAPHICS_GENERATION",
+    "scene_shot_planning": "EXACT_USED_CUTS_TITLE_LAYERS_VOICE_CUES_FRAME_CLOCK_EXPLICIT_HOLDS_PRESERVE_CONTEXTUAL_FOOTAGE_AND_UNKNOWN_RIGHTS"
   },
-  "latest_validated_general_project_state": "VOICE_LOCKED_SYNTHETIC_FIXTURES_ONLY",
+  "latest_validated_general_project_state": "SHOT_PLAN_READY_SYNTHETIC_FIXTURES_ONLY",
   "real_user_project_state": "RESEARCH_INTAKE_13_UNREVIEWED_CLAIMS_READ_ONLY_2026_10_02",
-  "next_general_project_stage": "DESIGN_DNA_APPROVED_GENERAL_PROJECT_ADAPTER_PENDING"
+  "next_general_project_stage": "HTML_REVIEW_READY_GENERAL_PROJECT_ADAPTER_PENDING"
 }
