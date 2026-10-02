@@ -1,5 +1,13 @@
 # Continuation Handoff — GMK Complete Documentary Maker
 
+## Current continuation (Build 053)
+
+`gmk_projects/media_bridge.py` connects current reviewed local cuts to canonical Source/Search/Search Result/Asset/Segment records and per-scene PROVENANCE_MANIFEST receipts, stopping at ASSET_RECON. Actual files are referenced through project logical URIs, without duplicating footage into core checkpoints. GUI preview/connection and CLI `media-inspect`/`media-connect` require exact edit/core hashes. Readiness routes to PRODUCTION_MEDIA before render. History restores stable cut identities after removal; missing/corrupt files and old reviews/previews block registration.
+
+Only owned editor media ASSET_RECON can reopen for explicit story/research/claim revisions; foreign/later stages retain their existing protections. Archived dependency heads are historical nodes, so upstream promotion/cold-start recomputation cannot overwrite their archive status. Active dependents still invalidate normally.
+
+UNKNOWN source independence/rights are retained. CONTEXT cuts remain unverified in the frozen contract (MISMATCH mapping, original classification retained). No Search Completion Certificate, Visual Coverage QA, invented download operation, release approval or documentary completion is created. Next adapters must assess coverage and connect canonical script/voice/design/scene/shot/timeline/render/QA/delivery. Real input reviews and live Drive acceptance remain necessary. Validation: 43 core/media/state/dependency PASS, mocked discovery PASS, live synthetic GUI preview → canonical media → MP4 → eight checks → exact ZIP PASS, and QUICK 37 PASS / 0 FAIL / 0 TIMEOUT / 1 documented legacy WARN. See BUILD_053_VALIDATION.md for scopes and overlapping counts. Real project unchanged: 13 UNREVIEWED claims / RESEARCH_INTAKE.
+
 ## Current continuation (Build 052)
 
 The user asked to complete the documentary product and remove unrelated functions. The desktop app now exposes only general documentary projects and setup; P.T./Lisa/TGA UI, pilot path requirements, legacy media execution controls, duplicate raw-file/research/delivery controls and the separate Log tab were removed. Legacy core engines/fixtures remain available outside the product app. No private project/media files were deleted.

@@ -64,8 +64,10 @@ def workflow_status(project):
                 media_issues.append(s['id']+': '+str(exc))
                 missing_footage.add(s['id'])
     next(row for row in stages if row['key'] == 'SELECTION')['ready'] = reviews and not media_issues
-    stage('ACQUISITION', 'ไฟล์ฟุตเทจ', all_shots and not media_issues, 'FOOTAGE',
-          '; '.join(media_issues) or 'ไฟล์ต้นฉบับอยู่ในคลังและเปิดอ่านได้')
+    media_binding = production['media_binding']
+    acquisition_action = 'PRODUCTION_MEDIA' if all_shots and not media_issues else 'FOOTAGE'
+    stage('ACQUISITION', 'ไฟล์ฟุตเทจและข้อมูลผลิต', all_shots and not media_issues and media_binding['current'], acquisition_action,
+          '; '.join(media_issues) or media_binding['reason'])
     stage('SCENE_PLAN', 'ลำดับฉาก', narrative, 'SCRIPT', 'เรียงฉากและกำหนดการพาคนดูจากคำถามไปสู่คำตอบ')
     stage('SHOT_PLAN', 'ช็อตและช่วงตัด', reviews and not media_issues, 'SHOT_REVIEW', 'ทุกช็อตมีช่วงเวลาและผลตรวจภาพที่ตรงกับบทปัจจุบัน')
     stage('TIMELINE', 'ไทม์ไลน์', plan['ready_to_render'], 'TIMELINE',
@@ -129,7 +131,7 @@ def workflow_status(project):
     pending = next((s for s in stages if not s['ready']), None)
     if pending and pending['action'] == 'SHOT_REVIEW' and media_issues:
         pending = next(s for s in stages if s['key'] == 'ACQUISITION')
-    if pending and pending['action'] in {'FOOTAGE', 'SHOT_REVIEW', 'TIMELINE'} and not voices:
+    if pending and pending['action'] in {'FOOTAGE', 'SHOT_REVIEW', 'PRODUCTION_MEDIA', 'TIMELINE'} and not voices:
         pending = next(s for s in stages if s['key'] == 'VOICE')
     target = None
     if pending:
@@ -148,4 +150,5 @@ def workflow_status(project):
             'next_label': pending['label'] if pending else 'สารคดีเสร็จสมบูรณ์',
             'edit_sha256': fingerprint(edit), 'production_state': production['production_state'],
             'documentary_completed': production['documentary_completed'], 'timeline': plan,
+            'media_binding': media_binding,
             'issues': media_issues}

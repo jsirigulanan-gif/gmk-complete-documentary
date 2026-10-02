@@ -73,6 +73,8 @@ class AuditRuntime:
         ('build051_story_bridge', ('tests/build051', 'tests/dependency/test_dependency_engine.py::test_repeated_promotions_persist_same_stale_envelope_as_cold_start')),
         ('build052_workflow', ('tests/build052/test_workflow.py', 'tests/build052/test_audit_timeout.py')),
         ('build052_research_draft', ('tests/build052/test_research_draft.py', 'tests/build052/test_asset_recovery.py')),
+        ('build053_media_bridge', ('tests/build053/test_media_bridge.py', 'tests/build053/test_drive_discovery.py', 'tests/dependency/test_dependency_engine.py::test_archived_dependent_is_retained_history_on_promotion_and_cold_start')),
+        ('build053_media_revisions', ('tests/build053/test_media_revisions.py',)),
     )
     FULL_BASE_PARTITIONS=(
         ('core_engines', ('tests/state','tests/dependency','tests/gate','tests/runtime','tests/semantic')),

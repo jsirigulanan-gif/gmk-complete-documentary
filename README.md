@@ -1,8 +1,10 @@
-# GMK Complete Documentary Maker — Build 052
+# GMK Complete Documentary Maker — Build 053
 
-> **Current build:** Build 052 — Focused documentary workspace, guided lifecycle readiness and exact media/full-film review. **End-to-end automatic documentary production is not ready.** Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
+> **Current build:** Build 053 — Reviewed local footage connected to canonical acquisition records, with guided editing, rendering and local export. **End-to-end automatic documentary production is not ready.** Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
 
 The final product requirement is a coherent **Topic / Brief → Research → Evidence / Claims → Narrative → Script → Narration Beats → Visual Requirements → Footage Research → Footage Selection → Footage Acquisition → Scene Planning → Shot Planning → Timeline / Edit Assembly → Voice / TTS → Design / Graphics → Render → Full-film QA → Delivery → Export → Completed Documentary** workflow. See [product requirements and acceptance criteria](PRODUCT_REQUIREMENTS.md) and [integration roadmap](IMPLEMENTATION_ROADMAP.md).
+
+Build 053 connects explicitly reviewed local footage to exact canonical Source/Search Result/Asset/Segment records, preserving byte hashes, original URLs and in/out ranges without copying large media into the production checkpoint. The editor previews and connects these records; readiness routes to that action before rendering. Trims require fresh picture review, revisions retain identities, and removed selections retain history and original files. Source independence, usage rights, search completeness and full-film canonical coverage are still pending. See [Build 053 changes](CHANGELOG_BUILD_053.md) and [validation](BUILD_053_VALIDATION.md).
 
 Build 052 removes the P.T./Lisa/TGA demonstration UI and its workspace dependencies from the desktop app. The app opens general projects directly, supports new topic briefs, and shows readiness across all 20 lifecycle stages with a next action. Exact shot/listening reviews expire when relevant draft inputs change, and whole-film review records eight editorial checks before local delivery. See [Build 052 changes](CHANGELOG_BUILD_052.md), [validation](BUILD_052_VALIDATION.md) and [Thai startup guide](README_START_HERE_TH.md). The readiness view is derived from existing records; canonical final-release integration and real-film acceptance remain pending.
 

@@ -17,7 +17,7 @@ from .script_review import script_readiness
 from .storage import atomic_json
 
 
-EARLY_STATES = {'RESEARCH_INTAKE', 'RESEARCH_AUDITED', 'ROUGH_NARRATIVE_READY', 'VISUAL_REQUIREMENTS_READY'}
+EARLY_STATES = {'RESEARCH_INTAKE', 'RESEARCH_AUDITED', 'ROUGH_NARRATIVE_READY', 'VISUAL_REQUIREMENTS_READY', 'ASSET_RECON'}
 ROLES = {'HOOK': ('HOOK', 'BUILD'), 'CONTEXT': ('SETUP', 'CALM'),
          'ESCALATION': ('ESCALATION', 'TENSE'), 'REVEAL': ('MAJOR_PEAK', 'REVEAL'),
          'RESOLUTION': ('REFLECTION', 'REFLECTIVE')}
@@ -110,6 +110,10 @@ def _inspect(project, edit, loaded):
         issues.append('รีเสิร์ชยังไม่ผ่านเกณฑ์ ต้องตรวจข้อกล่าวอ้างและประเด็นที่ค้างก่อน')
     if engine.project_state not in EARLY_STATES:
         issues.append('โปรเจกต์อยู่ขั้น '+engine.project_state+' ต้องใช้ขั้นตอนแก้ไขงานผลิตที่ล็อกแล้ว')
+    if engine.project_state == 'ASSET_RECON':
+        from .media_bridge import owned_media_recon
+        if not owned_media_recon(engine.snapshot()):
+            issues.append('ขั้นสำรวจฟุตเทจนี้มีข้อมูลจากระบบอื่น ต้องย้ายข้อมูลอย่างชัดเจนก่อนแก้บท')
     foreign = [o for o in _active(engine.snapshot()).values()
                if o['object_type'] in ('ACT', 'SCENE', 'NARRATION_BEAT')
                and not o.get('extensions', {}).get('project_story')]

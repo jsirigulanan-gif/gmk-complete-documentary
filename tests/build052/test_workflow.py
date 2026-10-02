@@ -34,9 +34,12 @@ def media(tmp_path):
 
 
 def review_media(p, session, scene, shot):
+    from gmk_projects.media_bridge import inspect_media, connect_media
     review_voice(p, scene, expected_revision=session.load()['revision'])
     review_shot(p, scene, shot, visible_content='The fixture frame is visible.', match_reason='Fixture matching decision for this narration.',
                 match_type='CONTEXT', expected_revision=session.load()['revision'])
+    preview = inspect_media(p)
+    connect_media(p, expected_edit_sha256=preview['edit_sha256'], expected_manifest_sha256=preview['manifest_sha256'])
 
 
 def test_new_topic_brief_and_real_readiness_preserve_core_state(tmp_path):

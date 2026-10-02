@@ -106,9 +106,11 @@ def review_claim(project,claim_id: str,expected_version: int,claim_text: str,*,s
         if not candidates or max(c['version'] for c in candidates)!=expected_version:
             raise EditError('ข้อกล่าวอ้างเปลี่ยนรุ่นแล้ว กรุณาโหลดใหม่ก่อนตรวจ')
         current=max(candidates,key=lambda c:c['version'])
+        from .media_bridge import owned_media_recon
         batch['claims'][0]['replace_external_evidence_links'] = claim_text.strip()!=current['claim_text'] or disposition=='INSUFFICIENT'
         batch['batch_id']='OPERATOR_REVIEW_'+fingerprint({**batch,'expected_version':expected_version})[:20].upper()
         result=ResearchAuditRuntime(RUNTIME_ROOT,production.workspace).run(
-            batch,transition_if_ready=False,reopen_early_stage=True).to_dict()
+            batch,transition_if_ready=False,reopen_early_stage=True,
+            reopen_editor_recon=owned_media_recon(loaded.engine.snapshot())).to_dict()
         data=project.read();data['storage_status']='PENDING_UPLOAD';atomic_json(project.manifest,data)
     return result

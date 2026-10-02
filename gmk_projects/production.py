@@ -91,6 +91,9 @@ class ProductionProject:
                              if a.get('artifact_type') == 'RESEARCH_PACK' and marker in a.get('notes', [])), None)
             if existing is None:
                 reopen = engine.project_state in ('RESEARCH_AUDITED', 'ROUGH_NARRATIVE_READY', 'VISUAL_REQUIREMENTS_READY')
+                if engine.project_state == 'ASSET_RECON':
+                    from .media_bridge import owned_media_recon
+                    reopen = owned_media_recon(engine.snapshot())
                 if engine.project_state not in ('BOOTSTRAPPED', 'RESEARCH_INTAKE') and not reopen:
                     raise StorageError('Research revision after audit requires the core revision/invalidation workflow')
                 target = self.workspace/'inputs'/'research'/source.name
@@ -157,6 +160,7 @@ class ProductionProject:
         loaded = self._load()
         engine = loaded.engine
         from .production_bridge import binding_status
+        from .media_bridge import media_binding_status
         claims = {}
         for obj in engine.snapshot().objects.values():
             if obj.get('object_type') == 'CLAIM':
@@ -165,6 +169,7 @@ class ProductionProject:
                     claims[obj['id']] = obj
         return {'connected': True, 'production_state': engine.project_state,
                 'story_binding': binding_status(self.project, engine.snapshot()),
+                'media_binding': media_binding_status(self.project, engine.snapshot()),
                 'project_ref': loaded.manifest['project_ref'], 'manifest_version': engine.manifest_version,
                 'manifest_sha256': loaded.manifest_sha256,
                 'research_pack_count': sum(a.get('artifact_type') == 'RESEARCH_PACK' for a in engine.snapshot().artifacts.values()),

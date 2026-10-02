@@ -59,6 +59,7 @@ class ProjectsPanel:
         data = p.read()
         research_label = 'ยังไม่มีข้อมูลตรวจรีเสิร์ช'
         story_label = 'ยังไม่ได้เชื่อมบทเข้าระบบผลิต'
+        media_label = 'ยังไม่ได้เชื่อมฟุตเทจเข้าข้อมูลผลิต'
         from gmk_projects.production import ProductionProject
         try:
             production = ProductionProject(p).status()
@@ -71,9 +72,11 @@ class ProjectsPanel:
                             'RESEARCH_INTAKE': 'รับรีเสิร์ชแล้ว — ขั้นถัดไปคือตรวจหลักฐานและข้อกล่าวอ้าง',
                             'RESEARCH_AUDITED': 'ตรวจรีเสิร์ชแล้ว — รอเชื่อมโครงเรื่อง',
                             'ROUGH_NARRATIVE_READY': 'มีโครงเรื่องและฉากแล้ว — รอกำหนดภาพ',
-                            'VISUAL_REQUIREMENTS_READY': 'กำหนดภาพแต่ละฉากแล้ว — ขั้นถัดไปคือค้นและตรวจฟุตเทจ'}
+                            'VISUAL_REQUIREMENTS_READY': 'กำหนดภาพแต่ละฉากแล้ว — ขั้นถัดไปคือค้นและตรวจฟุตเทจ',
+                            'ASSET_RECON': 'ลงทะเบียนฟุตเทจแล้ว — ตรวจภาพและจัดช็อตต่อ'}
             production_label = state_labels.get(production['production_state'], production['production_state'])
             story_label = production.get('story_binding', {}).get('reason', story_label)
+            media_label = production.get('media_binding', {}).get('reason', media_label)
             if production['connected']:
                 research_label = f'ข้อความรอตรวจ {production["unreviewed_claim_count"]} / ทั้งหมด {production["claim_count"]} รายการ'
         except Exception:
@@ -87,6 +90,7 @@ class ProjectsPanel:
                  'สถานะการผลิต: ' + production_label,
                  'รีเสิร์ช: ' + research_label,
                  'บทและฉาก: ' + story_label,
+                 'ฟุตเทจและช่วงตัด: ' + media_label,
                  'การส่งออกสารคดีครบกระบวนการ: ยังไม่ได้ยืนยัน', '']
         lines += [('✓ ' if a['upload_status'] == 'VERIFIED' else 'รอส่ง: ') + a['original_name'] for a in data['assets']]
         self.details.configure(state='normal')

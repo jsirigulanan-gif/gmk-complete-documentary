@@ -32,8 +32,9 @@ def add_review_claim(project, source_path: str, excerpt: str, claim_text: str) -
         raise EditError('เลือกข้อความต้นฉบับและระบุข้อกล่าวอ้างที่ต้องตรวจ')
     with project._lock():
         loaded = ProductionProject(project)._load()
+        from .media_bridge import owned_media_recon
         if loaded.engine.project_state not in ('RESEARCH_INTAKE', 'RESEARCH_AUDITED',
-                                              'ROUGH_NARRATIVE_READY', 'VISUAL_REQUIREMENTS_READY'):
+                                              'ROUGH_NARRATIVE_READY', 'VISUAL_REQUIREMENTS_READY') and not owned_media_recon(loaded.engine.snapshot()):
             raise EditError('เพิ่มประเด็นได้ในขั้นรีเสิร์ชหรือร่างเรื่องเท่านั้น')
         state = loaded.engine.snapshot()
         asset = next((a for a in project.read()['assets']

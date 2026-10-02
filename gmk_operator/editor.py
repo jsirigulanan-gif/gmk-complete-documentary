@@ -125,6 +125,7 @@ class EditorWindow:
         ttk.Button(row, text='เลื่อนลง', command=lambda: self.move_shot(1)).pack(side='left')
         ttk.Button(row, text='เอาช็อตออกจากฉาก', command=self.remove_shot).pack(side='left', padx=5)
         ttk.Button(footage, text='ตรวจภาพในช็อตที่เลือก', command=self.review_shot).pack(anchor='w', pady=5)
+        ttk.Button(footage, text='เชื่อมภาพที่ตรวจแล้วเข้าข้อมูลผลิต', command=self.production_media).pack(anchor='w', pady=5)
         ttk.Label(footage, text='ไฟล์ที่เอาออกจากฉากยังอยู่ในคลัง และรออัปโหลดไปโฟลเดอร์ Drive ของโปรเจกต์').pack(anchor='w')
 
         row = ttk.Frame(finish)
@@ -362,7 +363,8 @@ class EditorWindow:
             return messagebox.showinfo('GMK', 'บทเปลี่ยนแล้ว กรุณาตรวจความพร้อมใหม่', parent=self.window)
         action = result['next_action']
         direct = {'BRIEF': self.edit_brief, 'IMPORT_RESEARCH': self.import_research, 'RESEARCH': self.open_research,
-                  'STORY': self.generate_story, 'PRODUCTION': self.production_story, 'TIMELINE': self.preflight,
+                  'STORY': self.generate_story, 'PRODUCTION': self.production_story,
+                  'PRODUCTION_MEDIA': self.production_media, 'TIMELINE': self.preflight,
                   'RENDER': self.render, 'FILM_QA': self.approve, 'EXPORT': self.export, 'DRIVE': self.deliver}
         if action in direct:
             direct[action](); return
@@ -668,6 +670,52 @@ class EditorWindow:
             return consent.get('allowed') is True and consent.get('project_id')==self.project.read()['project_id']
         except (OSError,ValueError,AttributeError):
             return False
+
+    def production_media(self):
+        if self.app._busy or not self.save(): return
+        from gmk_projects.media_bridge import inspect_media, connect_media
+        tk, ttk = self.app.tk, self.app.ttk
+        dialog = tk.Toplevel(self.window)
+        dialog.title('ฟุตเทจ → ไฟล์ภาพ → ช่วงตัด')
+        dialog.geometry('850x600'); dialog.transient(self.window); dialog.grab_set()
+        ttk.Label(dialog, text='เชื่อมไฟล์ต้นฉบับ ช่วงตัด ที่มา และผลตรวจภาพของฉากที่เลือก พร้อมเก็บประวัติเมื่อแก้ช็อต',
+                  wraplength=800).pack(fill='x', padx=12, pady=12)
+        row = ttk.Frame(dialog); row.pack(side='bottom', fill='x', padx=12, pady=12)
+        details = tk.Text(dialog, wrap='word', state='disabled')
+        details.pack(fill='both', expand=True, padx=12, pady=6)
+        preview = {}
+        def show(value):
+            if not dialog.winfo_exists(): return
+            details.configure(state='normal'); details.delete('1.0', 'end'); details.insert('1.0', value)
+            details.configure(state='disabled')
+        def display(result):
+            if not dialog.winfo_exists(): return
+            preview.clear(); preview.update(result)
+            lines = ['ขั้นปัจจุบัน: '+result['production_state'], result['binding']['reason'],
+                     f'ช่วงภาพที่ตรวจ: {len(result["clips"])}',
+                     'ฉากที่ยังไม่มีภาพ: '+(', '.join(result['missing_scene_ids']) or 'ไม่มี'), '']
+            lines += ['พร้อมเชื่อมไฟล์และช่วงตัด' if result['ready'] else '\n'.join(result['issues']), '',
+                      'การลงทะเบียนภาพยังไม่ยืนยันสิทธิ์การใช้หรืออนุมัติความครอบคลุมภาพทั้งเรื่อง']
+            show('\n'.join(lines)); connect_button.configure(state='normal' if result['ready'] else 'disabled')
+        def inspect():
+            if self.app._busy: return
+            preview.clear(); connect_button.configure(state='disabled')
+            self.run('กำลังตรวจไฟล์และผลตรวจภาพ', lambda: inspect_media(self.project), display)
+        def connect():
+            if self.app._busy or not preview.get('ready'): return
+            tokens = dict(preview); preview.clear(); connect_button.configure(state='disabled')
+            def done(result):
+                show('เชื่อมภาพแล้ว: '+result['production_state']+'\n'+result['binding']['reason']+
+                     f'\nไฟล์ภาพและช่วงตัด: {result["binding"]["asset_count"]} รายการ'+
+                     '\n\nตรวจความพร้อมเพื่อทำขั้นถัดไป ฉากที่ยังไม่มีภาพต้องเลือกและตรวจเพิ่ม')
+            self.run('กำลังเชื่อมฟุตเทจเข้าข้อมูลผลิต', lambda: connect_media(self.project,
+                     expected_edit_sha256=tokens['edit_sha256'], expected_manifest_sha256=tokens['manifest_sha256']), done)
+        ttk.Button(row, text='ตรวจไฟล์และความพร้อม', command=inspect).pack(side='left')
+        connect_button = ttk.Button(row, text='เชื่อมไฟล์และช่วงตัดที่ตรวจแล้ว', command=connect, state='disabled')
+        connect_button.pack(side='left', padx=8)
+        ttk.Button(row, text='ปิด', command=dialog.destroy).pack(side='right')
+        show('กดตรวจไฟล์และความพร้อมก่อนเชื่อมภาพ')
+        return dialog
 
     def production_story(self):
         if self.app._busy or not self.save():

@@ -20,7 +20,8 @@ def main():
     for action in ('status', 'sync', 'add', 'voice', 'connect-production', 'research-intake', 'research-review',
                    'edit-init', 'edit-preflight', 'edit-voice', 'render', 'editorial-approve', 'delivery',
                    'footage-search', 'footage-download', 'delivery-verify', 'delivery-sync',
-                   'production-inspect', 'production-connect-story', 'workflow', 'brief-save', 'shot-review', 'voice-review', 'research-add-claim'):
+                   'production-inspect', 'production-connect-story', 'media-inspect', 'media-connect',
+                   'workflow', 'brief-save', 'shot-review', 'voice-review', 'research-add-claim'):
         p = sub.add_parser(action)
         p.add_argument('project', type=Path)
         if action == 'research-add-claim':
@@ -52,7 +53,7 @@ def main():
             p.add_argument('--visible-content', required=True)
             p.add_argument('--match-reason', required=True)
             p.add_argument('--match-type', choices=('DIRECT', 'SUPPORTING', 'CONTEXT'), required=True)
-        if action == 'production-connect-story':
+        if action in ('production-connect-story', 'media-connect'):
             p.add_argument('--edit-sha256', required=True)
             p.add_argument('--manifest-sha256', required=True)
         if action == 'footage-search':
@@ -102,6 +103,10 @@ def main():
         elif args.action in ('production-inspect', 'production-connect-story'):
             from .production_bridge import inspect_story, connect_story
             result = inspect_story(project) if args.action == 'production-inspect' else connect_story(
+                project, expected_edit_sha256=args.edit_sha256, expected_manifest_sha256=args.manifest_sha256)
+        elif args.action in ('media-inspect', 'media-connect'):
+            from .media_bridge import inspect_media, connect_media
+            result = inspect_media(project) if args.action == 'media-inspect' else connect_media(
                 project, expected_edit_sha256=args.edit_sha256, expected_manifest_sha256=args.manifest_sha256)
         elif args.action in ('delivery-verify', 'delivery-sync'):
             from .delivery import verify_delivery, deliver_project

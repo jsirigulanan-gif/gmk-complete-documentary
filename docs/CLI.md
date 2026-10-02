@@ -2,6 +2,23 @@
 
 The CLI is a thin operator surface over the frozen GMK runtime. It does not bypass the State Engine, Gate Engine, safety controller, Research boundary, or Cold Start integrity checks.
 
+## General documentary projects (Build 053)
+
+These commands use the same project as the desktop documentary workspace:
+
+```bash
+python -m gmk_projects status /path/to/project
+python -m gmk_projects workflow /path/to/project
+python -m gmk_projects production-inspect /path/to/project
+python -m gmk_projects media-inspect /path/to/project
+python -m gmk_projects media-connect /path/to/project --edit-sha256 <preview-edit-hash> --manifest-sha256 <preview-core-hash>
+python -m gmk_projects edit-preflight /path/to/project
+python -m gmk_projects render /path/to/project
+python -m gmk_projects delivery-verify /path/to/project
+```
+
+`media-connect` registers selected, explicitly reviewed existing files and time ranges. Exact preview hashes prevent connecting changed edits/evidence. Missing or corrupt bytes and expired picture reviews fail before publishing. These records do not grant rights or coverage approval; core registration stops at ASSET_RECON.
+
 ## Core commands
 
 ```bash

@@ -145,7 +145,11 @@ class DependencyEngine:
         rid=global_index(state.registries).get(node.node_id)
         if not rid:return False
         entry=state.registries[rid].entries.get(node.node_id)
-        return bool(entry and node.version in {entry.head_version,entry.active_version})
+        record=state.objects.get((node.node_id,node.version))
+        # An archived head is retained history, not a live production node.
+        # Recomputing upstream drift must preserve its archived envelope.
+        return bool(entry and record and record.get('status') != 'ARCHIVED'
+                    and node.version in {entry.head_version,entry.active_version})
 
     @staticmethod
     def _blast_for(node_record: dict[str,Any] | None, depth:int) -> str:

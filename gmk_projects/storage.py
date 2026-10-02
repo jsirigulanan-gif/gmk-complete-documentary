@@ -95,8 +95,12 @@ class RcloneDrive:
         return {'id': stat['ID'], 'path': dest, 'md5': hashes['md5'], 'size': stat['Size']}
 
     def list_scripts(self) -> list[dict]:
-        rows = json.loads(self._run('lsjson', self.remote, '--files-only', '--drive-export-formats', 'docx', timeout=120))
-        return [r for r in rows if r.get('Name', '').lower().startswith('[lemino script]') and r.get('ID')]
+        rows = json.loads(self._run('lsjson', self.remote, '--recursive', '--files-only',
+                                    '--drive-export-formats', 'docx', timeout=120))
+        # Gemini documents may have the plain title used by the user, rather
+        # than the historical bracketed prefix, and may live in a subfolder.
+        return [r for r in rows if re.match(r'^\[?lemino[\s_-]+script(?:\]|\b)',
+                                           r.get('Name', '').strip(), re.IGNORECASE) and r.get('ID')]
 
     def fetch_script(self, file_id: str, dest: Path) -> None:
         if not re.fullmatch(r'[A-Za-z0-9_-]+', file_id):

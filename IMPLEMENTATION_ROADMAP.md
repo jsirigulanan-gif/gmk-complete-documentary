@@ -4,6 +4,8 @@ See PRODUCT_REQUIREMENTS.md for the complete user requirement. This plan keeps a
 
 ## Current evidence
 
+- Build 053 registers explicitly reviewed acquired project footage as canonical Sources, library Searches/Results, Assets and Segments with byte/range provenance and versioned per-scene receipts. The GUI and CLI expose preview/connection; readiness requires the current binding. Identity/history survive cut or scene removal and reentry. This stops at ASSET_RECON; search completeness, rights, canonical coverage and downstream production integration still need completion.
+
 - Build 052 removes the unrelated demonstration UI and pilot dependencies from the product app. It adds new-topic briefs, readiness across all 20 lifecycle stages, guided next actions, exact picture/listening decisions and eight-part full-film review. These use the actual draft/core/asset records; the readiness view is not another completion authority. A synthetic GUI project passed guided local rendering, review and exact export. Final canonical adapters and real acceptance remain required.
 - Unstructured research now supports explicit excerpt-based claim extraction with immutable provenance and UNREVIEWED status. Media recovery routes back to the specific missing-file scene; absent footage requires acquisition before review. Neither operation approves facts or completes production.
 
