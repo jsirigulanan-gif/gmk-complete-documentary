@@ -16,11 +16,14 @@ from .production_bridge import _active, binding_status, story_input
 from .storage import StorageError, atomic_json
 
 
-MEDIA_EDITABLE_STATES = {'VISUAL_REQUIREMENTS_READY', 'ASSET_RECON', 'ASSET_CATALOG_READY', 'VISUAL_COVERAGE_READY'}
+MEDIA_EDITABLE_STATES = {'VISUAL_REQUIREMENTS_READY', 'ASSET_RECON', 'ASSET_CATALOG_READY', 'VISUAL_COVERAGE_READY', 'SCRIPT_READY', 'TTS_READY', 'VOICE_LOCKED'}
 OWNED_MEDIA_STATES = MEDIA_EDITABLE_STATES - {'VISUAL_REQUIREMENTS_READY'}
 
 
 def owned_media_recon(state):
+    if state.project_state in {'SCRIPT_READY', 'TTS_READY', 'VOICE_LOCKED'}:
+        from .final_production import owns_final
+        if not owns_final(state): return False
     return (state.project_state in OWNED_MEDIA_STATES and bool(_pools(state))
             and all(o.get('extensions', {}).get('project_media')
                     for o in _active(state).values()
@@ -90,6 +93,8 @@ def _inspect(project, edit, loaded):
     if not story['current']: issues.append('ตรวจและเชื่อมบทเข้าระบบผลิตก่อนเชื่อมภาพ')
     if loaded.engine.project_state not in MEDIA_EDITABLE_STATES:
         issues.append('เชื่อมภาพได้ในขั้นร่างภาพก่อนล็อกการผลิตเท่านั้น')
+    if loaded.engine.project_state in {'SCRIPT_READY', 'TTS_READY', 'VOICE_LOCKED'} and not owned_media_recon(state):
+        issues.append('งานบทหรือเสียงขั้นผลิตมาจากระบบอื่น ต้องย้ายข้อมูลก่อนแก้ภาพ')
     foreign = [o for o in _active(state).values() if o['object_type'] in {'ASSET', 'SEGMENT', 'SEARCH', 'SEARCH_RESULT'}
                and not o.get('extensions', {}).get('project_media')]
     if foreign: issues.append('มีรายการภาพจากระบบอื่น ต้องย้ายข้อมูลอย่างชัดเจนก่อนเชื่อมภาพ')
@@ -157,7 +162,7 @@ def connect_media(project, *, expected_edit_sha256, expected_manifest_sha256):
         tx = engine.begin()
         from .coverage import retire_coverage
         retire_coverage(tx)
-        if engine.project_state in {'ASSET_CATALOG_READY', 'VISUAL_COVERAGE_READY'}:
+        if engine.project_state in {'ASSET_CATALOG_READY', 'VISUAL_COVERAGE_READY', 'SCRIPT_READY', 'TTS_READY', 'VOICE_LOCKED'}:
             tx.reenter_stage('ASSET_RECON', actor_type='HUMAN')
         if engine.project_state == 'VISUAL_REQUIREMENTS_READY':
             tx.transition_project_state('ASSET_RECON', actor_type='SYSTEM')

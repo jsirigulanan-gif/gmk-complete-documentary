@@ -48,7 +48,7 @@ def _reports(state):
             and o.get('extensions', {}).get('project_coverage')]
 
 
-def retire_coverage(tx):
+def retire_coverage(tx, *, include_final=True):
     """Archive our superseded assessments/issues; never claim their repair.
 
     Run in the same transaction as the explicit upstream revision or retest.
@@ -57,6 +57,9 @@ def retire_coverage(tx):
     for obj in _active(tx.staged).values():
         if obj['object_type'] in {'QA_REPORT', 'QA_ISSUE'} and obj.get('extensions', {}).get('project_coverage'):
             tx.archive_object(obj['id'])
+    if include_final:
+        from .final_production import retire_final
+        retire_final(tx)
 
 
 def prepare_coverage_reentry(engine):
@@ -79,7 +82,7 @@ def coverage_input(edit, state):
                          if not p['extensions']['project_media'].get('retired')]}
 
 
-def coverage_binding_status(project, state, *, edit=None):
+def coverage_binding_status(project, state, *, edit=None, media_status=None):
     reports = [q for q in _reports(state) if q['report_type'] == 'ASSET_COVERAGE_REPORT']
     report = max(reports, key=lambda q: (q['evaluated_at'], q['id'])) if reports else None
     if edit is None:
@@ -87,7 +90,7 @@ def coverage_binding_status(project, state, *, edit=None):
         except (OSError, ValueError): edit = None
     ext = report.get('extensions', {}).get('project_coverage', {}) if report else {}
     current = bool(report and edit and ext.get('input_sha256') == fingerprint(coverage_input(edit, state))
-                   and media_binding_status(project, state, edit=edit)['current']
+                   and (media_status if media_status is not None else media_binding_status(project, state, edit=edit))['current']
                    and not report.get('stale', {}).get('is_stale')
                    and report['status'] not in {'STALE', 'BLOCKED', 'ARCHIVED', 'REJECTED'})
     if current:
@@ -284,7 +287,7 @@ def record_coverage(project, *, expected_edit_sha256, expected_manifest_sha256, 
                 and existing['extensions']['project_coverage'].get('stop_reason') == reason)):
             return {**check, 'idempotent_replay': True}
         tx = engine.begin(); retire_coverage(tx)
-        if engine.project_state in {'ASSET_CATALOG_READY', 'VISUAL_COVERAGE_READY'}:
+        if engine.project_state in {'ASSET_CATALOG_READY', 'VISUAL_COVERAGE_READY', 'SCRIPT_READY', 'TTS_READY', 'VOICE_LOCKED'}:
             tx.reenter_stage('ASSET_RECON', actor_type='HUMAN')
         if tx.actions: tx.commit()
         else: tx.discard()
@@ -292,50 +295,8 @@ def record_coverage(project, *, expected_edit_sha256, expected_manifest_sha256, 
             _planning_segments(engine, check)
             check = _inspect(project, edit, SimpleNamespace(engine=engine, manifest_sha256=loaded.manifest_sha256))
             if not check['ready']: raise EditError('ข้อมูลภาพเปลี่ยนระหว่างเตรียมฉาก กรุณาตรวจใหม่')
-        _validate_profile(engine, 'asset-coverage', check['profile_payload'])
-        # Capture a genuine assessment. Failed checks create genuine open QA
-        # issues; a new upstream revision archives the obsolete assessment.
-        snapshot = engine.snapshot(); project_ref = _ref(next(o for o in _active(snapshot).values() if o['object_type'] == 'PROJECT'))
-        tx = engine.begin()
-        artifact = tx.create_artifact('PROVENANCE_MANIFEST', {'entries': deepcopy(check['scenes']),
-            'disclosures': ['Measured scratch voice and explicitly reviewed used frames; repeated ranges and explicitly selected held frames do not add unique footage.',
-                            'No rights clearance or exhaustive external-source search is certified.'],
-            'extensions': {'project_coverage': {'input_sha256': check['input_sha256'], 'rules': RULES,
-                            'profile_payload': check['profile_payload'], 'inputs': check['inputs']}}}, origin_refs=check['origin_refs'])
-        tx.commit()
-        findings = [{'severity': 'MAJOR', 'code': i['code'], 'target': next((s['beat_ref'] for s in check['scenes'] if s['scene_id'] == i['scene_id']), project_ref),
-                     'description': i['detail'], 'root_cause': {'state': 'IDENTIFIED', 'category': 'ASSET'}} for i in check['issues']]
-        qa = QARuntime(engine).evaluate(report_type='ASSET_COVERAGE_REPORT', scope=project_ref, observed_artifact=artifact,
-            qa_profile={'config_id': 'GMK_PROJECT_ASSET_COVERAGE', 'version': '1.0.0', 'sha256': fingerprint(RULES)}, findings=findings)
-        ext = {'project_coverage': {'input_sha256': check['input_sha256'], 'selection_closed': complete_selection,
-                                   'stop_reason': reason if complete_selection else '', 'assessment_ref': artifact}}
-        tx = engine.begin()
-        issue_refs = []
-        for issue in qa['issue_refs']:
-            updated = tx.create_version(issue['id'], base_version=issue['version'], patch={'extensions': ext})
-            tx.promote_active_version(updated['id'], updated['version'])
-            issue_refs.append(updated)
-        report = tx.create_version(qa['report_ref']['id'], base_version=qa['report_ref']['version'],
-                                   patch={'extensions': ext, 'issue_refs': issue_refs})
-        tx.promote_active_version(report['id'], report['version'])
-        tx.commit()
+        _write_assessment(engine, check, complete_selection, reason)
         if complete_selection:
-            # The certificate explicitly records HUMAN_STOP_WITH_REASON for the
-            # already completed project-library searches, not internet exhaustion.
-            pools = _pools(engine.snapshot())
-            decisions = [{'target_beat_ref': s['beat_ref'], 'priority': 'STANDARD',
-                          'search_refs': [pools[s['scene_id']]['extensions']['project_media']['search_ref']],
-                          'viable_candidate_refs': [], 'stop_reason': 'HUMAN_STOP_WITH_REASON',
-                          'reason': reason, 'scope': 'HUMAN_REVIEWED_PROJECT_LIBRARY'} for s in check['scenes']]
-            for decision in decisions:
-                _validate_profile(engine, 'search-completion', {k: v for k, v in decision.items() if k not in {'reason', 'scope'}})
-            cert = QARuntime(engine).evaluate(report_type='SEARCH_COMPLETION_CERTIFICATE', scope=project_ref,
-                observed_artifact=artifact, qa_profile={'config_id': 'GMK_PROJECT_LIBRARY_HUMAN_STOP', 'version': '1.0.0',
-                                                      'sha256': fingerprint({'scope': check['search_scope'], 'decisions': decisions})})
-            tx = engine.begin()
-            cr = tx.create_version(cert['report_ref']['id'], base_version=cert['report_ref']['version'], patch={
-                'extensions': {**ext, 'project_library_stop': {'decisions': decisions, 'reason': reason}}})
-            tx.promote_active_version(cr['id'], cr['version']); tx.commit()
             for stage in ('ASSET_CATALOG_READY', 'VISUAL_COVERAGE_READY'):
                 tx = engine.begin(); tx.transition_project_state(stage, actor_type='AI'); tx.commit()
         # Last byte check and a single publication keep failed staging off disk.
@@ -344,3 +305,50 @@ def record_coverage(project, *, expected_edit_sha256, expected_manifest_sha256, 
         final = production._load(); data = project.read(); data['storage_status'] = 'PENDING_UPLOAD'; atomic_json(project.manifest, data)
         return {**check, 'production_state': engine.project_state, 'manifest_sha256': final.manifest_sha256,
                 'binding': coverage_binding_status(project, final.engine.snapshot(), edit=edit), 'idempotent_replay': False}
+
+
+def _write_assessment(engine, check, complete_selection=False, reason=''):
+    _validate_profile(engine, 'asset-coverage', check['profile_payload'])
+    # Capture a genuine assessment. Failed checks create genuine open QA
+    # issues; a new upstream revision archives the obsolete assessment.
+    snapshot = engine.snapshot(); project_ref = _ref(next(o for o in _active(snapshot).values() if o['object_type'] == 'PROJECT'))
+    tx = engine.begin()
+    artifact = tx.create_artifact('PROVENANCE_MANIFEST', {'entries': deepcopy(check['scenes']),
+        'disclosures': ['Measured scratch voice and explicitly reviewed used frames; repeated ranges and explicitly selected held frames do not add unique footage.',
+                        'No rights clearance or exhaustive external-source search is certified.'],
+        'extensions': {'project_coverage': {'input_sha256': check['input_sha256'], 'rules': RULES,
+                        'profile_payload': check['profile_payload'], 'inputs': check['inputs']}}}, origin_refs=check['origin_refs'])
+    tx.commit()
+    findings = [{'severity': 'MAJOR', 'code': i['code'], 'target': next((s['beat_ref'] for s in check['scenes'] if s['scene_id'] == i['scene_id']), project_ref),
+                 'description': i['detail'], 'root_cause': {'state': 'IDENTIFIED', 'category': 'ASSET'}} for i in check['issues']]
+    qa = QARuntime(engine).evaluate(report_type='ASSET_COVERAGE_REPORT', scope=project_ref, observed_artifact=artifact,
+        qa_profile={'config_id': 'GMK_PROJECT_ASSET_COVERAGE', 'version': '1.0.0', 'sha256': fingerprint(RULES)}, findings=findings)
+    ext = {'project_coverage': {'input_sha256': check['input_sha256'], 'selection_closed': complete_selection,
+                               'stop_reason': reason if complete_selection else '', 'assessment_ref': artifact}}
+    tx = engine.begin()
+    issue_refs = []
+    for issue in qa['issue_refs']:
+        updated = tx.create_version(issue['id'], base_version=issue['version'], patch={'extensions': ext})
+        tx.promote_active_version(updated['id'], updated['version'])
+        issue_refs.append(updated)
+    report = tx.create_version(qa['report_ref']['id'], base_version=qa['report_ref']['version'],
+                               patch={'extensions': ext, 'issue_refs': issue_refs})
+    tx.promote_active_version(report['id'], report['version'])
+    tx.commit()
+    if complete_selection:
+        # The certificate explicitly records HUMAN_STOP_WITH_REASON for the
+        # already completed project-library searches, not internet exhaustion.
+        pools = _pools(engine.snapshot())
+        decisions = [{'target_beat_ref': s['beat_ref'], 'priority': 'STANDARD',
+                      'search_refs': [pools[s['scene_id']]['extensions']['project_media']['search_ref']],
+                      'viable_candidate_refs': [], 'stop_reason': 'HUMAN_STOP_WITH_REASON',
+                      'reason': reason, 'scope': 'HUMAN_REVIEWED_PROJECT_LIBRARY'} for s in check['scenes']]
+        for decision in decisions:
+            _validate_profile(engine, 'search-completion', {k: v for k, v in decision.items() if k not in {'reason', 'scope'}})
+        cert = QARuntime(engine).evaluate(report_type='SEARCH_COMPLETION_CERTIFICATE', scope=project_ref,
+            observed_artifact=artifact, qa_profile={'config_id': 'GMK_PROJECT_LIBRARY_HUMAN_STOP', 'version': '1.0.0',
+                                                  'sha256': fingerprint({'scope': check['search_scope'], 'decisions': decisions})})
+        tx = engine.begin()
+        cr = tx.create_version(cert['report_ref']['id'], base_version=cert['report_ref']['version'], patch={
+            'extensions': {**ext, 'project_library_stop': {'decisions': decisions, 'reason': reason}}})
+        tx.promote_active_version(cr['id'], cr['version']); tx.commit()

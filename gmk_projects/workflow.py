@@ -85,8 +85,11 @@ def workflow_status(project):
                 voice_issues.append(scene['id']+': '+str(exc))
                 missing_voice.add(scene['id'])
         voices = not voice_issues
-    stage('VOICE', 'เสียงพากย์', voices and all(voice_review_current(s) for s in scenes), 'VOICE',
-          '; '.join(voice_issues) or 'สร้างหรือนำเข้าเสียงตรงบท แล้วฟังตรวจคำอ่านและยืนยันแต่ละฉาก')
+    listening_ready = voices and all(voice_review_current(s) for s in scenes)
+    final = production['final_binding']
+    voice_action = ('FINAL_PRODUCTION' if coverage['ready'] and coverage['selection_closed'] else 'COVERAGE') if listening_ready and media_binding['current'] else 'VOICE'
+    stage('VOICE', 'เสียงพากย์และเสียงขั้นผลิต', listening_ready and final['voice_locked'], voice_action,
+          '; '.join(voice_issues) or (final['reason'] if listening_ready else 'สร้างหรือนำเข้าเสียงตรงบท แล้วฟังตรวจคำอ่านและยืนยันแต่ละฉาก'))
     music_ready = bool(edit.get('music_omitted')) and not edit.get('music')
     if edit.get('music'):
         try:
@@ -134,7 +137,7 @@ def workflow_status(project):
         pending = next(s for s in stages if s['key'] == 'ACQUISITION')
     if pending and pending['action'] in {'FOOTAGE', 'SHOT_REVIEW', 'PRODUCTION_MEDIA', 'TIMELINE', 'COVERAGE'} and not voices:
         pending = next(s for s in stages if s['key'] == 'VOICE')
-    if pending and pending['action'] == 'COVERAGE' and not next(s for s in stages if s['key'] == 'VOICE')['ready']:
+    if pending and pending['action'] == 'COVERAGE' and not listening_ready:
         pending = next(s for s in stages if s['key'] == 'VOICE')
     target = None
     if pending:
@@ -155,4 +158,5 @@ def workflow_status(project):
             'documentary_completed': production['documentary_completed'], 'timeline': plan,
             'media_binding': media_binding,
             'coverage_binding': coverage,
+            'final_binding': final,
             'issues': media_issues}

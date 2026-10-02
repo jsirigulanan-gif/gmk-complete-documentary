@@ -233,11 +233,11 @@ class EditSession:
         shot.update(in_seconds=start, out_seconds=end, selection='USER_SELECTED')
         return self.save(data, expected_revision=expected_revision)
 
-    def preflight(self, data: dict | None = None) -> dict:
+    def preflight(self, data: dict | None = None, *, research=None) -> dict:
         data = deepcopy(data or self.load())
         issues, warnings, timeline = [], [], []
         from .script_review import script_readiness
-        script_review = script_readiness(self.project, data)
+        script_review = script_readiness(self.project, data, research)
         research_manifest = script_review['research_manifest_sha256']
         for row in script_review['scenes']:
             warnings.extend(row['scene_id']+': '+issue for issue in row['issues'])

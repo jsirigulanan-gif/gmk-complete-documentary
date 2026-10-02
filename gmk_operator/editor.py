@@ -127,6 +127,7 @@ class EditorWindow:
         ttk.Button(footage, text='ตรวจภาพในช็อตที่เลือก', command=self.review_shot).pack(anchor='w', pady=5)
         ttk.Button(footage, text='เชื่อมภาพที่ตรวจแล้วเข้าข้อมูลผลิต', command=self.production_media).pack(anchor='w', pady=5)
         ttk.Button(footage, text='ตรวจความครอบคลุมภาพกับเสียง', command=self.production_coverage).pack(anchor='w', pady=5)
+        ttk.Button(footage, text='เตรียมบทสุดท้ายและตรวจเสียงรวม', command=self.final_production).pack(anchor='w', pady=5)
         ttk.Label(footage, text='ไฟล์ที่เอาออกจากฉากยังอยู่ในคลัง และรออัปโหลดไปโฟลเดอร์ Drive ของโปรเจกต์').pack(anchor='w')
 
         row = ttk.Frame(finish)
@@ -365,7 +366,7 @@ class EditorWindow:
         action = result['next_action']
         direct = {'BRIEF': self.edit_brief, 'IMPORT_RESEARCH': self.import_research, 'RESEARCH': self.open_research,
                   'STORY': self.generate_story, 'PRODUCTION': self.production_story,
-                  'PRODUCTION_MEDIA': self.production_media, 'COVERAGE': self.production_coverage, 'TIMELINE': self.preflight,
+                  'PRODUCTION_MEDIA': self.production_media, 'COVERAGE': self.production_coverage, 'FINAL_PRODUCTION': self.final_production, 'TIMELINE': self.preflight,
                   'RENDER': self.render, 'FILM_QA': self.approve, 'EXPORT': self.export, 'DRIVE': self.deliver}
         if action in direct:
             direct[action](); return
@@ -671,6 +672,81 @@ class EditorWindow:
             return consent.get('allowed') is True and consent.get('project_id')==self.project.read()['project_id']
         except (OSError,ValueError,AttributeError):
             return False
+
+    def final_production(self):
+        if self.app._busy or not self.save(): return
+        from gmk_projects.final_production import inspect_final, prepare_final, decide_final_voice, reopen_final, master_file, _heads
+        from gmk_projects.production import ProductionProject
+        tk, ttk = self.app.tk, self.app.ttk
+        dialog = tk.Toplevel(self.window); dialog.title('บทสุดท้ายและเสียงรวมขั้นผลิต')
+        dialog.geometry('880x680'); dialog.transient(self.window); dialog.grab_set()
+        ttk.Label(dialog, text='ใช้บทและเสียงที่ตรวจแล้วตามลำดับฉาก เตรียมเสียงรวม แล้วเปิดฟังทั้งเรื่องก่อนยืนยัน', wraplength=830).pack(fill='x', padx=12, pady=10)
+        row = ttk.Frame(dialog); row.pack(side='bottom', fill='x', padx=12, pady=12)
+        review = ttk.Frame(dialog); review.pack(side='bottom', fill='x', padx=12, pady=8)
+        listened = tk.BooleanVar(value=False); actor = tk.StringVar()
+        ttk.Checkbutton(review, text='ฟังเสียงรวมรุ่นนี้ครบแล้ว และตรวจลำดับฉาก คำอ่าน และรอยต่อเสียงแล้ว', variable=listened).pack(anchor='w')
+        ttk.Label(review, text='ชื่อผู้ตรวจเสียง').pack(anchor='w', pady=(6, 0))
+        ttk.Entry(review, textvariable=actor).pack(fill='x')
+        decision_row = ttk.Frame(review); decision_row.pack(fill='x', pady=8)
+        details = tk.Text(dialog, wrap='word', state='disabled'); details.pack(fill='both', expand=True, padx=12, pady=6)
+        preview = {}
+        def buttons(*_):
+            prepared = preview.get('binding', {}).get('current')
+            prepare_button.configure(state='normal' if preview.get('ready') and not prepared else 'disabled')
+            play_button.configure(state='normal' if prepared else 'disabled')
+            enabled = prepared and listened.get() and bool(actor.get().strip()) and not preview.get('binding', {}).get('voice_decision')
+            for widget in (approve_button, reject_button): widget.configure(state='normal' if enabled else 'disabled')
+        def display(value):
+            if not dialog.winfo_exists(): return
+            preview.clear(); preview.update(value); listened.set(False)
+            lines = ['ขั้นปัจจุบัน: '+value['production_state'], value['binding']['reason'], '']
+            for i, scene in enumerate(value.get('scenes', []), 1):
+                lines += [f'{i}. '+scene['title']+f' · {scene["frames"]/value["fps"]:.3f} วินาที · '+scene['language_mode'], scene['narration'], '']
+            lines += ['ต้องแก้: '+issue for issue in value.get('issues', [])]
+            details.configure(state='normal'); details.delete('1.0', 'end'); details.insert('1.0', '\n'.join(lines)); details.configure(state='disabled')
+            buttons()
+        def inspect():
+            if self.app._busy: return
+            preview.clear(); buttons()
+            self.run('กำลังตรวจบทและเสียงขั้นผลิต', lambda: inspect_final(self.project), display)
+        def prepare():
+            if self.app._busy or not preview.get('ready'): return
+            tokens = dict(preview); preview.clear(); buttons()
+            self.run('กำลังเตรียมบทสุดท้ายและรวมเสียง', lambda: prepare_final(self.project,
+                expected_edit_sha256=tokens['edit_sha256'], expected_manifest_sha256=tokens['manifest_sha256']), display)
+        def play():
+            if self.app._busy or not preview.get('binding', {}).get('current'): return
+            def open_master():
+                loaded = ProductionProject(self.project)._load()
+                if loaded.manifest_sha256 != preview['manifest_sha256']: raise RuntimeError('ข้อมูลผลิตเปลี่ยนแล้ว กรุณาตรวจใหม่')
+                master = _heads(loaded.engine.snapshot(), 'MASTER_VOICE')[0]
+                return master_file(ProductionProject(self.project), master)
+            self.run('กำลังเปิดเสียงรวม', open_master, lambda path: webbrowser.open(path.as_uri()))
+        def decide(choice):
+            if self.app._busy or not listened.get() or not actor.get().strip(): return
+            tokens = dict(preview); name = actor.get().strip(); preview.clear(); buttons()
+            def record():
+                decide_final_voice(self.project, expected_edit_sha256=tokens['edit_sha256'],
+                    expected_manifest_sha256=tokens['manifest_sha256'], expected_master_sha256=tokens['binding']['master_audio_sha256'],
+                    decision=choice, actor_id=name)
+                return inspect_final(self.project)
+            self.run('กำลังบันทึกผลตรวจเสียงรวม', record, display)
+        def reopen():
+            if self.app._busy or not preview: return
+            tokens = dict(preview); preview.clear(); buttons()
+            def action():
+                reopen_final(self.project, expected_edit_sha256=tokens['edit_sha256'], expected_manifest_sha256=tokens['manifest_sha256'])
+                return inspect_final(self.project)
+            self.run('กำลังกลับไปแก้บทและเสียง โดยเก็บประวัติไว้', action, display)
+        ttk.Button(row, text='ตรวจบทและเสียงปัจจุบัน', command=inspect).pack(side='left')
+        prepare_button = ttk.Button(row, text='เตรียมบทสุดท้ายและเสียงรวม', command=prepare, state='disabled'); prepare_button.pack(side='left', padx=6)
+        play_button = ttk.Button(row, text='เปิดฟังเสียงรวม', command=play, state='disabled'); play_button.pack(side='left')
+        ttk.Button(row, text='ปิด', command=dialog.destroy).pack(side='right')
+        approve_button = ttk.Button(decision_row, text='ยืนยันเสียงรวมขั้นผลิต', command=lambda: decide('APPROVED'), state='disabled'); approve_button.pack(side='left')
+        reject_button = ttk.Button(decision_row, text='เสียงรวมยังต้องแก้', command=lambda: decide('REJECTED'), state='disabled'); reject_button.pack(side='left', padx=8)
+        ttk.Button(decision_row, text='กลับไปแก้บทหรือเสียง', command=reopen).pack(side='right')
+        listened.trace_add('write', buttons); actor.trace_add('write', buttons)
+        return dialog
 
     def production_coverage(self):
         if self.app._busy or not self.save(): return

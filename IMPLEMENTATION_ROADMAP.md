@@ -4,6 +4,8 @@ See PRODUCT_REQUIREMENTS.md for the complete user requirement. This plan keeps a
 
 ## Current evidence
 
+- Build 055 connects reviewed exact editor narration in scene order, refreshes canonical picture/coverage refs after Beat promotion, and assembles real frame-aligned 48 kHz mono PCM master audio. Existing script/TTS gates and an explicit named human voice decision reach VOICE_LOCKED. Rejection/reopening retains bytes/history and invalidates obsolete owned approvals. TTS planning does not claim provider synthesis. Canonical design/scene/shot/render/full-film QA/release and real acceptance remain required.
+
 - Build 054 adds canonical ASSET_COVERAGE_REPORT PASS/FAIL from actual used frames, unique source ranges, measured scratch voice and current exact picture/listening reviews. Explicit held frames are separately disclosed. Only an explicit human library stop with a reason creates the scoped certificate and advances existing gates to VISUAL_COVERAGE_READY. Frozen payloads are validated; early revision/retest archives obsolete owned QA while preserving history/files. The existing planning runtime can read the selected reviewed local segments. Final canonical script/voice/design/scene/shot/render/QA/release and real acceptance remain needed.
 
 - Build 053 registers explicitly reviewed acquired project footage as canonical Sources, library Searches/Results, Assets and Segments with byte/range provenance and versioned per-scene receipts. The GUI and CLI expose preview/connection; readiness requires the current binding. Identity/history survive cut or scene removal and reentry. Registration stops at ASSET_RECON; Build 054 adds scoped reviewed-library coverage/closure. Exhaustive external search, rights and downstream final production remain pending.

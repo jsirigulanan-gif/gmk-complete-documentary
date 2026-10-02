@@ -71,7 +71,17 @@ class AuditRuntime:
         ('build049_editor_records', ('tests/build049/test_story_footage.py', 'tests/build049/test_evidence_review.py', 'tests/build049/test_edit_checkpoint.py', 'tests/build049/test_script_review.py')),
         ('build050_delivery_receipts', ('tests/build050/test_storage_receipts.py', 'tests/build050/test_delivery.py::test_missing_export_has_actionable_error_without_creating_edit')),
         ('build051_story_bridge', ('tests/build051', 'tests/dependency/test_dependency_engine.py::test_repeated_promotions_persist_same_stale_envelope_as_cold_start')),
-        ('build052_workflow', ('tests/build052/test_workflow.py', 'tests/build052/test_audit_timeout.py')),
+        ('build052_workflow', (
+            'tests/build052/test_workflow.py::test_new_topic_brief_and_real_readiness_preserve_core_state',
+            'tests/build052/test_workflow.py::test_exact_picture_and_voice_reviews_invalidate_on_relevant_changes',
+            'tests/build052/test_workflow.py::test_claims_ready_but_scene_wording_review_missing_points_to_script',
+            'tests/build052/test_workflow.py::test_new_research_reopens_early_story_without_discarding_edit',
+            'tests/build052/test_workflow.py::test_missing_media_never_counts_as_acquired_or_reviewed',
+            'tests/build052/test_audit_timeout.py')),
+        ('build052_workflow_delivery', (
+            'tests/build052/test_workflow.py::test_reviewed_project_runs_through_render_checklist_and_local_delivery',
+            'tests/build052/test_workflow.py::test_missing_voice_routes_back_to_voice_even_with_prior_listening_review',
+            'tests/build052/test_workflow.py::test_recovery_targets_the_later_scene_with_missing_audio')),
         ('build052_research_draft', ('tests/build052/test_research_draft.py', 'tests/build052/test_asset_recovery.py')),
         ('build053_media_bridge', ('tests/build053/test_media_bridge.py', 'tests/build053/test_drive_discovery.py', 'tests/dependency/test_dependency_engine.py::test_archived_dependent_is_retained_history_on_promotion_and_cold_start')),
         ('build053_media_revisions', ('tests/build053/test_media_revisions.py',)),
@@ -87,6 +97,15 @@ class AuditRuntime:
             'tests/build054/test_coverage.py::test_failed_staged_transition_or_publish_preserves_persisted_state',
             'tests/build054/test_coverage.py::test_new_research_from_closed_coverage_reopens_intake_and_retains_media',
             'tests/build054/test_coverage.py::test_story_revision_from_closed_coverage_reopens_visual_requirements')),
+        ('build055_final_production', (
+            'tests/build055/test_final_production.py::test_final_script_real_master_and_explicit_voice_decision',
+            'tests/build055/test_final_production.py::test_stale_preview_missing_bytes_and_voice_edits_do_not_publish',
+            'tests/build055/test_final_production.py::test_late_compilation_failure_keeps_persisted_core_and_edit')),
+        ('build055_final_order', (
+            'tests/build055/test_final_production.py::test_scene_order_and_actual_pcm_follow_edit_with_frame_padding',)),
+        ('build055_final_revisions', (
+            'tests/build055/test_final_production.py::test_rejected_or_approved_voice_can_reopen_without_reusing_old_approval',
+            'tests/build055/test_final_production.py::test_changes_during_assembly_and_foreign_records_cannot_publish')),
     )
     FULL_BASE_PARTITIONS=(
         ('core_engines', ('tests/state','tests/dependency','tests/gate','tests/runtime','tests/semantic')),

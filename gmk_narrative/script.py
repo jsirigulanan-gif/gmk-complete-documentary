@@ -192,7 +192,13 @@ class ScriptRuntime:
         tx=engine.begin(expected_manifest_version=engine.manifest_version,expected_registry_versions=engine.registry_versions())
         beat_refs=[]
         try:
-            for beat in sorted(beats,key=lambda b:(b.get('scene_ref',{}).get('id',''),int(b.get('order',0)),b['id'])):
+            scenes = {o['id']: o for o in _active_objects(state, 'SCENE')}
+            acts = {o['id']: o for o in _active_objects(state, 'ACT')}
+            def narrative_order(beat):
+                scene = scenes.get(beat.get('scene_ref', {}).get('id'), {})
+                act = acts.get(scene.get('act_ref', {}).get('id'), {})
+                return (int(act.get('order', 0)), int(scene.get('order', 0)), int(beat.get('order', 0)), beat['id'])
+            for beat in sorted(beats, key=narrative_order):
                 key=self._beat_key(beat); text,mode,required=prepared[key]
                 ext=deepcopy(beat.get('extensions') or {})
                 ext['script_runtime']={'batch_id':batch_id,'plan_sha256':plan_sha,'beat_key':key,'required_language_mode':required}

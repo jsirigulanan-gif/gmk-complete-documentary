@@ -21,7 +21,8 @@ def main():
                    'edit-init', 'edit-preflight', 'edit-voice', 'render', 'editorial-approve', 'delivery',
                    'footage-search', 'footage-download', 'delivery-verify', 'delivery-sync',
                    'production-inspect', 'production-connect-story', 'media-inspect', 'media-connect', 'coverage-inspect', 'coverage-record',
-                   'workflow', 'brief-save', 'shot-review', 'voice-review', 'research-add-claim'):
+                   'workflow', 'brief-save', 'shot-review', 'voice-review', 'research-add-claim',
+                   'final-inspect', 'final-prepare', 'final-voice-decide', 'final-reopen'):
         p = sub.add_parser(action)
         p.add_argument('project', type=Path)
         if action == 'research-add-claim':
@@ -53,12 +54,16 @@ def main():
             p.add_argument('--visible-content', required=True)
             p.add_argument('--match-reason', required=True)
             p.add_argument('--match-type', choices=('DIRECT', 'SUPPORTING', 'CONTEXT'), required=True)
-        if action in ('production-connect-story', 'media-connect', 'coverage-record'):
+        if action in ('production-connect-story', 'media-connect', 'coverage-record', 'final-prepare', 'final-voice-decide', 'final-reopen'):
             p.add_argument('--edit-sha256', required=True)
             p.add_argument('--manifest-sha256', required=True)
         if action == 'coverage-record':
             p.add_argument('--complete-library-selection', action='store_true')
             p.add_argument('--stop-reason', default='')
+        if action == 'final-voice-decide':
+            p.add_argument('--master-sha256', required=True)
+            p.add_argument('--decision', choices=('APPROVED', 'REJECTED'), required=True)
+            p.add_argument('--actor-id', required=True)
         if action == 'footage-search':
             p.add_argument('--query', required=True)
         if action == 'footage-download':
@@ -116,6 +121,16 @@ def main():
             result = inspect_coverage(project) if args.action == 'coverage-inspect' else record_coverage(project,
                 expected_edit_sha256=args.edit_sha256, expected_manifest_sha256=args.manifest_sha256,
                 complete_selection=args.complete_library_selection, stop_reason=args.stop_reason)
+        elif args.action in ('final-inspect', 'final-prepare', 'final-voice-decide', 'final-reopen'):
+            from .final_production import inspect_final, prepare_final, decide_final_voice, reopen_final
+            if args.action == 'final-inspect': result = inspect_final(project)
+            elif args.action == 'final-prepare': result = prepare_final(project,
+                expected_edit_sha256=args.edit_sha256, expected_manifest_sha256=args.manifest_sha256)
+            elif args.action == 'final-reopen': result = reopen_final(project,
+                expected_edit_sha256=args.edit_sha256, expected_manifest_sha256=args.manifest_sha256)
+            else: result = decide_final_voice(project, expected_edit_sha256=args.edit_sha256,
+                expected_manifest_sha256=args.manifest_sha256, expected_master_sha256=args.master_sha256,
+                decision=args.decision, actor_id=args.actor_id)
         elif args.action in ('delivery-verify', 'delivery-sync'):
             from .delivery import verify_delivery, deliver_project
             result = (verify_delivery if args.action == 'delivery-verify' else deliver_project)(project)

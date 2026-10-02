@@ -91,7 +91,7 @@ class ProductionProject:
                              if a.get('artifact_type') == 'RESEARCH_PACK' and marker in a.get('notes', [])), None)
             if existing is None:
                 reopen = engine.project_state in ('RESEARCH_AUDITED', 'ROUGH_NARRATIVE_READY', 'VISUAL_REQUIREMENTS_READY')
-                if engine.project_state in {'ASSET_RECON', 'ASSET_CATALOG_READY', 'VISUAL_COVERAGE_READY'}:
+                if engine.project_state in {'ASSET_RECON', 'ASSET_CATALOG_READY', 'VISUAL_COVERAGE_READY', 'SCRIPT_READY', 'TTS_READY', 'VOICE_LOCKED'}:
                     from .media_bridge import owned_media_recon
                     reopen = owned_media_recon(engine.snapshot())
                 if engine.project_state not in ('BOOTSTRAPPED', 'RESEARCH_INTAKE') and not reopen:
@@ -164,6 +164,12 @@ class ProductionProject:
         from .production_bridge import binding_status
         from .media_bridge import media_binding_status
         from .coverage import coverage_binding_status
+        from .final_production import final_binding_status
+        state = engine.snapshot()
+        story = binding_status(self.project, state)
+        media = media_binding_status(self.project, state)
+        coverage = coverage_binding_status(self.project, state, media_status=media)
+        final = final_binding_status(self.project, state, story_status=story, media_status=media, coverage_status=coverage)
         claims = {}
         for obj in engine.snapshot().objects.values():
             if obj.get('object_type') == 'CLAIM':
@@ -171,9 +177,10 @@ class ProductionProject:
                 if previous is None or obj['version'] > previous['version']:
                     claims[obj['id']] = obj
         return {'connected': True, 'production_state': engine.project_state,
-                'story_binding': binding_status(self.project, engine.snapshot()),
-                'media_binding': media_binding_status(self.project, engine.snapshot()),
-                'coverage_binding': coverage_binding_status(self.project, engine.snapshot()),
+                'story_binding': story,
+                'media_binding': media,
+                'coverage_binding': coverage,
+                'final_binding': final,
                 'project_ref': loaded.manifest['project_ref'], 'manifest_version': engine.manifest_version,
                 'manifest_sha256': loaded.manifest_sha256,
                 'research_pack_count': sum(a.get('artifact_type') == 'RESEARCH_PACK' for a in engine.snapshot().artifacts.values()),

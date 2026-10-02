@@ -42,7 +42,15 @@ def review_media(p, session, scene, shot):
     preview = inspect_media(p)
     connect_media(p, expected_edit_sha256=preview['edit_sha256'], expected_manifest_sha256=preview['manifest_sha256'])
     preview = inspect_coverage(p)
-    record_coverage(p, expected_edit_sha256=preview['edit_sha256'], expected_manifest_sha256=preview['manifest_sha256'])
+    record_coverage(p, expected_edit_sha256=preview['edit_sha256'], expected_manifest_sha256=preview['manifest_sha256'],
+                    complete_selection=preview['ready'], stop_reason='Reviewed synthetic fixture library is sufficient.' if preview['ready'] else '')
+    if preview['ready']:
+        from gmk_projects.final_production import inspect_final, prepare_final, decide_final_voice, _heads
+        final = inspect_final(p)
+        prepare_final(p, expected_edit_sha256=final['edit_sha256'], expected_manifest_sha256=final['manifest_sha256'])
+        final = inspect_final(p);master = _heads(ProductionProject(p)._load().engine.snapshot(), 'MASTER_VOICE')[0]
+        decide_final_voice(p, expected_edit_sha256=final['edit_sha256'], expected_manifest_sha256=final['manifest_sha256'],
+                          expected_master_sha256=master['audio']['sha256'], decision='APPROVED', actor_id='Synthetic fixture reviewer')
 
 
 def test_new_topic_brief_and_real_readiness_preserve_core_state(tmp_path):

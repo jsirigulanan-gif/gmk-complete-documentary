@@ -1,13 +1,13 @@
 {
-  "build": "054",
+  "build": "055",
   "status": "VALIDATED_LOCAL_WORKFLOW_CANONICAL_PRODUCTION_INTEGRATION_INCOMPLETE",
   "product_end_to_end_ready": false,
-  "build_focus": "Measured used-picture coverage QA and explicit reviewed-library selection closure",
+  "build_focus": "Exact reviewed final script, frame-aligned real master narration and explicit canonical voice approval",
   "production_state_authority": "PER_PROJECT_STATE_ENGINE_CURRENT_MANIFEST",
-  "next_product_milestone": "CANONICAL_FINAL_SCRIPT_VOICE_DESIGN_SCENE_SHOT_RENDER_QA_RELEASE_AND_REAL_ACCEPTANCE",
+  "next_product_milestone": "CANONICAL_DESIGN_SCENE_SHOT_RENDER_QA_RELEASE_AND_REAL_ACCEPTANCE",
   "validated_target_state_scope": "LEGACY_FIXTURE_RUNTIME_TESTS_NOT_REAL_DOCUMENTARY_DELIVERY",
-  "next_legal_target": "SCRIPT_READY",
-  "legacy_pipeline_fields_scope": "Bundled pilot/component fixtures only: project_state, manifest_version, asset counts and tested_completion_path below do not describe a completed real user documentary.",
+  "next_legal_target": "DESIGN_DNA_APPROVED",
+  "legacy_pipeline_fields_scope": "Bundled pilot/component fixtures only: project_state, manifest_version, asset counts, next_frozen_stage and tested_completion_path below do not describe a completed real user documentary. next_frozen_stage refers to existing core runtimes; general-project adapters remain pending as recorded above.",
   "architecture_blocker": "RESOLVED_BY_VOICE_AND_DESIGN_REVIEW_PACKAGE_ERRATA",
   "audit_runtime": "IMPLEMENTED_STATIC_QUICK_FULL",
   "automatic_roughcut": "IMPLEMENTED_TRANSCRIPT_FIRST_VISUAL_SECOND_NO_METADATA_ONLY_GUESSING",
@@ -22,7 +22,7 @@
   "gate_runtime_core_tests": "19 PASSED",
   "github": "jsirigulanan-gif/gmk-complete-documentary",
   "html_review_runtime": "IMPLEMENTED_PREPARE_DECIDE",
-  "latest_stage_runtime": "CANONICAL_VISUAL_COVERAGE_READY_FINAL_PRODUCTION_RELEASE_PENDING",
+  "latest_stage_runtime": "CANONICAL_VOICE_LOCKED_WITH_EXPLICIT_MASTER_REVIEW_DESIGN_AND_FINAL_RELEASE_PENDING",
   "manifest_version": 104,
   "material_priority": "YOUTUBE>WEB_VIDEO>STILL_DOCUMENT>AI_GENERATED_LAST",
   "media_handoff_runtime": "IMPLEMENTED",
@@ -60,7 +60,7 @@
   "shot_plan_runtime": "IMPLEMENTED",
   "source_lock_enforced": true,
   "still_document_fallback": "IMPLEMENTED_WIKIMEDIA_NASA_RESEARCH_ACQUIRE_STILL_TO_CLIP",
-  "targeted_regression_tests": "Affected coverage/workflow 18 PASS in 133.69s; final binding/video bounds 2 PASS in 16.24s (overlapping); QUICK 39 PASS / 0 FAIL / 0 TIMEOUT / 1 legacy WARN",
+  "targeted_regression_tests": "All 6 new final-production cases PASS across completed runs; live synthetic GUI PASS; initial QUICK 41 PASS / 0 FAIL / 1 TIMEOUT / 1 legacy WARN; split timeout group retest 1+2 tests PASS; additional legacy pilot regression timeout 300s",
   "tested_completion_path": [
     "ASSET_RECON",
     "ASSET_CATALOG_READY",
@@ -281,7 +281,16 @@
     "build_054_tools": "EIGHT_INSTALLED_TOOLS_AND_OPERATOR_SMOKE_PASS",
     "build_054_quick_audit": "39 PASS / 0 FAIL / 0 TIMEOUT / 1 documented legacy WARN; coverage partitions 5 PASS in 80.44s and 5 PASS in 57.37s",
     "build_054_new_tests": "10 distinct PASS; overlapping coverage/workflow/QUICK reruns are not added",
-    "build_054_drive_live": "2026-10-02 READ_ONLY_RCLONE_ABOUT_SHARED_CLIENT_QUOTA_403_RECONFIRMED_NO_UPLOAD"
+    "build_054_drive_live": "2026-10-02 READ_ONLY_RCLONE_ABOUT_SHARED_CLIENT_QUOTA_403_RECONFIRMED_NO_UPLOAD",
+    "build_055_final_production": "6 distinct PASS in 129.07 seconds; subsequent QUICK repeats and extends assertions without adding case counts",
+    "build_055_gui": "LIVE_GUIDED_ORDERED_FINAL_SCRIPT_ACTUAL_PCM_MASTER_EXPLICIT_VOICE_LOCK_MP4_EIGHT_CHECK_QA_EXACT_LOCAL_ZIP_PASS_SYNTHETIC_NO_NETWORK_PLAY_URI_INTERCEPTED",
+    "build_055_real_project": "2026-10-02 READ_ONLY: RESEARCH_INTAKE / 13 CLAIMS / 13 UNREVIEWED / CANONICAL_MANIFEST_UNCHANGED",
+    "build_055_tools": "OPERATOR_SMOKE_AND_EIGHT_INSTALLED_TOOL_CHECKS_PASS",
+    "build_055_static": "16 PASS / 0 FAIL / 0 TIMEOUT / 1 documented legacy WARN",
+    "build_055_initial_quick_audit": "41 PASS / 0 FAIL / 1 TIMEOUT / 1 documented legacy WARN; 624.68 seconds; last final-revision group split for retest",
+    "build_055_legacy_script": "Additional legacy Build 021 pilot compile/replay regression: timeout 300 seconds / exit 124 / no completed pytest summary; not counted as PASS",
+    "build_055_partition_retest": "Scene order 1 PASS in 39.13s; revisions/in-flight/foreign records 2 PASS in 59.43s; current QUICK partitions covered across initial audit and focused rerun, not a second full QUICK run",
+    "build_055_final_new_cases": "6 distinct PASS on final code: QUICK first 3 PASS in 80.59s plus focused 1 PASS in 39.13s and 2 PASS in 59.43s; overlapping initial 6-case run is not added"
   },
   "verified_segments": 8,
   "visual_coverage_runtime": "IMPLEMENTED",
@@ -302,9 +311,9 @@
   "product_capabilities": {
     "research": "ARCHIVED_SOURCE_TEXT_EXPLICIT_EXCERPT_EXTRACTION_WITH_PROVENANCE_AND_CANONICAL_CLAIM_REVIEW",
     "story": "OPT_IN_CODEX_CLI_ADAPTER_SCHEMA_AND_REFERENCE_VALIDATED_NOT_LIVE_TESTED",
-    "script_and_scenes": "REVIEWED_DRAFT_CONNECTED_TO_CANONICAL_ACT_SCENE_BEAT_VISUAL_REQUIREMENTS",
+    "script_and_scenes": "REVIEWED_ORDERED_FINAL_SCRIPT_EXACT_CANONICAL_BEAT_REFS",
     "footage": "EXACT_REVIEWED_LOCAL_BYTES_RANGES_AND_PROVENANCE_CANONICAL_ASSET_SEGMENT_BINDING",
-    "voice": "EDIT_BOUND_CACHED_EDGE_TTS_OR_IMPORTED_AUDIO",
+    "voice": "REAL_FRAME_ALIGNED_48KHZ_MONO_PCM_MASTER_FROM_REVIEWED_SCENE_AUDIO_EXPLICIT_HUMAN_VOICE_LOCK",
     "timeline": "MEASURED_SPEECH_FRAME_AND_SAMPLE_CONFORM",
     "render": "REAL_FFMPEG_FIXTURE_MP4_MUSIC_DUCKING_SUBTITLES_TITLES",
     "qa": "FULL_FILE_TECHNICAL_DECODE_EXACT_PICTURE_LISTENING_REVIEWS_AND_EIGHT_PART_FILM_REVIEW",
@@ -316,6 +325,9 @@
     "media_recovery": "EXACT_ORIGINAL_REIMPORT_RESTORES_MISSING_BYTES_RETAINS_REFS_REJECTS_CHANGED_EXISTING_FILES",
     "drive_script_discovery": "PLAIN_OR_BRACKETED_LEMINO_SCRIPT_TITLES_RECURSIVE_FOLDER_DISCOVERY",
     "coverage": "MEASURED_USED_FRAME_RANGES_UNIQUE_BYTES_CURRENT_PICTURE_LISTENING_REVIEWS_CANONICAL_PASS_FAIL_QA_EXPLICIT_HUMAN_LIBRARY_STOP",
-    "canonical_integration": "REVIEWED_STORY_MEDIA_AND_COVERAGE_TO_VISUAL_COVERAGE_READY_DOWNSTREAM_FINAL_PRODUCTION_PENDING"
-  }
+    "canonical_integration": "REVIEWED_STORY_MEDIA_COVERAGE_FINAL_SCRIPT_AND_REAL_MASTER_TO_EXPLICIT_VOICE_LOCKED_DESIGN_AND_FINAL_RELEASE_PENDING"
+  },
+  "latest_validated_general_project_state": "VOICE_LOCKED_SYNTHETIC_FIXTURES_ONLY",
+  "real_user_project_state": "RESEARCH_INTAKE_13_UNREVIEWED_CLAIMS_READ_ONLY_2026_10_02",
+  "next_general_project_stage": "DESIGN_DNA_APPROVED_GENERAL_PROJECT_ADAPTER_PENDING"
 }
