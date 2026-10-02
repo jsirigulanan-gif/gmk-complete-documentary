@@ -17,7 +17,8 @@ from .script_review import script_readiness
 from .storage import atomic_json
 
 
-EARLY_STATES = {'RESEARCH_INTAKE', 'RESEARCH_AUDITED', 'ROUGH_NARRATIVE_READY', 'VISUAL_REQUIREMENTS_READY', 'ASSET_RECON'}
+EARLY_STATES = {'RESEARCH_INTAKE', 'RESEARCH_AUDITED', 'ROUGH_NARRATIVE_READY', 'VISUAL_REQUIREMENTS_READY',
+                'ASSET_RECON', 'ASSET_CATALOG_READY', 'VISUAL_COVERAGE_READY'}
 ROLES = {'HOOK': ('HOOK', 'BUILD'), 'CONTEXT': ('SETUP', 'CALM'),
          'ESCALATION': ('ESCALATION', 'TENSE'), 'REVEAL': ('MAJOR_PEAK', 'REVEAL'),
          'RESOLUTION': ('REFLECTION', 'REFLECTIVE')}
@@ -110,7 +111,7 @@ def _inspect(project, edit, loaded):
         issues.append('รีเสิร์ชยังไม่ผ่านเกณฑ์ ต้องตรวจข้อกล่าวอ้างและประเด็นที่ค้างก่อน')
     if engine.project_state not in EARLY_STATES:
         issues.append('โปรเจกต์อยู่ขั้น '+engine.project_state+' ต้องใช้ขั้นตอนแก้ไขงานผลิตที่ล็อกแล้ว')
-    if engine.project_state == 'ASSET_RECON':
+    if engine.project_state in {'ASSET_RECON', 'ASSET_CATALOG_READY', 'VISUAL_COVERAGE_READY'}:
         from .media_bridge import owned_media_recon
         if not owned_media_recon(engine.snapshot()):
             issues.append('ขั้นสำรวจฟุตเทจนี้มีข้อมูลจากระบบอื่น ต้องย้ายข้อมูลอย่างชัดเจนก่อนแก้บท')
@@ -186,6 +187,8 @@ def connect_story(project, *, expected_edit_sha256, expected_manifest_sha256):
         if engine.project_state != 'RESEARCH_INTAKE':
             # Only this explicit operator action reopens these early editable stages.
             tx = engine.begin()
+            from .coverage import retire_coverage
+            retire_coverage(tx)
             tx.reenter_stage('RESEARCH_INTAKE', actor_type='HUMAN')
             tx.commit()
         _transition(engine, 'RESEARCH_AUDITED')

@@ -126,6 +126,7 @@ class EditorWindow:
         ttk.Button(row, text='เอาช็อตออกจากฉาก', command=self.remove_shot).pack(side='left', padx=5)
         ttk.Button(footage, text='ตรวจภาพในช็อตที่เลือก', command=self.review_shot).pack(anchor='w', pady=5)
         ttk.Button(footage, text='เชื่อมภาพที่ตรวจแล้วเข้าข้อมูลผลิต', command=self.production_media).pack(anchor='w', pady=5)
+        ttk.Button(footage, text='ตรวจความครอบคลุมภาพกับเสียง', command=self.production_coverage).pack(anchor='w', pady=5)
         ttk.Label(footage, text='ไฟล์ที่เอาออกจากฉากยังอยู่ในคลัง และรออัปโหลดไปโฟลเดอร์ Drive ของโปรเจกต์').pack(anchor='w')
 
         row = ttk.Frame(finish)
@@ -364,7 +365,7 @@ class EditorWindow:
         action = result['next_action']
         direct = {'BRIEF': self.edit_brief, 'IMPORT_RESEARCH': self.import_research, 'RESEARCH': self.open_research,
                   'STORY': self.generate_story, 'PRODUCTION': self.production_story,
-                  'PRODUCTION_MEDIA': self.production_media, 'TIMELINE': self.preflight,
+                  'PRODUCTION_MEDIA': self.production_media, 'COVERAGE': self.production_coverage, 'TIMELINE': self.preflight,
                   'RENDER': self.render, 'FILM_QA': self.approve, 'EXPORT': self.export, 'DRIVE': self.deliver}
         if action in direct:
             direct[action](); return
@@ -670,6 +671,65 @@ class EditorWindow:
             return consent.get('allowed') is True and consent.get('project_id')==self.project.read()['project_id']
         except (OSError,ValueError,AttributeError):
             return False
+
+    def production_coverage(self):
+        if self.app._busy or not self.save(): return
+        from gmk_projects.coverage import inspect_coverage, record_coverage
+        tk, ttk = self.app.tk, self.app.ttk
+        dialog = tk.Toplevel(self.window); dialog.title('ตรวจภาพกับบทและความยาวเสียงพากย์')
+        dialog.geometry('880x650'); dialog.transient(self.window); dialog.grab_set()
+        ttk.Label(dialog, text='ตรวจภาพที่ใช้จริงตามเสียงพากย์ ภาพซ้ำและการค้างเฟรมไม่เพิ่มความยาวภาพใหม่',
+                  wraplength=830).pack(fill='x', padx=12, pady=10)
+        row = ttk.Frame(dialog); row.pack(side='bottom', fill='x', padx=12, pady=12)
+        selection = ttk.Frame(dialog); selection.pack(side='bottom', fill='x', padx=12, pady=6)
+        complete = tk.BooleanVar(value=False); reason = tk.StringVar()
+        ttk.Checkbutton(selection, text='เลือกใช้ภาพในคลังนี้และหยุดค้นสำหรับทุกฉากที่เลือก', variable=complete).pack(anchor='w')
+        ttk.Label(selection, text='เหตุผลที่หยุดค้น (ต้องระบุเมื่อเลือกหยุดค้น)').pack(anchor='w', pady=(5, 0))
+        ttk.Entry(selection, textvariable=reason).pack(fill='x', pady=4)
+        ttk.Label(selection, text='ผลตรวจนี้ไม่รับรองสิทธิ์ใช้ภาพ และไม่อ้างว่าค้นจากอินเทอร์เน็ตครบแล้ว', wraplength=830).pack(anchor='w')
+        details = tk.Text(dialog, wrap='word', state='disabled'); details.pack(fill='both', expand=True, padx=12, pady=6)
+        preview = {}
+        def show(value):
+            if not dialog.winfo_exists(): return
+            details.configure(state='normal'); details.delete('1.0', 'end'); details.insert('1.0', value); details.configure(state='disabled')
+        def refresh_button(*_):
+            enabled = preview.get('can_record') and (not complete.get() or (preview.get('ready') and bool(reason.get().strip())))
+            save_button.configure(state='normal' if enabled else 'disabled')
+        def display(result):
+            if not dialog.winfo_exists(): return
+            preview.clear(); preview.update(result)
+            lines = ['ขั้นปัจจุบัน: '+result['production_state'], result['binding']['reason'], '']
+            for scene in result['scenes']:
+                lines += [('✓ ' if scene['ready'] else 'รอ · ')+scene['title'],
+                          'ภาพที่ต้องการ: '+scene['visual_requirement'],
+                          f'เสียง {scene["required_seconds"]:.2f} วินาที / ภาพจริงไม่ซ้ำ {scene["unique_visual_seconds"]:.2f} วินาที',
+                          f'ค้างเฟรมโดยตั้งใจ {scene["held_seconds"]:.2f} วินาที / ภาพซ้ำ {scene["repeated_seconds"]:.2f} วินาที']
+                lines += ['  '+c['shot_id']+f' · {c["source_in_seconds"]:.2f}–{c["used_source_out_seconds"]:.2f}s · '+str(c['match_type']) for c in scene['cuts']]
+                lines += ['  ต้องแก้: '+i['detail'] for i in scene['issues']]+['']
+            lines += [i['detail'] for i in result['issues'] if i['scene_id'] is None]
+            show('\n'.join(lines)); refresh_button()
+        def inspect():
+            if self.app._busy: return
+            preview.clear(); refresh_button()
+            self.run('กำลังวัดภาพที่ใช้และเสียงพากย์', lambda: inspect_coverage(self.project), display)
+        def save():
+            if self.app._busy or not preview.get('can_record'): return
+            tokens = dict(preview); choice, explanation = complete.get(), reason.get().strip()
+            preview.clear(); refresh_button()
+            def done(result):
+                if not dialog.winfo_exists(): return
+                display(result)
+                show(details.get('1.0', 'end-1c')+'\nบันทึกผลตรวจ: '+result['binding']['result']+
+                     ('\nบันทึกเหตุผลหยุดค้นภาพจากคลังแล้ว' if result['binding']['selection_closed'] else '\nยังไม่ได้หยุดค้นภาพ'))
+            self.run('กำลังบันทึกผลตรวจความครอบคลุมภาพ', lambda: record_coverage(self.project,
+                expected_edit_sha256=tokens['edit_sha256'], expected_manifest_sha256=tokens['manifest_sha256'],
+                complete_selection=choice, stop_reason=explanation), done)
+        ttk.Button(row, text='ตรวจภาพและความยาวเสียง', command=inspect).pack(side='left')
+        save_button = ttk.Button(row, text='บันทึกผลตรวจภาพ', command=save, state='disabled'); save_button.pack(side='left', padx=8)
+        ttk.Button(row, text='ปิด', command=dialog.destroy).pack(side='right')
+        complete.trace_add('write', refresh_button); reason.trace_add('write', refresh_button)
+        show('กดตรวจภาพและความยาวเสียงก่อนบันทึก ผลตรวจที่ยังขาดจะเก็บรายการที่ต้องแก้ไว้')
+        return dialog
 
     def production_media(self):
         if self.app._busy or not self.save(): return

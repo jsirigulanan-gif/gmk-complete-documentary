@@ -91,7 +91,7 @@ class ProductionProject:
                              if a.get('artifact_type') == 'RESEARCH_PACK' and marker in a.get('notes', [])), None)
             if existing is None:
                 reopen = engine.project_state in ('RESEARCH_AUDITED', 'ROUGH_NARRATIVE_READY', 'VISUAL_REQUIREMENTS_READY')
-                if engine.project_state == 'ASSET_RECON':
+                if engine.project_state in {'ASSET_RECON', 'ASSET_CATALOG_READY', 'VISUAL_COVERAGE_READY'}:
                     from .media_bridge import owned_media_recon
                     reopen = owned_media_recon(engine.snapshot())
                 if engine.project_state not in ('BOOTSTRAPPED', 'RESEARCH_INTAKE') and not reopen:
@@ -103,6 +103,8 @@ class ProductionProject:
                 shutil.copyfile(source, target)
                 tx = engine.begin()
                 if reopen:
+                    from .coverage import retire_coverage
+                    retire_coverage(tx)
                     tx.reenter_stage('RESEARCH_INTAKE', actor_type='HUMAN')
                 tx.create_artifact('RESEARCH_PACK', {
                     'title': asset['original_name'],
@@ -161,6 +163,7 @@ class ProductionProject:
         engine = loaded.engine
         from .production_bridge import binding_status
         from .media_bridge import media_binding_status
+        from .coverage import coverage_binding_status
         claims = {}
         for obj in engine.snapshot().objects.values():
             if obj.get('object_type') == 'CLAIM':
@@ -170,6 +173,7 @@ class ProductionProject:
         return {'connected': True, 'production_state': engine.project_state,
                 'story_binding': binding_status(self.project, engine.snapshot()),
                 'media_binding': media_binding_status(self.project, engine.snapshot()),
+                'coverage_binding': coverage_binding_status(self.project, engine.snapshot()),
                 'project_ref': loaded.manifest['project_ref'], 'manifest_version': engine.manifest_version,
                 'manifest_sha256': loaded.manifest_sha256,
                 'research_pack_count': sum(a.get('artifact_type') == 'RESEARCH_PACK' for a in engine.snapshot().artifacts.values()),

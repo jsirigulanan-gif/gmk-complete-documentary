@@ -163,7 +163,7 @@ class ResearchAuditRuntime:
         return 'UNKNOWN'
 
     def run(self, verification_batch: dict[str,Any], *, transition_if_ready: bool=True,
-            reopen_early_stage: bool=False, reopen_editor_recon: bool=False) -> ResearchAuditResult:
+            reopen_early_stage: bool=False, reopen_editor_recon: bool=False, reopen_preparation=None) -> ResearchAuditResult:
         batch=deepcopy(verification_batch)
         batch_id=str(batch.get('batch_id') or ('AUDIT_'+_sha256_json(batch)[:16].upper()))
         batch_sha256=_sha256_json(batch)
@@ -173,9 +173,10 @@ class ResearchAuditRuntime:
             gate=engine.gates.evaluate_gate(state,'RESEARCH_AUDIT',engine.now()).result
             return ResearchAuditResult(replay.workspace,replay.batch_id,engine.project_state,engine.manifest_version,replay.claim_refs,replay.source_refs,replay.evidence_refs,replay.created_claim_refs,replay.gap_refs,replay.attempt_ref,gate,replay.disposition_counts,True)
         if reopen_early_stage and (engine.project_state in {'RESEARCH_AUDITED','ROUGH_NARRATIVE_READY','VISUAL_REQUIREMENTS_READY'}
-                                   or (reopen_editor_recon and engine.project_state == 'ASSET_RECON')):
+                                   or (reopen_editor_recon and engine.project_state in {'ASSET_RECON', 'ASSET_CATALOG_READY', 'VISUAL_COVERAGE_READY'})):
             # Explicit operator re-review: keep history and let claim promotion
             # invalidate dependent narrative objects. Never reopen locked production.
+            if reopen_preparation is not None: reopen_preparation(engine)
             reopening=engine.begin()
             reopening.reenter_stage('RESEARCH_INTAKE',actor_type='HUMAN')
             reopening.commit()

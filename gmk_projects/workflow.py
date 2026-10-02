@@ -69,7 +69,8 @@ def workflow_status(project):
     stage('ACQUISITION', 'ไฟล์ฟุตเทจและข้อมูลผลิต', all_shots and not media_issues and media_binding['current'], acquisition_action,
           '; '.join(media_issues) or media_binding['reason'])
     stage('SCENE_PLAN', 'ลำดับฉาก', narrative, 'SCRIPT', 'เรียงฉากและกำหนดการพาคนดูจากคำถามไปสู่คำตอบ')
-    stage('SHOT_PLAN', 'ช็อตและช่วงตัด', reviews and not media_issues, 'SHOT_REVIEW', 'ทุกช็อตมีช่วงเวลาและผลตรวจภาพที่ตรงกับบทปัจจุบัน')
+    coverage = production['coverage_binding']
+    stage('SHOT_PLAN', 'ช็อตและความครอบคลุมภาพ', reviews and not media_issues and coverage['ready'], 'COVERAGE', coverage['reason'])
     stage('TIMELINE', 'ไทม์ไลน์', plan['ready_to_render'], 'TIMELINE',
           '; '.join(x['detail'] for x in plan['issues']) or f'ความยาวจริง {plan["duration_seconds"]:.2f} วินาที')
     voices = bool(scenes) and all(s.get('voice') and s['voice'].get('text_sha256') == fingerprint(s['narration']) for s in scenes)
@@ -131,7 +132,9 @@ def workflow_status(project):
     pending = next((s for s in stages if not s['ready']), None)
     if pending and pending['action'] == 'SHOT_REVIEW' and media_issues:
         pending = next(s for s in stages if s['key'] == 'ACQUISITION')
-    if pending and pending['action'] in {'FOOTAGE', 'SHOT_REVIEW', 'PRODUCTION_MEDIA', 'TIMELINE'} and not voices:
+    if pending and pending['action'] in {'FOOTAGE', 'SHOT_REVIEW', 'PRODUCTION_MEDIA', 'TIMELINE', 'COVERAGE'} and not voices:
+        pending = next(s for s in stages if s['key'] == 'VOICE')
+    if pending and pending['action'] == 'COVERAGE' and not next(s for s in stages if s['key'] == 'VOICE')['ready']:
         pending = next(s for s in stages if s['key'] == 'VOICE')
     target = None
     if pending:
@@ -151,4 +154,5 @@ def workflow_status(project):
             'edit_sha256': fingerprint(edit), 'production_state': production['production_state'],
             'documentary_completed': production['documentary_completed'], 'timeline': plan,
             'media_binding': media_binding,
+            'coverage_binding': coverage,
             'issues': media_issues}

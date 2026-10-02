@@ -1,0 +1,13 @@
+# Build 054 — Assess used pictures against measured narration
+
+The working edit now produces canonical coverage QA from actual used video ranges, measured current scratch narration, and exact picture/listening decisions. The assessment follows the renderer's frame rounding and consumption order; unused tail cuts do not masquerade as coverage. Overlapping ranges of identical bytes count once. A longer audio track in the source container cannot inflate the available video duration. A deliberate final-frame hold is recorded separately and never adds unique footage.
+
+The footage page offers **ตรวจความครอบคลุมภาพกับเสียง**. Guided readiness opens this assessment after media registration and current listening review. It shows each scene's visual requirement, voice duration, unique footage, repeated ranges, missing duration and explicitly selected held frames. Saving insufficient coverage creates genuine FAIL/MAJOR QA issues, rather than advancing production.
+
+A separate, initially unchecked choice closes selection of the reviewed project library with a required human reason. Successful coverage plus this explicit choice records HUMAN_STOP_WITH_REASON and advances the existing gates to ASSET_CATALOG_READY and VISUAL_COVERAGE_READY. It does not certify exhaustive internet research, source independence, usage rights or a completed documentary. Search Results remain inspected library entries, not invented viable external candidates. Original files remain intact.
+
+CLI actions `coverage-inspect` and `coverage-record` require current edit/core hashes for publication. Closure additionally requires `--complete-library-selection --stop-reason`. Repeated identical decisions are no-ops. Frozen QA payloads are validated; exact inputs and rules are retained in a versioned provenance assessment. Changes to relevant story, cuts, voice bytes, listening decisions, frame rate or hold choices invalidate old coverage.
+
+Explicit revisions and retests archive only this adapter's superseded reports/issues without declaring their repair. Research/story changes may reopen owned early production records; foreign records and later production locks retain their protections. Independent unresolved/stale coverage reviews block selection closure and invalidate prior coverage; their reports/issues are preserved. Staging failures leave persisted production records unchanged. The compatibility records describe reviewed local copies and do not invent download Operations or assert origin-server bytes.
+
+Canonical final script/voice/design/scene/shot/render/QA/release integration, real short/long film acceptance and verified live Drive delivery remain unfinished. Local render/export continues to be a draft workflow.

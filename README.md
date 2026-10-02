@@ -1,8 +1,10 @@
-# GMK Complete Documentary Maker — Build 053
+# GMK Complete Documentary Maker — Build 054
 
-> **Current build:** Build 053 — Reviewed local footage connected to canonical acquisition records, with guided editing, rendering and local export. **End-to-end automatic documentary production is not ready.** Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
+> **Current build:** Build 054 — Measured picture/voice coverage QA and explicit project-library selection closure through canonical visual-coverage gates. **End-to-end automatic documentary production is not ready.** Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
 
 The final product requirement is a coherent **Topic / Brief → Research → Evidence / Claims → Narrative → Script → Narration Beats → Visual Requirements → Footage Research → Footage Selection → Footage Acquisition → Scene Planning → Shot Planning → Timeline / Edit Assembly → Voice / TTS → Design / Graphics → Render → Full-film QA → Delivery → Export → Completed Documentary** workflow. See [product requirements and acceptance criteria](PRODUCT_REQUIREMENTS.md) and [integration roadmap](IMPLEMENTATION_ROADMAP.md).
+
+Build 054 assesses the actual used picture ranges against measured current narration and exact visual/listening reviews. Repeated footage does not add unique duration; explicit final-frame holds are disclosed separately. The editor records canonical PASS/FAIL QA and missing coverage. An optional human library-selection stop with a reason advances existing gates to VISUAL_COVERAGE_READY, without certifying exhaustive search or rights. Relevant edits invalidate old results; explicit early revisions retain history and files. See [Build 054 changes](CHANGELOG_BUILD_054.md), [validation](BUILD_054_VALIDATION.md) and [editor guide](EDITOR_GUIDE_TH.md). Canonical final production and release remain unfinished.
 
 Build 053 connects explicitly reviewed local footage to exact canonical Source/Search Result/Asset/Segment records, preserving byte hashes, original URLs and in/out ranges without copying large media into the production checkpoint. The editor previews and connects these records; readiness routes to that action before rendering. Trims require fresh picture review, revisions retain identities, and removed selections retain history and original files. Source independence, usage rights, search completeness and full-film canonical coverage are still pending. See [Build 053 changes](CHANGELOG_BUILD_053.md) and [validation](BUILD_053_VALIDATION.md).
 

@@ -73,7 +73,9 @@ class ProjectsPanel:
                             'RESEARCH_AUDITED': 'ตรวจรีเสิร์ชแล้ว — รอเชื่อมโครงเรื่อง',
                             'ROUGH_NARRATIVE_READY': 'มีโครงเรื่องและฉากแล้ว — รอกำหนดภาพ',
                             'VISUAL_REQUIREMENTS_READY': 'กำหนดภาพแต่ละฉากแล้ว — ขั้นถัดไปคือค้นและตรวจฟุตเทจ',
-                            'ASSET_RECON': 'ลงทะเบียนฟุตเทจแล้ว — ตรวจภาพและจัดช็อตต่อ'}
+                            'ASSET_RECON': 'ลงทะเบียนฟุตเทจแล้ว — ตรวจภาพและจัดช็อตต่อ',
+                            'ASSET_CATALOG_READY': 'เลือกคลังภาพแล้ว — รอตรวจความครอบคลุมภาพ',
+                            'VISUAL_COVERAGE_READY': 'ภาพครอบคลุมฉากแล้ว — เตรียมบทและงานผลิตต่อ'}
             production_label = state_labels.get(production['production_state'], production['production_state'])
             story_label = production.get('story_binding', {}).get('reason', story_label)
             media_label = production.get('media_binding', {}).get('reason', media_label)

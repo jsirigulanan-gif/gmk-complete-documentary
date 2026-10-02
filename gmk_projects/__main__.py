@@ -20,7 +20,7 @@ def main():
     for action in ('status', 'sync', 'add', 'voice', 'connect-production', 'research-intake', 'research-review',
                    'edit-init', 'edit-preflight', 'edit-voice', 'render', 'editorial-approve', 'delivery',
                    'footage-search', 'footage-download', 'delivery-verify', 'delivery-sync',
-                   'production-inspect', 'production-connect-story', 'media-inspect', 'media-connect',
+                   'production-inspect', 'production-connect-story', 'media-inspect', 'media-connect', 'coverage-inspect', 'coverage-record',
                    'workflow', 'brief-save', 'shot-review', 'voice-review', 'research-add-claim'):
         p = sub.add_parser(action)
         p.add_argument('project', type=Path)
@@ -53,9 +53,12 @@ def main():
             p.add_argument('--visible-content', required=True)
             p.add_argument('--match-reason', required=True)
             p.add_argument('--match-type', choices=('DIRECT', 'SUPPORTING', 'CONTEXT'), required=True)
-        if action in ('production-connect-story', 'media-connect'):
+        if action in ('production-connect-story', 'media-connect', 'coverage-record'):
             p.add_argument('--edit-sha256', required=True)
             p.add_argument('--manifest-sha256', required=True)
+        if action == 'coverage-record':
+            p.add_argument('--complete-library-selection', action='store_true')
+            p.add_argument('--stop-reason', default='')
         if action == 'footage-search':
             p.add_argument('--query', required=True)
         if action == 'footage-download':
@@ -108,6 +111,11 @@ def main():
             from .media_bridge import inspect_media, connect_media
             result = inspect_media(project) if args.action == 'media-inspect' else connect_media(
                 project, expected_edit_sha256=args.edit_sha256, expected_manifest_sha256=args.manifest_sha256)
+        elif args.action in ('coverage-inspect', 'coverage-record'):
+            from .coverage import inspect_coverage, record_coverage
+            result = inspect_coverage(project) if args.action == 'coverage-inspect' else record_coverage(project,
+                expected_edit_sha256=args.edit_sha256, expected_manifest_sha256=args.manifest_sha256,
+                complete_selection=args.complete_library_selection, stop_reason=args.stop_reason)
         elif args.action in ('delivery-verify', 'delivery-sync'):
             from .delivery import verify_delivery, deliver_project
             result = (verify_delivery if args.action == 'delivery-verify' else deliver_project)(project)

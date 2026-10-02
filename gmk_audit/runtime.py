@@ -75,6 +75,18 @@ class AuditRuntime:
         ('build052_research_draft', ('tests/build052/test_research_draft.py', 'tests/build052/test_asset_recovery.py')),
         ('build053_media_bridge', ('tests/build053/test_media_bridge.py', 'tests/build053/test_drive_discovery.py', 'tests/dependency/test_dependency_engine.py::test_archived_dependent_is_retained_history_on_promotion_and_cold_start')),
         ('build053_media_revisions', ('tests/build053/test_media_revisions.py',)),
+        ('build054_coverage', (
+            'tests/build054/test_coverage.py::test_exact_coverage_records_qa_and_explicit_library_stop_advances_existing_gates',
+            'tests/build054/test_coverage.py::test_context_only_and_missing_audio_cannot_be_certified',
+            'tests/build054/test_coverage.py::test_trim_rejects_stale_preview_and_new_review_reopens_closed_coverage',
+            'tests/build054/test_coverage.py::test_failed_coverage_can_be_retested_after_picture_repair_without_old_blockers',
+            'tests/build054/test_coverage.py::test_overlapping_repeated_ranges_do_not_inflate_visual_duration')),
+        ('build054_coverage_revisions', (
+            'tests/build054/test_coverage.py::test_unused_context_shot_is_not_counted_and_explicit_hold_is_disclosed',
+            'tests/build054/test_coverage.py::test_voice_edit_research_and_retraction_invalidate_closed_coverage',
+            'tests/build054/test_coverage.py::test_failed_staged_transition_or_publish_preserves_persisted_state',
+            'tests/build054/test_coverage.py::test_new_research_from_closed_coverage_reopens_intake_and_retains_media',
+            'tests/build054/test_coverage.py::test_story_revision_from_closed_coverage_reopens_visual_requirements')),
     )
     FULL_BASE_PARTITIONS=(
         ('core_engines', ('tests/state','tests/dependency','tests/gate','tests/runtime','tests/semantic')),

@@ -1,6 +1,16 @@
 # Continuation Handoff — GMK Complete Documentary Maker
 
-## Current continuation (Build 053)
+## Current continuation (Build 054)
+
+`gmk_projects/coverage.py` measures current scratch voice and renderer-conformed used video ranges, unions overlaps by byte hash, verifies current exact picture/listening decisions and writes canonical ASSET_COVERAGE_REPORT with real MAJOR issues on failure. Explicit final-frame hold is disclosed separately; unused cuts do not count as semantic coverage. Relevant edits, voice bytes/listening decisions and hold/fps changes invalidate the binding. A default assessment never closes selection. Explicit human closure plus a nonempty reason records scoped HUMAN_STOP_WITH_REASON, retains inspected candidate status and unknown rights, and uses existing gates to reach VISUAL_COVERAGE_READY. No exhaustive internet-search, download Operation, origin authenticity or final release claim is created.
+
+The GUI coverage dialog and guided COVERAGE action are usable; CLI inspect/record requires exact preview hashes, closure flag and reason. Frozen coverage/search payloads are validated. Versioned provenance retains rules, inputs, measurements and decisions. Staging publishes once; late failure leaves persisted core state unchanged. Exact replay is a no-op. Owned early media stages can reopen for research/story/claim revisions; only this adapter's obsolete QA is archived, never declared repaired. Foreign QA and later locks remain protected. The local planning compatibility extensions mark registered reviewed copies, with origin_bytes false and UNKNOWN rights; existing VisualCoverageRuntime replay reads them.
+
+Validation and exact counts are in BUILD_054_VALIDATION.md. Live synthetic GUI passed guided media → coverage → explicit library closure → VISUAL_COVERAGE_READY → MP4 → eight-part review → exact ZIP, stopping at Drive/final release with completed false. No private facts were approved and no model/TTS provider was called. A separate read-only Drive account-quota check reconfirmed shared-client 403; it did not upload any file. Next work: final canonical script/voice/design/scene/shot/timeline/render/QA/release adapters and real 2–3 minute / 30 minute acceptance. Real project retains 13 UNREVIEWED claims / RESEARCH_INTAKE. Live read-only Drive quota failure was reconfirmed on 2026-10-02. Continue GMK despite unrelated IDE tabs; keep private project/media outside Git.
+
+Before connecting final-script engines, preserve the editor's scene order: `ScriptRuntime.run` currently sorts by scene reference ID, which is not narrative order. Its NARRATION_FINAL Beat promotions also change the exact versions pinned by story/media/coverage receipts; the adapter must refresh those dependencies from unchanged reviewed text/visual decisions in one staged publication, rather than treating old coverage as current. TTS planning is not audio generation. Imported per-scene audio must be assembled into an actual measured master with exact block timing before preparing canonical voice review. Keep explicit human voice/design approvals and the private-text provider consent boundary; do not synthesize approvals or blindly reuse fixture plans.
+
+## Previous continuation (Build 053)
 
 `gmk_projects/media_bridge.py` connects current reviewed local cuts to canonical Source/Search/Search Result/Asset/Segment records and per-scene PROVENANCE_MANIFEST receipts, stopping at ASSET_RECON. Actual files are referenced through project logical URIs, without duplicating footage into core checkpoints. GUI preview/connection and CLI `media-inspect`/`media-connect` require exact edit/core hashes. Readiness routes to PRODUCTION_MEDIA before render. History restores stable cut identities after removal; missing/corrupt files and old reviews/previews block registration.
 
@@ -8,7 +18,7 @@ Only owned editor media ASSET_RECON can reopen for explicit story/research/claim
 
 UNKNOWN source independence/rights are retained. CONTEXT cuts remain unverified in the frozen contract (MISMATCH mapping, original classification retained). No Search Completion Certificate, Visual Coverage QA, invented download operation, release approval or documentary completion is created. Next adapters must assess coverage and connect canonical script/voice/design/scene/shot/timeline/render/QA/delivery. Real input reviews and live Drive acceptance remain necessary. Validation: 43 core/media/state/dependency PASS, mocked discovery PASS, live synthetic GUI preview → canonical media → MP4 → eight checks → exact ZIP PASS, and QUICK 37 PASS / 0 FAIL / 0 TIMEOUT / 1 documented legacy WARN. See BUILD_053_VALIDATION.md for scopes and overlapping counts. Real project unchanged: 13 UNREVIEWED claims / RESEARCH_INTAKE.
 
-## Current continuation (Build 052)
+## Previous continuation (Build 052)
 
 The user asked to complete the documentary product and remove unrelated functions. The desktop app now exposes only general documentary projects and setup; P.T./Lisa/TGA UI, pilot path requirements, legacy media execution controls, duplicate raw-file/research/delivery controls and the separate Log tab were removed. Legacy core engines/fixtures remain available outside the product app. No private project/media files were deleted.
 

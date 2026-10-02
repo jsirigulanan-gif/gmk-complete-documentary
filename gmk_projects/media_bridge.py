@@ -16,11 +16,12 @@ from .production_bridge import _active, binding_status, story_input
 from .storage import StorageError, atomic_json
 
 
-MEDIA_EDITABLE_STATES = {'VISUAL_REQUIREMENTS_READY', 'ASSET_RECON'}
+MEDIA_EDITABLE_STATES = {'VISUAL_REQUIREMENTS_READY', 'ASSET_RECON', 'ASSET_CATALOG_READY', 'VISUAL_COVERAGE_READY'}
+OWNED_MEDIA_STATES = MEDIA_EDITABLE_STATES - {'VISUAL_REQUIREMENTS_READY'}
 
 
 def owned_media_recon(state):
-    return (state.project_state == 'ASSET_RECON' and bool(_pools(state))
+    return (state.project_state in OWNED_MEDIA_STATES and bool(_pools(state))
             and all(o.get('extensions', {}).get('project_media')
                     for o in _active(state).values()
                     if o['object_type'] in {'ASSET', 'SEGMENT', 'SEARCH', 'SEARCH_RESULT'}))
@@ -88,7 +89,7 @@ def _inspect(project, edit, loaded):
     issues, clips, missing = [], [], []
     if not story['current']: issues.append('ตรวจและเชื่อมบทเข้าระบบผลิตก่อนเชื่อมภาพ')
     if loaded.engine.project_state not in MEDIA_EDITABLE_STATES:
-        issues.append('เชื่อมภาพได้ในขั้นกำหนดภาพหรือสำรวจฟุตเทจเท่านั้น')
+        issues.append('เชื่อมภาพได้ในขั้นร่างภาพก่อนล็อกการผลิตเท่านั้น')
     foreign = [o for o in _active(state).values() if o['object_type'] in {'ASSET', 'SEGMENT', 'SEARCH', 'SEARCH_RESULT'}
                and not o.get('extensions', {}).get('project_media')]
     if foreign: issues.append('มีรายการภาพจากระบบอื่น ต้องย้ายข้อมูลอย่างชัดเจนก่อนเชื่อมภาพ')
@@ -154,6 +155,10 @@ def connect_media(project, *, expected_edit_sha256, expected_manifest_sha256):
                 for row in ext.get('rows', []):
                     old_rows[(ext['scene_id'], row['shot_id'])] = row
         tx = engine.begin()
+        from .coverage import retire_coverage
+        retire_coverage(tx)
+        if engine.project_state in {'ASSET_CATALOG_READY', 'VISUAL_COVERAGE_READY'}:
+            tx.reenter_stage('ASSET_RECON', actor_type='HUMAN')
         if engine.project_state == 'VISUAL_REQUIREMENTS_READY':
             tx.transition_project_state('ASSET_RECON', actor_type='SYSTEM')
 
