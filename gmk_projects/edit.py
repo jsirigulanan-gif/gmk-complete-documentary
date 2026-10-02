@@ -101,6 +101,8 @@ class EditSession:
             raise EditError('ต้องมีฉากอย่างน้อยหนึ่งฉากและรหัสฉากห้ามซ้ำ')
         if not 0 <= float(data.get('music_gain', .12)) <= 1:
             raise EditError('ระดับดนตรีต้องอยู่ระหว่าง 0 ถึง 1')
+        if data.get('music') and data.get('music_omitted'):
+            raise EditError('เลือกดนตรีหรือระบุว่าไม่ใช้ดนตรีอย่างใดอย่างหนึ่ง')
         if (data.get('width'), data.get('height')) not in ((640, 360), (1280, 720), (1920, 1080)) or data.get('fps') not in (24, 25, 30):
             raise EditError('ขนาดภาพหรือเฟรมเรตไม่รองรับ')
         with self.project._lock():
@@ -259,8 +261,9 @@ class EditSession:
                 frames = math.ceil(info['duration_seconds'] * fps)
                 remaining, cuts = frames, []
                 for shot in scene['shots']:
-                    if shot.get('selection') != 'USER_SELECTED':
-                        warnings.append(scene['id']+': ช่วงภาพที่เสนออัตโนมัติยังต้องตรวจความตรงของภาพจริง')
+                    from .media_review import shot_review_current
+                    if not shot_review_current(scene, shot):
+                        warnings.append(scene['id']+': ช่วงภาพยังต้องตรวจความตรงของภาพจริง')
                     path = asset_file(self.project, shot, 'footage')
                     media = probe(path)
                     if not any(s['codec_type'] == 'video' for s in media['streams']):
@@ -281,7 +284,8 @@ class EditSession:
                     cuts[-1]['freeze_frames'] = remaining
                     cuts[-1]['frames'] += remaining
                     warnings.append(scene['id'] + f': ค้างภาพท้าย {remaining/fps:.2f} วินาที')
-                if voice.get('listening_review') != 'APPROVED':
+                from .media_review import voice_review_current
+                if not voice_review_current(scene):
                     warnings.append(scene['id']+': ยังไม่ได้ยืนยันการฟังเสียง')
                 timeline.append({'scene_id': scene['id'], 'title': scene['title'], 'show_title': scene['show_title'],
                                  'narration': scene['narration'], 'voice': voice, 'cuts': cuts,

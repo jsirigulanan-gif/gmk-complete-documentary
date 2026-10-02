@@ -177,6 +177,16 @@ class Project:
                 path = f'{role}/{meta["sha256"]}{suffix}'
                 match = next((a for a in data['assets'] if a['path'] == path), None)
                 if match:
+                    local = self.root / path
+                    if any(match.get(k) != meta[k] for k in ('sha256', 'md5', 'size')):
+                        raise StorageError('Registered asset metadata does not match the imported bytes')
+                    if local.is_symlink() or (local.exists() and (not local.is_file() or digest(local) != meta)):
+                        raise StorageError('Registered asset was changed; preserve it and restore the original before reusing this version')
+                    if not local.exists():
+                        # Reimporting the exact original can recover missing bytes
+                        # without duplicating the catalog or losing timeline refs.
+                        os.replace(tmp, local)
+                        match['upload_status'] = 'PENDING'
                     match['scene_ids'] = sorted(set(match['scene_ids']) | set(scenes or []))
                     match['source_urls'] = sorted(set(match['source_urls']) | ({source_url} if source_url else set()))
                     data['storage_status'] = 'PENDING_UPLOAD'

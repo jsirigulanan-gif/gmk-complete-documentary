@@ -4,7 +4,7 @@ cd /d "%~dp0"
 title GMK Installer - Build 041
 
 echo ============================================================
-echo  GMK P.T. Operator - Build 041 - Windows Setup
+echo  GMK Documentary Maker - Windows Setup
 echo ============================================================
 echo.
 

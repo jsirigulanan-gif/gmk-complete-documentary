@@ -118,6 +118,7 @@ def _inspect(project, edit, loaded):
     return {'ready': not issues, 'issues': issues, 'edit_sha256': fingerprint(edit),
             'manifest_sha256': loaded.manifest_sha256, 'story_sha256': fingerprint(story_input(edit)),
             'production_state': engine.project_state, 'scene_count': len(readiness['scenes']),
+            'research_audit_gate': audit,
             'binding': binding_status(project, engine.snapshot()), 'documentary_completed': False}
 
 

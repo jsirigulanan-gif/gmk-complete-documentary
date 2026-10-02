@@ -22,7 +22,8 @@ def test_cli_exposes_footage_commands():
   if hasattr(a,'choices') and isinstance(a.choices,dict): choices.update(a.choices)
  assert 'footage-plan' in choices and 'footage-research' in choices and 'footage-material-research' in choices
 
-def test_operator_has_documentary_maker_tab_hooks():
+def test_operator_opens_general_projects_without_pilot_hooks():
  text=(ROOT/'gmk_operator/app.py').read_text()
- for token in ('Documentary Maker','generate_footage_plan','run_footage_research','run_material_research','PT_FOOTAGE_RESEARCH'):
+ for token in ('Documentary Maker','ProjectsPanel','ตั้งค่าและตรวจระบบ'):
   assert token in text
+ assert 'PT_WORKSPACE' not in text

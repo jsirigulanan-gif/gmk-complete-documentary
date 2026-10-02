@@ -1,7 +1,7 @@
 @echo off
 setlocal EnableExtensions
 cd /d "%~dp0"
-title GMK P.T. Operator - Build 041
+title GMK Documentary Maker
 
 if exist ".venv\Scripts\pythonw.exe" (
   start "GMK" ".venv\Scripts\pythonw.exe" -m gmk_operator

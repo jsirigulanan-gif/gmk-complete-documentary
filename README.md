@@ -1,8 +1,12 @@
-# GMK Complete Documentary Maker — Build 051
+# GMK Complete Documentary Maker — Build 052
 
-> **Current build:** Build 051 — Reviewed story and visual requirements connected to canonical production. **End-to-end automatic documentary production is not ready.** Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
+> **Current build:** Build 052 — Focused documentary workspace, guided lifecycle readiness and exact media/full-film review. **End-to-end automatic documentary production is not ready.** Schema status: `FROZEN_WITH_ERRATA_024_025_029_033`.
 
 The final product requirement is a coherent **Topic / Brief → Research → Evidence / Claims → Narrative → Script → Narration Beats → Visual Requirements → Footage Research → Footage Selection → Footage Acquisition → Scene Planning → Shot Planning → Timeline / Edit Assembly → Voice / TTS → Design / Graphics → Render → Full-film QA → Delivery → Export → Completed Documentary** workflow. See [product requirements and acceptance criteria](PRODUCT_REQUIREMENTS.md) and [integration roadmap](IMPLEMENTATION_ROADMAP.md).
+
+Build 052 removes the P.T./Lisa/TGA demonstration UI and its workspace dependencies from the desktop app. The app opens general projects directly, supports new topic briefs, and shows readiness across all 20 lifecycle stages with a next action. Exact shot/listening reviews expire when relevant draft inputs change, and whole-film review records eight editorial checks before local delivery. See [Build 052 changes](CHANGELOG_BUILD_052.md), [validation](BUILD_052_VALIDATION.md) and [Thai startup guide](README_START_HERE_TH.md). The readiness view is derived from existing records; canonical final-release integration and real-film acceptance remain pending.
+
+General research without script/claim markers can be reviewed by selecting original excerpts and creating UNREVIEWED assertions. The exact source and excerpt are retained, repeated selections do not duplicate claims, and existing scripts stay intact. Guided recovery selects the scene with missing media and requests reacquisition before picture review.
 
 Build 051 connects reviewed editor scenes to canonical Acts, Scenes, Narration Beats and visual requirements through existing production gates. The editor previews missing evidence and narrative inputs before an explicit connection. Footage planning then uses those exact beat/claim versions; repeated evidence revisions remain reloadable. See [Build 051 changes](CHANGELOG_BUILD_051.md) and [validation](BUILD_051_VALIDATION.md). Canonical integration beyond visual requirements and real-film acceptance remain pending.
 
@@ -14,7 +18,7 @@ Build 048 imports general documentary narration or explicitly labeled claims int
 
 Build 047 binds each new Drive project to a persistent StateEngine workspace. Research import registers original bytes and enters Research Intake; it does not claim factual audit or downstream completion. Project status comes from the core manifest, and Drive sync includes a production-record checkpoint. Old projects can be connected through the project panel or `python -m gmk_projects connect-production /path/to/project`.
 
-The new **โปรเจกต์ Drive** tab imports LEMiNO Script documents, creates projects independently of P.T., generates Thai narration through optional Edge TTS, and uploads registered research/media files to a per-project Google Drive folder. It verifies uploaded sizes and MD5 checksums, keeps local files on failures, and records immutable manifest snapshots. See [Drive project usage and remaining work](DRIVE_PROJECTS.md). The new editor connects local editing/rendering; a real full-lifecycle documentary has not yet passed acceptance.
+The **โปรเจกต์สารคดี** page imports LEMiNO Script documents, creates projects independently of P.T., generates Thai narration through optional Edge TTS, and uploads registered research/media files to a per-project Google Drive folder. It verifies uploaded sizes and MD5 checksums, keeps local files on failures, and records immutable manifest snapshots. See [Drive project usage and remaining work](DRIVE_PROJECTS.md). The new editor connects local editing/rendering; a real full-lifecycle documentary has not yet passed acceptance.
 
 Build 045 added a purpose and scope overview in the Operator. The two source-locked Lisa/TGA video slots now live under the P.T. pilot. General project creation was added in Build 046; producing a full film with one click remains incomplete. See [Build 045 changelog](CHANGELOG_BUILD_045.md).
 

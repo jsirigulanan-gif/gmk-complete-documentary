@@ -221,8 +221,12 @@ def render_project(project, *, progress=None) -> dict:
         raise
 
 
-def approve_editorial_review(project, *, expected_master_sha256: str) -> dict:
+def approve_editorial_review(project, *, expected_master_sha256: str, checklist: dict | None = None) -> dict:
     """Called by an explicit full-film review decision, never automatically by rendering."""
+    if checklist is not None:
+        from .workflow import FILM_CHECKS
+        if set(checklist) != set(FILM_CHECKS) or any(v is not True for v in checklist.values()):
+            raise EditError('ตรวจสารคดีทั้งเรื่องและยืนยันรายการให้ครบก่อนบันทึก')
     with project._lock():
         render = json.loads((project.root/'last_render.json').read_text(encoding='utf-8'))
         if render['technical_qa']['sha256'] != expected_master_sha256:
@@ -237,6 +241,8 @@ def approve_editorial_review(project, *, expected_master_sha256: str) -> dict:
         decision = {'master_sha256': expected_master_sha256, 'edit_sha256': render['edit_sha256'],
                     'research_manifest_sha256': render['research_manifest_sha256'],
                     'editorial_review': 'USER_APPROVED', 'scope': 'Local full-film picture, sound and caption review; canonical research/release gates are separate.'}
+        if checklist is not None:
+            decision['full_film_checklist'] = dict(checklist)
         atomic_json(project.root/'editorial_review.json', decision)
     return decision
 

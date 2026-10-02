@@ -1,6 +1,6 @@
 from pathlib import Path
 import tempfile
-from tkinter import filedialog, messagebox
+from tkinter import filedialog, messagebox, simpledialog
 
 from gmk_projects.intake import import_research, read_source
 from gmk_projects.storage import Project, RcloneDrive
@@ -11,14 +11,15 @@ class ProjectsPanel:
         self.app, self.base = app, Path.home() / 'GMK Projects'
         self.scripts, self.projects = [], []
         tk, ttk = app.tk, app.ttk
-        ttk.Label(parent, text='โปรเจกต์สารคดีบน Google Drive', font=('Segoe UI', 14, 'bold')).pack(anchor='w')
-        ttk.Label(parent, text='นำเข้ารีเสิร์ช แล้วเปิดโต๊ะตัดต่อเพื่อสร้างเรื่อง แก้บท ค้นภาพ ใส่เสียงและดนตรี เรนเดอร์ และส่งออก',
+        ttk.Label(parent, text='สร้างสารคดีจากหัวเรื่องและรีเสิร์ช', font=('Segoe UI', 14, 'bold')).pack(anchor='w')
+        ttk.Label(parent, text='สร้างโปรเจกต์หรือนำเข้าเอกสาร แล้วเปิดพื้นที่ทำสารคดีเพื่อตรวจงานถัดไป ค้นภาพ ใส่เสียง ตัดต่อ และส่งออก',
                   wraplength=800).pack(anchor='w', pady=6)
         ttk.Button(parent, text='ค้นเอกสาร LEMiNO Script ใน Drive', command=self.search).pack(anchor='w')
         self.sources = ttk.Combobox(parent, state='readonly', width=95)
         self.sources.pack(fill='x', pady=6)
         row = ttk.Frame(parent)
         row.pack(fill='x')
+        ttk.Button(row, text='เริ่มจากหัวเรื่องใหม่', command=self.new_topic).pack(side='left', padx=(0,6))
         ttk.Button(row, text='สร้างโปรเจกต์จากเอกสารที่เลือก', command=self.import_drive).pack(side='left')
         ttk.Button(row, text='นำเข้าไฟล์บทจากเครื่อง', command=self.import_local).pack(side='left', padx=6)
         ttk.Separator(parent).pack(fill='x', pady=12)
@@ -28,20 +29,10 @@ class ProjectsPanel:
         self.selection.bind('<<ComboboxSelected>>', lambda event: self.show())
         row = ttk.Frame(parent)
         row.pack(fill='x')
-        self.roles = {'ฟุตเทจต้นฉบับ': 'footage', 'เสียงพากย์': 'voice', 'ดนตรี': 'music',
-                      'บทและรีเสิร์ช': 'research', 'ไฟล์ตัดต่อ': 'timeline', 'วิดีโอส่งออก': 'exports'}
-        self.role = ttk.Combobox(row, state='readonly', values=list(self.roles), width=18)
-        self.role.current(0)
-        self.role.pack(side='left')
-        ttk.Button(row, text='เพิ่มไฟล์', command=self.add_file).pack(side='left', padx=6)
+        ttk.Button(row, text='เปิดพื้นที่ทำสารคดี', command=self.open_editor).pack(side='left', padx=(0,6))
         ttk.Button(row, text='ส่งไฟล์และตรวจสอบบน Drive', command=self.sync).pack(side='left')
         ttk.Button(row, text='รีเฟรช', command=self.reload).pack(side='left', padx=6)
         self.connect_button = ttk.Button(row, text='เชื่อมโปรเจกต์รุ่นเดิม', command=self.connect_production)
-        research_row = ttk.Frame(parent)
-        research_row.pack(fill='x', pady=6)
-        ttk.Button(research_row, text='แยกข้อกล่าวอ้างจากรีเสิร์ช', command=self.analyze_research).pack(side='left')
-        ttk.Button(research_row, text='เปิดรายการตรวจรีเสิร์ช', command=self.review_research).pack(side='left', padx=6)
-        ttk.Button(research_row, text='เปิดโต๊ะตัดต่อสารคดี', command=self.open_editor).pack(side='left')
         self.details = tk.Text(parent, height=12, wrap='word', state='disabled')
         self.details.pack(fill='both', expand=True, pady=10)
         self.reload()
@@ -141,14 +132,14 @@ class ProjectsPanel:
             return p
         self.app._async('กำลังนำเข้าบท…', run, self.reload)
 
-    def add_file(self):
-        project = self.current()
-        if not project:
-            return
-        chosen = filedialog.askopenfilename(title='เพิ่มไฟล์เข้าคลังโปรเจกต์')
-        if chosen:
-            role = self.roles[self.role.get()]
-            self.app._async('กำลังเก็บไฟล์ในโปรเจกต์…', lambda: project.add_file(Path(chosen), role), lambda _: self.show())
+    def new_topic(self):
+        topic = simpledialog.askstring('เริ่มสารคดี', 'หัวเรื่องสารคดี:', parent=self.app.root)
+        if not topic or not topic.strip(): return
+        def done(project):
+            self.reload(project)
+            from .editor import EditorWindow
+            EditorWindow(self.app, project).edit_brief()
+        self.app._async('กำลังสร้างโปรเจกต์สารคดี', lambda: Project.create(self.base, topic), done)
 
     def sync(self):
         project = self.current()
@@ -160,23 +151,6 @@ class ProjectsPanel:
         project = self.current()
         if project:
             self.app._async('กำลังเชื่อมสถานะการผลิต…', ProductionProject(project).connect_existing, lambda _: self.show())
-
-    def analyze_research(self):
-        from gmk_projects.research import analyze_research
-        project = self.current()
-        if project:
-            def done(result):
-                self.show()
-                messagebox.showinfo('GMK', f'มีข้อความรอตรวจ {result["claims_for_review"]} รายการ และลิงก์อ้างอิง {result["source_leads"]} แหล่ง\nกดเปิดรายการตรวจรีเสิร์ชเพื่อดูตำแหน่งต้นฉบับ ยังไม่ได้ตรวจข้อเท็จจริง')
-            self.app._async('กำลังแยกข้อความและแหล่งอ้างอิง…', lambda: analyze_research(project), done)
-
-    def review_research(self):
-        import webbrowser
-        from gmk_projects.research import research_review
-        project = self.current()
-        if project:
-            self.app._async('กำลังเปิดรายการตรวจรีเสิร์ช…', lambda: research_review(project),
-                            lambda result: webbrowser.open(Path(result['review_path']).as_uri()))
 
     def open_editor(self):
         project = self.current()

@@ -4,7 +4,7 @@ import hashlib
 import json
 import os
 
-from gmk_operator.app import ROOT, WORKSPACE, INTAKE, system_check, headless_status
+from gmk_operator.app import ROOT, system_check, headless_status
 from gmk_runtime.media_tools import resolve_ffprobe
 
 
@@ -12,15 +12,15 @@ def _sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def test_operator_headless_status_is_non_mutating():
-    pointer=WORKSPACE/'CURRENT_MANIFEST.json'
+def test_operator_headless_status_is_non_mutating(tmp_path):
+    from gmk_projects.storage import Project
+    p=Project.create(tmp_path,'General documentary')
+    pointer=p.root/'production'/'CURRENT_MANIFEST.json'
     before=_sha(pointer)
-    status=headless_status()
+    status=headless_status(p.root)
     after=_sha(pointer)
-    assert status['project_state']=='ASSET_RECON'
-    assert status['manifest_version']==104
-    assert status['readiness']=='BLOCKED_MEDIA'
-    assert status['workspace_mutated'] is False
+    assert status['production_state']=='BOOTSTRAPPED'
+    assert status['documentary_completed'] is False
     assert before==after
 
 
@@ -29,9 +29,8 @@ def test_operator_system_check_has_core_paths():
     by={x['check']:x for x in check['checks']}
     assert int(check['build']) >= 40
     assert by['python_3_10_plus']['ok']
-    assert by['workspace_present']['ok']
-    assert by['intake_present']['ok']
-    assert by['worksheet_present']['ok']
+    assert by['ffmpeg']['ok']
+    assert not any(key in by for key in ('workspace_present','intake_present','worksheet_present'))
     assert by['ffprobe']['ok']
 
 

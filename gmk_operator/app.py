@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from copy import deepcopy
 from pathlib import Path
 from typing import Any, Callable
 import argparse
@@ -13,25 +12,13 @@ import sys
 import threading
 import traceback
 
-from gmk_pilot import PilotReadinessRuntime, PilotMediaProcessRuntime
-from gmk_runtime.cold_start import ColdStartLoader
-from gmk_runtime.media_tools import resolve_ffprobe, MediaToolNotFound
+from gmk_runtime.media_tools import resolve_ffprobe
 from gmk_audit import AuditRuntime
-from gmk_footage.query_planner import FootageQueryPlanner
-from gmk_footage.research import FootageResearchRuntime
-from gmk_footage.fallback_research import MaterialFallbackResearchRuntime
 
 ROOT = Path(__file__).resolve().parents[1]
 BUILD = json.loads((ROOT / "BUILD_STATUS.json").read_text(encoding="utf-8"))["build"]
-WORKSPACE = ROOT / "pilot" / "PT_WORKSPACE"
-INTAKE = ROOT / "pilot" / "PT_MEDIA_INTAKE"
-WORKSHEET = INTAKE / "PT_MEDIA_INSPECTION_WORKSHEET.json"
-OUTPUT_DIR = ROOT / "pilot" / "PT_OPERATOR_OUTPUT"
-FOOTAGE_OUTPUT = ROOT / "pilot" / "PT_FOOTAGE_RESEARCH"
 CONFIG_DIR = ROOT / "operator"
 CONFIG_PATH = CONFIG_DIR / "GMK_OPERATOR_CONFIG.json"
-
-CANDIDATES = ("LISA_X_DIRECT_VERIFIED", "TGA_VIDEO")
 
 
 def _json_load(path: Path) -> dict[str, Any]:
@@ -76,24 +63,25 @@ def system_check() -> dict[str, Any]:
     apply_operator_config()
     checks: list[dict[str, Any]] = []
 
-    def add(name: str, ok: bool, detail: Any = None) -> None:
-        row = {"check": name, "ok": bool(ok)}
+    def add(name: str, ok: bool, detail: Any = None, *, required=True) -> None:
+        row = {"check": name, "ok": bool(ok), "required": required}
         if detail is not None:
             row["detail"] = detail
         checks.append(row)
 
     py_ok = sys.version_info >= (3, 10)
     add("python_3_10_plus", py_ok, sys.version.split()[0])
-    add("workspace_present", WORKSPACE.is_dir(), str(WORKSPACE))
-    add("intake_present", INTAKE.is_dir(), str(INTAKE))
-    add("worksheet_present", WORKSHEET.is_file(), str(WORKSHEET))
+    add("ffmpeg", bool(shutil.which('ffmpeg')), shutil.which('ffmpeg'))
     try:
         tool = resolve_ffprobe()
         add("ffprobe", True, tool)
     except Exception as exc:
         add("ffprobe", False, str(exc))
     yt = shutil.which("yt-dlp")
-    add("yt_dlp", bool(yt), yt or "not found — run INSTALL_GMK.sh")
+    add("yt_dlp", bool(yt), yt or "not found — run INSTALL_GMK.sh", required=False)
+    for name, executable in (('drive_sync', 'rclone'), ('story_ai', 'codex'), ('online_voice', 'edge-tts')):
+        found = shutil.which(executable)
+        add(name, bool(found), found or 'not installed', required=False)
     try:
         import tkinter  # noqa: F401
         add("tkinter", True, "available")
@@ -102,35 +90,20 @@ def system_check() -> dict[str, Any]:
     return {
         "build": BUILD,
         "platform": platform.platform(),
-        "ok": all(x["ok"] for x in checks),
+        "ok": all(x["ok"] for x in checks if x['required']),
         "checks": checks,
     }
 
 
-def headless_status() -> dict[str, Any]:
+def headless_status(project: Path | None = None, *, base: Path | None = None) -> dict[str, Any]:
     apply_operator_config()
-    result = PilotReadinessRuntime(ROOT, WORKSPACE).inspect(INTAKE, OUTPUT_DIR)
-    return result.to_dict()
-
-
-def _open_path(path: Path) -> None:
-    path.mkdir(parents=True, exist_ok=True)
-    if os.name == "nt":
-        os.startfile(str(path))  # type: ignore[attr-defined]
-    elif sys.platform == "darwin":
-        subprocess.Popen(["open", str(path)])
-    else:
-        subprocess.Popen(["xdg-open", str(path)])
-
-
-def _worksheet_items() -> tuple[dict[str, Any], dict[str, dict[str, Any]]]:
-    raw = _json_load(WORKSHEET)
-    by: dict[str, dict[str, Any]] = {}
-    for item in raw.get("items") or []:
-        key = str(item.get("candidate_key") or "")
-        if key:
-            by[key] = item
-    return raw, by
+    from gmk_projects.storage import Project
+    from gmk_projects.production import ProductionProject
+    if project is not None:
+        return ProductionProject(Project(project)).status()
+    base = base or Path.home() / 'GMK Projects'
+    return {'projects': [{'path': str(p.parent), 'title': Project(p.parent).read()['title']}
+                         for p in sorted(base.glob('project-*/project.json'))], 'workspace_mutated': False}
 
 
 class OperatorApp:
@@ -147,10 +120,6 @@ class OperatorApp:
         self.cfg = apply_operator_config()
         self._busy = False
         self.status_var = tk.StringVar(value="กำลังตรวจสถานะ…")
-        self.state_var = tk.StringVar(value="-")
-        self.version_var = tk.StringVar(value="-")
-        self.next_var = tk.StringVar(value="-")
-        self.slot_vars: dict[str, dict[str, Any]] = {}
         self._build_ui()
         self.status_var.set('พร้อม — เลือกโปรเจกต์และเปิดโต๊ะตัดต่อเพื่อทำงานต่อ')
 
@@ -170,236 +139,31 @@ class OperatorApp:
         self.notebook = ttk.Notebook(outer)
         self.notebook.pack(fill="both", expand=True)
 
-        overview = ttk.Frame(self.notebook, padding=12)
-        self.notebook.add(overview, text="เริ่มต้น")
-        self._build_overview(overview)
-
         projects = ttk.Frame(self.notebook, padding=12)
-        self.notebook.add(projects, text="โปรเจกต์ Drive")
+        self.notebook.add(projects, text="โปรเจกต์สารคดี")
         from .projects import ProjectsPanel
         self.projects_panel = ProjectsPanel(self, projects)
 
-        pilot = ttk.Frame(self.notebook, padding=12)
-        self.notebook.add(pilot, text="โครงการตัวอย่าง P.T.")
-        self.pilot_notebook = ttk.Notebook(pilot)
-        self.pilot_notebook.pack(fill="both", expand=True)
-
-        documentary = ttk.Frame(self.pilot_notebook, padding=12)
-        self.pilot_notebook.add(documentary, text="ค้นฟุตเทจ P.T.")
-        self._build_documentary_tab(documentary)
-
-        self.dashboard = ttk.Frame(self.pilot_notebook, padding=12)
-        self.pilot_notebook.add(self.dashboard, text="สถานะ P.T.")
-        self._build_dashboard(self.dashboard)
-
-        for key, label in (("LISA_X_DIRECT_VERIFIED", "วิดีโอ 1 · Lisa"), ("TGA_VIDEO", "วิดีโอ 2 · TGA")):
-            frame = ttk.Frame(self.pilot_notebook, padding=12)
-            self.pilot_notebook.add(frame, text=label)
-            self._build_candidate_tab(frame, key)
-
         system = ttk.Frame(self.notebook, padding=12)
-        self.notebook.add(system, text="ระบบ")
+        self.notebook.add(system, text="ตั้งค่าและตรวจระบบ")
         self._build_system_tab(system)
-
-        logs = ttk.Frame(self.notebook, padding=12)
-        self.notebook.add(logs, text="Log")
-        self.log = tk.Text(logs, wrap="word", height=20)
-        self.log.pack(fill="both", expand=True)
-        self.log.configure(state="disabled")
 
         self.footer = ttk.Label(outer, textvariable=self.status_var, anchor="w")
         self.footer.pack(fill="x", pady=(8, 0))
 
-    def _build_overview(self, parent) -> None:
-        ttk = self.ttk
-        sections = (
-            (
-                "GMK เอาไว้ทำอะไร",
-                "GMK ช่วยทำสารคดีจากงานวิจัย: วางเรื่องและช็อต ค้นและตรวจแหล่งภาพ "
-                "เตรียมเสียง ประกอบภาพ เรนเดอร์ ตรวจคุณภาพ และส่งออกไฟล์",
-            ),
-            (
-                "หน้าจอนี้ทำอะไรได้ตอนนี้",
-                "เลือกโปรเจกต์ในแท็บโปรเจกต์ Drive แล้วเปิดโต๊ะตัดต่อสารคดี "
-                "เพื่อตรวจหลักฐาน สร้างร่างเรื่องด้วย AI แก้บท เลือกช่วงฟุตเทจ ใส่เสียงและดนตรี "
-                "ตรวจไทม์ไลน์ เรนเดอร์ ดูวิดีโอ และสร้างชุดส่งออก "
-                "AI และเสียงออนไลน์ต้องเปิดใช้งานตามบัญชี ส่วน Drive ต้องเชื่อมต่อและตรวจอัปโหลดสำเร็จก่อนส่งมอบ",
-            ),
-            (
-                "ทำไมมี Lisa และ TGA",
-                "สองวิดีโอนี้เป็นหลักฐานเฉพาะเรื่อง P.T. ที่โครงการตัวอย่างยังขาด "
-                "ไม่ใช่ไฟล์บังคับสำหรับสารคดีทุกเรื่อง สร้างโปรเจกต์เรื่องใหม่ได้ในแท็บโปรเจกต์ Drive",
-            ),
-        )
-        for heading, body in sections:
-            box = ttk.LabelFrame(parent, text=heading, padding=12)
-            box.pack(fill="x", pady=(0, 10))
-            ttk.Label(box, text=body, wraplength=800, justify="left").pack(anchor="w")
-
-        actions = ttk.Frame(parent)
-        actions.pack(fill="x")
-        ttk.Button(actions, text="เปิดโปรเจกต์ Drive", command=lambda: self.notebook.select(1)).pack(side="left", padx=(0, 8))
-        ttk.Button(actions, text="ดูโครงการตัวอย่างเดิม", command=lambda: self.notebook.select(2)).pack(side="left")
-
-    def _build_dashboard(self, parent) -> None:
-        ttk = self.ttk
-        grid = ttk.Frame(parent)
-        grid.pack(fill="x")
-        rows = [
-            ("ความพร้อมของ P.T.", self.state_var),
-            ("สถานะโครงการ", self.version_var),
-            ("ขั้นถัดไป", self.next_var),
-        ]
-        for r, (label, var) in enumerate(rows):
-            ttk.Label(grid, text=label, font=("Segoe UI", 10, "bold")).grid(row=r, column=0, sticky="nw", padx=(0, 12), pady=4)
-            ttk.Label(grid, textvariable=var, wraplength=730).grid(row=r, column=1, sticky="nw", pady=4)
-        grid.columnconfigure(1, weight=1)
-
-        actions = ttk.Frame(parent)
-        actions.pack(fill="x", pady=12)
-        ttk.Button(actions, text="ตรวจความพร้อม", command=self.refresh_readiness).pack(side="left", padx=(0, 6))
-        ttk.Button(actions, text="ตรวจไฟล์ก่อนดำเนินการ", command=self.run_preflight).pack(side="left", padx=6)
-        ttk.Button(actions, text="นำเข้าวิดีโอ P.T.", command=self.execute_media).pack(side="left", padx=6)
-        ttk.Button(actions, text="เปิด intake folder", command=lambda: _open_path(INTAKE)).pack(side="left", padx=6)
-
-        ttk.Separator(parent).pack(fill="x", pady=8)
-        ttk.Label(parent, text="หลักฐานวิดีโอที่โครงการ P.T. รออยู่", font=("Segoe UI", 12, "bold")).pack(anchor="w")
-        self.slot_summary = ttk.Frame(parent)
-        self.slot_summary.pack(fill="x", pady=6)
-
-        ttk.Label(
-            parent,
-            text=(
-                "Execute จะเปิดได้อย่างปลอดภัยเมื่อ readiness เป็น READY_TO_EXECUTE เท่านั้น "
-                "และจะพา P.T. ไปถึง VISUAL_COVERAGE_READY โดยยังไม่ข้าม Human Approval ขั้นถัดไป"
-            ),
-            wraplength=820,
-        ).pack(anchor="w", pady=(8, 0))
-
-    def _build_candidate_tab(self, parent, key: str) -> None:
-        tk = self.tk
-        ttk = self.ttk
-        raw, items = _worksheet_items()
-        item = items.get(key, {})
-        vars_: dict[str, Any] = {
-            "operator": tk.StringVar(value=str(item.get("operator") or "")),
-            "start_seconds": tk.StringVar(value="" if item.get("start_seconds") is None else str(item.get("start_seconds"))),
-            "end_seconds": tk.StringVar(value="" if item.get("end_seconds") is None else str(item.get("end_seconds"))),
-            "key_seconds": tk.StringVar(value="" if item.get("key_seconds") is None else str(item.get("key_seconds"))),
-            "source_url": tk.StringVar(value=str(item.get("source_url") or "")),
-        }
-        self.slot_vars[key] = vars_
-
-        title = "วิดีโอ Lisa camera hack" if key == "LISA_X_DIRECT_VERIFIED" else "วิดีโอ TGA stage statement"
-        ttk.Label(parent, text=title, font=("Segoe UI", 14, "bold")).grid(row=0, column=0, columnspan=3, sticky="w")
-        ttk.Label(parent, text="หลักฐานเฉพาะโครงการ P.T. ที่เลือกแหล่งไว้แล้ว: " + key, wraplength=760).grid(row=1, column=0, columnspan=3, sticky="w", pady=(2, 2))
-        ttk.Label(parent, textvariable=vars_["source_url"], wraplength=760).grid(row=2, column=0, columnspan=3, sticky="w", pady=(0, 8))
-
-        buttons = ttk.Frame(parent)
-        buttons.grid(row=3, column=0, columnspan=3, sticky="w", pady=(0, 10))
-        ttk.Button(buttons, text="เลือกวิดีโอ…", command=lambda k=key: self.select_video(k)).pack(side="left", padx=(0, 6))
-        ttk.Button(buttons, text="เปิดโฟลเดอร์", command=lambda k=key: _open_path(INTAKE / k)).pack(side="left", padx=6)
-        ttk.Button(buttons, text="บันทึก inspection", command=lambda k=key: self.save_inspection(k)).pack(side="left", padx=6)
-
-        fields = [
-            ("Operator", "operator"),
-            ("Start (sec)", "start_seconds"),
-            ("End (sec)", "end_seconds"),
-            ("Key (sec, optional)", "key_seconds"),
-        ]
-        row = 4
-        for label, name in fields:
-            ttk.Label(parent, text=label).grid(row=row, column=0, sticky="w", pady=4)
-            ttk.Entry(parent, textvariable=vars_[name], width=36).grid(row=row, column=1, sticky="ew", pady=4)
-            row += 1
-
-        ttk.Label(parent, text="Visual content").grid(row=row, column=0, sticky="nw", pady=4)
-        visual = tk.Text(parent, height=5, wrap="word")
-        visual.insert("1.0", str(item.get("visual_content") or ""))
-        visual.grid(row=row, column=1, columnspan=2, sticky="nsew", pady=4)
-        vars_["visual_content_widget"] = visual
-        row += 1
-
-        ttk.Label(parent, text="Match reason").grid(row=row, column=0, sticky="nw", pady=4)
-        reason = tk.Text(parent, height=5, wrap="word")
-        reason.insert("1.0", str(item.get("match_reason") or ""))
-        reason.grid(row=row, column=1, columnspan=2, sticky="nsew", pady=4)
-        vars_["match_reason_widget"] = reason
-        row += 1
-
-        ttk.Label(parent, text="Inspection note").grid(row=row, column=0, sticky="nw", pady=4)
-        note = tk.Text(parent, height=5, wrap="word")
-        note.insert("1.0", str(item.get("inspection_note") or ""))
-        note.grid(row=row, column=1, columnspan=2, sticky="nsew", pady=4)
-        vars_["inspection_note_widget"] = note
-        row += 1
-
-        ttk.Label(
-            parent,
-            text="กรอกข้อมูลจากการดูไฟล์จริงเท่านั้น โดยเฉพาะช่วงเวลาและเหตุผลที่ยืนยันว่า media ตรงกับ source lock",
-            wraplength=760,
-        ).grid(row=row, column=0, columnspan=3, sticky="w", pady=(8, 0))
-        parent.columnconfigure(1, weight=1)
-        parent.rowconfigure(row - 3, weight=1)
-        parent.rowconfigure(row - 2, weight=1)
-        parent.rowconfigure(row - 1, weight=1)
-
-
-    def _build_documentary_tab(self, parent) -> None:
-        ttk=self.ttk
-        ttk.Label(parent,text="ค้นฟุตเทจสำหรับโครงการ P.T.",font=("Segoe UI",14,"bold")).pack(anchor="w")
-        ttk.Label(parent,text="สร้างคำค้นจาก Narration Beats ที่มีอยู่ แล้วค้นและประเมินแหล่งภาพ ผลลัพธ์เป็นรายงานประกอบการเลือก ยังไม่ใช่วิดีโอสารคดีสำเร็จรูป",wraplength=800).pack(anchor="w",pady=(2,5))
-        ttk.Label(parent,text="ลำดับวัตถุดิบ: YouTube → Web/Archive Video → Still/Document → AI (last resort)",wraplength=800).pack(anchor="w",pady=(0,10))
-        actions=ttk.Frame(parent);actions.pack(fill="x",pady=(0,10))
-        ttk.Button(actions,text="1. สร้าง Footage Search Plan",command=self.generate_footage_plan).pack(side="left",padx=(0,6))
-        ttk.Button(actions,text="2. ค้น YouTube + Timestamp",command=self.run_footage_research).pack(side="left",padx=6)
-        ttk.Button(actions,text="3. ค้นต่อ Web / Still",command=self.run_material_research).pack(side="left",padx=6)
-        ttk.Button(actions,text="เปิดโฟลเดอร์ผลลัพธ์",command=lambda:_open_path(FOOTAGE_OUTPUT)).pack(side="left",padx=6)
-        self.footage_text=self.tk.Text(parent,height=24,wrap="word");self.footage_text.pack(fill="both",expand=True)
-        self.footage_text.insert("1.0","ยังไม่ได้รัน Footage Research\n")
-        self.footage_text.configure(state="disabled")
-
-    def _show_footage_result(self, payload) -> None:
-        if hasattr(payload,'to_dict'): payload=payload.to_dict()
-        self.footage_text.configure(state="normal");self.footage_text.delete("1.0","end")
-        self.footage_text.insert("1.0",json.dumps(payload,ensure_ascii=False,indent=2,sort_keys=True))
-        self.footage_text.configure(state="disabled")
-
-    def generate_footage_plan(self) -> None:
-        def run():
-            FOOTAGE_OUTPUT.mkdir(parents=True,exist_ok=True)
-            payload=FootageQueryPlanner(ROOT,WORKSPACE).build().to_dict()
-            _json_write(FOOTAGE_OUTPUT/'FOOTAGE_QUERY_PLAN.json',payload)
-            return payload
-        self._async("กำลังสร้าง Footage Search Plan…",run,self._show_footage_result)
-
-    def run_footage_research(self) -> None:
-        def run():
-            FOOTAGE_OUTPUT.mkdir(parents=True,exist_ok=True)
-            report=FootageResearchRuntime(ROOT,WORKSPACE).run(per_query=5,inspect_top=3,timestamp_top=3).to_dict()
-            _json_write(FOOTAGE_OUTPUT/'FOOTAGE_RESEARCH_REPORT.json',report)
-            return report
-        self._async("กำลังค้น YouTube และวิเคราะห์ timestamp…",run,self._show_footage_result)
-
-    def run_material_research(self) -> None:
-        def run():
-            FOOTAGE_OUTPUT.mkdir(parents=True,exist_ok=True)
-            youtube=FootageResearchRuntime(ROOT,WORKSPACE).run(per_query=5,inspect_top=3,timestamp_top=3)
-            material=MaterialFallbackResearchRuntime(ROOT,WORKSPACE).run(youtube,per_query=5)
-            payload={'youtube':youtube.to_dict(),'material_fallback':material.to_dict()}
-            _json_write(FOOTAGE_OUTPUT/'MATERIAL_RESEARCH_REPORT.json',payload)
-            return payload
-        self._async("กำลังค้น YouTube → Web/Archive → Still/Document…",run,self._show_footage_result)
 
     def _build_system_tab(self, parent) -> None:
         ttk = self.ttk
-        self.system_text = self.tk.Text(parent, height=18, wrap="word")
-        self.system_text.pack(fill="both", expand=True)
         actions = ttk.Frame(parent)
         actions.pack(fill="x", pady=(8, 0))
-        ttk.Button(actions, text="System check", command=self.refresh_system_check).pack(side="left", padx=(0, 6))
-        ttk.Button(actions, text="เลือก ffprobe.exe…", command=self.choose_ffprobe).pack(side="left", padx=6)
-        ttk.Button(actions, text="Quick Audit", command=self.run_audit).pack(side="left", padx=6)
+        ttk.Button(actions, text="ตรวจเครื่องมือ", command=self.refresh_system_check).pack(side="left", padx=(0, 6))
+        ttk.Button(actions, text="เลือก ffprobe…", command=self.choose_ffprobe).pack(side="left", padx=6)
+        ttk.Button(actions, text="ตรวจโปรแกรม", command=self.run_audit).pack(side="left", padx=6)
+        self.system_text = self.tk.Text(parent, height=12, wrap="word")
+        self.system_text.pack(fill="both", expand=True, pady=8)
+        ttk.Label(parent, text='รายละเอียดเมื่อเกิดข้อผิดพลาด').pack(anchor='w')
+        self.log = self.tk.Text(parent, wrap='word', height=7, state='disabled')
+        self.log.pack(fill='both', expand=True)
         self.refresh_system_check()
 
     def log_line(self, text: str) -> None:
@@ -451,130 +215,21 @@ class OperatorApp:
         if done:
             done(result)
 
-    def refresh_readiness(self) -> None:
-        def run():
-            return PilotReadinessRuntime(ROOT, WORKSPACE).inspect(INTAKE, OUTPUT_DIR)
-        self._async("กำลังตรวจ readiness…", run, self._display_readiness)
-
-    def _display_readiness(self, result) -> None:
-        labels = {
-            "BLOCKED_MEDIA": "BLOCKED_MEDIA — ยังขาดวิดีโอต้นฉบับ",
-            "BLOCKED_INSPECTION": "BLOCKED_INSPECTION — รอการตรวจภาพจากไฟล์จริง",
-            "BLOCKED_PREFLIGHT": "BLOCKED_PREFLIGHT — ไฟล์หรือข้อมูลตรวจไม่ผ่าน",
-            "READY_TO_EXECUTE": "READY_TO_EXECUTE — พร้อมนำเข้าวิดีโอ",
-            "ALREADY_ADVANCED": "ผ่านขั้นตอนรับวิดีโอแล้ว",
-        }
-        self.state_var.set(labels.get(result.readiness, result.readiness))
-        self.version_var.set(f"{result.project_state} / manifest v{result.manifest_version}")
-        self.next_var.set(
-            "เพิ่มวิดีโอที่ตรงแหล่งในแท็บ Lisa และ TGA แล้วบันทึกผลตรวจภาพ"
-            if result.readiness == "BLOCKED_MEDIA" else result.next_action
-        )
-        for w in self.slot_summary.winfo_children():
-            w.destroy()
-        for idx, slot in enumerate(result.slots):
-            key = slot["candidate_key"]
-            name = "Lisa camera hack" if key == "LISA_X_DIRECT_VERIFIED" else "TGA stage statement"
-            text = f"{name}: วิดีโอ={'มีแล้ว' if slot['media_state'] != 'MISSING' else 'ยังขาด'} | ตรวจภาพ={'ครบ' if slot['inspection_complete'] else 'ยังไม่ครบ'}"
-            self.ttk.Label(self.slot_summary, text=text).grid(row=idx, column=0, sticky="w", pady=2)
-
-    def select_video(self, key: str) -> None:
-        from tkinter import filedialog, messagebox
-        selected = filedialog.askopenfilename(
-            title=f"เลือกวิดีโอสำหรับ {key}",
-            filetypes=[("Video files", "*.mp4 *.mov *.mkv *.webm *.m4v *.avi"), ("All files", "*.*")],
-        )
-        if not selected:
-            return
-        src = Path(selected)
-        slot = INTAKE / key
-        slot.mkdir(parents=True, exist_ok=True)
-        existing = [p for p in slot.iterdir() if p.is_file() and p.name not in {"README.txt", ".DS_Store", "Thumbs.db"} and not p.name.startswith(".")]
-        if existing:
-            if not messagebox.askyesno("แทนที่ไฟล์?", f"slot นี้มี {existing[0].name} อยู่แล้ว\nต้องการแทนที่ด้วย {src.name} หรือไม่?"):
-                return
-            for p in existing:
-                p.unlink()
-        dest = slot / src.name
-        shutil.copy2(src, dest)
-        self.log_line(f"Copied {src} -> {dest}")
-        messagebox.showinfo("GMK", f"ใส่ไฟล์ใน slot แล้ว:\n{dest.name}")
-        self.refresh_readiness()
-
-    @staticmethod
-    def _float_or_none(text: str) -> float | None:
-        text = text.strip()
-        if not text:
-            return None
-        return float(text)
-
-    def save_inspection(self, key: str) -> None:
-        from tkinter import messagebox
-        raw, items = _worksheet_items()
-        if key not in items:
-            messagebox.showerror("GMK", f"ไม่พบ inspection entry: {key}")
-            return
-        item = items[key]
-        v = self.slot_vars[key]
-        try:
-            item["operator"] = v["operator"].get().strip()
-            item["start_seconds"] = self._float_or_none(v["start_seconds"].get())
-            item["end_seconds"] = self._float_or_none(v["end_seconds"].get())
-            item["key_seconds"] = self._float_or_none(v["key_seconds"].get())
-        except ValueError:
-            messagebox.showerror("GMK", "Start / End / Key ต้องเป็นตัวเลขวินาที")
-            return
-        item["visual_content"] = v["visual_content_widget"].get("1.0", "end").strip()
-        item["match_reason"] = v["match_reason_widget"].get("1.0", "end").strip()
-        item["inspection_note"] = v["inspection_note_widget"].get("1.0", "end").strip()
-        _json_write(WORKSHEET, raw)
-        self.log_line(f"Saved inspection: {key}")
-        messagebox.showinfo("GMK", "บันทึก inspection แล้ว")
-        self.refresh_readiness()
-
-    def run_preflight(self) -> None:
-        from tkinter import messagebox
-        def run():
-            inspection = _json_load(WORKSHEET)
-            return PilotMediaProcessRuntime(ROOT, WORKSPACE).run(INTAKE, inspection, execute=False, output_dir=OUTPUT_DIR)
-        def done(result):
-            messagebox.showinfo("GMK", "Preflight ผ่าน" if result.ready else "Preflight ยังไม่พร้อม")
-            self.refresh_readiness()
-        self._async("กำลังรัน preflight…", run, done)
-
-    def execute_media(self) -> None:
-        from tkinter import messagebox
-        try:
-            readiness = PilotReadinessRuntime(ROOT, WORKSPACE).inspect(INTAKE, OUTPUT_DIR)
-        except Exception as exc:
-            messagebox.showerror("GMK", str(exc))
-            return
-        if readiness.readiness == "ALREADY_ADVANCED":
-            messagebox.showinfo("GMK", "P.T. ผ่าน media stage แล้ว ไม่ต้อง import ซ้ำ")
-            return
-        if not readiness.ready_to_execute:
-            messagebox.showwarning("GMK", f"ยัง Execute ไม่ได้\n\nสถานะ: {readiness.readiness}\n{readiness.next_action}")
-            return
-        if not messagebox.askyesno(
-            "ยืนยัน Execute",
-            "ไฟล์และ inspection ผ่าน authoritative preflight แล้ว\n\n"
-            "Execute จะ mutate PT_WORKSPACE และพาโปรเจกต์ผ่าน Asset Catalog / Visual Coverage\n"
-            "โดยจะหยุดก่อน Human Approval ขั้นถัดไป\n\nยืนยันหรือไม่?",
-        ):
-            return
-        def run():
-            inspection = _json_load(WORKSHEET)
-            return PilotMediaProcessRuntime(ROOT, WORKSPACE).run(INTAKE, inspection, execute=True, output_dir=OUTPUT_DIR)
-        def done(result):
-            messagebox.showinfo("GMK", f"Execute เสร็จ\nProject state: {result.project_state}")
-            self.refresh_readiness()
-        self._async("กำลัง Execute P.T. media…", run, done)
 
     def refresh_system_check(self) -> None:
         payload = system_check()
+        names = {'python_3_10_plus': 'Python', 'ffmpeg': 'ประกอบและเรนเดอร์วิดีโอ', 'ffprobe': 'อ่านข้อมูลภาพและเสียง',
+                 'yt_dlp': 'ค้นและดาวน์โหลดฟุตเทจ', 'drive_sync': 'ส่งไฟล์ไป Google Drive',
+                 'story_ai': 'สร้างโครงเรื่องด้วยบัญชี Codex', 'online_voice': 'สร้างเสียงฟรีผ่าน Edge TTS',
+                 'tkinter': 'หน้าจอโปรแกรม'}
+        lines = ['เครื่องมือสำหรับโปรเจกต์สารคดี', '']
+        for row in payload['checks']:
+            lines.append(('✓ พร้อม · ' if row['ok'] else 'ต้องติดตั้ง · ')+names[row['check']])
+            if not row['ok']: lines.append('  '+str(row.get('detail') or 'ใช้ INSTALL_GMK เพื่อเตรียมเครื่องมือ'))
+        lines += ['', 'เครื่องมือออนไลน์ที่ติดตั้งแล้ว ยังต้องเชื่อมบัญชีและมีโควตาที่ใช้ได้']
         self.system_text.configure(state="normal")
         self.system_text.delete("1.0", "end")
-        self.system_text.insert("1.0", json.dumps(payload, ensure_ascii=False, indent=2))
+        self.system_text.insert("1.0", '\n'.join(lines))
         self.system_text.configure(state="disabled")
 
     def choose_ffprobe(self) -> None:
@@ -611,9 +266,10 @@ class OperatorApp:
 
 
 def parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(prog="gmk-operator", description="GMK P.T. desktop operator surface")
-    p.add_argument("--headless-status", action="store_true", help="Print readiness JSON without opening a GUI.")
-    p.add_argument("--system-check", action="store_true", help="Print Windows/runtime dependency check JSON.")
+    p = argparse.ArgumentParser(prog="gmk-operator", description="GMK documentary project workspace")
+    p.add_argument("--headless-status", action="store_true", help="List user projects or inspect --project without opening a GUI.")
+    p.add_argument("--project", type=Path, help="Project directory for --headless-status.")
+    p.add_argument("--system-check", action="store_true", help="Print local production-tool checks.")
     p.add_argument("--json", action="store_true")
     return p
 
@@ -626,17 +282,16 @@ def main(argv: list[str] | None = None) -> int:
         return 0 if payload["ok"] else 2
     if args.headless_status:
         try:
-            payload = headless_status()
+            payload = headless_status(args.project)
         except Exception as exc:
             print(json.dumps({"error": type(exc).__name__, "message": str(exc)}, ensure_ascii=False, indent=2))
             return 2
         print(json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True))
-        return 0 if payload.get("ready_to_execute") or payload.get("readiness") == "ALREADY_ADVANCED" else 2
+        return 0
     check = system_check()
     if not check["ok"]:
-        # A GUI can still launch so the operator can select ffprobe from the System tab,
-        # but missing Python/Tk/workspace is fatal.
-        fatal = [x for x in check["checks"] if not x["ok"] and x["check"] != "ffprobe"]
+        # Tool setup is available in the GUI; only Python/Tk are needed to open it.
+        fatal = [x for x in check["checks"] if not x["ok"] and x['check'] in {'python_3_10_plus', 'tkinter'}]
         if fatal:
             print(json.dumps(check, ensure_ascii=False, indent=2), file=sys.stderr)
             return 2

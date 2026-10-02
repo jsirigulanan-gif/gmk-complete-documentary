@@ -46,6 +46,8 @@ The product must support this complete lifecycle:
 
 ## One coherent project
 
+The product app must expose general documentary work only. Remove unrelated demonstration projects, fixed Lisa/TGA media slots and obsolete duplicate controls from the user workflow. Opening the app must not require an example project's files. Show one project, its actual missing work, and the next useful action.
+
 Use the existing StateEngine, versioned references, dependency invalidation, and production/release gates as the authoritative production record. The Drive asset catalog provides storage receipts; it must not be a second authority for production completion. The desktop UI and CLI expose the same project and operations.
 
 Every stage consumes explicit upstream versions and emits real artifacts with provenance. Editing a claim, script, selected clip, narration, or timeline invalidates affected downstream results. Retry/resume reuses only artifacts whose dependencies still match. The UI must display the current task, actual outputs, blockers, and the next valid action, without requiring users to construct internal JSON by hand.

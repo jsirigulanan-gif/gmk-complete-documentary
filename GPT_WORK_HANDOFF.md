@@ -1,6 +1,26 @@
 # Continuation Handoff — GMK Complete Documentary Maker
 
-## Current continuation (Build 051)
+## Current continuation (Build 052)
+
+The user asked to complete the documentary product and remove unrelated functions. The desktop app now exposes only general documentary projects and setup; P.T./Lisa/TGA UI, pilot path requirements, legacy media execution controls, duplicate raw-file/research/delivery controls and the separate Log tab were removed. Legacy core engines/fixtures remain available outside the product app. No private project/media files were deleted.
+
+`brief.py`, `media_review.py` and `workflow.py` add editable topic/audience/question/length/scope, exact shot/listening review records, and a derived readiness view of all 20 requested lifecycle stages. It routes to the next task, accounts for voice timing before footage, rejects missing local bytes as ready, and never advances another state machine. Film approval optionally records the eight named checks; the GUI requires them. Existing legacy API approvals remain draft decisions and do not satisfy the new full-film readiness check.
+
+CLI: `workflow`, `brief-save`, `shot-review`, `voice-review`, `research-add-claim`; `editorial-approve --review-check <key>` accepts the full named checklist. `gmk-operator --headless-status` lists user projects; `--project <directory>` inspects that project's canonical status. System checks concern actual production tools, not a bundled pilot. Tool installation does not prove live account/quota readiness.
+
+`research_draft.py` closes the empty-claim UI dead end for unstructured research: select an excerpt from a registered original and create one UNREVIEWED assertion. Immutable JSON retains the original asset hash/path and exact excerpt; replay is idempotent, source-independence remains imported UNKNOWN, and script/edit files are preserved. Existing extraction questions remain open; this is partial explicit extraction, not a declaration that all research is extracted or verified. Live GUI interaction passed excerpt selection → claim creation with no provider calls.
+
+Explicit research import can reopen the three early narrative stages within its registration transaction, preserving old research and the edit. It still rejects later locked production revisions. The general editor has a readiness page, scrollable story/footage forms, exact media review dialogs, an eight-part film review dialog and one delivery action. The installed launcher name was updated to GMK Documentary Maker.
+
+Readiness includes `next_scene_id` for media recovery; missing bytes take priority over old approval hashes. Lost footage routes to acquisition, not review. Research forms scroll with save controls outside the viewport.
+
+`Project.add_file` now restores missing registered bytes on exact-original reimport, retaining asset identity and scene/source refs. Previously the deduplication branch returned an absent file reference. Existing changed bytes fail explicitly and are preserved. Exact restored bytes can satisfy their original reviews again; changed narration/media still requires a new review.
+
+Audit `_run` now handles byte/string partial output from `TimeoutExpired` without aborting the report. Build 052 workflow and extraction tests have separate FAST partitions. The initial aggregate run during overlapping targeted tests crashed in that old reporting branch; it is not a pass. Final results are in BUILD_052_VALIDATION.md.
+
+Validation: initial affected regression 65 PASS; final workflow/recovery/storage 36 PASS, including all 15 Build 052 cases (overlapping runs are not added). QUICK after the timeout fix: 35 PASS / 0 FAIL / 0 TIMEOUT / 1 legacy WARN. The final storage changes are covered by the subsequent 36-case run. Live GUI interaction carried a synthetic project through readiness → render → eight-part review → exact local export, stopping at Drive pending; the extra research GUI check passed manual excerpt extraction. Full product completion remains unfinished: canonical asset/coverage/final script/voice/scene/shot/render/QA/release adapters and real provider/Drive/short-film/long-film acceptance remain needed. Do not claim a complete automatic documentary from this build. Continue GMK despite the Sunshine/Veocut files shown in the IDE; they were not edited.
+
+## Previous continuation (Build 051)
 
 `gmk_projects/production_bridge.py` connects explicitly reviewed draft scenes to the existing StateEngine: RESEARCH_AUDITED → ROUGH_NARRATIVE_READY → VISUAL_REQUIREMENTS_READY. `inspect_story` previews blockers and pins edit/manifest hashes. `connect_story` uses those tokens, validates every gate in memory, and persists only after success. It retains stable scene/beat IDs through reorder, exclusion and reinclusion. It does not grant final script, asset, shot, voice, render or release approval.
 

@@ -13,14 +13,12 @@ from gmk_runtime.media_tools import resolve_ffprobe
 
 def main() -> int:
     check=system_check()
-    assert check['build']=='041'
-    assert any(x['check']=='workspace_present' and x['ok'] for x in check['checks'])
-    assert any(x['check']=='intake_present' and x['ok'] for x in check['checks'])
+    assert int(check['build']) >= 52
+    assert any(x['check']=='ffmpeg' and x['ok'] for x in check['checks'])
     assert resolve_ffprobe()
     status=headless_status()
-    assert status['project_state']=='ASSET_RECON'
-    assert status['readiness']=='BLOCKED_MEDIA'
-    print(json.dumps({'operator_system_check':check,'readiness':status['readiness']},ensure_ascii=False,indent=2))
+    assert status['workspace_mutated'] is False
+    print(json.dumps({'operator_system_check':check,'projects':len(status['projects'])},ensure_ascii=False,indent=2))
     return 0
 
 if __name__=='__main__':

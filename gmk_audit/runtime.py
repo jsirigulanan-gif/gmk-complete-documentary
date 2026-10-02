@@ -71,6 +71,8 @@ class AuditRuntime:
         ('build049_editor_records', ('tests/build049/test_story_footage.py', 'tests/build049/test_evidence_review.py', 'tests/build049/test_edit_checkpoint.py', 'tests/build049/test_script_review.py')),
         ('build050_delivery_receipts', ('tests/build050/test_storage_receipts.py', 'tests/build050/test_delivery.py::test_missing_export_has_actionable_error_without_creating_edit')),
         ('build051_story_bridge', ('tests/build051', 'tests/dependency/test_dependency_engine.py::test_repeated_promotions_persist_same_stale_envelope_as_cold_start')),
+        ('build052_workflow', ('tests/build052/test_workflow.py', 'tests/build052/test_audit_timeout.py')),
+        ('build052_research_draft', ('tests/build052/test_research_draft.py', 'tests/build052/test_asset_recovery.py')),
     )
     FULL_BASE_PARTITIONS=(
         ('core_engines', ('tests/state','tests/dependency','tests/gate','tests/runtime','tests/semantic')),
@@ -218,7 +220,9 @@ class AuditRuntime:
         try:
             p=subprocess.run(cmd,cwd=self.root,text=True,capture_output=True,timeout=timeout)
         except subprocess.TimeoutExpired as exc:
-            detail=((exc.stdout or '')+(exc.stderr or ''))[-2000:]
+            # TimeoutExpired can retain bytes even when run(text=True) was used.
+            detail=''.join(part.decode('utf-8',errors='replace') if isinstance(part,bytes)
+                           else part or '' for part in (exc.stdout,exc.stderr))[-2000:]
             return self._result(name,'TIMEOUT',detail,duration=time.monotonic()-start)
         detail=((p.stdout or '')+(p.stderr or '')).strip()
         if len(detail)>4000: detail=detail[-4000:]

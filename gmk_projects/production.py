@@ -90,7 +90,8 @@ class ProductionProject:
             existing = next((a for a in engine.snapshot().artifacts.values()
                              if a.get('artifact_type') == 'RESEARCH_PACK' and marker in a.get('notes', [])), None)
             if existing is None:
-                if engine.project_state not in ('BOOTSTRAPPED', 'RESEARCH_INTAKE'):
+                reopen = engine.project_state in ('RESEARCH_AUDITED', 'ROUGH_NARRATIVE_READY', 'VISUAL_REQUIREMENTS_READY')
+                if engine.project_state not in ('BOOTSTRAPPED', 'RESEARCH_INTAKE') and not reopen:
                     raise StorageError('Research revision after audit requires the core revision/invalidation workflow')
                 target = self.workspace/'inputs'/'research'/source.name
                 target.parent.mkdir(parents=True, exist_ok=True)
@@ -98,6 +99,8 @@ class ProductionProject:
                     raise StorageError('Immutable research copy mismatch')
                 shutil.copyfile(source, target)
                 tx = engine.begin()
+                if reopen:
+                    tx.reenter_stage('RESEARCH_INTAKE', actor_type='HUMAN')
                 tx.create_artifact('RESEARCH_PACK', {
                     'title': asset['original_name'],
                     'research_summary': 'User-supplied research/script source registered by exact bytes. Evidence, claims and editorial audit remain pending.',

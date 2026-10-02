@@ -4,6 +4,9 @@ See PRODUCT_REQUIREMENTS.md for the complete user requirement. This plan keeps a
 
 ## Current evidence
 
+- Build 052 removes the unrelated demonstration UI and pilot dependencies from the product app. It adds new-topic briefs, readiness across all 20 lifecycle stages, guided next actions, exact picture/listening decisions and eight-part full-film review. These use the actual draft/core/asset records; the readiness view is not another completion authority. A synthetic GUI project passed guided local rendering, review and exact export. Final canonical adapters and real acceptance remain required.
+- Unstructured research now supports explicit excerpt-based claim extraction with immutable provenance and UNREVIEWED status. Media recovery routes back to the specific missing-file scene; absent footage requires acquisition before review. Neither operation approves facts or completes production.
+
 - The legacy StateEngine supports versioned core objects, evidence/dependencies, gates, persistent manifests, QA and release records. Many component tests operate on supplied plans and fixtures.
 - Build 049 extends canonical intake with archived external source text, explicit versioned claim review, and scene-to-claim wording review. Compound claim splitting and independent evidence review remain manual.
 - Build 051 connects reviewed editor stories to canonical Acts/Scenes/Narration Beats and visual requirements through existing gates. Reordering and exclusions retain identity/history; repeated claim revisions invalidate the binding and remain reloadable. Canonical footage query intents feed automatic shot proposals. Asset registration/coverage and downstream canonical script/shot/render/release integration remain pending.

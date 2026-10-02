@@ -25,12 +25,26 @@ class EditorWindow:
         ttk.Label(self.window, textvariable=self.status, wraplength=1080).pack(fill='x', padx=12, pady=8)
         self.book = ttk.Notebook(self.window)
         self.book.pack(fill='both', expand=True, padx=12, pady=8)
+        workflow = ttk.Frame(self.book, padding=10)
+        self.book.add(workflow, text='ภาพรวมและงานถัดไป')
+        actions = ttk.Frame(workflow)
+        actions.pack(fill='x')
+        ttk.Button(actions, text='ตั้งโจทย์สารคดี', command=self.edit_brief).pack(side='left')
+        ttk.Button(actions, text='เพิ่มเอกสารรีเสิร์ช', command=self.import_research).pack(side='left', padx=6)
+        ttk.Button(actions, text='ตรวจความพร้อมทั้งโปรเจกต์', command=self.inspect_workflow).pack(side='left')
+        self.next_button = ttk.Button(actions, text='ทำขั้นตอนถัดไป', command=self.continue_workflow, state='disabled')
+        self.next_button.pack(side='left', padx=6)
+        self.workflow_result = None
+        self.workflow_text = tk.Text(workflow, wrap='word', state='disabled')
+        self.workflow_text.pack(fill='both', expand=True, pady=10)
         story = ttk.Frame(self.book, padding=10)
-        footage = ttk.Frame(self.book, padding=10)
+        footage_page = ttk.Frame(self.book, padding=10)
+        footage = self.scrollable_frame(footage_page)
         finish = ttk.Frame(self.book, padding=10)
         self.book.add(story, text='1 · บท ฉาก และเสียง')
-        self.book.add(footage, text='2 · ค้นภาพและตัดช็อต')
+        self.book.add(footage_page, text='2 · ค้นภาพและตัดช็อต')
         self.book.add(finish, text='3 · ไทม์ไลน์และส่งออก')
+        self.story_tab, self.footage_tab, self.finish_tab = story, footage_page, finish
         left = ttk.Frame(story)
         left.pack(side='left', fill='y', padx=(0,12))
         self.scenes = tk.Listbox(left, width=27, exportselection=False)
@@ -40,8 +54,9 @@ class EditorWindow:
             ttk.Button(left, text=label, command=action).pack(fill='x', pady=3)
         ttk.Button(left, text='ให้ AI สร้างโครงเรื่อง', command=self.generate_story).pack(fill='x', pady=8)
         ttk.Button(left, text='เชื่อมบทเข้าระบบผลิต', command=self.production_story).pack(fill='x', pady=3)
-        right = ttk.Frame(story)
-        right.pack(fill='both', expand=True)
+        right_outer = ttk.Frame(story)
+        right_outer.pack(fill='both', expand=True)
+        right = self.scrollable_frame(right_outer)
         self.title = tk.StringVar()
         self.included = tk.BooleanVar(value=True)
         self.hold = tk.BooleanVar()
@@ -69,7 +84,7 @@ class EditorWindow:
         row.pack(fill='x')
         ttk.Button(row, text='สร้างเสียงฉากนี้ · Edge ออนไลน์', command=lambda: self.synthesize(False)).pack(side='left')
         ttk.Button(row, text='สร้างเสียงฉากที่เลือกทั้งหมด', command=lambda: self.synthesize(True)).pack(side='left', padx=4)
-        ttk.Button(right, text='นำเสียงที่เคยสร้างในโปรเจกต์มาใช้', command=self.import_old_voice).pack(anchor='w', pady=5)
+        ttk.Button(right, text='ยืนยันว่าฟังเสียงฉากนี้แล้ว', command=self.review_voice).pack(anchor='w', pady=3)
         ttk.Button(right, text='เปิดรีเสิร์ชและแหล่งอ้างอิง', command=self.open_research).pack(anchor='w')
         ttk.Button(right, text='ตรวจบทฉากนี้กับหลักฐาน', command=self.review_claims).pack(anchor='w', pady=3)
         self.voice_status = tk.StringVar()
@@ -109,6 +124,7 @@ class EditorWindow:
         ttk.Button(row, text='เลื่อนขึ้น', command=lambda: self.move_shot(-1)).pack(side='left', padx=5)
         ttk.Button(row, text='เลื่อนลง', command=lambda: self.move_shot(1)).pack(side='left')
         ttk.Button(row, text='เอาช็อตออกจากฉาก', command=self.remove_shot).pack(side='left', padx=5)
+        ttk.Button(footage, text='ตรวจภาพในช็อตที่เลือก', command=self.review_shot).pack(anchor='w', pady=5)
         ttk.Label(footage, text='ไฟล์ที่เอาออกจากฉากยังอยู่ในคลัง และรออัปโหลดไปโฟลเดอร์ Drive ของโปรเจกต์').pack(anchor='w')
 
         row = ttk.Frame(finish)
@@ -123,7 +139,9 @@ class EditorWindow:
         ttk.Scale(row, from_=0, to=.4, variable=self.gain).pack(side='left', fill='x', expand=True)
         self.music_status = tk.StringVar()
         ttk.Label(finish, textvariable=self.music_status).pack(anchor='w', pady=6)
-        self.timeline = tk.Text(finish, height=19, wrap='word', state='disabled')
+        self.music_omitted = tk.BooleanVar(value=self.data.get('music_omitted', False))
+        ttk.Checkbutton(finish, text='ตั้งใจไม่ใช้ดนตรีในเรื่องนี้', variable=self.music_omitted).pack(anchor='w')
+        self.timeline = tk.Text(finish, height=12, wrap='word', state='disabled')
         self.timeline.pack(fill='both', expand=True)
         row = ttk.Frame(finish)
         row.pack(fill='x', pady=6)
@@ -131,16 +149,27 @@ class EditorWindow:
             ttk.Button(row, text=label, command=action).pack(side='left', padx=3)
         row = ttk.Frame(finish)
         row.pack(fill='x')
-        ttk.Button(row, text='ยืนยันว่าดูและฟังทั้งเรื่องแล้ว', command=self.approve).pack(side='left')
+        ttk.Button(row, text='ตรวจวิดีโอทั้งเรื่อง', command=self.approve).pack(side='left')
         ttk.Button(row, text='สร้างชุดส่งออกฉบับร่าง', command=self.export).pack(side='left', padx=5)
-        ttk.Button(row, text='อัปโหลดและตรวจไฟล์บน Drive', command=self.sync).pack(side='left')
         row = ttk.Frame(finish)
         row.pack(fill='x', pady=4)
-        ttk.Button(row, text='ตรวจชุดส่งออกกับงานรุ่นปัจจุบัน', command=self.verify_delivery).pack(side='left')
-        ttk.Button(row, text='ส่งชุดฉบับร่างและตรวจสำเนาบน Drive', command=self.deliver).pack(side='left', padx=5)
+        ttk.Button(row, text='ส่งชุดส่งออกและคลังฟุตเทจไป Drive', command=self.deliver).pack(side='left', padx=5)
         ttk.Label(finish, text='การตรวจไฟล์ทางเทคนิคไม่ใช่การตรวจข้อเท็จจริง ต้องตรวจภาพ เสียง คำบรรยาย และแหล่งอ้างอิงก่อนส่งมอบ', wraplength=1000).pack(anchor='w', pady=8)
         self.window.protocol('WM_DELETE_WINDOW', self.close)
         self.reload()
+
+    def scrollable_frame(self, parent):
+        tk, ttk = self.app.tk, self.app.ttk
+        canvas = tk.Canvas(parent, highlightthickness=0)
+        scrollbar = ttk.Scrollbar(parent, orient='vertical', command=canvas.yview)
+        scrollbar.pack(side='right', fill='y')
+        canvas.pack(side='left', fill='both', expand=True)
+        canvas.configure(yscrollcommand=scrollbar.set)
+        frame = ttk.Frame(canvas)
+        item = canvas.create_window((0, 0), window=frame, anchor='nw')
+        frame.bind('<Configure>', lambda _: canvas.configure(scrollregion=canvas.bbox('all')))
+        canvas.bind('<Configure>', lambda event: canvas.itemconfigure(item, width=event.width))
+        return frame
 
     def run(self, label, operation, done=None):
         if self.app._busy:
@@ -187,6 +216,9 @@ class EditorWindow:
                      visual=self.visual.get('1.0','end-1c'), included=self.included.get(),
                      hold_last_frame=self.hold.get(), show_title=self.overlay.get())
         self.data['music_gain'] = self.gain.get()
+        if self.music_omitted.get() or 'music_omitted' in self.data:
+            self.data['music_omitted'] = self.music_omitted.get()
+        if self.music_omitted.get(): self.data['music'] = None
         self.data['width'], self.data['height'] = [(640,360),(1280,720),(1920,1080)][self.resolution.current()]
 
     def save(self):
@@ -201,6 +233,14 @@ class EditorWindow:
 
     def reload(self):
         self.data = self.session.load()
+        self.music_omitted.set(self.data.get('music_omitted', False))
+        self.workflow_result = None
+        self.next_button.configure(state='disabled')
+        self.workflow_text.configure(state='normal')
+        self.workflow_text.delete('1.0', 'end')
+        self.workflow_text.insert('1.0', 'ตรวจความพร้อมทั้งโปรเจกต์เพื่อดูขั้นตอนปัจจุบัน สิ่งที่ยังขาด และงานถัดไป\n\n'+
+                                  'หัวเรื่อง → รีเสิร์ช/หลักฐาน → บท → ภาพและเสียง → ตัดต่อ → เรนเดอร์ → ตรวจทั้งเรื่อง → ส่งออก')
+        self.workflow_text.configure(state='disabled')
         self.index = min(self.index, len(self.data['scenes'])-1)
         self.scenes.delete(0,'end')
         for scene in self.data['scenes']:
@@ -265,13 +305,135 @@ class EditorWindow:
         ids = None if all_scenes else [self.data['scenes'][self.index]['id']]
         self.run('กำลังสร้างเสียงออนไลน์', lambda: self.session.synthesize(provider, scene_ids=ids))
 
-    def import_old_voice(self):
-        if self.save(): self.run('กำลังเชื่อมเสียงเดิม', self.session.import_existing_voice)
-
     def open_research(self):
         from .evidence import ResearchWindow
         if self.save():
             ResearchWindow(self.app,self.project)
+
+    def import_research(self):
+        from gmk_projects.intake import import_research
+        chosen = filedialog.askopenfilename(parent=self.window, title='เพิ่มเอกสารรีเสิร์ชให้โปรเจกต์นี้',
+                                           filetypes=[('Research', '*.docx *.txt *.json')])
+        if chosen:
+            self.run('กำลังเก็บและนำเข้ารีเสิร์ช', lambda: import_research(self.project, Path(chosen)))
+
+    def edit_brief(self):
+        if self.app._busy or not self.save(): return
+        from gmk_projects.brief import save_brief
+        tk, ttk = self.app.tk, self.app.ttk
+        dialog = tk.Toplevel(self.window); dialog.title('โจทย์สารคดี'); dialog.geometry('780x440')
+        dialog.transient(self.window); dialog.grab_set()
+        brief = self.data.get('brief') or {}
+        fields = {}
+        for key, label, value in [('topic', 'หัวเรื่อง', self.data['title']),
+                                  ('audience', 'กลุ่มผู้ชม', brief.get('audience', '')),
+                                  ('central_question', 'คำถามหลักที่เรื่องจะตอบ', self.data.get('central_question', '')),
+                                  ('target_seconds', 'ความยาวเป้าหมาย (วินาที)', str(brief.get('target_seconds', 180))),
+                                  ('scope', 'ขอบเขตและมุมที่ต้องการเล่า', brief.get('scope', ''))]:
+            ttk.Label(dialog, text=label).pack(anchor='w', padx=12, pady=(8, 0))
+            fields[key] = tk.StringVar(value=value)
+            ttk.Entry(dialog, textvariable=fields[key]).pack(fill='x', padx=12, pady=3)
+        def confirm():
+            try: seconds = int(fields['target_seconds'].get())
+            except ValueError: return messagebox.showerror('GMK', 'ความยาวต้องเป็นจำนวนเต็มวินาที', parent=dialog)
+            values = {key: variable.get() for key, variable in fields.items()}; values['target_seconds'] = seconds
+            revision = self.data['revision']
+            self.run('กำลังบันทึกโจทย์สารคดี', lambda: save_brief(self.project, **values, expected_revision=revision),
+                     lambda _: dialog.destroy())
+        ttk.Button(dialog, text='บันทึกโจทย์', command=confirm).pack(anchor='w', padx=12, pady=12)
+
+    def inspect_workflow(self):
+        from gmk_projects.workflow import workflow_status
+        def done(result):
+            self.workflow_result = result
+            lines = ['งานถัดไป: '+result['next_label'], '']
+            lines += [('✓ ' if row['ready'] else 'รอ · ')+row['label']+'\n  '+row['detail'] for row in result['stages']]
+            self.workflow_text.configure(state='normal'); self.workflow_text.delete('1.0', 'end')
+            self.workflow_text.insert('1.0', '\n'.join(lines)); self.workflow_text.configure(state='disabled')
+            self.next_button.configure(state='normal' if result['next_action'] not in (None, 'FINAL_RELEASE') else 'disabled')
+        self.run('กำลังตรวจความพร้อมทั้งโปรเจกต์', lambda: workflow_status(self.project), done)
+
+    def continue_workflow(self):
+        from gmk_projects.edit import fingerprint
+        result = self.workflow_result
+        if not result: return
+        if not self.save(): return
+        if fingerprint(self.data) != result.get('edit_sha256', fingerprint(self.data)):
+            return messagebox.showinfo('GMK', 'บทเปลี่ยนแล้ว กรุณาตรวจความพร้อมใหม่', parent=self.window)
+        action = result['next_action']
+        direct = {'BRIEF': self.edit_brief, 'IMPORT_RESEARCH': self.import_research, 'RESEARCH': self.open_research,
+                  'STORY': self.generate_story, 'PRODUCTION': self.production_story, 'TIMELINE': self.preflight,
+                  'RENDER': self.render, 'FILM_QA': self.approve, 'EXPORT': self.export, 'DRIVE': self.deliver}
+        if action in direct:
+            direct[action](); return
+        if action == 'CONNECT':
+            from gmk_projects.production import ProductionProject
+            self.run('กำลังเชื่อมโปรเจกต์', ProductionProject(self.project).connect_existing); return
+        if action == 'VOICE':
+            from gmk_projects.media_review import voice_review_current
+            target = result.get('next_scene_id')
+            if target:
+                self.index = next((i for i, s in enumerate(self.data['scenes']) if s['id'] == target), self.index)
+            else:
+                self.index = next((i for i, s in enumerate(self.data['scenes']) if s['included'] and not voice_review_current(s)), self.index)
+            self.reload(); self.book.select(self.story_tab)
+        elif action in ('FOOTAGE', 'SHOT_REVIEW'):
+            from gmk_projects.media_review import shot_review_current
+            target = result.get('next_scene_id')
+            if target:
+                self.index = next((i for i, s in enumerate(self.data['scenes']) if s['id'] == target), self.index)
+            else:
+                self.index = next((i for i, s in enumerate(self.data['scenes']) if s['included'] and
+                                   (not s['shots'] or any(not shot_review_current(s, cut) for cut in s['shots']))), self.index)
+            self.reload(); self.book.select(self.footage_tab)
+            if action == 'SHOT_REVIEW':
+                scene = self.data['scenes'][self.index]
+                index = next((i for i, cut in enumerate(scene['shots']) if not shot_review_current(scene, cut)), None)
+                if index is not None: self.shots.selection_set(index); self.review_shot()
+        elif action == 'DESIGN': self.book.select(self.finish_tab)
+        elif action == 'SCRIPT':
+            rows = result['timeline']['script_review']['scenes']
+            target = next((r['scene_id'] for r in rows if r['issues']), None)
+            if target: self.index = next(i for i, s in enumerate(self.data['scenes']) if s['id'] == target)
+            self.reload(); self.book.select(self.story_tab); self.review_claims()
+        else: self.book.select(self.story_tab)
+
+    def review_voice(self):
+        if not self.save(): return
+        if not messagebox.askyesno('ตรวจเสียง', 'คุณฟังเสียงฉากนี้ครบและตรวจคำอ่านแล้วหรือไม่?', parent=self.window): return
+        from gmk_projects.media_review import review_voice
+        scene_id, revision = self.data['scenes'][self.index]['id'], self.data['revision']
+        self.run('กำลังบันทึกผลฟังเสียง', lambda: review_voice(self.project, scene_id, expected_revision=revision))
+
+    def review_shot(self):
+        selected = self.shots.curselection()
+        if not selected: return messagebox.showinfo('GMK', 'เลือกช็อตที่จะตรวจก่อน', parent=self.window)
+        shot_id = self.data['scenes'][self.index]['shots'][selected[0]]['id']
+        if not self.save(): return
+        from gmk_projects.media_review import review_shot
+        scene = self.data['scenes'][self.index]; shot = next(c for c in scene['shots'] if c['id'] == shot_id)
+        tk, ttk = self.app.tk, self.app.ttk
+        dialog = tk.Toplevel(self.window); dialog.title('ตรวจช่วงภาพกับบท'); dialog.geometry('800x560')
+        dialog.transient(self.window); dialog.grab_set()
+        context = tk.Text(dialog, height=6, wrap='word')
+        context.insert('1.0', f'{scene["title"]} · {shot["in_seconds"]:.2f}–{shot["out_seconds"]:.2f} วินาที\n'+
+                       'บท: '+scene['narration']+'\nภาพที่ต้องการ: '+scene['visual'])
+        context.configure(state='disabled'); context.pack(fill='x', padx=12, pady=12)
+        ttk.Button(dialog, text='เปิดไฟล์ภาพเพื่อตรวจ', command=lambda: webbrowser.open((self.project.root/shot['path']).as_uri())).pack(anchor='w', padx=12)
+        fields = {}
+        footer = ttk.Frame(dialog); footer.pack(side='bottom', fill='x', padx=12, pady=12)
+        for key, label in [('visible_content', 'ภาพที่เห็นจริงในช่วงเวลานี้'), ('match_reason', 'ภาพช่วงนี้ช่วยอธิบายบทอย่างไร')]:
+            ttk.Label(dialog, text=label).pack(anchor='w', padx=12, pady=(8, 0))
+            fields[key] = tk.Text(dialog, height=4, wrap='word'); fields[key].pack(fill='both', expand=True, padx=12, pady=4)
+        match = ttk.Combobox(footer, state='readonly', values=['หลักฐานโดยตรง', 'ภาพสนับสนุน', 'ภาพบริบท/ประกอบ'], width=23)
+        match.current(2); match.pack(side='left')
+        revision, scene_id = self.data['revision'], scene['id']
+        def confirm():
+            values = {key: widget.get('1.0', 'end-1c') for key, widget in fields.items()}
+            kind = ['DIRECT', 'SUPPORTING', 'CONTEXT'][match.current()]
+            self.run('กำลังบันทึกผลตรวจภาพ', lambda: review_shot(self.project, scene_id, shot_id, **values,
+                     match_type=kind, expected_revision=revision), lambda _: dialog.destroy())
+        ttk.Button(footer, text='บันทึกผลตรวจช่วงภาพ', command=confirm).pack(side='left', padx=8)
 
     def search(self):
         from gmk_projects.footage import search_footage
@@ -321,7 +483,7 @@ class EditorWindow:
         from gmk_projects.footage import prepare_project_footage
         def progress(message):self.app.root.after(0,lambda:self.status.set(message))
         def done(result):
-            self.show_plan(result['preflight']);self.book.select(2)
+            self.show_plan(result['preflight']);self.book.select(self.finish_tab)
             failed=[row.get('reason','') for row in result['scenes'] if not row['prepared']]
             if failed:messagebox.showinfo('GMK','บางฉากต้องค้นหรือเลือกภาพเพิ่ม:\n'+'\n'.join(failed)[:1600],parent=self.window)
         self.run('กำลังเตรียมภาพทุกฉาก',lambda:prepare_project_footage(self.project,progress=progress),done)
@@ -392,6 +554,7 @@ class EditorWindow:
                 info=probe(Path(path))
                 if not any(s['codec_type']=='audio' for s in info['streams']): raise ValueError('ไฟล์นี้ไม่มีเสียง')
                 data=self.session.load(); data['music']=media_ref(self.project.add_file(Path(path),'music'))
+                data['music_omitted'] = False
                 return self.session.save(data,expected_revision=data['revision'])
             self.run('กำลังเพิ่มดนตรี',run)
 
@@ -427,16 +590,27 @@ class EditorWindow:
         path=self.project.root/'last_render.json'
         if not path.exists(): return messagebox.showinfo('GMK','เรนเดอร์ก่อนครับ',parent=self.window)
         result=json.loads(path.read_text())
-        if messagebox.askyesno('ตรวจทั้งเรื่อง','คุณดูและฟังวิดีโอรุ่นนี้ครบแล้ว และตรวจภาพ เสียง คำบรรยาย รวมถึงเนื้อหาแล้วใช่หรือไม่?',parent=self.window):
-            self.run('กำลังบันทึกผลตรวจ',lambda: approve_editorial_review(self.project,expected_master_sha256=result['technical_qa']['sha256']))
+        from gmk_projects.workflow import FILM_CHECKS
+        dialog = self.app.tk.Toplevel(self.window)
+        dialog.title('ตรวจสารคดีทั้งเรื่อง'); dialog.geometry('720x460')
+        dialog.transient(self.window); dialog.grab_set()
+        self.app.ttk.Label(dialog, text='เปิดดูและฟังวิดีโอรุ่นนี้ครบทั้งเรื่องก่อนยืนยัน', wraplength=680).pack(anchor='w', padx=12, pady=12)
+        choices = {}
+        for key, label in FILM_CHECKS.items():
+            choices[key] = self.app.tk.BooleanVar(value=False)
+            self.app.ttk.Checkbutton(dialog, text=label, variable=choices[key]).pack(anchor='w', padx=12, pady=3)
+        def confirm():
+            checks = {key: value.get() for key, value in choices.items()}
+            if not all(checks.values()):
+                return messagebox.showinfo('GMK', 'ตรวจและยืนยันทุกด้านก่อนบันทึก', parent=dialog)
+            self.run('กำลังบันทึกผลตรวจทั้งเรื่อง', lambda: approve_editorial_review(self.project,
+                     expected_master_sha256=result['technical_qa']['sha256'], checklist=checks), lambda _: dialog.destroy())
+        self.app.ttk.Button(dialog, text='บันทึกผลตรวจวิดีโอรุ่นนี้', command=confirm).pack(anchor='w', padx=12, pady=12)
 
     def export(self):
         if not self.save(): return
         from gmk_projects.render import export_delivery
         self.run('กำลังสร้างชุดส่งออก',lambda: export_delivery(self.project),lambda r: messagebox.showinfo('GMK','สร้างชุดส่งออกฉบับร่างแล้ว:\n'+str(self.project.root/r['package']['path'])+'\nบทผ่านการเทียบหลักฐานทุกฉาก: '+str(r['script_review_ready'])+'\nยังไม่ได้ผ่านการส่งมอบขั้นสุดท้ายและตรวจสำเนาบน Drive',parent=self.window))
-
-    def sync(self):
-        self.run('กำลังอัปโหลดและตรวจ Drive',self.project.sync)
 
     def show_delivery(self, result):
         lines = ['ตรวจชุดส่งออกฉบับร่างผ่านแล้ว',
@@ -453,10 +627,6 @@ class EditorWindow:
         self.timeline.insert('1.0', '\n'.join(lines))
         self.timeline.configure(state='disabled')
 
-    def verify_delivery(self):
-        from gmk_projects.delivery import verify_delivery
-        self.run('กำลังตรวจชุดส่งออก', lambda: verify_delivery(self.project), self.show_delivery)
-
     def deliver(self):
         from gmk_projects.delivery import deliver_project
         self.run('กำลังส่งชุดฉบับร่างและตรวจ Drive', lambda: deliver_project(self.project), self.show_delivery)
@@ -470,7 +640,7 @@ class EditorWindow:
         if not self.save(): return
         brief=simpledialog.askstring('โจทย์สารคดี','อยากเล่าเรื่องนี้ในมุมใด และอยากให้คนดูเข้าใจอะไร?',parent=self.window)
         if not brief: return
-        seconds=simpledialog.askinteger('ความยาว','ความยาวเป้าหมายเป็นวินาที (เช่น 180 = 3 นาที):',initialvalue=180,minvalue=30,maxvalue=3600,parent=self.window)
+        seconds=simpledialog.askinteger('ความยาว','ความยาวเป้าหมายเป็นวินาที (เช่น 180 = 3 นาที):',initialvalue=self.data.get('brief', {}).get('target_seconds', 180),minvalue=30,maxvalue=3600,parent=self.window)
         if seconds is None: return
         consent=self.project.root/'codex_story_consent.json'
         if not self.has_consent(consent):

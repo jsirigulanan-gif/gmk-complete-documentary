@@ -4,7 +4,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT"
 
 echo "============================================================"
-echo " GMK P.T. Operator — Build 045 — CachyOS / Arch Linux Setup"
+echo " GMK Documentary Maker — CachyOS / Arch Linux Setup"
 echo "============================================================"
 echo
 
@@ -14,7 +14,7 @@ if ! command -v pacman >/dev/null 2>&1; then
   exit 2
 fi
 
-PACKAGES=(python tk ffmpeg python-jsonschema python-yaml python-pytest)
+PACKAGES=(python tk ffmpeg rclone python-jsonschema python-yaml python-pytest)
 MISSING=()
 for pkg in "${PACKAGES[@]}"; do
   if ! pacman -Q "$pkg" >/dev/null 2>&1; then
@@ -65,8 +65,8 @@ DESKTOP="$HOME/.local/share/applications/gmk-pt-operator.desktop"
 cat > "$DESKTOP" <<DESKTOPFILE
 [Desktop Entry]
 Type=Application
-Name=GMK P.T. Operator
-Comment=Gamer Must Know P.T. production operator
+Name=GMK Documentary Maker
+Comment=Research, script, footage, narration and documentary editing
 Exec=${LAUNCHER}
 Path=${ROOT}
 Terminal=false
@@ -83,5 +83,5 @@ python -m gmk_operator --system-check
 
 echo
 echo "Setup complete."
-echo "Open GMK from your app launcher: GMK P.T. Operator"
+echo "Open GMK from your app launcher: GMK Documentary Maker"
 echo "or run: ./START_GMK.sh"

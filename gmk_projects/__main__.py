@@ -20,9 +20,13 @@ def main():
     for action in ('status', 'sync', 'add', 'voice', 'connect-production', 'research-intake', 'research-review',
                    'edit-init', 'edit-preflight', 'edit-voice', 'render', 'editorial-approve', 'delivery',
                    'footage-search', 'footage-download', 'delivery-verify', 'delivery-sync',
-                   'production-inspect', 'production-connect-story'):
+                   'production-inspect', 'production-connect-story', 'workflow', 'brief-save', 'shot-review', 'voice-review', 'research-add-claim'):
         p = sub.add_parser(action)
         p.add_argument('project', type=Path)
+        if action == 'research-add-claim':
+            p.add_argument('--source-path', required=True)
+            p.add_argument('--excerpt', required=True)
+            p.add_argument('--claim', required=True)
         if action == 'voice':
             p.add_argument('--limit', type=int)
             p.add_argument('--voice', default='th-TH-NiwatNeural')
@@ -32,6 +36,22 @@ def main():
             p.add_argument('--scene', action='append')
         if action == 'editorial-approve':
             p.add_argument('--master-sha256', required=True)
+            from .workflow import FILM_CHECKS
+            p.add_argument('--review-check', action='append', choices=tuple(FILM_CHECKS))
+        if action == 'brief-save':
+            for field in ('topic', 'audience', 'central-question'):
+                p.add_argument('--'+field, required=True)
+            p.add_argument('--target-seconds', type=int, required=True)
+            p.add_argument('--scope', default='')
+            p.add_argument('--revision', type=int, required=True)
+        if action in ('shot-review', 'voice-review'):
+            p.add_argument('--scene', required=True)
+            p.add_argument('--revision', type=int, required=True)
+        if action == 'shot-review':
+            p.add_argument('--shot', required=True)
+            p.add_argument('--visible-content', required=True)
+            p.add_argument('--match-reason', required=True)
+            p.add_argument('--match-type', choices=('DIRECT', 'SUPPORTING', 'CONTEXT'), required=True)
         if action == 'production-connect-story':
             p.add_argument('--edit-sha256', required=True)
             p.add_argument('--manifest-sha256', required=True)
@@ -54,7 +74,22 @@ def main():
         result = {'local_project': str(project.root), **project.read()}
     else:
         project = Project(args.project)
-        if args.action in ('edit-init', 'edit-preflight', 'edit-voice'):
+        if args.action == 'research-add-claim':
+            from .research_draft import add_review_claim
+            result = add_review_claim(project, args.source_path, args.excerpt, args.claim)
+        elif args.action == 'workflow':
+            from .workflow import workflow_status
+            result = workflow_status(project)
+        elif args.action == 'brief-save':
+            from .brief import save_brief
+            result = save_brief(project, topic=args.topic, audience=args.audience, central_question=args.central_question,
+                                target_seconds=args.target_seconds, scope=args.scope, expected_revision=args.revision)
+        elif args.action in ('shot-review', 'voice-review'):
+            from .media_review import review_shot, review_voice
+            result = (review_voice(project, args.scene, expected_revision=args.revision) if args.action == 'voice-review'
+                      else review_shot(project, args.scene, args.shot, visible_content=args.visible_content,
+                                       match_reason=args.match_reason, match_type=args.match_type, expected_revision=args.revision))
+        elif args.action in ('edit-init', 'edit-preflight', 'edit-voice'):
             from .edit import EditSession, EditError
             session = EditSession(project)
             if args.action == 'edit-voice':
@@ -74,7 +109,8 @@ def main():
         elif args.action in ('render', 'editorial-approve', 'delivery'):
             from .render import render_project, approve_editorial_review, export_delivery
             result = (render_project(project) if args.action == 'render' else
-                      approve_editorial_review(project, expected_master_sha256=args.master_sha256)
+                      approve_editorial_review(project, expected_master_sha256=args.master_sha256,
+                                              checklist={k: True for k in args.review_check} if args.review_check is not None else None)
                       if args.action == 'editorial-approve' else export_delivery(project))
         elif args.action in ('footage-search', 'footage-download'):
             from .footage import search_footage, acquire_footage, candidate_from_url

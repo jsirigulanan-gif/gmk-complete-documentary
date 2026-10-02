@@ -34,6 +34,5 @@ def test_operator_reports_build_041_or_newer():
     assert int(check['build']) >= 41
     by={x['check']:x for x in check['checks']}
     assert by['python_3_10_plus']['ok']
-    assert by['workspace_present']['ok']
-    assert by['intake_present']['ok']
-    assert by['worksheet_present']['ok']
+    assert by['ffmpeg']['ok']
+    assert by['tkinter']['ok']
