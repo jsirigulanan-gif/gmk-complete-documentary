@@ -1,6 +1,16 @@
 # Continuation Handoff — GMK Complete Documentary Maker
 
-## Current continuation (Build 056)
+## Current continuation (Build 057)
+
+Continue GMK only. `gmk_projects/preproduction.py` uses frozen StateEngine transactions for actual immutable per-scene HTML with source interval video links, approved master audio and separately named HTML/production-lock decisions. `gmk_projects/production_render.py` uses the actual byte-verified master and existing renderer, then stages real render job/output/manifest records and publishes once after all late checks. State remains PRODUCTION_RENDER; RENDER technical gate can pass while SHOT_QA remains FAIL/pending. No semantic QA is invented. The renderer/compiler/profile checksums describe actual code/settings, not test defaults. Derived HTML/media stay outside Git.
+
+Bindings read through PRODUCTION_RENDER while early mutation policies stay separate. Explicit preproduction reopening retires owned review/lock/render records and returns SHOT_PLAN_READY; old files/history and unchanged voice/design/plans remain. Before style/upstream reopening after a lock, use this explicit reopening action. Foreign review/lock/render records are protected. Stable lock identities are versioned on reentry. HTML is source-plan review, not composed film/mix/caption QA.
+
+The editor adds **ตรวจแผนทุกฉากและล็อกการผลิต** with initially unchecked review/name controls; plan and lock approvals are distinct. Guided readiness now has 22 rows. Its render action uses canonical production rendering only in PRODUCTION_RENDER. CLI adds preproduction-inspect/review-prepare/review-decide/lock-prepare/lock-decide/preproduction-reopen/production-render. Each mutation requires current edit/core hashes. The raw `render` command remains a local draft action.
+
+Canonical renders record both the reviewed input manifest and the post-publication manifest. Immutable local timeline/script/receipt records retain the input manifest hash; the render pointer/human local review bind to the publication manifest. Delivery verifies the actual canonical output/master/lock refs and both boundaries. Existing eight-part local review and exact ZIP remain draft workflows; canonical Shot/Scene/Full-film QA and delivery/release/Drive are next, followed by real 2–3 minute/30 minute acceptance. See BUILD_057_VALIDATION.md for exact results. Real project retains 13 UNREVIEWED claims / RESEARCH_INTAKE; no private claims/providers/TTS/uploads approved by tests. Latest read-only Drive observation remains Build 054 shared-client 403.
+
+## Historical continuation (Build 056)
 
 Continue GMK only, keep private projects/research/media out of Git. `gmk_projects/design_planning.py` connects renderer-derived design settings, actual PNG preview, explicit named DESIGN_DNA approval and exact measured scene/shot plans. The wrapper stages frozen objects/gates in memory under exact edit/core tokens and publishes once; no alternate state machine or provider call. Render code/config hashes participate in design inputs. Stable identities/history survive explicit design reopening; current voice approval is retained for style-only changes. Full upstream reopening through the existing voice dialog retires owned design/planning/voice and reenters ASSET_RECON. Foreign records and later locks remain protected.
 

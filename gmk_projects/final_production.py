@@ -30,7 +30,8 @@ from .storage import StorageError, atomic_json, digest, relative_path
 ARTIFACTS = {'VOICEOVER_SCRIPT_FINAL', 'PRONUNCIATION_DICTIONARY', 'TTS_READY_SCRIPT',
              'MASTER_VOICE', 'VOICE_TIMING_MAP', 'VOICE_LOCK_MANIFEST', 'VOICE_REVIEW_PACKAGE'}
 STATES = {'SCRIPT_READY', 'TTS_READY', 'VOICE_LOCKED'}
-READABLE_STATES = STATES | {'DESIGN_DNA_APPROVED', 'SCENE_PLAN_READY', 'SHOT_PLAN_READY'}
+EDITABLE_STATES = STATES | {'DESIGN_DNA_APPROVED', 'SCENE_PLAN_READY', 'SHOT_PLAN_READY', 'HTML_REVIEW', 'HTML_APPROVED'}
+READABLE_STATES = EDITABLE_STATES | {'PRODUCTION_RENDER'}
 
 
 def _ref(obj):
@@ -366,7 +367,7 @@ def reopen_final(project, *, expected_edit_sha256, expected_manifest_sha256):
             raise EditError('งานเปลี่ยนหลังเปิดตรวจ กรุณาตรวจใหม่ก่อนกลับไปแก้')
         from .design_planning import design_present, owns_design
         state = engine.snapshot()
-        if (engine.project_state not in READABLE_STATES or not owns_final(state)
+        if (engine.project_state not in EDITABLE_STATES or not owns_final(state)
                 or (design_present(state) and not owns_design(state))):
             raise EditError('กลับไปแก้ได้เฉพาะบทและเสียงขั้นต้นที่เตรียมจากโปรเจกต์นี้')
         tx = engine.begin(); retire_coverage(tx)

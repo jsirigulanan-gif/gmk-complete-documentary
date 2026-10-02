@@ -145,6 +145,7 @@ class EditorWindow:
         self.music_omitted = tk.BooleanVar(value=self.data.get('music_omitted', False))
         ttk.Checkbutton(finish, text='ตั้งใจไม่ใช้ดนตรีในเรื่องนี้', variable=self.music_omitted).pack(anchor='w')
         ttk.Button(finish, text='ตรวจรูปแบบภาพและเชื่อมแผนฉากช็อต', command=self.production_design).pack(anchor='w', pady=5)
+        ttk.Button(finish, text='ตรวจแผนทุกฉากและล็อกการผลิต', command=self.preproduction).pack(anchor='w', pady=5)
         self.timeline = tk.Text(finish, height=12, wrap='word', state='disabled')
         self.timeline.pack(fill='both', expand=True)
         row = ttk.Frame(finish)
@@ -369,6 +370,7 @@ class EditorWindow:
                   'STORY': self.generate_story, 'PRODUCTION': self.production_story,
                   'PRODUCTION_MEDIA': self.production_media, 'COVERAGE': self.production_coverage, 'FINAL_PRODUCTION': self.final_production, 'TIMELINE': self.preflight,
                   'DESIGN_PRODUCTION': self.production_design, 'PRODUCTION_PLANS': self.production_design,
+                  'PREPRODUCTION': self.preproduction,
                   'RENDER': self.render, 'FILM_QA': self.approve, 'EXPORT': self.export, 'DRIVE': self.deliver}
         if action in direct:
             direct[action](); return
@@ -583,7 +585,16 @@ class EditorWindow:
         from gmk_projects.render import render_project
         def progress(message):
             self.app.root.after(0,lambda: self.status.set(message))
-        self.run('กำลังเรนเดอร์',lambda: render_project(self.project,progress=progress),lambda r: messagebox.showinfo('GMK',f'สร้างไฟล์แล้ว\n{r["master_path"]}\nตรวจเทคนิค: {r["technical_qa"]["passed"]}\nกรุณาดูและฟังทั้งเรื่องก่อนส่งออก',parent=self.window))
+        def work():
+            from gmk_projects.production import ProductionProject
+            if ProductionProject(self.project)._load().engine.project_state == 'PRODUCTION_RENDER':
+                from gmk_projects.preproduction import inspect_preproduction
+                from gmk_projects.production_render import render_production
+                check = inspect_preproduction(self.project)
+                return render_production(self.project, expected_edit_sha256=check['edit_sha256'],
+                    expected_manifest_sha256=check['manifest_sha256'], progress=progress)
+            return render_project(self.project, progress=progress)
+        self.run('กำลังเรนเดอร์', work, lambda r: messagebox.showinfo('GMK',f'สร้างไฟล์แล้ว\n{r["master_path"]}\nตรวจเทคนิค: {r["technical_qa"]["passed"]}\nกรุณาดูและฟังทั้งเรื่องก่อนส่งออก',parent=self.window))
 
     def play_render(self):
         path=self.project.root/'last_render.json'
@@ -674,6 +685,81 @@ class EditorWindow:
             return consent.get('allowed') is True and consent.get('project_id')==self.project.read()['project_id']
         except (OSError,ValueError,AttributeError):
             return False
+
+    def preproduction(self):
+        if self.app._busy or not self.save(): return
+        from gmk_projects.preproduction import (inspect_preproduction, prepare_review, decide_review, prepare_lock,
+                                                 decide_lock, reopen_preproduction, review_file)
+        tk, ttk = self.app.tk, self.app.ttk
+        dialog = tk.Toplevel(self.window); dialog.title('ตรวจแผนทุกฉากและล็อกการผลิต')
+        dialog.geometry('920x760'); dialog.transient(self.window); dialog.grab_set()
+        ttk.Label(dialog, text='เปิดตรวจแผนทุกฉาก ฟังเสียงรวม แล้วบันทึกผลตรวจแผนและผลยืนยันล็อกแยกกัน วิดีโอที่ผลิตยังต้องตรวจทั้งเรื่อง', wraplength=870).pack(fill='x', padx=12, pady=10)
+        controls = ttk.Frame(dialog); controls.pack(side='bottom', fill='x', padx=12, pady=12)
+        review = ttk.Frame(dialog); review.pack(side='bottom', fill='x', padx=12, pady=8)
+        checked = tk.BooleanVar(value=False); actor = tk.StringVar()
+        ttk.Checkbutton(review, text='ตรวจทุกฉาก ช่วงภาพ เฟรมค้าง บท และเสียงรวมของแผนรุ่นนี้แล้ว', variable=checked).pack(anchor='w')
+        ttk.Label(review, text='ชื่อผู้ตรวจหรือผู้ยืนยันล็อกการผลิต').pack(anchor='w', pady=(6, 0))
+        ttk.Entry(review, textvariable=actor).pack(fill='x')
+        decisions = ttk.Frame(review); decisions.pack(fill='x', pady=8)
+        locking = ttk.Frame(review); locking.pack(fill='x', pady=4)
+        details = tk.Text(dialog, wrap='word', state='disabled'); details.pack(fill='both', expand=True, padx=12, pady=6)
+        preview = {}
+        def buttons(*_):
+            binding = preview.get('review_binding', {}); lock = preview.get('lock_binding', {})
+            ready = preview.get('ready'); consent = checked.get() and bool(actor.get().strip())
+            prepare_button.configure(state='normal' if ready and not binding.get('current') and preview.get('production_state') == 'SHOT_PLAN_READY' else 'disabled')
+            play_button.configure(state='normal' if binding.get('current') else 'disabled')
+            for widget in (approve_button, reject_button):
+                widget.configure(state='normal' if ready and binding.get('current') and not binding.get('decision') and consent else 'disabled')
+            lock_prepare.configure(state='normal' if ready and binding.get('approved') and not lock.get('current') else 'disabled')
+            for widget in (lock_approve, lock_reject):
+                widget.configure(state='normal' if ready and lock.get('current') and not lock.get('decision') and consent else 'disabled')
+        def display(value):
+            if not dialog.winfo_exists(): return
+            preview.clear(); preview.update(value); checked.set(False)
+            lines = ['ขั้นปัจจุบัน: '+value['production_state'], value['review_binding']['reason'], value['lock_binding']['reason'], '',
+                     'หน้าตรวจแสดงช่วงต้นฉบับและเสียงรวม ยังไม่ใช่ภาพตัดต่อทั้งเรื่อง',
+                     'การยืนยันล็อกครอบคลุมทุกช็อตที่แสดงในแผนรุ่นนี้ ยังไม่รับรองสิทธิ์หรือผลตรวจวิดีโอจริง', '']
+            fps = value['timeline']['fps']
+            for scene in value['timeline']['timeline']:
+                lines += [scene['title'], f'เสียง {scene["start_frame"]/fps:.3f}–{(scene["start_frame"]+scene["frames"])/fps:.3f} วินาที']
+                for cut in scene['cuts']:
+                    lines.append(f'  {cut["id"]} · ต้นฉบับ {cut["in_seconds"]:.3f}–{cut["out_seconds"]:.3f} · ใช้ {cut["frames"]-cut["freeze_frames"]} เฟรม · ค้างท้าย {cut["freeze_frames"]} เฟรม')
+            if value['lock_binding'].get('closure_sha256'): lines += ['', 'SHA256 ชุดแผน: '+value['lock_binding']['closure_sha256']]
+            lines += ['ต้องแก้: '+issue for issue in value['issues']]
+            details.configure(state='normal'); details.delete('1.0', 'end'); details.insert('1.0', '\n'.join(lines)); details.configure(state='disabled'); buttons()
+        def inspect():
+            if self.app._busy: return
+            preview.clear(); buttons(); self.run('กำลังตรวจแผนก่อนผลิต', lambda: inspect_preproduction(self.project), display)
+        def run_action(label, operation, **kwargs):
+            if self.app._busy or not preview: return
+            tokens = dict(preview); preview.clear(); buttons()
+            self.run(label, lambda: operation(self.project, expected_edit_sha256=tokens['edit_sha256'],
+                expected_manifest_sha256=tokens['manifest_sha256'], **kwargs), display)
+        def decide(operation, choice):
+            if checked.get() and actor.get().strip():
+                run_action('กำลังบันทึกผลตรวจแผนหรือยืนยันล็อก', operation, decision=choice, actor_id=actor.get().strip())
+        def play():
+            if self.app._busy or not preview.get('review_binding', {}).get('current'): return
+            tokens = dict(preview)
+            def verify():
+                current = inspect_preproduction(self.project)
+                if (current['edit_sha256'] != tokens['edit_sha256'] or current['manifest_sha256'] != tokens['manifest_sha256']
+                        or not current['review_binding']['current']): raise RuntimeError('แผนเปลี่ยนแล้ว กรุณาตรวจใหม่')
+                return review_file(self.project, tokens['review_binding']['index'])
+            self.run('กำลังเปิดแผนทุกฉาก', verify, lambda path: webbrowser.open(path.as_uri()))
+        ttk.Button(controls, text='ตรวจแผนปัจจุบัน', command=inspect).pack(side='left')
+        prepare_button = ttk.Button(controls, text='เตรียมหน้าตรวจทุกฉาก', command=lambda: run_action('กำลังเตรียมหน้าตรวจแผน', prepare_review), state='disabled'); prepare_button.pack(side='left', padx=5)
+        play_button = ttk.Button(controls, text='เปิดแผนทุกฉากและเสียงรวม', command=play, state='disabled'); play_button.pack(side='left')
+        ttk.Button(controls, text='ปิด', command=dialog.destroy).pack(side='right')
+        approve_button = ttk.Button(decisions, text='ยืนยันแผนทุกฉาก', command=lambda: decide(decide_review, 'APPROVED'), state='disabled'); approve_button.pack(side='left')
+        reject_button = ttk.Button(decisions, text='แผนยังต้องแก้', command=lambda: decide(decide_review, 'REJECTED'), state='disabled'); reject_button.pack(side='left', padx=5)
+        lock_prepare = ttk.Button(decisions, text='เตรียมชุดยืนยันล็อกการผลิต', command=lambda: run_action('กำลังเตรียมชุดล็อกการผลิต', prepare_lock), state='disabled'); lock_prepare.pack(side='left')
+        lock_approve = ttk.Button(locking, text='ยืนยันล็อกเพื่อผลิต', command=lambda: decide(decide_lock, 'APPROVED'), state='disabled'); lock_approve.pack(side='left')
+        lock_reject = ttk.Button(locking, text='ยังไม่ล็อกการผลิต', command=lambda: decide(decide_lock, 'REJECTED'), state='disabled'); lock_reject.pack(side='left', padx=5)
+        ttk.Button(review, text='กลับไปแก้แผนการผลิต', command=lambda: run_action('กำลังเปิดแผนใหม่และเก็บประวัติ', reopen_preproduction)).pack(anchor='w', pady=5)
+        checked.trace_add('write', buttons); actor.trace_add('write', buttons)
+        return dialog
 
     def production_design(self):
         if self.app._busy or not self.save(): return

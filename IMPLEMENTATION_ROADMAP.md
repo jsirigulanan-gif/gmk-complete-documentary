@@ -4,6 +4,8 @@ See PRODUCT_REQUIREMENTS.md for the complete user requirement. This plan keeps a
 
 ## Current evidence
 
+- Build 057 connects exact whole-plan HTML review and a separate production lock decision to PRODUCTION_RENDER. Actual canonical render records use the byte-verified reviewed PCM master, actual selected cuts, full-file decode and late input/manifest checks. Explicit reopening retires only owned current approvals/locks/render records and retains history/files. Readiness adds explicit review/lock rows (22 total). Canonical Shot/Scene/Full-film QA, delivery/release/Drive and real acceptance remain pending. Older build paragraphs below describe their historical boundaries.
+
 - Build 056 binds actual renderer design settings and a real PNG preview to named human design approval, then registers exact selected-cut scene/shot plans on measured voice/frame timing through SHOT_PLAN_READY. Title layers, source intervals, unused tails, explicit holds and SUPPORTING/UNKNOWN semantics are retained. Design-only reopening preserves voice; upstream reopening archives obsolete owned downstream records. Canonical review/production lock/render/full-film QA/final release and real acceptance remain required.
 
 - Build 055 connects reviewed exact editor narration in scene order, refreshes canonical picture/coverage refs after Beat promotion, and assembles real frame-aligned 48 kHz mono PCM master audio. Existing script/TTS gates and an explicit named human voice decision reach VOICE_LOCKED. Rejection/reopening retains bytes/history and invalidates obsolete owned approvals. TTS planning does not claim provider synthesis. Canonical design/scene/shot/render/full-film QA/release and real acceptance remain required.

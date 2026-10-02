@@ -1,0 +1,9 @@
+# Build 057 — exact plan review, production lock and actual master rendering
+
+General projects previously stopped at SHOT_PLAN_READY and rendered a local preview without a canonical production lock. This build connects immutable local per-scene HTML/source-interval review, a named whole-plan decision and a separate named production-lock decision to PRODUCTION_RENDER. The selected-cut closure freezes the exact voice, design, scene plans, shots, layers and cues.
+
+The production renderer consumes the byte-verified human-approved PCM master and publishes real canonical RENDER_JOB, RENDER_MANIFEST and RENDER_OUTPUT records only after actual MP4/full-file technical checks and final input validation. Inputs changing during rendering leave retained files without canonical success or a current render pointer. Exact local delivery now verifies both the reviewed input manifest and the canonical render publication manifest. Technical success leaves Shot/Scene/Full-film QA pending.
+
+The desktop adds the review/lock dialog and guided actions; CLI exposes inspect/prepare/decide/reopen/production-render with exact tokens. Explicit reopening archives owned obsolete approvals and render objects, versions owned artifacts, retains files/history/current upstream review and versions stable lock identities on reentry. Foreign records remain protected. Read-only upstream bindings extend to the new stages; automatic upstream editing does not.
+
+Frozen schema/contracts remain unchanged. The typo HTML_REVIEW_READY in current status is corrected to the existing frozen stages. Historical pilot completion fields remain explicitly scoped to fixtures. Real research approval, provider/TTS calls, live Drive delivery, canonical film QA/release and real film acceptance remain unperformed. See BUILD_057_VALIDATION.md.

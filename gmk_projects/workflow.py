@@ -103,6 +103,9 @@ def workflow_status(project):
     stage('DESIGN', 'รูปแบบภาพ ดนตรี และกราฟิก', music_ready and design['approved'],
           'DESIGN_PRODUCTION' if music_ready else 'DESIGN',
           design['reason'] if music_ready else 'เลือกดนตรี ระดับเสียง และชื่อฉาก หรือระบุว่าตั้งใจไม่ใช้ดนตรี')
+    review = production['review_binding']; lock = production['lock_binding']
+    stage('PREPRODUCTION_REVIEW', 'ตรวจแผนทุกฉากก่อนผลิต', review['approved'], 'PREPRODUCTION', review['reason'])
+    stage('PRODUCTION_LOCK', 'ยืนยันล็อกการผลิต', lock['locked'], 'PREPRODUCTION', lock['reason'])
     render_ready, render_issue = False, 'ยังไม่มีวิดีโอจากบทและไทม์ไลน์รุ่นปัจจุบัน'
     try:
         render = json.loads((project.root/'last_render.json').read_text())
@@ -111,6 +114,10 @@ def workflow_status(project):
                 and render['technical_qa']['passed'] is True):
             asset_file(project, render['registered']['preview.mp4'], 'exports')
             render_ready, render_issue = True, 'วิดีโอตรงกับบทและไทม์ไลน์ปัจจุบัน'
+            if lock['locked']:
+                from .production_render import canonical_render_current
+                render_ready = canonical_render_current(project, render, ProductionProject(project)._load().engine.snapshot())
+                if not render_ready: render_issue = 'ต้องเรนเดอร์จากล็อกการผลิตและเสียงรวมที่ยืนยันแล้ว'
     except (ValueError, OSError, StorageError, KeyError):
         pass
     stage('RENDER', 'เรนเดอร์วิดีโอ', render_ready, 'RENDER', render_issue)
@@ -169,4 +176,6 @@ def workflow_status(project):
             'final_binding': final,
             'design_binding': design,
             'plan_binding': plans,
+            'review_binding': review,
+            'lock_binding': lock,
             'issues': media_issues}

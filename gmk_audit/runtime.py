@@ -115,6 +115,14 @@ class AuditRuntime:
         ('build056_exact_cuts', ('tests/build056/test_design_planning.py::test_multiple_selected_cuts_and_explicit_hold_follow_frame_clock',)),
         ('build056_design_concurrency', ('tests/build056/test_design_planning.py::test_design_preview_in_flight_edit_does_not_publish',)),
         ('build056_voice_review_revision', ('tests/build056/test_design_planning.py::test_superseded_voice_review_context_invalidates_design_and_plans',)),
+        ('build057_preproduction_review', ('tests/build057/test_preproduction.py::test_review_and_production_lock_require_separate_exact_human_decisions',)),
+        ('build057_preproduction_rejection', ('tests/build057/test_preproduction.py::test_rejection_reopening_keeps_files_and_requires_new_plan_and_lock_review',)),
+        ('build057_review_guards', ('tests/build057/test_preproduction.py::test_changed_review_bytes_and_stale_tokens_never_grant_approval',)),
+        ('build057_lock_atomicity', ('tests/build057/test_preproduction.py::test_failed_lock_staging_and_foreign_records_leave_core_unchanged',)),
+        ('build057_production_render', ('tests/build057/test_preproduction.py::test_locked_render_consumes_actual_master_and_records_real_output_without_qa',)),
+        ('build057_render_concurrency', ('tests/build057/test_preproduction.py::test_edit_during_production_render_never_publishes_canonical_success',)),
+        ('build057_consumed_voice', ('tests/build057/test_preproduction.py::test_changed_consumed_master_copy_is_rejected_before_publication',)),
+        ('build057_draft_manifest', ('tests/build057/test_preproduction.py::test_draft_pointer_cannot_waive_current_research_with_an_input_manifest_field',)),
     )
     FULL_BASE_PARTITIONS=(
         ('core_engines', ('tests/state','tests/dependency','tests/gate','tests/runtime','tests/semantic')),

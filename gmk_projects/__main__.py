@@ -23,7 +23,8 @@ def main():
                    'production-inspect', 'production-connect-story', 'media-inspect', 'media-connect', 'coverage-inspect', 'coverage-record',
                    'workflow', 'brief-save', 'shot-review', 'voice-review', 'research-add-claim',
                    'final-inspect', 'final-prepare', 'final-voice-decide', 'final-reopen',
-                   'design-inspect', 'design-prepare', 'design-decide', 'design-reopen', 'plan-prepare'):
+                   'design-inspect', 'design-prepare', 'design-decide', 'design-reopen', 'plan-prepare',
+                   'preproduction-inspect', 'review-prepare', 'review-decide', 'lock-prepare', 'lock-decide', 'preproduction-reopen', 'production-render'):
         p = sub.add_parser(action)
         p.add_argument('project', type=Path)
         if action == 'research-add-claim':
@@ -56,7 +57,8 @@ def main():
             p.add_argument('--match-reason', required=True)
             p.add_argument('--match-type', choices=('DIRECT', 'SUPPORTING', 'CONTEXT'), required=True)
         if action in ('production-connect-story', 'media-connect', 'coverage-record', 'final-prepare', 'final-voice-decide', 'final-reopen',
-                      'design-prepare', 'design-decide', 'design-reopen', 'plan-prepare'):
+                      'design-prepare', 'design-decide', 'design-reopen', 'plan-prepare',
+                      'review-prepare', 'review-decide', 'lock-prepare', 'lock-decide', 'preproduction-reopen', 'production-render'):
             p.add_argument('--edit-sha256', required=True)
             p.add_argument('--manifest-sha256', required=True)
         if action == 'coverage-record':
@@ -66,7 +68,7 @@ def main():
             p.add_argument('--master-sha256', required=True)
             p.add_argument('--decision', choices=('APPROVED', 'REJECTED'), required=True)
             p.add_argument('--actor-id', required=True)
-        if action == 'design-decide':
+        if action in ('design-decide', 'review-decide', 'lock-decide'):
             p.add_argument('--decision', choices=('APPROVED', 'REJECTED'), required=True)
             p.add_argument('--actor-id', required=True)
         if action == 'footage-search':
@@ -145,6 +147,15 @@ def main():
                 kwargs = {'decision': args.decision, 'actor_id': args.actor_id} if args.action == 'design-decide' else {}
                 result = operation(project, expected_edit_sha256=args.edit_sha256,
                     expected_manifest_sha256=args.manifest_sha256, **kwargs)
+        elif args.action in ('preproduction-inspect', 'review-prepare', 'review-decide', 'lock-prepare', 'lock-decide', 'preproduction-reopen', 'production-render'):
+            from .preproduction import inspect_preproduction, prepare_review, decide_review, prepare_lock, decide_lock, reopen_preproduction
+            from .production_render import render_production
+            if args.action == 'preproduction-inspect': result = inspect_preproduction(project)
+            else:
+                operation = {'review-prepare': prepare_review, 'review-decide': decide_review, 'lock-prepare': prepare_lock,
+                             'lock-decide': decide_lock, 'preproduction-reopen': reopen_preproduction, 'production-render': render_production}[args.action]
+                kwargs = {'decision': args.decision, 'actor_id': args.actor_id} if args.action in ('review-decide', 'lock-decide') else {}
+                result = operation(project, expected_edit_sha256=args.edit_sha256, expected_manifest_sha256=args.manifest_sha256, **kwargs)
         elif args.action in ('delivery-verify', 'delivery-sync'):
             from .delivery import verify_delivery, deliver_project
             result = (verify_delivery if args.action == 'delivery-verify' else deliver_project)(project)

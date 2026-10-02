@@ -118,7 +118,7 @@ def technical_qa(path: Path, expected: dict) -> dict:
             'scope': 'Technical stream/duration/frame/decode checks only; factual and visual relevance require editorial review.'}
 
 
-def render_project(project, *, progress=None) -> dict:
+def render_project(project, *, progress=None, _locked_master_path=None, _locked_master_sha256=None, _publish_last=True) -> dict:
     edit = EditSession(project)
     snapshot = edit.load()
     plan = edit.preflight(snapshot)
@@ -162,19 +162,27 @@ def render_project(project, *, progress=None) -> dict:
                                     'source_in': cut['in_seconds'], 'source_out': cut['out_seconds'],
                                     'used_frames': cut['frames'], 'freeze_frames': cut['freeze_frames'],
                                     'permission_status': 'PENDING_PERMISSION'})
-                wave = temp/f'voice-{index:04}.wav'
-                # Use sample counts derived from video frames to avoid cumulative AAC segment drift.
-                samples = round(scene['frames']*48000/fps)
-                _run(_ffmpeg('-i', asset_file(project, scene['voice'], 'voice'), '-map', '0:a:0',
-                             '-af', f'aresample=48000,apad,atrim=end_sample={samples},asetpts=PTS-STARTPTS',
-                             '-ar', '48000', '-ac', '2', '-c:a', 'pcm_s16le', wave))
-                voices.append(wave.name)
+                if _locked_master_path is None:
+                    wave = temp/f'voice-{index:04}.wav'
+                    # Use sample counts derived from video frames to avoid cumulative AAC segment drift.
+                    samples = round(scene['frames']*48000/fps)
+                    _run(_ffmpeg('-i', asset_file(project, scene['voice'], 'voice'), '-map', '0:a:0',
+                                 '-af', f'aresample=48000,apad,atrim=end_sample={samples},asetpts=PTS-STARTPTS',
+                                 '-ar', '48000', '-ac', '2', '-c:a', 'pcm_s16le', wave))
+                    voices.append(wave.name)
             for name, files in (('video', videos), ('voice', voices)):
+                if not files: continue
                 (temp/(name+'.txt')).write_text(''.join(f"file '{p}'\n" for p in files), encoding='utf-8')
             report('กำลังรวมภาพ ผสมดนตรี และสร้างไฟล์ MP4')
             video, voice = temp/'video.mp4', temp/'voice.wav'
             _run(_ffmpeg('-f', 'concat', '-safe', '1', '-i', temp/'video.txt', '-c', 'copy', video))
-            _run(_ffmpeg('-f', 'concat', '-safe', '1', '-i', temp/'voice.txt', '-c', 'copy', voice))
+            if _locked_master_path is None:
+                _run(_ffmpeg('-f', 'concat', '-safe', '1', '-i', temp/'voice.txt', '-c', 'copy', voice))
+            else:
+                # Consume the actual reviewed PCM master without rebuilding scene voices.
+                shutil.copyfile(_locked_master_path, voice)
+                if digest(voice)['sha256'] != _locked_master_sha256:
+                    raise EditError('เสียงรวมที่ใช้เรนเดอร์ไม่ตรงกับไฟล์ที่ยืนยัน')
             master = root/'preview.mp4'
             args = ['-i', video, '-i', voice]
             output_args = []
@@ -218,7 +226,7 @@ def render_project(project, *, progress=None) -> dict:
                   'edit_sha256': plan['edit_sha256'], 'technical_qa': qa, 'matches_current_edit': current,
                   'estimated_caption_scenes': estimated, 'documentary_completed': False}
         result['script_review_ready'] = plan['script_review']['ready']
-        atomic_json(project.root/'last_render.json', result)
+        if _publish_last: atomic_json(project.root/'last_render.json', result)
         return result
     except Exception as exc:
         atomic_json(root/'failure.json', {'error': str(exc), 'edit_sha256': plan['edit_sha256']})

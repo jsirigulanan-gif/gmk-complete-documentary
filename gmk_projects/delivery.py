@@ -43,9 +43,16 @@ def current_reviewed_render(project):
     research_sha = ProductionProject(project).status()['manifest_sha256']
     if fingerprint(EditSession(project).load()) != edit_sha:
         raise EditError('ต้องตรวจวิดีโอรุ่นปัจจุบันก่อนสร้างชุดส่งออก')
-    if any(record.get('research_manifest_sha256') != research_sha
-           for record in (render, timeline, receipt, script, decision)):
+    # Only a verified canonical render can establish two manifest boundaries.
+    # A draft pointer cannot waive immutable research checks by adding a field.
+    input_sha = render.get('input_manifest_sha256') if render.get('canonical_render') else research_sha
+    if (any(record.get('research_manifest_sha256') != research_sha for record in (render, decision))
+            or any(record.get('research_manifest_sha256') != input_sha for record in (timeline, receipt, script))):
         raise EditError('รีเสิร์ชเปลี่ยนแล้ว ต้องตรวจวิดีโอรุ่นใหม่ก่อนส่งออก')
+    if render.get('canonical_render'):
+        from .production_render import canonical_render_current
+        if not canonical_render_current(project, render, ProductionProject(project)._load().engine.snapshot()):
+            raise EditError('ข้อมูลเรนเดอร์ไม่ตรงกับล็อกการผลิตปัจจุบัน')
     if (any(record.get('edit_sha256') != edit_sha for record in (render, timeline, receipt, decision))
             or qa.get('sha256') != master_sha or qa.get('passed') is not True
             or qa.get('full_decode_checked') is not True or qa.get('issues') != []

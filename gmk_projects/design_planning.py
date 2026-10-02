@@ -24,6 +24,8 @@ from .storage import StorageError, atomic_json, digest, relative_path
 
 
 STATES = {'VOICE_LOCKED', 'DESIGN_DNA_APPROVED', 'SCENE_PLAN_READY', 'SHOT_PLAN_READY'}
+READABLE_STATES = STATES | {'HTML_REVIEW', 'HTML_APPROVED', 'PRODUCTION_RENDER'}
+EDITABLE_STATES = STATES | {'HTML_REVIEW', 'HTML_APPROVED'}
 ARTIFACTS = {'EFFECTIVE_DESIGN_TOKENS', 'DESIGN_DNA_REVIEW_PACKAGE', 'SCENE_ASSET_POOL', 'SCENE_PLAN'}
 OBJECTS = {'DESIGN_DNA', 'SHOT', 'LAYER', 'CUE'}
 RULES = {'version': 1, 'fit': 'CONTAIN_WITH_BLACK_PADDING', 'transition': 'CUT',
@@ -52,6 +54,8 @@ def owns_design(state):
 
 
 def retire_design(tx):
+    from .preproduction import retire_review
+    retire_review(tx)
     for obj in _active(tx.staged).values():
         if _tag(obj) and (obj['object_type'] in OBJECTS or obj['object_type'] == 'APPROVAL'):
             tx.archive_object(obj['id'])
@@ -93,7 +97,7 @@ def design_binding_status(project, state, *, edit=None, final_status=None):
         except (OSError, ValueError): edit = None
     dnas = [o for o in _active(state).values() if o['object_type'] == 'DESIGN_DNA' and _tag(o)]
     dna = dnas[0] if len(dnas) == 1 else None
-    current = bool(dna and edit and state.project_state in STATES and owns_design(state)
+    current = bool(dna and edit and state.project_state in READABLE_STATES and owns_design(state)
                    and _tag(dna)['input_sha256'] == fingerprint(design_input(edit, state))
                    and not dna.get('stale', {}).get('is_stale')
                    and dna['status'] not in {'STALE', 'BLOCKED', 'ARCHIVED', 'REJECTED'}
@@ -132,7 +136,7 @@ def plan_binding_status(project, state, *, edit=None, design_status=None):
     design = design_status if design_status is not None else design_binding_status(project, state, edit=edit)
     plans = [a for a in _heads(state, 'SCENE_PLAN') if _tag(a) and not _tag(a).get('retired')]
     signature = fingerprint(edit) if edit else None
-    current = bool(edit and design['approved'] and state.project_state in {'SCENE_PLAN_READY', 'SHOT_PLAN_READY'}
+    current = bool(edit and design['approved'] and state.project_state in READABLE_STATES - {'VOICE_LOCKED', 'DESIGN_DNA_APPROVED'}
                    and len(plans) == sum(s['included'] for s in edit['scenes'])
                    and { _tag(p)['key'] for p in plans } == {s['id'] for s in edit['scenes'] if s['included']}
                    and all(_tag(p)['edit_sha256'] == signature and _asset_refs_current(state, p) for p in plans))
@@ -149,7 +153,7 @@ def plan_binding_status(project, state, *, edit=None, design_status=None):
             if (not shot or shot['version'] != ref['version'] or shot.get('stale', {}).get('is_stale')
                     or shot['status'] in {'STALE', 'BLOCKED', 'ARCHIVED', 'REJECTED'}): current = False
     return {'connected': bool(plans), 'current': current,
-            'scene_plan_ready': current, 'shot_plan_ready': current and state.project_state == 'SHOT_PLAN_READY',
+            'scene_plan_ready': current, 'shot_plan_ready': current and state.project_state != 'SCENE_PLAN_READY',
             'scene_count': len(plans), 'shot_count': sum(len(p['shots']) for p in plans),
             'reason': 'แผนฉากและช็อตตรงช่วงตัดและเสียงที่ยืนยันแล้ว' if current else 'ต้องเชื่อมแผนฉากและช็อตจากงานรุ่นปัจจุบัน'}
 
@@ -298,7 +302,7 @@ def decide_design(project, *, expected_edit_sha256, expected_manifest_sha256, de
 def reopen_design(project, *, expected_edit_sha256, expected_manifest_sha256):
     with project._lock():
         edit, loaded = _tokens(project, expected_edit_sha256, expected_manifest_sha256); engine = loaded.engine
-        if engine.project_state not in STATES or not owns_design(engine.snapshot()): raise EditError('กลับไปแก้ได้เฉพาะรูปแบบและแผนที่สร้างจากโปรเจกต์นี้ก่อนล็อกการผลิต')
+        if engine.project_state not in EDITABLE_STATES or not owns_design(engine.snapshot()): raise EditError('กลับไปแก้ได้เฉพาะรูปแบบและแผนที่สร้างจากโปรเจกต์นี้ก่อนล็อกการผลิต — ถ้าล็อกแล้วให้กลับไปแก้แผนการผลิตก่อน')
         tx = engine.begin(); retire_design(tx)
         if engine.project_state != 'VOICE_LOCKED': tx.reenter_stage('VOICE_LOCKED', actor_type='HUMAN')
         tx.commit(); _persist(project, engine)

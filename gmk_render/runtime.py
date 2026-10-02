@@ -30,18 +30,21 @@ class RenderRuntime:
         a=self.engine.snapshot().artifacts.get((ref['artifact_id'],int(ref['version'])))
         if not a or a.get('sha256')!=ref.get('sha256'):raise StateEngineError('RENDER_ARTIFACT_REF_INVALID','Artifact ref/hash invalid.',details=ref)
         return a
-    def queue_final(self, *, production_lock_ref, scope_type='SCENE', scope_target=None, renderer_adapter=None, output_profile=None, compiled_payload=None, transient_retry_limit=2):
+    def queue_final(self, *, production_lock_ref, scope_type='SCENE', scope_target=None, renderer_adapter=None, output_profile=None, compiled_payload=None, transient_retry_limit=2, compiler=None, extensions=None):
         lock=self.locks.assert_valid(production_lock_ref)
         renderer_adapter=renderer_adapter or {'config_id':'GMK_TEST_RENDERER','version':'1.0.0','sha256':'a'*64}
         output_profile=output_profile or {'config_id':'GMK_MASTER_4K','version':'1.0.0','sha256':'b'*64}
         prompt_payload={'production_lock':deepcopy(production_lock_ref),'renderer_adapter':deepcopy(renderer_adapter),'compiled_payload':deepcopy(compiled_payload or {'mode':'EXECUTE_LOCKED_DECISIONS'})}
-        tx=self.engine.begin();prompt_ref=tx.create_artifact('RENDERER_PROMPT',prompt_payload,origin_refs=[production_lock_ref],compiler={'config_id':'GMK_RENDERER_PROMPT_COMPILER','version':'1.0.0','sha256':'c'*64})
+        if extensions: prompt_payload['extensions']=deepcopy(extensions)
+        tx=self.engine.begin();prompt_ref=tx.create_artifact('RENDERER_PROMPT',prompt_payload,origin_refs=[production_lock_ref],compiler=compiler or {'config_id':'GMK_RENDERER_PROMPT_COMPILER','version':'1.0.0','sha256':'c'*64})
         inputs=[]
         for f in ('shots','layers','cues'):inputs.extend(deepcopy(lock.get(f,[])))
         snap={'production_lock':production_lock_ref,'inputs':inputs,'renderer_adapter':renderer_adapter,'output_profile':output_profile,'compiled_payload':deepcopy(compiled_payload or {'mode':'EXECUTE_LOCKED_DECISIONS'})}
         render_key=sha256_json(snap)
         target=scope_target or (lock.get('scope') or {}).get('scene_ref') or lock['shots'][0]
         payload={'render_level':'FINAL','scope':{'type':scope_type,'target':deepcopy(target)},'production_lock':deepcopy(production_lock_ref),'input_snapshot':{'snapshot_sha256':sha256_json(inputs),'inputs':inputs},'renderer':{'adapter_id':renderer_adapter['config_id'],'adapter_version':renderer_adapter['version']},'renderer_prompt':prompt_ref,'output_profile':deepcopy(output_profile),'cost_class':'HIGH','workflow_state':'QUEUED','execution_policy':{'transient_retry_limit':min(2,int(transient_retry_limit))},'extensions':{'render_key_sha256':render_key}}
+        if extensions:
+            payload['extensions'].update(deepcopy(extensions))
         job_ref=tx.create_object('RENDER_JOB',payload,activate=True);tx.commit();return job_ref
     def _cache_manifest(self,job):
         s=self.engine.snapshot();key=(job.get('extensions') or {}).get('render_key_sha256')

@@ -57,13 +57,18 @@ def review_media(p, session, scene, shot):
             for operation, kwargs in ((prepare_design, {}), (decide_design, {'decision': 'APPROVED', 'actor_id': 'Synthetic fixture designer'}), (prepare_plans, {})):
                 design = inspect_design(p)
                 operation(p, expected_edit_sha256=design['edit_sha256'], expected_manifest_sha256=design['manifest_sha256'], **kwargs)
+            from gmk_projects.preproduction import inspect_preproduction, prepare_review, decide_review, prepare_lock, decide_lock
+            for operation, kwargs in ((prepare_review, {}), (decide_review, {'decision': 'APPROVED', 'actor_id': 'Synthetic fixture plan reviewer'}),
+                                     (prepare_lock, {}), (decide_lock, {'decision': 'APPROVED', 'actor_id': 'Synthetic fixture production owner'})):
+                check = inspect_preproduction(p)
+                operation(p, expected_edit_sha256=check['edit_sha256'], expected_manifest_sha256=check['manifest_sha256'], **kwargs)
 
 
 def test_new_topic_brief_and_real_readiness_preserve_core_state(tmp_path):
     p=Project.create(tmp_path,'A new topic'); session=EditSession(p)
     before=ProductionProject(p)._load().manifest_sha256
     status=workflow_status(p)
-    assert len(status['stages']) == 20 and status['next_action']=='BRIEF'
+    assert len(status['stages']) == 22 and status['next_action']=='BRIEF'
     assert not status['documentary_completed']
     with pytest.raises(EditError, match='ระบุ'):
         save_brief(p,topic='topic',audience='',central_question='question',target_seconds=180,expected_revision=session.load()['revision'])
@@ -96,7 +101,10 @@ def test_reviewed_project_runs_through_render_checklist_and_local_delivery(media
     review_media(p,session,scene_id,shot_id)
     before=workflow_status(p)
     assert before['next_action']=='RENDER',before['stages']
-    result=render_project(p)
+    from gmk_projects.preproduction import inspect_preproduction
+    from gmk_projects.production_render import render_production
+    check=inspect_preproduction(p)
+    result=render_production(p,expected_edit_sha256=check['edit_sha256'],expected_manifest_sha256=check['manifest_sha256'])
     assert workflow_status(p)['next_action']=='FILM_QA'
     with pytest.raises(EditError,match='ให้ครบ'):
         approve_editorial_review(p,expected_master_sha256=result['technical_qa']['sha256'],checklist={'facts':True})

@@ -52,7 +52,7 @@ class ProductionLockRuntime:
         if inv: raise StateEngineError('PRODUCTION_LOCK_STALE','Production Lock has unresolved dependency invalidation.',details=deepcopy(inv))
         return a
 
-    def create_scene_lock(self, *, voice_lock_ref, design_dna_ref, scene_plan_ref, scene_preview_ref, shot_refs=None):
+    def create_scene_lock(self, *, voice_lock_ref, design_dna_ref, scene_plan_ref, scene_preview_ref, shot_refs=None, extensions=None, artifact_id=None):
         voice=self._resolve_art(voice_lock_ref); plan=self._resolve_art(scene_plan_ref); preview=self._resolve_art(scene_preview_ref); dna=self._resolve_obj(design_dna_ref)
         if voice.get('artifact_type')!='VOICE_LOCK_MANIFEST' or plan.get('artifact_type')!='SCENE_PLAN' or preview.get('artifact_type')!='SCENE_PREVIEW' or dna.get('object_type')!='DESIGN_DNA':
             raise StateEngineError('PRODUCTION_LOCK_INPUT_TYPE_INVALID','Production Lock inputs have invalid types.')
@@ -78,8 +78,14 @@ class ProductionLockRuntime:
             approvals.append(a)
         snapshot={'voice_lock':voice_lock_ref,'design_dna':design_dna_ref,'scene_plan':scene_plan_ref,'scene_preview':scene_preview_ref,'shots':[obj_ref(x) for x in shots],'layers':[obj_ref(x) for x in layers],'cues':[obj_ref(x) for x in cues],'approvals':[obj_ref(x) for x in approvals]}
         payload={'scope':{'type':'SCENE','scene_ref':deepcopy(preview['scene_ref'])},'system':{'schema_version':'1.0.0','policy_bundle':deepcopy(self.policy_bundle_ref)},'voice_lock':deepcopy(voice_lock_ref),'design_dna_ref':deepcopy(design_dna_ref),'scene_plan':deepcopy(scene_plan_ref),'scene_preview':deepcopy(scene_preview_ref),'shots':snapshot['shots'],'layers':snapshot['layers'],'cues':snapshot['cues'],'approvals':snapshot['approvals'],'dependency_snapshot_sha256':sha256_json(snapshot)}
-        tx=self.engine.begin();ref=tx.create_artifact('PRODUCTION_LOCK_MANIFEST',payload,origin_refs=[voice_lock_ref,design_dna_ref,scene_plan_ref,scene_preview_ref]);tx.commit();return ref
-    def create_project_lock(self, *, scene_lock_refs):
+        if extensions: payload['extensions']=deepcopy(extensions)
+        tx=self.engine.begin();origins=[voice_lock_ref,design_dna_ref,scene_plan_ref,scene_preview_ref]
+        if artifact_id:
+            old=self.engine.snapshot().artifact_registry.entries[artifact_id]
+            ref=tx.create_artifact_version(artifact_id,base_version=old.head_version,payload_patch=payload,origin_refs=origins)
+        else: ref=tx.create_artifact('PRODUCTION_LOCK_MANIFEST',payload,origin_refs=origins)
+        tx.commit();return ref
+    def create_project_lock(self, *, scene_lock_refs, extensions=None, artifact_id=None):
         """Freeze a project render graph by aggregating exact approved scene locks.
 
         The project lock never re-resolves live SHOT/LAYER/CUE state; it copies the
@@ -120,5 +126,10 @@ class ProductionLockRuntime:
             'scene_locks':child_refs,'shots':shots,'layers':layers,'cues':cues,'approvals':approvals,
             'dependency_snapshot_sha256':sha256_json(snapshot),
         }
-        tx=self.engine.begin(); ref=tx.create_artifact('PRODUCTION_LOCK_MANIFEST',payload,origin_refs=child_refs); tx.commit(); return ref
-
+        if extensions: payload['extensions']=deepcopy(extensions)
+        tx=self.engine.begin()
+        if artifact_id:
+            old=state.artifact_registry.entries[artifact_id]
+            ref=tx.create_artifact_version(artifact_id,base_version=old.head_version,payload_patch=payload,origin_refs=child_refs)
+        else: ref=tx.create_artifact('PRODUCTION_LOCK_MANIFEST',payload,origin_refs=child_refs)
+        tx.commit();return ref
